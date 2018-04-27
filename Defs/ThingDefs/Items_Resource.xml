@@ -1,0 +1,25 @@
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>MechanoidParts</defName>
+    <label>mechanoid parts</label>
+    <description>Parts scrapped from destroyed mechanoids</description>
+    <graphicData>
+      <texPath>Things/MechanoidParts</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>50</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>21</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+			<DeteriorationRate>2.0</DeteriorationRate>
+		</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+</Defs>

@@ -7,6 +7,9 @@ using System.Text;
 using UnityEngine;
 using Verse;
 using Verse.AI;
+using Verse.AI.Group;
+using WhatTheHack.Duties;
+using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
 {
@@ -27,11 +30,41 @@ namespace WhatTheHack.Harmony
                     return;
                 }
                 Pawn targetPawn = current.Thing as Pawn;
-                Action action = delegate
+
+                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(targetPawn);
+                if (!pawnData.isHacked)
                 {
-                    targetPawn.SetFaction(Faction.OfPlayer);
-                };
-                __result.Add(new FloatMenuOption("(Godmode) hack " + targetPawn.Name, action, MenuOptionPriority.Low));
+                    Action action = delegate
+                    {
+                        targetPawn.SetFaction(Faction.OfPlayer);
+                        if (targetPawn.story == null)
+                        {
+                            Log.Message("story was null");
+                            targetPawn.story = new Pawn_StoryTracker(targetPawn);
+                        }
+                        pawnData.isHacked = true;
+
+                    };
+                    __result.Add(new FloatMenuOption("(Godmode) hack " + targetPawn.Name, action, MenuOptionPriority.Low));
+                }
+
+                if (pawnData.isHacked)
+                {
+                    Action action = delegate
+                    {
+                        List<Pawn> pawns = new List<Pawn>
+                        {
+                            targetPawn
+                        };
+                        LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_SearchAndDestroy(), targetPawn.Map, pawns);
+                    };
+                    __result.Add(new FloatMenuOption("(Godmode) activate " + targetPawn.Name, action, MenuOptionPriority.Low));
+                    pawnData.isActive = true;
+                }
+
+
+
+
             }
         }
     }

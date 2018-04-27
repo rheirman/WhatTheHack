@@ -13,11 +13,14 @@ namespace WhatTheHack.Storage
     public class ExtendedPawnData : IExposable
     {
 
-        
+
+        public bool isHacked = false;
+        public bool isActive = false; 
 
         public void ExposeData()
         {
-            
+            Scribe_Values.Look(ref isHacked, "isHacked", false);
+            Scribe_Values.Look(ref isActive, "isActive", false);
         }
     }
 }

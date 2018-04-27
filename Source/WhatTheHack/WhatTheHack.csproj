@@ -55,7 +55,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base.cs" />
+    <Compile Include="Duties\LordJob_SearchAndDestroy.cs" />
+    <Compile Include="Duties\LordToil_SearchAndDestroy.cs" />
+    <Compile Include="Duties\WTH_DutyDefOf.cs" />
+    <Compile Include="Harmony\JobDriver_Wait.cs" />
+    <Compile Include="Harmony\JobGiver_AIFightEnemy.cs" />
+    <Compile Include="Harmony\StatWorker.cs" />
+    <Compile Include="Storage\ExtendedDataStorage.cs" />
+    <Compile Include="Storage\ExtendedPawnData.cs" />
     <Compile Include="Harmony\FloatMenuMakerMap.cs" />
+    <Compile Include="Harmony\Pawn_JobTracker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
