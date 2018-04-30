@@ -1,0 +1,8 @@
+  <Defs>
+	  <HediffDef>
+		<defName>TargetingHacked</defName>
+		<label>targeting hacked</label>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+	  </HediffDef>
+  </Defs>

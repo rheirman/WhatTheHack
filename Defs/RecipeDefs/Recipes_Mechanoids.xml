@@ -1,0 +1,35 @@
+<Defs>
+	<RecipeDef>
+		<defName>HackMechanoid</defName>
+		<label>hack mechanoid targeting device</label>
+		<description>Hacks the targeting device of a mechanoid so it targets your enemies instead of yourself</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_HackMechanoid</workerClass>
+		<jobString>Hacking mechanoid</jobString>
+		<workAmount>1500</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<skillRequirements>
+			<Medicine>8</Medicine>
+		</skillRequirements>
+		<effectWorking>Repair</effectWorking>
+		<requireBed>true</requireBed>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MechanoidParts</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>TargetingHacked</addsHediff>
+	</RecipeDef>
+</Defs>

@@ -1,0 +1,8 @@
+<Defs>
+  <JobDef>
+    <defName>CarryToHackingTable</defName>
+    <driverClass>WhatTheHack.Jobs.JobDriver_CarryToHackingTable</driverClass>
+    <reportString>Carrying mechanoid to hacking table</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+ </Defs>
