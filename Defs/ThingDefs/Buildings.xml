@@ -1,5 +1,5 @@
 <Defs>
-  <ThingDef ParentName="BedBase">
+  <ThingDef ParentName="BuildingBase">
     <defName>HackingTable</defName>
     <label>Mechanoid hacking facility</label>
     <description>Facility for hacking and repairing mechanoids</description>

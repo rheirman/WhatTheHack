@@ -38,17 +38,19 @@ namespace WhatTheHack.Jobs
             //this.FailOn(() => !this.DropPod.Accepts(this.Takee));
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.OnCell).FailOnDestroyedNullOrForbidden(TargetIndex.A).FailOnDespawnedNullOrForbidden(TargetIndex.B).FailOn(() => this.HackingTable.OccupiedBy != null).FailOn(() => !this.Takee.Downed).FailOn(() => !this.pawn.CanReach(this.Takee, PathEndMode.OnCell, Danger.Deadly, false, TraverseMode.ByPawn)).FailOnSomeonePhysicallyInteracting(TargetIndex.A);
             yield return Toils_Haul.StartCarryThing(TargetIndex.A, false, false, false);
-            yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.OnCell);
+            yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.InteractionCell);
+
             //yield return Toils_Haul.CarryHauledThingToCell(TargetIndex.A)
             yield return new Toil
             {
                 initAction = delegate
                 {
-                    HackingTable.OccupiedBy = Takee;
                     if (!Takee.IsHacked())
                     {
                         Log.Message("added hack mechanoid bill bill");
-                        Takee.health.surgeryBills.AddBill(new Bill_Medical(WTH_DefOf.HackMechanoid));
+                        this.pawn.carryTracker.TryDropCarriedThing(HackingTable.GetLyingSlotPos(), ThingPlaceMode.Direct, out Thing thing, null);
+                        HackingTable.TryAddPawnForModification(Takee, WTH_DefOf.HackMechanoid);
+                        Takee.Position = HackingTable.GetLyingSlotPos();
                     }                 
                 },
                 defaultCompleteMode = ToilCompleteMode.Instant
