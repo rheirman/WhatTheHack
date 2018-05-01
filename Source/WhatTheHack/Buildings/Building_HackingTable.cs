@@ -8,7 +8,7 @@ using WhatTheHack.Recipes;
 
 namespace WhatTheHack.Buildings
 {
-    class Building_HackingTable : Building , IBillGiver
+    public class Building_HackingTable : Building , IBillGiver
     {
         private Pawn occupiedByInt = null;
         public Pawn OccupiedBy { get => occupiedByInt;}
@@ -34,26 +34,10 @@ namespace WhatTheHack.Buildings
                 IEnumerable<BodyPartRecord> bodyparts = RecipeUtility.GetPartsToApplyOn(pawn, bill.recipe);
                 if(bodyparts.Count() == 0)
                 {
-                    Log.Message("No body part");
                     return false;
-                    
                 }
-                Log.Message("body part found, " + bodyparts.First().ToString());
-               
-
                 pawn.health.surgeryBills.AddBill(bill);
                 bill.Part = bodyparts.First();
-
-                if (bill.DeletedOrDereferenced)
-                {
-                    Log.Message("bill was deleted or dereferenced");
-                }
-                if (bill.suspended)
-                {
-                    Log.Message("bill was suspended");
-                }
-                Log.Message("targets body part:  " + bill.recipe.targetsBodyPart);
-                
                 return true;
             }
             return false;

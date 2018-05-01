@@ -13,7 +13,7 @@ namespace WhatTheHack.Recipes
         public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
         {
             BodyPartRecord brain = pawn.health.hediffSet.GetBrain();
-            if (brain != null)
+            if (brain != null && !pawn.health.hediffSet.HasHediff(recipe.addsHediff))
             {
                 yield return brain;
             }
@@ -39,7 +39,6 @@ namespace WhatTheHack.Recipes
             pawn.SetFaction(Faction.OfPlayer);
             if (pawn.story == null)
             {
-                Log.Message("story was null");
                 pawn.story = new Pawn_StoryTracker(pawn);
             }
         }

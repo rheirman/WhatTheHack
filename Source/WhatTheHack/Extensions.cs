@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
+using WhatTheHack.Buildings;
 
 namespace WhatTheHack
 {
@@ -18,6 +19,36 @@ namespace WhatTheHack
             {
                 return false;
             }
+        }
+        public static Building_HackingTable HackingTable(this Pawn pawn)
+        {
+            List<Thing> thingList = pawn.Position.GetThingList(pawn.Map);
+            Building_HackingTable hackingTable = null;
+            for (int i = 0; i < thingList.Count; i++)
+            {
+                hackingTable = (thingList[i] as Building_HackingTable);
+                if (hackingTable != null)
+                {
+                    break;
+                }
+            }
+            if (hackingTable == null)
+            {
+                return null;
+            }
+            if(hackingTable.OccupiedBy == pawn)
+            {
+                return hackingTable;
+            }
+            return null;
+        }
+        public static bool OnHackingTable(this Pawn pawn)
+        {
+            if(pawn.HackingTable() != null)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
