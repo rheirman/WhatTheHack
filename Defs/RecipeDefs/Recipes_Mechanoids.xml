@@ -28,7 +28,7 @@
 			</categories>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>Brain</li>
+			<li>ArtificialBrain</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>TargetingHacked</addsHediff>
 	</RecipeDef>

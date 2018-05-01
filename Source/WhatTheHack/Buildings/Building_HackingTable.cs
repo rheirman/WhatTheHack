@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
+using WhatTheHack.Recipes;
 
 namespace WhatTheHack.Buildings
 {
@@ -30,7 +31,19 @@ namespace WhatTheHack.Buildings
             {
                 occupiedByInt = pawn;
                 Bill_Medical bill = new Bill_Medical(recipeDef);
+                IEnumerable<BodyPartRecord> bodyparts = RecipeUtility.GetPartsToApplyOn(pawn, bill.recipe);
+                if(bodyparts.Count() == 0)
+                {
+                    Log.Message("No body part");
+                    return false;
+                    
+                }
+                Log.Message("body part found, " + bodyparts.First().ToString());
+               
+
                 pawn.health.surgeryBills.AddBill(bill);
+                bill.Part = bodyparts.First();
+
                 if (bill.DeletedOrDereferenced)
                 {
                     Log.Message("bill was deleted or dereferenced");
@@ -39,6 +52,8 @@ namespace WhatTheHack.Buildings
                 {
                     Log.Message("bill was suspended");
                 }
+                Log.Message("targets body part:  " + bill.recipe.targetsBodyPart);
+                
                 return true;
             }
             return false;

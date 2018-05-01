@@ -63,6 +63,7 @@
     <Compile Include="Harmony\JobGiver_AIFightEnemy.cs" />
     <Compile Include="Harmony\StatWorker.cs" />
     <Compile Include="Jobs\JobDriver_CarryToHackingTable.cs" />
+    <Compile Include="Recipes\RecipeUtility.cs" />
     <Compile Include="Recipes\Recipe_HackMechanoid.cs" />
     <Compile Include="WTH_DefOf.cs" />
     <Compile Include="Storage\ExtendedDataStorage.cs" />
