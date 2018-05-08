@@ -17,7 +17,6 @@ namespace WhatTheHack.Harmony
             if (__instance.RaceProps.IsMechanoid)
             {
                 Log.Message("CurrentlyUsableForBills called");
-                Log.Message("OnHackingTable: " + __instance.OnHackingTable());
             }
 
             if (bill != null && bill.recipe == WTH_DefOf.HackMechanoid &&  !__instance.OnHackingTable())

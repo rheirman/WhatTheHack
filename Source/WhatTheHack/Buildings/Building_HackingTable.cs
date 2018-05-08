@@ -4,32 +4,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
+using Verse.AI;
 using WhatTheHack.Recipes;
 
 namespace WhatTheHack.Buildings
 {
-    public class Building_HackingTable : Building , IBillGiver
+    public class Building_HackingTable : Building_Bed
     {
-        private Pawn occupiedByInt = null;
-        public Pawn OccupiedBy { get => occupiedByInt;}
+        //private Pawn occupiedByInt = null;
+        //public Pawn OccupiedBy { get => occupiedByInt;}
 
-        public BillStack BillStack { get; }
-        public Building_HackingTable() => BillStack = new BillStack(this);
-
-        
-
-        public IEnumerable<IntVec3> IngredientStackCells => throw new NotImplementedException();
-
-        public bool CurrentlyUsableForBills()
-        {
-            return OccupiedBy != null;
-        }
+        public const int SLOTINDEX = 2; 
 
         public bool TryAddPawnForModification(Pawn pawn, RecipeDef recipeDef)
         {
-            if(OccupiedBy == null && !pawn.health.hediffSet.HasHediff(recipeDef.addsHediff))
+            if(GetCurOccupant(SLOTINDEX) == null && !pawn.health.hediffSet.HasHediff(recipeDef.addsHediff))
             {
-                occupiedByInt = pawn;
+
                 Bill_Medical bill = new Bill_Medical(recipeDef);
                 IEnumerable<BodyPartRecord> bodyparts = RecipeUtility.GetPartsToApplyOn(pawn, bill.recipe);
                 if(bodyparts.Count() == 0)
@@ -38,24 +29,15 @@ namespace WhatTheHack.Buildings
                 }
                 pawn.health.surgeryBills.AddBill(bill);
                 bill.Part = bodyparts.First();
+                pawn.jobs.TryTakeOrderedJob(new Job(JobDefOf.LayDown));
+                
+                if(pawn.jobs.curDriver != null)
+                {
+                    pawn.jobs.curDriver.layingDown = LayingDownState.LayingInBed;
+                }
                 return true;
             }
             return false;
-        }
-
-        public IntVec3 GetLyingSlotPos() 
-        {
-            var index = 2;
-            var cellRect = this.OccupiedRect();
-            if (Rotation == Rot4.North)
-            {
-                return new IntVec3(cellRect.minX + index, Position.y, cellRect.minZ);
-            }
-            if (Rotation == Rot4.East)
-            {
-                return new IntVec3(cellRect.minX, Position.y, cellRect.maxZ - index);
-            }
-            return Rotation == Rot4.South ? new IntVec3(cellRect.minX + index, Position.y, cellRect.maxZ) : new IntVec3(cellRect.maxX, Position.y, cellRect.maxZ - index);
         }
 
     }

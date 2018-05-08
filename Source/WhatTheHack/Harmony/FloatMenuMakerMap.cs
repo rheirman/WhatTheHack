@@ -28,24 +28,13 @@ namespace WhatTheHack.Harmony
                 }
                 Pawn targetPawn = current.Thing as Pawn;
 
-                if (!pawn.IsHacked() && targetPawn.Downed)
+                if (!pawn.IsHacked() && targetPawn.Downed && !pawn.OnHackingTable())
                 {
 
                     List<Thing> things = targetPawn.Map.listerThings.ThingsMatching(ThingRequest.ForDef(WTH_DefOf.HackingTable));
                     if(things.Count > 0)
                     {
-                        Building_HackingTable closestAvailableTable = (Building_HackingTable)GenClosest.ClosestThingReachable(targetPawn.Position, targetPawn.Map, ThingRequest.ForDef(WTH_DefOf.HackingTable), PathEndMode.OnCell, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false), 9999f, delegate (Thing b) {
-
-                            if (b is Building_HackingTable)
-                            {
-                                Building_HackingTable ht = (Building_HackingTable)b;
-                                if (ht.OccupiedBy == null)
-                                {
-                                    return true;
-                                }
-                            }
-                            return false;
-                        });
+                        Building_HackingTable closestAvailableTable = Utilities.GetAvailableHackingTable(pawn, targetPawn);
                         if (closestAvailableTable != null)
                         {
                             Action action = delegate
@@ -58,7 +47,7 @@ namespace WhatTheHack.Harmony
                         }
 
                     }
-                    else
+                    else if (!pawn.OnHackingTable())
                     {
                         __result.Add(new FloatMenuOption("Carry to hacking table (no free table reachable)" + targetPawn.Name, null, MenuOptionPriority.Low));
                     }
@@ -90,7 +79,7 @@ namespace WhatTheHack.Harmony
 
 
                 //Allows you to instantly activate mechanoid with the right click menu.
-                if (pawn.IsHacked())
+                if (targetPawn.IsHacked())
                 {
                     Action action = delegate
                     {
@@ -110,5 +99,6 @@ namespace WhatTheHack.Harmony
 
             }
         }
+
     }
 }

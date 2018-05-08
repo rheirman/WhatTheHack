@@ -1,4 +1,5 @@
 ﻿using Harmony;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,25 +20,14 @@ namespace WhatTheHack.Harmony
             {
                 return;
             }
-            if(pawn.mindState == null)
+            Log.Message("determine next job for mechanoid");
+            Log.Message("Curjob was: " + __instance.curJob.def.defName);
+            Log.Message("next job is: " + __result.Job.def.defName);
+            if(pawn.IsHacked() && pawn.OnMechanoidPlatform())
             {
-                Log.Message("minstate was null");
-                return;
-            }
-            Verb verb = pawn.TryGetAttackVerb(false);
-            if(verb == null)
-            {
-                Log.Message("could not get verb!");
-            }
-
-            if (pawn.mindState.duty != null)
-            {
-                Log.Message("enemytarget: " + pawn.mindState.enemyTarget);
-                Log.Message("mechanoid has duty: "  + pawn.mindState.duty.def.defName);
-            }
-            else
-            {
-                Log.Message("mechanoid has no duty");
+                Job job = new Job(WTH_DefOf.Mechanoid_Rest, pawn.CurrentBed());
+                job.count = 1;
+                __result = new ThinkResult(job, __result.SourceNode, __result.Tag, false);
             }
         }
     }

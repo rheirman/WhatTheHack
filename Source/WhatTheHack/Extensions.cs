@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace WhatTheHack
                 return false;
             }
         }
+        /*
         public static Building_HackingTable HackingTable(this Pawn pawn)
         {
             List<Thing> thingList = pawn.Position.GetThingList(pawn.Map);
@@ -36,15 +38,34 @@ namespace WhatTheHack
             {
                 return null;
             }
-            if(hackingTable.OccupiedBy == pawn)
+            if(hackingTable.GetCurOccupant(0) == pawn)
             {
                 return hackingTable;
             }
             return null;
         }
+        */
+        /*
         public static bool OnHackingTable(this Pawn pawn)
         {
             if(pawn.HackingTable() != null)
+            {
+                return true;
+            }
+            return false;
+        }
+        */
+        public static bool OnHackingTable(this Pawn pawn)
+        {
+            if (pawn.CurrentBed() != null && pawn.CurrentBed() is Building_HackingTable)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static bool OnMechanoidPlatform(this Pawn pawn)
+        {
+            if (pawn.CurrentBed() != null && pawn.CurrentBed() is Building_MechanoidPlatform)
             {
                 return true;
             }

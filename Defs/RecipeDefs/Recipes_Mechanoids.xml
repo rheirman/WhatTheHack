@@ -11,7 +11,6 @@
 			<Medicine>8</Medicine>
 		</skillRequirements>
 		<effectWorking>Repair</effectWorking>
-		<requireBed>true</requireBed>
 		<ingredients>
 			<li>
 				<filter>

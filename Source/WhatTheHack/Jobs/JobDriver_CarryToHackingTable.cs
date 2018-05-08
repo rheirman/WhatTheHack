@@ -36,7 +36,7 @@ namespace WhatTheHack.Jobs
             this.FailOnDestroyedOrNull(TargetIndex.B);
             this.FailOnAggroMentalState(TargetIndex.A);
             //this.FailOn(() => !this.DropPod.Accepts(this.Takee));
-            yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.OnCell).FailOnDestroyedNullOrForbidden(TargetIndex.A).FailOnDespawnedNullOrForbidden(TargetIndex.B).FailOn(() => this.HackingTable.OccupiedBy != null).FailOn(() => !this.Takee.Downed).FailOn(() => !this.pawn.CanReach(this.Takee, PathEndMode.OnCell, Danger.Deadly, false, TraverseMode.ByPawn)).FailOnSomeonePhysicallyInteracting(TargetIndex.A);
+            yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.OnCell).FailOnDestroyedNullOrForbidden(TargetIndex.A).FailOnDespawnedNullOrForbidden(TargetIndex.B).FailOn(() => this.HackingTable.GetCurOccupant(Building_HackingTable.SLOTINDEX) != null).FailOn(() => !this.Takee.Downed).FailOn(() => !this.pawn.CanReach(this.Takee, PathEndMode.OnCell, Danger.Deadly, false, TraverseMode.ByPawn)).FailOnSomeonePhysicallyInteracting(TargetIndex.A);
             yield return Toils_Haul.StartCarryThing(TargetIndex.A, false, false, false);
             yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.InteractionCell);
 
@@ -48,9 +48,9 @@ namespace WhatTheHack.Jobs
                     if (!Takee.IsHacked())
                     {
                         Log.Message("added hack mechanoid bill bill");
-                        this.pawn.carryTracker.TryDropCarriedThing(HackingTable.GetLyingSlotPos(), ThingPlaceMode.Direct, out Thing thing, null);
+                        this.pawn.carryTracker.TryDropCarriedThing(HackingTable.GetSleepingSlotPos(Building_HackingTable.SLOTINDEX), ThingPlaceMode.Direct, out Thing thing, null);
                         HackingTable.TryAddPawnForModification(Takee, WTH_DefOf.HackMechanoid);
-                        Takee.Position = HackingTable.GetLyingSlotPos();
+                        Takee.Position = HackingTable.GetSleepingSlotPos(Building_HackingTable.SLOTINDEX);
                     }                 
                 },
                 defaultCompleteMode = ToilCompleteMode.Instant

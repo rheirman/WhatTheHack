@@ -1,13 +1,10 @@
 <Defs>
   <ThingDef ParentName="BuildingBase">
     <defName>HackingTable</defName>
-    <label>Mechanoid hacking facility</label>
+    <label>mechanoid hacking facility</label>
     <description>Facility for hacking and repairing mechanoids</description>
     <thingClass>WhatTheHack.Buildings.Building_HackingTable</thingClass>
     <size>(5,2)</size>
-    <stuffCategories>
-      <li>Metallic</li>
-    </stuffCategories>
     <costStuffCount>150</costStuffCount>
     <costList>
       <Steel>100</Steel>
@@ -23,16 +20,17 @@
         <cornerBL>Damage/Corner</cornerBL>
         <cornerBR>Damage/Corner</cornerBR>
       </damageData>
-	  <shaderType>None</shaderType>
     </graphicData>
+	<castEdgeShadows>false</castEdgeShadows>
     <altitudeLayer>Building</altitudeLayer>
-    <passability>Standable</passability>
+    <passability>PassThroughOnly</passability>
     <pathCost>70</pathCost>
     <statBases>
       <MaxHitPoints>250</MaxHitPoints>
       <WorkToBuild>5000</WorkToBuild>
       <Flammability>1.0</Flammability>
     </statBases>
+	<rotatable>false</rotatable>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
@@ -49,10 +47,75 @@
     <surfaceType>Item</surfaceType>
     <researchPrerequisites>
       <li>MicroelectronicsBasics</li>
-    </researchPrerequisites>
+    </researchPrerequisites>	
 	<building>
-      <bed_showSleeperBody>True</bed_showSleeperBody>
-      <bed_healPerDay>0</bed_healPerDay>
-    </building>
+		<bed_humanlike>false</bed_humanlike>
+		<bed_showSleeperBody>True</bed_showSleeperBody>
+		<canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+		<ai_chillDestination>false</ai_chillDestination>
+	</building>
   </ThingDef>
+  
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>MechanoidPlatform</defName>
+    <label>mechanoid platform</label>
+    <description></description>
+	<thingClass>WhatTheHack.Buildings.Building_MechanoidPlatform</thingClass>
+    <graphicData>
+      <texPath>Things/MechanoidPlatform</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,4)</drawSize>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <costList>
+      <Steel>100</Steel>
+      <Component>1</Component>
+    </costList>
+	<rotatable>false</rotatable>
+
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <statBases>
+      <WorkToBuild>1000</WorkToBuild>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <size>(3,2)</size>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,0)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+	
+	<comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <startElectricalFires>true</startElectricalFires>
+        <basePowerConsumption>80</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+	  <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>40.0</fuelConsumptionRate>
+        <fuelCapacity>10.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>MechanoidParts</li>
+          </thingDefs>
+        </fuelFilter>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+      </li>
+    </comps>
+    <designationCategory>Production</designationCategory>
+	<building>
+		<bed_humanlike>false</bed_humanlike>
+		<bed_healPerDay>30</bed_healPerDay>
+		<bed_showSleeperBody>True</bed_showSleeperBody>
+		<canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+		<ai_chillDestination>false</ai_chillDestination>
+	</building>
+  </ThingDef>
+  
+  
 </Defs>

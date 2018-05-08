@@ -15,8 +15,8 @@
       <MarketValue>21</MarketValue>
       <Mass>0.6</Mass>
       <Flammability>1.0</Flammability>
-			<DeteriorationRate>2.0</DeteriorationRate>
-		</statBases>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	</statBases>
     <intricate>true</intricate>
     <thingCategories>
       <li>Manufactured</li>

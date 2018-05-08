@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
+using Verse.AI;
 
 namespace WhatTheHack.Recipes
 {
@@ -37,6 +38,22 @@ namespace WhatTheHack.Recipes
             }
             pawn.health.AddHediff(this.recipe.addsHediff, part, null);
             pawn.SetFaction(Faction.OfPlayer);
+            if(pawn.playerSettings == null)
+            {
+                Log.Message("pawn playersettings were null");
+
+            }
+            else
+            {
+                Log.Message("pawn playersettings medcare: " + pawn.playerSettings.medCare.GetLabel());
+                Log.Message("pawn playersettings medcare tostring: " + pawn.playerSettings.medCare);
+
+            }
+
+            if (pawn.jobs.curDriver != null)
+            {
+                pawn.jobs.curDriver.layingDown = LayingDownState.LayingSurface;
+            }
             if (pawn.story == null)
             {
                 pawn.story = new Pawn_StoryTracker(pawn);

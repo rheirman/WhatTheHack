@@ -5,4 +5,10 @@
     <reportString>Carrying mechanoid to hacking table</reportString>
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
+  <JobDef>
+    <defName>Mechanoid_Rest</defName>
+    <driverClass>WhatTheHack.Jobs.JobDriver_Mechanoid_Rest</driverClass>
+    <reportString>Linked to mechanoid platform</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
  </Defs>
