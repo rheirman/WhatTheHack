@@ -58,6 +58,7 @@ namespace WhatTheHack.Recipes
             {
                 pawn.story = new Pawn_StoryTracker(pawn);
             }
+
         }
     }
 }

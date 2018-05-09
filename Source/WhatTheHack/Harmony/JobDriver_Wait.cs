@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using Verse;
 using Verse.AI;
+using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
 {
@@ -15,8 +16,9 @@ namespace WhatTheHack.Harmony
     {
         static void Prefix(JobDriver_Wait __instance)
         {
-            if(__instance.pawn.RaceProps.IsMechanoid && __instance.pawn.Faction == Faction.OfPlayer){
+            if (__instance.pawn.RaceProps.IsMechanoid && __instance.pawn.Faction == Faction.OfPlayer) {
                 Log.Message("checkforautoattack called");
+
                 bool flag = __instance.pawn.story == null || !__instance.pawn.story.WorkTagIsDisabled(WorkTags.Violent);
                 if (flag && __instance.pawn.Faction != null && __instance.job.def == JobDefOf.WaitCombat && (__instance.pawn.drafter == null || __instance.pawn.drafter.FireAtWill))
                 {
@@ -44,8 +46,21 @@ namespace WhatTheHack.Harmony
                     }
                 }
             }
-           
+
         }
     }
-    
+
+
+    [HarmonyPatch(typeof(ThingOwner), "CanAcceptAnyOf")]
+    static class ThingOwner_CanAcceptAnyOf
+    {
+        static void Postfix(bool __result)
+        {
+            Log.Message("CanAcceptAnyOf called, result: " + __result);
+        }
+    }
+
+
+
+
 }

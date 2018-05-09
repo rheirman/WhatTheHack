@@ -20,10 +20,6 @@ namespace WhatTheHack.Buildings
         }
         public bool CanHealNow()
         {
-            if(powerComp == null || !powerComp.PowerOn)
-            {
-                Log.Message("power not on!");
-            }
             return this.refuelableComp.HasFuel && this.powerComp != null && this.powerComp.PowerOn; ;
         }
     }

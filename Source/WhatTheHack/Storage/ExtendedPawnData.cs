@@ -15,10 +15,11 @@ namespace WhatTheHack.Storage
 
 
         public bool isHacked = false;
-        public bool isActive = false; 
-
+        public bool isActive = false;
+        public ThingWithComps carriedThing = null;
         public void ExposeData()
         {
+            Scribe_References.Look(ref carriedThing, "carriedThing", false);
             Scribe_Values.Look(ref isHacked, "isHacked", false);
             Scribe_Values.Look(ref isActive, "isActive", false);
         }

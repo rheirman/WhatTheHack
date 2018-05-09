@@ -46,7 +46,6 @@ namespace WhatTheHack.Harmony
                     }
                     else
                     {
-                        Log.Message("calling GetAvailableMechanoidPlatform");
                         __result = Utilities.GetAvailableMechanoidPlatform(traveler, sleeper);
                         return false;
                     }
@@ -63,7 +62,6 @@ namespace WhatTheHack.Harmony
         {
             if(bed is Building_MechanoidPlatform)
             {
-                Log.Message("getting bedsleepingslotpos for Building_MechanoidPlatform");
                 __result = bed.GetSleepingSlotPos(Building_MechanoidPlatform.SLOTINDEX);
                 return false;
             }
@@ -129,7 +127,6 @@ namespace WhatTheHack.Harmony
                 }
                 if (mechanoidPlatform == null)
                 {
-                    Log.Message("mechanoidPlatform was null");
                     return true;
                 }
 
