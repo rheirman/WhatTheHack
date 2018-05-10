@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using Verse;
 using Verse.AI;
+using WhatTheHack.Buildings;
 using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
@@ -27,6 +28,16 @@ namespace WhatTheHack.Harmony
                 job.count = 1;
                 __result = new ThinkResult(job, __result.SourceNode, __result.Tag, false);
 
+            }
+            if(pawn.IsHacked() && !pawn.IsActivated())
+            {
+                List<Thing> things = pawn.Map.listerThings.ThingsMatching(ThingRequest.ForDef(WTH_DefOf.HackingTable));
+                if (things.Count > 0)
+                {
+                    Building_MechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(pawn, pawn);
+                    Job job = new Job(JobDefOf.LayDown, closestAvailablePlatform);
+                    __result = new ThinkResult(job, __result.SourceNode, __result.Tag, false);
+                }
             }
 
         }

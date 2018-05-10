@@ -8,6 +8,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
+using WhatTheHack.Buildings;
 using WhatTheHack.Duties;
 using WhatTheHack.Storage;
 
@@ -41,7 +42,7 @@ namespace WhatTheHack.Harmony
         {
             List<Gizmo> gizmoList = __result.ToList();
             ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
-            if(store == null)
+            if(store == null || !__instance.IsHacked())
             {
                 return;
             }
@@ -55,28 +56,40 @@ namespace WhatTheHack.Harmony
                 isActive = () => pawnData.isActive,
                 toggleAction = () => {
                     pawnData.isActive = !pawnData.isActive;
-                    __instance.jobs.EndCurrentJob(JobCondition.InterruptForced);
-                    if(__instance.GetLord() == null || __instance.GetLord().LordJob == null)
+                    if (pawnData.isActive)
                     {
-                        LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_SearchAndDestroy(), __instance.Map, new List<Pawn> { __instance });
-                    }
+                        __instance.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                        if (__instance.GetLord() == null || __instance.GetLord().LordJob == null)
+                        {
+                            LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_SearchAndDestroy(), __instance.Map, new List<Pawn> { __instance });
+                        }
 
-                    if (pawnData.isActive && __instance.equipment.Primary == null)
+                        if (__instance.equipment.Primary == null)
+                        {
+                            if (pawnData.carriedThing == null)
+                            {
+                                PawnWeaponGenerator.TryGenerateWeaponFor(__instance);//when the mod is added to an existing save, handle this properly by generate the missing weapon.
+                                pawnData.carriedThing = __instance.equipment.Primary;
+                            }
+                            if (pawnData.carriedThing != null && pawnData.carriedThing.stackCount == 0)
+                            {
+                                pawnData.carriedThing.stackCount = 1;
+                            }
+                            Traverse.Create(__instance.equipment).Property("Primary").SetValue(pawnData.carriedThing);
+                            //Traverse.Create(__instance).Method("set_Primary", new object[] { pawnData.carriedThing });
+                        }
+                    }
+                    else
                     {
-                        if (pawnData.carriedThing == null)
+                        __instance.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                        List<Thing> things = __instance.Map.listerThings.ThingsMatching(ThingRequest.ForDef(WTH_DefOf.HackingTable));
+                        if (things.Count > 0)
                         {
-                            PawnWeaponGenerator.TryGenerateWeaponFor(__instance);//when the mod is added to an existing save, handle this properly by generate the missing weapon.
-                            pawnData.carriedThing = __instance.equipment.Primary;
+                            Building_MechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(__instance, __instance);
+                            Job job = new Job(JobDefOf.LayDown, closestAvailablePlatform);
+                            __instance.jobs.TryTakeOrderedJob(job);
                         }
-                        if (pawnData.carriedThing != null && pawnData.carriedThing.stackCount == 0)
-                        {
-                            pawnData.carriedThing.stackCount = 1;
-                        }
-                        Traverse.Create(__instance.equipment).Property("Primary").SetValue(pawnData.carriedThing);
-                        //Traverse.Create(__instance).Method("set_Primary", new object[] { pawnData.carriedThing });
                     }
-
-
                 }
             };
 

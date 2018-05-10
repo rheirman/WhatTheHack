@@ -10,7 +10,7 @@ using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
 {
-
+    /*
     [HarmonyPatch(typeof(JobDriver_Wait), "CheckForAutoAttack")]
     static class JobDriver_Wait_CheckForAutoAttack
     {
@@ -48,19 +48,7 @@ namespace WhatTheHack.Harmony
             }
 
         }
+
     }
-
-
-    [HarmonyPatch(typeof(ThingOwner), "CanAcceptAnyOf")]
-    static class ThingOwner_CanAcceptAnyOf
-    {
-        static void Postfix(bool __result)
-        {
-            Log.Message("CanAcceptAnyOf called, result: " + __result);
-        }
-    }
-
-
-
-
+            */
 }

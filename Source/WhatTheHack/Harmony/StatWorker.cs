@@ -15,18 +15,14 @@ namespace WhatTheHack.Harmony
     {
         static bool Prefix(Thing thing, ref bool __result)
         {
+            
             if(thing is Pawn && ((Pawn)thing).RaceProps.IsMechanoid)
             {
                 Pawn pawn = (Pawn)thing;
-                ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
-                if(store != null)
+                if (pawn.IsHacked())
                 {
-                    ExtendedPawnData pawnData = store.GetExtendedDataFor(pawn);
-                    if (pawnData.isHacked)
-                    {
-                        __result = false;
-                        return false;
-                    }
+                    __result = false;
+                    return false;
                 }
             }
             return true;

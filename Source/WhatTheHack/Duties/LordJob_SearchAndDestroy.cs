@@ -18,6 +18,12 @@ namespace WhatTheHack.Duties
             graph.AddToil(endToil);
             Transition endTransition = new Transition(sdToil, endToil);
             endTransition.AddTrigger(new Trigger_TicksPassedWithoutHarm(900));
+            endTransition.AddTrigger(new Trigger_Custom(delegate {
+                if (!this.lord.ownedPawns[0].IsActivated()) {
+                    Log.Message("ending duty for mechanoid");
+                }
+                return !this.lord.ownedPawns[0].IsActivated();
+            }));
             return graph;
         }
     }

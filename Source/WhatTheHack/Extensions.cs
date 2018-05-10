@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using Verse;
 using WhatTheHack.Buildings;
+using WhatTheHack.Storage;
 
 namespace WhatTheHack
 {
@@ -68,6 +69,16 @@ namespace WhatTheHack
             if (pawn.CurrentBed() != null && pawn.CurrentBed() is Building_MechanoidPlatform)
             {
                 return true;
+            }
+            return false;
+        }
+        public static bool IsActivated(this Pawn pawn)
+        {
+            ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
+            if(store != null)
+            {
+                ExtendedPawnData pawnData = store.GetExtendedDataFor(pawn);
+                return pawnData.isActive;
             }
             return false;
         }
