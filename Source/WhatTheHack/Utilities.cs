@@ -15,7 +15,6 @@ namespace WhatTheHack
         {
             return (Building_HackingTable)GenClosest.ClosestThingReachable(targetPawn.Position, targetPawn.Map, ThingRequest.ForDef(WTH_DefOf.HackingTable), PathEndMode.OnCell, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false), 9999f, delegate (Thing b)
             {
-
                 if (b is Building_HackingTable)
                 {
                     Building_HackingTable ht = (Building_HackingTable)b;
@@ -26,6 +25,7 @@ namespace WhatTheHack
                 }
                 return false;
             });
+
         }
         public static Building_MechanoidPlatform GetAvailableMechanoidPlatform(Pawn pawn, Pawn targetPawn)
         {
@@ -34,8 +34,8 @@ namespace WhatTheHack
 
                 if (b is Building_MechanoidPlatform)
                 {
-                    Building_MechanoidPlatform ht = (Building_MechanoidPlatform)b;
-                    if (ht.GetCurOccupant(Building_MechanoidPlatform.SLOTINDEX) == null)
+                    Building_MechanoidPlatform platform = (Building_MechanoidPlatform)b;
+                    if (platform.GetCurOccupant(Building_MechanoidPlatform.SLOTINDEX) == null)
                     {
                         Log.Message("GetAvailableMechanoidPlatform returning true");
                         return true;

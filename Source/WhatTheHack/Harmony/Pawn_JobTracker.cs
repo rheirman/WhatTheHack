@@ -30,14 +30,13 @@ namespace WhatTheHack.Harmony
 
             }
             if(pawn.IsHacked() && !pawn.IsActivated())
-            {
-                List<Thing> things = pawn.Map.listerThings.ThingsMatching(ThingRequest.ForDef(WTH_DefOf.HackingTable));
-                if (things.Count > 0)
+            { 
+                Building_MechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(pawn, pawn);
+                if(closestAvailablePlatform != null)
                 {
-                    Building_MechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(pawn, pawn);
-                    Job job = new Job(JobDefOf.LayDown, closestAvailablePlatform);
+                    Job job = new Job(WTH_DefOf.Mechanoid_Rest, closestAvailablePlatform);
                     __result = new ThinkResult(job, __result.SourceNode, __result.Tag, false);
-                }
+                }                
             }
 
         }

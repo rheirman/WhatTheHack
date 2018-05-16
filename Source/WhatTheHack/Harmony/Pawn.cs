@@ -82,13 +82,12 @@ namespace WhatTheHack.Harmony
                     else
                     {
                         __instance.jobs.EndCurrentJob(JobCondition.InterruptForced);
-                        List<Thing> things = __instance.Map.listerThings.ThingsMatching(ThingRequest.ForDef(WTH_DefOf.HackingTable));
-                        if (things.Count > 0)
+                        Building_MechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(__instance, __instance);
+                        if(closestAvailablePlatform != null)
                         {
-                            Building_MechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(__instance, __instance);
-                            Job job = new Job(JobDefOf.LayDown, closestAvailablePlatform);
+                            Job job = new Job(WTH_DefOf.Mechanoid_Rest, closestAvailablePlatform);
                             __instance.jobs.TryTakeOrderedJob(job);
-                        }
+                        }                      
                     }
                 }
             };

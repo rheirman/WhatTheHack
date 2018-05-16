@@ -31,22 +31,17 @@ namespace WhatTheHack.Harmony
                 if (!pawn.IsHacked() && targetPawn.Downed && !pawn.OnHackingTable())
                 {
 
-                    List<Thing> things = targetPawn.Map.listerThings.ThingsMatching(ThingRequest.ForDef(WTH_DefOf.HackingTable));
-                    if(things.Count > 0)
+                    Building_HackingTable closestAvailableTable = Utilities.GetAvailableHackingTable(pawn, targetPawn);
+                    if (closestAvailableTable != null)
                     {
-                        Building_HackingTable closestAvailableTable = Utilities.GetAvailableHackingTable(pawn, targetPawn);
-                        if (closestAvailableTable != null)
+                        Action action = delegate
                         {
-                            Action action = delegate
-                            {
-                                Job job = new Job(WTH_DefOf.CarryToHackingTable, targetPawn, closestAvailableTable);
-                                job.count = 1;
-                                pawn.jobs.TryTakeOrderedJob(job);
-                            };
-                            __result.Add(new FloatMenuOption("Carry to hacking table " + targetPawn.Name, action, MenuOptionPriority.Low));
-                        }
-
-                    }
+                            Job job = new Job(WTH_DefOf.CarryToHackingTable, targetPawn, closestAvailableTable);
+                            job.count = 1;
+                            pawn.jobs.TryTakeOrderedJob(job);
+                        };
+                        __result.Add(new FloatMenuOption("Carry to hacking table " + targetPawn.Name, action, MenuOptionPriority.Low));
+                    }                
                     else if (!pawn.OnHackingTable())
                     {
                         __result.Add(new FloatMenuOption("Carry to hacking table (no free table reachable)" + targetPawn.Name, null, MenuOptionPriority.Low));
