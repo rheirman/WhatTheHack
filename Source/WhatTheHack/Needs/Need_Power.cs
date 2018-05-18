@@ -1,0 +1,181 @@
+﻿using RimWorld;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using UnityEngine;
+using Verse;
+
+namespace WhatTheHack.Needs
+{
+    public class Need_Power : Need
+    {
+        private const float BasePowerFallPerTick = 2.66666666E-05f;
+
+        //private const float BaseMalnutritionSeverityPerDay = 0.17f;
+
+        //private const float BaseMalnutritionSeverityPerInterval = 0.00113333331f;
+
+        public bool OutOfPower
+        {
+            get
+            {
+                return this.CurCategory == PowerCategory.OutOfPower;
+            }
+        }
+
+        public float PercentageThreshVeryLowPower
+        {
+            get
+            {
+                return 0.1f;//TODO
+            }
+        }
+
+        public float PercentageThreshLowPower
+        {
+            get
+            {
+                return 0.25f;//TODO
+            }
+        }
+
+        public float NutritionBetweenHungryAndFed
+        {
+            get
+            {
+                return (1f - this.PercentageThreshLowPower) * this.MaxLevel;//TODO
+            }
+        }
+
+        public PowerCategory CurCategory
+        {
+            get
+            {
+                if (base.CurLevelPercentage <= 0f)
+                {
+                    return PowerCategory.OutOfPower;
+                }
+                if (base.CurLevelPercentage < this.PercentageThreshVeryLowPower)
+                {
+                    return PowerCategory.VeryLowPower;
+                }
+                if (base.CurLevelPercentage < this.PercentageThreshLowPower)
+                {
+                    return PowerCategory.LowPower;
+                }
+                return PowerCategory.EnoughPower;
+            }
+        }
+
+        public float FoodFallPerTick
+        {
+            get
+            {
+                return this.PowerFallPerTickAssumingCategory(this.CurCategory);
+            }
+        }
+
+        public override int GUIChangeArrow
+        {
+            get
+            {
+                return -1;
+            }
+        }
+
+        public override float MaxLevel
+        {
+            get
+            {
+                return this.pawn.BodySize * this.pawn.ageTracker.CurLifeStage.foodMaxFactor;
+            }
+        }
+
+        public float NutritionWanted
+        {
+            get
+            {
+                return this.MaxLevel - this.CurLevel;
+            }
+        }
+
+        private float PowerRate
+        {
+            get
+            {
+                return 1.0f;//TODO - no magic number
+            }
+        }
+
+        public Need_Power(Pawn pawn) : base(pawn)
+        {
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+        }
+
+        private float PowerFallPerTickAssumingCategory(PowerCategory cat)
+        {
+            if(cat == PowerCategory.OutOfPower)
+            {
+                return 0;
+            }
+            return 2.66666666E-05f * this.PowerRate;
+        }
+
+        public override void NeedInterval()
+        {
+            if (!base.IsFrozen)
+            {
+                this.CurLevel -= this.FoodFallPerTick * 150f;
+            }
+            if (!base.IsFrozen)
+            {
+                if (this.OutOfPower)
+                {
+                    //HealthUtility.AdjustSeverity(this.pawn, HediffDefOf.Malnutrition, this.MalnutritionSeverityPerInterval);
+                }
+                else
+                {
+                    //HealthUtility.AdjustSeverity(this.pawn, HediffDefOf.Malnutrition, -this.MalnutritionSeverityPerInterval);
+                }
+            }
+        }
+
+        public override void SetInitialLevel()
+        {
+              base.CurLevelPercentage = 0.2f;
+        }
+
+        public override string GetTipString()
+        {
+            return string.Concat(new string[]
+            {
+                base.LabelCap,
+                ": ",
+                base.CurLevelPercentage.ToStringPercent(),
+                " (",
+                this.CurLevel.ToString("0.##"),
+                " / ",
+                this.MaxLevel.ToString("0.##"),
+                ")\n",
+                this.def.description
+            });
+        }
+
+        public override void DrawOnGUI(Rect rect, int maxThresholdMarkers = 2147483647, float customMargin = -1f, bool drawArrows = true, bool doTooltip = true)
+        {
+            if (this.threshPercents == null)
+            {
+                this.threshPercents = new List<float>();
+            }
+            this.threshPercents.Clear();
+            this.threshPercents.Add(this.PercentageThreshLowPower);
+            this.threshPercents.Add(this.PercentageThreshVeryLowPower);
+            base.DrawOnGUI(rect, maxThresholdMarkers, customMargin, drawArrows, doTooltip);
+        }
+    }
+}
