@@ -8,6 +8,7 @@ using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
 {
+    /*
     //Since equipment dissapears when mechanoid is downed, we need to store it, so the mechanoid can use it when it is activated.
     [HarmonyPatch(typeof(PawnGenerator), "GeneratePawn")]
     [HarmonyPatch(new Type[]{typeof(PawnGenerationRequest)})]
@@ -17,7 +18,12 @@ namespace WhatTheHack.Harmony
         {
             if (__result.RaceProps.IsMechanoid)
             {
+                if(__result.equipment.Primary != null)
+                {
+                    __result.equipment.Primary.def.destroyOnDrop = false;
+                }
                 Log.Message("GeneratePawn mechanoid postfix");
+                
                 ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
                 if(store != null)
                 {
@@ -26,8 +32,11 @@ namespace WhatTheHack.Harmony
                     pawnData.carriedThing = __result.equipment.Primary;
 
                 }
-
+                
             }
         }
     }
+    */
+
+
 }

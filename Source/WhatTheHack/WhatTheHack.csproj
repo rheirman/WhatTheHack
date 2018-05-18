@@ -64,7 +64,9 @@
     <Compile Include="Harmony\JobGiver_AIFightEnemy.cs" />
     <Compile Include="Harmony\Pawn.cs" />
     <Compile Include="Harmony\PawnGenerator.cs" />
+    <Compile Include="Harmony\Pawn_EquipmentTracker.cs" />
     <Compile Include="Harmony\Pawn_HealthTracker.cs" />
+    <Compile Include="Harmony\Pawn_InventoryTracker.cs" />
     <Compile Include="Harmony\RestUtility.cs" />
     <Compile Include="Harmony\StatWorker.cs" />
     <Compile Include="Harmony\WorkGiver_Tend.cs" />

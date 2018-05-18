@@ -3,11 +3,11 @@
 		<defName>TargetingHacked</defName>
 		<label>targeting hacked</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
-		<causesNeed>WTH_Power</causesNeed>
+		<causesNeed>Mechanoid_Power</causesNeed>
 		<isBad>false</isBad>
 	  </HediffDef>
 	  <NeedDef>
-		<defName>WTH_Power</defName>
+		<defName>Mechanoid_Power</defName>
 		<needClass>WhatTheHack.Needs.Need_Power</needClass>
 		<label>power</label>
 		<description>After being hacked the connection to the mechanoid hive is lost, as well as the infinite power the hive provides. As a result, hacked mechanoids depend on their internal backup battery, which can be recharged on mechanoid platforms</description>

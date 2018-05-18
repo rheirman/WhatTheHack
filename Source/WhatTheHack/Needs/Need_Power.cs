@@ -29,6 +29,7 @@ namespace WhatTheHack.Needs
             get
             {
                 return 0.1f;//TODO
+
             }
         }
 
@@ -68,7 +69,7 @@ namespace WhatTheHack.Needs
             }
         }
 
-        public float FoodFallPerTick
+        public float PowerFallPerTick
         {
             get
             {
@@ -88,7 +89,7 @@ namespace WhatTheHack.Needs
         {
             get
             {
-                return this.pawn.BodySize * this.pawn.ageTracker.CurLifeStage.foodMaxFactor;
+                return 300.0f;//TODO
             }
         }
 
@@ -104,7 +105,7 @@ namespace WhatTheHack.Needs
         {
             get
             {
-                return 1.0f;//TODO - no magic number
+                return 10.0f;//TODO - no magic number
             }
         }
 
@@ -130,7 +131,7 @@ namespace WhatTheHack.Needs
         {
             if (!base.IsFrozen)
             {
-                this.CurLevel -= this.FoodFallPerTick * 150f;
+                this.CurLevel -= this.PowerFallPerTick * 150f;
             }
             if (!base.IsFrozen)
             {

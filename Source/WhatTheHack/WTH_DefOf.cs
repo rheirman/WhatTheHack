@@ -16,6 +16,7 @@ namespace WhatTheHack
         public static DutyDef SearchAndDestroy;
         public static JobDef CarryToHackingTable;
         public static JobDef Mechanoid_Rest;
+        public static NeedDef Mechanoid_Power;
         public static ThingDef HackingTable;
         public static ThingDef MechanoidPlatform;
 

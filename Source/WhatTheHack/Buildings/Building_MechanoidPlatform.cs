@@ -20,7 +20,11 @@ namespace WhatTheHack.Buildings
         }
         public bool CanHealNow()
         {
-            return this.refuelableComp.HasFuel && this.powerComp != null && this.powerComp.PowerOn; ;
+            return this.refuelableComp.HasFuel && this.HasPowerNow();
+        }
+        public bool HasPowerNow()
+        {
+            return this.powerComp != null && this.powerComp.PowerOn; 
         }
     }
 }

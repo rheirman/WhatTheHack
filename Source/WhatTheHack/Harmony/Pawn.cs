@@ -64,6 +64,7 @@ namespace WhatTheHack.Harmony
                             LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_SearchAndDestroy(), __instance.Map, new List<Pawn> { __instance });
                         }
 
+                        /*
                         if (__instance.equipment.Primary == null)
                         {
                             if (pawnData.carriedThing == null)
@@ -78,6 +79,7 @@ namespace WhatTheHack.Harmony
                             Traverse.Create(__instance.equipment).Property("Primary").SetValue(pawnData.carriedThing);
                             //Traverse.Create(__instance).Method("set_Primary", new object[] { pawnData.carriedThing });
                         }
+                        */
                     }
                     else
                     {
