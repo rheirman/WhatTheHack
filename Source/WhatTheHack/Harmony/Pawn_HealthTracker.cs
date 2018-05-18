@@ -50,6 +50,7 @@ namespace WhatTheHack.Harmony
 
             if(!pawn.RaceProps.IsMechanoid  || !(pawn.CurrentBed() is Building_MechanoidPlatform))
             {
+                Log.Message("pawn not in bed :( mie mie ");
                 return;
             }
 

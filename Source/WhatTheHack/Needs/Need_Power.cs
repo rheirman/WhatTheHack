@@ -11,11 +11,12 @@ namespace WhatTheHack.Needs
     public class Need_Power : Need
     {
         private const float BasePowerFallPerTick = 2.66666666E-05f;
+        private float lastLevel = 0;
 
         //private const float BaseMalnutritionSeverityPerDay = 0.17f;
 
         //private const float BaseMalnutritionSeverityPerInterval = 0.00113333331f;
-
+        
         public bool OutOfPower
         {
             get
@@ -54,7 +55,7 @@ namespace WhatTheHack.Needs
             get
             {
                 if (base.CurLevelPercentage <= 0f)
-                {
+                {                   
                     return PowerCategory.OutOfPower;
                 }
                 if (base.CurLevelPercentage < this.PercentageThreshVeryLowPower)
@@ -81,7 +82,18 @@ namespace WhatTheHack.Needs
         {
             get
             {
-                return -1;
+                if(CurLevel > lastLevel)
+                {
+                    return 1;
+                }
+                else if(CurLevel < lastLevel)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 
@@ -116,11 +128,12 @@ namespace WhatTheHack.Needs
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_Values.Look<float>(ref lastLevel, "lastLevel");
         }
 
         private float PowerFallPerTickAssumingCategory(PowerCategory cat)
         {
-            if(cat == PowerCategory.OutOfPower)
+            if(cat == PowerCategory.OutOfPower || !base.pawn.IsActivated())
             {
                 return 0;
             }
@@ -131,24 +144,16 @@ namespace WhatTheHack.Needs
         {
             if (!base.IsFrozen)
             {
+                this.lastLevel = CurLevel;
                 this.CurLevel -= this.PowerFallPerTick * 150f;
             }
-            if (!base.IsFrozen)
-            {
-                if (this.OutOfPower)
-                {
-                    //HealthUtility.AdjustSeverity(this.pawn, HediffDefOf.Malnutrition, this.MalnutritionSeverityPerInterval);
-                }
-                else
-                {
-                    //HealthUtility.AdjustSeverity(this.pawn, HediffDefOf.Malnutrition, -this.MalnutritionSeverityPerInterval);
-                }
-            }
+
         }
 
         public override void SetInitialLevel()
         {
-              base.CurLevelPercentage = 0.2f;
+            base.CurLevelPercentage = 0f;
+            lastLevel = 0f;
         }
 
         public override string GetTipString()

@@ -83,9 +83,11 @@ namespace WhatTheHack.Harmony
             {
                 return true;
             }
-            if (p.jobs.curDriver == null || p.jobs.curDriver.layingDown != LayingDownState.LayingInBed)
+            if (p.jobs.curDriver == null || ((p.CurJob.def != WTH_DefOf.Mechanoid_Rest) && p.jobs.curDriver.layingDown != LayingDownState.LayingInBed))
             {
+                Log.Message("AAARGH!");
                 return true;
+                
             }
             List<Thing> thingList = p.Position.GetThingList(p.Map);
 
@@ -127,6 +129,8 @@ namespace WhatTheHack.Harmony
                 }
                 if (mechanoidPlatform == null)
                 {
+                    Log.Message("mechanoid platform was null");
+
                     return true;
                 }
 
