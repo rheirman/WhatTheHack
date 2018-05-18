@@ -12,6 +12,9 @@ namespace WhatTheHack
     class WTH_DefOf
     {
         public static HediffDef TargetingHacked;
+        public static HediffDef VeryLowPower;
+        public static HediffDef NoPower;
+
         public static RecipeDef HackMechanoid;
         public static DutyDef SearchAndDestroy;
         public static JobDef CarryToHackingTable;
@@ -19,6 +22,5 @@ namespace WhatTheHack
         public static NeedDef Mechanoid_Power;
         public static ThingDef HackingTable;
         public static ThingDef MechanoidPlatform;
-
     }
 }

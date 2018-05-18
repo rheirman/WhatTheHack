@@ -47,10 +47,12 @@ namespace WhatTheHack.Harmony
         {
             
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-
-            if(!pawn.RaceProps.IsMechanoid  || !(pawn.CurrentBed() is Building_MechanoidPlatform))
+            if(!pawn.RaceProps.IsMechanoid)
             {
-                Log.Message("pawn not in bed :( mie mie ");
+                return;
+            }
+            if(!(pawn.CurrentBed() is Building_MechanoidPlatform))
+            {
                 return;
             }
 
@@ -85,26 +87,9 @@ namespace WhatTheHack.Harmony
                 {
                     //MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_PowerBeam);
                 }
-                int i = 512;
+                int i = 100;
 
                 if (pawn.IsHashIntervalTick(i))
-                {
-                    MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_PowerBeam);
-                }
-
-                else if (pawn.IsHashIntervalTick(i / 2))
-                {
-                    MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_ShotHit_Spark);
-                }
-                else if (pawn.IsHashIntervalTick(i / 4))
-                {
-                    MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_FireGlow);
-                }
-                else if (pawn.IsHashIntervalTick(i / 8))
-                {
-                    MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_MetaPuff);
-                }
-                else if (pawn.IsHashIntervalTick(i / 16))
                 {
                     MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_LightningGlow);
                 }

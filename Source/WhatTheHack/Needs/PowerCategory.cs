@@ -10,6 +10,6 @@ namespace WhatTheHack.Needs
         EnoughPower = 0,
         LowPower = 1,
         VeryLowPower = 2,
-        OutOfPower = 3
+        NoPower = 3
     }
 }

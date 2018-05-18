@@ -16,12 +16,12 @@ namespace WhatTheHack.Needs
         //private const float BaseMalnutritionSeverityPerDay = 0.17f;
 
         //private const float BaseMalnutritionSeverityPerInterval = 0.00113333331f;
-        
+
         public bool OutOfPower
         {
             get
             {
-                return this.CurCategory == PowerCategory.OutOfPower;
+                return this.CurCategory == PowerCategory.NoPower;
             }
         }
 
@@ -55,8 +55,8 @@ namespace WhatTheHack.Needs
             get
             {
                 if (base.CurLevelPercentage <= 0f)
-                {                   
-                    return PowerCategory.OutOfPower;
+                {
+                    return PowerCategory.NoPower;
                 }
                 if (base.CurLevelPercentage < this.PercentageThreshVeryLowPower)
                 {
@@ -68,6 +68,35 @@ namespace WhatTheHack.Needs
                 }
                 return PowerCategory.EnoughPower;
             }
+        }
+        public void SetHediffs(){
+            if(CurCategory != PowerCategory.NoPower)
+            {
+                Hediff noPowerHediff = pawn.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.NoPower, false);
+                if (noPowerHediff != null)
+                {
+                    pawn.health.RemoveHediff(noPowerHediff);
+                }
+            }
+            else if(!pawn.health.hediffSet.HasHediff(WTH_DefOf.NoPower))
+            {
+                Hediff noPowerHediff = HediffMaker.MakeHediff(WTH_DefOf.NoPower, pawn);
+                pawn.health.AddHediff(noPowerHediff);
+            }
+            if (CurCategory != PowerCategory.VeryLowPower)
+            {
+                Hediff veryLowPowerHediff = pawn.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.VeryLowPower, false);
+                if (veryLowPowerHediff != null)
+                {
+                    pawn.health.RemoveHediff(veryLowPowerHediff);
+                }
+            }
+            else if (!pawn.health.hediffSet.HasHediff(WTH_DefOf.VeryLowPower))
+            {
+                Hediff veryLowPowerHediff = HediffMaker.MakeHediff(WTH_DefOf.VeryLowPower, pawn);
+                pawn.health.AddHediff(veryLowPowerHediff);
+            }
+            
         }
 
         public float PowerFallPerTick
@@ -133,7 +162,7 @@ namespace WhatTheHack.Needs
 
         private float PowerFallPerTickAssumingCategory(PowerCategory cat)
         {
-            if(cat == PowerCategory.OutOfPower || !base.pawn.IsActivated())
+            if(cat == PowerCategory.NoPower || !base.pawn.IsActivated())
             {
                 return 0;
             }
@@ -147,7 +176,7 @@ namespace WhatTheHack.Needs
                 this.lastLevel = CurLevel;
                 this.CurLevel -= this.PowerFallPerTick * 150f;
             }
-
+            SetHediffs();
         }
 
         public override void SetInitialLevel()
