@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
+using WhatTheHack.Needs;
 
 namespace WhatTheHack.Buildings
 {
@@ -12,11 +13,13 @@ namespace WhatTheHack.Buildings
         public const int SLOTINDEX = 1;
         public CompRefuelable refuelableComp;
         public CompPowerTrader powerComp;
+        
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
             this.refuelableComp = base.GetComp<CompRefuelable>();
             this.powerComp = base.GetComp<CompPowerTrader>();
+            
         }
         public bool CanHealNow()
         {

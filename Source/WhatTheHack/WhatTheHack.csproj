@@ -61,6 +61,7 @@
     <Compile Include="Duties\LordToil_SearchAndDestroy.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Harmony\Building_Bed.cs" />
+    <Compile Include="Harmony\ITab_Pawn_Character.cs" />
     <Compile Include="Harmony\JobDriver_Wait.cs" />
     <Compile Include="Harmony\JobGiver_AIFightEnemy.cs" />
     <Compile Include="Harmony\Pawn.cs" />

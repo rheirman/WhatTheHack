@@ -50,7 +50,7 @@ namespace WhatTheHack.Harmony
                 {
                     Hediff_Injury hediff_Injury = __instance.hediffSet.GetHediffs<Hediff_Injury>().Where(new Func<Hediff_Injury, bool>(HediffUtility.CanHealNaturally)).RandomElement<Hediff_Injury>();
                     hediff_Injury.Heal(10 * platform.def.building.bed_healPerDay / RimWorld.GenDate.TicksPerDay);
-                    if (pawn.IsHashIntervalTick(100) && !pawn.Position.Fogged(pawn.Map))
+                    if (pawn.IsHashIntervalTick(50) && !pawn.IsHashIntervalTick(100) && !pawn.Position.Fogged(pawn.Map))
                     {
                         MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_HealingCross);
                     }
@@ -79,7 +79,7 @@ namespace WhatTheHack.Harmony
 
                 if (pawn.IsHashIntervalTick(i))
                 {
-                    MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_LightningGlow);
+                    MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, WTH_DefOf.Mote_Charging);
                 }
             }
 

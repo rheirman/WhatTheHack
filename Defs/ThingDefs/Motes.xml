@@ -1,0 +1,14 @@
+<Defs>
+	<ThingDef ParentName="MoteBase">
+	<defName>Mote_Charging</defName>
+	<graphicData>
+	  <texPath>Things/Mote_Charging</texPath>
+	</graphicData>
+	<altitudeLayer>MetaOverlays</altitudeLayer>
+	<mote>
+	  <fadeInTime>0.08</fadeInTime>
+	  <solidTime>1.4</solidTime>
+	  <fadeOutTime>1.5</fadeOutTime>
+	</mote>
+	</ThingDef>
+</Defs>
