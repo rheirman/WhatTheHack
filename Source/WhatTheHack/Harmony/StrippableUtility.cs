@@ -20,7 +20,6 @@ namespace WhatTheHack.Harmony
                     && pawn.inventory != null && pawn.inventory.innerContainer.Count == 0
                     && pawn.apparel != null && pawn.apparel.WornApparelCount == 0)
                 {
-                    Log.Message("HasJobOnThing returning false");
                     __result = false;
                     return false;
                 }

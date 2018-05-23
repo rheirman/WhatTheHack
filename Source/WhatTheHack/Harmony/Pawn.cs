@@ -21,9 +21,9 @@ namespace WhatTheHack.Harmony
         static void Postfix(Pawn __instance, ref bool __result)
         {
             Bill bill = __instance.health.surgeryBills.FirstShouldDoNow;
-            if (__instance.RaceProps.IsMechanoid)
+            if (!__instance.RaceProps.IsMechanoid)
             {
-                Log.Message("CurrentlyUsableForBills called");
+                return;
             }
 
             if (bill != null && bill.recipe == WTH_DefOf.HackMechanoid &&  !__instance.OnHackingTable())

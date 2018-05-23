@@ -1,10 +1,13 @@
-﻿using RimWorld;
+﻿using Harmony;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
 using Verse.AI;
+using Verse.AI.Group;
+using WhatTheHack.Duties;
 
 namespace WhatTheHack.Recipes
 {
@@ -27,7 +30,24 @@ namespace WhatTheHack.Recipes
                 if (base.CheckSurgeryFail(billDoer, pawn, ingredients, part, bill))
                 {
                     //TODO actions here when hacking fails!
+                    Verb verb = null;
 
+                    foreach (Verb v in pawn.equipment.AllEquipmentVerbs)
+                    {
+                        if (!v.IsMeleeAttack)
+                        {
+                            verb = v;
+                        }
+                    }
+                    if(verb == null)
+                    {
+                        Log.Message("verb was null, miemie");
+                        return;
+                    }
+                    Traverse.Create(verb).Field("currentTarget").SetValue(new LocalTargetInfo(billDoer.Position));
+                    Traverse.Create(verb).Method("TryCastNextBurstShot").GetValue();
+
+                    //HealUntilStanding(pawn);
                     return;
                 }
                 TaleRecorder.RecordTale(TaleDefOf.DidSurgery, new object[]
@@ -60,5 +80,30 @@ namespace WhatTheHack.Recipes
             }
 
         }
+
+        private static void HealUntilStanding(Pawn pawn)
+        {
+            bool shouldStop = false;
+            while (!shouldStop)
+            {
+                Hediff_Injury hediff_Injury = pawn.health.hediffSet.GetHediffs<Hediff_Injury>().Where(new Func<Hediff_Injury, bool>(HediffUtility.CanHealNaturally)).RandomElement<Hediff_Injury>();
+                if (hediff_Injury == null || !pawn.Downed)
+                {
+                    shouldStop = true;
+                    continue;
+                }
+                hediff_Injury.Heal(10);
+            }
+            pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
+            if (pawn.GetLord() == null || pawn.GetLord().LordJob == null)
+            {
+                LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_SearchAndDestroy(), pawn.Map, new List<Pawn> { pawn });
+            }
+            else
+            {
+                Log.Message("lord was not null");
+            }
+        }
     }
+    
 }
