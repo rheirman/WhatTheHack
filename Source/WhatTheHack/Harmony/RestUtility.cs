@@ -17,6 +17,13 @@ namespace WhatTheHack.Harmony
     {
         static bool Prefix(Pawn sleeper, Pawn traveler, ref Building_Bed __result)
         {
+            /*
+            if (sleeper.RaceProps.Animal && (__result is Building_MechanoidPlatform || __result is Building_HackingTable))
+            {
+                return false;
+            }
+            */
+
             if (!sleeper.RaceProps.IsMechanoid || !sleeper.IsHacked())
             {
                 return true;
@@ -74,6 +81,19 @@ namespace WhatTheHack.Harmony
         }
     }
 
+    [HarmonyPatch(typeof(RestUtility), "CanUseBedEver")]
+    class RestUtility_CanUseBedEver
+    {
+        static bool Prefix(ref bool __result, Pawn p, ThingDef bedDef)
+        {
+            if(!p.RaceProps.IsMechanoid && (bedDef == WTH_DefOf.HackingTable || bedDef == WTH_DefOf.MechanoidPlatform)){
+                __result = false;
+                return false;
+            }
+            return true;
+        }
+    }
+
     [HarmonyPatch(typeof(RestUtility), "CurrentBed")]
     class RestUtility_CurrentBed
     {
@@ -85,7 +105,6 @@ namespace WhatTheHack.Harmony
             }
             if (p.jobs.curDriver == null || ((p.CurJob.def != WTH_DefOf.Mechanoid_Rest) && p.jobs.curDriver.layingDown != LayingDownState.LayingInBed))
             {
-                Log.Message("AAARGH!");
                 return true;
                 
             }
@@ -106,7 +125,6 @@ namespace WhatTheHack.Harmony
                 }
                 if (hackingTable == null)
                 {
-                    Log.Message("hacking table was null");
                     return true;
                 }
 
@@ -129,8 +147,6 @@ namespace WhatTheHack.Harmony
                 }
                 if (mechanoidPlatform == null)
                 {
-                    Log.Message("mechanoid platform was null");
-
                     return true;
                 }
 

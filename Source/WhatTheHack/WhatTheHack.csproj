@@ -68,6 +68,8 @@
     <Compile Include="Harmony\Pawn_HealthTracker.cs" />
     <Compile Include="Harmony\RestUtility.cs" />
     <Compile Include="Harmony\StatWorker.cs" />
+    <Compile Include="Harmony\Thing.cs" />
+    <Compile Include="Harmony\StrippableUtility.cs" />
     <Compile Include="Harmony\WorkGiver_Tend.cs" />
     <Compile Include="Jobs\JobDriver_Mechanoid_Rest.cs" />
     <Compile Include="Needs\Need_Power.cs" />

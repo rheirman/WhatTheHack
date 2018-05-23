@@ -10,8 +10,8 @@ namespace WhatTheHack.Buildings
     class Building_MechanoidPlatform : Building_Bed
     {
         public const int SLOTINDEX = 1;
-        CompRefuelable refuelableComp;
-        CompPowerTrader powerComp;
+        public CompRefuelable refuelableComp;
+        public CompPowerTrader powerComp;
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);

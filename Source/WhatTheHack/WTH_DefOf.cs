@@ -22,5 +22,6 @@ namespace WhatTheHack
         public static NeedDef Mechanoid_Power;
         public static ThingDef HackingTable;
         public static ThingDef MechanoidPlatform;
+        public static ThingDef MechanoidParts;
     }
 }

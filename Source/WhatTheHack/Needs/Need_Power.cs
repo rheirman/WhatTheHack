@@ -42,13 +42,6 @@ namespace WhatTheHack.Needs
             }
         }
 
-        public float NutritionBetweenHungryAndFed
-        {
-            get
-            {
-                return (1f - this.PercentageThreshLowPower) * this.MaxLevel;//TODO
-            }
-        }
 
         public PowerCategory CurCategory
         {
@@ -130,7 +123,7 @@ namespace WhatTheHack.Needs
         {
             get
             {
-                return 300.0f;//TODO
+                return 100 +  pawn.BodySize * 100;//TODO
             }
         }
 
@@ -146,7 +139,7 @@ namespace WhatTheHack.Needs
         {
             get
             {
-                return 10.0f;//TODO - no magic number
+                return 100 + pawn.BodySize * 100;//TODO - no magic number
             }
         }
 

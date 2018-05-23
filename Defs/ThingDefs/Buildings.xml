@@ -93,7 +93,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <startElectricalFires>true</startElectricalFires>
-        <basePowerConsumption>200</basePowerConsumption>
+        <basePowerConsumption>500</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable"/>
 	  <li Class="CompProperties_Refuelable">
@@ -110,7 +110,7 @@
     <designationCategory>Production</designationCategory>
 	<building>
 		<bed_humanlike>false</bed_humanlike>
-		<bed_healPerDay>30</bed_healPerDay>
+		<bed_healPerDay>250</bed_healPerDay>
 		<bed_showSleeperBody>True</bed_showSleeperBody>
 		<canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
 		<ai_chillDestination>false</ai_chillDestination>
