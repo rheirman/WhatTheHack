@@ -38,7 +38,7 @@ namespace WhatTheHack.Needs
         {
             get
             {
-                return 0.25f;//TODO
+                return 0.2f;//TODO
             }
         }
 

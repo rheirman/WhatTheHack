@@ -7,6 +7,7 @@ using System.Text;
 using Verse;
 using Verse.AI;
 using WhatTheHack.Buildings;
+using WhatTheHack.Needs;
 using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
@@ -18,7 +19,7 @@ namespace WhatTheHack.Harmony
         {
             
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            if (!pawn.RaceProps.IsMechanoid)
+            if (!pawn.RaceProps.IsMechanoid || pawn.Downed)
             {
                 return;
             }
@@ -28,6 +29,18 @@ namespace WhatTheHack.Harmony
                 job.count = 1;
                 __result = new ThinkResult(job, __result.SourceNode, __result.Tag, false);
 
+            }
+            ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
+            if(store != null)
+            {
+                //de-activate if should auto recharge and power is very low. 
+                ExtendedPawnData pawnData = store.GetExtendedDataFor(pawn);
+                Need_Power powerNeed = pawn.needs.TryGetNeed(WTH_DefOf.Mechanoid_Power) as Need_Power;
+
+                if(powerNeed != null && powerNeed.CurCategory >= PowerCategory.LowPower && pawnData.shouldAutoRecharge && pawn.IsActivated())
+                {
+                    pawnData.isActive = false;
+                }
             }
             if(pawn.IsHacked() && !pawn.IsActivated())
             { 

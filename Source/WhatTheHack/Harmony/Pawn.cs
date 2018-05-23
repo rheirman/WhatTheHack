@@ -10,6 +10,7 @@ using Verse.AI;
 using Verse.AI.Group;
 using WhatTheHack.Buildings;
 using WhatTheHack.Duties;
+using WhatTheHack.Needs;
 using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
@@ -36,25 +37,49 @@ namespace WhatTheHack.Harmony
     [HarmonyPatch(typeof(Pawn), "GetGizmos")]
     public class Pawn_DraftController_GetGizmos_Patch
     {
-        private static object targetPawn;
-
         public static void Postfix(ref IEnumerable<Gizmo> __result, Pawn __instance)
         {
             List<Gizmo> gizmoList = __result.ToList();
             ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
-            if(store == null || !__instance.IsHacked())
+            if (store == null || !__instance.IsHacked())
             {
                 return;
             }
-            
+
             ExtendedPawnData pawnData = store.GetExtendedDataFor(__instance);
+            gizmoList.Add(CreateGizmo_SearchAndDestroy(__instance, pawnData));
+            gizmoList.Add(CreateGizmo_AutoRecharge(__instance, pawnData));
+            __result = gizmoList;
+        }
+
+        private static Gizmo CreateGizmo_SearchAndDestroy(Pawn __instance, ExtendedPawnData pawnData)
+        {
+            string disabledReason = "";
+            bool disabled = false;
+            if (__instance.Downed)
+            {
+                disabled = true;
+                disabledReason = "WTH_Reason_Mechanoid_Downed".Translate();
+            }
+            else if(pawnData.shouldAutoRecharge)
+            {
+                Need_Power powerNeed = __instance.needs.TryGetNeed(WTH_DefOf.Mechanoid_Power) as Need_Power;
+                if (powerNeed != null && powerNeed.CurCategory >= PowerCategory.LowPower)
+                {
+                    disabled = true;
+                    disabledReason = "WTH_Reason_Power_Low".Translate();
+                }
+            }
             Gizmo gizmo = new Command_Toggle
             {
-                defaultLabel = "test",
-                defaultDesc = "test",
+                defaultLabel = "WTH_Gizmo_SearchAndDestroy_Label".Translate(),
+                defaultDesc = "WTH_Gizmo_SearchAndDestroy_Description".Translate(),
+                disabled = disabled,
+                disabledReason = disabledReason,
                 icon = ContentFinder<Texture2D>.Get(("UI/" + "Enable_SD"), true),
                 isActive = () => pawnData.isActive,
-                toggleAction = () => {
+                toggleAction = () =>
+                {
                     pawnData.isActive = !pawnData.isActive;
                     if (pawnData.isActive)
                     {
@@ -63,40 +88,35 @@ namespace WhatTheHack.Harmony
                         {
                             LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_SearchAndDestroy(), __instance.Map, new List<Pawn> { __instance });
                         }
-
-                        /*
-                        if (__instance.equipment.Primary == null)
-                        {
-                            if (pawnData.carriedThing == null)
-                            {
-                                PawnWeaponGenerator.TryGenerateWeaponFor(__instance);//when the mod is added to an existing save, handle this properly by generate the missing weapon.
-                                pawnData.carriedThing = __instance.equipment.Primary;
-                            }
-                            if (pawnData.carriedThing != null && pawnData.carriedThing.stackCount == 0)
-                            {
-                                pawnData.carriedThing.stackCount = 1;
-                            }
-                            Traverse.Create(__instance.equipment).Property("Primary").SetValue(pawnData.carriedThing);
-                            //Traverse.Create(__instance).Method("set_Primary", new object[] { pawnData.carriedThing });
-                        }
-                        */
                     }
                     else
                     {
                         __instance.jobs.EndCurrentJob(JobCondition.InterruptForced);
                         Building_MechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(__instance, __instance);
-                        if(closestAvailablePlatform != null)
+                        if (closestAvailablePlatform != null)
                         {
                             Job job = new Job(WTH_DefOf.Mechanoid_Rest, closestAvailablePlatform);
                             __instance.jobs.TryTakeOrderedJob(job);
-                        }                      
+                        }
                     }
                 }
             };
-
-
-            gizmoList.Add(gizmo);
-            __result = gizmoList;
+            return gizmo;
+        }
+        private static Gizmo CreateGizmo_AutoRecharge(Pawn __instance, ExtendedPawnData pawnData)
+        {
+            Gizmo gizmo = new Command_Toggle
+            {
+                defaultLabel = "WTH_Gizmo_AutoRecharge_Label".Translate(),
+                defaultDesc = "WTH_Gizmo_AutoRecharge_Label".Translate(),
+                icon = ContentFinder<Texture2D>.Get(("UI/" + "AutoRecharge"), true),
+                isActive = () => pawnData.shouldAutoRecharge,
+                toggleAction = () =>
+                {
+                    pawnData.shouldAutoRecharge = !pawnData.shouldAutoRecharge;
+                }
+            };
+            return gizmo;
         }
     }
 }
