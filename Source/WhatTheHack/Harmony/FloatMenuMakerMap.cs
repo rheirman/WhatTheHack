@@ -28,7 +28,7 @@ namespace WhatTheHack.Harmony
                 }
                 Pawn targetPawn = current.Thing as Pawn;
 
-                if (!pawn.IsHacked() && targetPawn.Downed && !pawn.OnHackingTable())
+                if (!targetPawn.IsHacked() && targetPawn.Downed && !pawn.OnHackingTable())
                 {
 
                     Building_HackingTable closestAvailableTable = Utilities.GetAvailableHackingTable(pawn, targetPawn);

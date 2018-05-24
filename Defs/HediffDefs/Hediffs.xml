@@ -7,6 +7,21 @@
 		<isBad>false</isBad>
 	  </HediffDef>
 	  
+	  <HediffDef>
+		<defName>TargetingHackedPoorly</defName>
+		<label>targeting hacked poorly</label>
+		<defaultLabelColor>(1.0, 0.5, 0.1)</defaultLabelColor>
+		<causesNeed>Mechanoid_Power</causesNeed>
+		<isBad>false</isBad>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>TargetingDestroyed</defName>
+		<label>targeting destroyed</label>
+		<defaultLabelColor>(1.0, 0.5, 0.1)</defaultLabelColor>
+		<isBad>false</isBad>
+	  </HediffDef>
+	  
 	  <NeedDef>
 		<defName>Mechanoid_Power</defName>
 		 <onlyIfCausedByHediff>true</onlyIfCausedByHediff>
@@ -26,10 +41,6 @@
 			  <li>
 				<capacity>Moving</capacity>
 				<offset>-0.30</offset>
-			  </li>
-			  <li>
-				<capacity>Consciousness</capacity>
-				<offset>-0.10</offset>
 			  </li>
 			</capMods>
 		  </li>

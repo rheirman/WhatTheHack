@@ -30,23 +30,31 @@ namespace WhatTheHack.Recipes
                 if (base.CheckSurgeryFail(billDoer, pawn, ingredients, part, bill))
                 {
                     //TODO actions here when hacking fails!
-                    Verb verb = null;
 
-                    foreach (Verb v in pawn.equipment.AllEquipmentVerbs)
+                    pawn.health.AddHediff(WTH_DefOf.TargetingHackedPoorly, part, null);
+                    pawn.SetFaction(Faction.OfPlayer);
+                    if (pawn.playerSettings == null)
                     {
-                        if (!v.IsMeleeAttack)
-                        {
-                            verb = v;
-                        }
-                    }
-                    if(verb == null)
-                    {
-                        Log.Message("verb was null, miemie");
-                        return;
-                    }
-                    Traverse.Create(verb).Field("currentTarget").SetValue(new LocalTargetInfo(billDoer.Position));
-                    Traverse.Create(verb).Method("TryCastNextBurstShot").GetValue();
+                        Log.Message("pawn playersettings were null");
 
+                    }
+                    else
+                    {
+                        Log.Message("pawn playersettings medcare: " + pawn.playerSettings.medCare.GetLabel());
+                        Log.Message("pawn playersettings medcare tostring: " + pawn.playerSettings.medCare);
+
+                    }
+                    if (pawn.jobs.curDriver != null)
+                    {
+                        pawn.jobs.curDriver.layingDown = LayingDownState.LayingSurface;
+                    }
+                    if (pawn.story == null)
+                    {
+                        pawn.story = new Pawn_StoryTracker(pawn);
+                    }
+
+                    //CauseMechanoidRaid(pawn);
+                    //FireShotRandomly(pawn);
                     //HealUntilStanding(pawn);
                     return;
                 }
@@ -79,6 +87,45 @@ namespace WhatTheHack.Recipes
                 pawn.story = new Pawn_StoryTracker(pawn);
             }
 
+        }
+
+        private static void CauseMechanoidRaid(Pawn pawn)
+        {
+            IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(Find.Storyteller.def, IncidentCategory.ThreatBig, pawn.Map);
+            IntVec3 spawnSpot;
+            if (!CellFinder.TryFindRandomEdgeCellWith((IntVec3 c) => pawn.Map.reachability.CanReachColony(c), pawn.Map, CellFinder.EdgeRoadChance_Neutral, out spawnSpot))
+            {
+                //return;
+            }
+            incidentParms.forced = true;
+            incidentParms.faction = Faction.OfMechanoids;
+            incidentParms.raidStrategy = RaidStrategyDefOf.ImmediateAttack;
+            incidentParms.raidArrivalMode = PawnsArriveMode.EdgeWalkIn;
+            incidentParms.spawnCenter = spawnSpot;
+            incidentParms.points *= 1.35f;
+
+            QueuedIncident qi = new QueuedIncident(new FiringIncident(IncidentDefOf.RaidEnemy, null, incidentParms), Find.TickManager.TicksGame + new IntRange(1000, 2500).RandomInRange);
+            Find.Storyteller.incidentQueue.Add(qi);
+        }
+
+        private static void FireShotRandomly(Pawn pawn)
+        {
+            Verb verb = null;
+
+            foreach (Verb v in pawn.equipment.AllEquipmentVerbs)
+            {
+                if (!v.IsMeleeAttack)
+                {
+                    verb = v;
+                }
+            }
+            if (verb == null)
+            {
+                return;
+            }
+            IntVec3 targetCell = GenRadial.RadialCellsAround(pawn.Position, 7, true).RandomElement();
+            Traverse.Create(verb).Field("currentTarget").SetValue(new LocalTargetInfo(targetCell));
+            Traverse.Create(verb).Method("TryCastNextBurstShot").GetValue();
         }
 
         private static void HealUntilStanding(Pawn pawn)

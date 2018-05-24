@@ -14,6 +14,7 @@ namespace WhatTheHack
         public static HediffDef TargetingHacked;
         public static HediffDef VeryLowPower;
         public static HediffDef NoPower;
+        public static HediffDef TargetingHackedPoorly;
 
         public static RecipeDef HackMechanoid;
         public static DutyDef SearchAndDestroy;

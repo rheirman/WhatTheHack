@@ -13,7 +13,7 @@ namespace WhatTheHack
     {
         public static bool IsHacked(this Pawn pawn)
         {
-            if (pawn.health != null && pawn.health.hediffSet.HasHediff(WTH_DefOf.TargetingHacked))
+            if (pawn.health != null && (pawn.health.hediffSet.HasHediff(WTH_DefOf.TargetingHacked) || pawn.health.hediffSet.HasHediff(WTH_DefOf.TargetingHackedPoorly)))
             {
                 return true;
             }

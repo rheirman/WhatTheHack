@@ -174,8 +174,8 @@ namespace WhatTheHack.Needs
 
         public override void SetInitialLevel()
         {
-            base.CurLevelPercentage = 0f;
-            lastLevel = 0f;
+            base.CurLevelPercentage = 0;
+            lastLevel = 0;
         }
 
         public override string GetTipString()

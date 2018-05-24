@@ -62,9 +62,13 @@ namespace WhatTheHack.Harmony
             if (platform.HasPowerNow())
             {
                 Need powerNeed = pawn.needs.TryGetNeed(WTH_DefOf.Mechanoid_Power);
-                float powerPerTick = 0.75f * platform.PowerComp.Props.basePowerConsumption / GenDate.TicksPerDay; //TODO no magic number
+                float powerPerTick = 0.75f * platform.PowerComp.Props.basePowerConsumption / GenDate.TicksPerDay; 
                 if (powerNeed.CurLevel + powerPerTick < powerNeed.MaxLevel)
                 {
+                    if (pawn.IsHashIntervalTick(100))
+                    {
+                        MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, WTH_DefOf.Mote_Charging);
+                    }
                     powerNeed.CurLevel += powerPerTick;
                 }
                 else if (powerNeed.CurLevel < powerNeed.MaxLevel)
@@ -75,12 +79,8 @@ namespace WhatTheHack.Harmony
                 {
                     //MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_PowerBeam);
                 }
-                int i = 100;
 
-                if (pawn.IsHashIntervalTick(i))
-                {
-                    MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, WTH_DefOf.Mote_Charging);
-                }
+
             }
 
         }
