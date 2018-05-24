@@ -29,33 +29,24 @@ namespace WhatTheHack.Recipes
             {
                 if (base.CheckSurgeryFail(billDoer, pawn, ingredients, part, bill))
                 {
-                    //TODO actions here when hacking fails!
+                    Random r = new Random(DateTime.Now.Millisecond);
+                    int randInt = r.Next(1, 100);
 
-                    pawn.health.AddHediff(WTH_DefOf.TargetingHackedPoorly, part, null);
-                    pawn.SetFaction(Faction.OfPlayer);
-                    if (pawn.playerSettings == null)
+                    //Applying syntactic sugar. Short, but not very readable.
+                    int[] chances = { Base.failureChanceHackPoorly, Base.failureChanceCauseRaid, Base.failureChanceShootRandomDirection, Base.failureChanceHealToStanding, Base.failureChanceNothing };
+                    Action<Pawn, BodyPartRecord>[] functions = { HackPoorly, CauseMechanoidRaid, ShootRandomDirection, HealToStanding, Nothing };
+                    int totalChance = chances.Sum();
+                    int acc = 0;
+                    for(int i = 0; i < chances.Count(); i++)
                     {
-                        Log.Message("pawn playersettings were null");
-
-                    }
-                    else
-                    {
-                        Log.Message("pawn playersettings medcare: " + pawn.playerSettings.medCare.GetLabel());
-                        Log.Message("pawn playersettings medcare tostring: " + pawn.playerSettings.medCare);
-
-                    }
-                    if (pawn.jobs.curDriver != null)
-                    {
-                        pawn.jobs.curDriver.layingDown = LayingDownState.LayingSurface;
-                    }
-                    if (pawn.story == null)
-                    {
-                        pawn.story = new Pawn_StoryTracker(pawn);
-                    }
-
-                    //CauseMechanoidRaid(pawn);
-                    //FireShotRandomly(pawn);
-                    //HealUntilStanding(pawn);
+                        if(randInt < ((acc + chances[i]) * totalChance) / 100)
+                        {
+                            Log.Message("Invoking " + functions[i].Method.Name + ", randInt: " + randInt);
+                            functions[i].Invoke(pawn, part);
+                            break;
+                        }
+                        acc += chances[i];
+                    }              
                     return;
                 }
                 TaleRecorder.RecordTale(TaleDefOf.DidSurgery, new object[]
@@ -66,18 +57,6 @@ namespace WhatTheHack.Recipes
             }
             pawn.health.AddHediff(this.recipe.addsHediff, part, null);
             pawn.SetFaction(Faction.OfPlayer);
-            if(pawn.playerSettings == null)
-            {
-                Log.Message("pawn playersettings were null");
-
-            }
-            else
-            {
-                Log.Message("pawn playersettings medcare: " + pawn.playerSettings.medCare.GetLabel());
-                Log.Message("pawn playersettings medcare tostring: " + pawn.playerSettings.medCare);
-
-            }
-
             if (pawn.jobs.curDriver != null)
             {
                 pawn.jobs.curDriver.layingDown = LayingDownState.LayingSurface;
@@ -88,8 +67,25 @@ namespace WhatTheHack.Recipes
             }
 
         }
+        private static void Nothing(Pawn pawn, BodyPartRecord part) {
+            //nothing
+        }
 
-        private static void CauseMechanoidRaid(Pawn pawn)
+        private static void HackPoorly(Pawn pawn, BodyPartRecord part)
+        {
+            pawn.health.AddHediff(WTH_DefOf.TargetingHackedPoorly, part, null);
+            pawn.SetFaction(Faction.OfPlayer);
+            if (pawn.jobs.curDriver != null)
+            {
+                pawn.jobs.curDriver.layingDown = LayingDownState.LayingSurface;
+            }
+            if (pawn.story == null)
+            {
+                pawn.story = new Pawn_StoryTracker(pawn);
+            }
+        }
+
+        private static void CauseMechanoidRaid(Pawn pawn, BodyPartRecord part)
         {
             IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(Find.Storyteller.def, IncidentCategory.ThreatBig, pawn.Map);
             IntVec3 spawnSpot;
@@ -108,7 +104,7 @@ namespace WhatTheHack.Recipes
             Find.Storyteller.incidentQueue.Add(qi);
         }
 
-        private static void FireShotRandomly(Pawn pawn)
+        private static void ShootRandomDirection(Pawn pawn, BodyPartRecord part)
         {
             Verb verb = null;
 
@@ -128,7 +124,7 @@ namespace WhatTheHack.Recipes
             Traverse.Create(verb).Method("TryCastNextBurstShot").GetValue();
         }
 
-        private static void HealUntilStanding(Pawn pawn)
+        private static void HealToStanding(Pawn pawn, BodyPartRecord part)
         {
             bool shouldStop = false;
             while (!shouldStop)
