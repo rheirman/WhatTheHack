@@ -41,7 +41,6 @@ namespace WhatTheHack.Recipes
                     {
                         if(randInt < ((acc + chances[i]) * totalChance) / 100)
                         {
-                            Log.Message("Invoking " + functions[i].Method.Name + ", randInt: " + randInt);
                             functions[i].Invoke(pawn, part);
                             break;
                         }
