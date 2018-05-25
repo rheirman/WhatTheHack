@@ -30,9 +30,9 @@ namespace WhatTheHack
         }
         public override void DefsLoaded()
         {
-            failureChanceNothing = Settings.GetHandle<int>("failureChanceNothing", "WTH_FailureChanceNothing_Title".Translate(), "WTH_FailureChanceNothing_Description".Translate(), 40);
-            failureChanceCauseRaid = Settings.GetHandle<int>("failureChanceCauseRaid", "WTH_FailureChanceCauseRaid_Title".Translate(), "WTH_FailureChanceCauseRaid_Description".Translate(), 15);
-            failureChanceShootRandomDirection = Settings.GetHandle<int>("failureChanceShootRandomDirection", "WTH_FailureChanceShootRandomDirection_Title".Translate(), "WTH_FailureChanceShootRandomDirection_Description".Translate(), 20);
+            failureChanceNothing = Settings.GetHandle<int>("failureChanceNothing", "WTH_FailureChanceNothing_Title".Translate(), "WTH_FailureChanceNothing_Description".Translate(), 50);
+            failureChanceCauseRaid = Settings.GetHandle<int>("failureChanceCauseRaid", "WTH_FailureChanceCauseRaid_Title".Translate(), "WTH_FailureChanceCauseRaid_Description".Translate(), 10);
+            failureChanceShootRandomDirection = Settings.GetHandle<int>("failureChanceShootRandomDirection", "WTH_FailureChanceShootRandomDirection_Title".Translate(), "WTH_FailureChanceShootRandomDirection_Description".Translate(), 15);
             failureChanceHealToStanding = Settings.GetHandle<int>("failureChanceHealToStanding", "WTH_FailureChanceHealToStanding_Title".Translate(), "WTH_FailureChanceHealToStanding_Description".Translate(), 10);
             failureChanceHackPoorly = Settings.GetHandle<int>("failureChanceHackPoorly", "WTH_FailureChanceHackPoorly_Title".Translate(), "WTH_FailureChanceHackPoorly_Description".Translate(), 15);
         }

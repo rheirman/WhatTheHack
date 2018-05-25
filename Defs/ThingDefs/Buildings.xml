@@ -43,7 +43,7 @@
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <hasInteractionCell>true</hasInteractionCell>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-    <designationCategory>Production</designationCategory>
+    <designationCategory>Misc</designationCategory>
     <surfaceType>Item</surfaceType>
     <researchPrerequisites>
       <li>MicroelectronicsBasics</li>
@@ -69,8 +69,8 @@
     </graphicData>
     <castEdgeShadows>false</castEdgeShadows>
     <costList>
-      <Steel>100</Steel>
-      <Component>1</Component>
+      <Steel>75</Steel>
+      <Component>6</Component>
     </costList>
 	<rotatable>false</rotatable>
 
@@ -87,8 +87,12 @@
     <pathCost>70</pathCost>
     <hasInteractionCell>True</hasInteractionCell>
     <interactionCellOffset>(0,0,0)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
 	
+    <designationCategory>Misc</designationCategory>
+    <surfaceType>Item</surfaceType>
+    <researchPrerequisites>
+      <li>MicroelectronicsBasics</li>
+    </researchPrerequisites>		
 	<comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
@@ -107,7 +111,6 @@
         <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
       </li>
     </comps>
-    <designationCategory>Production</designationCategory>
 	<building>
 		<bed_humanlike>false</bed_humanlike>
 		<bed_healPerDay>250</bed_healPerDay>

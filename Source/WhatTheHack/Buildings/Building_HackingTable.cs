@@ -16,9 +16,9 @@ namespace WhatTheHack.Buildings
 
         public const int SLOTINDEX = 2; 
 
-        public bool TryAddPawnForModification(Pawn pawn, RecipeDef recipeDef)
+        public static bool TryAddPawnForModification(Pawn pawn, RecipeDef recipeDef)
         {
-            if(GetCurOccupant(SLOTINDEX) == null && !pawn.health.hediffSet.HasHediff(recipeDef.addsHediff))
+            if(!pawn.IsHacked())
             {
 
                 Bill_Medical bill = new Bill_Medical(recipeDef);
