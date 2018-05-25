@@ -8,7 +8,7 @@
 		<workAmount>1500</workAmount>
 		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
 		<skillRequirements>
-			<Medicine>8</Medicine>
+			<Crafting>8</Crafting>
 		</skillRequirements>
 		<effectWorking>Repair</effectWorking>
 		<ingredients>

@@ -66,8 +66,8 @@ namespace WhatTheHack.Harmony
         private static void UnHackMechanoid(Pawn pawn)
         {
             Random rand = new Random(DateTime.Now.Millisecond);
-            int rndInt = rand.Next(1, 100);
-            if (rndInt == 1) //TODO: 
+            int rndInt = rand.Next(1, 1000);
+            if (rndInt <= 5) //TODO: no magic number
             {
                 pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.TargetingHackedPoorly));
                 pawn.SetFaction(Faction.OfMechanoids);
