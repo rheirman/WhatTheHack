@@ -34,23 +34,58 @@ namespace WhatTheHack.Harmony
         }
     }
 
+    [HarmonyPatch(typeof(Pawn), "get_IsColonist")]
+    public class Pawn_get_IsColonist
+    {
+        public static bool Prefix(Pawn __instance, ref bool __result)
+        {
+            if (__instance.IsHacked())
+            {
+                __result = true;
+                return false;
+            }
+            return true;
+        }
+    }
+
     [HarmonyPatch(typeof(Pawn), "GetGizmos")]
-    public class Pawn_DraftController_GetGizmos_Patch
+    public class Pawn_GetGizmos_Patch
     {
         public static void Postfix(ref IEnumerable<Gizmo> __result, Pawn __instance)
         {
             List<Gizmo> gizmoList = __result.ToList();
             ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
+            bool flagIsCreatureMine = __instance.Faction != null && __instance.Faction.IsPlayer;
+
             if (store == null || !__instance.IsHacked())
             {
                 return;
             }
+            /*
+            if ((__instance.drafter != null) && flagIsCreatureMine)
+            {
+                Command_Toggle draftGizmo = new Command_Toggle
+                {
+                    defaultLabel = "WTH_Draft_Label".Translate(),
+                    defaultDesc = "WTH_Draft_Description".Translate(),
+                    icon = ContentFinder<Texture2D>.Get("ui/commands/Draft", true),
+                    isActive = () => __instance.drafter.Drafted,
+                    toggleAction = () =>
+                    {
+                        __instance.drafter.Drafted = !__instance.drafter.Drafted;
+                    }
+                };
+                gizmoList.Add(draftGizmo);
+            }
+            */
 
             ExtendedPawnData pawnData = store.GetExtendedDataFor(__instance);
             gizmoList.Add(CreateGizmo_SearchAndDestroy(__instance, pawnData));
             gizmoList.Add(CreateGizmo_AutoRecharge(__instance, pawnData));
             __result = gizmoList;
         }
+
+
 
         private static Gizmo CreateGizmo_SearchAndDestroy(Pawn __instance, ExtendedPawnData pawnData)
         {

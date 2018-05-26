@@ -58,6 +58,7 @@ namespace WhatTheHack.Recipes
                     billDoer,
                     pawn
                 });
+                Find.LetterStack.ReceiveLetter("LetterSuccess_Label".Translate(), "LetterSuccess_Label_Description".Translate(), LetterDefOf.PositiveEvent, pawn);
             }
             pawn.health.AddHediff(this.recipe.addsHediff, part, null);
             pawn.SetFaction(Faction.OfPlayer);

@@ -32,4 +32,39 @@
 		</appliedOnFixedBodyParts>
 		<addsHediff>TargetingHacked</addsHediff>
 	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>ImplantAI</defName>
+		<label>implant AI</label>
+		<description>Implants the AI persona core into the mechanoid, allowing full control for combat purposes</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_HackMechanoid</workerClass>
+		<jobString>Hacking mechanoid</jobString>
+		<workAmount>2000</workAmount>
+		<surgerySuccessChanceFactor>1.0</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+		<effectWorking>Repair</effectWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MechanoidParts</li>
+						<li>AIPersonaCore</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ReplacedAI</addsHediff>
+	</RecipeDef>
 </Defs>

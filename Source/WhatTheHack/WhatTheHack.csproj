@@ -65,6 +65,7 @@
     <Compile Include="Harmony\JobDriver_Wait.cs" />
     <Compile Include="Harmony\JobGiver_AIFightEnemy.cs" />
     <Compile Include="Harmony\Pawn.cs" />
+    <Compile Include="Harmony\PawnComponentsUtility.cs" />
     <Compile Include="Harmony\Pawn_EquipmentTracker.cs" />
     <Compile Include="Harmony\Pawn_HealthTracker.cs" />
     <Compile Include="Harmony\RestUtility.cs" />

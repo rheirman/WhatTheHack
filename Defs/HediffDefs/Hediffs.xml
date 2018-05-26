@@ -1,4 +1,11 @@
   <Defs>
+  	  <HediffDef>
+		<defName>ReplacedAI</defName>
+		<label>AI replaced</label>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+	  </HediffDef>
+	  
 	  <HediffDef>
 		<defName>TargetingHacked</defName>
 		<label>targeting hacked</label>
