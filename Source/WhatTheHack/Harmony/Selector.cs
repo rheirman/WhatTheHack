@@ -24,18 +24,15 @@ namespace WhatTheHack.Harmony
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var instructionsList = new List<CodeInstruction>(instructions);
-            Log.Message("transpiler called for Selector_SelectInsideDragbox");
             for (var i = 0; i < instructionsList.Count; i++)
             {
                 CodeInstruction instruction = instructionsList[i];
                 if (instruction.operand == typeof(Pawn).GetMethod("get_RaceProps"))
                 {
-                    Log.Message("found get_RaceProps");
                     yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Selector_SelectInsideDragbox), "IsHumanLikeOrHacked", new Type[] {typeof(Pawn)}));//Injected code     
                 }             
                 else if(instruction.operand == AccessTools.Method(typeof(RaceProperties), "get_Humanlike"))
                 {
-                    Log.Message("found get_Humanlike");
                     //Ommit this instruction
                 }
                 else
@@ -47,7 +44,6 @@ namespace WhatTheHack.Harmony
         }
         static public bool IsHumanLikeOrHacked(Pawn p)
         {
-            Log.Message("calling IsHumanLikeOrHacked");
             return p.RaceProps.Humanlike || p.IsHacked();
         }
     }

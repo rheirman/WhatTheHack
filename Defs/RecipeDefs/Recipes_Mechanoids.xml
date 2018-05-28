@@ -37,7 +37,7 @@
 		<defName>ImplantAI</defName>
 		<label>implant AI</label>
 		<description>Implants the AI persona core into the mechanoid, allowing full control for combat purposes</description>
-		<workerClass>WhatTheHack.Recipes.Recipe_HackMechanoid</workerClass>
+		<workerClass>WhatTheHack.Recipes.Recipe_ImplantAI</workerClass>
 		<jobString>Hacking mechanoid</jobString>
 		<workAmount>2000</workAmount>
 		<surgerySuccessChanceFactor>1.0</surgerySuccessChanceFactor>
@@ -51,10 +51,17 @@
 				<filter>
 					<thingDefs>
 						<li>MechanoidParts</li>
-						<li>AIPersonaCore</li>
 					</thingDefs>
 				</filter>
 				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AIPersonaCore</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>

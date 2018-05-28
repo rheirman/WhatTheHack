@@ -40,7 +40,18 @@ namespace WhatTheHack.Harmony
                 }
                 Pawn targetPawn = current.Thing as Pawn;
 
-                if (!targetPawn.IsHacked() && targetPawn.Downed && !pawn.OnHackingTable())
+                if (targetPawn.OnHackingTable())
+                {
+                    Action action = delegate
+                    {
+                        Job job = new Job(WTH_DefOf.ClearHackingTable, targetPawn, targetPawn.CurrentBed());
+                        job.count = 1;
+                        pawn.jobs.TryTakeOrderedJob(job);
+                    };
+                    __result.Add(new FloatMenuOption("Clear hacking table " + targetPawn.Name, action, MenuOptionPriority.Low));
+                }
+
+                if (!targetPawn.IsHacked() && targetPawn.Downed && !targetPawn.OnHackingTable())
                 {
 
                     Building_HackingTable closestAvailableTable = Utilities.GetAvailableHackingTable(pawn, targetPawn);
@@ -58,7 +69,7 @@ namespace WhatTheHack.Harmony
                     {
                         __result.Add(new FloatMenuOption("Carry to hacking table (no free table reachable)" + targetPawn.Name, null, MenuOptionPriority.Low));
                     }
-                }
+                }  
 
                 //Following menu options are only for testing, and only enabled when godmode is on. 
                 if (!Verse.DebugSettings.godMode)

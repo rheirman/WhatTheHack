@@ -76,9 +76,11 @@
     <Compile Include="Harmony\Thing.cs" />
     <Compile Include="Harmony\StrippableUtility.cs" />
     <Compile Include="Harmony\WorkGiver_Tend.cs" />
+    <Compile Include="Jobs\JobDriver_ClearHackingTable.cs" />
     <Compile Include="Jobs\JobDriver_Mechanoid_Rest.cs" />
     <Compile Include="Needs\Need_Power.cs" />
     <Compile Include="Needs\PowerCategory.cs" />
+    <Compile Include="Recipes\Recipe_ImplantAI.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="Jobs\JobDriver_CarryToHackingTable.cs" />
     <Compile Include="Recipes\RecipeUtility.cs" />

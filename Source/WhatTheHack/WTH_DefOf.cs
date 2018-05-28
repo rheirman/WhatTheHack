@@ -15,12 +15,16 @@ namespace WhatTheHack
         public static HediffDef VeryLowPower;
         public static HediffDef NoPower;
         public static HediffDef TargetingHackedPoorly;
-
         public static RecipeDef HackMechanoid;
+
         public static DutyDef SearchAndDestroy;
+
         public static JobDef CarryToHackingTable;
+        public static JobDef ClearHackingTable;
         public static JobDef Mechanoid_Rest;
+
         public static NeedDef Mechanoid_Power;
+
         public static ThingDef HackingTable;
         public static ThingDef MechanoidPlatform;
         public static ThingDef MechanoidParts;

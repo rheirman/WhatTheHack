@@ -4,6 +4,7 @@
 	  <xpath>*/ThingDef[@ParentName = "BaseMechanoid"]/recipes</xpath>
 	  <value>
 		<li>HackMechanoid</li>
+		<li>ImplantAI</li>
 	  </value>
 	</Operation> 
 </Patch>

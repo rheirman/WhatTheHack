@@ -6,6 +6,12 @@
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
   <JobDef>
+    <defName>ClearHackingTable</defName>
+    <driverClass>WhatTheHack.Jobs.JobDriver_ClearHackingTable</driverClass>
+    <reportString>Remove the mechanoid from the mechanoid table to make room</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  <JobDef>
     <defName>Mechanoid_Rest</defName>
     <driverClass>WhatTheHack.Jobs.JobDriver_Mechanoid_Rest</driverClass>
     <reportString>Linked to mechanoid platform</reportString>
