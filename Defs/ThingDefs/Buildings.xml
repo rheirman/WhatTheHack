@@ -26,7 +26,7 @@
     <passability>PassThroughOnly</passability>
     <pathCost>70</pathCost>
     <statBases>
-      <MaxHitPoints>250</MaxHitPoints>
+      <MaxHitPoints>350</MaxHitPoints>
       <WorkToBuild>5000</WorkToBuild>
       <Flammability>1.0</Flammability>
     </statBases>
@@ -46,7 +46,7 @@
     <designationCategory>Misc</designationCategory>
     <surfaceType>Item</surfaceType>
     <researchPrerequisites>
-      <li>MicroelectronicsBasics</li>
+      <li>WTH_HackingBasics</li>
     </researchPrerequisites>	
 	<building>
 		<bed_humanlike>false</bed_humanlike>
@@ -87,12 +87,11 @@
     <pathCost>70</pathCost>
     <hasInteractionCell>True</hasInteractionCell>
     <interactionCellOffset>(0,0,0)</interactionCellOffset>
-	
     <designationCategory>Misc</designationCategory>
     <surfaceType>Item</surfaceType>
-    <researchPrerequisites>
-      <li>MicroelectronicsBasics</li>
-    </researchPrerequisites>		
+	 <researchPrerequisites>
+      <li>WTH_HackingBasics</li>
+    </researchPrerequisites>	
 	<comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>

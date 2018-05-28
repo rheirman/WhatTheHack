@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<WTH_Letter_Success_Label>Hacking successful</WTH_Letter_Success_Label>
+	<WTH_Letter_Success_Label_Description>A mechanoid has successfully been hacked. It's targeting system now targets your enemy instead of your pawns.</WTH_Letter_Success_Label_Description>
+	<WTH_Letter_Nothing_Label>Hacking failed - just some damage</WTH_Letter_Nothing_Label>
+	<WTH_Letter_Nothing_Description>Hacking failed but apart from some damage nothing serious happened</WTH_Letter_Nothing_Description>
+	<WTH_Letter_HackedPoorly_Label>Hacking failed - poor job</WTH_Letter_HackedPoorly_Label>
+	<WTH_Letter_HackedPoorly_Description>While the mechanoid is hacked for now, the job isn't done well. Use this mechanoid at your own risk, or discard it</WTH_Letter_HackedPoorly_Description>
+	<WTH_Letter_CausedMechanoidRaid_Label>Hacking failed - emergency signal transmitted</WTH_Letter_CausedMechanoidRaid_Label>
+	<WTH_Letter_CausedMechanoidRaid_Description>One of your pawns somehow managed to activate a security mechanism that broadcasted a signal to nearby mechanoids. Prepare for more flesh machines...</WTH_Letter_CausedMechanoidRaid_Description>
+	<WTH_Letter_ShotRandomDirection_Label>Hacking failed - whoops</WTH_Letter_ShotRandomDirection_Label>
+	<WTH_Letter_ShotRandomDirection_Description>One of your pawns accidentally triggered the mechanoids main weapon. Whoops.</WTH_Letter_ShotRandomDirection_Description>
+	<WTH_Letter_HealedToStanding_Label>Hacking failed - mechanoid standing again</WTH_Letter_HealedToStanding_Label>
+	<WTH_Letter_HealedToStanding_Description>The mechanoid wasn't really disabled after all, while being hacked, it managed to recover and it is now your colony.</WTH_Letter_HealedToStanding_Description>
+	
+	<WTH_FailureChance_Nothing_Title>Failure chance: nothing happens</WTH_FailureChance_Nothing_Title>
+	<WTH_FailureChance_Nothing_Description>Relative chance that nothing escalates when hacking fails</WTH_FailureChance_Nothing_Description>
+	<WTH_FailureChance_CauseRaid_Title>Failure chance: cause raid</WTH_FailureChance_CauseRaid_Title>
+	<WTH_FailureChance_CauseRaid_Description>Relative chance that a raid is caused when hacking fails</WTH_FailureChance_CauseRaid_Description>
+	<WTH_FailureChance_ShootRandomDirection_Title>Failure chance: weapon fire</WTH_FailureChance_ShootRandomDirection_Title>	
+	<WTH_FailureChance_ShootRandomDirection_Description>Relative chance a mechanoid's main weapons fires in a random direction when hacking fails</WTH_FailureChance_ShootRandomDirection_Description>
+	<WTH_FailureChance_HealToStanding_Title>Failure chance: heal to standing</WTH_FailureChance_HealToStanding_Title>
+	<WTH_FailureChance_HealToStanding_Description>Relative chance a mechanoid is healed until it can stand when hacking fails</WTH_FailureChance_HealToStanding_Description>
+	<WTH_FailureChance_HackPoorly_Title>Failure chance: hacked poorly</WTH_FailureChance_HackPoorly_Title>
+	<WTH_FailureChance_HackPoorly_Description>Relative chance a mechanoid is hacked poorly when hacking fails</WTH_FailureChance_HackPoorly_Description>
+	
+	<WTH_Menu_ClearTable>Remove from hacking table</WTH_Menu_ClearTable>
+	<WTH_Menu_CarryToTable>Carry to hacking table</WTH_Menu_CarryToTable>
+	<WTH_Menu_CarryToTable_Disabled>Carry to hacking table (no free table reachable)</WTH_Menu_CarryToTable_Disabled>
+	
+	<WTH_Reason_MechanoidDowned>Cannot enable downed mechanoid</WTH_Reason_MechanoidDowned>
+	<WTH_Reason_PowerLow>Cannot enable mechanoid, power too low (disable auto-recharge to override this)</WTH_Reason_PowerLow>
+	<WTH_Gizmo_SearchAndDestroy_Label>Activate</WTH_Gizmo_SearchAndDestroy_Label>
+	<WTH_Gizmo_SearchAndDestroy_Description>Activate search and destroy mod. The mechanoid will automatically attack any enemies near your colony. When disabled, the mechanoid will return to a mechanoid platform when possible.</WTH_Gizmo_SearchAndDestroy_Description>
+	<WTH_Gizmo_AutoRecharge_Label>Auto recharge</WTH_Gizmo_AutoRecharge_Label>
+	<WTH_Gizmo_AutoRecharge_Description>With this mode enabled, mechanoids automatically go back to a mechanoid platform when they have low power.</WTH_Gizmo_AutoRecharge_Description>
+	
+</LanguageData>

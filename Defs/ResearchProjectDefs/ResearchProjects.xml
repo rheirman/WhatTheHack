@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ResearchProjectDef>
+	<defName>WTH_HackingBasics</defName>
+	<label>mechanoid hacking basics</label>
+	<tab>WTH_ResearchTab</tab>
+	<techLevel>Spacer</techLevel>
+	<description>Research the basics of hacking. Gives access to the hacking table and the mechanoid platform. The hacking table can be used to hack into the targeting system of mechanoids, making sure they attack your enemy instead of you when activated. The mechanoid platform is needed as a maintenance and as a power station for mechanoids. </description>
+	<baseCost>1200</baseCost>
+	<prerequisites>
+	  <li>MicroelectronicsBasics</li>
+	</prerequisites>
+		<researchViewX>0</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+	<defName>WTH_HackingAdvanced</defName>
+	<label>AI implanting</label>
+	<tab>WTH_ResearchTab</tab>
+	<techLevel>Spacer</techLevel>
+	<description>Research the possibility to implant AI Persona Cores in hacked mechanoids, giving full control over them for combat purposes.</description>
+	<baseCost>2400</baseCost>
+	<prerequisites>
+	  <li>MicroelectronicsBasics</li>
+	  <li>WTH_HackingBasics</li>
+	</prerequisites>
+	<researchViewX>1</researchViewX>
+	<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+</Defs>

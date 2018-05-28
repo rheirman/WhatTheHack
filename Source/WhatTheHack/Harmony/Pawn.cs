@@ -30,7 +30,6 @@ namespace WhatTheHack.Harmony
 
             if (bill != null && bill.recipe == WTH_DefOf.HackMechanoid &&  !__instance.OnHackingTable())
             {
-                Log.Message("Cannot do bill now, mechanoid should be on hacking table");
                 __result = false;
             }
         }
@@ -118,7 +117,7 @@ namespace WhatTheHack.Harmony
             if (__instance.Downed)
             {
                 disabled = true;
-                disabledReason = "WTH_Reason_Mechanoid_Downed".Translate();
+                disabledReason = "WTH_Reason_MechanoidDowned".Translate();
             }
             else if(pawnData.shouldAutoRecharge)
             {
@@ -126,7 +125,7 @@ namespace WhatTheHack.Harmony
                 if (powerNeed != null && powerNeed.CurCategory >= PowerCategory.LowPower)
                 {
                     disabled = true;
-                    disabledReason = "WTH_Reason_Power_Low".Translate();
+                    disabledReason = "WTH_Reason_PowerLow".Translate();
                 }
             }
             Gizmo gizmo = new Command_Toggle
@@ -167,7 +166,7 @@ namespace WhatTheHack.Harmony
             Gizmo gizmo = new Command_Toggle
             {
                 defaultLabel = "WTH_Gizmo_AutoRecharge_Label".Translate(),
-                defaultDesc = "WTH_Gizmo_AutoRecharge_Label".Translate(),
+                defaultDesc = "WTH_Gizmo_AutoRecharge_Description".Translate(),
                 icon = ContentFinder<Texture2D>.Get(("UI/" + "AutoRecharge"), true),
                 isActive = () => pawnData.shouldAutoRecharge,
                 toggleAction = () =>

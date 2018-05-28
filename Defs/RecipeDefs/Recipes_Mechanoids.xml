@@ -31,6 +31,7 @@
 			<li>ArtificialBrain</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>TargetingHacked</addsHediff>
+		<researchPrerequisite>WTH_HackingBasics</researchPrerequisite>
 	</RecipeDef>
 	
 	<RecipeDef>
@@ -53,7 +54,7 @@
 						<li>MechanoidParts</li>
 					</thingDefs>
 				</filter>
-				<count>10</count>
+				<count>25</count>
 			</li>
 			<li>
 				<filter>
@@ -73,5 +74,6 @@
 			<li>ArtificialBrain</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>ReplacedAI</addsHediff>
+		<researchPrerequisite>WTH_HackingAdvanced</researchPrerequisite>
 	</RecipeDef>
 </Defs>

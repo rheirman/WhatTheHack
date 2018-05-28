@@ -58,7 +58,7 @@ namespace WhatTheHack.Recipes
                     billDoer,
                     pawn
                 });
-                Find.LetterStack.ReceiveLetter("LetterSuccess_Label".Translate(), "LetterSuccess_Label_Description".Translate(), LetterDefOf.PositiveEvent, pawn);
+                Find.LetterStack.ReceiveLetter("WTH_Letter_Success_Label".Translate(), "WTH_Letter_Success_Label_Description".Translate(), LetterDefOf.PositiveEvent, pawn);
             }
             pawn.health.AddHediff(this.recipe.addsHediff, part, null);
             pawn.SetFaction(Faction.OfPlayer);
@@ -74,7 +74,7 @@ namespace WhatTheHack.Recipes
         }
         private static void Nothing(Pawn pawn, BodyPartRecord part) {
             //nothing
-            Find.LetterStack.ReceiveLetter("LetterNothing_Label".Translate(), "LetterNothing_Description".Translate(), LetterDefOf.NeutralEvent, pawn);
+            Find.LetterStack.ReceiveLetter("WTH_Letter_Nothing_Label".Translate(), "WTH_Letter_Nothing_Description".Translate(), LetterDefOf.NeutralEvent, pawn);
         }
 
         private static void HackPoorly(Pawn pawn, BodyPartRecord part)
@@ -89,7 +89,7 @@ namespace WhatTheHack.Recipes
             {
                 pawn.story = new Pawn_StoryTracker(pawn);
             }
-            Find.LetterStack.ReceiveLetter("LetterHackedPoorly_Label".Translate(), "LetterHackedPoorly_Description".Translate(), LetterDefOf.NegativeEvent, pawn);
+            Find.LetterStack.ReceiveLetter("WTH_Letter_HackedPoorly_Label".Translate(), "WTH_Letter_HackedPoorly_Description".Translate(), LetterDefOf.NegativeEvent, pawn);
         }
 
         private static void CauseMechanoidRaid(Pawn pawn, BodyPartRecord part)
@@ -110,7 +110,7 @@ namespace WhatTheHack.Recipes
 
             QueuedIncident qi = new QueuedIncident(new FiringIncident(IncidentDefOf.RaidEnemy, null, incidentParms), Find.TickManager.TicksGame + new IntRange(1000, 2500).RandomInRange);
             Find.Storyteller.incidentQueue.Add(qi);
-            Find.LetterStack.ReceiveLetter("LetterCausedMechanoidRaid_Label".Translate(), "LetterCausedMechanoidRaid_Description".Translate(), LetterDefOf.ThreatBig, pawn);
+            Find.LetterStack.ReceiveLetter("WTH_Letter_CausedMechanoidRaid_Label".Translate(), "WTH_Letter_CausedMechanoidRaid_Description".Translate(), LetterDefOf.ThreatBig, pawn);
 
         }
 
@@ -132,7 +132,7 @@ namespace WhatTheHack.Recipes
             IntVec3 targetCell = GenRadial.RadialCellsAround(pawn.Position, 7, true).RandomElement();
             Traverse.Create(verb).Field("currentTarget").SetValue(new LocalTargetInfo(targetCell));
             Traverse.Create(verb).Method("TryCastNextBurstShot").GetValue();
-            Find.LetterStack.ReceiveLetter("LetterShotRandomDirection_Label".Translate(), "LetterShotRandomDirection_Description".Translate(), LetterDefOf.ThreatSmall, pawn);
+            Find.LetterStack.ReceiveLetter("WTH_Letter_ShotRandomDirection_Label".Translate(), "WTH_Letter_ShotRandomDirection_Description".Translate(), LetterDefOf.ThreatSmall, pawn);
 
         }
 
@@ -154,7 +154,7 @@ namespace WhatTheHack.Recipes
             {
                 LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_SearchAndDestroy(), pawn.Map, new List<Pawn> { pawn });
             }
-            Find.LetterStack.ReceiveLetter("LetterHealedToStanding_Label".Translate(), "LetterHealedToStanding_Description".Translate(), LetterDefOf.ThreatBig, pawn);
+            Find.LetterStack.ReceiveLetter("WTH_Letter_HealedToStanding_Label".Translate(), "WTH_Letter_HealedToStanding_Description".Translate(), LetterDefOf.ThreatBig, pawn);
 
         }
     }

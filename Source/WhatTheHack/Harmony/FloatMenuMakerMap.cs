@@ -48,7 +48,7 @@ namespace WhatTheHack.Harmony
                         job.count = 1;
                         pawn.jobs.TryTakeOrderedJob(job);
                     };
-                    __result.Add(new FloatMenuOption("Clear hacking table " + targetPawn.Name, action, MenuOptionPriority.Low));
+                    __result.Add(new FloatMenuOption("WTH_Menu_ClearTable".Translate(), action, MenuOptionPriority.Low));
                 }
 
                 if (!targetPawn.IsHacked() && targetPawn.Downed && !targetPawn.OnHackingTable())
@@ -63,11 +63,11 @@ namespace WhatTheHack.Harmony
                             job.count = 1;
                             pawn.jobs.TryTakeOrderedJob(job);
                         };
-                        __result.Add(new FloatMenuOption("Carry to hacking table " + targetPawn.Name, action, MenuOptionPriority.Low));
+                        __result.Add(new FloatMenuOption("WTH_Menu_CarryToTable".Translate(), action, MenuOptionPriority.Low));
                     }                
                     else if (!pawn.OnHackingTable())
                     {
-                        __result.Add(new FloatMenuOption("Carry to hacking table (no free table reachable)" + targetPawn.Name, null, MenuOptionPriority.Low));
+                        __result.Add(new FloatMenuOption("WTH_Menu_CarryToTable_Disabled".Translate(), null, MenuOptionPriority.Low));
                     }
                 }  
 
