@@ -61,14 +61,17 @@
     <Compile Include="Duties\LordToil_SearchAndDestroy.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Harmony\Building_Bed.cs" />
+    <Compile Include="Harmony\FloatMenuUtility.cs" />
     <Compile Include="Harmony\ITab_Pawn_Character.cs" />
     <Compile Include="Harmony\JobDriver_Wait.cs" />
     <Compile Include="Harmony\JobGiver_AIFightEnemy.cs" />
     <Compile Include="Harmony\Pawn.cs" />
+    <Compile Include="Harmony\PawnAttackGizmoUtility.cs" />
     <Compile Include="Harmony\PawnComponentsUtility.cs" />
     <Compile Include="Harmony\Pawn_EquipmentTracker.cs" />
     <Compile Include="Harmony\Pawn_HealthTracker.cs" />
     <Compile Include="Harmony\RestUtility.cs" />
+    <Compile Include="Harmony\Selector.cs" />
     <Compile Include="Harmony\StatWorker.cs" />
     <Compile Include="Harmony\Thing.cs" />
     <Compile Include="Harmony\StrippableUtility.cs" />

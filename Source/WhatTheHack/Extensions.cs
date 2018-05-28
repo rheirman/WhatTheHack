@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using Harmony;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -82,5 +83,19 @@ namespace WhatTheHack
             }
             return false;
         }
+        /*
+        public static bool CanTakeOrder(this Pawn pawn)
+        {
+            bool flagIsCreatureMine = pawn.Faction != null && pawn.Faction.IsPlayer;
+            bool flagIsCreatureDraftable = (pawn.IsHacked());
+
+            if (flagIsCreatureDraftable && flagIsCreatureMine)
+            {
+                return true;
+            }
+            return false;
+        }
+        */
+        
     }
 }

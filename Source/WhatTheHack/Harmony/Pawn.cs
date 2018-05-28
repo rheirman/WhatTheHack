@@ -3,6 +3,8 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
 using System.Text;
 using UnityEngine;
 using Verse;
@@ -34,8 +36,9 @@ namespace WhatTheHack.Harmony
         }
     }
 
-    [HarmonyPatch(typeof(Pawn), "get_IsColonist")]
-    public class Pawn_get_IsColonist
+    
+    [HarmonyPatch(typeof(Pawn), "get_IsColonistPlayerControlled")]
+    public class Pawn_get_IsColonistPlayerControlled
     {
         public static bool Prefix(Pawn __instance, ref bool __result)
         {
@@ -47,45 +50,66 @@ namespace WhatTheHack.Harmony
             return true;
         }
     }
+    
+    /*
+    [HarmonyPatch]
+    public static class Pawn_GetGizmos_Transpiler {
+        static MethodBase TargetMethod()
+        {
+            var predicateClass = typeof(Pawn).GetNestedTypes(AccessTools.all)
+                .FirstOrDefault(t => t.FullName.Contains("c__Iterator2"));
+            return predicateClass.GetMethods(AccessTools.all).FirstOrDefault(m => m.Name.Contains("MoveNext"));
+        }
+        static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var instructionsList = new List<CodeInstruction>(instructions);
+            for (var i = 0; i < instructionsList.Count - 1; i++)
+            {
+                CodeInstruction instruction = instructionsList[i];
+
+                if (instructionsList[i].operand == typeof(Pawn).GetMethod("get_IsColonistPlayerControlled"))
+                {
+                    //yield return new CodeInstruction(OpCodes.Call, typeof(Pawn).GetMethod("CanTakeOrder"));//Injected code     
+                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Extensions), "CanTakeOrder"));//Injected code     
+
+                }
+                else
+                {
+                    yield return instruction;
+                }
+            }
+        }
+    }
+    */
+
 
     [HarmonyPatch(typeof(Pawn), "GetGizmos")]
-    public class Pawn_GetGizmos_Patch
+    public class Pawn_GetGizmos
     {
         public static void Postfix(ref IEnumerable<Gizmo> __result, Pawn __instance)
         {
             List<Gizmo> gizmoList = __result.ToList();
             ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
-            bool flagIsCreatureMine = __instance.Faction != null && __instance.Faction.IsPlayer;
+            bool isCreatureMine = __instance.Faction != null && __instance.Faction.IsPlayer;
 
-            if (store == null || !__instance.IsHacked())
+            if (store == null || !isCreatureMine)
             {
                 return;
             }
-            /*
-            if ((__instance.drafter != null) && flagIsCreatureMine)
+            if (__instance.IsHacked())
             {
-                Command_Toggle draftGizmo = new Command_Toggle
-                {
-                    defaultLabel = "WTH_Draft_Label".Translate(),
-                    defaultDesc = "WTH_Draft_Description".Translate(),
-                    icon = ContentFinder<Texture2D>.Get("ui/commands/Draft", true),
-                    isActive = () => __instance.drafter.Drafted,
-                    toggleAction = () =>
-                    {
-                        __instance.drafter.Drafted = !__instance.drafter.Drafted;
-                    }
-                };
-                gizmoList.Add(draftGizmo);
+                AddHackedPawnGizmos(__instance, ref gizmoList, store);
             }
-            */
 
-            ExtendedPawnData pawnData = store.GetExtendedDataFor(__instance);
-            gizmoList.Add(CreateGizmo_SearchAndDestroy(__instance, pawnData));
-            gizmoList.Add(CreateGizmo_AutoRecharge(__instance, pawnData));
             __result = gizmoList;
         }
 
-
+        private static void AddHackedPawnGizmos(Pawn __instance, ref List<Gizmo> gizmoList, ExtendedDataStorage store)
+        {
+            ExtendedPawnData pawnData = store.GetExtendedDataFor(__instance);
+            gizmoList.Add(CreateGizmo_SearchAndDestroy(__instance, pawnData));
+            gizmoList.Add(CreateGizmo_AutoRecharge(__instance, pawnData));
+        }
 
         private static Gizmo CreateGizmo_SearchAndDestroy(Pawn __instance, ExtendedPawnData pawnData)
         {

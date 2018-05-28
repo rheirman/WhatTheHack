@@ -16,28 +16,16 @@ namespace WhatTheHack.Harmony
 {
     /*This Harmony Postfix makes the creature respond to clicks on the map screen, so it can be controlled
  */
-    /*
+     /*
     [HarmonyPatch(typeof(FloatMenuMakerMap), "CanTakeOrder")]
-    [HarmonyPatch("CanTakeOrder")]
-    public static class FloatMenuMakerMap_CanTakeOrder_Patch
+    public static class FloatMenuMakerMap_CanTakeOrder
     {
-        [HarmonyPostfix]
-        public static void MakePawnControllable(Pawn pawn, ref bool __result)
-
+        public static void Postfix(Pawn pawn, ref bool __result)
         {
-            bool flagIsCreatureMine = pawn.Faction != null && pawn.Faction.IsPlayer;
-            bool flagIsCreatureDraftable = (pawn.IsHacked());
-
-            if (flagIsCreatureDraftable && flagIsCreatureMine)
-            {
-                //Log.Message("You should be controllable now");
-                __result = true;
-            }
-
+            __result = pawn.CanTakeOrder();
         }
     }
     */
-
     [HarmonyPatch(typeof(FloatMenuMakerMap), "ChoicesAtFor")]
     static class FloatMenuMakerMap_ChoicesAtFor
     {

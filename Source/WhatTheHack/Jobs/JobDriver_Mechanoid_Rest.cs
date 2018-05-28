@@ -11,9 +11,16 @@ namespace WhatTheHack.Jobs
 {
     class JobDriver_Mechanoid_Rest : JobDriver
     {
+        protected Building_MechanoidPlatform MechanoidPlatform
+        {
+            get
+            {
+                return (Building_MechanoidPlatform)this.job.GetTarget(TargetIndex.A).Thing;
+            }
+        }
         public override bool TryMakePreToilReservations()
         {
-            return true;
+            return this.pawn.Reserve(this.MechanoidPlatform, this.job, 1, -1, null);
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
@@ -55,15 +62,9 @@ namespace WhatTheHack.Jobs
             toil.defaultCompleteMode = ToilCompleteMode.Never;
             toil.initAction = delegate
             {
-                Log.Message("Starting next toil");
-                if(TargetA.Thing is Building_HackingTable)
-                    pawn.Position = ((Building_Bed) TargetA.Thing).GetSleepingSlotPos(Building_HackingTable.SLOTINDEX);
-                if (TargetA.Thing is Building_HackingTable)
-                    pawn.Position = ((Building_MechanoidPlatform)TargetA.Thing).GetSleepingSlotPos(Building_MechanoidPlatform.SLOTINDEX);
+                pawn.Position = MechanoidPlatform.GetSleepingSlotPos(Building_MechanoidPlatform.SLOTINDEX);
                 pawn.CurJob.SetTarget(TargetIndex.C, new LocalTargetInfo(new IntVec3(pawn.Position.x, pawn.Position.y, pawn.Position.z - 1)));
                 this.rotateToFace = TargetIndex.C;
-
-
             };
             yield return toil;
 
