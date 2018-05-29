@@ -30,6 +30,7 @@ namespace WhatTheHack.Harmony
 
                 if (powerNeed != null && powerNeed.CurCategory >= PowerCategory.LowPower && pawnData.shouldAutoRecharge && pawn.IsActivated())
                 {
+                    pawn.drafter.Drafted = false;
                     pawnData.isActive = false;
                 }
             }
