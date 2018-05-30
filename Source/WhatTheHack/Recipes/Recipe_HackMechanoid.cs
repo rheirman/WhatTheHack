@@ -31,6 +31,10 @@ namespace WhatTheHack.Recipes
                 //Let random bad events happen when hacking fails
                 if (base.CheckSurgeryFail(billDoer, pawn, ingredients, part, bill))
                 {
+                    if (pawn.Dead)
+                    {
+                        return;
+                    }
                     Random r = new Random(DateTime.Now.Millisecond);
                     int randInt = r.Next(1, 100);
                     //Applying syntactic sugar. Short, but not very readable.

@@ -23,6 +23,17 @@ namespace WhatTheHack
                 return false;
             }
         }
+        public static bool HasReplacedAI(this Pawn pawn)
+        {
+            if (pawn.health != null && (pawn.health.hediffSet.HasHediff(WTH_DefOf.ReplacedAI)))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         /*
         public static Building_HackingTable HackingTable(this Pawn pawn)
         {

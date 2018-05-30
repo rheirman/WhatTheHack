@@ -41,7 +41,7 @@ namespace WhatTheHack.Harmony
     {
         public static bool Prefix(Pawn __instance, ref bool __result)
         {
-            if (__instance.IsHacked())
+            if (__instance.HasReplacedAI())
             {
                 __result = true;
                 return false;

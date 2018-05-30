@@ -5,7 +5,6 @@
     <description>Facility for hacking and repairing mechanoids</description>
     <thingClass>WhatTheHack.Buildings.Building_HackingTable</thingClass>
     <size>(5,2)</size>
-    <costStuffCount>150</costStuffCount>
     <costList>
       <Steel>100</Steel>
       <Component>10</Component>
@@ -26,7 +25,7 @@
     <passability>PassThroughOnly</passability>
     <pathCost>70</pathCost>
     <statBases>
-      <MaxHitPoints>350</MaxHitPoints>
+      <MaxHitPoints>450</MaxHitPoints>
       <WorkToBuild>5000</WorkToBuild>
       <Flammability>1.0</Flammability>
     </statBases>
@@ -79,10 +78,10 @@
     <useHitPoints>True</useHitPoints>
     <statBases>
       <WorkToBuild>1000</WorkToBuild>
-      <MaxHitPoints>150</MaxHitPoints>
+      <MaxHitPoints>350</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
-    <size>(3,2)</size>
+    <size>(3,4)</size>
     <passability>PassThroughOnly</passability>
     <pathCost>70</pathCost>
     <hasInteractionCell>True</hasInteractionCell>

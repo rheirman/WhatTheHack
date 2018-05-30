@@ -41,8 +41,8 @@
 		<workerClass>WhatTheHack.Recipes.Recipe_ImplantAI</workerClass>
 		<jobString>Hacking mechanoid</jobString>
 		<workAmount>2000</workAmount>
-		<surgerySuccessChanceFactor>1.0</surgerySuccessChanceFactor>
-		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<surgerySuccessChanceFactor>1.6</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
 		<skillRequirements>
 			<Crafting>8</Crafting>
 		</skillRequirements>
