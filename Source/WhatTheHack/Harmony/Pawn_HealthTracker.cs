@@ -54,7 +54,7 @@ namespace WhatTheHack.Harmony
                     {
                         MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_HealingCross);
                     }
-                    platform.refuelableComp.ConsumeFuel(0.004f);//TODO no magic number
+                    platform.refuelableComp.ConsumeFuel(0.002f);//TODO no magic number
 
                 }           
             }

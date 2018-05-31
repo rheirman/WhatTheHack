@@ -19,8 +19,13 @@ namespace WhatTheHack.Harmony
     {
         static void Postfix(ref Pawn_JobTracker __instance, ref ThinkResult __result)
         {
-            
+
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
+
+            if (!pawn.RaceProps.IsMechanoid)
+            {
+                return;
+            }
             ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
             if (store != null)
             {
@@ -35,14 +40,14 @@ namespace WhatTheHack.Harmony
                 }
             }
 
-            if (pawn.IsHacked() && pawn.OnMechanoidPlatform())
+            if (pawn.IsHacked() && pawn.OnMechanoidPlatform() && pawn.CanReserve(pawn.CurrentBed()))
             {
                 Job job = new Job(WTH_DefOf.Mechanoid_Rest, pawn.CurrentBed());
                 job.count = 1;
                 __result = new ThinkResult(job, __result.SourceNode, __result.Tag, false);
             }
 
-            if (!pawn.RaceProps.IsMechanoid || pawn.Downed)
+            if (pawn.Downed)
             {
                 return;
             }
@@ -55,7 +60,7 @@ namespace WhatTheHack.Harmony
             if (pawn.IsHacked() && !pawn.IsActivated() && !pawn.OnMechanoidPlatform())
             { 
                 Building_MechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(pawn, pawn);
-                if(closestAvailablePlatform != null)
+                if(closestAvailablePlatform != null && pawn.CanReserve(closestAvailablePlatform))
                 {
                     Job job = new Job(WTH_DefOf.Mechanoid_Rest, closestAvailablePlatform);
                     __result = new ThinkResult(job, __result.SourceNode, __result.Tag, false);

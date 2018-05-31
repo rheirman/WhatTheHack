@@ -146,6 +146,10 @@ namespace WhatTheHack.Harmony
                         {
                             LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_SearchAndDestroy(), __instance.Map, new List<Pawn> { __instance });
                         }
+                        else
+                        {
+                            Log.Message("lord was null!");
+                        }
                     }
                     else
                     {

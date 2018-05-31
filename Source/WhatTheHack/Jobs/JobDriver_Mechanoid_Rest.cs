@@ -44,6 +44,7 @@ namespace WhatTheHack.Jobs
             });
             goToPlatformToil.defaultCompleteMode = ToilCompleteMode.PatherArrival;
             */
+            
             Toil goToPlatform = Toils_Bed.GotoBed(TargetIndex.A);
             yield return goToPlatform;
 
@@ -51,9 +52,9 @@ namespace WhatTheHack.Jobs
             layDownToil.defaultCompleteMode = ToilCompleteMode.Never;
             layDownToil.AddPreTickAction(delegate
             {
+                pawn.ClearAllReservations();
                 if (!pawn.health.hediffSet.HasNaturallyHealingInjury())
                 {
-                    Log.Message("ready for next toil!");
                     ReadyForNextToil();
                 }
             });

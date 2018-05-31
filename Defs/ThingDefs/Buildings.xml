@@ -81,7 +81,7 @@
       <MaxHitPoints>350</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
-    <size>(3,4)</size>
+    <size>(3,3)</size>
     <passability>PassThroughOnly</passability>
     <pathCost>70</pathCost>
     <hasInteractionCell>True</hasInteractionCell>
