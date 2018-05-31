@@ -13,8 +13,14 @@ namespace WhatTheHack.Buildings
     {
         //private Pawn occupiedByInt = null;
         //public Pawn OccupiedBy { get => occupiedByInt;}
+        public CompPowerTrader powerComp;
+        public const int SLOTINDEX = 2;
 
-        public const int SLOTINDEX = 2; 
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            this.powerComp = base.GetComp<CompPowerTrader>();
+        }
 
         public static bool TryAddPawnForModification(Pawn pawn, RecipeDef recipeDef)
         {
@@ -38,6 +44,10 @@ namespace WhatTheHack.Buildings
                 return true;
             }
             return false;
+        }
+        public bool HasPowerNow()
+        {
+            return this.powerComp != null && this.powerComp.PowerOn;
         }
 
     }
