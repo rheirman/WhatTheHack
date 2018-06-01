@@ -35,4 +35,9 @@
 	<WTH_Gizmo_AutoRecharge_Label>Auto recharge</WTH_Gizmo_AutoRecharge_Label>
 	<WTH_Gizmo_AutoRecharge_Description>With this mode enabled, mechanoids automatically go back to a mechanoid platform when they have low power.</WTH_Gizmo_AutoRecharge_Description>
 	
+	<WTH_Alert_NotEnoughPlatforms_Label>Not enough mechanoid platforms</WTH_Alert_NotEnoughPlatforms_Label>
+	<WTH_Alert_NotEnoughPlatforms_Description>You have more hacked mechanoids than mechanoid platforms in your main base. Make sure to make more mechanoid platforms</WTH_Alert_NotEnoughPlatforms_Description>
+	<WTH_Alert_Power_Low_Label>Mechanoids low on power</WTH_Alert_Power_Low_Label>
+	<WTH_Alert_Power_Low_Description>The following mechanoids are low on power:{0} deactivate them so they go back to a mechanoid platform</WTH_Alert_Power_Low_Description>
+
 </LanguageData>

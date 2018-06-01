@@ -54,6 +54,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alerts\Alert_NotEnoughPlatforms.cs" />
+    <Compile Include="Alerts\Alert_PowerLow.cs" />
     <Compile Include="Base.cs" />
     <Compile Include="Buildings\Building_HackingTable.cs" />
     <Compile Include="Buildings\Building_MechanoidPlatform.cs" />
