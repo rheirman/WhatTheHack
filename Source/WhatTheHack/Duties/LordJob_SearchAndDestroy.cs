@@ -7,7 +7,7 @@ using Verse.AI.Group;
 
 namespace WhatTheHack.Duties
 {
-    class LordJob_SearchAndDestroy : LordJob
+    public class LordJob_SearchAndDestroy : LordJob
     {
         public override StateGraph CreateGraph()
         {
