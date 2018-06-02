@@ -1,4 +1,5 @@
 ﻿using Harmony;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,18 +13,16 @@ namespace WhatTheHack.Harmony
     {
         static void Postfix(Thing __instance, ref IEnumerable<Thing> __result, float efficiency)
         {
-            Log.Message("callign butcher products postfix");
-
             if (__instance is Pawn && ((Pawn)__instance).RaceProps.IsMechanoid)
             {
                 Pawn pawn = __instance as Pawn;
                 int partsCount = GenMath.RoundRandom(pawn.kindDef.combatPower / 10 * efficiency);
-                Log.Message("spawning " + partsCount + "mechanoid parts");
-                __result = GenerateMechanoidParts(__result, partsCount);
+
+                __result = GenerateExtraButcherProducts(__result, pawn, partsCount);
             }
         }
 
-        private static IEnumerable<Thing> GenerateMechanoidParts(IEnumerable<Thing> things, int partsCount)
+        private static IEnumerable<Thing> GenerateExtraButcherProducts(IEnumerable<Thing> things, Pawn pawn, int partsCount)
         {
             foreach( Thing thing in things){
                 yield return thing;
@@ -33,6 +32,11 @@ namespace WhatTheHack.Harmony
                 Thing parts = ThingMaker.MakeThing(WTH_DefOf.MechanoidParts, null);
                 parts.stackCount = partsCount;
                 yield return parts;
+            }
+            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.ReplacedAI))
+            {
+                Thing AICore = ThingMaker.MakeThing(ThingDefOf.AIPersonaCore);
+                yield return AICore;
             }
         }
     }
