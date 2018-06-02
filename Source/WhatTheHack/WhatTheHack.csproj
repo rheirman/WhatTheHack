@@ -62,6 +62,7 @@
     <Compile Include="Duties\LordJob_SearchAndDestroy.cs" />
     <Compile Include="Duties\LordToil_SearchAndDestroy.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="Harmony\Bill_Medical.cs" />
     <Compile Include="Harmony\Building_Bed.cs" />
     <Compile Include="Harmony\ITab_Pawn_Character.cs" />
     <Compile Include="Harmony\Pawn.cs" />
