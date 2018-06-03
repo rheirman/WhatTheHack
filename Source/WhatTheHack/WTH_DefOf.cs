@@ -30,6 +30,7 @@ namespace WhatTheHack
         public static ThingDef HackingTable;
         public static ThingDef MechanoidPlatform;
         public static ThingDef MechanoidParts;
+        public static ThingDef MechanoidChip;
         public static ThingDef Mote_Charging;
     }
 }

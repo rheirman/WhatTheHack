@@ -16,22 +16,30 @@ namespace WhatTheHack.Harmony
             if (__instance is Pawn && ((Pawn)__instance).RaceProps.IsMechanoid)
             {
                 Pawn pawn = __instance as Pawn;
-                int partsCount = GenMath.RoundRandom(pawn.kindDef.combatPower / 10 * efficiency);
-
-                __result = GenerateExtraButcherProducts(__result, pawn, partsCount);
+                __result = GenerateExtraButcherProducts(__result, pawn, efficiency);
             }
         }
 
-        private static IEnumerable<Thing> GenerateExtraButcherProducts(IEnumerable<Thing> things, Pawn pawn, int partsCount)
+        private static IEnumerable<Thing> GenerateExtraButcherProducts(IEnumerable<Thing> things, Pawn pawn, float efficiency)
         {
             foreach( Thing thing in things){
                 yield return thing;
             }
+            Random random = new Random(DateTime.Now.Millisecond);
+
+            int partsCount = random.Next(0, GenMath.RoundRandom(pawn.kindDef.combatPower * 0.15f * efficiency)); //TODO: no magic number
             if (partsCount > 0)
             {
                 Thing parts = ThingMaker.MakeThing(WTH_DefOf.MechanoidParts, null);
                 parts.stackCount = partsCount;
                 yield return parts;
+            }
+            int chipCount = random.Next(0, GenMath.RoundRandom(pawn.kindDef.combatPower * 0.015f * efficiency));
+            if(random.Next(0,100) <= 100 && chipCount > 0) //TODO: no magic number
+            {
+                Thing chips = ThingMaker.MakeThing(WTH_DefOf.MechanoidChip, null);
+                chips.stackCount = chipCount;
+                yield return chips;
             }
             if (pawn.health.hediffSet.HasHediff(WTH_DefOf.ReplacedAI))
             {

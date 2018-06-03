@@ -2,7 +2,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>MechanoidParts</defName>
     <label>mechanoid parts</label>
-    <description>Parts scrapped from destroyed mechanoids</description>
+    <description>Parts scrapped from destroyed mechanoids. Needed for repairing and hacking mechanoids.</description>
     <graphicData>
       <texPath>Things/MechanoidParts</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -13,6 +13,29 @@
     <statBases>
       <MaxHitPoints>70</MaxHitPoints>
       <MarketValue>4</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>MechanoidChip</defName>
+    <label>advanced mechanoid chip</label>
+    <description>Advanced chips scavenged from downed or destroyed mechanoids. Needed for the more complicated hacking operations.</description>
+    <graphicData>
+      <texPath>Things/AIChip</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>50</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>25</MarketValue>
       <Mass>0.6</Mass>
       <Flammability>1.0</Flammability>
 	  <DeteriorationRate>2.0</DeteriorationRate>
