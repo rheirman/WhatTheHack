@@ -17,11 +17,15 @@ namespace WhatTheHack.Storage
         public bool isHacked = false;
         public bool isActive = false;
         public bool shouldAutoRecharge = true;
+
+        public Pawn remoteControlLink = null;
+
         public void ExposeData()
         {
             Scribe_Values.Look(ref isHacked, "isHacked", false);
             Scribe_Values.Look(ref isActive, "isActive", false);
             Scribe_Values.Look(ref shouldAutoRecharge, "shouldAutoRecharge", true);
+            Scribe_References.Look(ref remoteControlLink, "remoteControlLink");
         }
     }
 }

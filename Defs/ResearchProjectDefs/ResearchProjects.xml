@@ -6,7 +6,7 @@
 	<tab>WTH_ResearchTab</tab>
 	<techLevel>Spacer</techLevel>
 	<description>Research the basics of hacking. Gives access to the hacking table and the mechanoid platform. The hacking table can be used to hack into the targeting system of mechanoids, making sure they attack your enemy instead of you when activated. The mechanoid platform is needed as a maintenance and as a power station for mechanoids. </description>
-	<baseCost>1200</baseCost>
+	<baseCost>1000</baseCost>
 	<prerequisites>
 	  <li>MicroelectronicsBasics</li>
 	</prerequisites>
@@ -14,6 +14,20 @@
 		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 
+	<ResearchProjectDef>
+	<defName>WTH_HackingRemoteControl</defName>
+	<label>remote mechanoid control</label>
+	<tab>WTH_ResearchTab</tab>
+	<techLevel>Spacer</techLevel>
+	<description>Research how to hack the locomotion system of mechanoids and how to control hacked them with colonists using a remote control.</description>
+	<baseCost>1600</baseCost>
+	<prerequisites>
+	  <li>WTH_HackingBasics</li>
+	</prerequisites>
+		<researchViewX>1</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+	
 	<ResearchProjectDef>
 	<defName>WTH_HackingAdvanced</defName>
 	<label>AI implanting</label>
@@ -25,7 +39,7 @@
 	  <li>MicroelectronicsBasics</li>
 	  <li>WTH_HackingBasics</li>
 	</prerequisites>
-	<researchViewX>1</researchViewX>
+	<researchViewX>2</researchViewX>
 	<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 </Defs>

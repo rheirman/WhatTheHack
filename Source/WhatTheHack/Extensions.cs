@@ -34,6 +34,24 @@ namespace WhatTheHack
                 return false;
             }
         }
+        public static bool HasHackedLocomotion(this Pawn pawn)
+        {
+            if (pawn.health != null && (pawn.health.hediffSet.HasHediff(WTH_DefOf.LocomotionHacked)))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static ExtendedPawnData RemoteControlLink(this Pawn pawn)
+        {
+            ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+            Pawn linkt = pawnData.remoteControlLink;
+            return pawnData;
+        }
         /*
         public static Building_HackingTable HackingTable(this Pawn pawn)
         {

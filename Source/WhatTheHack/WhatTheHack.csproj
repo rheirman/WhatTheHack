@@ -56,10 +56,13 @@
   <ItemGroup>
     <Compile Include="Alerts\Alert_NotEnoughPlatforms.cs" />
     <Compile Include="Alerts\Alert_PowerLow.cs" />
+    <Compile Include="Apparel\RemoteController.cs" />
     <Compile Include="Base.cs" />
     <Compile Include="Buildings\Building_HackingTable.cs" />
     <Compile Include="Buildings\Building_MechanoidPlatform.cs" />
+    <Compile Include="Duties\LordJob_ControlMechanoid.cs" />
     <Compile Include="Duties\LordJob_SearchAndDestroy.cs" />
+    <Compile Include="Duties\LordToil_ControlMechanoid.cs" />
     <Compile Include="Duties\LordToil_SearchAndDestroy.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Harmony\Bill_Medical.cs" />
@@ -78,7 +81,9 @@
     <Compile Include="Harmony\Thing.cs" />
     <Compile Include="Harmony\StrippableUtility.cs" />
     <Compile Include="Jobs\JobDriver_ClearHackingTable.cs" />
+    <Compile Include="Jobs\JobDriver_ControlMechanoid.cs" />
     <Compile Include="Jobs\JobDriver_Mechanoid_Rest.cs" />
+    <Compile Include="Jobs\JobGiver_ControlMechanoid.cs" />
     <Compile Include="Needs\Need_Power.cs" />
     <Compile Include="Needs\PowerCategory.cs" />
     <Compile Include="Recipes\Recipe_ImplantAI.cs" />

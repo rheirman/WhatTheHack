@@ -12,7 +12,7 @@ using WhatTheHack.Duties;
 
 namespace WhatTheHack.Recipes
 {
-    class Recipe_ImplantAI : Recipe_Surgery
+    class Recipe_ModifyMechanoid : Recipe_Surgery
     {
 
         public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)

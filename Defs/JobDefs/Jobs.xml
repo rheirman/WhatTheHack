@@ -17,4 +17,10 @@
     <reportString>Linked to mechanoid platform</reportString>
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
+  <JobDef>
+    <defName>ControlMechanoid</defName>
+    <driverClass>WhatTheHack.Jobs.JobDriver_ControlMechanoid</driverClass>
+    <reportString>Controlling mechanoid</reportString>
+    <casualInterruptible>true</casualInterruptible>
+  </JobDef>
  </Defs>

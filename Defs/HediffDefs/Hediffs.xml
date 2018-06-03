@@ -15,6 +15,13 @@
 	  </HediffDef>
 	  
 	  <HediffDef>
+		<defName>LocomotionHacked</defName>
+		<label>locomotion hacked</label>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+	  </HediffDef> 
+	  
+	  <HediffDef>
 		<defName>TargetingHackedPoorly</defName>
 		<label>targeting hacked poorly</label>
 		<defaultLabelColor>(1.0, 0.5, 0.1)</defaultLabelColor>
