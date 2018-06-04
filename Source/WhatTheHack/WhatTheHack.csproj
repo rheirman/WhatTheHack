@@ -82,8 +82,10 @@
     <Compile Include="Harmony\StrippableUtility.cs" />
     <Compile Include="Jobs\JobDriver_ClearHackingTable.cs" />
     <Compile Include="Jobs\JobDriver_ControlMechanoid.cs" />
+    <Compile Include="Jobs\JobDriver_ControlMechanoid_Goto.cs" />
     <Compile Include="Jobs\JobDriver_Mechanoid_Rest.cs" />
     <Compile Include="Jobs\JobGiver_ControlMechanoid.cs" />
+    <Compile Include="Jobs\JobGiver_ControlMechanoid_Follow.cs" />
     <Compile Include="Needs\Need_Power.cs" />
     <Compile Include="Needs\PowerCategory.cs" />
     <Compile Include="Recipes\Recipe_ImplantAI.cs" />

@@ -18,7 +18,7 @@
 		<alwaysShowWeapon>false</alwaysShowWeapon>
 		<thinkNode Class="ThinkNode_Priority">
 		  <subNodes>
-		  	<li Class="JobGiver_AIFollowEscortee"></li>
+		  	<li Class="WhatTheHack.Jobs.JobGiver_ControlMechanoid_Follow"></li>
 			<li Class="WhatTheHack.Jobs.JobGiver_ControlMechanoid"></li>
 		  </subNodes>
 		</thinkNode>

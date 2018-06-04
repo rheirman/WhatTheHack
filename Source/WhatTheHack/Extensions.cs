@@ -23,6 +23,10 @@ namespace WhatTheHack
                 return false;
             }
         }
+        public static bool UnableToControl(this Pawn pawn)
+        {
+            return  pawn.DestroyedOrNull() || pawn.Downed || pawn.InMentalState || pawn.IsBurning() || pawn.RemoteControlLink() == null;
+        }
         public static bool HasReplacedAI(this Pawn pawn)
         {
             if (pawn.health != null && (pawn.health.hediffSet.HasHediff(WTH_DefOf.ReplacedAI)))
@@ -46,11 +50,15 @@ namespace WhatTheHack
             }
         }
 
-        public static ExtendedPawnData RemoteControlLink(this Pawn pawn)
+        public static Pawn RemoteControlLink(this Pawn pawn)
         {
-            ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
-            Pawn linkt = pawnData.remoteControlLink;
-            return pawnData;
+            ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
+            if(store != null)
+            {
+                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+                return pawnData.remoteControlLink;
+            }
+            return null;
         }
         /*
         public static Building_HackingTable HackingTable(this Pawn pawn)
@@ -112,19 +120,6 @@ namespace WhatTheHack
             }
             return false;
         }
-        /*
-        public static bool CanTakeOrder(this Pawn pawn)
-        {
-            bool flagIsCreatureMine = pawn.Faction != null && pawn.Faction.IsPlayer;
-            bool flagIsCreatureDraftable = (pawn.IsHacked());
-
-            if (flagIsCreatureDraftable && flagIsCreatureMine)
-            {
-                return true;
-            }
-            return false;
-        }
-        */
         
     }
 }

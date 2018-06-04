@@ -82,14 +82,6 @@ namespace WhatTheHack.Harmony
                 {
                     LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_SearchAndDestroy(), pawn.Map, new List<Pawn> { pawn });
                 }
-                else
-                {
-                    Log.Message("lord was not null");
-                }
-            }
-            else
-            {
-                Log.Message("mechnoid stays hacked");
             }
         }
     }

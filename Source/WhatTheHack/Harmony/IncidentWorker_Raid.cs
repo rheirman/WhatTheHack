@@ -17,7 +17,6 @@ namespace WhatTheHack.Harmony
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var instructionsList = new List<CodeInstruction>(instructions);
-            Log.Message("added IncidentWorker_Raid_TryExecuteWorker transpiler");
             for (var i = 0; i < instructionsList.Count; i++)
             {
                 CodeInstruction instruction = instructionsList[i];

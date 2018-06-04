@@ -41,7 +41,7 @@ namespace WhatTheHack.Harmony
     {
         public static bool Prefix(Pawn __instance, ref bool __result)
         {
-            if (__instance.HasReplacedAI())
+            if (__instance.HasReplacedAI() || (__instance.RaceProps.IsMechanoid && __instance.RemoteControlLink() != null && !__instance.RemoteControlLink().Drafted))
             {
                 __result = true;
                 return false;
@@ -145,10 +145,6 @@ namespace WhatTheHack.Harmony
                         if (__instance.GetLord() == null || __instance.GetLord().LordJob == null)
                         {
                             LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_SearchAndDestroy(), __instance.Map, new List<Pawn> { __instance });
-                        }
-                        else
-                        {
-                            Log.Message("lord was null!");
                         }
                     }
                     else

@@ -43,7 +43,6 @@ namespace WhatTheHack.Harmony
                 if (gizmo is Command_Toggle)
                 {
                     Command_Toggle toggleCommand = gizmo as Command_Toggle;
-                    Log.Message(toggleCommand.defaultLabel);
                     if (toggleCommand.defaultLabel == "CommandDraftLabel".Translate())
                     {
                         DisableCommandIfMechanoidPowerLow(__instance, toggleCommand);

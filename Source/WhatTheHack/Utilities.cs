@@ -47,7 +47,18 @@ namespace WhatTheHack
                 return false;
             });
         }
-
+        public static float QuickDistance(IntVec3 a, IntVec3 b)
+        {
+            float arg_1D_0 = (float)(a.x - b.x);
+            float num = (float)(a.z - b.z);
+            return (float)Math.Sqrt(arg_1D_0 * arg_1D_0 + num * num);
+        }
+        public static float QuickDistanceSquared(IntVec3 a, IntVec3 b)
+        {
+            float arg_1D_0 = (float)(a.x - b.x);
+            float num = (float)(a.z - b.z);
+            return arg_1D_0 * arg_1D_0 + num * num;
+        }
     }
 
 }

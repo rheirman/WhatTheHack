@@ -25,5 +25,6 @@ namespace WhatTheHack.Duties
                 this.lord.ownedPawns[i].mindState.duty = new PawnDuty(WTH_DefOf.ControlMechanoidDuty);
             }
         }
+        //public override bool en
     }
 }

@@ -21,7 +21,7 @@ namespace WhatTheHack.Duties
             endTransition.AddTrigger(new Trigger_Custom(delegate
             {
                 Pawn pawn = this.lord.ownedPawns[0];
-                return (!pawn.IsActivated() || pawn.RemoteControlLink() == null);
+                return (pawn.RemoteControlLink() == null);
             }));
             return graph;
         }

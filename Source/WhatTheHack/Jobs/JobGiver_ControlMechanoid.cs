@@ -11,7 +11,7 @@ namespace WhatTheHack.Jobs
     {
         protected override Job TryGiveJob(Pawn pawn)
         {
-            if(pawn.RemoteControlLink() != null)
+            if(pawn.RemoteControlLink() != null && Utilities.QuickDistance(pawn.Position, pawn.RemoteControlLink().Position) <= 30)
             {
                 Job job = new Job(WTH_DefOf.ControlMechanoid);
                 job.count = 1;

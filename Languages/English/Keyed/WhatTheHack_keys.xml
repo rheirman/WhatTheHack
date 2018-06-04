@@ -35,6 +35,11 @@
 	<WTH_Gizmo_AutoRecharge_Label>Auto recharge</WTH_Gizmo_AutoRecharge_Label>
 	<WTH_Gizmo_AutoRecharge_Description>With this mode enabled, mechanoids automatically go back to a mechanoid platform when they have low power.</WTH_Gizmo_AutoRecharge_Description>
 	
+	<WTH_Gizmo_RemoteControlActivate_Label>Activate remote</WTH_Gizmo_RemoteControlActivate_Label>
+	<WTH_Gizmo_RemoteControlActivate_Description>Use the remote control device to control a mechanoid with a hacked locomotion system directly</WTH_Gizmo_RemoteControlActivate_Description>
+	<WTH_Gizmo_RemoteControlDeactivate_Label>Deactivate remote</WTH_Gizmo_RemoteControlDeactivate_Label>
+	<WTH_Gizmo_RemoteControlDeactivate_Description>Deactivates the remote control device, giving control back to the mechanoid</WTH_Gizmo_RemoteControlDeactivate_Description>
+	
 	<WTH_Alert_NotEnoughPlatforms_Label>Not enough mechanoid platforms</WTH_Alert_NotEnoughPlatforms_Label>
 	<WTH_Alert_NotEnoughPlatforms_Description>You have more hacked mechanoids than mechanoid platforms in your main base. Make sure to make more mechanoid platforms</WTH_Alert_NotEnoughPlatforms_Description>
 	<WTH_Alert_Power_Low_Label>Mechanoids low on power</WTH_Alert_Power_Low_Label>

@@ -27,6 +27,7 @@ namespace WhatTheHack
         public static JobDef ClearHackingTable;
         public static JobDef Mechanoid_Rest;
         public static JobDef ControlMechanoid;
+        public static JobDef ControlMechanoid_Goto;
 
         public static NeedDef Mechanoid_Power;
 
