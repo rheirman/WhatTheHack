@@ -25,6 +25,10 @@ namespace WhatTheHack.Jobs
             Toil toil = new Toil();
             toil.defaultCompleteMode = ToilCompleteMode.Never;
             toil.FailOn(() => pawn.UnableToControl() || this.Mech.DestroyedOrNull() || this.Mech.Downed);
+            toil.initAction = new Action(delegate
+            {
+                pawn.pather.StopDead();
+            });
             toil.tickAction = new Action(delegate {
 
 

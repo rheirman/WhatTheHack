@@ -54,7 +54,6 @@ namespace WhatTheHack.Jobs
             {
                 job.locomotionUrgency = pawn.mindState.duty.locomotion;
             }
-            Log.Message("returning follow job");
             return job;
         }
     }
