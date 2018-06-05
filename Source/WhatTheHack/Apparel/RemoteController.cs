@@ -70,6 +70,8 @@ namespace WhatTheHack
                     mechData.isActive = true;
                     mech.drafter.Drafted = true;
                     pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                    Find.Selector.ClearSelection();
+                    Find.Selector.Select(mech);
                     if (pawn.GetLord() == null || pawn.GetLord().LordJob == null)
                     {
                         LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_ControlMechanoid(), pawn.Map, new List<Pawn> { pawn });

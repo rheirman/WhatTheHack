@@ -21,12 +21,12 @@
     <defName>ControlMechanoid</defName>
     <driverClass>WhatTheHack.Jobs.JobDriver_ControlMechanoid</driverClass>
     <reportString>Controlling mechanoid</reportString>
-    <casualInterruptible>true</casualInterruptible>
+    <casualInterruptible>false</casualInterruptible>
   </JobDef>
   <JobDef>
     <defName>ControlMechanoid_Goto</defName>
     <driverClass>WhatTheHack.Jobs.JobDriver_ControlMechanoid_Goto</driverClass>
     <reportString>Controlling mechanoid (moving)</reportString>
-    <casualInterruptible>true</casualInterruptible>
+    <casualInterruptible>false</casualInterruptible>
   </JobDef>
  </Defs>
