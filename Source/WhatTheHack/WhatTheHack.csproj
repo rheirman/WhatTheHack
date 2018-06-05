@@ -77,6 +77,7 @@
     <Compile Include="Harmony\Pawn_HealthTracker.cs" />
     <Compile Include="Harmony\RestUtility.cs" />
     <Compile Include="Harmony\Selector.cs" />
+    <Compile Include="Harmony\SelfDefenceUtility.cs" />
     <Compile Include="Harmony\StatWorker.cs" />
     <Compile Include="Harmony\Thing.cs" />
     <Compile Include="Harmony\StrippableUtility.cs" />
