@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
@@ -56,7 +57,7 @@ namespace WhatTheHack
             command_Target.defaultDesc = "WTH_Gizmo_RemoteControlActivate_Description".Translate();
             command_Target.targetingParams = GetTargetingParametersForHacking();
             command_Target.hotKey = KeyBindingDefOf.Misc5;
-            command_Target.icon = TexCommand.Install;
+            command_Target.icon = ContentFinder<Texture2D>.Get(("Things/MechControllerBelt"));
             command_Target.action = delegate (Thing target)
             {
                 if(target is Pawn)

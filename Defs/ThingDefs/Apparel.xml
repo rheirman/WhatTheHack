@@ -1,11 +1,11 @@
 <Defs> 
  <ThingDef ParentName="ApparelBase">
-    <defName>Apparel_RemoteControl</defName>
-	<label>remote mechanoid control</label>
-    <description>A remote control device that can be used to controlled mechanoids that have their locomotion system hacked</description>
+    <defName>WTH_Apparel_MechControllerBelt</defName>
+	<label>mechanoid controller belt</label>
+    <description>A remote control belt that can be used to control mechanoids that have their locomotion system hacked</description>
 	<thingClass>WhatTheHack.RemoteController</thingClass>
 	<graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath>
+      <texPath>Things/MechControllerBelt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <tickerType>Normal</tickerType>

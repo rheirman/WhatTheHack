@@ -26,7 +26,7 @@ namespace WhatTheHack.Jobs
             Pawn followee = pawn.RemoteControlLink();
             if (followee == null)
             {
-                Log.Error(base.GetType() + "has null followee.");
+                Log.Warning(base.GetType() + "has null followee.");
                 return null;
             }
             if (!GenAI.CanInteractPawn(pawn, followee))
@@ -34,7 +34,7 @@ namespace WhatTheHack.Jobs
                 return null;
             }
             float radius = 30f;//TODO: no magic number
-            if ((!followee.pather.Moving || (float)followee.pather.Destination.Cell.DistanceToSquared(pawn.Position) <= radius * radius) && (followee.GetRoom(RegionType.Set_Passable) == pawn.GetRoom(RegionType.Set_Passable) || GenSight.LineOfSight(pawn.Position, followee.Position, followee.Map, false, null, 0, 0)) && (float)followee.Position.DistanceToSquared(pawn.Position) <= radius * radius)
+            if ((!followee.pather.Moving || (float)followee.pather.Destination.Cell.DistanceToSquared(pawn.Position) <= radius * radius) && (float)followee.Position.DistanceToSquared(pawn.Position) <= radius * radius)
             {
                 return null;
             }

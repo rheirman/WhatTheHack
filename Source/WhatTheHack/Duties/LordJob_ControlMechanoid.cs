@@ -16,13 +16,15 @@ namespace WhatTheHack.Duties
             LordToil_ControlMechanoid sdToil = new LordToil_ControlMechanoid();
             graph.AddToil(sdToil);
             LordToil_End endToil = new LordToil_End();
-            graph.AddToil(endToil);
             Transition endTransition = new Transition(sdToil, endToil);
             endTransition.AddTrigger(new Trigger_Custom(delegate
             {
                 Pawn pawn = this.lord.ownedPawns[0];
                 return (pawn.RemoteControlLink() == null);
             }));
+            graph.AddToil(endToil);
+            graph.AddTransition(endTransition);
+
             return graph;
         }
 
