@@ -91,7 +91,7 @@
 		<description>Hacks the locomotion system of the mechanoid and adds a receiver to the mechanoid to allow the it to be operated by a colonist using a remote control device</description>
 		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
 		<jobString>Hacking mechanoid</jobString>
-		<workAmount>2000</workAmount>
+		<workAmount>3000</workAmount>
 		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
 		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
 		<skillRequirements>
