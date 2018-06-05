@@ -41,7 +41,10 @@ namespace WhatTheHack.Harmony
     {
         public static bool Prefix(Pawn __instance, ref bool __result)
         {
-            if (__instance.HasReplacedAI() || (__instance.RaceProps.IsMechanoid && __instance.RemoteControlLink() != null && !__instance.RemoteControlLink().Drafted))
+            if (__instance.HasReplacedAI() || (__instance.RaceProps.IsMechanoid &&
+                __instance.RemoteControlLink() != null &&
+                !__instance.RemoteControlLink().Drafted &&
+                Utilities.QuickDistanceSquared(__instance.RemoteControlLink().Position, __instance.Position) <= 30 * 30))
             {
                 __result = true;
                 return false;

@@ -33,7 +33,7 @@ namespace WhatTheHack.Alerts
         }
         private bool NeedPlatforms(Map map)
         {
-            List<Pawn> hackedMechanoids = map.mapPawns.AllPawnsSpawned.FindAll((Pawn p) => p.IsHacked());
+            List<Pawn> hackedMechanoids = map.mapPawns.AllPawnsSpawned.FindAll((Pawn p) => p.IsHacked() && p.Faction == Faction.OfPlayer);
             if (!map.IsPlayerHome)
             {
                 return false;
