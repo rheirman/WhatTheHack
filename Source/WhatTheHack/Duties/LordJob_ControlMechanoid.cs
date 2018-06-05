@@ -20,7 +20,8 @@ namespace WhatTheHack.Duties
             endTransition.AddTrigger(new Trigger_Custom(delegate
             {
                 Pawn pawn = this.lord.ownedPawns[0];
-                return (pawn.RemoteControlLink() == null);
+                Pawn mech = pawn.RemoteControlLink();
+                return (mech == null || !mech.Spawned || mech.Dead || mech.Downed);
             }));
             graph.AddToil(endToil);
             graph.AddTransition(endTransition);
