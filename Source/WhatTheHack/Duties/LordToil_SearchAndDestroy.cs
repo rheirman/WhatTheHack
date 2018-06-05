@@ -25,12 +25,5 @@ namespace WhatTheHack.Duties
                 this.lord.ownedPawns[i].mindState.duty = new PawnDuty(WTH_DefOf.SearchAndDestroy);
             }
         }
-        public override bool ShouldFail
-        {
-            get
-            {
-                return this.lord.ownedPawns[0].RemoteControlLink() == null;
-            }
-        }
     }
 }
