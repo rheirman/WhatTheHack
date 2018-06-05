@@ -21,8 +21,10 @@ namespace WhatTheHack
                 Pawn linkedPawn = base.Wearer.RemoteControlLink();
                 if (linkedPawn == null)
                 {
-                    yield return GetRemoteControlActivateGizmo(base.Wearer);
-
+                    if (!base.Wearer.Drafted)
+                    {
+                        yield return GetRemoteControlActivateGizmo(base.Wearer);
+                    }
                 }
                 else
                 {
