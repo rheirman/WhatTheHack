@@ -21,10 +21,7 @@ namespace WhatTheHack
                 Pawn linkedPawn = base.Wearer.RemoteControlLink();
                 if (linkedPawn == null)
                 {
-                    if (!base.Wearer.Drafted)
-                    {
-                        yield return GetRemoteControlActivateGizmo(base.Wearer);
-                    }
+                    yield return GetRemoteControlActivateGizmo(base.Wearer);
                 }
                 else
                 {
@@ -39,6 +36,10 @@ namespace WhatTheHack
             command.defaultLabel = "WTH_Gizmo_RemoteControlDeactivate_Label".Translate();
             command.defaultDesc = "WTH_Gizmo_RemoteControlDeactivate_Description".Translate();
             command.icon = TexCommand.CannotShoot;
+            if (pawn.Drafted)
+            {
+                command.Disable("WTH_Reaon_PawnCannotBeDrafted".Translate());
+            }
             command.action = delegate ()
             {
                 Pawn mech = pawn.RemoteControlLink();

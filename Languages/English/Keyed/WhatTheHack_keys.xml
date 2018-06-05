@@ -30,6 +30,8 @@
 	
 	<WTH_Reason_MechanoidDowned>Cannot enable downed mechanoid</WTH_Reason_MechanoidDowned>
 	<WTH_Reason_PowerLow>Cannot enable mechanoid, power too low (disable auto-recharge to override this)</WTH_Reason_PowerLow>
+	<WTH_Reaon_PawnCannotBeDrafted>Cannot enable operate mechanoid controller belt when drafted</WTH_Reaon_PawnCannotBeDrafted>
+	
 	<WTH_Gizmo_SearchAndDestroy_Label>Activate</WTH_Gizmo_SearchAndDestroy_Label>
 	<WTH_Gizmo_SearchAndDestroy_Description>Activate search and destroy mod. The mechanoid will automatically attack any enemies near your colony. When disabled, the mechanoid will return to a mechanoid platform when possible.</WTH_Gizmo_SearchAndDestroy_Description>
 	<WTH_Gizmo_AutoRecharge_Label>Auto recharge</WTH_Gizmo_AutoRecharge_Label>
