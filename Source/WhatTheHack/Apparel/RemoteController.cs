@@ -36,10 +36,6 @@ namespace WhatTheHack
             command.defaultLabel = "WTH_Gizmo_RemoteControlDeactivate_Label".Translate();
             command.defaultDesc = "WTH_Gizmo_RemoteControlDeactivate_Description".Translate();
             command.icon = TexCommand.CannotShoot;
-            if (pawn.Drafted)
-            {
-                command.Disable("WTH_Reaon_PawnCannotBeDrafted".Translate());
-            }
             command.action = delegate ()
             {
                 Pawn mech = pawn.RemoteControlLink();
@@ -60,11 +56,16 @@ namespace WhatTheHack
             command_Target.defaultDesc = "WTH_Gizmo_RemoteControlActivate_Description".Translate();
             command_Target.targetingParams = GetTargetingParametersForHacking();
             command_Target.hotKey = KeyBindingDefOf.Misc5;
+            if (pawn.Drafted)
+            {
+                command_Target.Disable("WTH_Reaon_PawnCannotBeDrafted".Translate());
+            }
             command_Target.icon = ContentFinder<Texture2D>.Get(("Things/MechControllerBelt"));
             command_Target.action = delegate (Thing target)
             {
                 if(target is Pawn)
                 {
+                    pawn.jobs.EndCurrentJob(JobCondition.InterruptForced, false);
                     Pawn mech = (Pawn)target;
                     ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
                     ExtendedPawnData mechData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(mech);
@@ -72,7 +73,6 @@ namespace WhatTheHack
                     mechData.remoteControlLink = pawn;
                     mechData.isActive = true;
                     mech.drafter.Drafted = true;
-                    pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
                     Find.Selector.ClearSelection();
                     Find.Selector.Select(mech);
                     if (pawn.GetLord() == null || pawn.GetLord().LordJob == null)
