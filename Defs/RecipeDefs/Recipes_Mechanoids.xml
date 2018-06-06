@@ -6,7 +6,7 @@
 		<workerClass>WhatTheHack.Recipes.Recipe_HackMechanoid</workerClass>
 		<jobString>Hacking mechanoid</jobString>
 		<workAmount>1500</workAmount>
-		<surgerySuccessChanceFactor>1.0</surgerySuccessChanceFactor>
+		<surgerySuccessChanceFactor>0.9</surgerySuccessChanceFactor>
 		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
 		<skillRequirements>
 			<Crafting>6</Crafting>
@@ -42,7 +42,7 @@
 		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
 		<jobString>Hacking mechanoid</jobString>
 		<workAmount>2000</workAmount>
-		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<surgerySuccessChanceFactor>1.1</surgerySuccessChanceFactor>
 		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
 		<skillRequirements>
 			<Crafting>6</Crafting>

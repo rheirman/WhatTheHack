@@ -18,7 +18,7 @@ namespace WhatTheHack.Recipes
         public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
         {
             BodyPartRecord brain = pawn.health.hediffSet.GetBrain();
-            if (brain != null && (!pawn.health.hediffSet.HasHediff(recipe.addsHediff) || pawn.Faction != Faction.OfPlayer))
+            if (brain != null && (!pawn.health.hediffSet.HasHediff(recipe.addsHediff) || (pawn.IsHacked() && pawn.Faction != Faction.OfPlayer)))
             {
                 yield return brain;
             }
@@ -64,7 +64,10 @@ namespace WhatTheHack.Recipes
                 });
                 Find.LetterStack.ReceiveLetter("WTH_Letter_Success_Label".Translate(), "WTH_Letter_Success_Label_Description".Translate(), LetterDefOf.PositiveEvent, pawn);
             }
-            pawn.health.AddHediff(this.recipe.addsHediff, part, null);
+            if (!pawn.IsHacked())
+            {
+                pawn.health.AddHediff(this.recipe.addsHediff, part, null);
+            }
             pawn.SetFaction(Faction.OfPlayer);
             if (pawn.jobs.curDriver != null)
             {

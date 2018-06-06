@@ -43,6 +43,10 @@ namespace WhatTheHack.Buildings
                 }
                 return true;
             }
+            else
+            {
+                Log.Message("hacking not possible TryAddPawnForModification failed");
+            }
             return false;
         }
         public bool HasPowerNow()
