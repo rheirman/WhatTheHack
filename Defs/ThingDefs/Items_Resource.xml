@@ -16,6 +16,7 @@
       <Mass>0.6</Mass>
       <Flammability>1.0</Flammability>
 	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <MedicalPotency>1.00</MedicalPotency>
 	</statBases>
     <intricate>true</intricate>
     <thingCategories>

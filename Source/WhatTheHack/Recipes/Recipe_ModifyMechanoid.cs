@@ -18,7 +18,7 @@ namespace WhatTheHack.Recipes
         public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
         {
             BodyPartRecord brain = pawn.health.hediffSet.GetBrain();
-            if (pawn.IsHacked() && brain != null && !pawn.health.hediffSet.HasHediff(recipe.addsHediff) && pawn.IsHacked())
+            if (pawn.IsHacked() && brain != null && !pawn.health.hediffSet.HasHediff(recipe.addsHediff) && pawn.IsHacked() && pawn.Faction == Faction.OfPlayer)
             {
                 yield return brain;
             }

@@ -9,7 +9,7 @@
 		<surgerySuccessChanceFactor>1.0</surgerySuccessChanceFactor>
 		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
 		<skillRequirements>
-			<Crafting>8</Crafting>
+			<Crafting>6</Crafting>
 		</skillRequirements>
 		<effectWorking>Repair</effectWorking>
 		<ingredients>
@@ -31,6 +31,7 @@
 			<li>ArtificialBrain</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>TargetingHacked</addsHediff>
+		<workSkill>Intellectual</workSkill>
 		<researchPrerequisite>WTH_HackingBasics</researchPrerequisite>
 	</RecipeDef>
 	
@@ -44,8 +45,9 @@
 		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
 		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
 		<skillRequirements>
-			<Crafting>8</Crafting>
+			<Crafting>6</Crafting>
 		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
 		<effectWorking>Repair</effectWorking>
 		<ingredients>
 			<li>
@@ -95,8 +97,9 @@
 		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
 		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
 		<skillRequirements>
-			<Crafting>8</Crafting>
+			<Crafting>6</Crafting>
 		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
 		<effectWorking>Repair</effectWorking>
 		<ingredients>
 			<li>

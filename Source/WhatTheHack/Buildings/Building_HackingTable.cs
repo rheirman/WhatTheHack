@@ -24,7 +24,7 @@ namespace WhatTheHack.Buildings
 
         public static bool TryAddPawnForModification(Pawn pawn, RecipeDef recipeDef)
         {
-            if(!pawn.IsHacked())
+            if(!pawn.IsHacked() || (pawn.IsHacked() && pawn.Faction != Faction.OfPlayer))
             {
 
                 Bill_Medical bill = new Bill_Medical(recipeDef);

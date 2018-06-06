@@ -51,7 +51,7 @@ namespace WhatTheHack.Harmony
                     __result.Add(new FloatMenuOption("WTH_Menu_ClearTable".Translate(), action, MenuOptionPriority.Low));
                 }
 
-                if (!targetPawn.IsHacked() && targetPawn.Downed && !targetPawn.OnHackingTable())
+                if ((!targetPawn.IsHacked() || targetPawn.Faction != Faction.OfPlayer) && targetPawn.Downed && !targetPawn.OnHackingTable())
                 {
 
                     Building_HackingTable closestAvailableTable = Utilities.GetAvailableHackingTable(pawn, targetPawn);
