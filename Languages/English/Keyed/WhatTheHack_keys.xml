@@ -42,6 +42,10 @@
 	<WTH_Gizmo_RemoteControlDeactivate_Label>Deactivate remote</WTH_Gizmo_RemoteControlDeactivate_Label>
 	<WTH_Gizmo_RemoteControlDeactivate_Description>Deactivates the remote control device, giving control back to the mechanoid</WTH_Gizmo_RemoteControlDeactivate_Description>
 	
+	<WTH_Gizmo_Regenerate_Label>Regenerate parts</WTH_Gizmo_Regenerate_Label>
+	<WTH_Gizmo_Regenerate_Description>When this is active, the platform regenerates body parts of the mechanoid that are missing. Regenerating body parts requires a large amount of mechanoid parts.</WTH_Gizmo_Regenerate_Description>
+	
+	
 	<WTH_Alert_NotEnoughPlatforms_Label>Not enough mechanoid platforms</WTH_Alert_NotEnoughPlatforms_Label>
 	<WTH_Alert_NotEnoughPlatforms_Description>You have more hacked mechanoids than mechanoid platforms in your main base. Make sure to make more mechanoid platforms</WTH_Alert_NotEnoughPlatforms_Description>
 	<WTH_Alert_Power_Low_Label>Mechanoids low on power</WTH_Alert_Power_Low_Label>

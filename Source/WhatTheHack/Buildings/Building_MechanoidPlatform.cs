@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 using Verse;
 using WhatTheHack.Needs;
 
@@ -13,6 +14,7 @@ namespace WhatTheHack.Buildings
         public const int SLOTINDEX = 1;
         public CompRefuelable refuelableComp;
         public CompPowerTrader powerComp;
+        private bool regenerateActive;
         
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
@@ -20,6 +22,12 @@ namespace WhatTheHack.Buildings
             this.refuelableComp = base.GetComp<CompRefuelable>();
             this.powerComp = base.GetComp<CompPowerTrader>();
             
+        }
+        public bool RegenerateActive {
+            get
+            {
+                return regenerateActive;
+            }
         }
         public bool CanHealNow()
         {
@@ -29,5 +37,31 @@ namespace WhatTheHack.Buildings
         {
             return this.powerComp != null && this.powerComp.PowerOn; 
         }
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            foreach (Gizmo g in base.GetGizmos())
+            {
+                yield return g;
+            }
+            Gizmo gizmo = new Command_Toggle
+            {
+                defaultLabel = "WTH_Gizmo_Regenerate_Label".Translate(),
+                defaultDesc = "WTH_Gizmo_Regenerate_Description".Translate(),
+                icon = ContentFinder<Texture2D>.Get(("Things/Mote_HealingCrossGreen"), true),
+                isActive = () => regenerateActive,
+                toggleAction = () =>
+                {
+                    regenerateActive = !regenerateActive;
+                }
+            };
+            yield return gizmo;
+        }
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref regenerateActive, "regenerateActive", true);
+        }
+
+
     }
 }

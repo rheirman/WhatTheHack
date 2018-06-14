@@ -17,6 +17,10 @@ namespace WhatTheHack
         public static HediffDef NoPower;
         public static HediffDef TargetingHackedPoorly;
         public static HediffDef LocomotionHacked;
+        public static HediffDef WTH_RegeneratedPart;
+
+        public static DamageDef WTH_RegeneratedPartDamage;
+
         public static RecipeDef HackMechanoid;
         
 
@@ -35,6 +39,8 @@ namespace WhatTheHack
         public static ThingDef MechanoidPlatform;
         public static ThingDef MechanoidParts;
         public static ThingDef MechanoidChip;
-        public static ThingDef Mote_Charging;
+        public static ThingDef WTH_Mote_Charging;
+        public static ThingDef WTH_Mote_HealingCrossGreen;
+
     }
 }

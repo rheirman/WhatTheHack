@@ -100,7 +100,7 @@
       <li Class="CompProperties_Flickable"/>
 	  <li Class="CompProperties_Refuelable">
         <fuelConsumptionRate>40.0</fuelConsumptionRate>
-        <fuelCapacity>10.0</fuelCapacity>
+        <fuelCapacity>20.0</fuelCapacity>
         <fuelFilter>
           <thingDefs>
             <li>MechanoidParts</li>
@@ -111,7 +111,7 @@
     </comps>
 	<building>
 		<bed_humanlike>false</bed_humanlike>
-		<bed_healPerDay>250</bed_healPerDay>
+		<bed_healPerDay>450</bed_healPerDay>
 		<bed_showSleeperBody>True</bed_showSleeperBody>
 		<canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
 		<ai_chillDestination>false</ai_chillDestination>
