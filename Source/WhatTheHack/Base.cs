@@ -7,6 +7,7 @@ using WhatTheHack.Storage;
 using HugsLib.Utils;
 using HugsLib.Settings;
 using Verse;
+using RimWorld;
 
 namespace WhatTheHack
 {
@@ -14,11 +15,16 @@ namespace WhatTheHack
     {
         public static Base Instance { get; private set; }
         ExtendedDataStorage _extendedDataStorage;
+
+        internal static SettingHandle<String> tabsHandler;
+
         internal static SettingHandle<int> failureChanceNothing;
         internal static SettingHandle<int> failureChanceCauseRaid;
         internal static SettingHandle<int> failureChanceShootRandomDirection;
         internal static SettingHandle<int> failureChanceHealToStanding;
         internal static SettingHandle<int> failureChanceHackPoorly;
+
+        List<String> tabNames = new List<String>();
 
         public override string ModIdentifier
         {
@@ -30,6 +36,20 @@ namespace WhatTheHack
         }
         public override void DefsLoaded()
         {
+            base.DefsLoaded();
+
+            Log.Message("before adding tab names");
+            foreach (FactionDef factionDef in from td in DefDatabase<FactionDef>.AllDefs
+                                          select td)
+            {
+                Log.Message("inside foreach");
+                Log.Message("adding: " + factionDef.label);
+                tabNames.Add(factionDef.label);
+            }
+            tabsHandler = Settings.GetHandle<String>("tabs", "Configure faction mech usage", "", "none");
+            tabsHandler.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_Tabs(rect, tabsHandler, tabNames.ToArray(), true, (int)-rect.width, (int)rect.height); };
+
+
             failureChanceNothing = Settings.GetHandle<int>("failureChanceNothing", "WTH_FailureChance_Nothing_Title".Translate(), "WTH_FailureChance_Nothing_Description".Translate(), 50);
             failureChanceCauseRaid = Settings.GetHandle<int>("failureChanceCauseRaid", "WTH_FailureChance_CauseRaid_Title".Translate(), "WTH_FailureChance_CauseRaid_Description".Translate(), 10);
             failureChanceShootRandomDirection = Settings.GetHandle<int>("failureChanceShootRandomDirection", "WTH_FailureChance_ShootRandomDirection_Title".Translate(), "WTH_FailureChance_ShootRandomDirection_Description".Translate(), 15);

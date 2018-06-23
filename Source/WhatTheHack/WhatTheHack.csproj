@@ -56,10 +56,13 @@
   <ItemGroup>
     <Compile Include="Alerts\Alert_NotEnoughPlatforms.cs" />
     <Compile Include="Alerts\Alert_PowerLow.cs" />
+    <Compile Include="Record.cs" />
     <Compile Include="Apparel\RemoteController.cs" />
     <Compile Include="Base.cs" />
     <Compile Include="Buildings\Building_HackingTable.cs" />
     <Compile Include="Buildings\Building_MechanoidPlatform.cs" />
+    <Compile Include="Dict2DRecordHandler.cs" />
+    <Compile Include="GUIDrawUtility.cs" />
     <Compile Include="Duties\LordJob_ControlMechanoid.cs" />
     <Compile Include="Duties\LordJob_SearchAndDestroy.cs" />
     <Compile Include="Duties\LordToil_ControlMechanoid.cs" />

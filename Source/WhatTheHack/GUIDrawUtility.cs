@@ -8,7 +8,7 @@ using Verse;
 using Verse.Sound;
 using HugsLib.Settings;
 
-namespace GiddyUpCore.Utilities
+namespace WhatTheHack
 {
     public class GUIDrawUtility
     {
@@ -91,19 +91,20 @@ namespace GiddyUpCore.Utilities
 
         }
 
-        public static bool CustomDrawer_Tabs(Rect rect, SettingHandle<String> selected, String[] defaultValues)
+        public static bool CustomDrawer_Tabs(Rect rect, SettingHandle<String> setting, String[] defaultValues, bool vertical = false, int xOffset = 0, int yOffset = 0)
         {
             int labelWidth = 140;
-            int offset = 0;
+            int horizontalOffset = 0;
+            int verticalOffset = 0;
+            
             bool change = false;
-
             foreach (String tab in defaultValues)
             {
                 Rect buttonRect = new Rect(rect);
                 buttonRect.width = labelWidth;
-                buttonRect.position = new Vector2(buttonRect.position.x + offset, buttonRect.position.y);
+                buttonRect.position = new Vector2(buttonRect.position.x + horizontalOffset + xOffset, buttonRect.position.y + verticalOffset + yOffset);
                 Color activeColor = GUI.color;
-                bool isSelected = tab == selected.Value;
+                bool isSelected = tab == setting.Value;
                 if (isSelected)
                     GUI.color = SelectedOptionColor;
                 bool clicked = Widgets.ButtonText(buttonRect, tab);
@@ -112,19 +113,30 @@ namespace GiddyUpCore.Utilities
 
                 if (clicked)
                 {
-                    if(selected.Value != tab)
+                    if(setting.Value != tab)
                     {
-                        selected.Value = tab;
+                        setting.Value = tab;
                     }
                     else
                     {
-                        selected.Value = "none";
+                        setting.Value = "none";
                     }
                     change = true;
                 }
 
-                offset += labelWidth;
+                if (vertical)
+                {
+                    verticalOffset += (int) buttonRect.height;
+                }
+                else
+                {
+                    horizontalOffset += labelWidth;
+                }
 
+            }
+            if (vertical)
+            {
+                //setting.CustomDrawerHeight = verticalOffset;
             }
             return change;
         }
@@ -187,7 +199,7 @@ namespace GiddyUpCore.Utilities
                 }
                 else
                 {
-                    addNewAnimal(animal, selection, shouldSelect, setting.Name);
+                    //addNewAnimal(animal, selection, shouldSelect, setting.Name);
                 }
                 
             }
@@ -195,6 +207,7 @@ namespace GiddyUpCore.Utilities
             setting.Value.InnerList = selection;
         }
 
+        /*
         internal static void addNewAnimal(ThingDef animal, Dictionary<string, Record> selection, bool shouldSelect, String settingName)
         {
                 CompProperties_Mount prop = animal.GetCompProperties<CompProperties_Mount>();
@@ -212,6 +225,7 @@ namespace GiddyUpCore.Utilities
                     selection.Add(animal.defName, new Record(shouldSelect, false, animal.label));
                 }
         }
+        */
 
 
         public static bool CustomDrawer_MatchingAnimals_active(Rect wholeRect, SettingHandle<DictRecordHandler> setting, List<ThingDef> allAnimals, SettingHandle<float> filter = null, string yesText = "Is a mount", string noText = "Is not a mount")
