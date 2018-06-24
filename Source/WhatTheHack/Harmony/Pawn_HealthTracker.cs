@@ -3,6 +3,7 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using Verse;
 using WhatTheHack.Buildings;
@@ -12,10 +13,45 @@ using WhatTheHack.Storage;
 namespace WhatTheHack.Harmony
 {
 
+    //Make sure mechanoids can be downed like other pawns. 
+    [HarmonyPatch(typeof(Pawn_HealthTracker), "CheckForStateChange")]
+    static class Pawn_HealthTracker_CheckForStateChange
+    {
+        static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            Log.Message("applying transpiler");
+            bool flag = false;
+            var instructionsList = new List<CodeInstruction>(instructions);
+            for (var i = 0; i < instructionsList.Count; i++)
+            {
+                CodeInstruction instruction = instructionsList[i];
+
+                if (instruction.operand == typeof(RaceProperties).GetMethod("get_IsMechanoid"))
+                {
+                    flag = true;
+                }
+                if(flag && instruction.opcode == OpCodes.Ldc_R4)
+                {
+                    Log.Message("applying change to instruction  OpCodes.Ldc_R4");
+                    //yield return new CodeInstruction(OpCodes.Call, typeof(Pawn_HealthTracker_CheckForStateChange).GetMethod(""))
+                    yield return new CodeInstruction(OpCodes.Ldc_R4,0.1f);//TODO: no magic number? 
+                    flag = false;
+                }
+                else
+                {
+                    yield return instruction;
+                }
+            }
+        }
+    }
 
     [HarmonyPatch(typeof(Pawn_HealthTracker), "MakeDowned")]
     static class Pawn_HealthTracker_MakeDowned
     {
+        static void Prefix()
+        {
+            Log.Message("MakeDowned called");
+        }
         static void Postfix(Pawn_HealthTracker __instance)
         {
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
