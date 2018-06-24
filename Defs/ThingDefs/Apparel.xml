@@ -14,7 +14,7 @@
 			<WorkToMake>45000</WorkToMake>
     </statBases>
 		<costList>
-			<Component>6</Component>
+			<ComponentIndustrial>6</ComponentIndustrial>
 			<Plasteel>25</Plasteel>
 			<MechanoidChip>5</MechanoidChip>
 			<Uranium>2</Uranium>

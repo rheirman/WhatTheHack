@@ -7,7 +7,7 @@
     <size>(5,2)</size>
     <costList>
       <Steel>100</Steel>
-      <Component>10</Component>
+      <ComponentIndustrial>10</ComponentIndustrial>
     </costList>
     <graphicData>
       <texPath>Things/HackingTable</texPath>
@@ -59,7 +59,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>MechanoidPlatform</defName>
     <label>mechanoid platform</label>
-    <description></description>
+    <description>Platform used for charging and repairing mechanoids.</description>
 	<thingClass>WhatTheHack.Buildings.Building_MechanoidPlatform</thingClass>
     <graphicData>
       <texPath>Things/MechanoidPlatform</texPath>
@@ -69,7 +69,7 @@
     <castEdgeShadows>false</castEdgeShadows>
     <costList>
       <Steel>75</Steel>
-      <Component>6</Component>
+      <ComponentIndustrial>6</ComponentIndustrial>
     </costList>
 	<rotatable>false</rotatable>
 

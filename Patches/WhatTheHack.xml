@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
+
 <Patch>
+<!--
 	<Operation Class="PatchOperationAdd">
 	  <xpath>*/ThingDef[@ParentName = "BaseMechanoid"]/recipes</xpath>
 	  <value>
@@ -8,4 +11,5 @@
 		<li>HackLocomotion</li>
 	  </value>
 	</Operation> 
+	-->
 </Patch>
