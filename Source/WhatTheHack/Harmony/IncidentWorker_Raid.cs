@@ -38,7 +38,7 @@ namespace WhatTheHack.Harmony
         {
             //Don't use mechs in sieges or with droppods
             if (list.Count == 0 
-                || !(parms.raidArrivalMode == PawnsArriveMode.EdgeWalkIn || parms.raidArrivalMode == PawnsArriveMode.Undecided) 
+                || !(parms.raidArrivalMode == PawnsArrivalModeDefOf.EdgeWalkIn) 
                 || (parms.raidStrategy != null && parms.raidStrategy.workerClass == typeof(RaidStrategyWorker_Siege)))
             {
                 return;
@@ -48,7 +48,7 @@ namespace WhatTheHack.Harmony
                 return;
             }
             //Only allow hacked mechs for advanced factions
-            if(parms.faction.def.techLevel != TechLevel.Spacer && parms.faction.def.techLevel != TechLevel.Transcendent && parms.faction.def.techLevel != TechLevel.Ultra)
+            if(parms.faction.def.techLevel != TechLevel.Spacer && parms.faction.def.techLevel != TechLevel.Archotech && parms.faction.def.techLevel != TechLevel.Ultra)
             {
                 return;
             }
@@ -77,7 +77,7 @@ namespace WhatTheHack.Harmony
                 {
                     Pawn mechanoid = PawnGenerator.GeneratePawn(pawnKindDef, parms.faction);
                     IntVec3 loc = CellFinder.RandomClosewalkCellNear(parms.spawnCenter, map, 8, null);
-                    GenSpawn.Spawn(mechanoid, loc, map, parms.spawnRotation, false);
+                    GenSpawn.Spawn(mechanoid, loc, map, parms.spawnRotation);
                     mechanoid.health.AddHediff(WTH_DefOf.TargetingHacked);
                     Need_Power powerNeed = (Need_Power) mechanoid.needs.TryGetNeed(WTH_DefOf.Mechanoid_Power);
                     powerNeed.CurLevel = powerNeed.MaxLevel;

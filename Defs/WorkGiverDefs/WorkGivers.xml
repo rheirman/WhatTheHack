@@ -1,0 +1,17 @@
+<Defs>
+  <WorkGiverDef>
+    <defName>DoBillsMedicalMechanoidOperation</defName>
+    <label>operate on mechanoids</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Crafting</workType>
+    <priorityInType>110</priorityInType>
+    <billGiversAllMechanoids>true</billGiversAllMechanoids>
+    <billGiversAllMechanoidsCorpses>true</billGiversAllMechanoidsCorpses>
+    <verb>modify</verb>
+    <gerund>modifying</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+</Defs>

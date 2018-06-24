@@ -39,7 +39,7 @@ namespace WhatTheHack.Buildings
                 
                 if(pawn.jobs.curDriver != null)
                 {
-                    pawn.jobs.curDriver.layingDown = LayingDownState.LayingInBed;
+                    pawn.jobs.posture = PawnPosture.LayingInBed;
                 }
                 return true;
             }

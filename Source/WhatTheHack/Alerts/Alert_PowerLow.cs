@@ -34,7 +34,7 @@ namespace WhatTheHack.Alerts
             StringBuilder stringBuilder = new StringBuilder();
             foreach (Pawn current in this.LowPowerPawns)
             {
-                stringBuilder.AppendLine("    " + current.NameStringShort);
+                stringBuilder.AppendLine("    " + current.Name);
             }
             return string.Format("WTH_Alert_Power_Low_Label".Translate(), stringBuilder.ToString());
         }

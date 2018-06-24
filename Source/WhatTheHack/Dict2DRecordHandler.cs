@@ -37,6 +37,8 @@ namespace WhatTheHack
 
         public override string ToString()
         {
+            return "";
+            /*
             XmlDocument xmlDoc = new XmlDocument();
 
             foreach (KeyValuePair<string, Dictionary<String, Record>> item in inner)

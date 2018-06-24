@@ -29,10 +29,10 @@ namespace WhatTheHack.Jobs
                 Log.Warning(base.GetType() + "has null followee.");
                 return null;
             }
-            if (!GenAI.CanInteractPawn(pawn, followee))
-            {
-                return null;
-            }
+            //if (!GenAI.CanInteractPawn(pawn, followee))
+           // {
+            //    return null;
+          //  }
             float radius = 30;//TODO: no magic number
             if ((!followee.pather.Moving || (float)followee.pather.Destination.Cell.DistanceToSquared(pawn.Position) <= radius * radius) && (float)followee.Position.DistanceToSquared(pawn.Position) <= radius * radius)
             {

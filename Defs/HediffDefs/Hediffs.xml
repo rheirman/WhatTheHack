@@ -10,7 +10,6 @@
 		<labelNoun>a freshly replaced part that is regenerating</labelNoun>
 		<injuryProps>
 		  <painPerSeverity>0.01</painPerSeverity>
-		  <averagePainPerSeverityOld>0.00625</averagePainPerSeverityOld>
 		</injuryProps>
 	</HediffDef>
   

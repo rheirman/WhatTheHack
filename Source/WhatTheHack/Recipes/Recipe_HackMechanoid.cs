@@ -71,7 +71,7 @@ namespace WhatTheHack.Recipes
             pawn.SetFaction(Faction.OfPlayer);
             if (pawn.jobs.curDriver != null)
             {
-                pawn.jobs.curDriver.layingDown = LayingDownState.LayingSurface;
+                pawn.jobs.posture = PawnPosture.LayingOnGroundNormal;
             }
             if (pawn.story == null)
             {
@@ -90,7 +90,7 @@ namespace WhatTheHack.Recipes
             pawn.SetFaction(Faction.OfPlayer);
             if (pawn.jobs.curDriver != null)
             {
-                pawn.jobs.curDriver.layingDown = LayingDownState.LayingSurface;
+                pawn.jobs.posture = PawnPosture.LayingOnGroundNormal;
             }
             if (pawn.story == null)
             {
@@ -101,7 +101,7 @@ namespace WhatTheHack.Recipes
 
         private static void CauseMechanoidRaid(Pawn pawn, BodyPartRecord part)
         {
-            IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(Find.Storyteller.def, IncidentCategory.ThreatBig, pawn.Map);
+            IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, pawn.Map);
             IntVec3 spawnSpot;
             if (!CellFinder.TryFindRandomEdgeCellWith((IntVec3 c) => pawn.Map.reachability.CanReachColony(c), pawn.Map, CellFinder.EdgeRoadChance_Neutral, out spawnSpot))
             {
@@ -111,7 +111,7 @@ namespace WhatTheHack.Recipes
             incidentParms.forced = true;
             incidentParms.faction = Faction.OfMechanoids;
             incidentParms.raidStrategy = RaidStrategyDefOf.ImmediateAttack;
-            incidentParms.raidArrivalMode = PawnsArriveMode.EdgeWalkIn;
+            incidentParms.raidArrivalMode = PawnsArrivalModeDefOf.EdgeWalkIn;
             incidentParms.spawnCenter = spawnSpot;
             incidentParms.points *= 1.35f;
 

@@ -103,7 +103,7 @@ namespace WhatTheHack.Harmony
             {
                 return true;
             }
-            if (p.jobs.curDriver == null || ((p.CurJob.def != WTH_DefOf.Mechanoid_Rest) && p.jobs.curDriver.layingDown != LayingDownState.LayingInBed))
+            if (p.jobs.curDriver == null || ((p.CurJob.def != WTH_DefOf.Mechanoid_Rest) && p.jobs.posture != PawnPosture.LayingInBed))
             {
                 return true;
                 

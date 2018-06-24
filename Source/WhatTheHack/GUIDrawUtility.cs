@@ -60,7 +60,7 @@ namespace WhatTheHack
         private static bool DrawTileForAnimal(KeyValuePair<String, Record> Animal, Rect contentRect, Vector2 iconOffset, int buttonID)
         {
             var iconRect = new Rect(contentRect.x + iconOffset.x, contentRect.y + iconOffset.y, contentRect.width, rowHeight);
-            MouseoverSounds.DoRegion(iconRect, SoundDefOf.MouseoverCommand);
+            MouseoverSounds.DoRegion(iconRect, SoundDefOf.Mouseover_Command);
             Color save = GUI.color;
 
             if (Mouse.IsOver(iconRect))
@@ -171,11 +171,13 @@ namespace WhatTheHack
             return change;
         }
 
-        internal static void filterAnimals(ref SettingHandle<DictRecordHandler> setting, List<ThingDef> allAnimals, SettingHandle<float> filter = null)
+        internal static void filterAnimals(ref SettingHandle<Dict2DRecordHandler> setting, List<ThingDef> allAnimals, SettingHandle<float> filter = null)
         {
+            //TODO:Implement
+            /*
             if (setting.Value == null)
             {
-                setting.Value = new DictRecordHandler();
+                setting.Value = new Dict2DRecordHandler();
             }
 
             Dictionary<String, Record> selection = new Dictionary<string, Record>();
@@ -205,6 +207,7 @@ namespace WhatTheHack
             }
             selection = selection.OrderBy(d => d.Value.label).ToDictionary(d => d.Key, d => d.Value);
             setting.Value.InnerList = selection;
+            */
         }
 
         /*
@@ -228,8 +231,10 @@ namespace WhatTheHack
         */
 
 
-        public static bool CustomDrawer_MatchingAnimals_active(Rect wholeRect, SettingHandle<DictRecordHandler> setting, List<ThingDef> allAnimals, SettingHandle<float> filter = null, string yesText = "Is a mount", string noText = "Is not a mount")
+        public static bool CustomDrawer_MatchingAnimals_active(Rect wholeRect, SettingHandle<Dict2DRecordHandler> setting, List<ThingDef> allAnimals, SettingHandle<float> filter = null, string yesText = "Is a mount", string noText = "Is not a mount")
         {
+            return false; //TODO: Implement
+            /*
             drawBackground(wholeRect, background);
 
 
@@ -299,8 +304,10 @@ namespace WhatTheHack
                 setting.Value.InnerList = selection;
             }
             return change;
+             */
         }
-       
+
+
     }
 }
 
