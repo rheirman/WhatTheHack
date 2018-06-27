@@ -34,7 +34,7 @@ namespace WhatTheHack.Harmony
                 {
                     Log.Message("applying change to instruction  OpCodes.Ldc_R4");
                     //yield return new CodeInstruction(OpCodes.Call, typeof(Pawn_HealthTracker_CheckForStateChange).GetMethod(""))
-                    yield return new CodeInstruction(OpCodes.Ldc_R4,0.1f);//TODO: no magic number? 
+                    yield return new CodeInstruction(OpCodes.Ldc_R4,0.5f);//TODO: no magic number? 
                     flag = false;
                 }
                 else
@@ -65,13 +65,13 @@ namespace WhatTheHack.Harmony
     {
         static void Postfix(Pawn_HealthTracker __instance)
         {
-            
+
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            if(!pawn.RaceProps.IsMechanoid)
+            if (!pawn.RaceProps.IsMechanoid)
             {
                 return;
             }
-            if(!(pawn.CurrentBed() is Building_MechanoidPlatform))
+            if (!(pawn.CurrentBed() is Building_MechanoidPlatform))
             {
                 return;
             }
@@ -83,33 +83,13 @@ namespace WhatTheHack.Harmony
                 if (pawn.IsHashIntervalTick(10) && platform.CanHealNow())
                 {
                     TryHealRandomInjury(__instance, pawn, platform);
-                    if (platform.RegenerateActive)
+                    if (platform.RegenerateActive && pawn.IsHashIntervalTick(1000))
                     {
-                        TryRegeneratePart(__instance, pawn, platform);
+                        TryRegeneratePart(pawn, platform);
                     }
-                }
-            }
-            if (pawn.IsHashIntervalTick(1000))
-            {
-                Random rand = new Random(DateTime.Now.Millisecond);
-                foreach (Hediff_MissingPart hediff in from x 
-                                                      in pawn.health.hediffSet.GetHediffs<Hediff_MissingPart>()
-                                                      select x)
-                {
-                    int randInt = rand.Next(0, 100);
-                    Log.Message("randInt: " + randInt);
-                    Log.Message("fixing lost parts, damaging part with: " + (int)hediff.Part.def.GetMaxHealth(pawn) + " damage");
-                    pawn.health.RemoveHediff(hediff);
-                    platform.refuelableComp.ConsumeFuel(5f);
-                    //Hediff_Injury injury = new Hediff_Injury();
-                    DamageWorker_AddInjury addInjury = new DamageWorker_AddInjury();
-                    addInjury.Apply(new DamageInfo(WTH_DefOf.WTH_RegeneratedPartDamage, (int)hediff.Part.def.GetMaxHealth(pawn) - 1, -1, null, hediff.Part), pawn);
-                    //pawn.health.AddHediff(WTH_DefOf.WTH_RegeneratedPart);
 
                 }
-
             }
-
 
             if (platform.HasPowerNow())
             {
@@ -127,10 +107,29 @@ namespace WhatTheHack.Harmony
                 {
                     powerNeed.CurLevel = powerNeed.MaxLevel;
                 }
+            }
+        }
 
+        private static void TryRegeneratePart(Pawn pawn, Building_MechanoidPlatform platform)
+        {
+            Random rand = new Random(DateTime.Now.Millisecond);
+            foreach (Hediff_MissingPart hediff in from x
+                                                    in pawn.health.hediffSet.GetHediffs<Hediff_MissingPart>()
+                                                    select x)
+            {
+                int randInt = rand.Next(0, 100);
+                Log.Message("randInt: " + randInt);
+                Log.Message("fixing lost parts, damaging part with: " + (int)hediff.Part.def.GetMaxHealth(pawn) + " damage");
+                pawn.health.RemoveHediff(hediff);
+                platform.refuelableComp.ConsumeFuel(5f);
+                //Hediff_Injury injury = new Hediff_Injury();
+                DamageWorker_AddInjury addInjury = new DamageWorker_AddInjury();
+                addInjury.Apply(new DamageInfo(WTH_DefOf.WTH_RegeneratedPartDamage, (int)hediff.Part.def.GetMaxHealth(pawn) - 1, -1, null, hediff.Part), pawn);
+                MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, WTH_DefOf.WTH_Mote_HealingCrossGreen);
+
+                //pawn.health.AddHediff(WTH_DefOf.WTH_RegeneratedPart);
 
             }
-
         }
 
         private static void TryHealRandomInjury(Pawn_HealthTracker __instance, Pawn pawn, Building_MechanoidPlatform platform)
@@ -141,27 +140,14 @@ namespace WhatTheHack.Harmony
                 return;
             }
             Hediff_Injury hediff_Injury = hediffs.RandomElement();
-            hediff_Injury.Heal(platform.def.building.bed_healPerDay / RimWorld.GenDate.TicksPerDay);
+            float healAmount = (platform.def.building.bed_healPerDay / RimWorld.GenDate.TicksPerDay) * pawn.HealthScale;
+            hediff_Injury.Heal(healAmount);
             if (pawn.IsHashIntervalTick(50) && !pawn.IsHashIntervalTick(100) && !pawn.Position.Fogged(pawn.Map))
             {
                 MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_HealingCross);
             }
             platform.refuelableComp.ConsumeFuel(0.002f);//TODO no magic number
         }
-        private static void TryRegeneratePart(Pawn_HealthTracker __instance, Pawn pawn, Building_MechanoidPlatform platform)
-        {
-            IEnumerable<Hediff_Injury> hediffs = __instance.hediffSet.GetHediffs<Hediff_Injury>().Where((Hediff_Injury i) => HediffUtility.CanHealNaturally(i) && i.def == WTH_DefOf.WTH_RegeneratedPart);
-            if(hediffs.Count() == 0)
-            {
-                return;
-            }
-            Hediff_Injury hediff_Injury = hediffs.RandomElement();
-            hediff_Injury.Heal(platform.def.building.bed_healPerDay / RimWorld.GenDate.TicksPerDay);
-            if (pawn.IsHashIntervalTick(70) && !pawn.IsHashIntervalTick(100) && !pawn.IsHashIntervalTick(50) && !pawn.Position.Fogged(pawn.Map))
-            {
-                MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, WTH_DefOf.WTH_Mote_HealingCrossGreen);
-            }
-            platform.refuelableComp.ConsumeFuel(0.01f);//TODO no magic number
-        }
+
     }
 }

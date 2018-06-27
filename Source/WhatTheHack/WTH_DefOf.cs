@@ -23,7 +23,6 @@ namespace WhatTheHack
 
         public static RecipeDef WTH_HackMechanoid;
         
-
         public static DutyDef WTH_SearchAndDestroy;
         public static DutyDef WTH_ControlMechanoidDuty;
 
@@ -42,5 +41,6 @@ namespace WhatTheHack
         public static ThingDef WTH_Mote_Charging;
         public static ThingDef WTH_Mote_HealingCrossGreen;
 
+        public static StatDef WTH_HackingSuccessChance;
     }
 }

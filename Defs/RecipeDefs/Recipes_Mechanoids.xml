@@ -10,7 +10,9 @@
 		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
 		<skillRequirements>
 			<Crafting>6</Crafting>
+			<Intellectual>6</Intellectual>
 		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
 		<effectWorking>Repair</effectWorking>
 		<ingredients>
 			<li>
@@ -31,12 +33,11 @@
 			<li>ArtificialBrain</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>WTH_TargetingHacked</addsHediff>
-		<workSkill>Intellectual</workSkill>
 		<researchPrerequisite>WTH_HackingBasics</researchPrerequisite>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
-				<surgerySuccessChanceFactor>1.25</surgerySuccessChanceFactor>
+				<surgerySuccessChanceFactor>0.5</surgerySuccessChanceFactor>
 				<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
 			</li>
 		</modExtensions>

@@ -18,6 +18,7 @@ namespace WhatTheHack.Recipes
         public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
         {
             BodyPartRecord brain = pawn.health.hediffSet.GetBrain();
+            Log.Message("recipe.SuccessFactor: " + recipe.surgerySuccessChanceFactor);
             if (brain != null && (!pawn.health.hediffSet.HasHediff(recipe.addsHediff) || (pawn.IsHacked() && pawn.Faction != Faction.OfPlayer)))
             {
                 yield return brain;
@@ -29,30 +30,13 @@ namespace WhatTheHack.Recipes
             if (billDoer != null)
             {
                 //Let random bad events happen when hacking fails
-                if (base.CheckSurgeryFail(billDoer, pawn, ingredients, part, bill))
+                if (CheckHackingFail(pawn, billDoer, part))
                 {
                     if (pawn.Dead)
                     {
                         return;
                     }
-                    Random r = new Random(DateTime.Now.Millisecond);
-                    int randInt = r.Next(1, 100);
-                    //Applying syntactic sugar. Short, but not very readable.
-                    int[] chances = { Base.failureChanceHackPoorly, Base.failureChanceCauseRaid, Base.failureChanceShootRandomDirection, Base.failureChanceHealToStanding, Base.failureChanceNothing };
-                    Action<Pawn, BodyPartRecord>[] functions = { HackPoorly, CauseMechanoidRaid, ShootRandomDirection, HealToStanding, Nothing };
-                    int totalChance = chances.Sum();
-                    int acc = 0;
-                    for(int i = 0; i < chances.Count(); i++)
-                    {
-                        if(randInt < ((acc + chances[i]) * totalChance) / 100)
-                        {
-                            functions[i].Invoke(pawn, part);
-                            break;
-                        }
-                        acc += chances[i];
-                    }
                     //Re-add surgery bill
-                    
                     Building_HackingTable.TryAddPawnForModification(pawn, WTH_DefOf.WTH_HackMechanoid);
 
                     return;
@@ -79,9 +63,60 @@ namespace WhatTheHack.Recipes
             }
 
         }
+
+        private bool CheckHackingFail(Pawn hackee, Pawn hacker, BodyPartRecord part)
+        {
+            float failureChance = 1.0f;
+            failureChance *= recipe.surgerySuccessChanceFactor;
+            failureChance *= hacker.GetStatValue(WTH_DefOf.WTH_HackingSuccessChance, true);
+            Random r = new Random(DateTime.Now.Millisecond);
+
+            if (!Rand.Chance(failureChance))
+            {
+                if (Rand.Chance(this.recipe.deathOnFailedSurgeryChance))
+                {
+                    HealthUtility.GiveInjuriesOperationFailureCatastrophic(hackee, part);
+                    if (!hackee.Dead)
+                    {
+                        hackee.Kill(null, null);
+                    }
+                    Messages.Message("MessageMedicalOperationFailureFatal".Translate(new object[]
+                    {
+                hacker.LabelShort,
+                hacker.LabelShort,
+                this.recipe.LabelCap
+                    }), hackee, MessageTypeDefOf.NegativeHealthEvent, true);
+                }
+                else
+                {
+                    int randInt = r.Next(1, 100);
+                    //Applying syntactic sugar. Short, but not very readable.
+                    int[] chances = { Base.failureChanceHackPoorly, Base.failureChanceCauseRaid, Base.failureChanceShootRandomDirection, Base.failureChanceHealToStanding, Base.failureChanceNothing };
+                    Action<Pawn, BodyPartRecord>[] functions = { HackPoorly, CauseMechanoidRaid, ShootRandomDirection, HealToStanding, Nothing };
+                    int totalChance = chances.Sum();
+                    int acc = 0;
+                    for (int i = 0; i < chances.Count(); i++)
+                    {
+                        if (randInt < ((acc + chances[i]) * totalChance) / 100)
+                        {
+                            functions[i].Invoke(hackee, part);
+                            break;
+                        }
+                        acc += chances[i];
+                    }
+                }
+                return true;
+            }
+            return false;
+
+
+
+        }
+
         private static void Nothing(Pawn pawn, BodyPartRecord part) {
             //nothing
             Find.LetterStack.ReceiveLetter("WTH_Letter_Nothing_Label".Translate(), "WTH_Letter_Nothing_Description".Translate(), LetterDefOf.NeutralEvent, pawn);
+            HealthUtility.GiveInjuriesOperationFailureMinor(pawn, part);
         }
 
         private static void HackPoorly(Pawn pawn, BodyPartRecord part)

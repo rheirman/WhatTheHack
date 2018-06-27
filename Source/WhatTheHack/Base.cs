@@ -39,16 +39,6 @@ namespace WhatTheHack
         {
             base.DefsLoaded();
 
-            foreach(RecipeDef recipe in from rd in DefDatabase<RecipeDef>.AllDefs
-                                 where rd.HasModExtension<DefModExtension_Recipe>()
-                                 select rd)
-            {
-                Log.Message("modifying success chance for surgery:" + recipe.defName);
-                DefModExtension_Recipe modExtentsion = recipe.GetModExtension<DefModExtension_Recipe>();
-                recipe.deathOnFailedSurgeryChance = modExtentsion.deathOnFailedSurgeryChance;
-                recipe.surgerySuccessChanceFactor = modExtentsion.surgerySuccessChanceFactor;
-                recipe.requireBed = modExtentsion.requireBed;
-            }
 
             foreach (FactionDef factionDef in from td in DefDatabase<FactionDef>.AllDefs
                                           select td)
@@ -69,6 +59,17 @@ namespace WhatTheHack
         {
             _extendedDataStorage = UtilityWorldObjectManager.GetUtilityWorldObject<ExtendedDataStorage>();
             base.WorldLoaded();
+            foreach (RecipeDef recipe in from rd in DefDatabase<RecipeDef>.AllDefs
+                                         where rd.HasModExtension<DefModExtension_Recipe>()
+                                         select rd)
+            {
+                Log.Message("modifying success chance for surgery:" + recipe.defName);
+                DefModExtension_Recipe modExtentsion = recipe.GetModExtension<DefModExtension_Recipe>();
+                recipe.deathOnFailedSurgeryChance = modExtentsion.deathOnFailedSurgeryChance;
+                recipe.surgerySuccessChanceFactor = modExtentsion.surgerySuccessChanceFactor;
+                recipe.requireBed = modExtentsion.requireBed;
+            }
+
         }
         public ExtendedDataStorage GetExtendedDataStorage()
         {
