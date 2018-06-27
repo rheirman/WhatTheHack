@@ -48,7 +48,7 @@ namespace WhatTheHack.Jobs
                     if (!Takee.IsHacked() || (Takee.IsHacked() && Takee.Faction != Faction.OfPlayer))
                     {
                         this.pawn.carryTracker.TryDropCarriedThing(HackingTable.GetSleepingSlotPos(Building_HackingTable.SLOTINDEX), ThingPlaceMode.Direct, out Thing thing, null);
-                        Building_HackingTable.TryAddPawnForModification(Takee, WTH_DefOf.HackMechanoid);
+                        Building_HackingTable.TryAddPawnForModification(Takee, WTH_DefOf.WTH_HackMechanoid);
                         Takee.Position = HackingTable.GetSleepingSlotPos(Building_HackingTable.SLOTINDEX);
                     }                 
                 },

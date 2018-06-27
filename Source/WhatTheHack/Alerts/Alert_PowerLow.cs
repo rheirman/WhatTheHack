@@ -16,8 +16,8 @@ namespace WhatTheHack.Alerts
             get
             {
                 return from p in PawnsFinder.AllMaps_Spawned
-                       where p.needs.TryGetNeed(WTH_DefOf.Mechanoid_Power) != null 
-                       && ((Need_Power) p.needs.TryGetNeed(WTH_DefOf.Mechanoid_Power)).CurCategory >= PowerCategory.VeryLowPower 
+                       where p.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) != null 
+                       && ((Need_Power) p.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power)).CurCategory >= PowerCategory.VeryLowPower 
                        && !(p.CurrentBed() is Building_MechanoidPlatform) 
                        select p;
             }

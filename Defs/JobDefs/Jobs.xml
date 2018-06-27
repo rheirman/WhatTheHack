@@ -1,30 +1,30 @@
 <Defs>
   <JobDef>
-    <defName>CarryToHackingTable</defName>
+    <defName>WTH_CarryToHackingTable</defName>
     <driverClass>WhatTheHack.Jobs.JobDriver_CarryToHackingTable</driverClass>
     <reportString>Carrying mechanoid to hacking table</reportString>
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
   <JobDef>
-    <defName>ClearHackingTable</defName>
+    <defName>WTH_ClearHackingTable</defName>
     <driverClass>WhatTheHack.Jobs.JobDriver_ClearHackingTable</driverClass>
     <reportString>Remove the mechanoid from the mechanoid table to make room</reportString>
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
   <JobDef>
-    <defName>Mechanoid_Rest</defName>
+    <defName>WTH_Mechanoid_Rest</defName>
     <driverClass>WhatTheHack.Jobs.JobDriver_Mechanoid_Rest</driverClass>
     <reportString>Linked to mechanoid platform</reportString>
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
   <JobDef>
-    <defName>ControlMechanoid</defName>
+    <defName>WTH_ControlMechanoid</defName>
     <driverClass>WhatTheHack.Jobs.JobDriver_ControlMechanoid</driverClass>
     <reportString>Controlling mechanoid</reportString>
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
   <JobDef>
-    <defName>ControlMechanoid_Goto</defName>
+    <defName>WTH_ControlMechanoid_Goto</defName>
     <driverClass>WhatTheHack.Jobs.JobDriver_ControlMechanoid_Goto</driverClass>
     <reportString>Controlling mechanoid (moving)</reportString>
     <casualInterruptible>false</casualInterruptible>

@@ -14,7 +14,7 @@ namespace WhatTheHack
     {
         public static bool IsHacked(this Pawn pawn)
         {
-            if (pawn.health != null && (pawn.health.hediffSet.HasHediff(WTH_DefOf.TargetingHacked) || pawn.health.hediffSet.HasHediff(WTH_DefOf.TargetingHackedPoorly)))
+            if (pawn.health != null && (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_TargetingHacked) || pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_TargetingHackedPoorly)))
             {
                 return true;
             }
@@ -29,7 +29,7 @@ namespace WhatTheHack
         }
         public static bool HasReplacedAI(this Pawn pawn)
         {
-            if (pawn.health != null && (pawn.health.hediffSet.HasHediff(WTH_DefOf.ReplacedAI)))
+            if (pawn.health != null && (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_ReplacedAI)))
             {
                 return true;
             }
@@ -40,7 +40,7 @@ namespace WhatTheHack
         }
         public static bool HasHackedLocomotion(this Pawn pawn)
         {
-            if (pawn.health != null && (pawn.health.hediffSet.HasHediff(WTH_DefOf.LocomotionHacked)))
+            if (pawn.health != null && (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_LocomotionHacked)))
             {
                 return true;
             }

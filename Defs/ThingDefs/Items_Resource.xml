@@ -1,6 +1,6 @@
 <Defs>
   <ThingDef ParentName="ResourceBase">
-    <defName>MechanoidParts</defName>
+    <defName>WTH_MechanoidParts</defName>
     <label>mechanoid parts</label>
     <description>Parts scrapped from destroyed mechanoids. Needed for repairing and hacking mechanoids.</description>
     <graphicData>
@@ -23,7 +23,7 @@
     </thingCategories>
   </ThingDef>
   <ThingDef ParentName="ResourceBase">
-    <defName>MechanoidChip</defName>
+    <defName>WTH_MechanoidChip</defName>
     <label>advanced mechanoid chip</label>
     <description>Advanced chips scavenged from downed or destroyed mechanoids. Needed for the more complicated hacking operations.</description>
     <graphicData>

@@ -42,7 +42,7 @@ namespace WhatTheHack.Harmony
                 return;
             }
 
-            if (bill != null && bill.recipe == WTH_DefOf.HackMechanoid &&  !__instance.OnHackingTable())
+            if (bill != null && bill.recipe == WTH_DefOf.WTH_HackMechanoid &&  !__instance.OnHackingTable())
             {
                 __result = false;
             }
@@ -138,7 +138,7 @@ namespace WhatTheHack.Harmony
             }
             else if(pawnData.shouldAutoRecharge)
             {
-                Need_Power powerNeed = __instance.needs.TryGetNeed(WTH_DefOf.Mechanoid_Power) as Need_Power;
+                Need_Power powerNeed = __instance.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) as Need_Power;
                 if (powerNeed != null && powerNeed.CurCategory >= PowerCategory.LowPower)
                 {
                     disabled = true;
@@ -170,7 +170,7 @@ namespace WhatTheHack.Harmony
                         Building_MechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(__instance, __instance);
                         if (closestAvailablePlatform != null)
                         {
-                            Job job = new Job(WTH_DefOf.Mechanoid_Rest, closestAvailablePlatform);
+                            Job job = new Job(WTH_DefOf.WTH_Mechanoid_Rest, closestAvailablePlatform);
                             __instance.jobs.TryTakeOrderedJob(job);
                         }
                     }

@@ -13,7 +13,7 @@ namespace WhatTheHack.Jobs
         {
             if(pawn.RemoteControlLink() != null && Utilities.QuickDistance(pawn.Position, pawn.RemoteControlLink().Position) <= 30)
             {
-                Job job = new Job(WTH_DefOf.ControlMechanoid);
+                Job job = new Job(WTH_DefOf.WTH_ControlMechanoid);
                 job.count = 1;
                 return job;
             }

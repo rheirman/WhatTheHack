@@ -16,7 +16,7 @@
 		<costList>
 			<ComponentIndustrial>6</ComponentIndustrial>
 			<Plasteel>25</Plasteel>
-			<MechanoidChip>5</MechanoidChip>
+			<WTH_MechanoidChip>5</WTH_MechanoidChip>
 			<Uranium>2</Uranium>
 		</costList>
 		<recipeMaker>

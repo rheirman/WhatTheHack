@@ -1,10 +1,20 @@
   <Defs>
   
+	<HediffDef ParentName="DiseaseBase">
+		<defName>WTH_ShutDown</defName>
+		<label>shut down</label>
+		<hediffClass>HediffWithComps</hediffClass>
+		<initialSeverity>0.001</initialSeverity>
+		<lethalSeverity>0</lethalSeverity>
+		<defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+		<labelNoun>a shutdown command</labelNoun>
+	</HediffDef>
+	
   	<HediffDef>
+		<defName>WTH_RegeneratedPart</defName>
 		<hediffClass>Hediff_Injury</hediffClass>
 		<tendable>true</tendable>
 		<displayWound>true</displayWound>
-		<defName>WTH_RegeneratedPart</defName>
 		<label>regenerating part</label>
 		<defaultLabelColor>(1.0, 0.5, 0.1)</defaultLabelColor>
 		<labelNoun>a freshly replaced part that is regenerating</labelNoun>
@@ -24,44 +34,44 @@
 	</HediffDef>
   -->
   	  <HediffDef>
-		<defName>ReplacedAI</defName>
+		<defName>WTH_ReplacedAI</defName>
 		<label>AI replaced</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>
 	  </HediffDef>
 	  
 	  <HediffDef>
-		<defName>TargetingHacked</defName>
+		<defName>WTH_TargetingHacked</defName>
 		<label>targeting hacked</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
-		<causesNeed>Mechanoid_Power</causesNeed>
+		<causesNeed>WTH_Mechanoid_Power</causesNeed>
 		<isBad>false</isBad>
 	  </HediffDef>
 	  
 	  <HediffDef>
-		<defName>LocomotionHacked</defName>
+		<defName>WTH_LocomotionHacked</defName>
 		<label>locomotion hacked</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>
 	  </HediffDef> 
 	  
 	  <HediffDef>
-		<defName>TargetingHackedPoorly</defName>
+		<defName>WTH_TargetingHackedPoorly</defName>
 		<label>targeting hacked poorly</label>
 		<defaultLabelColor>(1.0, 0.5, 0.1)</defaultLabelColor>
-		<causesNeed>Mechanoid_Power</causesNeed>
+		<causesNeed>WTH_Mechanoid_Power</causesNeed>
 		<isBad>false</isBad>
 	  </HediffDef>
 	  
 	  <HediffDef>
-		<defName>TargetingDestroyed</defName>
+		<defName>WTH_TargetingDestroyed</defName>
 		<label>targeting destroyed</label>
 		<defaultLabelColor>(1.0, 0.5, 0.1)</defaultLabelColor>
 		<isBad>false</isBad>
 	  </HediffDef>
 	  
 	  <NeedDef>
-		<defName>Mechanoid_Power</defName>
+		<defName>WTH_Mechanoid_Power</defName>
 		 <onlyIfCausedByHediff>true</onlyIfCausedByHediff>
 		<needClass>WhatTheHack.Needs.Need_Power</needClass>
 		<label>power</label>
@@ -70,7 +80,7 @@
 	  </NeedDef>
 	  
 	  <HediffDef>
-		<defName>VeryLowPower</defName>
+		<defName>WTH_VeryLowPower</defName>
 		<label>very low power</label>
 		<isBad>true</isBad>
 		<stages>
@@ -86,7 +96,7 @@
 	  </HediffDef>
 	  
 	  <HediffDef>
-		<defName>NoPower</defName>
+		<defName>WTH_NoPower</defName>
 		<label>no power</label>
 		<isBad>true</isBad>
 		<stages>

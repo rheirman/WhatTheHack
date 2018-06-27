@@ -59,6 +59,7 @@
     <Compile Include="Harmony\PawnCapacitiesHandler.cs" />
     <Compile Include="ModExtension\DefModExtension_PawnCapacity.cs" />
     <Compile Include="ModExtension\DefModExtension_Recipe.cs" />
+    <Compile Include="Recipes\Recipe_ShutDown.cs" />
     <Compile Include="Record.cs" />
     <Compile Include="Apparel\RemoteController.cs" />
     <Compile Include="Base.cs" />

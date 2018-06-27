@@ -47,7 +47,7 @@ namespace WhatTheHack.Jobs
             {
                 root = followee.Position;
             }
-            Job job = new Job(WTH_DefOf.ControlMechanoid_Goto, followee.Position);
+            Job job = new Job(WTH_DefOf.WTH_ControlMechanoid_Goto, followee.Position);
             job.expiryInterval = this.FollowJobExpireInterval;
             job.checkOverrideOnExpire = true;
             if (pawn.mindState.duty != null && pawn.mindState.duty.locomotion != LocomotionUrgency.None)

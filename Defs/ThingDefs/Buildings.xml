@@ -1,6 +1,6 @@
 <Defs>
   <ThingDef ParentName="BuildingBase">
-    <defName>HackingTable</defName>
+    <defName>WTH_HackingTable</defName>
     <label>mechanoid hacking facility</label>
     <description>Facility for hacking and repairing mechanoids</description>
     <thingClass>WhatTheHack.Buildings.Building_HackingTable</thingClass>
@@ -57,7 +57,7 @@
   
   
   <ThingDef ParentName="BuildingBase">
-    <defName>MechanoidPlatform</defName>
+    <defName>WTH_MechanoidPlatform</defName>
     <label>mechanoid platform</label>
     <description>Platform used for charging and repairing mechanoids.</description>
 	<thingClass>WhatTheHack.Buildings.Building_MechanoidPlatform</thingClass>
@@ -103,7 +103,7 @@
         <fuelCapacity>20.0</fuelCapacity>
         <fuelFilter>
           <thingDefs>
-            <li>MechanoidParts</li>
+            <li>WTH_MechanoidParts</li>
           </thingDefs>
         </fuelFilter>
         <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>

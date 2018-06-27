@@ -1,6 +1,6 @@
  <Defs>
 	 <DutyDef>
-		<defName>SearchAndDestroy</defName>
+		<defName>WTH_SearchAndDestroy</defName>
 		<alwaysShowWeapon>true</alwaysShowWeapon>
 		<thinkNode Class="ThinkNode_Priority">
 		  <subNodes>
@@ -14,7 +14,7 @@
 		</thinkNode>
 	  </DutyDef>
 	  <DutyDef>
-		<defName>ControlMechanoidDuty</defName>
+		<defName>WTH_ControlMechanoidDuty</defName>
 		<alwaysShowWeapon>false</alwaysShowWeapon>
 		<thinkNode Class="ThinkNode_Priority">
 		  <subNodes>

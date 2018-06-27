@@ -15,7 +15,7 @@ namespace WhatTheHack
 
         public static Building_HackingTable GetAvailableHackingTable(Pawn pawn, Pawn targetPawn)
         {
-            return (Building_HackingTable)GenClosest.ClosestThingReachable(targetPawn.Position, targetPawn.Map, ThingRequest.ForDef(WTH_DefOf.HackingTable), PathEndMode.OnCell, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false), 9999f, delegate (Thing b)
+            return (Building_HackingTable)GenClosest.ClosestThingReachable(targetPawn.Position, targetPawn.Map, ThingRequest.ForDef(WTH_DefOf.WTH_HackingTable), PathEndMode.OnCell, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false), 9999f, delegate (Thing b)
             {
                 if (b is Building_HackingTable)
                 {
@@ -31,7 +31,7 @@ namespace WhatTheHack
         }
         public static Building_MechanoidPlatform GetAvailableMechanoidPlatform(Pawn pawn, Pawn targetPawn)
         {
-            return (Building_MechanoidPlatform)GenClosest.ClosestThingReachable(targetPawn.Position, targetPawn.Map, ThingRequest.ForDef(WTH_DefOf.MechanoidPlatform), PathEndMode.OnCell, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false), 9999f, delegate (Thing b)
+            return (Building_MechanoidPlatform)GenClosest.ClosestThingReachable(targetPawn.Position, targetPawn.Map, ThingRequest.ForDef(WTH_DefOf.WTH_MechanoidPlatform), PathEndMode.OnCell, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false), 9999f, delegate (Thing b)
             {
 
                 if (b is Building_MechanoidPlatform)

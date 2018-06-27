@@ -53,7 +53,7 @@ namespace WhatTheHack.Recipes
                     }
                     //Re-add surgery bill
                     
-                    Building_HackingTable.TryAddPawnForModification(pawn, WTH_DefOf.HackMechanoid);
+                    Building_HackingTable.TryAddPawnForModification(pawn, WTH_DefOf.WTH_HackMechanoid);
 
                     return;
                 }
@@ -86,7 +86,7 @@ namespace WhatTheHack.Recipes
 
         private static void HackPoorly(Pawn pawn, BodyPartRecord part)
         {
-            pawn.health.AddHediff(WTH_DefOf.TargetingHackedPoorly, part, null);
+            pawn.health.AddHediff(WTH_DefOf.WTH_TargetingHackedPoorly, part, null);
             pawn.SetFaction(Faction.OfPlayer);
             if (pawn.jobs.curDriver != null)
             {

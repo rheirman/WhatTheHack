@@ -4,9 +4,10 @@
 		<xpath>*/ThingDef[@ParentName = "BaseMechanoid"]</xpath>
 		<value>
 			<recipes>
-				<li>HackMechanoid</li>
-				<li>ImplantAI</li>
-				<li>HackLocomotion</li>
+				<li>WTH_HackMechanoid</li>
+				<li>WTH_ImplantAI</li>
+				<li>WTH_HackLocomotion</li>
+				<li>WTH_ShutDownMechanoid</li>
 			</recipes>
 		</value>
 	</Operation> 

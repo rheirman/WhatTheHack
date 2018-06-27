@@ -44,7 +44,7 @@ namespace WhatTheHack.Harmony
                 {
                     Action action = delegate
                     {
-                        Job job = new Job(WTH_DefOf.ClearHackingTable, targetPawn, targetPawn.CurrentBed());
+                        Job job = new Job(WTH_DefOf.WTH_ClearHackingTable, targetPawn, targetPawn.CurrentBed());
                         job.count = 1;
                         pawn.jobs.TryTakeOrderedJob(job);
                     };
@@ -59,7 +59,7 @@ namespace WhatTheHack.Harmony
                     {
                         Action action = delegate
                         {
-                            Job job = new Job(WTH_DefOf.CarryToHackingTable, targetPawn, closestAvailableTable);
+                            Job job = new Job(WTH_DefOf.WTH_CarryToHackingTable, targetPawn, closestAvailableTable);
                             job.count = 1;
                             pawn.jobs.TryTakeOrderedJob(job);
                         };

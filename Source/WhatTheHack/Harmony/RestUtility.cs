@@ -86,7 +86,7 @@ namespace WhatTheHack.Harmony
     {
         static bool Prefix(ref bool __result, Pawn p, ThingDef bedDef)
         {
-            if(!p.RaceProps.IsMechanoid && (bedDef == WTH_DefOf.HackingTable || bedDef == WTH_DefOf.MechanoidPlatform)){
+            if(!p.RaceProps.IsMechanoid && (bedDef == WTH_DefOf.WTH_HackingTable || bedDef == WTH_DefOf.WTH_MechanoidPlatform)){
                 __result = false;
                 return false;
             }
@@ -103,7 +103,7 @@ namespace WhatTheHack.Harmony
             {
                 return true;
             }
-            if (p.jobs.curDriver == null || ((p.CurJob.def != WTH_DefOf.Mechanoid_Rest) && p.jobs.posture != PawnPosture.LayingInBed))
+            if (p.jobs.curDriver == null || ((p.CurJob.def != WTH_DefOf.WTH_Mechanoid_Rest) && p.jobs.posture != PawnPosture.LayingInBed))
             {
                 return true;
                 

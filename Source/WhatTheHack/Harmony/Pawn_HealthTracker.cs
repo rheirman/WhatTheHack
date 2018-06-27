@@ -113,7 +113,7 @@ namespace WhatTheHack.Harmony
 
             if (platform.HasPowerNow())
             {
-                Need powerNeed = pawn.needs.TryGetNeed(WTH_DefOf.Mechanoid_Power);
+                Need powerNeed = pawn.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power);
                 float powerPerTick = 0.75f * platform.PowerComp.Props.basePowerConsumption / GenDate.TicksPerDay; //TODO: no magic number
                 if (powerNeed.CurLevel + powerPerTick < powerNeed.MaxLevel)
                 {

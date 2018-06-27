@@ -43,18 +43,16 @@ namespace WhatTheHack
                                  where rd.HasModExtension<DefModExtension_Recipe>()
                                  select rd)
             {
+                Log.Message("modifying success chance for surgery:" + recipe.defName);
                 DefModExtension_Recipe modExtentsion = recipe.GetModExtension<DefModExtension_Recipe>();
                 recipe.deathOnFailedSurgeryChance = modExtentsion.deathOnFailedSurgeryChance;
                 recipe.surgerySuccessChanceFactor = modExtentsion.surgerySuccessChanceFactor;
                 recipe.requireBed = modExtentsion.requireBed;
             }
 
-            Log.Message("before adding tab names");
             foreach (FactionDef factionDef in from td in DefDatabase<FactionDef>.AllDefs
                                           select td)
             {
-                Log.Message("inside foreach");
-                Log.Message("adding: " + factionDef.label);
                 tabNames.Add(factionDef.label);
             }
             tabsHandler = Settings.GetHandle<String>("tabs", "Configure faction mech usage", "", "none");

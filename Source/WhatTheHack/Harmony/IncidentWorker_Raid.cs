@@ -78,8 +78,8 @@ namespace WhatTheHack.Harmony
                     Pawn mechanoid = PawnGenerator.GeneratePawn(pawnKindDef, parms.faction);
                     IntVec3 loc = CellFinder.RandomClosewalkCellNear(parms.spawnCenter, map, 8, null);
                     GenSpawn.Spawn(mechanoid, loc, map, parms.spawnRotation);
-                    mechanoid.health.AddHediff(WTH_DefOf.TargetingHacked);
-                    Need_Power powerNeed = (Need_Power) mechanoid.needs.TryGetNeed(WTH_DefOf.Mechanoid_Power);
+                    mechanoid.health.AddHediff(WTH_DefOf.WTH_TargetingHacked);
+                    Need_Power powerNeed = (Need_Power) mechanoid.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power);
                     powerNeed.CurLevel = powerNeed.MaxLevel;
                     list.Add(mechanoid);
                     cumulativePoints += pawnKindDef.combatPower;

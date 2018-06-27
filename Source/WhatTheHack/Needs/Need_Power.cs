@@ -65,28 +65,28 @@ namespace WhatTheHack.Needs
         public void SetHediffs(){
             if(CurCategory != PowerCategory.NoPower)
             {
-                Hediff noPowerHediff = pawn.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.NoPower, false);
+                Hediff noPowerHediff = pawn.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.WTH_NoPower, false);
                 if (noPowerHediff != null)
                 {
                     pawn.health.RemoveHediff(noPowerHediff);
                 }
             }
-            else if(!pawn.health.hediffSet.HasHediff(WTH_DefOf.NoPower))
+            else if(!pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_NoPower))
             {
-                Hediff noPowerHediff = HediffMaker.MakeHediff(WTH_DefOf.NoPower, pawn);
+                Hediff noPowerHediff = HediffMaker.MakeHediff(WTH_DefOf.WTH_NoPower, pawn);
                 pawn.health.AddHediff(noPowerHediff);
             }
             if (CurCategory != PowerCategory.VeryLowPower)
             {
-                Hediff veryLowPowerHediff = pawn.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.VeryLowPower, false);
+                Hediff veryLowPowerHediff = pawn.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.WTH_VeryLowPower, false);
                 if (veryLowPowerHediff != null)
                 {
                     pawn.health.RemoveHediff(veryLowPowerHediff);
                 }
             }
-            else if (!pawn.health.hediffSet.HasHediff(WTH_DefOf.VeryLowPower))
+            else if (!pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_VeryLowPower))
             {
-                Hediff veryLowPowerHediff = HediffMaker.MakeHediff(WTH_DefOf.VeryLowPower, pawn);
+                Hediff veryLowPowerHediff = HediffMaker.MakeHediff(WTH_DefOf.WTH_VeryLowPower, pawn);
                 pawn.health.AddHediff(veryLowPowerHediff);
             }
             

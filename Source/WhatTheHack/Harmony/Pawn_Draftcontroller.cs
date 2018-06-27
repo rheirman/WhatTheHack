@@ -56,7 +56,7 @@ namespace WhatTheHack.Harmony
 
         private static void DisableCommandIfMechanoidPowerLow(Pawn_DraftController __instance, Command_Toggle toggleCommand)
         {
-            Need_Power powerNeed = __instance.pawn.needs.TryGetNeed(WTH_DefOf.Mechanoid_Power) as Need_Power;
+            Need_Power powerNeed = __instance.pawn.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) as Need_Power;
             ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
             if (powerNeed != null && store != null)
             {

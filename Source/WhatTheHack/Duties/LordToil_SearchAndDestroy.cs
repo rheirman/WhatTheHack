@@ -22,7 +22,7 @@ namespace WhatTheHack.Duties
         {
             for (int i = 0; i < this.lord.ownedPawns.Count; i++)
             {
-                this.lord.ownedPawns[i].mindState.duty = new PawnDuty(WTH_DefOf.SearchAndDestroy);
+                this.lord.ownedPawns[i].mindState.duty = new PawnDuty(WTH_DefOf.WTH_SearchAndDestroy);
             }
         }
     }

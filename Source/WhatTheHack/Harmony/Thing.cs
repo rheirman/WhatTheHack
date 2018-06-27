@@ -30,18 +30,18 @@ namespace WhatTheHack.Harmony
             int partsCount = random.Next(GenMath.RoundRandom(pawn.kindDef.combatPower * 0.04f * efficiency), GenMath.RoundRandom(pawn.kindDef.combatPower * 0.08f * efficiency)); //TODO: no magic number
             if (partsCount > 0)
             {
-                Thing parts = ThingMaker.MakeThing(WTH_DefOf.MechanoidParts, null);
+                Thing parts = ThingMaker.MakeThing(WTH_DefOf.WTH_MechanoidParts, null);
                 parts.stackCount = partsCount;
                 yield return parts;
             }
             int chipCount = random.Next(0, GenMath.RoundRandom(pawn.kindDef.combatPower * 0.015f * efficiency));//TODO: no magic number
             if (chipCount > 0) 
             {
-                Thing chips = ThingMaker.MakeThing(WTH_DefOf.MechanoidChip, null);
+                Thing chips = ThingMaker.MakeThing(WTH_DefOf.WTH_MechanoidChip, null);
                 chips.stackCount = chipCount;
                 yield return chips;
             }
-            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.ReplacedAI))
+            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_ReplacedAI))
             {
                 Thing AICore = ThingMaker.MakeThing(ThingDefOf.AIPersonaCore);
                 yield return AICore;

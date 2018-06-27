@@ -1,6 +1,6 @@
 <Defs>
 	<RecipeDef>
-		<defName>HackMechanoid</defName>
+		<defName>WTH_HackMechanoid</defName>
 		<label>hack mechanoid targeting device</label>
 		<description>Hacks the targeting device of a mechanoid so it targets your enemies instead of yourself</description>
 		<workerClass>WhatTheHack.Recipes.Recipe_HackMechanoid</workerClass>
@@ -16,7 +16,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>MechanoidParts</li>
+						<li>WTH_MechanoidParts</li>
 					</thingDefs>
 				</filter>
 				<count>10</count>
@@ -30,7 +30,7 @@
 		<appliedOnFixedBodyParts>
 			<li>ArtificialBrain</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>TargetingHacked</addsHediff>
+		<addsHediff>WTH_TargetingHacked</addsHediff>
 		<workSkill>Intellectual</workSkill>
 		<researchPrerequisite>WTH_HackingBasics</researchPrerequisite>
 		<modExtensions>
@@ -43,7 +43,7 @@
 	</RecipeDef>
 	
 	<RecipeDef>
-		<defName>ImplantAI</defName>
+		<defName>WTH_ImplantAI</defName>
 		<label>implant AI</label>
 		<description>Implants the AI persona core into the mechanoid, allowing full control for combat purposes</description>
 		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
@@ -60,7 +60,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>MechanoidParts</li>
+						<li>WTH_MechanoidParts</li>
 					</thingDefs>
 				</filter>
 				<count>25</count>
@@ -68,7 +68,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>MechanoidChip</li>
+						<li>WTH_MechanoidChip</li>
 					</thingDefs>
 				</filter>
 				<count>5</count>
@@ -90,7 +90,7 @@
 		<appliedOnFixedBodyParts>
 			<li>ArtificialBrain</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ReplacedAI</addsHediff>
+		<addsHediff>WTH_ReplacedAI</addsHediff>
 		<researchPrerequisite>WTH_HackingAdvanced</researchPrerequisite>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
@@ -102,7 +102,7 @@
 	</RecipeDef>
 	
 	<RecipeDef>
-		<defName>HackLocomotion</defName>
+		<defName>WTH_HackLocomotion</defName>
 		<label>hack mechanoid locomotion system</label>
 		<description>Hacks the locomotion system of the mechanoid and adds a receiver to the mechanoid to allow the it to be operated by a colonist using a remote control device</description>
 		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
@@ -119,7 +119,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>MechanoidParts</li>
+						<li>WTH_MechanoidParts</li>
 					</thingDefs>
 				</filter>
 				<count>20</count>
@@ -127,7 +127,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>MechanoidChip</li>
+						<li>WTH_MechanoidChip</li>
 					</thingDefs>
 				</filter>
 				<count>10</count>
@@ -141,7 +141,7 @@
 		<appliedOnFixedBodyParts>
 			<li>ArtificialBrain</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>LocomotionHacked</addsHediff>
+		<addsHediff>WTH_LocomotionHacked</addsHediff>
 		<researchPrerequisite>WTH_HackingRemoteControl</researchPrerequisite>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
@@ -151,5 +151,19 @@
 			</li>
 		</modExtensions>
 	</RecipeDef>
-	
+
+  <RecipeDef>
+    <defName>WTH_ShutDownMechanoid</defName>
+    <label>shut down</label>
+    <description>Shuts down a mechanoid.</description>
+    <workerClass>WhatTheHack.Recipes.Recipe_ShutDown</workerClass>
+    <jobString>Shutting down mechanoid.</jobString>
+    <workAmount>500</workAmount>
+    <effectWorking>Repair</effectWorking>
+    <addsHediff>WTH_ShutDown</addsHediff>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <isViolation>true</isViolation>
+    <surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
+    <requireBed>false</requireBed>
+  </RecipeDef>
 </Defs>

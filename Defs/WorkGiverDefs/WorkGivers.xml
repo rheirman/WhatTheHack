@@ -1,6 +1,6 @@
 <Defs>
   <WorkGiverDef>
-    <defName>DoBillsMedicalMechanoidOperation</defName>
+    <defName>WTH_DoBillsMedicalMechanoidOperation</defName>
     <label>operate on mechanoids</label>
     <giverClass>WorkGiver_DoBill</giverClass>
     <workType>Crafting</workType>
