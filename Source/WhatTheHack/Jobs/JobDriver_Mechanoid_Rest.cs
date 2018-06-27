@@ -63,6 +63,7 @@ namespace WhatTheHack.Jobs
             toil.defaultCompleteMode = ToilCompleteMode.Never;
             toil.initAction = delegate
             {
+                pawn.jobs.posture = PawnPosture.Standing;
                 pawn.Position = MechanoidPlatform.GetSleepingSlotPos(Building_MechanoidPlatform.SLOTINDEX);
                 pawn.CurJob.SetTarget(TargetIndex.C, new LocalTargetInfo(new IntVec3(pawn.Position.x, pawn.Position.y, pawn.Position.z - 1)));
                 this.rotateToFace = TargetIndex.C;

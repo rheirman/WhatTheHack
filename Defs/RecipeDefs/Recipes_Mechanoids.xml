@@ -6,8 +6,8 @@
 		<workerClass>WhatTheHack.Recipes.Recipe_HackMechanoid</workerClass>
 		<jobString>Hacking mechanoid</jobString>
 		<workAmount>1500</workAmount>
-		<surgerySuccessChanceFactor>1.25</surgerySuccessChanceFactor>
-		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<requireBed>false</requireBed>
+		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
 		<skillRequirements>
 			<Crafting>6</Crafting>
 		</skillRequirements>
@@ -33,6 +33,13 @@
 		<addsHediff>TargetingHacked</addsHediff>
 		<workSkill>Intellectual</workSkill>
 		<researchPrerequisite>WTH_HackingBasics</researchPrerequisite>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+				<surgerySuccessChanceFactor>1.25</surgerySuccessChanceFactor>
+				<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+			</li>
+		</modExtensions>
 	</RecipeDef>
 	
 	<RecipeDef>
@@ -42,8 +49,8 @@
 		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
 		<jobString>Hacking mechanoid</jobString>
 		<workAmount>2000</workAmount>
-		<surgerySuccessChanceFactor>1.5</surgerySuccessChanceFactor>
-		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
+		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
+		<requireBed>false</requireBed>
 		<skillRequirements>
 			<Crafting>6</Crafting>
 		</skillRequirements>
@@ -85,6 +92,13 @@
 		</appliedOnFixedBodyParts>
 		<addsHediff>ReplacedAI</addsHediff>
 		<researchPrerequisite>WTH_HackingAdvanced</researchPrerequisite>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+				<surgerySuccessChanceFactor>1.5</surgerySuccessChanceFactor>
+				<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
+			</li>
+		</modExtensions>
 	</RecipeDef>
 	
 	<RecipeDef>
@@ -94,8 +108,8 @@
 		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
 		<jobString>Hacking mechanoid</jobString>
 		<workAmount>3000</workAmount>
-		<surgerySuccessChanceFactor>1.5</surgerySuccessChanceFactor>
-		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
+		<requireBed>false</requireBed>
+		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
 		<skillRequirements>
 			<Crafting>6</Crafting>
 		</skillRequirements>
@@ -129,6 +143,13 @@
 		</appliedOnFixedBodyParts>
 		<addsHediff>LocomotionHacked</addsHediff>
 		<researchPrerequisite>WTH_HackingRemoteControl</researchPrerequisite>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+				<surgerySuccessChanceFactor>1.5</surgerySuccessChanceFactor>
+				<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
+			</li>
+		</modExtensions>
 	</RecipeDef>
 	
 </Defs>

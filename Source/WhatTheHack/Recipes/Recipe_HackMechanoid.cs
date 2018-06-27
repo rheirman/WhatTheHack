@@ -146,15 +146,22 @@ namespace WhatTheHack.Recipes
         private static void HealToStanding(Pawn pawn, BodyPartRecord part)
         {
             bool shouldStop = false;
-            while (!shouldStop)
+            float extraHealth = 100f; //TODO: no magic number;
+            extraHealth *= pawn.HealthScale;
+            float healPerIteration = 10f;
+            float totalExtraHealed = 0f;
+            while (shouldStop && totalExtraHealed <= extraHealth)
             {
                 Hediff_Injury hediff_Injury = pawn.health.hediffSet.GetHediffs<Hediff_Injury>().Where(new Func<Hediff_Injury, bool>(HediffUtility.CanHealNaturally)).RandomElement<Hediff_Injury>();
                 if (hediff_Injury == null || !pawn.Downed)
                 {
                     shouldStop = true;
-                    continue;
                 }
-                hediff_Injury.Heal(15);
+                hediff_Injury.Heal(healPerIteration);
+                if (shouldStop)
+                {
+                    totalExtraHealed += healPerIteration;
+                }
             }
             pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
             if (pawn.GetLord() == null || pawn.GetLord().LordJob == null)

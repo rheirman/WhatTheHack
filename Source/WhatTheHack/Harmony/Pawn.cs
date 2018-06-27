@@ -17,6 +17,20 @@ using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
 {
+    [HarmonyPatch(typeof(Pawn), "DropAndForbidEverything")]
+    class Pawn_DropAndForbidEverything
+    {
+        static bool Prefix(Pawn __instance)
+        {
+            if (__instance.RaceProps.IsMechanoid && !__instance.Dead)
+            {
+                return false;
+            }
+            return true;
+        }
+    }
+
+
     [HarmonyPatch(typeof(Pawn), "CurrentlyUsableForBills")]
     static class Pawn_CurrentlyUsableForBills
     {

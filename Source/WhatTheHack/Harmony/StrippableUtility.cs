@@ -8,6 +8,7 @@ using Verse;
 
 namespace WhatTheHack.Harmony
 {
+    /*
     [HarmonyPatch(typeof(StrippableUtility), "CanBeStrippedByColony")]
     class WorkGiver_Strip_HasJobOnThing
     {
@@ -27,4 +28,5 @@ namespace WhatTheHack.Harmony
             return true;
         }
     }
+    */
 }

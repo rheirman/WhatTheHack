@@ -7,6 +7,7 @@ using Verse;
 
 namespace WhatTheHack.Harmony
 {
+    /*
     [HarmonyPatch(typeof(Pawn_EquipmentTracker), "DropAllEquipment")]
     class Pawn_InventoryTracker_DropAllEquipment
     {
@@ -20,4 +21,5 @@ namespace WhatTheHack.Harmony
             return true;
         }
     }
+    */
 }

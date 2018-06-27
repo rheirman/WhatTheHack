@@ -9,6 +9,7 @@ using HugsLib.Settings;
 using Verse;
 using RimWorld;
 
+
 namespace WhatTheHack
 {
     public class Base : ModBase
@@ -37,6 +38,16 @@ namespace WhatTheHack
         public override void DefsLoaded()
         {
             base.DefsLoaded();
+
+            foreach(RecipeDef recipe in from rd in DefDatabase<RecipeDef>.AllDefs
+                                 where rd.HasModExtension<DefModExtension_Recipe>()
+                                 select rd)
+            {
+                DefModExtension_Recipe modExtentsion = recipe.GetModExtension<DefModExtension_Recipe>();
+                recipe.deathOnFailedSurgeryChance = modExtentsion.deathOnFailedSurgeryChance;
+                recipe.surgerySuccessChanceFactor = modExtentsion.surgerySuccessChanceFactor;
+                recipe.requireBed = modExtentsion.requireBed;
+            }
 
             Log.Message("before adding tab names");
             foreach (FactionDef factionDef in from td in DefDatabase<FactionDef>.AllDefs

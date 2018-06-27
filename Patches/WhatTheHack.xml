@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-
 <Patch>
-<!--
 	<Operation Class="PatchOperationAdd">
-	  <xpath>*/ThingDef[@ParentName = "BaseMechanoid"]/recipes</xpath>
-	  <value>
-		<li>HackMechanoid</li>
-		<li>ImplantAI</li>
-		<li>HackLocomotion</li>
-	  </value>
+		<xpath>*/ThingDef[@ParentName = "BaseMechanoid"]</xpath>
+		<value>
+			<recipes>
+				<li>HackMechanoid</li>
+				<li>ImplantAI</li>
+				<li>HackLocomotion</li>
+			</recipes>
+		</value>
 	</Operation> 
-	-->
+	<!--In vanilla, centipedes always die due to the damagethreshold before being downed. This patch makes sure they are downed quicker-->
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>*/ThingDef[defName = "Mech_Centipede"]</xpath>
+		<value>
+			<li Class="WhatTheHack.DefModExtension_PawnCapacity">
+				<minForCapableMoving>0.38</minForCapableMoving>
+			</li>
+		</value>
+	</Operation> 
 </Patch>
