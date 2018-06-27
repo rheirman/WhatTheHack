@@ -9,8 +9,8 @@
 		<requireBed>false</requireBed>
 		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
 		<skillRequirements>
-			<Crafting>6</Crafting>
-			<Intellectual>6</Intellectual>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
 		</skillRequirements>
 		<workSkill>Intellectual</workSkill>
 		<effectWorking>Repair</effectWorking>
@@ -37,7 +37,7 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
-				<surgerySuccessChanceFactor>0.5</surgerySuccessChanceFactor>
+				<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
 				<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
 			</li>
 		</modExtensions>
@@ -53,7 +53,8 @@
 		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
 		<requireBed>false</requireBed>
 		<skillRequirements>
-			<Crafting>6</Crafting>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
 		</skillRequirements>
 		<workSkill>Intellectual</workSkill>
 		<effectWorking>Repair</effectWorking>
@@ -112,7 +113,8 @@
 		<requireBed>false</requireBed>
 		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
 		<skillRequirements>
-			<Crafting>6</Crafting>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
 		</skillRequirements>
 		<workSkill>Intellectual</workSkill>
 		<effectWorking>Repair</effectWorking>

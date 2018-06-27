@@ -18,7 +18,6 @@ namespace WhatTheHack.Recipes
         public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
         {
             BodyPartRecord brain = pawn.health.hediffSet.GetBrain();
-            Log.Message("recipe.SuccessFactor: " + recipe.surgerySuccessChanceFactor);
             if (brain != null && (!pawn.health.hediffSet.HasHediff(recipe.addsHediff) || (pawn.IsHacked() && pawn.Faction != Faction.OfPlayer)))
             {
                 yield return brain;
@@ -66,12 +65,12 @@ namespace WhatTheHack.Recipes
 
         private bool CheckHackingFail(Pawn hackee, Pawn hacker, BodyPartRecord part)
         {
-            float failureChance = 1.0f;
-            failureChance *= recipe.surgerySuccessChanceFactor;
-            failureChance *= hacker.GetStatValue(WTH_DefOf.WTH_HackingSuccessChance, true);
+            float successChance = 1.0f;
+            successChance *= recipe.surgerySuccessChanceFactor;
+            successChance *= hacker.GetStatValue(WTH_DefOf.WTH_HackingSuccessChance, true);
             Random r = new Random(DateTime.Now.Millisecond);
-
-            if (!Rand.Chance(failureChance))
+            Log.Message("SuccessChance: " + successChance);
+            if (!Rand.Chance(successChance))
             {
                 if (Rand.Chance(this.recipe.deathOnFailedSurgeryChance))
                 {
@@ -82,9 +81,9 @@ namespace WhatTheHack.Recipes
                     }
                     Messages.Message("MessageMedicalOperationFailureFatal".Translate(new object[]
                     {
-                hacker.LabelShort,
-                hacker.LabelShort,
-                this.recipe.LabelCap
+                        hacker.LabelShort,
+                        hacker.LabelShort,
+                        this.recipe.LabelCap
                     }), hackee, MessageTypeDefOf.NegativeHealthEvent, true);
                 }
                 else
@@ -185,7 +184,7 @@ namespace WhatTheHack.Recipes
             extraHealth *= pawn.HealthScale;
             float healPerIteration = 10f;
             float totalExtraHealed = 0f;
-            while (shouldStop && totalExtraHealed <= extraHealth)
+            while (totalExtraHealed <= extraHealth)
             {
                 Hediff_Injury hediff_Injury = pawn.health.hediffSet.GetHediffs<Hediff_Injury>().Where(new Func<Hediff_Injury, bool>(HediffUtility.CanHealNaturally)).RandomElement<Hediff_Injury>();
                 if (hediff_Injury == null || !pawn.Downed)

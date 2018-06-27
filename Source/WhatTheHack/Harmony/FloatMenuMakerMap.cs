@@ -71,50 +71,6 @@ namespace WhatTheHack.Harmony
                     }
                 }  
 
-                //Following menu options are only for testing, and only enabled when godmode is on. 
-                if (!Verse.DebugSettings.godMode)
-                {
-                    return;
-                }
-                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(targetPawn);
-                /*
-                if (!pawnData.isHacked)
-                {
-                    Action action = delegate
-                    {
-                        targetPawn.SetFaction(Faction.OfPlayer);
-                        if (targetPawn.story == null)
-                        {
-                            Log.Message("story was null");
-                            targetPawn.story = new Pawn_StoryTracker(targetPawn);
-                        }
-                        pawnData.isHacked = true;
-
-                    };
-                    __result.Add(new FloatMenuOption("(Godmode) hack " + targetPawn.Name, action, MenuOptionPriority.Low));
-                }
-                */
-
-
-                //Allows you to instantly activate mechanoid with the right click menu.
-                if (targetPawn.IsHacked())
-                {
-                    Action action = delegate
-                    {
-                        List<Pawn> pawns = new List<Pawn>
-                        {
-                            targetPawn
-                        };
-                        LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_SearchAndDestroy(), targetPawn.Map, pawns);
-                    };
-                    __result.Add(new FloatMenuOption("(Godmode) activate " + targetPawn.Name, action, MenuOptionPriority.Low));
-                    pawnData.isActive = true;
-                }
-
-
-
-
-
             }
         }
 

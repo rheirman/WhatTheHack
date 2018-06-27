@@ -19,7 +19,6 @@ namespace WhatTheHack.Harmony
     {
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            Log.Message("applying transpiler");
             bool flag = false;
             var instructionsList = new List<CodeInstruction>(instructions);
             for (var i = 0; i < instructionsList.Count; i++)
@@ -32,7 +31,6 @@ namespace WhatTheHack.Harmony
                 }
                 if(flag && instruction.opcode == OpCodes.Ldc_R4)
                 {
-                    Log.Message("applying change to instruction  OpCodes.Ldc_R4");
                     //yield return new CodeInstruction(OpCodes.Call, typeof(Pawn_HealthTracker_CheckForStateChange).GetMethod(""))
                     yield return new CodeInstruction(OpCodes.Ldc_R4,0.5f);//TODO: no magic number? 
                     flag = false;
@@ -48,10 +46,6 @@ namespace WhatTheHack.Harmony
     [HarmonyPatch(typeof(Pawn_HealthTracker), "MakeDowned")]
     static class Pawn_HealthTracker_MakeDowned
     {
-        static void Prefix()
-        {
-            Log.Message("MakeDowned called");
-        }
         static void Postfix(Pawn_HealthTracker __instance)
         {
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
@@ -118,13 +112,11 @@ namespace WhatTheHack.Harmony
                                                     select x)
             {
                 int randInt = rand.Next(0, 100);
-                Log.Message("randInt: " + randInt);
-                Log.Message("fixing lost parts, damaging part with: " + (int)hediff.Part.def.GetMaxHealth(pawn) + " damage");
                 pawn.health.RemoveHediff(hediff);
                 platform.refuelableComp.ConsumeFuel(5f);
                 //Hediff_Injury injury = new Hediff_Injury();
                 DamageWorker_AddInjury addInjury = new DamageWorker_AddInjury();
-                addInjury.Apply(new DamageInfo(WTH_DefOf.WTH_RegeneratedPartDamage, (int)hediff.Part.def.GetMaxHealth(pawn) - 1, -1, null, hediff.Part), pawn);
+                addInjury.Apply(new DamageInfo(WTH_DefOf.WTH_RegeneratedPartDamage, hediff.Part.def.GetMaxHealth(pawn) - 1), pawn);
                 MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, WTH_DefOf.WTH_Mote_HealingCrossGreen);
 
                 //pawn.health.AddHediff(WTH_DefOf.WTH_RegeneratedPart);
