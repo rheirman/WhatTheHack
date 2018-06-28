@@ -3,7 +3,7 @@
     <defName>WTH_DoBillsMedicalMechanoidOperation</defName>
     <label>operate on mechanoids</label>
     <giverClass>WorkGiver_DoBill</giverClass>
-    <workType>Crafting</workType>
+    <workType>WTH_Hack</workType>
     <priorityInType>110</priorityInType>
     <billGiversAllMechanoids>true</billGiversAllMechanoids>
     <billGiversAllMechanoidsCorpses>true</billGiversAllMechanoidsCorpses>

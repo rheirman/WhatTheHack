@@ -12,7 +12,6 @@
 			<Crafting>5</Crafting>
 			<Intellectual>5</Intellectual>
 		</skillRequirements>
-		<workSkill>Intellectual</workSkill>
 		<effectWorking>Repair</effectWorking>
 		<ingredients>
 			<li>
