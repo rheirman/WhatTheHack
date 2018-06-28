@@ -74,7 +74,7 @@ namespace WhatTheHack.Harmony
 
             if (__instance.hediffSet.HasNaturallyHealingInjury() && pawn.OnMechanoidPlatform())
             {
-                if (pawn.IsHashIntervalTick(200) && platform.CanHealNow())
+                if (pawn.IsHashIntervalTick(10) && platform.CanHealNow())
                 {
                     TryHealRandomInjury(__instance, pawn, platform);
                     if (platform.RegenerateActive && pawn.IsHashIntervalTick(1000))
@@ -113,7 +113,7 @@ namespace WhatTheHack.Harmony
             {
                 int randInt = rand.Next(0, 100);
 
-                if(randInt <= 2)//TODO: No magic number
+                if(randInt <= 2)
                 {
                     pawn.health.RemoveHediff(hediff);
                     platform.refuelableComp.ConsumeFuel(5f);
@@ -138,7 +138,7 @@ namespace WhatTheHack.Harmony
             Hediff_Injury hediff_Injury = hediffs.RandomElement();
             float healAmount = (platform.def.building.bed_healPerDay / RimWorld.GenDate.TicksPerDay) * pawn.HealthScale;
             hediff_Injury.Heal(healAmount);
-            if (pawn.IsHashIntervalTick(150) && !pawn.IsHashIntervalTick(200) && !pawn.Position.Fogged(pawn.Map))
+            if (pawn.IsHashIntervalTick(50) && !pawn.IsHashIntervalTick(100) && !pawn.Position.Fogged(pawn.Map))
             {
                 MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_HealingCross);
             }

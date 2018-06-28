@@ -11,7 +11,7 @@
     <tickerType>Normal</tickerType>
     <statBases>
       <Mass>3</Mass>
-			<WorkToMake>45000</WorkToMake>
+			<WorkToMake>15000</WorkToMake>
     </statBases>
 		<costList>
 			<ComponentIndustrial>6</ComponentIndustrial>

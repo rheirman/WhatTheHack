@@ -48,7 +48,7 @@
 		<description>Implants the AI persona core into the mechanoid, allowing full control for combat purposes</description>
 		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
 		<jobString>Hacking mechanoid</jobString>
-		<workAmount>2000</workAmount>
+		<workAmount>8000</workAmount>
 		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
 		<requireBed>false</requireBed>
 		<skillRequirements>
@@ -108,7 +108,7 @@
 		<description>Hacks the locomotion system of the mechanoid and adds a receiver to the mechanoid to allow the it to be operated by a colonist using a remote control device</description>
 		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
 		<jobString>Hacking mechanoid</jobString>
-		<workAmount>3000</workAmount>
+		<workAmount>4000</workAmount>
 		<requireBed>false</requireBed>
 		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
 		<skillRequirements>
