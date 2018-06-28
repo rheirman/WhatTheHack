@@ -168,6 +168,7 @@ namespace WhatTheHack.Recipes
             }
             if (verb == null)
             {
+                Nothing(pawn, part);
                 return;
             }
             IntVec3 targetCell = GenRadial.RadialCellsAround(pawn.Position, 7, true).RandomElement();

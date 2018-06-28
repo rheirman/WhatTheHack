@@ -39,11 +39,9 @@ namespace WhatTheHack
                     Building_MechanoidPlatform platform = (Building_MechanoidPlatform)b;
                     if (platform.GetCurOccupant(Building_MechanoidPlatform.SLOTINDEX) == null)
                     {
-                        Log.Message("GetAvailableMechanoidPlatform returning true");
                         return true;
                     }
                 }
-                Log.Message("GetAvailableMechanoidPlatform returning false");
                 return false;
             });
         }

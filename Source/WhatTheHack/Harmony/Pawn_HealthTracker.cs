@@ -42,7 +42,7 @@ namespace WhatTheHack.Harmony
             }
         }
     }
-
+    //Deactivates mechanoid when downed
     [HarmonyPatch(typeof(Pawn_HealthTracker), "MakeDowned")]
     static class Pawn_HealthTracker_MakeDowned
     {
@@ -53,7 +53,7 @@ namespace WhatTheHack.Harmony
             pawnData.isActive = false;
         }
     }
-
+    //Recharge and repair mechanoid when on platform
     [HarmonyPatch(typeof(Pawn_HealthTracker), "HealthTick")]
     static class Pawn_HealthTracker_HealthTick
     {
@@ -74,7 +74,7 @@ namespace WhatTheHack.Harmony
 
             if (__instance.hediffSet.HasNaturallyHealingInjury() && pawn.OnMechanoidPlatform())
             {
-                if (pawn.IsHashIntervalTick(10) && platform.CanHealNow())
+                if (pawn.IsHashIntervalTick(200) && platform.CanHealNow())
                 {
                     TryHealRandomInjury(__instance, pawn, platform);
                     if (platform.RegenerateActive && pawn.IsHashIntervalTick(1000))
@@ -112,12 +112,16 @@ namespace WhatTheHack.Harmony
                                                     select x)
             {
                 int randInt = rand.Next(0, 100);
-                pawn.health.RemoveHediff(hediff);
-                platform.refuelableComp.ConsumeFuel(5f);
-                //Hediff_Injury injury = new Hediff_Injury();
-                DamageWorker_AddInjury addInjury = new DamageWorker_AddInjury();
-                addInjury.Apply(new DamageInfo(WTH_DefOf.WTH_RegeneratedPartDamage, hediff.Part.def.GetMaxHealth(pawn) - 1), pawn);
-                MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, WTH_DefOf.WTH_Mote_HealingCrossGreen);
+
+                if(randInt <= 2)//TODO: No magic number
+                {
+                    pawn.health.RemoveHediff(hediff);
+                    platform.refuelableComp.ConsumeFuel(5f);
+                    //Hediff_Injury injury = new Hediff_Injury();
+                    DamageWorker_AddInjury addInjury = new DamageWorker_AddInjury();
+                    addInjury.Apply(new DamageInfo(WTH_DefOf.WTH_RegeneratedPartDamage, hediff.Part.def.GetMaxHealth(pawn) - 1), pawn);
+                    MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, WTH_DefOf.WTH_Mote_HealingCrossGreen);
+                }
 
                 //pawn.health.AddHediff(WTH_DefOf.WTH_RegeneratedPart);
 
@@ -134,7 +138,7 @@ namespace WhatTheHack.Harmony
             Hediff_Injury hediff_Injury = hediffs.RandomElement();
             float healAmount = (platform.def.building.bed_healPerDay / RimWorld.GenDate.TicksPerDay) * pawn.HealthScale;
             hediff_Injury.Heal(healAmount);
-            if (pawn.IsHashIntervalTick(50) && !pawn.IsHashIntervalTick(100) && !pawn.Position.Fogged(pawn.Map))
+            if (pawn.IsHashIntervalTick(150) && !pawn.IsHashIntervalTick(200) && !pawn.Position.Fogged(pawn.Map))
             {
                 MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_HealingCross);
             }
