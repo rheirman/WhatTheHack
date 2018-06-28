@@ -82,6 +82,7 @@ namespace WhatTheHack.Harmony
                 {
                     LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_SearchAndDestroy(), pawn.Map, new List<Pawn> { pawn });
                 }
+                Find.LetterStack.ReceiveLetter("WTH_Letter_Mech_Reverted_Label".Translate(), "WTH_Letter_Mech_Reverted_Description".Translate(), LetterDefOf.ThreatBig, pawn);
             }
         }
     }
