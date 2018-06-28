@@ -17,6 +17,24 @@ using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
 {
+
+    [HarmonyPatch(typeof(Pawn), "Kill")]
+    static class Pawn_Kill
+    {
+        static void Prefix(Pawn __instance)
+        {
+
+            if (__instance.RaceProps.IsMechanoid)
+            {
+                if (__instance.relations == null)
+                {
+                    __instance.relations = new Pawn_RelationsTracker(__instance);
+                }
+                __instance.RemoveRemoteControlLink();
+            }
+        }
+    }
+
     [HarmonyPatch(typeof(Pawn), "DropAndForbidEverything")]
     class Pawn_DropAndForbidEverything
     {

@@ -139,7 +139,7 @@ namespace WhatTheHack.Needs
         {
             get
             {
-                return 500 + pawn.BodySize * 500;//TODO - no magic number
+                return 150 + pawn.BodySize * 150;//TODO - no magic number
             }
         }
 

@@ -8,6 +8,7 @@ using Verse;
 
 namespace WhatTheHack.Harmony
 {
+
     [HarmonyPatch(typeof(Thing), "ButcherProducts")]
     static class Thing_ButcherProducts
     {

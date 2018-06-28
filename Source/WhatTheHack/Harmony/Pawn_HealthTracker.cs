@@ -51,6 +51,8 @@ namespace WhatTheHack.Harmony
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
             ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
             pawnData.isActive = false;
+            pawn.RemoveRemoteControlLink();
+
         }
     }
     //Recharge and repair mechanoid when on platform

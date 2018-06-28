@@ -12,7 +12,8 @@
 	<WTH_Letter_ShotRandomDirection_Description>One of your pawns accidentally triggered the mechanoids main weapon. Whoops.</WTH_Letter_ShotRandomDirection_Description>
 	<WTH_Letter_HealedToStanding_Label>Hacking failed - mechanoid standing again</WTH_Letter_HealedToStanding_Label>
 	<WTH_Letter_HealedToStanding_Description>The mechanoid wasn't really disabled after all, while being hacked, it managed to recover and it is now your colony.</WTH_Letter_HealedToStanding_Description>
-	
+	<WTH_Letter_Mech_Reverted_Label>Hack stopped working</WTH_Letter_Mech_Reverted_Label>
+	<WTH_Letter_Mech_Reverted_Description>A mechanoid that was hacked poorly reverted to its original deadly behaviour.</WTH_Letter_Mech_Reverted_Description>
 	<WTH_FailureChance_Nothing_Title>Failure chance: nothing happens</WTH_FailureChance_Nothing_Title>
 	<WTH_FailureChance_Nothing_Description>Relative chance that nothing escalates when hacking fails</WTH_FailureChance_Nothing_Description>
 	<WTH_FailureChance_CauseRaid_Title>Failure chance: cause raid</WTH_FailureChance_CauseRaid_Title>

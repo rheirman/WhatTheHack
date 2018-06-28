@@ -12,6 +12,18 @@ namespace WhatTheHack
 {
     public static class Extensions
     {
+        public static void RemoveRemoteControlLink(this Pawn pawn)
+        {
+            Log.Message("removeRemoteControlLink called");
+            ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+            Pawn remoteControlLink = pawnData.remoteControlLink;
+            if (remoteControlLink != null)
+            {
+                ExtendedPawnData linkPawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(remoteControlLink);
+                linkPawnData.remoteControlLink = null;
+            }
+            pawnData.remoteControlLink = null;
+        }
         public static bool IsHacked(this Pawn pawn)
         {
             if (pawn.health != null && (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_TargetingHacked) || pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_TargetingHackedPoorly)))

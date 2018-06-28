@@ -25,7 +25,7 @@ namespace WhatTheHack.Jobs
             Toil gotoCell = Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.OnCell);
             gotoCell.FailOn(() => pawn.UnableToControl() || this.Mech.DestroyedOrNull() || this.Mech.Downed);
             gotoCell.AddPreTickAction(new Action(delegate {
-                if(Utilities.QuickDistanceSquared(pawn.Position, Mech.Position) < 25 * 25)
+                if(Utilities.QuickDistanceSquared(pawn.Position, Mech.Position) < 20 * 20)
                 {
                     pawn.pather.StopDead();
                     ReadyForNextToil();
