@@ -49,7 +49,12 @@ namespace WhatTheHack.Harmony
         static void Postfix(Pawn_HealthTracker __instance)
         {
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+            ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
+            if(store == null)
+            {
+                return;
+            }
+            ExtendedPawnData pawnData = store.GetExtendedDataFor(pawn);
             pawnData.isActive = false;
             pawn.RemoveRemoteControlLink();
 

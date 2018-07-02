@@ -1,9 +1,13 @@
 ﻿using HugsLib.Settings;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml;
+using System.Xml.Linq;
+using System.Xml.Serialization;
+using Verse;
 
 namespace WhatTheHack
 {
@@ -11,24 +15,29 @@ namespace WhatTheHack
     {
         public Dictionary<String, Dictionary<String, Record>> inner = new Dictionary<String, Dictionary<String, Record>>();
         public Dictionary<String, Dictionary<String, Record>> InnerList { get { return inner; } set { inner = value; } }
+        private XmlSerializer serializer = new XmlSerializer(typeof(Record));
+        XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
 
+        public Dict2DRecordHandler()
+        {
+            ns.Add("", "");
+        }
         public override void FromString(string settingValue)
         {
             inner = new Dictionary<String, Dictionary<String, Record>>();
             if (!settingValue.Equals(string.Empty))
             {
                 XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(settingValue);
-                foreach (XmlNode dictNode in xmlDoc.ChildNodes)
+                xmlDoc.InnerXml = settingValue;
+
+                foreach (XmlNode dictNode in xmlDoc.FirstChild.ChildNodes)
                 {
                     Dictionary<String, Record> nestedDict = new Dictionary<string, Record>();
                     String name = dictNode.Name;
                     foreach(XmlNode recordNode in dictNode.ChildNodes)
                     {
-                        bool isSelected = Convert.ToBoolean(dictNode.Attributes.GetNamedItem("isSelected").Value);
-                        bool isException = Convert.ToBoolean(dictNode.Attributes.GetNamedItem("isException").Value);
-                        string label = dictNode.Attributes.GetNamedItem("label").Value;
-                        nestedDict.Add(recordNode.Name, new Record(isSelected, isException, label));
+                        StringReader rdr = new StringReader(recordNode.InnerXml);
+                        nestedDict.Add(recordNode.Name, (Record)serializer.Deserialize(rdr));
                     }
                     inner.Add(name, nestedDict);
                 }
@@ -37,25 +46,23 @@ namespace WhatTheHack
 
         public override string ToString()
         {
-            return "";
-            /*
             XmlDocument xmlDoc = new XmlDocument();
+            XmlNode root = xmlDoc.AppendChild(xmlDoc.CreateElement("Dict2DRecordHandler"));
 
-            foreach (KeyValuePair<string, Dictionary<String, Record>> item in inner)
-            {
-                
-                xmlDoc.AppendChild()
+            foreach (KeyValuePair< String, Dictionary < String, Record >> kv in inner){
+                XmlElement child = xmlDoc.CreateElement(kv.Key);
+                foreach (KeyValuePair<String, Record> kvInner in kv.Value)
+                {
+                    XmlElement childInner = xmlDoc.CreateElement(kvInner.Key);
+                    StringWriter writer = new StringWriter();
+                    serializer.Serialize(writer, kvInner.Value, ns);
+                    childInner.InnerXml = writer.ToString();
+                    child.AppendChild(childInner);
+                }
+                root.AppendChild(child);
             }
-
-            /*
-            List<String> strings = new List<string>();
-            foreach (KeyValuePair<string, Record> item in inner)
-            {
-                strings.Add(item.Key +","+item.Value.ToString());
-            }
-
-            return inner != null ? String.Join("|", strings.ToArray()) : "";
-            */
+            Log.Message(xmlDoc.OuterXml);
+            return xmlDoc.OuterXml;
         }
     }
 

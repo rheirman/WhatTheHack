@@ -10,6 +10,10 @@ namespace WhatTheHack
         public bool isSelected = false;
         public bool isException = false;
         public String label = "";
+        public Record()
+        {
+
+        }
         public Record(bool isSelected, bool isException, String label)
         {
             this.isException = isException;

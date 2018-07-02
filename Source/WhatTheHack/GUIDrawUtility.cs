@@ -171,43 +171,29 @@ namespace WhatTheHack
             return change;
         }
 
-        internal static void filterAnimals(ref SettingHandle<Dict2DRecordHandler> setting, List<ThingDef> allAnimals, SettingHandle<float> filter = null)
+        internal static void FilterSelection(ref Dictionary<string, Record> selection, List<ThingDef> allDefs)
         {
-            //TODO:Implement
-            /*
-            if (setting.Value == null)
-            {
-                setting.Value = new Dict2DRecordHandler();
-            }
+            Dictionary<string, Record> shouldSelect = new Dictionary<string, Record>();
 
-            Dictionary<String, Record> selection = new Dictionary<string, Record>();
-            foreach (ThingDef animal in allAnimals)
+            if (selection == null)
             {
-                bool shouldSelect = false;
-                if (filter != null)
-                {
-                    float mass = animal.race.baseBodySize;
-                    shouldSelect = mass >= filter.Value;
-                }
+                selection = new Dictionary<string, Record>();
+            }
+            foreach (ThingDef td in allDefs)
+            {
                 Record value = null;
-                bool found = setting.Value.InnerList.TryGetValue(animal.defName, out value);
+                bool found = selection.TryGetValue(td.defName, out value);
                 if (found && value.isException)
                 {
-                    selection.Add(animal.defName, value);
-                }
-                else if (found)
-                {
-                    selection.Add(animal.defName, new Record(shouldSelect, false, animal.label));
+                    shouldSelect.Add(td.defName, value);
                 }
                 else
                 {
-                    //addNewAnimal(animal, selection, shouldSelect, setting.Name);
+                    shouldSelect.Add(td.defName, new Record(false, false, td.label));
                 }
                 
             }
-            selection = selection.OrderBy(d => d.Value.label).ToDictionary(d => d.Key, d => d.Value);
-            setting.Value.InnerList = selection;
-            */
+            selection = shouldSelect.OrderBy(d => d.Value.label).ToDictionary(d => d.Key, d => d.Value);
         }
 
         /*
@@ -231,10 +217,8 @@ namespace WhatTheHack
         */
 
 
-        public static bool CustomDrawer_MatchingAnimals_active(Rect wholeRect, SettingHandle<Dict2DRecordHandler> setting, List<ThingDef> allAnimals, SettingHandle<float> filter = null, string yesText = "Is a mount", string noText = "Is not a mount")
+        public static bool CustomDrawer_MatchingAnimals_active(Rect wholeRect, SettingHandle<Dict2DRecordHandler> setting, List<ThingDef> allAnimals, SettingHandle<string> filter = null, string yesText = "Is a mount", string noText = "Is not a mount")
         {
-            return false; //TODO: Implement
-            /*
             drawBackground(wholeRect, background);
 
 
@@ -259,9 +243,30 @@ namespace WhatTheHack
             bool change = false;
             int numSelected = 0;
 
-            filterAnimals(ref setting, allAnimals, filter);
-            Dictionary<string, Record> selection = setting.Value.InnerList;
 
+
+            if (setting.Value == null)
+            {
+                setting.Value = new Dict2DRecordHandler();
+            }
+
+            if (setting.Value.InnerList == null)
+            {
+                Dictionary<String, Dictionary<String, Record>> factionRestrictionsDict = new Dictionary<String, Dictionary<String, Record>>();
+                foreach (FactionDef factionDef in from td in DefDatabase<FactionDef>.AllDefs
+                                                  where !td.isPlayer && td != FactionDefOf.Mechanoid && td != FactionDefOf.Insect
+                                                  select td)
+                {
+                    if (!factionRestrictionsDict.ContainsKey(factionDef.defName))
+                    {
+                        factionRestrictionsDict.Add(factionDef.defName, new Dictionary<string, Record>());
+                    }
+                }
+                setting.Value.InnerList = factionRestrictionsDict;
+            }
+
+            bool factionFound = setting.Value.InnerList.TryGetValue(filter.Value, out Dictionary<string, Record> selection);
+            FilterSelection(ref selection, allAnimals);
             foreach (KeyValuePair<String, Record> item in selection)
             {
                 if (item.Value.isSelected)
@@ -270,9 +275,9 @@ namespace WhatTheHack
                 }
             }
 
-
             int biggerRows = Math.Max( numSelected/ iconsPerRow, (selection.Count - numSelected) / iconsPerRow);
             setting.CustomDrawerHeight = (biggerRows * rowHeight) + ((biggerRows) * BottomMargin) + TextMargin;
+            setting.CustomDrawerHeight = 1000;
             
             int indexLeft = 0;
             int indexRight = 0;
@@ -301,10 +306,10 @@ namespace WhatTheHack
             }
             if (change)
             {
-                setting.Value.InnerList = selection;
+                setting.Value.InnerList[filter.Value] = selection;
+                //setting.Value.InnerList = selection;
             }
             return change;
-             */
         }
 
 
