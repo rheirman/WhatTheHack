@@ -52,15 +52,15 @@ namespace WhatTheHack
                                             select td.defName).ToList();
 
             tabsHandler = Settings.GetHandle<String>("tabs", "Configure faction mech usage", "", "none");
-            tabsHandler.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_Tabs(rect, tabsHandler, allFactionNames.ToArray(), true, (int)-rect.width, (int)rect.height * 2); };
+            tabsHandler.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_Tabs(rect, tabsHandler, allFactionNames.ToArray(), true, (int)-rect.width, (int)rect.height + 5); };
 
 
-            factionRestrictions = Settings.GetHandle<Dict2DRecordHandler>("factionRestrictions", "Faction restrictions", "Configure faction mech usage", null);
+            factionRestrictions = Settings.GetHandle<Dict2DRecordHandler>("factionRestrictions", "", "", null);
 
             Log.Message("miemie 4");
 
 
-            factionRestrictions.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_MatchingAnimals_active(rect, factionRestrictions, allAnimals, tabsHandler, "GUC_SizeOk".Translate(), "GUC_SizeNotOk".Translate()); };
+            factionRestrictions.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_MatchingAnimals_active(rect, factionRestrictions, allAnimals, tabsHandler, allFactionNames.Count, "GUC_SizeOk".Translate(), "GUC_SizeNotOk".Translate()); };
 
             Log.Message("miemie 5");
 

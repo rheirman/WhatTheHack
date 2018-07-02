@@ -18,7 +18,7 @@ namespace WhatTheHack
         private const float TextMargin = 20f;
         private const float BottomMargin = 2f;
         private const float rowHeight = 20f;
-
+        private const float buttonHeight = 28f;
         private static readonly Color iconBaseColor = new Color(0.5f, 0.5f, 0.5f, 1f);
         private static readonly Color iconMouseOverColor = new Color(0.6f, 0.6f, 0.4f, 1f);
 
@@ -217,7 +217,7 @@ namespace WhatTheHack
         */
 
 
-        public static bool CustomDrawer_MatchingAnimals_active(Rect wholeRect, SettingHandle<Dict2DRecordHandler> setting, List<ThingDef> allAnimals, SettingHandle<string> filter = null, string yesText = "Is a mount", string noText = "Is not a mount")
+        public static bool CustomDrawer_MatchingAnimals_active(Rect wholeRect, SettingHandle<Dict2DRecordHandler> setting, List<ThingDef> allAnimals, SettingHandle<string> filter = null, int filterCount = 0, string yesText = "Is a mount", string noText = "Is not a mount")
         {
             drawBackground(wholeRect, background);
 
@@ -274,11 +274,13 @@ namespace WhatTheHack
                     numSelected++;
                 }
             }
-
+            Dictionary<String, Dictionary<String, Record>> innerDict = setting.Value.InnerList;
             int biggerRows = Math.Max( numSelected/ iconsPerRow, (selection.Count - numSelected) / iconsPerRow);
-            setting.CustomDrawerHeight = (biggerRows * rowHeight) + ((biggerRows) * BottomMargin) + TextMargin;
-            setting.CustomDrawerHeight = 1000;
-            
+            float neededHightSelector = biggerRows * (rowHeight + BottomMargin) + TextMargin;
+            float neededHightFilter = filterCount * buttonHeight + TextMargin;
+            setting.CustomDrawerHeight = Math.Max(neededHightSelector, neededHightFilter);
+
+
             int indexLeft = 0;
             int indexRight = 0;
             foreach (KeyValuePair<String, Record> item in selection)
