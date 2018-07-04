@@ -12,6 +12,16 @@ namespace WhatTheHack
 {
     static class Utilities
     {
+        public static bool IsAllowedInModOptions(String pawnName, Faction faction)
+        {
+            bool found = Base.factionRestrictions.Value.InnerList[faction.def.defName].TryGetValue(pawnName, out Record value);
+            if (found && value.isSelected)
+            {
+                return true;
+            }
+            return false;
+        }
+
 
         public static Building_HackingTable GetAvailableHackingTable(Pawn pawn, Pawn targetPawn)
         {

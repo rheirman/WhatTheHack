@@ -39,31 +39,20 @@ namespace WhatTheHack
         public override void DefsLoaded()
         {
             base.DefsLoaded();
-
-
-
-
-            Predicate<ThingDef> isAnimal = (ThingDef d) => d.race != null && d.race.IsMechanoid;
+            Predicate<ThingDef> isMech = (ThingDef d) => d.race != null && d.race.IsMechanoid;
             Predicate<FactionDef> isHackingFaction = (FactionDef d) => !d.isPlayer && d != FactionDefOf.Mechanoid && d != FactionDefOf.Insect;
-            List<ThingDef> allAnimals = (from td in DefDatabase < ThingDef >.AllDefs where isAnimal(td) select td).ToList();
+            List<ThingDef> allMechs = (from td in DefDatabase < ThingDef >.AllDefs where isMech(td) select td).ToList();
             List<string> allFactionNames = (from td
                                             in DefDatabase<FactionDef>.AllDefs
                                             where isHackingFaction(td)
                                             select td.defName).ToList();
 
-            tabsHandler = Settings.GetHandle<String>("tabs", "Configure faction mech usage", "", "none");
+            tabsHandler = Settings.GetHandle<String>("tabs", "Configure faction mech usage", "", allFactionNames.First());
             tabsHandler.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_Tabs(rect, tabsHandler, allFactionNames.ToArray(), true, (int)-rect.width, (int)rect.height + 5); };
 
 
             factionRestrictions = Settings.GetHandle<Dict2DRecordHandler>("factionRestrictions", "", "", null);
-
-            Log.Message("miemie 4");
-
-
-            factionRestrictions.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_MatchingAnimals_active(rect, factionRestrictions, allAnimals, tabsHandler, allFactionNames.Count, "GUC_SizeOk".Translate(), "GUC_SizeNotOk".Translate()); };
-
-            Log.Message("miemie 5");
-
+            factionRestrictions.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_MatchingPawns_active(rect, factionRestrictions, allMechs, tabsHandler, allFactionNames.Count, "GUC_SizeOk".Translate(), "GUC_SizeNotOk".Translate()); };
 
             failureChanceNothing = Settings.GetHandle<int>("failureChanceNothing", "WTH_FailureChance_Nothing_Title".Translate(), "WTH_FailureChance_Nothing_Description".Translate(), 70);
             failureChanceCauseRaid = Settings.GetHandle<int>("failureChanceCauseRaid", "WTH_FailureChance_CauseRaid_Title".Translate(), "WTH_FailureChance_CauseRaid_Description".Translate(), 5);

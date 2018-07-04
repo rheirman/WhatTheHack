@@ -44,30 +44,25 @@ namespace WhatTheHack.Harmony
             {
                 return;
             }
-            //Only allow hacked mechs for advanced factions
-            if(parms.faction.def.techLevel != TechLevel.Spacer && parms.faction.def.techLevel != TechLevel.Archotech && parms.faction.def.techLevel != TechLevel.Ultra)
-            {
-                return;
-            }
-
             Random rand = new Random(DateTime.Now.Millisecond);
             if(rand.Next(0, 100) < 40)//TODO: no magic number
             {
-                return; 
+                //return; 
             }
 
             float maxMechPoints = parms.points * ((float)rand.Next(0, 50))/100; //TODO: no magic numbers
             float cumulativePoints = 0;
             Map map = parms.target as Map;
+            Log.Message("MaxMechPoints: " + maxMechPoints);
 
             while (cumulativePoints < maxMechPoints)
             {
                 PawnKindDef pawnKindDef = null;
                 (from a in DefDatabase<PawnKindDef>.AllDefs
                  where a.RaceProps.IsMechanoid &&
-                 cumulativePoints + a.combatPower < maxMechPoints
+                 cumulativePoints + a.combatPower < maxMechPoints && 
+                 Utilities.IsAllowedInModOptions(a.race.defName, parms.faction)                
                  //&& IsMountableUtility.isAllowedInModOptions(a.defName)
-                 //&& (factionWildAnimalRestrictions.NullOrEmpty() || factionWildAnimalRestrictions.Contains(a.defName))
                  select a).TryRandomElement(out pawnKindDef);
 
                 if (pawnKindDef != null)

@@ -30,6 +30,7 @@
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
 			<li>ArtificialBrain</li>
+			<li>Brain</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>WTH_TargetingHacked</addsHediff>
 		<researchPrerequisite>WTH_HackingBasics</researchPrerequisite>

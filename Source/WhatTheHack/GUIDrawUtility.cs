@@ -24,8 +24,10 @@ namespace WhatTheHack
 
         private static readonly Color SelectedOptionColor = new Color(0.5f, 1f, 0.5f, 1f);
         private static readonly Color constGrey = new Color(0.8f, 0.8f, 0.8f, 1f);
+
         private static Color background = new Color(0.5f, 0, 0, 0.1f);
-        private static Color exceptionBackground = new Color(0f, 0.5f, 0, 0.1f);
+        private static Color tileBackground = new Color(0f, 0.5f, 0, 0.1f);
+        private static Color exceptionBackground = new Color(0.5f, 0, 0, 0.1f);
 
 
 
@@ -48,16 +50,16 @@ namespace WhatTheHack
             Text.Anchor = TextAnchor.UpperLeft;
             GUI.color = Color.white;
         }
-        private static Color getColor(ThingDef Animal)
+        private static Color getColor(ThingDef mech)
         {
-            if (Animal.graphicData != null)
+            if (mech.graphicData != null)
             {
-                return Animal.graphicData.color;
+                return mech.graphicData.color;
             }
             return Color.white;
         }
 
-        private static bool DrawTileForAnimal(KeyValuePair<String, Record> Animal, Rect contentRect, Vector2 iconOffset, int buttonID)
+        private static bool DrawTileForPawn(KeyValuePair<String, Record> pawn, Rect contentRect, Vector2 iconOffset, int buttonID)
         {
             var iconRect = new Rect(contentRect.x + iconOffset.x, contentRect.y + iconOffset.y, contentRect.width, rowHeight);
             MouseoverSounds.DoRegion(iconRect, SoundDefOf.Mouseover_Command);
@@ -67,18 +69,18 @@ namespace WhatTheHack
             {
                 GUI.color = iconMouseOverColor;
             }
-            else if (Animal.Value.isException == true)
+            else if (pawn.Value.isException == true)
             {
                 GUI.color = exceptionBackground;
             }
             else
             {
-                GUI.color = background;
+                GUI.color = tileBackground;
             }
             GUI.DrawTexture(iconRect, TexUI.FastFillTex);
             GUI.color = save;
             Text.Anchor = TextAnchor.MiddleCenter;
-            Widgets.Label(iconRect, (!Animal.Value.label.NullOrEmpty() ? Animal.Value.label : Animal.Key));
+            Widgets.Label(iconRect, (!pawn.Value.label.NullOrEmpty() ? pawn.Value.label : pawn.Key));
             Text.Anchor = TextAnchor.UpperLeft;
 
             if (Widgets.ButtonInvisible(iconRect, true))
@@ -98,8 +100,10 @@ namespace WhatTheHack
             int verticalOffset = 0;
             
             bool change = false;
+           
             foreach (String tab in defaultValues)
             {
+
                 Rect buttonRect = new Rect(rect);
                 buttonRect.width = labelWidth;
                 buttonRect.position = new Vector2(buttonRect.position.x + horizontalOffset + xOffset, buttonRect.position.y + verticalOffset + yOffset);
@@ -111,16 +115,17 @@ namespace WhatTheHack
                 if (isSelected)
                     GUI.color = activeColor;
 
+
                 if (clicked)
                 {
                     if(setting.Value != tab)
                     {
                         setting.Value = tab;
                     }
-                    else
-                    {
-                        setting.Value = "none";
-                    }
+                    //else
+                    //{
+                    //    setting.Value = "none";
+                    //}
                     change = true;
                 }
 
@@ -171,7 +176,7 @@ namespace WhatTheHack
             return change;
         }
 
-        internal static void FilterSelection(ref Dictionary<string, Record> selection, List<ThingDef> allDefs)
+        internal static void FilterSelection(ref Dictionary<string, Record> selection, List<ThingDef> allDefs, string factionName)
         {
             Dictionary<string, Record> shouldSelect = new Dictionary<string, Record>();
 
@@ -189,35 +194,28 @@ namespace WhatTheHack
                 }
                 else
                 {
-                    shouldSelect.Add(td.defName, new Record(false, false, td.label));
+                    FactionDef factionDef = getFactionByName(factionName);
+                    if (factionDef != null && (factionDef.techLevel == TechLevel.Spacer || factionDef.techLevel == TechLevel.Archotech || factionDef.techLevel == TechLevel.Ultra))
+                    {
+                        shouldSelect.Add(td.defName, new Record(true, false, td.label));
+                    }
+                    else
+                    {
+                        shouldSelect.Add(td.defName, new Record(false, false, td.label));
+                    }
+
+
                 }
                 
             }
             selection = shouldSelect.OrderBy(d => d.Value.label).ToDictionary(d => d.Key, d => d.Value);
         }
-
-        /*
-        internal static void addNewAnimal(ThingDef animal, Dictionary<string, Record> selection, bool shouldSelect, String settingName)
+        private static FactionDef getFactionByName(string name)
         {
-                CompProperties_Mount prop = animal.GetCompProperties<CompProperties_Mount>();
-                float mass = animal.race.baseBodySize;
-                if (prop != null && prop.isException && settingName == "Animalselecter")
-                {
-                    selection.Add(animal.defName, new Record(false, true, animal.label));
-                }
-                else if (prop != null && prop.drawFront && settingName == "drawSelecter")
-                {
-                    selection.Add(animal.defName, new Record(true, true, animal.label));
-                }
-                else
-                {
-                    selection.Add(animal.defName, new Record(shouldSelect, false, animal.label));
-                }
+            return DefDatabase<FactionDef>.AllDefs.FirstOrDefault((FactionDef fd) => fd.defName == name);
         }
-        */
 
-
-        public static bool CustomDrawer_MatchingAnimals_active(Rect wholeRect, SettingHandle<Dict2DRecordHandler> setting, List<ThingDef> allAnimals, SettingHandle<string> filter = null, int filterCount = 0, string yesText = "Is a mount", string noText = "Is not a mount")
+        public static bool CustomDrawer_MatchingPawns_active(Rect wholeRect, SettingHandle<Dict2DRecordHandler> setting, List<ThingDef> allPawns, SettingHandle<string> filter = null, int filterCount = 0, string yesText = "Is a mount", string noText = "Is not a mount")
         {
             drawBackground(wholeRect, background);
 
@@ -266,7 +264,7 @@ namespace WhatTheHack
             }
 
             bool factionFound = setting.Value.InnerList.TryGetValue(filter.Value, out Dictionary<string, Record> selection);
-            FilterSelection(ref selection, allAnimals);
+            FilterSelection(ref selection, allPawns, filter.Value);
             foreach (KeyValuePair<String, Record> item in selection)
             {
                 if (item.Value.isSelected)
@@ -298,7 +296,7 @@ namespace WhatTheHack
 
                 int collum = (index % iconsPerRow);
                 int row = (index / iconsPerRow);
-                bool interacted = DrawTileForAnimal(item, rect, new Vector2(0, rowHeight * row + row * BottomMargin), index);
+                bool interacted = DrawTileForPawn(item, rect, new Vector2(0, rowHeight * row + row * BottomMargin), index);
                 if (interacted)
                 {
                     change = true;
