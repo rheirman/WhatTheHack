@@ -52,4 +52,9 @@
 	<WTH_Alert_Power_Low_Label>Mechanoids low on power</WTH_Alert_Power_Low_Label>
 	<WTH_Alert_Power_Low_Description>The following mechanoids are low on power:{0} deactivate them so they go back to a mechanoid platform</WTH_Alert_Power_Low_Description>
 
+	<WTH_FactionRestrictions_OK>Allow</WTH_FactionRestrictions_OK>
+	<WTH_FactionRestrictions_NOK>Disallow</WTH_FactionRestrictions_NOK>
+	<WTH_FactionRestrictions_Label>Configure which mechanoids each faction can hack</WTH_FactionRestrictions_Label>
+	<WTH_FactionRestrictions_Description>This setting allows you to configure what hacked mechanoids each faction can use during raids</WTH_FactionRestrictions_Description>
+	
 </LanguageData>
