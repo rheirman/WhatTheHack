@@ -26,8 +26,8 @@ namespace WhatTheHack
         private static readonly Color constGrey = new Color(0.8f, 0.8f, 0.8f, 1f);
 
         private static Color background = new Color(0.5f, 0, 0, 0.1f);
-        private static Color tileBackground = new Color(0f, 0.5f, 0, 0.1f);
-        private static Color exceptionBackground = new Color(0.5f, 0, 0, 0.1f);
+        private static Color selectedBackground = new Color(0f, 0.5f, 0, 0.1f);
+        private static Color notSelectedBackground = new Color(0.5f, 0, 0, 0.1f);
 
 
 
@@ -69,13 +69,13 @@ namespace WhatTheHack
             {
                 GUI.color = iconMouseOverColor;
             }
-            else if (pawn.Value.isException == true)
+            else if (pawn.Value.isSelected == true)
             {
-                GUI.color = exceptionBackground;
+                GUI.color = selectedBackground;
             }
             else
             {
-                GUI.color = tileBackground;
+                GUI.color = notSelectedBackground;
             }
             GUI.DrawTexture(iconRect, TexUI.FastFillTex);
             GUI.color = save;
@@ -243,25 +243,7 @@ namespace WhatTheHack
 
 
 
-            if (setting.Value == null)
-            {
-                setting.Value = new Dict2DRecordHandler();
-            }
 
-            if (setting.Value.InnerList == null)
-            {
-                Dictionary<String, Dictionary<String, Record>> factionRestrictionsDict = new Dictionary<String, Dictionary<String, Record>>();
-                foreach (FactionDef factionDef in from td in DefDatabase<FactionDef>.AllDefs
-                                                  where !td.isPlayer && td != FactionDefOf.Mechanoid && td != FactionDefOf.Insect
-                                                  select td)
-                {
-                    if (!factionRestrictionsDict.ContainsKey(factionDef.defName))
-                    {
-                        factionRestrictionsDict.Add(factionDef.defName, new Dictionary<string, Record>());
-                    }
-                }
-                setting.Value.InnerList = factionRestrictionsDict;
-            }
 
             bool factionFound = setting.Value.InnerList.TryGetValue(filter.Value, out Dictionary<string, Record> selection);
             FilterSelection(ref selection, allPawns, filter.Value);

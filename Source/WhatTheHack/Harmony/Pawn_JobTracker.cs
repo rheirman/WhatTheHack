@@ -26,6 +26,7 @@ namespace WhatTheHack.Harmony
             {
                 return;
             }
+
             ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
             if (store != null)
             {

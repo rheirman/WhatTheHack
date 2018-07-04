@@ -61,7 +61,6 @@ namespace WhatTheHack
                 }
                 root.AppendChild(child);
             }
-            Log.Message(xmlDoc.OuterXml);
             return xmlDoc.OuterXml;
         }
     }

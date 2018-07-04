@@ -41,7 +41,7 @@ namespace WhatTheHack
             base.DefsLoaded();
             Predicate<ThingDef> isMech = (ThingDef d) => d.race != null && d.race.IsMechanoid;
             Predicate<FactionDef> isHackingFaction = (FactionDef d) => !d.isPlayer && d != FactionDefOf.Mechanoid && d != FactionDefOf.Insect;
-            List<ThingDef> allMechs = (from td in DefDatabase < ThingDef >.AllDefs where isMech(td) select td).ToList();
+            List<ThingDef> allMechs = (from td in DefDatabase<ThingDef>.AllDefs where isMech(td) select td).ToList();
             List<string> allFactionNames = (from td
                                             in DefDatabase<FactionDef>.AllDefs
                                             where isHackingFaction(td)
@@ -59,7 +59,38 @@ namespace WhatTheHack
             failureChanceShootRandomDirection = Settings.GetHandle<int>("failureChanceShootRandomDirection", "WTH_FailureChance_ShootRandomDirection_Title".Translate(), "WTH_FailureChance_ShootRandomDirection_Description".Translate(), 10);
             failureChanceHealToStanding = Settings.GetHandle<int>("failureChanceHealToStanding", "WTH_FailureChance_HealToStanding_Title".Translate(), "WTH_FailureChance_HealToStanding_Description".Translate(), 5);
             failureChanceHackPoorly = Settings.GetHandle<int>("failureChanceHackPoorly", "WTH_FailureChance_HackPoorly_Title".Translate(), "WTH_FailureChance_HackPoorly_Description".Translate(), 10);
+            factionRestrictions = GetDefaultForFactionRestrictions(factionRestrictions, allMechs, allFactionNames);
         }
+
+        private static SettingHandle<Dict2DRecordHandler> GetDefaultForFactionRestrictions(SettingHandle<Dict2DRecordHandler> factionRestrictions, List<ThingDef> allMechs, List<string> allFactionNames)
+        {
+            if (factionRestrictions.Value == null)
+            {
+                factionRestrictions.Value = new Dict2DRecordHandler();
+            }
+
+            if (factionRestrictions.Value.InnerList == null)
+            {
+                factionRestrictions.Value.InnerList = new Dictionary<String, Dictionary<String, Record>>();    
+            }
+            foreach (FactionDef factionDef in from td in DefDatabase<FactionDef>.AllDefs
+                                              where allFactionNames.Contains(td.defName)
+                                              select td)
+            {
+                if (!factionRestrictions.Value.InnerList.ContainsKey(factionDef.defName))
+                {
+                    factionRestrictions.Value.InnerList.Add(factionDef.defName, new Dictionary<string, Record>());
+                }
+            }
+            foreach (string name in allFactionNames)
+            {
+                Dictionary<string, Record> selection = factionRestrictions.Value.InnerList[name];
+                GUIDrawUtility.FilterSelection(ref selection, allMechs, name);
+                factionRestrictions.Value.InnerList[name] = selection;
+            }
+            return factionRestrictions;
+        }
+
         public override void WorldLoaded()
         {
             _extendedDataStorage = UtilityWorldObjectManager.GetUtilityWorldObject<ExtendedDataStorage>();
@@ -68,7 +99,6 @@ namespace WhatTheHack
                                          where rd.HasModExtension<DefModExtension_Recipe>()
                                          select rd)
             {
-                Log.Message("modifying success chance for surgery:" + recipe.defName);
                 DefModExtension_Recipe modExtentsion = recipe.GetModExtension<DefModExtension_Recipe>();
                 recipe.deathOnFailedSurgeryChance = modExtentsion.deathOnFailedSurgeryChance;
                 recipe.surgerySuccessChanceFactor = modExtentsion.surgerySuccessChanceFactor;

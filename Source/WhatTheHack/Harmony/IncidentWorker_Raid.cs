@@ -53,7 +53,6 @@ namespace WhatTheHack.Harmony
             float maxMechPoints = parms.points * ((float)rand.Next(0, 50))/100; //TODO: no magic numbers
             float cumulativePoints = 0;
             Map map = parms.target as Map;
-            Log.Message("MaxMechPoints: " + maxMechPoints);
 
             while (cumulativePoints < maxMechPoints)
             {

@@ -176,11 +176,11 @@ namespace WhatTheHack.Harmony
                     pawnData.isActive = !pawnData.isActive;
                     if (pawnData.isActive)
                     {
-                        __instance.jobs.EndCurrentJob(JobCondition.InterruptForced);
                         if (__instance.GetLord() == null || __instance.GetLord().LordJob == null)
                         {
                             LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_SearchAndDestroy(), __instance.Map, new List<Pawn> { __instance });
                         }
+                        __instance.jobs.EndCurrentJob(JobCondition.InterruptForced);
                     }
                     else
                     {

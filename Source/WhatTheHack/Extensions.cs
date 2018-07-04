@@ -14,7 +14,6 @@ namespace WhatTheHack
     {
         public static void RemoveRemoteControlLink(this Pawn pawn)
         {
-            Log.Message("removeRemoteControlLink called");
             ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
             Pawn remoteControlLink = pawnData.remoteControlLink;
             if (remoteControlLink != null)
