@@ -37,6 +37,7 @@
         <shortCircuitInRain>true</shortCircuitInRain>
       </li>
       <li Class="CompProperties_Flickable"/>
+	  <li Class="CompProperties_Forbiddable" />
     </comps>
     <fillPercent>0.5</fillPercent>
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
@@ -95,7 +96,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>true</shortCircuitInRain>
-        <basePowerConsumption>400</basePowerConsumption>
+        <basePowerConsumption>300</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable"/>
 	  <li Class="CompProperties_Refuelable">
@@ -107,7 +108,10 @@
           </thingDefs>
         </fuelFilter>
         <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+		 <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>10.0</initialConfigurableTargetFuelLevel>
       </li>
+	  <li Class="CompProperties_Forbiddable" />
     </comps>
 	<building>
 		<bed_humanlike>false</bed_humanlike>

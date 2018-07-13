@@ -14,19 +14,28 @@ namespace WhatTheHack.Buildings
         public const int SLOTINDEX = 1;
         public CompRefuelable refuelableComp;
         public CompPowerTrader powerComp;
+        public const float MINFUELREGENERATE = 5.0f;
         private bool regenerateActive;
+        private bool repairActive;
+        
         
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
             this.refuelableComp = base.GetComp<CompRefuelable>();
-            this.powerComp = base.GetComp<CompPowerTrader>();
-            
+            this.powerComp = base.GetComp<CompPowerTrader>();            
         }
         public bool RegenerateActive {
             get
             {
                 return regenerateActive;
+            }
+        }
+        public bool RepairActive
+        {
+            get
+            {
+                return repairActive;
             }
         }
         public bool CanHealNow()
@@ -43,23 +52,39 @@ namespace WhatTheHack.Buildings
             {
                 yield return g;
             }
-            Gizmo gizmo = new Command_Toggle
+            Gizmo regenerateGizmo = new Command_Toggle
             {
                 defaultLabel = "WTH_Gizmo_Regenerate_Label".Translate(),
-                defaultDesc = "WTH_Gizmo_Regenerate_Description".Translate(),
+                defaultDesc = "WTH_Gizmo_Regenerate_Description".Translate(new object[] { MINFUELREGENERATE }),
                 icon = ContentFinder<Texture2D>.Get(("Things/Mote_HealingCrossGreen"), true),
                 isActive = () => regenerateActive,
+                disabled = this.refuelableComp.Fuel < MINFUELREGENERATE,
+                disabledReason = "WTH_Reason_NotEnoughParts".Translate(new object[]{ MINFUELREGENERATE }),
                 toggleAction = () =>
                 {
                     regenerateActive = !regenerateActive;
                 }
             };
-            yield return gizmo;
+            yield return regenerateGizmo;
+
+            Gizmo repairGizmo = new Command_Toggle
+            {
+                defaultLabel = "WTH_Gizmo_Repair_Label".Translate(),
+                defaultDesc = "WTH_Gizmo_Repair_Description".Translate(),
+                icon = ContentFinder<Texture2D>.Get(("Things/Mote_HealingCrossBlue"), true),
+                isActive = () => repairActive,
+                toggleAction = () =>
+                {
+                    repairActive = !repairActive;
+                }
+            };
+            yield return repairGizmo;
         }
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref regenerateActive, "regenerateActive", true);
+            Scribe_Values.Look(ref repairActive, "repairActive", true);
         }
 
 

@@ -27,7 +27,7 @@ namespace WhatTheHack
         {
             return (Building_HackingTable)GenClosest.ClosestThingReachable(targetPawn.Position, targetPawn.Map, ThingRequest.ForDef(WTH_DefOf.WTH_HackingTable), PathEndMode.OnCell, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false), 9999f, delegate (Thing b)
             {
-                if (b is Building_HackingTable)
+                if (b is Building_HackingTable && !b.IsForbidden(pawn))
                 {
                     Building_HackingTable ht = (Building_HackingTable)b;
                     if (ht.GetCurOccupant(Building_HackingTable.SLOTINDEX) == null)
@@ -44,7 +44,7 @@ namespace WhatTheHack
             return (Building_MechanoidPlatform)GenClosest.ClosestThingReachable(targetPawn.Position, targetPawn.Map, ThingRequest.ForDef(WTH_DefOf.WTH_MechanoidPlatform), PathEndMode.OnCell, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false), 9999f, delegate (Thing b)
             {
 
-                if (b is Building_MechanoidPlatform)
+                if (b is Building_MechanoidPlatform && !b.IsForbidden(pawn))
                 {
                     Building_MechanoidPlatform platform = (Building_MechanoidPlatform)b;
                     if (platform.GetCurOccupant(Building_MechanoidPlatform.SLOTINDEX) == null)

@@ -79,16 +79,18 @@ namespace WhatTheHack.Harmony
 
             Building_MechanoidPlatform platform = (Building_MechanoidPlatform)pawn.CurrentBed();
 
-            if (__instance.hediffSet.HasNaturallyHealingInjury() && pawn.OnMechanoidPlatform())
+            if (platform.RepairActive && __instance.hediffSet.HasNaturallyHealingInjury() && pawn.OnMechanoidPlatform())
             {
                 if (pawn.IsHashIntervalTick(10) && platform.CanHealNow())
                 {
                     TryHealRandomInjury(__instance, pawn, platform);
-                    if (platform.RegenerateActive && pawn.IsHashIntervalTick(1000))
-                    {
-                        TryRegeneratePart(pawn, platform);
-                    }
-
+                }
+            }
+            if (pawn.OnMechanoidPlatform())
+            {
+                if (platform.RegenerateActive && pawn.IsHashIntervalTick(1000))
+                {
+                    TryRegeneratePart(pawn, platform);
                 }
             }
 
@@ -120,7 +122,7 @@ namespace WhatTheHack.Harmony
             {
                 int randInt = rand.Next(0, 100);
 
-                if(randInt <= 2)
+                if(randInt <= 5)
                 {
                     pawn.health.RemoveHediff(hediff);
                     platform.refuelableComp.ConsumeFuel(5f);
@@ -137,7 +139,7 @@ namespace WhatTheHack.Harmony
 
         private static void TryHealRandomInjury(Pawn_HealthTracker __instance, Pawn pawn, Building_MechanoidPlatform platform)
         {
-            IEnumerable<Hediff_Injury> hediffs = __instance.hediffSet.GetHediffs<Hediff_Injury>().Where((Hediff_Injury i) => HediffUtility.CanHealNaturally(i) && i.def != WTH_DefOf.WTH_RegeneratedPart);
+            IEnumerable<Hediff_Injury> hediffs = __instance.hediffSet.GetHediffs<Hediff_Injury>().Where((Hediff_Injury i) => HediffUtility.CanHealNaturally(i));
             if (hediffs.Count() == 0)
             {
                 return;

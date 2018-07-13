@@ -32,6 +32,7 @@
 	<WTH_Reason_MechanoidDowned>Cannot enable downed mechanoid</WTH_Reason_MechanoidDowned>
 	<WTH_Reason_PowerLow>Cannot enable mechanoid, power too low (disable auto-recharge to override this)</WTH_Reason_PowerLow>
 	<WTH_Reaon_PawnCannotBeDrafted>Cannot enable operate mechanoid controller belt when drafted</WTH_Reaon_PawnCannotBeDrafted>
+	<WTH_Reason_NotEnoughParts>Regenerating body parts costs {0} mechanoids parts per body part, not enough parts loaded to the platform to regenerate a single part</WTH_Reason_NotEnoughParts>
 	
 	<WTH_Gizmo_SearchAndDestroy_Label>Activate</WTH_Gizmo_SearchAndDestroy_Label>
 	<WTH_Gizmo_SearchAndDestroy_Description>Activate search and destroy mod. The mechanoid will automatically attack any enemies near your colony. When disabled, the mechanoid will return to a mechanoid platform when possible.</WTH_Gizmo_SearchAndDestroy_Description>
@@ -43,10 +44,11 @@
 	<WTH_Gizmo_RemoteControlDeactivate_Label>Deactivate remote</WTH_Gizmo_RemoteControlDeactivate_Label>
 	<WTH_Gizmo_RemoteControlDeactivate_Description>Deactivates the remote control device, giving control back to the mechanoid</WTH_Gizmo_RemoteControlDeactivate_Description>
 	
-	<WTH_Gizmo_Regenerate_Label>Regenerate parts</WTH_Gizmo_Regenerate_Label>
-	<WTH_Gizmo_Regenerate_Description>When this is active, the platform regenerates body parts of the mechanoid that are missing. Regenerating body parts requires a large amount of mechanoid parts.</WTH_Gizmo_Regenerate_Description>
-	
-	
+	<WTH_Gizmo_Regenerate_Label>Regenerate body parts</WTH_Gizmo_Regenerate_Label>
+	<WTH_Gizmo_Regenerate_Description>When this is active, the platform regenerates body parts of the mechanoid that are missing. Regenerating body parts consumes {0} mechanoid parts for each body part.</WTH_Gizmo_Regenerate_Description>
+	<WTH_Gizmo_Repair_Label>Repair mechanoid</WTH_Gizmo_Repair_Label>
+	<WTH_Gizmo_Repair_Description>When this is active, the platform repairs any mechanoid on the platform by activating its internal mechanites by providing enough power, and material to work with. The mechanites consume mechanoid parts stored in the platform in the process.</WTH_Gizmo_Repair_Description>
+
 	<WTH_Alert_NotEnoughPlatforms_Label>Not enough mechanoid platforms</WTH_Alert_NotEnoughPlatforms_Label>
 	<WTH_Alert_NotEnoughPlatforms_Description>You have more hacked mechanoids than mechanoid platforms in your main base. Make sure to make more mechanoid platforms</WTH_Alert_NotEnoughPlatforms_Description>
 	<WTH_Alert_Power_Low_Label>Mechanoids low on power</WTH_Alert_Power_Low_Label>

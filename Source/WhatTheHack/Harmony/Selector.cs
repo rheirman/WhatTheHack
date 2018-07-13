@@ -42,9 +42,19 @@ namespace WhatTheHack.Harmony
                 
             }
         }
-        static public bool IsHumanLikeOrHacked(Pawn p)
+        public static bool IsHumanLikeOrHacked(Pawn p)
         {
-            return p.RaceProps.Humanlike || p.IsHacked();
+            return p.RaceProps.Humanlike || p.IsHacked() && !MechLikelyMounted(p);
+        }
+        //returns true when a humanlike is on the same square as a mechanoid
+        private static bool MechLikelyMounted(Pawn pawn)
+        {
+            if (pawn.RaceProps.IsMechanoid)
+            {
+                bool humanLikeOnPawnPosition = pawn.Map.thingGrid.ThingsAt(pawn.Position).FirstOrDefault((Thing t) => t is Pawn && ((Pawn)t).RaceProps.Humanlike) != null;
+                return humanLikeOnPawnPosition;
+            }
+            return false;
         }
     }
 }
