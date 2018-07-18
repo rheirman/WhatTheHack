@@ -61,4 +61,17 @@
 	
 	<WTH_MechanoidsSection>Mechanoids</WTH_MechanoidsSection>
 	
+	<WTH_Explanation_NumMechs>Number of mechanoids</WTH_Explanation_NumMechs>
+	<WTH_Explanation_NumPlatforms>Number of portable platforms</WTH_Explanation_NumPlatforms>
+	<WTH_Explanation_FuelConsumption>Fuel consumption per platform</WTH_Explanation_FuelConsumption>
+	<WTH_Explanation_TotalFuel>Total fuel</WTH_Explanation_TotalFuel>
+	<WTH_Explanation_DaysOfFuel>Days of fuel</WTH_Explanation_DaysOfFuel>
+	<WTH_Explanation_NotEnoughPlatforms>You don't have enough portable mechanoid platforms for the amount of mechanoids you selected. You should bring one for each mechanoid</WTH_Explanation_NotEnoughPlatforms>
+	<WTH_ExtraInfoKey_DaysOfFuel>Days of fuel (mechanoids)</WTH_ExtraInfoKey_DaysOfFuel>
+	
+	
+	
+	
+	
+	
 </LanguageData>

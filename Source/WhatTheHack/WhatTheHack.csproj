@@ -61,8 +61,11 @@
     <Compile Include="Harmony\CaravanFormingUtility.cs" />
     <Compile Include="Harmony\CaravanUIUtility.cs" />
     <Compile Include="Harmony\DaysWorthOfFoodCalculator.cs" />
+    <Compile Include="Harmony\Dialog_FormCaravan.cs" />
     <Compile Include="Harmony\LovePartnerRelationUtility.cs" />
     <Compile Include="Harmony\PawnCapacitiesHandler.cs" />
+    <Compile Include="Harmony\TransferableUIUtility.cs" />
+    <Compile Include="Harmony\TransferableUtility.cs" />
     <Compile Include="ModExtension\DefModExtension_PawnCapacity.cs" />
     <Compile Include="ModExtension\DefModExtension_Recipe.cs" />
     <Compile Include="Recipes\Recipe_ShutDown.cs" />

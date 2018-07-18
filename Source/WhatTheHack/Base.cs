@@ -17,14 +17,19 @@ namespace WhatTheHack
         public static Base Instance { get; private set; }
         ExtendedDataStorage _extendedDataStorage;
 
-        internal static SettingHandle<String> tabsHandler;
 
+        //settings
+        internal static SettingHandle<String> tabsHandler;
         internal static SettingHandle<int> failureChanceNothing;
         internal static SettingHandle<int> failureChanceCauseRaid;
         internal static SettingHandle<int> failureChanceShootRandomDirection;
         internal static SettingHandle<int> failureChanceHealToStanding;
         internal static SettingHandle<int> failureChanceHackPoorly;
         internal static SettingHandle<Dict2DRecordHandler> factionRestrictions;
+
+        //temp accessible storage
+        internal float daysOfFuel = 0;
+        internal string daysOfFuelReason = "";
 
         //List<String> tabNames = new List<String>();
 

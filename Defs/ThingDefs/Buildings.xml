@@ -124,8 +124,8 @@
   
     <ThingDef ParentName="FurnitureBase">
 	   <defName>WTH_PortableChargingPlatform</defName>
-		<label>portable mechanoid charging platform</label>
-		<description>Portable platform used for charging mechanoids, for travelling purposes</description>
+		<label>portable charging platform</label>
+		<description>Portable platform used for charging mechanoids. For travelling purposes</description>
 		<thingClass>WhatTheHack.Buildings.Building_PortableChargingPlatform</thingClass>
 		<graphicData>
 		  <texPath>Things/PortableMechanoidPlatform</texPath>
@@ -159,7 +159,7 @@
 		</researchPrerequisites>	
 		<comps>
 		  <li Class="CompProperties_Refuelable">
-			<fuelConsumptionRate>20.0</fuelConsumptionRate>
+			<fuelConsumptionRate>15.0</fuelConsumptionRate>
 			<fuelCapacity>20.0</fuelCapacity>
 			<fuelFilter>
 			  <thingDefs>

@@ -18,18 +18,12 @@ namespace WhatTheHack.Harmony
                                                      where x.ThingDef.category == ThingCategory.Pawn
                                                      select x;
 
-            Log.Message("calling AddPawnsSections");
 
             foreach(TransferableOneWay tow in transferables)
             {
                 Log.Message(tow.ThingDef.defName);
             }
             List<Pawn> pawns = transferables[0].things[0].Map.mapPawns.AllPawnsSpawned;
-            foreach(Pawn pawn in pawns)
-            {
-                Log.Message("pawn label: " + pawn.Label + ", pawn def: " + pawn.def.defName);
-            }
-
             widget.AddSection("WTH_MechanoidsSection".Translate(), from x in source
                                                             where ((Pawn)x.AnyThing).RaceProps.IsMechanoid
                                                             select x);
