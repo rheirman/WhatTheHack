@@ -6,7 +6,7 @@
     <thingClass>WhatTheHack.Buildings.Building_HackingTable</thingClass>
     <size>(5,2)</size>
     <costList>
-      <Steel>100</Steel>
+      <Steel>200</Steel>
       <ComponentIndustrial>10</ComponentIndustrial>
     </costList>
     <graphicData>
@@ -69,7 +69,7 @@
     </graphicData>
     <castEdgeShadows>false</castEdgeShadows>
     <costList>
-      <Steel>75</Steel>
+      <Steel>125</Steel>
       <ComponentIndustrial>6</ComponentIndustrial>
     </costList>
 	<rotatable>false</rotatable>
@@ -122,5 +122,63 @@
 	</building>
   </ThingDef>
   
-  
+    <ThingDef ParentName="FurnitureBase">
+	   <defName>WTH_PortableChargingPlatform</defName>
+		<label>portable mechanoid charging platform</label>
+		<description>Portable platform used for charging mechanoids, for travelling purposes</description>
+		<thingClass>WhatTheHack.Buildings.Building_PortableChargingPlatform</thingClass>
+		<graphicData>
+		  <texPath>Things/PortableMechanoidPlatform</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <drawSize>(2,2)</drawSize>
+		</graphicData>
+		<castEdgeShadows>false</castEdgeShadows>
+		<costList>
+		  <Steel>100</Steel>
+		  <ComponentIndustrial>6</ComponentIndustrial>
+		</costList>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+		  <WorkToBuild>1000</WorkToBuild>
+		  <MaxHitPoints>250</MaxHitPoints>
+		  <Flammability>1.0</Flammability>
+		  <Mass>25</Mass>
+		</statBases>
+		<size>(2,2)</size>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,0)</interactionCellOffset>
+		<designationCategory>Misc</designationCategory>
+		<surfaceType>Item</surfaceType>
+		 <researchPrerequisites>
+		  <li>WTH_HackingBasics</li>
+		</researchPrerequisites>	
+		<comps>
+		  <li Class="CompProperties_Refuelable">
+			<fuelConsumptionRate>20.0</fuelConsumptionRate>
+			<fuelCapacity>20.0</fuelCapacity>
+			<fuelFilter>
+			  <thingDefs>
+				<li>Chemfuel</li>
+			  </thingDefs>
+			</fuelFilter>
+			<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			 <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+			<initialConfigurableTargetFuelLevel>10.0</initialConfigurableTargetFuelLevel>
+		  </li>
+		  <li Class="CompProperties_Forbiddable" />
+		</comps>
+		<building>
+			<bed_humanlike>false</bed_humanlike>
+			<bed_healPerDay>850</bed_healPerDay>
+			<bed_showSleeperBody>True</bed_showSleeperBody>
+			<canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+			<ai_chillDestination>false</ai_chillDestination>
+		</building>
+	</ThingDef>
+ 
 </Defs>

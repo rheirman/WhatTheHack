@@ -185,7 +185,7 @@ namespace WhatTheHack.Harmony
                     else
                     {
                         __instance.jobs.EndCurrentJob(JobCondition.InterruptForced);
-                        Building_MechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(__instance, __instance);
+                        Building_BaseMechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(__instance, __instance);
                         if (closestAvailablePlatform != null)
                         {
                             Job job = new Job(WTH_DefOf.WTH_Mechanoid_Rest, closestAvailablePlatform);

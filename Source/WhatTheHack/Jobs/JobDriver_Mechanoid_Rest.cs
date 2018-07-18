@@ -11,11 +11,11 @@ namespace WhatTheHack.Jobs
 {
     class JobDriver_Mechanoid_Rest : JobDriver
     {
-        protected Building_MechanoidPlatform MechanoidPlatform
+        protected Building_BaseMechanoidPlatform MechanoidPlatform
         {
             get
             {
-                return (Building_MechanoidPlatform)this.job.GetTarget(TargetIndex.A).Thing;
+                return (Building_BaseMechanoidPlatform)this.job.GetTarget(TargetIndex.A).Thing;
             }
         }
         public override bool TryMakePreToilReservations()
@@ -64,7 +64,7 @@ namespace WhatTheHack.Jobs
             toil.initAction = delegate
             {
                 pawn.jobs.posture = PawnPosture.Standing;
-                pawn.Position = MechanoidPlatform.GetSleepingSlotPos(Building_MechanoidPlatform.SLOTINDEX);
+                pawn.Position = MechanoidPlatform.GetSleepingSlotPos(Building_BaseMechanoidPlatform.SLOTINDEX);
                 pawn.CurJob.SetTarget(TargetIndex.C, new LocalTargetInfo(new IntVec3(pawn.Position.x, pawn.Position.y, pawn.Position.z - 1)));
                 this.rotateToFace = TargetIndex.C;
             };

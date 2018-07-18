@@ -113,9 +113,9 @@ namespace WhatTheHack
             }
             return false;
         }
-        public static bool OnMechanoidPlatform(this Pawn pawn)
+        public static bool OnBaseMechanoidPlatform(this Pawn pawn)
         {
-            if (pawn.CurrentBed() != null && pawn.CurrentBed() is Building_MechanoidPlatform)
+            if (pawn.CurrentBed() != null && pawn.CurrentBed() is Building_BaseMechanoidPlatform)
             {
                 return true;
             }

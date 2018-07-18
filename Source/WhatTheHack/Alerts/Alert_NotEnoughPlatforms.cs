@@ -42,7 +42,7 @@ namespace WhatTheHack.Alerts
             {
                 return false;
             }
-            return map.listerBuildings.allBuildingsColonist.FindAll((Building b) => b is Building_MechanoidPlatform).Count < hackedMechanoids.Count;
+            return map.listerBuildings.allBuildingsColonist.FindAll((Building b) => b is Building_BaseMechanoidPlatform).Count < hackedMechanoids.Count;
         }
     }
 }

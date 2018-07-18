@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using Verse;
+using WhatTheHack.Buildings;
 
 namespace WhatTheHack.Needs
 {
@@ -155,7 +156,11 @@ namespace WhatTheHack.Needs
 
         private float PowerFallPerTickAssumingCategory(PowerCategory cat)
         {
-            if(cat == PowerCategory.NoPower || !base.pawn.IsActivated())
+            if(cat == PowerCategory.NoPower)
+            {
+                return 0;
+            }
+            if(!base.pawn.IsActivated() && base.pawn.OnBaseMechanoidPlatform() && ((Building_BaseMechanoidPlatform)base.pawn.CurrentBed()).HasPowerNow())
             {
                 return 0;
             }

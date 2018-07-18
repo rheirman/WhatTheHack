@@ -72,32 +72,39 @@ namespace WhatTheHack.Harmony
             {
                 return;
             }
-            if (!(pawn.CurrentBed() is Building_MechanoidPlatform))
+            if (!(pawn.CurrentBed() is Building_BaseMechanoidPlatform))
             {
                 return;
             }
 
-            Building_MechanoidPlatform platform = (Building_MechanoidPlatform)pawn.CurrentBed();
+            Building_BaseMechanoidPlatform platform = (Building_BaseMechanoidPlatform)pawn.CurrentBed();
 
-            if (platform.RepairActive && __instance.hediffSet.HasNaturallyHealingInjury() && pawn.OnMechanoidPlatform())
+            if (platform.RepairActive && __instance.hediffSet.HasNaturallyHealingInjury())
             {
                 if (pawn.IsHashIntervalTick(10) && platform.CanHealNow())
                 {
                     TryHealRandomInjury(__instance, pawn, platform);
                 }
             }
-            if (pawn.OnMechanoidPlatform())
+            if (platform.RegenerateActive && pawn.IsHashIntervalTick(1000))
             {
-                if (platform.RegenerateActive && pawn.IsHashIntervalTick(1000))
-                {
-                    TryRegeneratePart(pawn, platform);
-                }
+                TryRegeneratePart(pawn, platform);
             }
 
             if (platform.HasPowerNow())
             {
                 Need powerNeed = pawn.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power);
-                float powerPerTick = 0.75f * platform.PowerComp.Props.basePowerConsumption / GenDate.TicksPerDay; //TODO: no magic number
+                float powerPerTick = 0;
+                if (platform.PowerComp != null)
+                {
+                     powerPerTick = 0.75f * platform.PowerComp.Props.basePowerConsumption / GenDate.TicksPerDay; //TODO: no magic number
+                }
+                else
+                {
+                    platform.refuelableComp.ConsumeFuel(platform.refuelableComp.Props.fuelConsumptionRate / GenDate.TicksPerDay); //TODO: no magic number
+                    powerPerTick = 0.75f * platform.refuelableComp.Props.fuelConsumptionRate * 15 / GenDate.TicksPerDay; //TODO: no magic number
+                }
+
                 if (powerNeed.CurLevel + powerPerTick < powerNeed.MaxLevel)
                 {
                     if (pawn.IsHashIntervalTick(100))
@@ -113,7 +120,7 @@ namespace WhatTheHack.Harmony
             }
         }
 
-        private static void TryRegeneratePart(Pawn pawn, Building_MechanoidPlatform platform)
+        private static void TryRegeneratePart(Pawn pawn, Building_BaseMechanoidPlatform platform)
         {
             Random rand = new Random(DateTime.Now.Millisecond);
             foreach (Hediff_MissingPart hediff in from x
@@ -137,7 +144,7 @@ namespace WhatTheHack.Harmony
             }
         }
 
-        private static void TryHealRandomInjury(Pawn_HealthTracker __instance, Pawn pawn, Building_MechanoidPlatform platform)
+        private static void TryHealRandomInjury(Pawn_HealthTracker __instance, Pawn pawn, Building_BaseMechanoidPlatform platform)
         {
             IEnumerable<Hediff_Injury> hediffs = __instance.hediffSet.GetHediffs<Hediff_Injury>().Where((Hediff_Injury i) => HediffUtility.CanHealNaturally(i));
             if (hediffs.Count() == 0)

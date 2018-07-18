@@ -11,7 +11,6 @@ using WhatTheHack.Buildings;
 namespace WhatTheHack.Harmony
 {
 
-    //Adjust sleeping slot position for smaller pawns. 
     [HarmonyPatch(typeof(Building_Bed), "GetSleepingSlotPos")]
     static class Building_Bed_GetSleepingSlotPos
     {
@@ -25,6 +24,7 @@ namespace WhatTheHack.Harmony
     }
     
     
+    
 
     //Patch is needed so mechanoids that are standing up can still have a "cur bed"
     [HarmonyPatch(typeof(Building_Bed), "GetCurOccupant")]
@@ -33,7 +33,7 @@ namespace WhatTheHack.Harmony
         //Copied from vanilla, prefixing and replacing is safe because of the check for Building_MechanoidPlatform
         static bool Prefix(Building_Bed __instance, int slotIndex, ref Pawn __result)
         {
-            if(!(__instance is Building_MechanoidPlatform)){
+            if(!(__instance is Building_BaseMechanoidPlatform)){
                 return true;
             }
 

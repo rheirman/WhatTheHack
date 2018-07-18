@@ -39,15 +39,14 @@ namespace WhatTheHack
             });
 
         }
-        public static Building_MechanoidPlatform GetAvailableMechanoidPlatform(Pawn pawn, Pawn targetPawn)
+        public static Building_BaseMechanoidPlatform GetAvailableMechanoidPlatform(Pawn pawn, Pawn targetPawn)
         {
-            return (Building_MechanoidPlatform)GenClosest.ClosestThingReachable(targetPawn.Position, targetPawn.Map, ThingRequest.ForDef(WTH_DefOf.WTH_MechanoidPlatform), PathEndMode.OnCell, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false), 9999f, delegate (Thing b)
+            return (Building_BaseMechanoidPlatform)GenClosest.ClosestThingReachable(targetPawn.Position, targetPawn.Map, ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial), PathEndMode.OnCell, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false), 9999f, delegate (Thing b)
             {
-
-                if (b is Building_MechanoidPlatform && !b.IsForbidden(pawn))
+                if (b is Building_BaseMechanoidPlatform && !b.IsForbidden(pawn))
                 {
-                    Building_MechanoidPlatform platform = (Building_MechanoidPlatform)b;
-                    if (platform.GetCurOccupant(Building_MechanoidPlatform.SLOTINDEX) == null)
+                    Building_BaseMechanoidPlatform platform = (Building_BaseMechanoidPlatform)b;
+                    if (platform.GetCurOccupant(Building_BaseMechanoidPlatform.SLOTINDEX) == null)
                     {
                         return true;
                     }

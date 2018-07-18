@@ -9,10 +9,9 @@ using WhatTheHack.Needs;
 
 namespace WhatTheHack.Buildings
 {
-    class Building_MechanoidPlatform : Building_Bed
+    class Building_MechanoidPlatform : Building_BaseMechanoidPlatform
     {
-        public const int SLOTINDEX = 1;
-        public CompRefuelable refuelableComp;
+        public new const int SLOTINDEX = 1;
         public CompPowerTrader powerComp;
         public const float MINFUELREGENERATE = 5.0f;
         private bool regenerateActive;
@@ -25,24 +24,24 @@ namespace WhatTheHack.Buildings
             this.refuelableComp = base.GetComp<CompRefuelable>();
             this.powerComp = base.GetComp<CompPowerTrader>();            
         }
-        public bool RegenerateActive {
+        public override bool RegenerateActive {
             get
             {
                 return regenerateActive;
             }
         }
-        public bool RepairActive
+        public override bool RepairActive
         {
             get
             {
                 return repairActive;
             }
         }
-        public bool CanHealNow()
+        public override bool CanHealNow()
         {
             return this.refuelableComp.HasFuel && this.HasPowerNow();
         }
-        public bool HasPowerNow()
+        public override bool HasPowerNow()
         {
             return this.powerComp != null && this.powerComp.PowerOn; 
         }

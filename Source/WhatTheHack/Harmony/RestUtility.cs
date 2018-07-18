@@ -46,7 +46,7 @@ namespace WhatTheHack.Harmony
                 }
                 else
                 {
-                    if (sleeper.OnMechanoidPlatform())
+                    if (sleeper.OnBaseMechanoidPlatform())
                     {
                         __result = sleeper.CurrentBed();
                         return false;
@@ -67,9 +67,9 @@ namespace WhatTheHack.Harmony
     {
         static bool Prefix(Pawn pawn, Building_Bed bed, ref IntVec3 __result)
         {
-            if(bed is Building_MechanoidPlatform)
+            if(bed is Building_BaseMechanoidPlatform)
             {
-                __result = bed.GetSleepingSlotPos(Building_MechanoidPlatform.SLOTINDEX);
+                __result = bed.GetSleepingSlotPos(Building_BaseMechanoidPlatform.SLOTINDEX);
                 return false;
             }
             if (bed is Building_HackingTable)
@@ -86,7 +86,7 @@ namespace WhatTheHack.Harmony
     {
         static bool Prefix(ref bool __result, Pawn p, ThingDef bedDef)
         {
-            if(!p.RaceProps.IsMechanoid && (bedDef == WTH_DefOf.WTH_HackingTable || bedDef == WTH_DefOf.WTH_MechanoidPlatform)){
+            if(!p.RaceProps.IsMechanoid && (bedDef == WTH_DefOf.WTH_HackingTable || bedDef == WTH_DefOf.WTH_MechanoidPlatform || bedDef == WTH_DefOf.WTH_PortableChargingPlatform)){
                 __result = false;
                 return false;
             }
@@ -136,10 +136,10 @@ namespace WhatTheHack.Harmony
             }
             else
             {
-                Building_MechanoidPlatform mechanoidPlatform = null;
+                Building_BaseMechanoidPlatform mechanoidPlatform = null;
                 for (int i = 0; i < thingList.Count; i++)
                 {
-                    mechanoidPlatform = (thingList[i] as Building_MechanoidPlatform);
+                    mechanoidPlatform = (thingList[i] as Building_BaseMechanoidPlatform);
                     if (mechanoidPlatform != null)
                     {
                         break;
@@ -150,7 +150,7 @@ namespace WhatTheHack.Harmony
                     return true;
                 }
 
-                if (mechanoidPlatform.GetCurOccupant(Building_MechanoidPlatform.SLOTINDEX) == p)
+                if (mechanoidPlatform.GetCurOccupant(Building_BaseMechanoidPlatform.SLOTINDEX) == p)
                 {
                     __result = mechanoidPlatform;
                     return false;
