@@ -86,7 +86,7 @@ namespace WhatTheHack.Harmony
                     TryHealRandomInjury(__instance, pawn, platform);
                 }
             }
-            if (platform.RegenerateActive && pawn.IsHashIntervalTick(1000))
+            if (platform.RegenerateActive && pawn.IsHashIntervalTick(1000) && platform.refuelableComp.Fuel > 5f) //TODO: no magic number
             {
                 TryRegeneratePart(pawn, platform);
             }
@@ -101,7 +101,7 @@ namespace WhatTheHack.Harmony
                 }
                 else
                 {
-                    platform.refuelableComp.ConsumeFuel(platform.refuelableComp.Props.fuelConsumptionRate / GenDate.TicksPerDay); //TODO: no magic number
+                    platform.refuelableComp.ConsumeFuel(platform.refuelableComp.Props.fuelConsumptionRate / GenDate.TicksPerDay);
                     powerPerTick = 0.75f * platform.refuelableComp.Props.fuelConsumptionRate * 15 / GenDate.TicksPerDay; //TODO: no magic number
                 }
 
@@ -129,7 +129,7 @@ namespace WhatTheHack.Harmony
             {
                 int randInt = rand.Next(0, 100);
 
-                if(randInt <= 5)
+                if(randInt <= 5)//TODO: no magic number
                 {
                     pawn.health.RemoveHediff(hediff);
                     platform.refuelableComp.ConsumeFuel(5f);
