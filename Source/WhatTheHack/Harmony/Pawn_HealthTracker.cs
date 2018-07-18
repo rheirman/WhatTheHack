@@ -61,6 +61,7 @@ namespace WhatTheHack.Harmony
         }
     }
     //Recharge and repair mechanoid when on platform
+    //TODO: refactor. Move all needs related stuff to something needs related
     [HarmonyPatch(typeof(Pawn_HealthTracker), "HealthTick")]
     static class Pawn_HealthTracker_HealthTick
     {
@@ -71,6 +72,11 @@ namespace WhatTheHack.Harmony
             if (!pawn.RaceProps.IsMechanoid)
             {
                 return;
+            }
+            if (pawn.HasValidCaravanPlatform())
+            {
+                float powerPerTick = 0.5f * WTH_DefOf.WTH_PortableChargingPlatform.GetCompProperties<CompProperties_Refuelable>().fuelConsumptionRate/ GenDate.TicksPerDay; //TODO: no magic number
+                RechargeMechanoid(pawn, pawn.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power), powerPerTick);
             }
             if (!(pawn.CurrentBed() is Building_BaseMechanoidPlatform))
             {
@@ -97,7 +103,7 @@ namespace WhatTheHack.Harmony
                 float powerPerTick = 0;
                 if (platform.PowerComp != null)
                 {
-                     powerPerTick = 0.75f * platform.PowerComp.Props.basePowerConsumption / GenDate.TicksPerDay; //TODO: no magic number
+                    powerPerTick = 0.75f * platform.PowerComp.Props.basePowerConsumption / GenDate.TicksPerDay; //TODO: no magic number
                 }
                 else
                 {
@@ -105,18 +111,23 @@ namespace WhatTheHack.Harmony
                     powerPerTick = 0.75f * platform.refuelableComp.Props.fuelConsumptionRate * 15 / GenDate.TicksPerDay; //TODO: no magic number
                 }
 
-                if (powerNeed.CurLevel + powerPerTick < powerNeed.MaxLevel)
+                RechargeMechanoid(pawn, powerNeed, powerPerTick);
+            }
+        }
+
+        private static void RechargeMechanoid(Pawn pawn, Need powerNeed, float powerPerTick)
+        {
+            if (powerNeed.CurLevel + powerPerTick < powerNeed.MaxLevel)
+            {
+                if (pawn.IsHashIntervalTick(100))
                 {
-                    if (pawn.IsHashIntervalTick(100))
-                    {
-                        MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, WTH_DefOf.WTH_Mote_Charging);
-                    }
-                    powerNeed.CurLevel += powerPerTick;
+                    MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, WTH_DefOf.WTH_Mote_Charging);
                 }
-                else if (powerNeed.CurLevel < powerNeed.MaxLevel)
-                {
-                    powerNeed.CurLevel = powerNeed.MaxLevel;
-                }
+                powerNeed.CurLevel += powerPerTick;
+            }
+            else if (powerNeed.CurLevel < powerNeed.MaxLevel)
+            {
+                powerNeed.CurLevel = powerNeed.MaxLevel;
             }
         }
 

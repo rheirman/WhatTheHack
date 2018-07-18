@@ -1,5 +1,6 @@
 ﻿using Harmony;
 using RimWorld;
+using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -118,6 +119,19 @@ namespace WhatTheHack
             if (pawn.CurrentBed() != null && pawn.CurrentBed() is Building_BaseMechanoidPlatform)
             {
                 return true;
+            }
+            return false;
+        }
+        public static bool HasValidCaravanPlatform(this Pawn pawn)
+        {
+            Caravan caravan = pawn.GetCaravan();
+            if (caravan != null)
+            {
+                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+                if (pawnData.caravanPlatform != null && pawnData.caravanPlatform.CaravanPawn == pawn)
+                {
+                    return true;
+                }
             }
             return false;
         }

@@ -20,21 +20,33 @@ namespace WhatTheHack.Harmony
             List<Pawn> pawns = TransferableUtility.GetPawnsFromTransferables(__instance.transferables);
             Predicate<Thing> isChargingPlatform = (Thing t) => t != null && t.GetInnerIfMinified().def == WTH_DefOf.WTH_PortableChargingPlatform;
             List<TransferableOneWay> chargingPlatformTows = __instance.transferables.FindAll((TransferableOneWay x) => x.CountToTransfer > 0 && x.HasAnyThing && isChargingPlatform(x.AnyThing));
+            List<Building_PortableChargingPlatform> platforms = new List<Building_PortableChargingPlatform>();
+
+            foreach (TransferableOneWay tow in chargingPlatformTows)
+            {
+                foreach (Thing t in tow.things)
+                {
+                    Building_PortableChargingPlatform platform = t.GetInnerIfMinified() as Building_PortableChargingPlatform;
+                    //TODO: prevent stacking here so each pawn can have an associated platform
+                    platforms.Add(platform);
+                }
+            }
+            foreach (Building_PortableChargingPlatform platform in platforms)
+            {
+                platform.CaravanPawn = null;
+            }
             foreach (Pawn pawn in pawns)
             {
                 if (pawn.IsHacked())
                 {
-                    foreach(TransferableOneWay tow in chargingPlatformTows)
+                    foreach(Building_PortableChargingPlatform platform in platforms)
                     {
-                        foreach(Thing t in tow.things)
+                        if (platform != null && platform.CaravanPawn == null)
                         {
-                            Building_PortableChargingPlatform platform = t.GetInnerIfMinified() as Building_PortableChargingPlatform;
-                            if(platform != null && platform.CaravanPawn == null)
-                            {
-                                platform.CaravanPawn = pawn;
-                                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
-                                pawnData.caravanPlatform = platform;
-                            }
+                            platform.CaravanPawn = pawn;
+                            ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+                            pawnData.caravanPlatform = platform;
+                            break;
                         }
                     }
                 }

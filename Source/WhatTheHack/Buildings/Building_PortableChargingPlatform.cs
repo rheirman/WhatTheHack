@@ -48,5 +48,11 @@ namespace WhatTheHack.Buildings
         {
             return this.refuelableComp.Fuel > 0;
         }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_References.Look(ref caravanPawn, "caravanPawn");
+        }
     }
 }

@@ -166,15 +166,9 @@ namespace WhatTheHack.Needs
             {
                 return 0;
             }
-            Caravan caravan = base.pawn.GetCaravan();
-            if (caravan != null)
+            if (pawn.HasValidCaravanPlatform())
             {
-                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
-                if(pawnData.caravanPlatform != null && pawnData.caravanPlatform.CaravanPawn == pawn)
-                {
-                    return 0;
-                }
-
+                return 0;
             }
             return 2.66666666E-05f * this.PowerRate;
         }
