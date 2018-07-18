@@ -9,7 +9,7 @@ using WhatTheHack.Needs;
 
 namespace WhatTheHack.Buildings
 {
-    class Building_MechanoidPlatform : Building_BaseMechanoidPlatform
+    public class Building_MechanoidPlatform : Building_BaseMechanoidPlatform
     {
         public new const int SLOTINDEX = 1;
         public CompPowerTrader powerComp;

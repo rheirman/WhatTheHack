@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Text;
 using UnityEngine;
 using Verse;
 using WhatTheHack.Buildings;
+using WhatTheHack.Storage;
 
 namespace WhatTheHack.Needs
 {
@@ -163,6 +165,16 @@ namespace WhatTheHack.Needs
             if(!base.pawn.IsActivated() && base.pawn.OnBaseMechanoidPlatform() && ((Building_BaseMechanoidPlatform)base.pawn.CurrentBed()).HasPowerNow())
             {
                 return 0;
+            }
+            Caravan caravan = base.pawn.GetCaravan();
+            if (caravan != null)
+            {
+                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+                if(pawnData.caravanPlatform != null && pawnData.caravanPlatform.CaravanPawn == pawn)
+                {
+                    return 0;
+                }
+
             }
             return 2.66666666E-05f * this.PowerRate;
         }

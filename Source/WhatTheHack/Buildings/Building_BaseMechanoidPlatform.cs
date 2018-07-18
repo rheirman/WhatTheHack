@@ -6,7 +6,7 @@ using System.Text;
 
 namespace WhatTheHack.Buildings
 {
-    abstract class Building_BaseMechanoidPlatform : Building_Bed
+    public abstract class Building_BaseMechanoidPlatform : Building_Bed
     {
         private bool regenerateActive = false;
         private bool repairActive = false;

@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,31 @@ using Verse;
 
 namespace WhatTheHack.Buildings
 {
-    class Building_PortableChargingPlatform : Building_BaseMechanoidPlatform
+    public class Building_PortableChargingPlatform : Building_BaseMechanoidPlatform
     {
+        private Pawn caravanPawn = null;
         public new const int SLOTINDEX = 1;
+
+        public Pawn CaravanPawn
+        {
+            get
+            {
+                if(caravanPawn != null)
+                {
+                    Caravan caravan = caravanPawn.GetCaravan();
+                    if(caravan == null)
+                    {
+                        caravanPawn = null;
+                    }
+                }
+                return caravanPawn;
+            }
+            set
+            {
+                caravanPawn = value;
+            }
+        }
+
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
