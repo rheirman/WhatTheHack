@@ -66,8 +66,11 @@
 	<WTH_Explanation_FuelConsumption>Fuel consumption per platform</WTH_Explanation_FuelConsumption>
 	<WTH_Explanation_TotalFuel>Total fuel</WTH_Explanation_TotalFuel>
 	<WTH_Explanation_DaysOfFuel>Days of fuel</WTH_Explanation_DaysOfFuel>
-	<WTH_Explanation_NotEnoughPlatforms>You don't have enough portable mechanoid platforms for the amount of mechanoids you selected. You should bring one for each mechanoid</WTH_Explanation_NotEnoughPlatforms>
+	<WTH_Explanation_NotEnoughPlatforms>You don't have enough portable mechanoid platforms for the amount of mechanoids you selected. You should bring one for each mechanoid.</WTH_Explanation_NotEnoughPlatforms>
 	<WTH_ExtraInfoKey_DaysOfFuel>Days of fuel (mechanoids)</WTH_ExtraInfoKey_DaysOfFuel>
+	
+	<WTH_Warning_NotEnoughPlatforms>Your caravan has not enough charging platforms to charge all mechanoids. You should bring one for each mechanoid, otherwise some mechanoids will run out of power very quickly.</WTH_Warning_NotEnoughPlatforms>
+	<WTH_Warning_DaysOfFuel>You caravan has only {0} days worth of fuel for powering your mechanoids, and your mechanoids might run out of power quickly.</WTH_Warning_DaysOfFuel>
 	
 	
 	

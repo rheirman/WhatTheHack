@@ -19,10 +19,6 @@ namespace WhatTheHack.Harmony
                                                      select x;
 
 
-            foreach(TransferableOneWay tow in transferables)
-            {
-                Log.Message(tow.ThingDef.defName);
-            }
             List<Pawn> pawns = transferables[0].things[0].Map.mapPawns.AllPawnsSpawned;
             widget.AddSection("WTH_MechanoidsSection".Translate(), from x in source
                                                             where ((Pawn)x.AnyThing).RaceProps.IsMechanoid

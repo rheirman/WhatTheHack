@@ -17,7 +17,7 @@ namespace WhatTheHack.Harmony
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var instructionsList = new List<CodeInstruction>(instructions);
-            for (var i = 0; i < instructionsList.Count - 1; i++)
+            for (var i = 0; i < instructionsList.Count; i++)
             {
                 CodeInstruction instruction = instructionsList[i];
                 if(instruction.opcode == OpCodes.Isinst && instruction.operand.Equals(typeof(LordJob_VoluntarilyJoinable)))
