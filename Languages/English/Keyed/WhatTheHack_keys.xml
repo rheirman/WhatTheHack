@@ -59,4 +59,6 @@
 	<WTH_FactionRestrictions_Label>Configure which mechanoids each faction can hack</WTH_FactionRestrictions_Label>
 	<WTH_FactionRestrictions_Description>This setting allows you to configure what hacked mechanoids each faction can use during raids</WTH_FactionRestrictions_Description>
 	
+	<WTH_MechanoidsSection>Mechanoids</WTH_MechanoidsSection>
+	
 </LanguageData>

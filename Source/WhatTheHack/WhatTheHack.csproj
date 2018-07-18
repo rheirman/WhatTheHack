@@ -58,6 +58,9 @@
     <Compile Include="Alerts\Alert_PowerLow.cs" />
     <Compile Include="Buildings\Building_BaseMechanoidPlatform.cs" />
     <Compile Include="Buildings\Building_PortableChargingPlatform.cs" />
+    <Compile Include="Harmony\CaravanFormingUtility.cs" />
+    <Compile Include="Harmony\CaravanUIUtility.cs" />
+    <Compile Include="Harmony\DaysWorthOfFoodCalculator.cs" />
     <Compile Include="Harmony\LovePartnerRelationUtility.cs" />
     <Compile Include="Harmony\PawnCapacitiesHandler.cs" />
     <Compile Include="ModExtension\DefModExtension_PawnCapacity.cs" />

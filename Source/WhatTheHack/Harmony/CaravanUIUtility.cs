@@ -1,0 +1,38 @@
+﻿using Harmony;
+using RimWorld;
+using RimWorld.Planet;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Verse;
+
+namespace WhatTheHack.Harmony
+{
+    [HarmonyPatch(typeof(CaravanUIUtility), "AddPawnsSections")]
+    class CaravanUIUtility_AddPawnsSections
+    {
+        static void Postfix(ref TransferableOneWayWidget widget, List<TransferableOneWay> transferables)
+        {
+            IEnumerable<TransferableOneWay> source = from x in transferables
+                                                     where x.ThingDef.category == ThingCategory.Pawn
+                                                     select x;
+
+            Log.Message("calling AddPawnsSections");
+
+            foreach(TransferableOneWay tow in transferables)
+            {
+                Log.Message(tow.ThingDef.defName);
+            }
+            List<Pawn> pawns = transferables[0].things[0].Map.mapPawns.AllPawnsSpawned;
+            foreach(Pawn pawn in pawns)
+            {
+                Log.Message("pawn label: " + pawn.Label + ", pawn def: " + pawn.def.defName);
+            }
+
+            widget.AddSection("WTH_MechanoidsSection".Translate(), from x in source
+                                                            where ((Pawn)x.AnyThing).RaceProps.IsMechanoid
+                                                            select x);
+        }
+    }
+}
