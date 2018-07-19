@@ -17,14 +17,6 @@ namespace WhatTheHack.Buildings
         {
             get
             {
-                if(caravanPawn != null)
-                {
-                    Caravan caravan = caravanPawn.GetCaravan();
-                    if(caravan == null)
-                    {
-                        caravanPawn = null;
-                    }
-                }
                 return caravanPawn;
             }
             set

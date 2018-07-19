@@ -145,6 +145,11 @@ namespace WhatTheHack
             }
             return false;
         }
+
+        public static bool HasFuel(this Caravan caravan)
+        {
+            return caravan.AllThings.Any((Thing thing) => thing.def == ThingDefOf.Chemfuel && thing.stackCount > 0);
+        }
         
     }
 }

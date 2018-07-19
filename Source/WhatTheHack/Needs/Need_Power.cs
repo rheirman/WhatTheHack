@@ -166,7 +166,7 @@ namespace WhatTheHack.Needs
             {
                 return 0;
             }
-            if (pawn.HasValidCaravanPlatform())
+            if (pawn.HasValidCaravanPlatform() && pawn.GetCaravan() != null && pawn.GetCaravan().HasFuel())
             {
                 return 0;
             }

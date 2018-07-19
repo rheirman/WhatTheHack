@@ -26,28 +26,33 @@ namespace WhatTheHack.Harmony
             {
                 foreach (Thing t in tow.things)
                 {
-                    Building_PortableChargingPlatform platform = t.GetInnerIfMinified() as Building_PortableChargingPlatform;
+                    Building_PortableChargingPlatform platform = (Building_PortableChargingPlatform)t.GetInnerIfMinified();
+                    platform.CaravanPawn = null;
                     //TODO: prevent stacking here so each pawn can have an associated platform
-                    platforms.Add(platform);
+                    //platforms.Add(platform);
                 }
             }
-            foreach (Building_PortableChargingPlatform platform in platforms)
-            {
-                platform.CaravanPawn = null;
-            }
+
+            //Find and assign platform for each pawn. 
             foreach (Pawn pawn in pawns)
             {
                 if (pawn.IsHacked())
                 {
-                    foreach(Building_PortableChargingPlatform platform in platforms)
+                    bool foundPlatform = false;
+                    for(int j = 0; j < chargingPlatformTows.Count && !foundPlatform; j++)
                     {
-                        if (platform != null && platform.CaravanPawn == null)
+                        for(int i = 0; i < chargingPlatformTows[j].things.Count && !foundPlatform; i++)
                         {
-                            platform.CaravanPawn = pawn;
-                            ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
-                            pawnData.caravanPlatform = platform;
-                            break;
+                            Building_PortableChargingPlatform platform = (Building_PortableChargingPlatform)chargingPlatformTows[j].things[i].GetInnerIfMinified();
+                            if (platform != null && platform.CaravanPawn == null)
+                            {
+                                platform.CaravanPawn = pawn;
+                                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+                                pawnData.caravanPlatform = platform;
+                                foundPlatform = true;
+                            }
                         }
+
                     }
                 }
             }
@@ -65,7 +70,6 @@ namespace WhatTheHack.Harmony
                 CodeInstruction instruction = instructionsList[i];
                 if (i < instructionsList.Count - 2 && instructionsList[i + 1].opcode == OpCodes.Call && instructionsList[i + 1].operand == AccessTools.Method(typeof(Dialog_FormCaravan), "get_DaysWorthOfFood"))
                 {
-                    Log.Message("Found instruction");
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
                     yield return new CodeInstruction(OpCodes.Ldloca_S, 4);
                     yield return new CodeInstruction(OpCodes.Call, typeof(Dialog_FormCaravan_DoBottomButtons).GetMethod("AddWarnings"));
@@ -75,7 +79,6 @@ namespace WhatTheHack.Harmony
         }
 
         public static void AddWarnings(Dialog_FormCaravan instance, ref List<string> warnings){
-            Log.Message("calling AddWarnings");
             int numMechanoids = 0;
             int numPlatforms = 0;
             foreach (TransferableOneWay tow in instance.transferables)
@@ -112,55 +115,10 @@ namespace WhatTheHack.Harmony
     {
         static void Postfix(Dialog_FormCaravan __instance)
         {
-            int numMechanoids = 0;
-            float fuelAmount = 0f;
-            float fuelConsumption = 0f;
-            int numPlatforms = 0;
-            float daysOfFuel = 0;
-            StringBuilder daysOfFuelReason = new StringBuilder();
-
-            foreach (TransferableOneWay tow in __instance.transferables)
-            {
-                if(tow.ThingDef.race != null && tow.ThingDef.race.IsMechanoid)
-                {
-                    numMechanoids += tow.CountToTransfer;
-                }
-                if(tow.ThingDef == ThingDefOf.Chemfuel)
-                {
-                    fuelAmount += tow.CountToTransfer;
-                }
-                if(tow.ThingDef == ThingDefOf.MinifiedThing)
-                {
-                    if (tow.things[0].GetInnerIfMinified().def == WTH_DefOf.WTH_PortableChargingPlatform)
-                    {
-                        numPlatforms += tow.CountToTransfer;
-                    }
-
-                }
-            }
-            if (numMechanoids == 0)
-            {
-                return;
-            }
-            daysOfFuelReason.AppendLine("WTH_Explanation_NumMechs".Translate() + ": " + numMechanoids);
-            daysOfFuelReason.AppendLine("WTH_Explanation_NumPlatforms".Translate() + ": " + numPlatforms);
-            if (numPlatforms >= numMechanoids)
-            {
-                fuelConsumption = numMechanoids * WTH_DefOf.WTH_PortableChargingPlatform.GetCompProperties<CompProperties_Refuelable>().fuelConsumptionRate;
-                daysOfFuel = fuelAmount / fuelConsumption;
-                daysOfFuelReason.AppendLine("WTH_Explanation_FuelConsumption".Translate() + ": " + fuelConsumption.ToString("0.#"));
-                daysOfFuelReason.AppendLine("WTH_Explanation_TotalFuel".Translate() + ": " + fuelAmount.ToString("0.#"));
-                daysOfFuelReason.AppendLine("WTH_Explanation_DaysOfFuel".Translate() + ": " + fuelAmount.ToString("0.#") + " /( " + numMechanoids + " * " + fuelConsumption + ") = " + daysOfFuel.ToString("0.#"));
-            }
-            else
-            {
-                daysOfFuelReason.AppendLine("WTH_Explanation_NotEnoughPlatforms".Translate());
-            }
-            Base.Instance.daysOfFuel = daysOfFuel;
-            Base.Instance.daysOfFuelReason = daysOfFuelReason.ToString();
-
+            Utilities.CalcDaysOfFuel(__instance.transferables);
         }
 
+       
     }
 
 }

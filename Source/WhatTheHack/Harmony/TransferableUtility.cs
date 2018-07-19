@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
+using WhatTheHack.Buildings;
 
 namespace WhatTheHack.Harmony
 {
@@ -13,7 +14,7 @@ namespace WhatTheHack.Harmony
     {
         static bool Prefix(Thing thing, ref bool __result)
         {
-            if(thing is Pawn && ((Pawn)thing).IsHacked())
+            if((thing is Pawn && ((Pawn)thing).IsHacked()) || thing is Building_PortableChargingPlatform)
             {
                 __result = false; 
                 return false;
