@@ -18,7 +18,7 @@ namespace WhatTheHack.Jobs
                 return (Building_BaseMechanoidPlatform)this.job.GetTarget(TargetIndex.A).Thing;
             }
         }
-        public override bool TryMakePreToilReservations()
+        public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
             return this.pawn.Reserve(this.MechanoidPlatform, this.job, 1, -1, null);
         }

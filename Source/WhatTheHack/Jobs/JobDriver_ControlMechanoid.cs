@@ -9,7 +9,7 @@ namespace WhatTheHack.Jobs
 {
     class JobDriver_ControlMechanoid : JobDriver
     {
-        public override bool TryMakePreToilReservations()
+        public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
             return true;
         }

@@ -25,7 +25,7 @@ namespace WhatTheHack.Jobs
                 return (Building_HackingTable)this.job.GetTarget(TargetIndex.B).Thing;
             }
         }
-        public override bool TryMakePreToilReservations()
+        public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
             return this.pawn.Reserve(this.Takee, this.job, 1, -1, null) && this.pawn.Reserve(this.HackingTable, this.job, 1, -1, null);
         }
