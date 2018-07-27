@@ -41,7 +41,7 @@
 	</Operation>
 	<!-- Mechanoid parts sold from exotic goods trader --> 
 	<Operation Class="PatchOperationAdd">
-		<xpath>*/TraderKindDef[defName = "Caravan_Outlander_Exotic"]/stockGenerators</xpath>
+		<xpath>*/TraderKindDef[defName = "Caravan_Outlander_Exotic" or defName = "Orbital_Exotic"]/stockGenerators</xpath>
 		<value>
 			<li Class="StockGenerator_SingleDef">
 					<thingDef>WTH_MechanoidParts</thingDef>
