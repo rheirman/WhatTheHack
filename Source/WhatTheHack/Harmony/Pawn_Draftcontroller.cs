@@ -22,7 +22,10 @@ namespace WhatTheHack.Harmony
             if (store != null)
             {
                 ExtendedPawnData pawnData = store.GetExtendedDataFor(__instance.pawn);
-                pawnData.isActive = true;
+                if (__instance.Drafted)
+                {
+                    pawnData.isActive = true;
+                }
             }
 
         }
@@ -43,9 +46,10 @@ namespace WhatTheHack.Harmony
                 if (gizmo is Command_Toggle)
                 {
                     Command_Toggle toggleCommand = gizmo as Command_Toggle;
-                    if (toggleCommand.defaultLabel == "CommandDraftLabel".Translate())
+                    if (toggleCommand.defaultDesc == "CommandToggleDraftDesc".Translate())
                     {
                         DisableCommandIfMechanoidPowerLow(__instance, toggleCommand);
+                        DisableCommandIfNotActivated(__instance, toggleCommand);
                         yield return toggleCommand;
                         continue;
                     }
@@ -65,6 +69,16 @@ namespace WhatTheHack.Harmony
                 {
                     toggleCommand.Disable("WTH_Reason_PowerLow".Translate());
                 }
+            }
+        }
+
+        private static void DisableCommandIfNotActivated(Pawn_DraftController __instance, Command_Toggle toggleCommand)
+        {
+            Log.Message("toggleCommand.isActive(): " + toggleCommand.isActive());
+            Log.Message("__instance.pawn.IsActivated()" + __instance.pawn.IsActivated());
+            if(toggleCommand.isActive() && !__instance.pawn.IsActivated())
+            {
+                __instance.Drafted = false;
             }
         }
     }
