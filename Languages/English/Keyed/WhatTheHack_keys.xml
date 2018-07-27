@@ -71,10 +71,5 @@
 	
 	<WTH_Warning_NotEnoughPlatforms>Your caravan has not enough charging platforms to charge all mechanoids. You should bring one for each mechanoid, otherwise some mechanoids will run out of power very quickly.</WTH_Warning_NotEnoughPlatforms>
 	<WTH_Warning_DaysOfFuel>You caravan has only {0} days worth of fuel for powering your mechanoids, and your mechanoids might run out of power quickly.</WTH_Warning_DaysOfFuel>
-	
-	
-	
-	
-	
-	
+	<WTH_Message_CaravanOutOfFuel>{0} has run out of fuel ({1}).</WTH_Message_CaravanOutOfFuel>
 </LanguageData>

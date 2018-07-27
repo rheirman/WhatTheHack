@@ -37,10 +37,13 @@ namespace WhatTheHack.Harmony
                 foreach (Thing thing in __instance.AllThings)
                 {
                     Log.Message(thing.def.defName);
-                    if (numMechanoids > 0 && numPlatforms > 0 && thing.def == ThingDefOf.Chemfuel)
+                    if (numMechanoids > 0 && numPlatforms > 0 && thing.def == ThingDefOf.Chemfuel && thing.stackCount > 0)
                     {
                         int fuelConsumedThisInterval = Math.Min(numMechanoids, numPlatforms);
                         thing.SplitOff(fuelConsumedThisInterval).Destroy(DestroyMode.Vanish);
+                        if(thing.stackCount == 0) {
+                            Messages.Message("WTH_Message_CaravanOutOfFuel".Translate(new object[]{__instance.LabelCap}), __instance, MessageTypeDefOf.ThreatBig, true);
+                        }
                     }
                 }
             }
