@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
+	<!--Add mechanoid specific operations-->
 	<Operation Class="PatchOperationAdd">
 		<xpath>*/ThingDef[race/fleshType = "Mechanoid"]</xpath>
 		<value>
@@ -20,4 +21,22 @@
 			</li>
 		</value>
 	</Operation> 
+	<!-- Make sure mechanoids don't wander about when drafted --> 
+	<Operation Class="PatchOperationInsert">
+		<xpath>*/ThinkTreeDef[defName = "Mechanoid"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[treeDef="LordDuty"]</xpath> <!--Priority is important here, hence the insert after this specific subNode--> 
+		<value>
+	        <!-- Wait if drafted -->
+			<li Class="ThinkNode_ConditionalDrafted">
+			  <subNodes>
+				<li Class="ThinkNode_Tagger">
+				  <tagToGive>DraftedOrder</tagToGive>
+				  <subNodes>
+					<li Class="JobGiver_MoveToStandable" />
+					<li Class="JobGiver_Orders" />
+				  </subNodes>
+				</li>
+			  </subNodes>
+			</li>
+		</value>
+	</Operation>
 </Patch>

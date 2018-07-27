@@ -185,7 +185,8 @@ namespace WhatTheHack.Recipes
             extraHealth *= pawn.HealthScale;
             float healPerIteration = 10f;
             float totalExtraHealed = 0f;
-            while (totalExtraHealed <= extraHealth)
+            int guard = 0;
+            while (totalExtraHealed <= extraHealth && guard < 1000)
             {
                 Hediff_Injury hediff_Injury = pawn.health.hediffSet.GetHediffs<Hediff_Injury>().Where(new Func<Hediff_Injury, bool>(HediffUtility.CanHealNaturally)).RandomElement<Hediff_Injury>();
                 if (hediff_Injury == null || !pawn.Downed)
@@ -197,6 +198,7 @@ namespace WhatTheHack.Recipes
                 {
                     totalExtraHealed += healPerIteration;
                 }
+                guard++;
             }
             pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
             if (pawn.GetLord() == null || pawn.GetLord().LordJob == null)
