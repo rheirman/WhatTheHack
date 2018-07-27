@@ -39,4 +39,24 @@
 			</li>
 		</value>
 	</Operation>
+	<!-- Mechanoid parts sold from exotic goods trader --> 
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/TraderKindDef[defName = "Caravan_Outlander_Exotic"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_SingleDef">
+					<thingDef>WTH_MechanoidParts</thingDef>
+					<countRange>
+						<min>0</min>
+						<max>70</max>
+					</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+					<thingDef>WTH_MechanoidChip</thingDef>
+					<countRange>
+						<min>0</min>
+						<max>5</max>
+					</countRange>
+			</li>
+		</value>
+	</Operation>
 </Patch>

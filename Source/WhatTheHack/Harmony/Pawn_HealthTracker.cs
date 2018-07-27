@@ -144,7 +144,7 @@ namespace WhatTheHack.Harmony
                 if(randInt <= 5)//TODO: no magic number
                 {
                     pawn.health.RemoveHediff(hediff);
-                    platform.refuelableComp.ConsumeFuel(5f);
+                    platform.refuelableComp.ConsumeFuel(4f);
                     //Hediff_Injury injury = new Hediff_Injury();
                     DamageWorker_AddInjury addInjury = new DamageWorker_AddInjury();
                     addInjury.Apply(new DamageInfo(WTH_DefOf.WTH_RegeneratedPartDamage, hediff.Part.def.GetMaxHealth(pawn) - 1), pawn);

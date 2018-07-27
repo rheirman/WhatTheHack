@@ -35,7 +35,7 @@ namespace WhatTheHack.Harmony
                 parts.stackCount = partsCount;
                 yield return parts;
             }
-            int chipCount = random.Next(0, GenMath.RoundRandom(pawn.kindDef.combatPower * 0.015f * efficiency));//TODO: no magic number
+            int chipCount = random.Next(0, GenMath.RoundRandom(pawn.kindDef.combatPower * 0.012f * efficiency));//TODO: no magic number
             if (chipCount > 0) 
             {
                 Thing chips = ThingMaker.MakeThing(WTH_DefOf.WTH_MechanoidChip, null);

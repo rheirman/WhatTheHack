@@ -12,10 +12,11 @@
     <stackLimit>50</stackLimit>
     <statBases>
       <MaxHitPoints>70</MaxHitPoints>
-      <MarketValue>4</MarketValue>
+      <MarketValue>8</MarketValue>
       <Mass>0.6</Mass>
       <Flammability>1.0</Flammability>
 	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
 	</statBases>
     <intricate>true</intricate>
     <thingCategories>
@@ -35,10 +36,11 @@
     <stackLimit>50</stackLimit>
     <statBases>
       <MaxHitPoints>70</MaxHitPoints>
-      <MarketValue>25</MarketValue>
+      <MarketValue>55</MarketValue>
       <Mass>0.6</Mass>
       <Flammability>1.0</Flammability>
 	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
 	</statBases>
     <intricate>true</intricate>
     <thingCategories>
