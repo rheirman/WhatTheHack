@@ -74,8 +74,6 @@ namespace WhatTheHack.Harmony
 
         private static void DisableCommandIfNotActivated(Pawn_DraftController __instance, Command_Toggle toggleCommand)
         {
-            Log.Message("toggleCommand.isActive(): " + toggleCommand.isActive());
-            Log.Message("__instance.pawn.IsActivated()" + __instance.pawn.IsActivated());
             if(toggleCommand.isActive() && !__instance.pawn.IsActivated())
             {
                 __instance.Drafted = false;
