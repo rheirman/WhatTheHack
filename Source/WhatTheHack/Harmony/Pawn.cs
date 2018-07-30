@@ -64,6 +64,14 @@ namespace WhatTheHack.Harmony
             {
                 __result = false;
             }
+
+            if(bill != null && bill.recipe.HasModExtension<DefModExtension_Recipe>() && __instance.InteractionCell.IsValid)
+            {
+                if (bill.recipe.GetModExtension<DefModExtension_Recipe>().requireBed == false)
+                {
+                    __result = true;
+                }
+            }
         }
     }
 

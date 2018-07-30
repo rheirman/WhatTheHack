@@ -10,5 +10,6 @@ namespace WhatTheHack
     {
         public float surgerySuccessChanceFactor;
         public float deathOnFailedSurgeryChance;
+        public bool requireBed;
     }
 }
