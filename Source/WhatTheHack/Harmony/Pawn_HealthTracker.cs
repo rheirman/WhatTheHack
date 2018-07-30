@@ -58,7 +58,6 @@ namespace WhatTheHack.Harmony
             ExtendedPawnData pawnData = store.GetExtendedDataFor(pawn);
             pawnData.isActive = false;
             pawn.RemoveRemoteControlLink();
-
         }
     }
     //Recharge and repair mechanoid when on platform
@@ -93,9 +92,11 @@ namespace WhatTheHack.Harmony
                     TryHealRandomInjury(__instance, pawn, platform);
                 }
             }
-            if (platform.RegenerateActive && pawn.IsHashIntervalTick(1000) && platform.refuelableComp.Fuel > 5f) //TODO: no magic number
+            if (platform.RegenerateActive && pawn.IsHashIntervalTick(100) && platform.refuelableComp.Fuel > 4f) //TODO: no magic number
             {
                 TryRegeneratePart(pawn, platform);
+                RegainWeapon(pawn);
+
             }
 
             if (platform.HasPowerNow())
@@ -113,6 +114,14 @@ namespace WhatTheHack.Harmony
                 }
 
                 RechargeMechanoid(pawn, powerNeed, powerPerTick);
+            }
+        }
+
+        private static void RegainWeapon(Pawn pawn)
+        {
+            if(pawn.equipment.Primary == null)
+            {
+                PawnWeaponGenerator.TryGenerateWeaponFor(pawn);
             }
         }
 
@@ -134,26 +143,41 @@ namespace WhatTheHack.Harmony
 
         private static void TryRegeneratePart(Pawn pawn, Building_BaseMechanoidPlatform platform)
         {
-            Random rand = new Random(DateTime.Now.Millisecond);
-            foreach (Hediff_MissingPart hediff in from x
-                                                    in pawn.health.hediffSet.GetHediffs<Hediff_MissingPart>()
-                                                    select x)
+            Hediff_MissingPart hediff = FindBiggestMissingBodyPart(pawn);
+            if(hediff == null || pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_RegeneratedPart))
             {
-                int randInt = rand.Next(0, 100);
-
-                if(randInt <= 5)//TODO: no magic number
-                {
-                    pawn.health.RemoveHediff(hediff);
-                    platform.refuelableComp.ConsumeFuel(4f);
-                    //Hediff_Injury injury = new Hediff_Injury();
-                    DamageWorker_AddInjury addInjury = new DamageWorker_AddInjury();
-                    addInjury.Apply(new DamageInfo(WTH_DefOf.WTH_RegeneratedPartDamage, hediff.Part.def.GetMaxHealth(pawn) - 1), pawn);
-                    MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, WTH_DefOf.WTH_Mote_HealingCrossGreen);
-                }
+                return;
+            }
+            
+            pawn.health.RemoveHediff(hediff);
+            platform.refuelableComp.ConsumeFuel(4f);
+            //Hediff_Injury injury = new Hediff_Injury();
+            DamageWorker_AddInjury addInjury = new DamageWorker_AddInjury();
+            addInjury.Apply(new DamageInfo(WTH_DefOf.WTH_RegeneratedPartDamage, hediff.Part.def.GetMaxHealth(pawn) - 1, 0, -1, pawn, hediff.Part), pawn);
 
                 //pawn.health.AddHediff(WTH_DefOf.WTH_RegeneratedPart);
 
+            
+        }
+
+        //almost literal copy vanilla CompUseEffect_FixWorstHealthCondition.FindBiggestMissingBodyPart, only returns the hediff instead. 
+        private static Hediff_MissingPart FindBiggestMissingBodyPart(Pawn pawn, float minCoverage = 0f)
+        {
+            Hediff_MissingPart hediff = null;
+            foreach (Hediff_MissingPart current in pawn.health.hediffSet.GetMissingPartsCommonAncestors())
+            {
+                if (current.Part.coverageAbsWithChildren >= minCoverage)
+                {
+                    if (!pawn.health.hediffSet.PartOrAnyAncestorHasDirectlyAddedParts(current.Part))
+                    {
+                        if (hediff == null || current.Part.coverageAbsWithChildren > hediff.Part.coverageAbsWithChildren)
+                        {
+                            hediff = current;
+                        }
+                    }
+                }
             }
+            return hediff;
         }
 
         private static void TryHealRandomInjury(Pawn_HealthTracker __instance, Pawn pawn, Building_BaseMechanoidPlatform platform)
