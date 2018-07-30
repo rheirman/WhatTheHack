@@ -107,7 +107,6 @@ namespace WhatTheHack
                 DefModExtension_Recipe modExtentsion = recipe.GetModExtension<DefModExtension_Recipe>();
                 recipe.deathOnFailedSurgeryChance = modExtentsion.deathOnFailedSurgeryChance;
                 recipe.surgerySuccessChanceFactor = modExtentsion.surgerySuccessChanceFactor;
-                recipe.requireBed = modExtentsion.requireBed;
             }
 
         }

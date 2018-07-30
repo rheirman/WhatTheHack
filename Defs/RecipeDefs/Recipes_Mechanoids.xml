@@ -6,7 +6,6 @@
 		<workerClass>WhatTheHack.Recipes.Recipe_HackMechanoid</workerClass>
 		<jobString>Hacking mechanoid</jobString>
 		<workAmount>1500</workAmount>
-		<requireBed>false</requireBed>
 		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
 		<skillRequirements>
 			<Crafting>5</Crafting>
@@ -36,7 +35,6 @@
 		<researchPrerequisite>WTH_HackingBasics</researchPrerequisite>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
-				<requireBed>true</requireBed>
 				<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
 				<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
 			</li>
@@ -51,7 +49,6 @@
 		<jobString>Hacking mechanoid</jobString>
 		<workAmount>8000</workAmount>
 		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
-		<requireBed>false</requireBed>
 		<skillRequirements>
 			<Crafting>5</Crafting>
 			<Intellectual>5</Intellectual>
@@ -96,7 +93,6 @@
 		<researchPrerequisite>WTH_HackingAdvanced</researchPrerequisite>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
-				<requireBed>true</requireBed>
 				<surgerySuccessChanceFactor>1.5</surgerySuccessChanceFactor>
 				<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
 			</li>
@@ -110,7 +106,6 @@
 		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
 		<jobString>Hacking mechanoid</jobString>
 		<workAmount>4000</workAmount>
-		<requireBed>false</requireBed>
 		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
 		<skillRequirements>
 			<Crafting>5</Crafting>
@@ -148,7 +143,6 @@
 		<researchPrerequisite>WTH_HackingRemoteControl</researchPrerequisite>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
-				<requireBed>true</requireBed>
 				<surgerySuccessChanceFactor>1.5</surgerySuccessChanceFactor>
 				<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
 			</li>
@@ -167,6 +161,5 @@
     <hideBodyPartNames>true</hideBodyPartNames>
     <isViolation>true</isViolation>
     <surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
-    <requireBed>false</requireBed>
   </RecipeDef>
 </Defs>
