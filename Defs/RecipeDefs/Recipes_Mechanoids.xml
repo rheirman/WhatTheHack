@@ -145,6 +145,65 @@
 		</modExtensions>
 	</RecipeDef>
 
+	<RecipeDef>
+		<defName>WTH_RepairModule</defName>
+		<label>install repair module</label>
+		<description>A module that can be loaded with mechanoid parts, and is capable of redirecting the mechanoid's power supply to its internal mechanites. This activates the mechanites, which will repair the mechanoid using the parts, but renders the mechanoid incapable of doing anything during the process.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Modifying mechanoid</jobString>
+		<workAmount>4000</workAmount>
+		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<effectWorking>Repair</effectWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>25</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_MechanoidParts</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_MechanoidChip</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_RepairModule</addsHediff>
+		<researchPrerequisite>WTH_HackingRemoteControl</researchPrerequisite>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+				<surgerySuccessChanceFactor>1.5</surgerySuccessChanceFactor>
+				<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
   <RecipeDef>
     <defName>WTH_ShutDownMechanoid</defName>
     <label>shut down</label>

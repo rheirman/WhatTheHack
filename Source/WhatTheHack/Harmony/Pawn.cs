@@ -189,6 +189,10 @@ namespace WhatTheHack.Harmony
                             LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_SearchAndDestroy(), __instance.Map, new List<Pawn> { __instance });
                         }
                         __instance.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                        if (__instance.relations == null) //Added here to fix existing saves. 
+                        {
+                            __instance.relations = new Pawn_RelationsTracker(__instance);
+                        }
                     }
                     else
                     {

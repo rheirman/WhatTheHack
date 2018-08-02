@@ -79,7 +79,7 @@ namespace WhatTheHack
 
             foreach (TransferableOneWay tow in transferables)
             {
-                if (tow.ThingDef.race != null && tow.ThingDef.race.IsMechanoid)
+                if (tow.ThingDef != null && tow.ThingDef.race != null && tow.ThingDef.race.IsMechanoid)
                 {
                     numMechanoids += tow.CountToTransfer;
                 }

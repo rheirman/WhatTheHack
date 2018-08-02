@@ -34,6 +34,14 @@
 	</HediffDef>
   -->
   	  <HediffDef>
+		<defName>WTH_RepairModule</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>repair module added</label>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+	  </HediffDef>
+	  
+  	  <HediffDef>
 		<defName>WTH_ReplacedAI</defName>
 		<label>AI replaced</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
@@ -54,6 +62,7 @@
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>
 	  </HediffDef> 
+	  
 	  
 	  <HediffDef>
 		<defName>WTH_TargetingHackedPoorly</defName>

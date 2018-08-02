@@ -68,6 +68,7 @@
     <Compile Include="Harmony\Gizmo_CaravanInfo.cs" />
     <Compile Include="Harmony\LovePartnerRelationUtility.cs" />
     <Compile Include="Harmony\PawnCapacitiesHandler.cs" />
+    <Compile Include="Harmony\CompRefuelable.cs" />
     <Compile Include="Harmony\TransferableUIUtility.cs" />
     <Compile Include="Harmony\TransferableUtility.cs" />
     <Compile Include="ModExtension\DefModExtension_PawnCapacity.cs" />

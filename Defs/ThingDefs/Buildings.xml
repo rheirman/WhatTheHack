@@ -156,6 +156,7 @@
 		<surfaceType>Item</surfaceType>
 		 <researchPrerequisites>
 		  <li>WTH_HackingBasics</li>
+		  <li>WTH_PortableChemfuelPlatform</li>
 		</researchPrerequisites>	
 		<comps>
 		  <li Class="CompProperties_Refuelable">

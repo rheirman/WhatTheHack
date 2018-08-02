@@ -101,7 +101,7 @@ namespace WhatTheHack.Harmony
             }
             if(numPlatforms < numMechanoids)
             {
-                warnings.Add("WTH_Warning_NotEnoughPlatforms");
+                warnings.Add("WTH_Warning_NotEnoughPlatforms".Translate());
             }
             else if (Base.Instance.daysOfFuel < Traverse.Create(instance).Field("MaxDaysWorthOfFoodToShowWarningDialog").GetValue<float>())
             {

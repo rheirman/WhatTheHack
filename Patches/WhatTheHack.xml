@@ -9,7 +9,24 @@
 				<li>WTH_ImplantAI</li>
 				<li>WTH_HackLocomotion</li>
 				<li>WTH_ShutDownMechanoid</li>
+				<!-- <li>WTH_RepairModule</li> -->
 			</recipes>
+			<!--
+			<comps>
+			  <li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>40.0</fuelConsumptionRate>
+				<fuelCapacity>10.0</fuelCapacity>
+				<fuelFilter>
+				  <thingDefs>
+					<li>WTH_MechanoidParts</li>
+				  </thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				 <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>10.0</initialConfigurableTargetFuelLevel>
+			  </li>
+			</comps>
+			-->
 		</value>
 	</Operation> 
 	<!--In vanilla, centipedes always die due to the damagethreshold before being downed. This patch makes sure they are downed quicker-->

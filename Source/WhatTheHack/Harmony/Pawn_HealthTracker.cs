@@ -75,7 +75,7 @@ namespace WhatTheHack.Harmony
             }
             if (pawn.HasValidCaravanPlatform() && pawn.GetCaravan() != null && pawn.GetCaravan().HasFuel())
             {
-                float powerPerTick = 0.5f * WTH_DefOf.WTH_PortableChargingPlatform.GetCompProperties<CompProperties_Refuelable>().fuelConsumptionRate/ GenDate.TicksPerDay; //TODO: no magic number
+                float powerPerTick = 0.5f * WTH_DefOf.WTH_PortableChargingPlatform.GetCompProperties<CompProperties_Refuelable>().fuelConsumptionRate * 15 / GenDate.TicksPerDay; //TODO: no magic number
                 RechargeMechanoid(pawn, pawn.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power), powerPerTick);
             }
             if (!(pawn.CurrentBed() is Building_BaseMechanoidPlatform))
