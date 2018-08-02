@@ -36,7 +36,6 @@ namespace WhatTheHack.Harmony
                 }
                 foreach (Thing thing in __instance.AllThings)
                 {
-                    Log.Message(thing.def.defName);
                     if (numMechanoids > 0 && numPlatforms > 0 && thing.def == ThingDefOf.Chemfuel && thing.stackCount > 0)
                     {
                         int fuelConsumedThisInterval = Math.Min(numMechanoids, numPlatforms);

@@ -113,7 +113,6 @@ namespace WhatTheHack.Harmony
 
             if(targetPawn.jobs.curJob.def == WTH_DefOf.WTH_Mechanoid_Rest)
             {
-                Log.Message("waking up mechanoid!");
                 targetPawn.jobs.EndCurrentJob(JobCondition.InterruptForced, false);
                 ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(targetPawn);
                 pawnData.isActive = true;
