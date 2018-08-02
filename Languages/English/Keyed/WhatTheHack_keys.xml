@@ -61,6 +61,7 @@
 	
 	<WTH_MechanoidsSection>Mechanoids</WTH_MechanoidsSection>
 	
+	<WTH_Explanation_BonusCapacity>Bonus capacity for this pawn type</WTH_Explanation_BonusCapacity>	
 	<WTH_Explanation_NumMechs>Number of mechanoids</WTH_Explanation_NumMechs>
 	<WTH_Explanation_NumPlatforms>Number of portable platforms</WTH_Explanation_NumPlatforms>
 	<WTH_Explanation_FuelConsumption>Fuel consumption per platform</WTH_Explanation_FuelConsumption>
@@ -72,4 +73,5 @@
 	<WTH_Warning_NotEnoughPlatforms>Your caravan has not enough charging platforms to charge all mechanoids. You should bring one for each mechanoid, otherwise some mechanoids will run out of power very quickly.</WTH_Warning_NotEnoughPlatforms>
 	<WTH_Warning_DaysOfFuel>You caravan has only {0} days worth of fuel for powering your mechanoids, and your mechanoids might run out of power quickly.</WTH_Warning_DaysOfFuel>
 	<WTH_Message_CaravanOutOfFuel>{0} has run out of fuel.</WTH_Message_CaravanOutOfFuel>
+	<WTH_Message_CannotDrop>This equipment is attached to the pawn, therefore you cannot drop it</WTH_Message_CannotDrop>
 </LanguageData>

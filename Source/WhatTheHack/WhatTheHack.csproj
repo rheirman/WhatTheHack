@@ -66,12 +66,15 @@
     <Compile Include="Harmony\Dialog_LoadTransporters.cs" />
     <Compile Include="Harmony\Dialog_SplitCaravan.cs" />
     <Compile Include="Harmony\Gizmo_CaravanInfo.cs" />
+    <Compile Include="Harmony\ITab_Pawn_Gear.cs" />
     <Compile Include="Harmony\LovePartnerRelationUtility.cs" />
+    <Compile Include="Harmony\MassUtility.cs" />
     <Compile Include="Harmony\PawnCapacitiesHandler.cs" />
     <Compile Include="Harmony\CompRefuelable.cs" />
     <Compile Include="Harmony\TransferableUIUtility.cs" />
     <Compile Include="Harmony\TransferableUtility.cs" />
     <Compile Include="ModExtension\DefModExtension_PawnCapacity.cs" />
+    <Compile Include="ModExtension\DefModExtension_PawnMassCapacity.cs" />
     <Compile Include="ModExtension\DefModExtension_Recipe.cs" />
     <Compile Include="Recipes\Recipe_ShutDown.cs" />
     <Compile Include="Record.cs" />

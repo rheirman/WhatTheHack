@@ -29,12 +29,16 @@
 			-->
 		</value>
 	</Operation> 
-	<!--In vanilla, centipedes always die due to the damagethreshold before being downed. This patch makes sure they are downed quicker-->
 	<Operation Class="PatchOperationAddModExtension">
 		<xpath>*/ThingDef[defName = "Mech_Centipede"]</xpath>
 		<value>
+			<!--In vanilla, centipedes always die due to the damagethreshold before being downed. This patch makes sure they are downed quicker-->
 			<li Class="WhatTheHack.DefModExtension_PawnCapacity">
 				<minForCapableMoving>0.38</minForCapableMoving>
+			</li>
+			<!--Cmon, centipedes should be able to carry more than 70-ish kilos --> 
+			<li Class="WhatTheHack.DefModExtension_PawnMassCapacity">
+				<bonusMassCapacity>35</bonusMassCapacity>
 			</li>
 		</value>
 	</Operation> 
