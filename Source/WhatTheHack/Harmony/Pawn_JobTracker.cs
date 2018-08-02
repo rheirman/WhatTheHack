@@ -1,5 +1,6 @@
 ﻿using Harmony;
 using RimWorld;
+using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,15 +34,28 @@ namespace WhatTheHack.Harmony
                 //de-activate if should auto recharge and power is very low. 
                 ExtendedPawnData pawnData = store.GetExtendedDataFor(pawn);
                 Need_Power powerNeed = pawn.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) as Need_Power;
+                if(pawn.GetCaravan() == null)
+                {
+                    Log.Message("pawn Caravan is null for " + pawn.def.defName);
+                }
+                else
+                {
+                    Log.Message("pawn Caravan is NOT null for " + pawn.def.defName);
 
-                if (powerNeed != null && powerNeed.CurCategory >= PowerCategory.LowPower && pawnData.shouldAutoRecharge && pawn.IsActivated())
+                }
+                if (powerNeed != null &&
+                    powerNeed.CurCategory >= PowerCategory.LowPower &&
+                    pawnData.shouldAutoRecharge && 
+                    pawn.IsActivated() &&
+                    pawn.GetCaravan() == null
+                    )
                 {
                     pawn.drafter.Drafted = false;
                     pawnData.isActive = false;
                 }
             }
 
-            if (pawn.Faction == Faction.OfPlayer && pawn.IsHacked() && pawn.OnBaseMechanoidPlatform() && pawn.CanReserve(pawn.CurrentBed()))
+            if ( pawn.Faction == Faction.OfPlayer && pawn.IsHacked() && !pawn.IsActivated() && pawn.OnBaseMechanoidPlatform() && pawn.CanReserve(pawn.CurrentBed()))
             {
                 Job job = new Job(WTH_DefOf.WTH_Mechanoid_Rest, pawn.CurrentBed());
                 job.count = 1;

@@ -8,6 +8,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 using WhatTheHack.Buildings;
+using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
 {
@@ -80,7 +81,7 @@ namespace WhatTheHack.Harmony
             return true;
         }
     }
-
+    //Make sure only mechanoids can use hacking table and mechanoid platforms a bed
     [HarmonyPatch(typeof(RestUtility), "CanUseBedEver")]
     class RestUtility_CanUseBedEver
     {
@@ -93,7 +94,32 @@ namespace WhatTheHack.Harmony
             return true;
         }
     }
+    //"Wake up" mechanoids when forming a caravan
+    [HarmonyPatch(typeof(RestUtility), "WakeUp")]
+    class RestUtility_WakeUp
+    {
+        static void Postfix(ref Pawn p)
+        {
+            Pawn targetPawn = null;
 
+            if (p.CurJob.targetA != null && p.CurJob.targetA.HasThing && p.CurJob.targetA.Thing is Pawn)
+            {
+                targetPawn = p.CurJob.targetA.Thing as Pawn;
+            }
+            else
+            {
+                return;
+            }
+
+            if(targetPawn.jobs.curJob.def == WTH_DefOf.WTH_Mechanoid_Rest)
+            {
+                Log.Message("waking up mechanoid!");
+                targetPawn.jobs.EndCurrentJob(JobCondition.InterruptForced, false);
+                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(targetPawn);
+                pawnData.isActive = true;
+            }
+        }
+    }
     [HarmonyPatch(typeof(RestUtility), "CurrentBed")]
     class RestUtility_CurrentBed
     {
