@@ -14,7 +14,7 @@ namespace WhatTheHack.Harmony
         static bool Prefix(ITab_Pawn_Gear __instance, Thing t)
         {
             Pawn pawn = Traverse.Create(__instance).Property("SelPawnForGear").GetValue<Pawn>();
-            if(pawn != null && pawn.IsHacked())
+            if(pawn != null && pawn.IsHacked() && pawn.equipment != null && pawn.equipment.Primary == t)
             {
                 Messages.Message("WTH_Message_CannotDrop".Translate(), MessageTypeDefOf.RejectInput);
                 return false;
