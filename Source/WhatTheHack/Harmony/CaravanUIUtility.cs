@@ -14,15 +14,13 @@ namespace WhatTheHack.Harmony
     {
         static void Postfix(ref TransferableOneWayWidget widget, List<TransferableOneWay> transferables)
         {
-            IEnumerable<TransferableOneWay> source = from x in transferables
+            IEnumerable<TransferableOneWay> mechs = from x in transferables
                                                      where x.ThingDef.category == ThingCategory.Pawn
+                                                     && ((Pawn)x.AnyThing).RaceProps.IsMechanoid
+                                                     && ((Pawn)x.AnyThing).IsHacked()
                                                      select x;
 
-
-            List<Pawn> pawns = transferables[0].things[0].Map.mapPawns.AllPawnsSpawned;
-            widget.AddSection("WTH_MechanoidsSection".Translate(), from x in source
-                                                            where ((Pawn)x.AnyThing).RaceProps.IsMechanoid
-                                                            select x);
+            widget.AddSection("WTH_MechanoidsSection".Translate(), mechs);
         }
     }
 }
