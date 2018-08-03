@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
@@ -17,25 +18,28 @@ namespace WhatTheHack.Recipes
 
         public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
         {
-            for (int i = 0; i < recipe.appliedOnFixedBodyParts.Count; i++)
+            if (pawn.Faction != Faction.OfPlayer)
             {
-                BodyPartDef part = recipe.appliedOnFixedBodyParts[i];
-                List<BodyPartRecord> bpList = pawn.RaceProps.body.AllParts;
-                for (int j = 0; j < bpList.Count; j++)
+                for (int i = 0; i < recipe.appliedOnFixedBodyParts.Count; i++)
                 {
-                    BodyPartRecord record = bpList[j];
-                    if (record.def == part)
+                    BodyPartDef part = recipe.appliedOnFixedBodyParts[i];
+                    List<BodyPartRecord> bpList = pawn.RaceProps.body.AllParts;
+                    for (int j = 0; j < bpList.Count; j++)
                     {
-                        IEnumerable<Hediff> diffs = from x in pawn.health.hediffSet.hediffs
-                                                    where x.Part == record
-                                                    select x;
-                        if (diffs.Count<Hediff>() != 1 || diffs.First<Hediff>().def != recipe.addsHediff)
+                        BodyPartRecord record = bpList[j];
+                        if (record.def == part)
                         {
-                            if (record.parent == null || pawn.health.hediffSet.GetNotMissingParts(BodyPartHeight.Undefined, BodyPartDepth.Undefined, null, null).Contains(record.parent))
+                            IEnumerable<Hediff> diffs = from x in pawn.health.hediffSet.hediffs
+                                                        where x.Part == record
+                                                        select x;
+                            if (diffs.Count<Hediff>() != 1 || diffs.First<Hediff>().def != recipe.addsHediff)
                             {
-                                if (!pawn.health.hediffSet.PartOrAnyAncestorHasDirectlyAddedParts(record) || pawn.health.hediffSet.HasDirectlyAddedPartFor(record))
+                                if (record.parent == null || pawn.health.hediffSet.GetNotMissingParts(BodyPartHeight.Undefined, BodyPartDepth.Undefined, null, null).Contains(record.parent))
                                 {
-                                    yield return record;
+                                    if (!pawn.health.hediffSet.PartOrAnyAncestorHasDirectlyAddedParts(record) || pawn.health.hediffSet.HasDirectlyAddedPartFor(record))
+                                    {
+                                        yield return record;
+                                    }
                                 }
                             }
                         }
@@ -92,10 +96,16 @@ namespace WhatTheHack.Recipes
             float successChance = 1.0f;
             successChance *= recipe.surgerySuccessChanceFactor;
             successChance *= hacker.GetStatValue(WTH_DefOf.WTH_HackingSuccessChance, true);
-            Random r = new Random(DateTime.Now.Millisecond);
+            System.Random r = new System.Random(DateTime.Now.Millisecond);
+            float combatPowerFactorCapped = CalcCombatPowerFactorCapped(hackee);
+            successChance *= combatPowerFactorCapped;
+            Log.Message("combatPowerFactorCapped " + combatPowerFactorCapped);
             Log.Message("SuccessChance: " + successChance);
+            float learnfactor = 1.0f;
+
             if (!Rand.Chance(successChance))
             {
+                learnfactor = 0.5f;
                 if (Rand.Chance(this.recipe.deathOnFailedSurgeryChance))
                 {
                     HealthUtility.GiveInjuriesOperationFailureCatastrophic(hackee, part);
@@ -128,12 +138,25 @@ namespace WhatTheHack.Recipes
                         acc += chances[i];
                     }
                 }
+                //Experience
+
+                hacker.skills.Learn(SkillDefOf.Crafting, hackee.kindDef.combatPower * learnfactor, false);
+                hacker.skills.Learn(SkillDefOf.Intellectual, hackee.kindDef.combatPower * learnfactor, false);
+
                 return true;
             }
             return false;
 
 
 
+        }
+        //Used to make hacking more powerful mechs more difficult. Capped at 1000 points. At this value, hacking is 50% more difficult.  
+        private static float CalcCombatPowerFactorCapped(Pawn hackee)
+        {
+            float combatPowerFactor = Mathf.Min(hackee.kindDef.combatPower / 1000, 1.0f);
+            float maxDifficultyPentaly = 0.5f;
+            float combatPowerFactorCapped = 1 - maxDifficultyPentaly * combatPowerFactor;
+            return combatPowerFactorCapped;
         }
 
         private static void Nothing(Pawn pawn, BodyPartRecord part) {

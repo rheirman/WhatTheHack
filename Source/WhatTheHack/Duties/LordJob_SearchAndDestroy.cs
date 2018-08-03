@@ -17,6 +17,7 @@ namespace WhatTheHack.Duties
             LordToil_End endToil = new LordToil_End();
             graph.AddToil(endToil);
             Transition endTransition = new Transition(sdToil, endToil);
+            //TODO: revise this
             endTransition.AddTrigger(new Trigger_TicksPassedWithoutHarm(900));
             endTransition.AddTrigger(new Trigger_Custom(delegate {
                 return !this.lord.ownedPawns[0].IsActivated();
