@@ -20,6 +20,7 @@ namespace WhatTheHack.Recipes
         {
             if (pawn.Faction != Faction.OfPlayer)
             {
+                //Copy from vanilla. Much more complex than needed, but does the trick
                 for (int i = 0; i < recipe.appliedOnFixedBodyParts.Count; i++)
                 {
                     BodyPartDef part = recipe.appliedOnFixedBodyParts[i];

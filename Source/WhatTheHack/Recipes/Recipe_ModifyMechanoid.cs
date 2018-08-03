@@ -17,21 +17,22 @@ namespace WhatTheHack.Recipes
 
         public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
         {
-            if (pawn.IsHacked())
+            if (pawn.IsHacked() && !pawn.health.hediffSet.HasHediff(recipe.addsHediff))
             {
-                for (int i = 0; i < recipe.appliedOnFixedBodyParts.Count; i++)
+                //Copy from vanilla code. Much more complex than needed, but does the trick
+                for (int i = 0; i < recipe.appliedOnFixedBodyParts.Count; i++) //for each allowed body part
                 {
                     BodyPartDef part = recipe.appliedOnFixedBodyParts[i];
                     List<BodyPartRecord> bpList = pawn.RaceProps.body.AllParts;
-                    for (int j = 0; j < bpList.Count; j++)
+                    for (int j = 0; j < bpList.Count; j++) //for each body part of pawn
                     {
                         BodyPartRecord record = bpList[j];
                         if (record.def == part)
                         {
-                            IEnumerable<Hediff> diffs = from x in pawn.health.hediffSet.hediffs
+                            IEnumerable<Hediff> hediffs = from x in pawn.health.hediffSet.hediffs
                                                         where x.Part == record
                                                         select x;
-                            if (diffs.Count<Hediff>() != 1 || diffs.First<Hediff>().def != recipe.addsHediff)
+                            if (hediffs.Count<Hediff>() != 1 || hediffs.First<Hediff>().def != recipe.addsHediff)
                             {
                                 if (record.parent == null || pawn.health.hediffSet.GetNotMissingParts(BodyPartHeight.Undefined, BodyPartDepth.Undefined, null, null).Contains(record.parent))
                                 {
