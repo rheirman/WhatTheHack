@@ -13,6 +13,19 @@ using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
 {
+    [HarmonyPatch(typeof(Pawn_HealthTracker), "HasHediffsNeedingTend")]
+    static class Pawn_HealthTracker_HasHediffsNeedingTend
+    {
+        static bool Prefix(Pawn_HealthTracker __instance)
+        {
+            Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
+            if (pawn.RaceProps.IsMechanoid && pawn.IsHacked())
+            {
+                return false;
+            }
+            return true;
+        }
+    }
 
     //Make sure mechanoids can be downed like other pawns. 
     [HarmonyPatch(typeof(Pawn_HealthTracker), "CheckForStateChange")]

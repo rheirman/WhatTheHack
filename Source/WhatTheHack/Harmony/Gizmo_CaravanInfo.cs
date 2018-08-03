@@ -38,7 +38,10 @@ namespace WhatTheHack.Harmony
                     {
                         numPlatforms += thing.stackCount;
                     }
-
+                }
+                if (thing.def == WTH_DefOf.WTH_PortableChargingPlatform)
+                {
+                    numPlatforms += thing.stackCount;
                 }
             }
             Utilities.CalcDaysOfFuel(numMechanoids, fuelAmount, ref fuelConsumption, numPlatforms, ref daysOfFuel, daysOfFuelReason);

@@ -93,7 +93,10 @@ namespace WhatTheHack
                     {
                         numPlatforms += tow.CountToTransfer;
                     }
-
+                }
+                if(tow.ThingDef == WTH_DefOf.WTH_PortableChargingPlatform)
+                {
+                    numPlatforms += tow.CountToTransfer;
                 }
             }
             CalcDaysOfFuel(numMechanoids, fuelAmount, ref fuelConsumption, numPlatforms, ref daysOfFuel, daysOfFuelReason);

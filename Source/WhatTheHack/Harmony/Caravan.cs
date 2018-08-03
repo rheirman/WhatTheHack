@@ -33,6 +33,10 @@ namespace WhatTheHack.Harmony
                             numPlatforms ++;
                         }
                     }
+                    if (thing.def == WTH_DefOf.WTH_PortableChargingPlatform)
+                    {
+                        numPlatforms += thing.stackCount;
+                    }
                 }
                 foreach (Thing thing in __instance.AllThings)
                 {
