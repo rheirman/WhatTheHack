@@ -28,7 +28,7 @@ namespace WhatTheHack.Harmony
             }
             Random random = new Random(DateTime.Now.Millisecond);
 
-            int partsCount = random.Next(GenMath.RoundRandom(pawn.kindDef.combatPower * 0.05f * efficiency), GenMath.RoundRandom(pawn.kindDef.combatPower * 0.1f * efficiency)); //TODO: no magic number
+            int partsCount = random.Next(GenMath.RoundRandom(pawn.kindDef.combatPower * 0.03f * efficiency), GenMath.RoundRandom(pawn.kindDef.combatPower * 0.06f * efficiency)); //TODO: no magic number
             if (partsCount > 0)
             {
                 Thing parts = ThingMaker.MakeThing(WTH_DefOf.WTH_MechanoidParts, null);

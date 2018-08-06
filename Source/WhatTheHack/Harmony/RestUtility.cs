@@ -102,7 +102,7 @@ namespace WhatTheHack.Harmony
         {
             Pawn targetPawn = null;
 
-            if (p.CurJob.targetA != null && p.CurJob.targetA.HasThing && p.CurJob.targetA.Thing is Pawn)
+            if (p.CurJob != null && p.CurJob.targetA != null && p.CurJob.targetA.HasThing && p.CurJob.targetA.Thing is Pawn)
             {
                 targetPawn = p.CurJob.targetA.Thing as Pawn;
             }
