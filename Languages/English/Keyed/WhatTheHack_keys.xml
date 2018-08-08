@@ -25,7 +25,7 @@
 	<WTH_FailureChance_HackPoorly_Title>Failure chance: hacked poorly</WTH_FailureChance_HackPoorly_Title>
 	<WTH_FailureChance_HackPoorly_Description>Relative chance a mechanoid is hacked poorly when hacking fails</WTH_FailureChance_HackPoorly_Description>
 	
-	<WTH_Menu_ClearTable>Remove from hacking table</WTH_Menu_ClearTable>
+	<WTH_Menu_ClearTable>Clear hacking table</WTH_Menu_ClearTable>
 	<WTH_Menu_CarryToTable>Carry to hacking table</WTH_Menu_CarryToTable>
 	<WTH_Menu_CarryToTable_Disabled>Carry to hacking table (no free table reachable)</WTH_Menu_CarryToTable_Disabled>
 	

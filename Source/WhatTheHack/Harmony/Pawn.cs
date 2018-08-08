@@ -60,16 +60,15 @@ namespace WhatTheHack.Harmony
                 return;
             }
 
-            if (bill != null && bill.recipe == WTH_DefOf.WTH_HackMechanoid &&  !__instance.OnHackingTable())
-            {
-                __result = false;
-            }
-
             if(bill != null && bill.recipe.HasModExtension<DefModExtension_Recipe>() && __instance.InteractionCell.IsValid)
             {
-                if (bill.recipe.GetModExtension<DefModExtension_Recipe>().requireBed == false)
+                if (bill.recipe.GetModExtension<DefModExtension_Recipe>().requireBed == false || __instance.OnHackingTable())
                 {
                     __result = true;
+                }
+                else
+                {
+                    __result = false;
                 }
             }
         }

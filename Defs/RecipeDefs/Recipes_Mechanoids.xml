@@ -92,6 +92,11 @@
 		</appliedOnFixedBodyParts>
 		<addsHediff>WTH_ReplacedAI</addsHediff>
 		<researchPrerequisite>WTH_HackingAdvanced</researchPrerequisite>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
 	</RecipeDef>
 	
 	<RecipeDef>

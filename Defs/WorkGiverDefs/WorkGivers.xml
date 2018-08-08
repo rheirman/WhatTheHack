@@ -14,4 +14,18 @@
     </requiredCapacities>
     <prioritizeSustains>true</prioritizeSustains>
   </WorkGiverDef>
+  
+  <WorkGiverDef>
+    <defName>WTH_HaulMechanoid</defName>
+    <label>haul mechanoid to hacking table</label>
+    <giverClass>WhatTheHack.Jobs.WorkGiver_HaulMechanoid</giverClass>
+    <workType>Hauling</workType>
+    <priorityInType>110</priorityInType>
+    <verb>haul</verb>
+    <gerund>hauling</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
 </Defs>

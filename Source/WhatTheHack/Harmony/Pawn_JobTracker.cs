@@ -62,7 +62,8 @@ namespace WhatTheHack.Harmony
             {
                 UnHackMechanoid(pawn);
             }
-            if (pawn.Faction == Faction.OfPlayer && pawn.IsHacked() && !pawn.IsActivated() && !pawn.OnBaseMechanoidPlatform())
+            Log.Message("__result.Job.def" + __result.Job.def);
+            if (pawn.Faction == Faction.OfPlayer && pawn.IsHacked() && !pawn.IsActivated() && !pawn.OnBaseMechanoidPlatform() && __result.Job.def != JobDefOf.LayDown)
             {
                 Building_BaseMechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(pawn, pawn);
                 if(closestAvailablePlatform != null && pawn.CanReserve(closestAvailablePlatform))

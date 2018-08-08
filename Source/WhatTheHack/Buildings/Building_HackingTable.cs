@@ -24,7 +24,8 @@ namespace WhatTheHack.Buildings
 
         public static bool TryAddPawnForModification(Pawn pawn, RecipeDef recipeDef)
         {
-            if(!pawn.IsHacked() || (pawn.IsHacked() && pawn.Faction != Faction.OfPlayer))
+            if(!pawn.health.surgeryBills.Bills.Any((Bill b) => b.recipe == WTH_DefOf.WTH_HackMechanoid) &&
+                (!pawn.IsHacked() || (pawn.IsHacked() && pawn.Faction != Faction.OfPlayer)))
             {
 
                 Bill_Medical bill = new Bill_Medical(recipeDef);
@@ -35,15 +36,15 @@ namespace WhatTheHack.Buildings
                 }
                 pawn.health.surgeryBills.AddBill(bill);
                 bill.Part = bodyparts.First();
-                pawn.jobs.TryTakeOrderedJob(new Job(JobDefOf.LayDown));
-                
-                if(pawn.jobs.curDriver != null)
-                {
-                    pawn.jobs.posture = PawnPosture.LayingInBed;
-                }
-                return true;
+
             }
-            return false;
+            Log.Message("try take ordered job LayDown");
+            pawn.jobs.TryTakeOrderedJob(new Job(JobDefOf.LayDown));
+            if (pawn.jobs.curDriver != null)
+            {
+                pawn.jobs.posture = PawnPosture.LayingInBed;
+            }
+            return true;
         }
         public bool HasPowerNow()
         {
