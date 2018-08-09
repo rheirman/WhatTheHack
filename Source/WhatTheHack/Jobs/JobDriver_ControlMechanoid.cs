@@ -32,7 +32,7 @@ namespace WhatTheHack.Jobs
             toil.tickAction = new Action(delegate {
 
 
-                if(Utilities.QuickDistanceSquared(pawn.Position, this.Mech.Position) > 30 * 30)
+                if(Utilities.QuickDistanceSquared(pawn.Position, this.Mech.Position) > 25 * 25)
                 {
                     ReadyForNextToil();
                     return;

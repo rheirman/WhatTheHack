@@ -83,7 +83,7 @@ namespace WhatTheHack.Harmony
             if (__instance.HasReplacedAI() || (__instance.RaceProps.IsMechanoid &&
                 __instance.RemoteControlLink() != null &&
                 !__instance.RemoteControlLink().Drafted &&
-                Utilities.QuickDistanceSquared(__instance.RemoteControlLink().Position, __instance.Position) <= 30 * 30))
+                (float)__instance.pather.Destination.Cell.DistanceToSquared(__instance.RemoteControlLink().Position) <= 30f * 30f))
             {
                 __result = true;
                 return false;

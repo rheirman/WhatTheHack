@@ -33,7 +33,7 @@ namespace WhatTheHack.Jobs
            // {
             //    return null;
           //  }
-            float radius = 30;//TODO: no magic number
+            float radius = 25;//TODO: no magic number
             if ((!followee.pather.Moving || (float)followee.pather.Destination.Cell.DistanceToSquared(pawn.Position) <= radius * radius) && (float)followee.Position.DistanceToSquared(pawn.Position) <= radius * radius)
             {
                 return null;

@@ -26,6 +26,22 @@ namespace WhatTheHack.Harmony
         }
     }
     */
+
+    [HarmonyPatch(typeof(FloatMenuMakerMap), "AddJobGiverWorkOrders")]
+    static class FloatMenuMakerMap_AddJobGiverWorkOrders
+    {
+        static bool Prefix(Pawn pawn)
+        {
+            if (pawn.IsHacked())
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+    }
     [HarmonyPatch(typeof(FloatMenuMakerMap), "ChoicesAtFor")]
     static class FloatMenuMakerMap_ChoicesAtFor
     {
