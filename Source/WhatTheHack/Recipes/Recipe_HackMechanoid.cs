@@ -61,7 +61,7 @@ namespace WhatTheHack.Recipes
                         return;
                     }
                     //Re-add surgery bill
-                    Building_HackingTable.TryAddPawnForModification(pawn, WTH_DefOf.WTH_HackMechanoid);
+                    ((Building_HackingTable)pawn.CurrentBed()).TryAddPawnForModification(pawn, WTH_DefOf.WTH_HackMechanoid);
 
                     return;
                 }

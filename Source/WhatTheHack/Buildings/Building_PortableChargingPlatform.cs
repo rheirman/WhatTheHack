@@ -11,8 +11,6 @@ namespace WhatTheHack.Buildings
     public class Building_PortableChargingPlatform : Building_BaseMechanoidPlatform
     {
         private Pawn caravanPawn = null;
-        public new const int SLOTINDEX = 1;
-
         public Pawn CaravanPawn
         {
             get

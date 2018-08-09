@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using Verse;
 using Verse.AI;
+using WhatTheHack.Needs;
 using WhatTheHack.Recipes;
 
 namespace WhatTheHack.Buildings
@@ -22,10 +23,9 @@ namespace WhatTheHack.Buildings
             this.powerComp = base.GetComp<CompPowerTrader>();
         }
 
-        public static bool TryAddPawnForModification(Pawn pawn, RecipeDef recipeDef)
+        public bool TryAddPawnForModification(Pawn pawn, RecipeDef recipeDef)
         {
-            if(!pawn.health.surgeryBills.Bills.Any((Bill b) => b.recipe == WTH_DefOf.WTH_HackMechanoid) &&
-                (!pawn.IsHacked() || (pawn.IsHacked() && pawn.Faction != Faction.OfPlayer)))
+            if((!pawn.IsHacked() || (pawn.IsHacked() && pawn.Faction != Faction.OfPlayer)))
             {
 
                 Bill_Medical bill = new Bill_Medical(recipeDef);
@@ -38,8 +38,15 @@ namespace WhatTheHack.Buildings
                 bill.Part = bodyparts.First();
 
             }
+            Need_Power powerNeed = pawn.needs.TryGetNeed<Need_Power>();
+            if (powerNeed != null)
+            {
+                //discharge mech battery so pawns can work safely. 
+                powerNeed.CurLevel = 0;
+            }
+
             Log.Message("try take ordered job LayDown");
-            pawn.jobs.TryTakeOrderedJob(new Job(JobDefOf.LayDown));
+            pawn.jobs.TryTakeOrderedJob(new Job(WTH_DefOf.WTH_Mechanoid_Rest, this));
             if (pawn.jobs.curDriver != null)
             {
                 pawn.jobs.posture = PawnPosture.LayingInBed;

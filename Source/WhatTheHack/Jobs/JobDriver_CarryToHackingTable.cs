@@ -29,7 +29,7 @@ namespace WhatTheHack.Jobs
         {
             return this.pawn.Reserve(this.Takee, this.job, 1, -1, null) && this.pawn.Reserve(this.HackingTable, this.job, 1, -1, null);
         }
-
+        
         protected override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDestroyedOrNull(TargetIndex.A);
@@ -46,7 +46,8 @@ namespace WhatTheHack.Jobs
                 initAction = delegate
                 {
                     this.pawn.carryTracker.TryDropCarriedThing(HackingTable.GetSleepingSlotPos(Building_HackingTable.SLOTINDEX), ThingPlaceMode.Direct, out Thing thing, null);
-                    Building_HackingTable.TryAddPawnForModification(Takee, WTH_DefOf.WTH_HackMechanoid);
+                    this.pawn.ClearAllReservations();
+                    HackingTable.TryAddPawnForModification(Takee, WTH_DefOf.WTH_HackMechanoid);
                     Takee.Position = HackingTable.GetSleepingSlotPos(Building_HackingTable.SLOTINDEX);
                 },
                 defaultCompleteMode = ToilCompleteMode.Instant

@@ -11,16 +11,16 @@ namespace WhatTheHack.Jobs
 {
     class JobDriver_Mechanoid_Rest : JobDriver
     {
-        protected Building_BaseMechanoidPlatform MechanoidPlatform
+        protected Building_Bed RestingPlace
         {
             get
             {
-                return (Building_BaseMechanoidPlatform)this.job.GetTarget(TargetIndex.A).Thing;
+                return (Building_Bed)this.job.GetTarget(TargetIndex.A).Thing;
             }
         }
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            return this.pawn.Reserve(this.MechanoidPlatform, this.job, 1, -1, null);
+            return this.pawn.Reserve(this.RestingPlace, this.job, 1, -1, null);
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
@@ -52,9 +52,10 @@ namespace WhatTheHack.Jobs
             layDownToil.defaultCompleteMode = ToilCompleteMode.Never;
             layDownToil.AddPreTickAction(delegate
             {
-                pawn.ClearAllReservations();
-                if (!pawn.health.hediffSet.HasNaturallyHealingInjury())
+                //pawn.ClearAllReservations();
+                if (!(pawn.health.hediffSet.HasNaturallyHealingInjury() || (pawn.OnHackingTable() && HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn))))
                 {
+                    Log.Message("done sleeping. ready for next toil");
                     ReadyForNextToil();
                 }
             });
@@ -64,7 +65,7 @@ namespace WhatTheHack.Jobs
             toil.initAction = delegate
             {
                 pawn.jobs.posture = PawnPosture.Standing;
-                pawn.Position = MechanoidPlatform.GetSleepingSlotPos(Building_BaseMechanoidPlatform.SLOTINDEX);
+                pawn.Position = RestingPlace.GetSleepingSlotPos(RestingPlace is Building_HackingTable ? Building_HackingTable.SLOTINDEX : Building_BaseMechanoidPlatform.SLOTINDEX);
                 pawn.CurJob.SetTarget(TargetIndex.C, new LocalTargetInfo(new IntVec3(pawn.Position.x, pawn.Position.y, pawn.Position.z - 1)));
                 this.rotateToFace = TargetIndex.C;
             };

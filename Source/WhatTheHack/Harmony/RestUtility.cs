@@ -130,8 +130,7 @@ namespace WhatTheHack.Harmony
             }
             if (p.jobs.curDriver == null || ((p.CurJob.def != WTH_DefOf.WTH_Mechanoid_Rest) && p.jobs.posture != PawnPosture.LayingInBed))
             {
-                return true;
-                
+                return true;              
             }
             List<Thing> thingList = p.Position.GetThingList(p.Map);
 

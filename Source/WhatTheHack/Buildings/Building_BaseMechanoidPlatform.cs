@@ -11,7 +11,7 @@ namespace WhatTheHack.Buildings
         private bool regenerateActive = true;
         private bool repairActive = true;
         public CompRefuelable refuelableComp;
-        public const int SLOTINDEX = 0;
+        public const int SLOTINDEX = 1;
 
         public virtual bool RegenerateActive { get => regenerateActive; }
         public virtual bool RepairActive { get => repairActive;}

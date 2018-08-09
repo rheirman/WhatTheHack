@@ -11,7 +11,6 @@ namespace WhatTheHack.Buildings
 {
     public class Building_MechanoidPlatform : Building_BaseMechanoidPlatform
     {
-        public new const int SLOTINDEX = 1;
         public CompPowerTrader powerComp;
         public const float MINFUELREGENERATE = 4.0f;
         private bool regenerateActive;
