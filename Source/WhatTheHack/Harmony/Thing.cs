@@ -8,7 +8,28 @@ using Verse;
 
 namespace WhatTheHack.Harmony
 {
-
+    [HarmonyPatch(typeof(Thing), "DrawExtraSelectionOverlays")]
+    static class Thing_DrawExtraSelectionOverlays
+    {
+        static void Postfix(Thing __instance)
+        {
+            if(__instance is Pawn)
+            {
+                Pawn pawn = (Pawn)__instance;
+                if(pawn.RemoteControlLink() != null)
+                {
+                    if (pawn.IsHacked())
+                    {
+                        GenDraw.DrawRadiusRing(pawn.RemoteControlLink().Position, 30f);
+                    }
+                    else
+                    {
+                        GenDraw.DrawRadiusRing(pawn.Position, 30f);
+                    }
+                }
+            }
+        }
+    }
     [HarmonyPatch(typeof(Thing), "ButcherProducts")]
     static class Thing_ButcherProducts
     {
