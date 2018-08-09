@@ -14,7 +14,7 @@
   <JobDef>
     <defName>WTH_Mechanoid_Rest</defName>
     <driverClass>WhatTheHack.Jobs.JobDriver_Mechanoid_Rest</driverClass>
-    <reportString>Linked to mechanoid platform</reportString>
+    <reportString>Linked to facility</reportString>
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
   <JobDef>
