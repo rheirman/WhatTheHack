@@ -36,9 +36,33 @@
   	  <HediffDef>
 		<defName>WTH_RepairModule</defName>
 		<hediffClass>HediffWithComps</hediffClass>
-		<label>repair module added</label>
+		<label>repair module installed</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>WTH_Repairing</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>charged repairing mechanites</label>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+		<maxSeverity>1.0</maxSeverity>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-5</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+        <li>
+			<capMods>
+				<li>
+				  <capacity>Moving</capacity>
+				  <offset>-0.30</offset>
+				</li>
+			</capMods>  
+		</li>
+      </stages>
 	  </HediffDef>
 	  
   	  <HediffDef>

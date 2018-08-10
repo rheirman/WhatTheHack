@@ -91,7 +91,7 @@ namespace WhatTheHack.Harmony
             return true;
         }
     }
-    
+
     /*
     [HarmonyPatch]
     public static class Pawn_GetGizmos_Transpiler {
@@ -150,6 +150,11 @@ namespace WhatTheHack.Harmony
             ExtendedPawnData pawnData = store.GetExtendedDataFor(__instance);
             gizmoList.Add(CreateGizmo_SearchAndDestroy(__instance, pawnData));
             gizmoList.Add(CreateGizmo_AutoRecharge(__instance, pawnData));
+            if (__instance.health.hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule))
+            {
+                gizmoList.Add(CreateGizmo_SelfRepair(__instance, pawnData));
+            }
+
         }
 
         private static Gizmo CreateGizmo_SearchAndDestroy(Pawn __instance, ExtendedPawnData pawnData)
@@ -161,7 +166,7 @@ namespace WhatTheHack.Harmony
                 disabled = true;
                 disabledReason = "WTH_Reason_MechanoidDowned".Translate();
             }
-            else if(pawnData.shouldAutoRecharge)
+            else if (pawnData.shouldAutoRecharge)
             {
                 Need_Power powerNeed = __instance.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) as Need_Power;
                 if (powerNeed != null && powerNeed.CurCategory >= PowerCategory.LowPower)
@@ -218,6 +223,65 @@ namespace WhatTheHack.Harmony
                 toggleAction = () =>
                 {
                     pawnData.shouldAutoRecharge = !pawnData.shouldAutoRecharge;
+                }
+            };
+            return gizmo;
+        }
+
+        private static Gizmo CreateGizmo_SelfRepair(Pawn __instance, ExtendedPawnData pawnData)
+        {
+            CompRefuelable compRefuelable = __instance.GetComp<CompRefuelable>();
+            Need_Power powerNeed = __instance.needs.TryGetNeed<Need_Power>();
+
+            if(compRefuelable == null)
+            {
+                Log.Message("compRefuelable is null");
+            }
+            if(powerNeed == null)
+            {
+                Log.Message("powerNeed is null");
+            }
+            float powerDrain = 50f;
+            float fuelConsumption = 5f;
+            bool alreadyRepairing = __instance.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing);
+            bool needsMorePower = powerNeed.CurLevel < powerDrain;
+            bool needsMoreFuel = compRefuelable.Fuel < fuelConsumption;
+            bool notActicated = !__instance.IsActivated();
+
+            bool isDisabled = alreadyRepairing || needsMorePower || needsMoreFuel || notActicated;
+            string disabledReason = "";
+            if (isDisabled)
+            {
+                if (alreadyRepairing)
+                {
+                    disabledReason = "WTH_Reason_AlreadyRepairing".Translate();
+                }
+                else if (needsMorePower)
+                {
+                    disabledReason = "WTH_Reason_NeedsMorePower".Translate(new object[] {powerDrain});
+                }
+                else if (needsMoreFuel)
+                {
+                    disabledReason = "WTH_Reason_NeedsMoreFuel".Translate(new object[] { fuelConsumption });
+                }
+                else if (notActicated)
+                {
+                    disabledReason = "WTH_Reason_NotActivated".Translate();
+                }
+            }
+
+
+            Gizmo gizmo = new Command_Action
+            {
+                defaultLabel = "WTH_Gizmo_SelfRepair_Label".Translate(),
+                defaultDesc = "WTH_Gizmo_SelfRepair_Description".Translate(),
+                icon = ContentFinder<Texture2D>.Get(("Things/" + "Mote_HealingCrossGreen"), true),
+                disabled = isDisabled,
+                disabledReason = disabledReason,
+                action = delegate {
+                    compRefuelable.ConsumeFuel(fuelConsumption);
+                    powerNeed.CurLevel -= powerDrain;
+                    __instance.health.AddHediff(WTH_DefOf.WTH_Repairing);
                 }
             };
             return gizmo;

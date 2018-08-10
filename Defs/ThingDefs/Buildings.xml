@@ -115,7 +115,7 @@
     </comps>
 	<building>
 		<bed_humanlike>false</bed_humanlike>
-		<bed_healPerDay>850</bed_healPerDay>
+		<bed_healPerDay>125</bed_healPerDay>
 		<bed_showSleeperBody>True</bed_showSleeperBody>
 		<canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
 		<ai_chillDestination>false</ai_chillDestination>
