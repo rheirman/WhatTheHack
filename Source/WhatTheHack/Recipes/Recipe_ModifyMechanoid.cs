@@ -67,15 +67,15 @@ namespace WhatTheHack.Recipes
                 billDoer.skills.Learn(SkillDefOf.Crafting, xp * learnfactor, false);
                 billDoer.skills.Learn(SkillDefOf.Intellectual, xp * learnfactor, false);
                 //Find.LetterStack.ReceiveLetter("LetterSuccess_Label".Translate(), "LetterSuccess_Label_Description".Translate(), LetterDefOf.PositiveEvent, pawn);
+                pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
             }
-            /*
             Log.Message("Recipe_ModifyMechanoid.ApplyOnPawn called");
             if(this.recipe.addsHediff == WTH_DefOf.WTH_RepairModule)
             {
                 Log.Message("pawn.InitializeComps() called");
                 pawn.InitializeComps();
             }
-            */
+            
         }
     }
 }

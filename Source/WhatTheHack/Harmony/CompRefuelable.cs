@@ -8,7 +8,7 @@ using Verse;
 
 namespace WhatTheHack.Harmony
 {
-    /*
+    
     [HarmonyPatch(typeof(ThingWithComps), "InitializeComps")]
     class ThingWithComps_Initialize
     {
@@ -20,8 +20,7 @@ namespace WhatTheHack.Harmony
             {
                 Log.Message("InitializeComps for mechanoid");
                 Pawn pawn = (Pawn)__instance;
-                List<ThingComp> comps = Traverse.Create(__instance).Field("comps").GetValue<List<ThingComp>>();
-                comps = new List<ThingComp>();
+                List<ThingComp> comps = new List<ThingComp>();
                 for (int i = 0; i < __instance.def.comps.Count; i++)
                 {
                     ThingComp thingComp = (ThingComp)Activator.CreateInstance(__instance.def.comps[i].compClass);
@@ -40,11 +39,13 @@ namespace WhatTheHack.Harmony
                         thingComp.PostSpawnSetup(false);
                     }
                 }
+                Traverse.Create(__instance).Field("comps").SetValue(comps);
+
                 return false;
                 
             }
             return true;          
         }
     }
-    */
+    
 }
