@@ -14,19 +14,7 @@
 		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 
-	<ResearchProjectDef>
-	<defName>WTH_HackingRemoteControl</defName>
-	<label>hacking and controlling locomotion systems</label>
-	<tab>WTH_ResearchTab</tab>
-	<techLevel>Spacer</techLevel>
-	<description>Learn how to hack the locomotion system of hacked mechanoids and how to control them with colonists using a remote controlling belt which can be crafted at the machining table. Finally your non-violent colonists can participate in battle without feeling guilty by taking control over your mechanoid palls. After all, it's the mechanoids doing the killing, not them, right?</description>
-	<baseCost>1600</baseCost>
-	<prerequisites>
-	  <li>WTH_HackingBasics</li>
-	</prerequisites>
-		<researchViewX>1</researchViewX>
-		<researchViewY>1</researchViewY>
-	</ResearchProjectDef>
+
 	
 	<ResearchProjectDef>
 	<defName>WTH_PortableChemfuelPlatform</defName>
@@ -44,6 +32,49 @@
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
+	<defName>WTH_HackingRemoteControl</defName>
+	<label>mechanoid control and modification</label>
+	<tab>WTH_ResearchTab</tab>
+	<techLevel>Spacer</techLevel>
+	<description>Learn how to hack the locomotion system of hacked mechanoids and how to control them with colonists using a remote controlling belt which can be crafted at the machining table. Finally your non-violent colonists can participate in battle without feeling guilty by taking control over your mechanoid palls. After all, it's the mechanoids doing the killing, not them, right?</description>
+	<baseCost>1600</baseCost>
+	<prerequisites>
+	  <li>WTH_HackingBasics</li>
+	</prerequisites>
+		<researchViewX>1</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_RepairModule</defName>
+		<label>Repair module</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>The repair module can be installed in the reactor of mechanoids. It can be loaded with mechanoid parts, and is capable of very rapidly drawing a large amount of power from the mechanoid, and redirecting it the the mech's internal mechanites. This activates the mechanites, which can repair damage consuming the parts, while slowing down the mechanoid temporarily.</description>
+		<baseCost>2400</baseCost>
+		<prerequisites>
+		  <li>WTH_HackingRemoteControl</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_RepairArm</defName>
+		<label>Repair arm</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Can be used to replace the arm of a mechanoid that has a repair module installed. This arm is capable of transferring mechanites charged by the repair module to other mechanoids, resulting in the other mechanoids being repaired. The arm is however not very suitable for combat.</description>
+		<baseCost>1800</baseCost>
+		<prerequisites>
+		  <li>WTH_RepairModule</li>
+		</prerequisites>
+		<researchViewX>3</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+	
+	
+	<ResearchProjectDef>
 	<defName>WTH_HackingAdvanced</defName>
 	<label>AI implanting</label>
 	<tab>WTH_ResearchTab</tab>
@@ -51,10 +82,10 @@
 	<description>Research the possibility to implant AI Persona Cores in hacked mechanoids, giving full control over them for combat purposes.</description>
 	<baseCost>2400</baseCost>
 	<prerequisites>
-	  <li>MicroelectronicsBasics</li>
 	  <li>WTH_HackingBasics</li>
+	  <li>WTH_HackingRemoteControl</li>
 	</prerequisites>
-	<researchViewX>2</researchViewX>
+	<researchViewX>3</researchViewX>
 	<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 	

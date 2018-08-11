@@ -150,6 +150,62 @@
 		</modExtensions>
 	</RecipeDef>
 
+	
+	<RecipeDef>
+		<defName>WTH_InstallRepairArm</defName>
+		<label>install repair arm arm</label>
+		<description>Install a repair arm.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Installing repair arm.</jobString>
+		<workAmount>2500</workAmount>
+		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_MechanoidParts</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_MechanoidChip</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		
+		<appliedOnFixedBodyParts>
+			<li>MechanicalShoulder</li>
+		</appliedOnFixedBodyParts>
+		<researchPrerequisite>WTH_RepairArm</researchPrerequisite>
+		<addsHediff>WTH_RepairArm</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+				<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+				<requiredHediff>WTH_RepairModule</requiredHediff>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
 	<RecipeDef>
 		<defName>WTH_RepairModule</defName>
 		<label>install repair module</label>
@@ -203,8 +259,8 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
-				<surgerySuccessChanceFactor>1.5</surgerySuccessChanceFactor>
-				<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
+				<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+				<deathOnFailedSurgeryChance>0.2</deathOnFailedSurgeryChance>
 			</li>
 		</modExtensions>
 	</RecipeDef>

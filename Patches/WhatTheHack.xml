@@ -10,6 +10,7 @@
 				<li>WTH_HackLocomotion</li>
 				<li>WTH_ShutDownMechanoid</li>
 				<li>WTH_RepairModule</li>
+				<li>WTH_InstallRepairArm</li>
 			</recipes>
 			<comps>
 			  <li Class="CompProperties_Refuelable">

@@ -40,6 +40,28 @@
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>
 	  </HediffDef>
+	  <HediffDef ParentName="AddedBodyPartBase">
+		<defName>WTH_RepairArm</defName>
+		<label>repair arm</label>
+		<labelNoun>a repair arm</labelNoun>
+		<addedPartProps>
+		  <partEfficiency>0.9</partEfficiency>
+		</addedPartProps>
+		<comps>
+		  <li Class="HediffCompProperties_VerbGiver">
+			<tools>
+			  <li>
+				<label>fist</label>
+				<capacities>
+				  <li>Blunt</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>2</cooldownTime>
+			  </li>
+			</tools>
+		  </li>
+		</comps>
+	  </HediffDef>
 	  
 	  <HediffDef>
 		<defName>WTH_Repairing</defName>
