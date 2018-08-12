@@ -104,7 +104,6 @@ namespace WhatTheHack
             {
                 foreach (Pawn pawn in map.mapPawns.AllPawnsSpawned.Where((Pawn p) => p.health != null && p.health.hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule)))
                 {
-                    Log.Message("initilializing comps for " + pawn.def);
                     pawn.InitializeComps();
                 }
             }

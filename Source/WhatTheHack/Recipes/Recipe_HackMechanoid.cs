@@ -100,8 +100,6 @@ namespace WhatTheHack.Recipes
             System.Random r = new System.Random(DateTime.Now.Millisecond);
             float combatPowerFactorCapped = CalcCombatPowerFactorCapped(hackee);
             successChance *= combatPowerFactorCapped;
-            Log.Message("combatPowerFactorCapped " + combatPowerFactorCapped);
-            Log.Message("SuccessChance: " + successChance);
             float learnfactor = 1.0f;
 
             if (!Rand.Chance(successChance))

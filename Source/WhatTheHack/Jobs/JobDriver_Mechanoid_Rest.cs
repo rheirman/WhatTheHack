@@ -55,7 +55,6 @@ namespace WhatTheHack.Jobs
                 //pawn.ClearAllReservations();
                 if (!(pawn.health.hediffSet.HasNaturallyHealingInjury() || (pawn.OnHackingTable() && HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn))))
                 {
-                    Log.Message("done sleeping. ready for next toil");
                     ReadyForNextToil();
                 }
             });

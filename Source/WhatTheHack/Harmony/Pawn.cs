@@ -238,14 +238,6 @@ namespace WhatTheHack.Harmony
             CompRefuelable compRefuelable = __instance.GetComp<CompRefuelable>();
             Need_Power powerNeed = __instance.needs.TryGetNeed<Need_Power>();
 
-            if(compRefuelable == null)
-            {
-                Log.Message("compRefuelable is null");
-            }
-            if(powerNeed == null)
-            {
-                Log.Message("powerNeed is null");
-            }
             float powerDrain = 50f;
             float fuelConsumption = 5f;
             bool alreadyRepairing = __instance.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing);
@@ -296,14 +288,6 @@ namespace WhatTheHack.Harmony
             CompRefuelable compRefuelable = __instance.GetComp<CompRefuelable>();
             Need_Power powerNeed = __instance.needs.TryGetNeed<Need_Power>();
 
-            if (compRefuelable == null)
-            {
-                Log.Message("compRefuelable is null");
-            }
-            if (powerNeed == null)
-            {
-                Log.Message("powerNeed is null");
-            }
             float powerDrain = 50f; //TODO store somewhere else
             float fuelConsumption = 5f;//TODO store somewhere else
             bool alreadyRepairing = __instance.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing);

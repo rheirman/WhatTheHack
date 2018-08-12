@@ -15,11 +15,6 @@ namespace WhatTheHack.Harmony
         //Only initialize the refeulcomp of mechanoids that have a repairmodule. 
         static bool Prefix(ref ThingWithComps __instance)
         {
-            Log.Message("InitializeComps called");
-            if((__instance is Pawn && ((Pawn)__instance).health == null))
-            {
-                Log.Message("health is null for pawn " + __instance.def.defName);
-            }
             if (__instance is Pawn && ((Pawn)__instance).RaceProps.IsMechanoid && __instance.def.comps.Any<CompProperties>())
             {
                 Pawn pawn = (Pawn)__instance;
