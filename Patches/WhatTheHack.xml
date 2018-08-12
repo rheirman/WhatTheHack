@@ -1,34 +1,67 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-	<!--Add mechanoid specific operations-->
-	<Operation Class="PatchOperationAdd">
-		<xpath>*/ThingDef[race/fleshType = "Mechanoid"]</xpath>
-		<value>
-			<recipes>
-				<li>WTH_HackMechanoid</li>
-				<li>WTH_ImplantAI</li>
-				<li>WTH_HackLocomotion</li>
-				<li>WTH_ShutDownMechanoid</li>
-				<li>WTH_RepairModule</li>
-				<li>WTH_InstallRepairArm</li>
-			</recipes>
-			<comps>
-			  <li Class="CompProperties_Refuelable">
-				<fuelConsumptionRate>40.0</fuelConsumptionRate>
-				<fuelCapacity>10.0</fuelCapacity>
-				<fuelFilter>
-				  <thingDefs>
-					<li>WTH_MechanoidParts</li>
-				  </thingDefs>
-				</fuelFilter>
-				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-				 <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
-				<initialConfigurableTargetFuelLevel>10.0</initialConfigurableTargetFuelLevel>
-			  </li>
-			</comps>
-			
-		</value>
-	</Operation> 
+<!--Add mechanoid specific operations-->
+<Operation Class="PatchOperationAdd">
+	<xpath>*/ThingDef[race/fleshType = "Mechanoid"]</xpath>
+	<value>
+		<recipes>
+			<li>WTH_HackMechanoid</li>
+			<li>WTH_ImplantAI</li>
+			<li>WTH_HackLocomotion</li>
+			<li>WTH_ShutDownMechanoid</li>
+			<li>WTH_RepairModule</li>
+			<li>WTH_InstallRepairArm</li>
+		</recipes>		
+	</value>
+</Operation> 
+
+<Operation Class="PatchOperationSequence">
+	<success>Always</success>
+	<operations>
+		<li Class="PatchOperationAdd">
+			<xpath>*/ThingDef[race/fleshType = "Mechanoid"]/comps[not(descendant::li[@Class = "CompProperties_Refuelable"])]</xpath>
+			<value>
+				<li Class="CompProperties_Refuelable">
+					<fuelConsumptionRate>40.0</fuelConsumptionRate>
+					<fuelCapacity>10.0</fuelCapacity>
+					<fuelFilter>
+					  <thingDefs>
+						<li>WTH_MechanoidParts</li>
+					  </thingDefs>
+					</fuelFilter>
+					<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+					 <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+					<initialConfigurableTargetFuelLevel>10.0</initialConfigurableTargetFuelLevel>
+				</li>
+			</value>
+		</li> 
+	</operations>
+</Operation>
+
+<Operation Class="PatchOperationSequence">
+	<success>Always</success>
+	<operations>
+		<li Class="PatchOperationAdd">
+			<xpath>*/ThingDef[race/fleshType = "Mechanoid" and not(comps)]</xpath>
+			<value>
+				<comps>
+					<li Class="CompProperties_Refuelable">
+						<fuelConsumptionRate>40.0</fuelConsumptionRate>
+						<fuelCapacity>10.0</fuelCapacity>
+						<fuelFilter>
+						  <thingDefs>
+							<li>WTH_MechanoidParts</li>
+						  </thingDefs>
+						</fuelFilter>
+						<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+						 <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+						<initialConfigurableTargetFuelLevel>10.0</initialConfigurableTargetFuelLevel>
+					</li>
+				</comps>
+			</value>
+		</li> 
+	</operations>
+</Operation>
 	<Operation Class="PatchOperationAddModExtension">
 		<xpath>*/ThingDef[defName = "Mech_Centipede"]</xpath>
 		<value>

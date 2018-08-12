@@ -49,6 +49,8 @@
 	<WTH_Gizmo_Repair_Label>Repair mechanoid</WTH_Gizmo_Repair_Label>
 	<WTH_Gizmo_Repair_Description>When this is active, the platform repairs any mechanoid on the platform by activating its internal mechanites by providing enough power, and material to work with. The mechanites consume mechanoid parts stored in the platform in the process.</WTH_Gizmo_Repair_Description>
 
+	<WTH_Gizmo_Mech_Repair_Label>Repair</WTH_Gizmo_Mech_Repair_Label>
+	<WTH_Gizmo_Mech_Repair_Description>Orders the mech to use its repair arm to transfer mechanoids charged by the repair module to the other mechs, repairing them.</WTH_Gizmo_Mech_Repair_Description>
 	<WTH_Gizmo_SelfRepair_Label>Self repair</WTH_Gizmo_SelfRepair_Label>
 	<WTH_Gizmo_SelfRepair_Description>Orders the mech to activate the repair module, which causes surge of energy, activating the mechanoid's internal mechanites. These start to repair immediately using the parts stored in the module.</WTH_Gizmo_SelfRepair_Description>
 	

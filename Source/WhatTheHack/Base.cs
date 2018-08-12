@@ -100,10 +100,13 @@ namespace WhatTheHack
         {
             _extendedDataStorage = UtilityWorldObjectManager.GetUtilityWorldObject<ExtendedDataStorage>();
             base.WorldLoaded();
-            foreach (Pawn pawn in Find.WorldPawns.AllPawnsAlive.Where((Pawn p) => p.health != null && p.health.hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule)))
+            foreach (Map map in Find.Maps)
             {
-                Log.Message("initilializing comps for " + pawn.def);
-                pawn.InitializeComps();
+                foreach (Pawn pawn in map.mapPawns.AllPawnsSpawned.Where((Pawn p) => p.health != null && p.health.hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule)))
+                {
+                    Log.Message("initilializing comps for " + pawn.def);
+                    pawn.InitializeComps();
+                }
             }
 
             foreach (RecipeDef recipe in from rd in DefDatabase<RecipeDef>.AllDefs

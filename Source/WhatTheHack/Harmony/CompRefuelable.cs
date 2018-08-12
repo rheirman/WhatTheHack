@@ -16,7 +16,11 @@ namespace WhatTheHack.Harmony
         static bool Prefix(ref ThingWithComps __instance)
         {
             Log.Message("InitializeComps called");
-            if (__instance is Pawn && ((Pawn)__instance).RaceProps.IsMechanoid && __instance.def.comps.Any<CompProperties>() && ((Pawn)__instance).health != null)
+            if((__instance is Pawn && ((Pawn)__instance).health == null))
+            {
+                Log.Message("health is null for pawn " + __instance.def.defName);
+            }
+            if (__instance is Pawn && ((Pawn)__instance).RaceProps.IsMechanoid && __instance.def.comps.Any<CompProperties>())
             {
                 Pawn pawn = (Pawn)__instance;
                 List<ThingComp> comps = Traverse.Create(__instance).Field("comps").GetValue<List<ThingComp>>();
@@ -27,7 +31,7 @@ namespace WhatTheHack.Harmony
                 for (int i = 0; i < __instance.def.comps.Count; i++)
                 {
                     ThingComp thingComp = (ThingComp)Activator.CreateInstance(__instance.def.comps[i].compClass);
-                    if (!(thingComp is CompRefuelable) || (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule)))
+                    if (!(thingComp is CompRefuelable) || ((Pawn)__instance).health != null && (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule)))
                     {
                         thingComp.parent = __instance;
                         comps.Add(thingComp);

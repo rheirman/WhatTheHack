@@ -150,9 +150,14 @@ namespace WhatTheHack.Harmony
             ExtendedPawnData pawnData = store.GetExtendedDataFor(__instance);
             gizmoList.Add(CreateGizmo_SearchAndDestroy(__instance, pawnData));
             gizmoList.Add(CreateGizmo_AutoRecharge(__instance, pawnData));
-            if (__instance.health.hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule))
+            HediffSet hediffSet = __instance.health.hediffSet;
+            if (hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule))
             {
                 gizmoList.Add(CreateGizmo_SelfRepair(__instance, pawnData));
+            }
+            if(hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule) && hediffSet.HasHediff(WTH_DefOf.WTH_RepairArm))
+            {
+                gizmoList.Add(CreateGizmo_Repair(__instance, pawnData));
             }
 
         }
@@ -270,7 +275,6 @@ namespace WhatTheHack.Harmony
                 }
             }
 
-
             Gizmo gizmo = new Command_Action
             {
                 defaultLabel = "WTH_Gizmo_SelfRepair_Label".Translate(),
@@ -285,6 +289,84 @@ namespace WhatTheHack.Harmony
                 }
             };
             return gizmo;
+        }
+
+        private static Gizmo CreateGizmo_Repair(Pawn __instance, ExtendedPawnData pawnData)
+        {
+            CompRefuelable compRefuelable = __instance.GetComp<CompRefuelable>();
+            Need_Power powerNeed = __instance.needs.TryGetNeed<Need_Power>();
+
+            if (compRefuelable == null)
+            {
+                Log.Message("compRefuelable is null");
+            }
+            if (powerNeed == null)
+            {
+                Log.Message("powerNeed is null");
+            }
+            float powerDrain = 50f; //TODO store somewhere else
+            float fuelConsumption = 5f;//TODO store somewhere else
+            bool alreadyRepairing = __instance.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing);
+            bool needsMorePower = powerNeed.CurLevel < powerDrain;
+            bool needsMoreFuel = compRefuelable.Fuel < fuelConsumption;
+            bool notActicated = !__instance.IsActivated();
+
+            bool isDisabled = needsMorePower || needsMoreFuel || notActicated;
+            string disabledReason = "";
+            if (isDisabled)
+            {
+                if (needsMorePower)
+                {
+                    disabledReason = "WTH_Reason_NeedsMorePower".Translate(new object[] { powerDrain });
+                }
+                else if (needsMoreFuel)
+                {
+                    disabledReason = "WTH_Reason_NeedsMoreFuel".Translate(new object[] { fuelConsumption });
+                }
+                else if (notActicated)
+                {
+                    disabledReason = "WTH_Reason_NotActivated".Translate();
+                }
+            }
+
+            Gizmo gizmo = new Command_Target
+            {
+                defaultLabel = "WTH_Gizmo_Mech_Repair_Label".Translate(),
+                defaultDesc = "WTH_Gizmo_Mech_Repair_Description".Translate(),
+                icon = ContentFinder<Texture2D>.Get(("Things/" + "Mote_HealingCrossBlue"), true), //TODO: other icon
+                disabled = isDisabled,
+                targetingParams = GetTargetingParametersForRepairing(),
+                disabledReason = disabledReason,
+                action = delegate(Thing target) {
+                    if(target is Pawn)
+                    {
+                        Pawn mech = (Pawn)target;
+                        compRefuelable.ConsumeFuel(fuelConsumption);
+                        powerNeed.CurLevel -= powerDrain;
+                        mech.health.AddHediff(WTH_DefOf.WTH_Repairing);
+                    }
+
+                }
+        };
+            return gizmo;
+        }
+        private static TargetingParameters GetTargetingParametersForRepairing()
+        {
+            return new TargetingParameters
+            {
+                canTargetPawns = true,
+                canTargetBuildings = false,
+                mapObjectTargetsMustBeAutoAttackable = false,
+                validator = delegate (TargetInfo targ)
+                {
+                    if (!targ.HasThing)
+                    {
+                        return false;
+                    }
+                    Pawn pawn = targ.Thing as Pawn;
+                    return pawn != null && !pawn.Downed && pawn.IsHacked() && pawn.health != null && !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing);
+                }
+            };
         }
     }
 }

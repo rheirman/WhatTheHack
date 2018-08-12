@@ -20,6 +20,7 @@ namespace WhatTheHack
         public static HediffDef WTH_RegeneratedPart;
         public static HediffDef WTH_RepairModule;
         public static HediffDef WTH_Repairing;
+        public static HediffDef WTH_RepairArm;
 
 
         public static DamageDef WTH_RegeneratedPartDamage;
