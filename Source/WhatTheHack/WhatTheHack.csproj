@@ -61,6 +61,7 @@
     <Compile Include="Harmony\Caravan.cs" />
     <Compile Include="Harmony\CaravanFormingUtility.cs" />
     <Compile Include="Harmony\CaravanUIUtility.cs" />
+    <Compile Include="Harmony\CompRefuelable.cs" />
     <Compile Include="Harmony\DaysWorthOfFoodCalculator.cs" />
     <Compile Include="Harmony\Dialog_FormCaravan.cs" />
     <Compile Include="Harmony\Dialog_LoadTransporters.cs" />

@@ -238,7 +238,7 @@ namespace WhatTheHack.Harmony
             CompRefuelable compRefuelable = __instance.GetComp<CompRefuelable>();
             Need_Power powerNeed = __instance.needs.TryGetNeed<Need_Power>();
 
-            float powerDrain = 50f;
+            float powerDrain = 40f;
             float fuelConsumption = 5f;
             bool alreadyRepairing = __instance.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing);
             bool needsMorePower = powerNeed.CurLevel < powerDrain;
@@ -281,7 +281,7 @@ namespace WhatTheHack.Harmony
                 disabledReason = disabledReason,
                 action = delegate
                 {
-                    StartRepairJob(__instance, __instance, compRefuelable, powerNeed, powerDrain, fuelConsumption, 700);
+                    StartRepairJob(__instance, __instance, compRefuelable, powerNeed, powerDrain, fuelConsumption, 500);
                 }
             };
             return gizmo;
@@ -291,7 +291,7 @@ namespace WhatTheHack.Harmony
             CompRefuelable compRefuelable = __instance.GetComp<CompRefuelable>();
             Need_Power powerNeed = __instance.needs.TryGetNeed<Need_Power>();
 
-            float powerDrain = 50f; //TODO store somewhere else
+            float powerDrain = 40f; //TODO store somewhere else
             float fuelConsumption = 5f;//TODO store somewhere else
             bool alreadyRepairing = __instance.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing);
             bool needsMorePower = powerNeed.CurLevel < powerDrain;
@@ -327,7 +327,7 @@ namespace WhatTheHack.Harmony
                 action = delegate(Thing target) {
                     if (target is Pawn mech)
                     {
-                        StartRepairJob(__instance, mech, compRefuelable, powerNeed, powerDrain, fuelConsumption, 1000);
+                        StartRepairJob(__instance, mech, compRefuelable, powerNeed, powerDrain, fuelConsumption, 700);
                     }
 
                 }
