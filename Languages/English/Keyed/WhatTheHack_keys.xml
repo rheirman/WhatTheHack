@@ -54,10 +54,11 @@
 	<WTH_Gizmo_SelfRepair_Label>Self repair</WTH_Gizmo_SelfRepair_Label>
 	<WTH_Gizmo_SelfRepair_Description>Orders the mech to activate the repair module, which causes surge of energy, activating the mechanoid's internal mechanites. These start to repair immediately using the parts stored in the module.</WTH_Gizmo_SelfRepair_Description>
 	
-	<WTH_Reason_AlreadyRepairing>This mechanoid is already already injected with charged repairing mechanoids.</WTH_Reason_AlreadyRepairing>
+	<WTH_Reason_AlreadyRepairing>This mechanoid is already injected with charged repairing mechanoids.</WTH_Reason_AlreadyRepairing>
 	<WTH_Reason_NeedsMorePower>At least {0} power is needed to activate this.</WTH_Reason_NeedsMorePower>
 	<WTH_Reason_NeedsMoreFuel>At least {0} fuel is needed to activate this.</WTH_Reason_NeedsMoreFuel>
 	<WTH_Reason_NotActivated>This cannot be used with a deactivated mechanoid.</WTH_Reason_NotActivated>
+	<WTH_Reason_NoDamage>No damage to be repaired.</WTH_Reason_NoDamage>
 	
 	<WTH_Alert_NotEnoughPlatforms_Label>Not enough mechanoid platforms</WTH_Alert_NotEnoughPlatforms_Label>
 	<WTH_Alert_NotEnoughPlatforms_Description>You have more hacked mechanoids than mechanoid platforms in your main base. Make sure to make more mechanoid platforms</WTH_Alert_NotEnoughPlatforms_Description>

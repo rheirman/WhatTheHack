@@ -50,9 +50,11 @@ namespace WhatTheHack.Jobs
 
             Toil layDownToil = Toils_LayDown.LayDown(TargetIndex.A, true, false, false, false);
             layDownToil.defaultCompleteMode = ToilCompleteMode.Never;
+            layDownToil.initAction = new Action(delegate {
+                pawn.ClearAllReservations();
+            });
             layDownToil.AddPreTickAction(delegate
             {
-                //pawn.ClearAllReservations();
                 if (!(pawn.health.hediffSet.HasNaturallyHealingInjury() || (pawn.OnHackingTable() && HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn))))
                 {
                     ReadyForNextToil();

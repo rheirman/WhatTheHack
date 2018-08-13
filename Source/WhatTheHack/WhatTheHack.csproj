@@ -73,6 +73,7 @@
     <Compile Include="Harmony\PawnCapacitiesHandler.cs" />
     <Compile Include="Harmony\TransferableUIUtility.cs" />
     <Compile Include="Harmony\TransferableUtility.cs" />
+    <Compile Include="Jobs\JobDriver_Ability.cs" />
     <Compile Include="Jobs\WorkGiver_HaulMechanoid.cs" />
     <Compile Include="ModExtension\DefModExtension_PawnCapacity.cs" />
     <Compile Include="ModExtension\DefModExtension_PawnMassCapacity.cs" />

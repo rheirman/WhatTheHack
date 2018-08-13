@@ -35,6 +35,7 @@ namespace WhatTheHack
         public static JobDef WTH_Mechanoid_Rest;
         public static JobDef WTH_ControlMechanoid;
         public static JobDef WTH_ControlMechanoid_Goto;
+        public static JobDef WTH_Ability;
 
         public static NeedDef WTH_Mechanoid_Power;
 

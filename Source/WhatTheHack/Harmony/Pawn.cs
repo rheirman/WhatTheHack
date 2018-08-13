@@ -244,14 +244,22 @@ namespace WhatTheHack.Harmony
             bool needsMorePower = powerNeed.CurLevel < powerDrain;
             bool needsMoreFuel = compRefuelable.Fuel < fuelConsumption;
             bool notActicated = !__instance.IsActivated();
-
-            bool isDisabled = alreadyRepairing || needsMorePower || needsMoreFuel || notActicated;
+            bool noDamage = !__instance.health.hediffSet.HasNaturallyHealingInjury();
+            bool isDisabled = alreadyRepairing || needsMorePower || needsMoreFuel || notActicated || noDamage;
             string disabledReason = "";
             if (isDisabled)
             {
                 if (alreadyRepairing)
                 {
                     disabledReason = "WTH_Reason_AlreadyRepairing".Translate();
+                }
+                else if (notActicated)
+                {
+                    disabledReason = "WTH_Reason_NotActivated".Translate();
+                }
+                else if (noDamage)
+                {
+                    disabledReason = "WTH_Reason_NoDamage".Translate();
                 }
                 else if (needsMorePower)
                 {
@@ -261,10 +269,7 @@ namespace WhatTheHack.Harmony
                 {
                     disabledReason = "WTH_Reason_NeedsMoreFuel".Translate(new object[] { fuelConsumption });
                 }
-                else if (notActicated)
-                {
-                    disabledReason = "WTH_Reason_NotActivated".Translate();
-                }
+
             }
 
             Gizmo gizmo = new Command_Action
@@ -274,15 +279,13 @@ namespace WhatTheHack.Harmony
                 icon = ContentFinder<Texture2D>.Get(("Things/" + "Mote_HealingCrossGreen"), true),
                 disabled = isDisabled,
                 disabledReason = disabledReason,
-                action = delegate {
-                    compRefuelable.ConsumeFuel(fuelConsumption);
-                    powerNeed.CurLevel -= powerDrain;
-                    __instance.health.AddHediff(WTH_DefOf.WTH_Repairing);
+                action = delegate
+                {
+                    StartRepairJob(__instance, __instance, compRefuelable, powerNeed, powerDrain, fuelConsumption, 700);
                 }
             };
             return gizmo;
         }
-
         private static Gizmo CreateGizmo_Repair(Pawn __instance, ExtendedPawnData pawnData)
         {
             CompRefuelable compRefuelable = __instance.GetComp<CompRefuelable>();
@@ -322,18 +325,33 @@ namespace WhatTheHack.Harmony
                 targetingParams = GetTargetingParametersForRepairing(),
                 disabledReason = disabledReason,
                 action = delegate(Thing target) {
-                    if(target is Pawn)
+                    if (target is Pawn mech)
                     {
-                        Pawn mech = (Pawn)target;
-                        compRefuelable.ConsumeFuel(fuelConsumption);
-                        powerNeed.CurLevel -= powerDrain;
-                        mech.health.AddHediff(WTH_DefOf.WTH_Repairing);
+                        StartRepairJob(__instance, mech, compRefuelable, powerNeed, powerDrain, fuelConsumption, 1000);
                     }
 
                 }
-        };
+            };
             return gizmo;
         }
+
+
+        private static void StartRepairJob(Pawn pawn, Pawn target, CompRefuelable compRefuelable, Need_Power powerNeed, float powerDrain, float fuelConsumption, int expiryInterval)
+        {
+            Job job = new Job(WTH_DefOf.WTH_Ability, target)
+            {
+                count = 1,
+                expiryInterval = expiryInterval
+            };
+            pawn.jobs.StartJob(job);
+            pawn.jobs.curDriver.AddFinishAction(delegate
+            {
+                compRefuelable.ConsumeFuel(fuelConsumption);
+                powerNeed.CurLevel -= powerDrain;
+                target.health.AddHediff(WTH_DefOf.WTH_Repairing);
+            });
+        }
+
         private static TargetingParameters GetTargetingParametersForRepairing()
         {
             return new TargetingParameters
@@ -348,7 +366,12 @@ namespace WhatTheHack.Harmony
                         return false;
                     }
                     Pawn pawn = targ.Thing as Pawn;
-                    return pawn != null && !pawn.Downed && pawn.IsHacked() && pawn.health != null && !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing);
+                    return pawn != null 
+                    && !pawn.Downed
+                    && pawn.IsHacked() 
+                    && pawn.health != null
+                    && pawn.health.hediffSet.HasNaturallyHealingInjury()
+                    && !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing);
                 }
             };
         }

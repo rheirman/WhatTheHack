@@ -29,4 +29,10 @@
     <reportString>Controlling mechanoid (moving)</reportString>
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
+  <JobDef>
+    <defName>WTH_Ability</defName>
+    <driverClass>WhatTheHack.Jobs.JobDriver_Ability</driverClass>
+    <reportString>Using ability</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
  </Defs>
