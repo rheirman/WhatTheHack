@@ -100,6 +100,7 @@ namespace WhatTheHack
         {
             _extendedDataStorage = UtilityWorldObjectManager.GetUtilityWorldObject<ExtendedDataStorage>();
             base.WorldLoaded();
+            /*
             foreach (Map map in Find.Maps)
             {
                 foreach (Pawn pawn in map.mapPawns.AllPawnsSpawned.Where((Pawn p) => p.health != null && p.RaceProps.IsMechanoid && p.def.comps.Any<CompProperties>()))
@@ -108,6 +109,7 @@ namespace WhatTheHack
                     RemoveComps(ref twc);
                 }
             }
+            */
 
         }        
         //Removes comps if necessary

@@ -61,11 +61,11 @@
     <Compile Include="Harmony\Caravan.cs" />
     <Compile Include="Harmony\CaravanFormingUtility.cs" />
     <Compile Include="Harmony\CaravanUIUtility.cs" />
-    <Compile Include="Harmony\CompRefuelable.cs" />
     <Compile Include="Harmony\DaysWorthOfFoodCalculator.cs" />
     <Compile Include="Harmony\Dialog_FormCaravan.cs" />
     <Compile Include="Harmony\Dialog_LoadTransporters.cs" />
     <Compile Include="Harmony\Dialog_SplitCaravan.cs" />
+    <Compile Include="Harmony\GenSpawn.cs" />
     <Compile Include="Harmony\Gizmo_CaravanInfo.cs" />
     <Compile Include="Harmony\ITab_Pawn_Gear.cs" />
     <Compile Include="Harmony\LordToil_Siege.cs" />
