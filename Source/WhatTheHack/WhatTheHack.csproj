@@ -77,6 +77,7 @@
     <Compile Include="ModExtension\DefModExtension_PawnCapacity.cs" />
     <Compile Include="ModExtension\DefModExtension_PawnMassCapacity.cs" />
     <Compile Include="ModExtension\DefModExtension_Recipe.cs" />
+    <Compile Include="Recipes\Recipe_Hacking.cs" />
     <Compile Include="Recipes\Recipe_ShutDown.cs" />
     <Compile Include="Record.cs" />
     <Compile Include="Apparel\RemoteController.cs" />

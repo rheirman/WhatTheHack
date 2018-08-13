@@ -8,9 +8,9 @@ namespace WhatTheHack
 {
     public class DefModExtension_Recipe : DefModExtension
     {
-        public float surgerySuccessChanceFactor;
-        public float deathOnFailedSurgeryChance;
+        public float surgerySuccessChanceFactor = -1f;
+        public float deathOnFailedSurgeryChance = -1f;
         public bool requireBed;
-        public string requiredHediff;
+        public HediffDef requiredHediff;
     }
 }

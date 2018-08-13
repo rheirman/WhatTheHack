@@ -13,69 +13,15 @@ using WhatTheHack.Duties;
 
 namespace WhatTheHack.Recipes
 {
-    class Recipe_HackMechanoid : Recipe_Surgery
+    class Recipe_HackMechanoid : Recipe_Hacking
     {
-
-        public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
+        protected override bool CanApplyOn(Pawn pawn)
         {
-            if (pawn.Faction != Faction.OfPlayer)
-            {
-                //Copy from vanilla. Much more complex than needed, but does the trick
-                for (int i = 0; i < recipe.appliedOnFixedBodyParts.Count; i++)
-                {
-                    BodyPartDef part = recipe.appliedOnFixedBodyParts[i];
-                    List<BodyPartRecord> bpList = pawn.RaceProps.body.AllParts;
-                    for (int j = 0; j < bpList.Count; j++)
-                    {
-                        BodyPartRecord record = bpList[j];
-                        if (record.def == part)
-                        {
-                            IEnumerable<Hediff> diffs = from x in pawn.health.hediffSet.hediffs
-                                                        where x.Part == record
-                                                        select x;
-                            if (diffs.Count<Hediff>() != 1 || diffs.First<Hediff>().def != recipe.addsHediff)
-                            {
-                                if (record.parent == null || pawn.health.hediffSet.GetNotMissingParts(BodyPartHeight.Undefined, BodyPartDepth.Undefined, null, null).Contains(record.parent))
-                                {
-                                    if (!pawn.health.hediffSet.PartOrAnyAncestorHasDirectlyAddedParts(record) || pawn.health.hediffSet.HasDirectlyAddedPartFor(record))
-                                    {
-                                        yield return record;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            return pawn.Faction != Faction.OfPlayer;
         }
 
-        public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
+        protected override void PostApply(Pawn pawn)
         {
-            if (billDoer != null)
-            {
-                //Let random bad events happen when hacking fails
-                if (CheckHackingFail(pawn, billDoer, part))
-                {
-                    if (pawn.Dead)
-                    {
-                        return;
-                    }
-                    //Re-add surgery bill
-                    ((Building_HackingTable)pawn.CurrentBed()).TryAddPawnForModification(pawn, WTH_DefOf.WTH_HackMechanoid);
-
-                    return;
-                }
-                TaleRecorder.RecordTale(TaleDefOf.DidSurgery, new object[]
-                {
-                    billDoer,
-                    pawn
-                });
-                Find.LetterStack.ReceiveLetter("WTH_Letter_Success_Label".Translate(), "WTH_Letter_Success_Label_Description".Translate(), LetterDefOf.PositiveEvent, pawn);
-            }
-            if (!pawn.IsHacked())
-            {
-                pawn.health.AddHediff(this.recipe.addsHediff, part, null);
-            }
             pawn.SetFaction(Faction.OfPlayer);
             if (pawn.relations == null)
             {
@@ -89,66 +35,27 @@ namespace WhatTheHack.Recipes
             {
                 pawn.story = new Pawn_StoryTracker(pawn);
             }
-
         }
 
-        private bool CheckHackingFail(Pawn hackee, Pawn hacker, BodyPartRecord part)
+        protected override void HackingFailEvent(Pawn hackee, BodyPartRecord part, System.Random r)
         {
-            float successChance = 1.0f;
-            successChance *= recipe.surgerySuccessChanceFactor;
-            successChance *= hacker.GetStatValue(WTH_DefOf.WTH_HackingSuccessChance, true);
-            System.Random r = new System.Random(DateTime.Now.Millisecond);
-            float combatPowerFactorCapped = CalcCombatPowerFactorCapped(hackee);
-            successChance *= combatPowerFactorCapped;
-            float learnfactor = 1.0f;
-
-            if (!Rand.Chance(successChance))
+            int randInt = r.Next(1, 100);
+            //Applying syntactic sugar. Short, but not very readable.
+            int[] chances = { Base.failureChanceHackPoorly, Base.failureChanceCauseRaid, Base.failureChanceShootRandomDirection, Base.failureChanceHealToStanding, Base.failureChanceNothing };
+            Action<Pawn, BodyPartRecord>[] functions = { HackPoorly, CauseMechanoidRaid, ShootRandomDirection, HealToStanding, Nothing };
+            int totalChance = chances.Sum();
+            int acc = 0;
+            for (int i = 0; i < chances.Count(); i++)
             {
-                learnfactor = 0.5f;
-                if (Rand.Chance(this.recipe.deathOnFailedSurgeryChance))
+                if (randInt < ((acc + chances[i]) * totalChance) / 100)
                 {
-                    HealthUtility.GiveInjuriesOperationFailureCatastrophic(hackee, part);
-                    if (!hackee.Dead)
-                    {
-                        hackee.Kill(null, null);
-                    }
-                    Messages.Message("MessageMedicalOperationFailureFatal".Translate(new object[]
-                    {
-                        hacker.LabelShort,
-                        hacker.LabelShort,
-                        this.recipe.LabelCap
-                    }), hackee, MessageTypeDefOf.NegativeHealthEvent, true);
+                    functions[i].Invoke(hackee, part);
+                    break;
                 }
-                else
-                {
-                    int randInt = r.Next(1, 100);
-                    //Applying syntactic sugar. Short, but not very readable.
-                    int[] chances = { Base.failureChanceHackPoorly, Base.failureChanceCauseRaid, Base.failureChanceShootRandomDirection, Base.failureChanceHealToStanding, Base.failureChanceNothing };
-                    Action<Pawn, BodyPartRecord>[] functions = { HackPoorly, CauseMechanoidRaid, ShootRandomDirection, HealToStanding, Nothing };
-                    int totalChance = chances.Sum();
-                    int acc = 0;
-                    for (int i = 0; i < chances.Count(); i++)
-                    {
-                        if (randInt < ((acc + chances[i]) * totalChance) / 100)
-                        {
-                            functions[i].Invoke(hackee, part);
-                            break;
-                        }
-                        acc += chances[i];
-                    }
-                }
-                //Experience
-
-                hacker.skills.Learn(SkillDefOf.Crafting, hackee.kindDef.combatPower * learnfactor, false);
-                hacker.skills.Learn(SkillDefOf.Intellectual, hackee.kindDef.combatPower * learnfactor, false);
-
-                return true;
+                acc += chances[i];
             }
-            return false;
-
-
-
         }
+
         //Used to make hacking more powerful mechs more difficult. Capped at 1000 points. At this value, hacking is 50% more difficult.  
         private static float CalcCombatPowerFactorCapped(Pawn hackee)
         {

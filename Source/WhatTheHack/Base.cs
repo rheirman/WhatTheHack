@@ -109,15 +109,6 @@ namespace WhatTheHack
                 }
             }
 
-            foreach (RecipeDef recipe in from rd in DefDatabase<RecipeDef>.AllDefs
-                                         where rd.HasModExtension<DefModExtension_Recipe>()
-                                         select rd)
-            {
-                DefModExtension_Recipe modExtentsion = recipe.GetModExtension<DefModExtension_Recipe>();
-                recipe.deathOnFailedSurgeryChance = modExtentsion.deathOnFailedSurgeryChance;
-                recipe.surgerySuccessChanceFactor = modExtentsion.surgerySuccessChanceFactor;
-            }
-
         }        
         //Removes comps if necessary
         //Explanation: Vanilla doesn't support conditional comps. Example: For the repair module, we only want mechs to have comp_refuelable when the mech has one installed. 

@@ -5,8 +5,9 @@
 		<description>Hacks the targeting device of a mechanoid so it targets your enemies instead of yourself</description>
 		<workerClass>WhatTheHack.Recipes.Recipe_HackMechanoid</workerClass>
 		<jobString>Hacking mechanoid</jobString>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
 		<workAmount>1500</workAmount>
-		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
 		<skillRequirements>
 			<Crafting>5</Crafting>
 			<Intellectual>5</Intellectual>
@@ -36,8 +37,6 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
-				<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
-				<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
 			</li>
 		</modExtensions>
 	</RecipeDef>
@@ -105,8 +104,9 @@
 		<description>Hacks the locomotion system of the mechanoid and adds a receiver to the mechanoid to allow the it to be operated by a colonist using a remote control device</description>
 		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
 		<jobString>Hacking mechanoid</jobString>
-		<workAmount>4000</workAmount>
-		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
+		<workAmount>4000</workAmount>				
+		<surgerySuccessChanceFactor>1.5</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
 		<skillRequirements>
 			<Crafting>5</Crafting>
 			<Intellectual>5</Intellectual>
@@ -144,8 +144,6 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
-				<surgerySuccessChanceFactor>1.5</surgerySuccessChanceFactor>
-				<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
 			</li>
 		</modExtensions>
 	</RecipeDef>
@@ -157,8 +155,8 @@
 		<description>Install a repair arm.</description>
 		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
 		<jobString>Installing repair arm.</jobString>
-		<workAmount>2500</workAmount>
-		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
+		<workAmount>3000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
 		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
 		<skillRequirements>
 			<Crafting>5</Crafting>
@@ -190,8 +188,7 @@
 				</filter>
 				<count>5</count>
 			</li>
-		</ingredients>
-		
+		</ingredients>		
 		<appliedOnFixedBodyParts>
 			<li>MechanicalShoulder</li>
 		</appliedOnFixedBodyParts>
@@ -200,7 +197,6 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
-				<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
 				<requiredHediff>WTH_RepairModule</requiredHediff>
 			</li>
 		</modExtensions>
@@ -213,7 +209,8 @@
 		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
 		<jobString>Modifying mechanoid</jobString>
 		<workAmount>4000</workAmount>
-		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.2</deathOnFailedSurgeryChance>		
 		<skillRequirements>
 			<Crafting>5</Crafting>
 			<Intellectual>5</Intellectual>
@@ -259,8 +256,6 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
-				<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
-				<deathOnFailedSurgeryChance>0.2</deathOnFailedSurgeryChance>
 			</li>
 		</modExtensions>
 	</RecipeDef>
