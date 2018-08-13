@@ -71,7 +71,6 @@
     <Compile Include="Harmony\LovePartnerRelationUtility.cs" />
     <Compile Include="Harmony\MassUtility.cs" />
     <Compile Include="Harmony\PawnCapacitiesHandler.cs" />
-    <Compile Include="Harmony\CompRefuelable.cs" />
     <Compile Include="Harmony\TransferableUIUtility.cs" />
     <Compile Include="Harmony\TransferableUtility.cs" />
     <Compile Include="Jobs\WorkGiver_HaulMechanoid.cs" />

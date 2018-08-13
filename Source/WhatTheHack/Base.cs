@@ -8,7 +8,7 @@ using HugsLib.Utils;
 using HugsLib.Settings;
 using Verse;
 using RimWorld;
-
+using Harmony;
 
 namespace WhatTheHack
 {
@@ -102,9 +102,10 @@ namespace WhatTheHack
             base.WorldLoaded();
             foreach (Map map in Find.Maps)
             {
-                foreach (Pawn pawn in map.mapPawns.AllPawnsSpawned.Where((Pawn p) => p.health != null && p.health.hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule)))
+                foreach (Pawn pawn in map.mapPawns.AllPawnsSpawned.Where((Pawn p) => p.health != null && p.RaceProps.IsMechanoid && p.def.comps.Any<CompProperties>()))
                 {
-                    pawn.InitializeComps();
+                    ThingWithComps twc = (ThingWithComps)pawn;
+                    RemoveComps(ref twc);
                 }
             }
 
@@ -117,7 +118,35 @@ namespace WhatTheHack
                 recipe.surgerySuccessChanceFactor = modExtentsion.surgerySuccessChanceFactor;
             }
 
+        }        
+        //Removes comps if necessary
+        //Explanation: Vanilla doesn't support conditional comps. Example: For the repair module, we only want mechs to have comp_refuelable when the mech has one installed. 
+        //So to support conditional comps like this, we first allow all comps to be loaded. Then we remove the comps for which the condition doesn't hold. In this case, the refuelable comp for the repair module is
+        //removed when a mechanoid doens't have one installed. 
+        public static void RemoveComps(ref ThingWithComps __instance)
+        {
+
+                Pawn pawn = (Pawn)__instance;
+                List<ThingComp> comps = Traverse.Create(__instance).Field("comps").GetValue<List<ThingComp>>();
+                List<ThingComp> newComps = new List<ThingComp>();
+                foreach (ThingComp thingComp in comps)
+                {
+                    CompProperties_Refuelable refuelableProps = thingComp.props as CompProperties_Refuelable;
+                    if (refuelableProps == null || !refuelableProps.fuelFilter.Allows(WTH_DefOf.WTH_MechanoidParts))
+                    {
+                        newComps.Add(thingComp);
+                    }
+                    if (refuelableProps != null
+                        && refuelableProps.fuelFilter.Allows(WTH_DefOf.WTH_MechanoidParts)
+                        && pawn.IsHacked()
+                        && (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule)))
+                    {
+                        newComps.Add(thingComp);
+                    }
+                }
+                Traverse.Create(__instance).Field("comps").SetValue(newComps);    
         }
+
         public ExtendedDataStorage GetExtendedDataStorage()
         {
             return _extendedDataStorage;
