@@ -35,4 +35,10 @@
     <reportString>Using ability</reportString>
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
+  <JobDef>
+    <defName>WTH_Explode</defName>
+    <driverClass>WhatTheHack.Jobs.JobDriver_Explode</driverClass>
+    <reportString>Self destructing</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
  </Defs>

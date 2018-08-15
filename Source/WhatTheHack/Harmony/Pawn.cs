@@ -12,6 +12,7 @@ using Verse.AI;
 using Verse.AI.Group;
 using WhatTheHack.Buildings;
 using WhatTheHack.Duties;
+using WhatTheHack.Jobs;
 using WhatTheHack.Needs;
 using WhatTheHack.Storage;
 
@@ -151,6 +152,10 @@ namespace WhatTheHack.Harmony
             gizmoList.Add(CreateGizmo_SearchAndDestroy(__instance, pawnData));
             gizmoList.Add(CreateGizmo_AutoRecharge(__instance, pawnData));
             HediffSet hediffSet = __instance.health.hediffSet;
+            if (hediffSet.HasHediff(WTH_DefOf.WTH_SelfDestruct))
+            {
+                gizmoList.Add(CreateGizmo_SelfDestruct(__instance, pawnData));
+            }
             if (hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule))
             {
                 gizmoList.Add(CreateGizmo_SelfRepair(__instance, pawnData));
@@ -233,6 +238,56 @@ namespace WhatTheHack.Harmony
             return gizmo;
         }
 
+        private static Gizmo CreateGizmo_SelfDestruct(Pawn pawn, ExtendedPawnData pawnData)
+        {
+            Need_Power powerNeed = pawn.needs.TryGetNeed<Need_Power>();
+
+            float powerDrain = 10f;
+            bool needsMorePower = powerNeed.CurLevel < powerDrain;
+            bool notActicated = !pawn.IsActivated();
+            bool isDisabled = needsMorePower || notActicated;
+            string disabledReason = "";
+            if (isDisabled)
+            {
+                if (notActicated)
+                {
+                    disabledReason = "WTH_Reason_NotActivated".Translate();
+                }
+                else if (needsMorePower)
+                {
+                    disabledReason = "WTH_Reason_NeedsMorePower".Translate(new object[] { powerDrain });
+                }
+            }
+
+            Gizmo gizmo = new Command_Action
+            {
+                defaultLabel = "WTH_Gizmo_SelfDestruct_Label".Translate(),
+                defaultDesc = "WTH_Gizmo_SelfDestruct_Description".Translate(),
+                icon = ContentFinder<Texture2D>.Get(("UI/" + "Detonate"), true),
+                disabled = isDisabled,
+                disabledReason = disabledReason,
+                action = delegate
+                {
+                    Job job = new Job(WTH_DefOf.WTH_Ability, pawn)
+                    {
+                        count = 250,
+                        playerForced = true                       
+                    };
+                    pawn.jobs.StartJob(job, JobCondition.InterruptForced);
+                    pawn.jobs.curDriver.AddFinishAction(delegate
+                    {
+                        if (pawn.jobs.curDriver is JobDriver_Ability jobDriver && !pawn.Dead && jobDriver.finished)
+                        {
+                            powerNeed.CurLevel -= powerDrain;
+                            pawn.jobs.jobQueue.EnqueueFirst(new Job(WTH_DefOf.WTH_Explode) { count = 1});
+                        }
+                    });
+                }
+            };
+            return gizmo;
+        }
+
+
         private static Gizmo CreateGizmo_SelfRepair(Pawn __instance, ExtendedPawnData pawnData)
         {
             CompRefuelable compRefuelable = __instance.GetComp<CompRefuelable>();
@@ -281,7 +336,7 @@ namespace WhatTheHack.Harmony
                 disabledReason = disabledReason,
                 action = delegate
                 {
-                    StartRepairJob(__instance, __instance, compRefuelable, powerNeed, powerDrain, fuelConsumption, 500);
+                    StartRepairJob(__instance, __instance, compRefuelable, powerNeed, powerDrain, fuelConsumption, 400);
                 }
             };
             return gizmo;
@@ -327,7 +382,7 @@ namespace WhatTheHack.Harmony
                 action = delegate(Thing target) {
                     if (target is Pawn mech)
                     {
-                        StartRepairJob(__instance, mech, compRefuelable, powerNeed, powerDrain, fuelConsumption, 700);
+                        StartRepairJob(__instance, mech, compRefuelable, powerNeed, powerDrain, fuelConsumption, 500);
                     }
 
                 }
@@ -336,19 +391,21 @@ namespace WhatTheHack.Harmony
         }
 
 
-        private static void StartRepairJob(Pawn pawn, Pawn target, CompRefuelable compRefuelable, Need_Power powerNeed, float powerDrain, float fuelConsumption, int expiryInterval)
+        private static void StartRepairJob(Pawn pawn, Pawn target, CompRefuelable compRefuelable, Need_Power powerNeed, float powerDrain, float fuelConsumption, int duration)
         {
             Job job = new Job(WTH_DefOf.WTH_Ability, target)
             {
-                count = 1,
-                expiryInterval = expiryInterval
+                count = duration,
             };
-            pawn.jobs.StartJob(job);
+            pawn.jobs.StartJob(job, JobCondition.InterruptForced, null, true);
             pawn.jobs.curDriver.AddFinishAction(delegate
             {
-                compRefuelable.ConsumeFuel(fuelConsumption);
-                powerNeed.CurLevel -= powerDrain;
-                target.health.AddHediff(WTH_DefOf.WTH_Repairing);
+                if (pawn.jobs.curDriver is JobDriver_Ability jobDriver && !pawn.Dead && jobDriver.finished)
+                {
+                    compRefuelable.ConsumeFuel(fuelConsumption);
+                    powerNeed.CurLevel -= powerDrain;
+                    target.health.AddHediff(WTH_DefOf.WTH_Repairing);
+                }
             });
         }
 

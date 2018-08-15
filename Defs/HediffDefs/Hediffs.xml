@@ -33,9 +33,15 @@
 		<labelNoun>a freshly replaced part that is regenerating</labelNoun>
 	</HediffDef>
   -->
+      <HediffDef>
+		<defName>WTH_SelfDestruct</defName>
+		<label>self destruct module installed</label>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+	  </HediffDef>
+	  
   	  <HediffDef>
 		<defName>WTH_RepairModule</defName>
-		<hediffClass>HediffWithComps</hediffClass>
 		<label>repair module installed</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>

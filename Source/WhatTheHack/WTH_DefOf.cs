@@ -21,6 +21,7 @@ namespace WhatTheHack
         public static HediffDef WTH_RepairModule;
         public static HediffDef WTH_Repairing;
         public static HediffDef WTH_RepairArm;
+        public static HediffDef WTH_SelfDestruct;
 
 
         public static DamageDef WTH_RegeneratedPartDamage;
@@ -36,6 +37,7 @@ namespace WhatTheHack
         public static JobDef WTH_ControlMechanoid;
         public static JobDef WTH_ControlMechanoid_Goto;
         public static JobDef WTH_Ability;
+        public static JobDef WTH_Explode;
 
         public static NeedDef WTH_Mechanoid_Power;
 

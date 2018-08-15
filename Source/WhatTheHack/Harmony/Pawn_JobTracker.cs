@@ -15,6 +15,22 @@ using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
 {
+    [HarmonyPatch(typeof(Pawn_JobTracker), "StartJob")]
+    static class Pawn_JobTracker_StartJob
+    {
+
+        static bool Prefix(Pawn_JobTracker __instance, Job newJob)
+        {
+            if (__instance.curDriver != null && __instance.curDriver.pawn != null && __instance.curDriver.pawn.CurJob != null)
+            {
+                if (__instance.curDriver.pawn.CurJob.def == WTH_DefOf.WTH_Ability && newJob.def != WTH_DefOf.WTH_Explode)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
     [HarmonyPatch(typeof(Pawn_JobTracker), "DetermineNextJob")]
     static class Pawn_JobTracker_DetermineNextJob
     {
