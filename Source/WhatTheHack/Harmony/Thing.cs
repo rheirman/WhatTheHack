@@ -13,10 +13,10 @@ namespace WhatTheHack.Harmony
     {
         static void Postfix(Thing __instance)
         {
-            if(__instance is Pawn)
+            if (__instance is Pawn)
             {
                 Pawn pawn = (Pawn)__instance;
-                if(pawn.RemoteControlLink() != null)
+                if (pawn.RemoteControlLink() != null)
                 {
                     if (pawn.IsHacked())
                     {
@@ -26,6 +26,7 @@ namespace WhatTheHack.Harmony
                     {
                         GenDraw.DrawRadiusRing(pawn.Position, 30f);
                     }
+                    GenDraw.DrawLineBetween(pawn.Position.ToVector3Shifted(), pawn.RemoteControlLink().Position.ToVector3Shifted());
                 }
             }
         }
