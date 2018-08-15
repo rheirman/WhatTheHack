@@ -31,6 +31,10 @@
     </statBases>
 	<rotatable>false</rotatable>
     <comps>
+	  <li Class="CompProperties_Glower">
+		<glowRadius>5</glowRadius>
+		<glowColor>(138,73,73,0)</glowColor>
+	  </li>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <basePowerConsumption>250</basePowerConsumption>
@@ -112,7 +116,7 @@
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Glower">
         <glowRadius>5</glowRadius>
-        <glowColor>(73,123,138,0)</glowColor>
+		<glowColor>(138,73,73,0)</glowColor>
       </li>
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
