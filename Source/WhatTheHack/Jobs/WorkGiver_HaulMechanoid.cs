@@ -34,7 +34,7 @@ namespace WhatTheHack.Jobs
             {
                 Building_HackingTable closestAvailableTable = Utilities.GetAvailableHackingTable(pawn, mech);
 
-                if (!mech.OnHackingTable())
+                if (closestAvailableTable != null && !mech.OnHackingTable())
                 {
                     result = new Job(WTH_DefOf.WTH_CarryToHackingTable, t, closestAvailableTable) { count = 1};
                 }

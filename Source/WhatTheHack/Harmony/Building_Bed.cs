@@ -33,7 +33,7 @@ namespace WhatTheHack.Harmony
         //Copied from vanilla, prefixing and replacing is safe because of the check for Building_MechanoidPlatform
         static bool Prefix(Building_Bed __instance, int slotIndex, ref Pawn __result)
         {
-            if(!(__instance is Building_BaseMechanoidPlatform)){
+            if(!(__instance is Building_BaseMechanoidPlatform) && !(__instance is Building_HackingTable)){
                 return true;
             }
 

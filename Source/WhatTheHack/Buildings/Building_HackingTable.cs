@@ -45,7 +45,6 @@ namespace WhatTheHack.Buildings
                 powerNeed.CurLevel = 0;
             }
 
-            Log.Message("try take ordered job LayDown");
             pawn.jobs.TryTakeOrderedJob(new Job(WTH_DefOf.WTH_Mechanoid_Rest, this));
             if (pawn.jobs.curDriver != null)
             {

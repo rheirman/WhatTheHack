@@ -24,9 +24,6 @@ namespace WhatTheHack.Jobs
                 this.FailOnNotCasualInterruptible(TargetIndex.A);
                 this.FailOn(() => pawn.Dead);
                 yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
-                yield return Toils_General.Do(delegate {
-                    Log.Message("before wait toil called for mech");
-                });
                 if (TargetA != pawn)
                 {
                     yield return Toils_General.WaitWith(TargetIndex.A, job.count, true, true);
@@ -36,7 +33,6 @@ namespace WhatTheHack.Jobs
                     yield return Toils_General.Wait(job.count).WithProgressBarToilDelay(TargetIndex.A);
                 }
                 yield return Toils_General.Do(delegate {
-                    Log.Message("finish toil called for mech");
                     finished = true;                        //ended = true;
                 });
             }
