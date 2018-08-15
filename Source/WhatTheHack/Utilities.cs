@@ -27,9 +27,12 @@ namespace WhatTheHack
         {
             return (Building_HackingTable)GenClosest.ClosestThingReachable(targetPawn.Position, targetPawn.Map, ThingRequest.ForDef(WTH_DefOf.WTH_HackingTable), PathEndMode.OnCell, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false), 9999f, delegate (Thing b)
             {
-                if (b is Building_HackingTable && !b.IsForbidden(pawn) && pawn.CanReserve(b))
+                if (b is Building_HackingTable ht && 
+                ht.TryGetComp<CompFlickable>() is CompFlickable flickable && flickable.SwitchIsOn && 
+                !b.IsBurning() &&
+                !b.IsForbidden(pawn) &&
+                pawn.CanReserve(b))
                 {
-                    Building_HackingTable ht = (Building_HackingTable)b;
                     if (ht.GetCurOccupant(Building_HackingTable.SLOTINDEX) == null)
                     {
                         return true;
@@ -43,9 +46,16 @@ namespace WhatTheHack
         {
             return (Building_BaseMechanoidPlatform)GenClosest.ClosestThingReachable(targetPawn.Position, targetPawn.Map, ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial), PathEndMode.OnCell, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false), 9999f, delegate (Thing b)
             {
-                if (b is Building_BaseMechanoidPlatform && !b.IsForbidden(pawn) && pawn.CanReserve(b))
+                if (b is Building_BaseMechanoidPlatform platform &&
+                !b.IsBurning() &&
+                !b.IsForbidden(pawn) &&
+                pawn.CanReserve(b))
                 {
-                    Building_BaseMechanoidPlatform platform = (Building_BaseMechanoidPlatform)b;
+                    CompFlickable flickable = platform.TryGetComp<CompFlickable>();
+                    if(flickable != null && !flickable.SwitchIsOn)
+                    {
+                        return false;
+                    }
                     if (platform.GetCurOccupant(Building_BaseMechanoidPlatform.SLOTINDEX) == null)
                     {
                         return true;
