@@ -32,18 +32,33 @@
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
-	<defName>WTH_HackingRemoteControl</defName>
-	<label>mechanoid control and modification</label>
-	<tab>WTH_ResearchTab</tab>
-	<techLevel>Spacer</techLevel>
-	<description>Learn how to hack the locomotion system of hacked mechanoids and how to control them with colonists using a remote controlling belt which can be crafted at the machining table. Finally your non-violent colonists can participate in battle without feeling guilty by taking control over your mechanoid palls. After all, it's the mechanoids doing the killing, not them, right?</description>
-	<baseCost>1600</baseCost>
-	<prerequisites>
-	  <li>WTH_HackingBasics</li>
-	</prerequisites>
+		<defName>WTH_MechanoidWorkshop</defName>
+		<label>mechanoid workshop</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Build a mechanoid workshop, which is used to construct all kinds of mechanoid related contraptions and upgrades, and also for scrapping advanced mechanoid parts.</description>
+		<baseCost>2400</baseCost>
+		<prerequisites>
+		  <li>WTH_HackingBasics</li>
+		</prerequisites>
 		<researchViewX>1</researchViewX>
 		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_HackingRemoteControl</defName>
+		<label>mechanoid controller belt</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Learn how to hack the locomotion system of hacked mechanoids and how to control them with colonists using a mechanoid controller belt which can be crafted at the mechanoid workshop. Finally your non-violent colonists can participate in battle without feeling guilty by taking control over your mechanoid palls. After all, it's the mechanoids doing the killing, not them, right?</description>
+		<baseCost>1600</baseCost>
+		<prerequisites>
+		  <li>WTH_MechanoidWorkshop</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+	
 	
 	<ResearchProjectDef>
 		<defName>WTH_RepairModule</defName>
@@ -53,7 +68,7 @@
 		<description>The repair module can be installed in the reactor of mechanoids. It can be loaded with mechanoid parts, and is capable of very rapidly drawing a large amount of power from the mechanoid, and redirecting it the the mech's internal mechanites. This activates the mechanites, which can repair damage consuming the parts, while slowing down the mechanoid temporarily.</description>
 		<baseCost>2400</baseCost>
 		<prerequisites>
-		  <li>WTH_HackingRemoteControl</li>
+		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
 		<researchViewX>2</researchViewX>
 		<researchViewY>1</researchViewY>
@@ -81,7 +96,7 @@
 		<description>A simple upgrade, consisting of two mortar shells and a wire that short circuits when activated. A plasteel casing prevents that the explosives go off unintentionally. Let your mechs go with a bang!</description>
 		<baseCost>800</baseCost>
 		<prerequisites>
-		  <li>WTH_HackingRemoteControl</li>
+		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
 		<researchViewX>2</researchViewX>
 		<researchViewY>2</researchViewY>
@@ -95,7 +110,6 @@
 	<description>Research the possibility to implant AI Persona Cores in hacked mechanoids, giving full control over them for combat purposes.</description>
 	<baseCost>2400</baseCost>
 	<prerequisites>
-	  <li>WTH_HackingBasics</li>
 	  <li>WTH_HackingRemoteControl</li>
 	</prerequisites>
 	<researchViewX>3</researchViewX>

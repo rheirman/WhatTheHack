@@ -1,5 +1,40 @@
 <Defs>
 	<RecipeDef>
+    <defName>WTH_Scrap_AdvancedMechanoidChip</defName>
+    <label>scrap advanced mechanoid chip</label>
+    <description>Scrap advanded mechanoid chip</description>
+    <jobString>Scrapping</jobString>
+    <workSpeedStat>SmithingSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>1000</workAmount>
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WTH_MechanoidChip</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WTH_MechanoidChip</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <WTH_MechanoidParts>5</WTH_MechanoidParts>
+    </products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+    <workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_MechanoidWorkshop</researchPrerequisite>
+  </RecipeDef>
+
+	<RecipeDef>
 		<defName>WTH_HackMechanoid</defName>
 		<label>hack mechanoid targeting device</label>
 		<description>Hacks the targeting device of a mechanoid so it targets your enemies instead of yourself</description>

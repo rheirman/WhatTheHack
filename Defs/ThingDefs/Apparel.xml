@@ -27,7 +27,7 @@
 			<effectWorking>Smith</effectWorking>
 			<soundWorking>Recipe_Machining</soundWorking>
 			<recipeUsers>
-				<li>TableMachining</li>
+				<li>WTH_TableMechanoidWorkshop</li>
 			</recipeUsers>
 		</recipeMaker>
     <thingCategories>
