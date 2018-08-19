@@ -233,6 +233,68 @@
 	</RecipeDef>
 	
 	<RecipeDef>
+		<defName>WTH_InstallTurretModule</defName>
+		<label>install turret module</label>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<description>A module that provides both structural support and and interface for gun turrets and mortars. Any turret that can be uninstalled, can be interfaced with this module. While this is a powerful upgrade, turrets do draw extra power, and have a tendency of exploding when destroyed. Can only be installed on large mechanoids.</description>
+		<jobString>Modifying mechanoid</jobString>
+		<workAmount>5000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.2</deathOnFailedSurgeryChance>		
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<effectWorking>Repair</effectWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_MechanoidParts</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_MechanoidChip</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<researchPrerequisite>WTH_TurretModule</researchPrerequisite>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+		<addsHediff>WTH_TurretModule</addsHediff>
+	</RecipeDef>
+	
+	
+	<RecipeDef>
 		<defName>WTH_InstallRepairModule</defName>
 		<label>install repair module</label>
 		<description>A module that can be loaded with mechanoid parts, and is capable of redirecting the mechanoid's power supply to its internal mechanites. This activates the mechanites, which will repair the mechanoid using the parts, but renders the mechanoid incapable of doing anything during the process.</description>

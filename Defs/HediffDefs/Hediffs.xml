@@ -47,6 +47,13 @@
 		<isBad>false</isBad>
 	  </HediffDef>
 	  
+	  <HediffDef>
+		<defName>WTH_TurretModule</defName>
+		<label>turret module installed</label>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+	  </HediffDef>
+	  
 	  <HediffDef ParentName="AddedBodyPartBase">
 		<defName>WTH_RepairArm</defName>
 		<label>repair arm</label>

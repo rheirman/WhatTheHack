@@ -12,6 +12,7 @@
 			<li>WTH_InstallRepairModule</li>
 			<li>WTH_InstallRepairArm</li>
 			<li>WTH_InstallSelfDestruct</li>
+			<li>WTH_InstallTurretModule</li>
 		</recipes>		
 	</value>
 </Operation> 

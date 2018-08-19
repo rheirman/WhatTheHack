@@ -93,7 +93,7 @@ namespace WhatTheHack
                 r.label = "WTH_Mount".Translate(new object[] { def.label });
                 r.jobString = "WTH_Mount_Jobstring".Translate(new object[] { def.label });
                 r.workerClass = typeof(Recipe_MountTurret);
-                r.targetsBodyPart = false;
+                r.appliedOnFixedBodyParts = new List<BodyPartDef>() { WTH_DefOf.Reactor };
                 r.anesthetize = false;
                 r.effectWorking = DefDatabase<EffecterDef>.AllDefs.FirstOrDefault((EffecterDef ed) => ed.defName == "Repair");
                 r.surgerySuccessChanceFactor = 99999f;
@@ -102,11 +102,16 @@ namespace WhatTheHack
                 IngredientCount ic = new IngredientCount();
                 ic.SetBaseCount(1f);
                 ic.filter.SetAllow(def, true);
-                r.ingredients.Add(ic);
-                
+                r.ingredients.Add(ic);                
                 r.fixedIngredientFilter.SetAllow(def, true);
-                //r.fixedIngredientFilter.SetAllow(def, true);
                 r.recipeUsers = new List<ThingDef>();
+                r.modExtensions = new List<DefModExtension>()
+                {
+                    new DefModExtension_Recipe(){
+                        requireBed = true,
+                        requiredHediff = WTH_DefOf.WTH_TurretModule
+                    }
+                };
                 foreach (ThingDef current in DefDatabase<ThingDef>.AllDefs.Where((ThingDef d) => d.category == ThingCategory.Pawn && d.race.IsMechanoid))
                 {
                     r.recipeUsers.Add(current);

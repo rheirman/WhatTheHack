@@ -36,7 +36,6 @@ namespace WhatTheHack.Buildings
                 }
                 pawn.health.surgeryBills.AddBill(bill);
                 bill.Part = bodyparts.First();
-
             }
             Need_Power powerNeed = pawn.needs.TryGetNeed<Need_Power>();
             if (powerNeed != null)
