@@ -58,6 +58,10 @@
     <Compile Include="Alerts\Alert_PowerLow.cs" />
     <Compile Include="Buildings\Building_BaseMechanoidPlatform.cs" />
     <Compile Include="Buildings\Building_PortableChargingPlatform.cs" />
+    <Compile Include="Comps\CompMountable.cs" />
+    <Compile Include="Comps\CompProperties_Mountable.cs" />
+    <Compile Include="Harmony\Bill.cs" />
+    <Compile Include="Harmony\Building_TurretGun.cs" />
     <Compile Include="Harmony\Caravan.cs" />
     <Compile Include="Harmony\CaravanFormingUtility.cs" />
     <Compile Include="Harmony\CaravanUIUtility.cs" />
@@ -65,6 +69,8 @@
     <Compile Include="Harmony\Dialog_FormCaravan.cs" />
     <Compile Include="Harmony\Dialog_LoadTransporters.cs" />
     <Compile Include="Harmony\Dialog_SplitCaravan.cs" />
+    <Compile Include="Harmony\EdificeGrid.cs" />
+    <Compile Include="Harmony\GenGrid.cs" />
     <Compile Include="Harmony\GenSpawn.cs" />
     <Compile Include="Harmony\Gizmo_CaravanInfo.cs" />
     <Compile Include="Harmony\ITab_Pawn_Gear.cs" />
@@ -81,6 +87,7 @@
     <Compile Include="ModExtension\DefModExtension_PawnMassCapacity.cs" />
     <Compile Include="ModExtension\DefModExtension_Recipe.cs" />
     <Compile Include="Recipes\Recipe_Hacking.cs" />
+    <Compile Include="Recipes\Recipe_MountTurret.cs" />
     <Compile Include="Recipes\Recipe_ShutDown.cs" />
     <Compile Include="Record.cs" />
     <Compile Include="Apparel\RemoteController.cs" />

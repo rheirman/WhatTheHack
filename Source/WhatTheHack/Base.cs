@@ -9,6 +9,8 @@ using HugsLib.Settings;
 using Verse;
 using RimWorld;
 using Harmony;
+using WhatTheHack.Comps;
+using WhatTheHack.Recipes;
 
 namespace WhatTheHack
 {
@@ -65,6 +67,63 @@ namespace WhatTheHack
             failureChanceHealToStanding = Settings.GetHandle<int>("failureChanceHealToStanding", "WTH_FailureChance_HealToStanding_Title".Translate(), "WTH_FailureChance_HealToStanding_Description".Translate(), 5);
             failureChanceHackPoorly = Settings.GetHandle<int>("failureChanceHackPoorly", "WTH_FailureChance_HackPoorly_Title".Translate(), "WTH_FailureChance_HackPoorly_Description".Translate(), 10);
             factionRestrictions = GetDefaultForFactionRestrictions(factionRestrictions, allMechs, allFactionNames);
+
+            GenerateImpliedRecipeDefs();
+            DefDatabase<ThingDef>.ResolveAllReferences(true);
+            SetMechMarketValue();
+        }
+
+        private static void GenerateImpliedRecipeDefs()
+        {
+            IEnumerable<RecipeDef> extraRecipeDefs = ImpliedRecipeDefs();
+            foreach (RecipeDef td in extraRecipeDefs)
+            {
+                DefGenerator.AddImpliedDef<RecipeDef>(td);
+            }
+        }
+
+        private static IEnumerable<RecipeDef> ImpliedRecipeDefs()
+        {
+            foreach (ThingDef def in from d in DefDatabase<ThingDef>.AllDefs
+                                     where d.HasComp(typeof(CompMountable))
+                                     select d)
+            {
+                RecipeDef r = new RecipeDef();
+                r.defName = "WTH_Mount_" + def.defName;
+                r.label = "WTH_Mount".Translate(new object[] { def.label });
+                r.jobString = "WTH_Mount_Jobstring".Translate(new object[] { def.label });
+                r.workerClass = typeof(Recipe_MountTurret);
+                r.targetsBodyPart = false;
+                r.anesthetize = false;
+                r.effectWorking = DefDatabase<EffecterDef>.AllDefs.FirstOrDefault((EffecterDef ed) => ed.defName == "Repair");
+                r.surgerySuccessChanceFactor = 99999f;
+                r.modContentPack = def.modContentPack;
+                r.workAmount = 2000f;
+                IngredientCount ic = new IngredientCount();
+                ic.SetBaseCount(1f);
+                ic.filter.SetAllow(def, true);
+                r.ingredients.Add(ic);
+                
+                r.fixedIngredientFilter.SetAllow(def, true);
+                //r.fixedIngredientFilter.SetAllow(def, true);
+                r.recipeUsers = new List<ThingDef>();
+                foreach (ThingDef current in DefDatabase<ThingDef>.AllDefs.Where((ThingDef d) => d.category == ThingCategory.Pawn && d.race.IsMechanoid))
+                {
+                    r.recipeUsers.Add(current);
+                }
+                r.ResolveReferences();
+                yield return r;
+            }
+        }
+        private static void SetMechMarketValue()
+        {
+            foreach (PawnKindDef kind in (from kd in DefDatabase<PawnKindDef>.AllDefs where kd.RaceProps.IsMechanoid select kd))
+            {
+                if (kind.race.BaseMarketValue < 1.0f)
+                {
+                    kind.race.BaseMarketValue = kind.combatPower * 3.0f;
+                }
+            }
         }
 
         private static SettingHandle<Dict2DRecordHandler> GetDefaultForFactionRestrictions(SettingHandle<Dict2DRecordHandler> factionRestrictions, List<ThingDef> allMechs, List<string> allFactionNames)

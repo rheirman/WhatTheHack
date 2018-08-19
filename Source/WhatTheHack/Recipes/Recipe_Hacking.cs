@@ -72,14 +72,13 @@ namespace WhatTheHack.Recipes
                 });
                 Find.LetterStack.ReceiveLetter("WTH_Letter_Success_Label".Translate(), "WTH_Letter_Success_Label_Description".Translate(), LetterDefOf.PositiveEvent, pawn);
             }
-            pawn.health.AddHediff(this.recipe.addsHediff, part, null);
+            if(this.recipe.addsHediff != null)
+            {
+                pawn.health.AddHediff(this.recipe.addsHediff, part, null);
+            }
             billDoer.skills.Learn(SkillDefOf.Crafting, pawn.kindDef.combatPower * learnfactor, false);
             billDoer.skills.Learn(SkillDefOf.Intellectual, pawn.kindDef.combatPower * learnfactor, false);
-            PostApply(pawn);
         }
-
-        protected abstract void PostApply(Pawn pawn);
-
 
         private bool CheckHackingFail(Pawn hackee, Pawn hacker, BodyPartRecord part)
         {

@@ -20,8 +20,9 @@ namespace WhatTheHack.Recipes
             return pawn.Faction != Faction.OfPlayer;
         }
 
-        protected override void PostApply(Pawn pawn)
+        public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
+            base.ApplyOnPawn(pawn, part, billDoer, ingredients, bill);
             pawn.SetFaction(Faction.OfPlayer);
             if (pawn.relations == null)
             {

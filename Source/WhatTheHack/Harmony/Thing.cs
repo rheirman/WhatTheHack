@@ -4,10 +4,44 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 using Verse;
+using WhatTheHack.Comps;
 
 namespace WhatTheHack.Harmony
 {
+    [HarmonyPatch(typeof(Thing), "Print")]
+    static class Building_DrawAt
+    {
+        static bool Prefix(Thing __instance)
+        {
+            if (__instance.TryGetComp<CompMountable>() is CompMountable comp && comp.Active)
+            {
+                return false;
+            }
+            return true;
+        }
+    }
+
+
+    [HarmonyPatch(typeof(Thing), "get_DrawPos")]
+    static class Thing_get_DrawPos
+    {
+        static bool Prefix(Thing __instance, ref Vector3 __result)
+        {
+            if(!__instance.Destroyed && __instance.TryGetComp<CompMountable>() is CompMountable comp && comp.Active)
+            {
+                Vector3 drawPos = comp.mountedTo.DrawPos;
+                drawPos.z = comp.mountedTo.DrawPos.z + 0.7f;
+                drawPos.y = comp.mountedTo.DrawPos.y + 1;
+                __result = drawPos;
+                return false;
+            }
+            return true;
+        }
+    }
+    
+
     [HarmonyPatch(typeof(Thing), "DrawExtraSelectionOverlays")]
     static class Thing_DrawExtraSelectionOverlays
     {
@@ -48,7 +82,7 @@ namespace WhatTheHack.Harmony
             foreach( Thing thing in things){
                 yield return thing;
             }
-            Random random = new Random(DateTime.Now.Millisecond);
+            System.Random random = new System.Random(DateTime.Now.Millisecond);
 
             int partsCount = random.Next(GenMath.RoundRandom(pawn.kindDef.combatPower * 0.03f * efficiency), GenMath.RoundRandom(pawn.kindDef.combatPower * 0.06f * efficiency)); //TODO: no magic number
             if (partsCount > 0)

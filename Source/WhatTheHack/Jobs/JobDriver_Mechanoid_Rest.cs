@@ -25,25 +25,6 @@ namespace WhatTheHack.Jobs
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-
-            /*
-            Toil goToPlatformToil = new Toil();
-            goToPlatformToil.AddPreInitAction(delegate
-            {
-                Building_Bed bed = (Building_Bed)pawn.CurJob.GetTarget(TargetIndex.A).Thing;
-                IntVec3 bedSleepingSlotPosFor = RestUtility.GetBedSleepingSlotPosFor(pawn, bed);
-                if (pawn.Position == bedSleepingSlotPosFor)
-                {
-                    pawn.jobs.curDriver.ReadyForNextToil();
-                }
-                else
-                {
-                    Log.Message("start path");
-                    pawn.pather.StartPath(RestUtility.GetBedSleepingSlotPosFor(pawn, bed), PathEndMode.OnCell);
-                }
-            });
-            goToPlatformToil.defaultCompleteMode = ToilCompleteMode.PatherArrival;
-            */
             
             Toil goToPlatform = Toils_Bed.GotoBed(TargetIndex.A);
             yield return goToPlatform;

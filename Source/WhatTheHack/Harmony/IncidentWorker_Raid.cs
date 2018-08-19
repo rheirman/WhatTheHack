@@ -21,8 +21,6 @@ namespace WhatTheHack.Harmony
             {
                 CodeInstruction instruction = instructionsList[i];
                 yield return instruction;
-                //Log.Message(instructionsList[i].opcode.ToString());
-                //Log.Message(instructionsList[i].operand as String);
 
                 if (instructionsList[i].operand == AccessTools.Method(typeof(IncidentWorker_Raid), "GetLetterLabel")) //Identifier for which IL line to inject to
                 {

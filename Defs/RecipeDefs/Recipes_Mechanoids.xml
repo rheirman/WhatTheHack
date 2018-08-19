@@ -110,17 +110,12 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>AIPersonaCore</li>
+						<li>Turret_MiniTurret</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
 			</li>
 		</ingredients>
-		<fixedIngredientFilter>
-			<categories>
-				<li>Medicine</li>
-			</categories>
-		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
 			<li>ArtificialBrain</li>
 		</appliedOnFixedBodyParts>

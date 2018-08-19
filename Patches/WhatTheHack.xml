@@ -15,7 +15,12 @@
 		</recipes>		
 	</value>
 </Operation> 
-
+<Operation Class="PatchOperationAdd">
+	<xpath>*/ThingDef[thingClass = "Building_TurretGun" and minifiedDef]/comps</xpath>
+	<value>
+		<li Class="WhatTheHack.Comps.CompProperties_Mountable"></li>
+	</value>
+</Operation> 
 <Operation Class="PatchOperationSequence">
 	<success>Always</success>
 	<operations>

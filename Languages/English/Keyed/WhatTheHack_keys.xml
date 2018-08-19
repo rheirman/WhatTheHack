@@ -88,4 +88,8 @@
 	<WTH_Warning_DaysOfFuel>You caravan has only {0} days worth of fuel for powering your mechanoids, and your mechanoids might run out of power quickly.</WTH_Warning_DaysOfFuel>
 	<WTH_Message_CaravanOutOfFuel>{0} has run out of fuel.</WTH_Message_CaravanOutOfFuel>
 	<WTH_Message_CannotDrop>This equipment is attached to the pawn, therefore you cannot drop it</WTH_Message_CannotDrop>
+	
+	<WTH_Mount>Mount {0}</WTH_Mount>
+	<WTH_Mount_Jobstring>Mounting {0}</WTH_Mount_Jobstring>
+	
 </LanguageData>

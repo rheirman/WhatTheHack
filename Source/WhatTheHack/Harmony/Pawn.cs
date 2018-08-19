@@ -11,6 +11,7 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 using WhatTheHack.Buildings;
+using WhatTheHack.Comps;
 using WhatTheHack.Duties;
 using WhatTheHack.Jobs;
 using WhatTheHack.Needs;
@@ -86,8 +87,11 @@ namespace WhatTheHack.Harmony
                 !__instance.RemoteControlLink().Drafted &&
                 (float)__instance.pather.Destination.Cell.DistanceToSquared(__instance.RemoteControlLink().Position) <= 30f * 30f))
             {
-                __result = true;
-                return false;
+                if (!__instance.Dead)
+                {
+                    __result = true;
+                    return false;
+                }
             }
             return true;
         }
@@ -152,6 +156,8 @@ namespace WhatTheHack.Harmony
             gizmoList.Add(CreateGizmo_SearchAndDestroy(__instance, pawnData));
             gizmoList.Add(CreateGizmo_AutoRecharge(__instance, pawnData));
             HediffSet hediffSet = __instance.health.hediffSet;
+            gizmoList.Add(CreateGizmo_Test(__instance, pawnData));
+
             if (hediffSet.HasHediff(WTH_DefOf.WTH_SelfDestruct))
             {
                 gizmoList.Add(CreateGizmo_SelfDestruct(__instance, pawnData));
@@ -166,6 +172,44 @@ namespace WhatTheHack.Harmony
             }
 
         }
+
+        private static Gizmo CreateGizmo_Test(Pawn pawn, ExtendedPawnData pawnData)
+        {
+
+            Gizmo gizmo = new Command_Target
+            {
+                defaultLabel = "test",
+                defaultDesc = "testDesc",
+                icon = ContentFinder<Texture2D>.Get(("Things/" + "Mote_Charging"), true), //TODO: other icon
+                targetingParams = GetTargetingParametersForTurret(),
+                action = delegate (Thing target) {
+                    Building b = target as Building;
+                    CompMountable comp = b.TryGetComp<CompMountable>();
+                    comp.MountToPawn(pawn);
+                }
+            };
+            return gizmo;
+        }
+
+        private static TargetingParameters GetTargetingParametersForTurret()
+        {
+            return new TargetingParameters
+            {
+                canTargetPawns = false,
+                canTargetBuildings = true,
+                mapObjectTargetsMustBeAutoAttackable = false,
+                validator = delegate (TargetInfo targ)
+                {
+                    if (!targ.HasThing)
+                    {
+                        return false;
+                    }
+                    Building building = targ.Thing as Building;
+                    return building != null && building.TryGetComp<CompMountable>() != null;
+                }
+            };
+        }
+
 
         private static Gizmo CreateGizmo_SearchAndDestroy(Pawn __instance, ExtendedPawnData pawnData)
         {
