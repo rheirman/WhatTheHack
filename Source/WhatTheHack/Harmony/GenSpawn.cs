@@ -46,10 +46,17 @@ namespace WhatTheHack.Harmony
 
         public static void Modified_WipeExistingThings(IntVec3 thingPos, Rot4 thingRot, BuildableDef thingDef, Map map, DestroyMode mode, Thing thing)
         {
+            if(thing is Building_TurretGun)
+            {
+                Log.Message("spawning Building_TurretGun");
+                Log.Message("CompMountable: " + (thing.TryGetComp<CompMountable>() != null));
+                Log.Message("CompMountable mountedTo is not null: " + (thing.TryGetComp<CompMountable>() is CompMountable test && test.mountedTo != null));
+            }
             if (!(thing.TryGetComp<CompMountable>() is CompMountable comp && comp.Active))
             {
                 GenSpawn.WipeExistingThings(thingPos, thingRot, thingDef, map, mode);
             }
+
         }
     }
 

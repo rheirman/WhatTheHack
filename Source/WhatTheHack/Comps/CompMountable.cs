@@ -56,9 +56,11 @@ namespace WhatTheHack.Comps
             {
                 parent = (ThingWithComps)parent.SplitOff(1);
                 //mountedTo.Map.spawnedThings.TryAdd(parent, 1);
+                Log.Message("calling GenSpawn.Spawn");
                 GenSpawn.Spawn(parent, mountedTo.Position, mountedTo.Map, Rot4.North, WipeMode.Vanish, false);
-                SetPowerComp();
             }
+            SetPowerComp();
+
         }
 
         private void SetPowerComp()
@@ -66,7 +68,11 @@ namespace WhatTheHack.Comps
             CompPowerTrader compPower = parent.GetComp<CompPowerTrader>();
             if (compPower != null && parent.Spawned)
             {
-                compPower.PowerOn = true;
+                CompFlickable compFlickable = parent.GetComp<CompFlickable>();
+                if (compFlickable != null && compFlickable.SwitchIsOn)
+                {
+                    compPower.PowerOn = true;
+                }
             }
         }
 
