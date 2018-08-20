@@ -23,7 +23,7 @@ namespace WhatTheHack
         public static HediffDef WTH_RepairArm;
         public static HediffDef WTH_SelfDestruct;
         public static HediffDef WTH_TurretModule;
-
+        public static HediffDef WTH_MountedTurret;
 
         public static DamageDef WTH_RegeneratedPartDamage;
 

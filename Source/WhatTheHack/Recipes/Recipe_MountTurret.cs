@@ -13,7 +13,6 @@ namespace WhatTheHack.Recipes
     {
         protected override bool CanApplyOn(Pawn pawn)
         {
-            Log.Message("calling CanApplyOn");
             bool hasRequiredHediff = true;
             if (recipe.HasModExtension<DefModExtension_Recipe>())
             {
@@ -28,11 +27,6 @@ namespace WhatTheHack.Recipes
             bool mortarResearchCompleted = DefDatabase<ResearchProjectDef>.AllDefs.FirstOrDefault((ResearchProjectDef rp) => rp == WTH_DefOf.WTH_TurretModule_Mortars && rp.IsFinished) != null;
             bool isTurretGun = !isArtillery;
             bool turretGunResearchCompleted = DefDatabase<ResearchProjectDef>.AllDefs.FirstOrDefault((ResearchProjectDef rp) => rp == WTH_DefOf.WTH_TurretModule_GunTurrets && rp.IsFinished) != null;
-
-            Log.Message("is artillery: " + isArtillery);
-            Log.Message("mortarResearchCompleted " + mortarResearchCompleted);
-            Log.Message("isTurretGun: " + isTurretGun);
-            Log.Message("turretGunResearchCompleted: " + turretGunResearchCompleted);
 
             if(isArtillery && !mortarResearchCompleted)
             {

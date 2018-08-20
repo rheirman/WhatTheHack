@@ -16,7 +16,7 @@ namespace WhatTheHack.Harmony
         {
             if (th.TryGetComp<CompMountable>() is CompMountable comp && comp.Active)
             {
-                comp.mountedTo = null;
+                comp.Uninstall();
             }
         }
     }

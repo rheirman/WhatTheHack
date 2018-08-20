@@ -156,7 +156,6 @@ namespace WhatTheHack.Harmony
             gizmoList.Add(CreateGizmo_SearchAndDestroy(__instance, pawnData));
             gizmoList.Add(CreateGizmo_AutoRecharge(__instance, pawnData));
             HediffSet hediffSet = __instance.health.hediffSet;
-            gizmoList.Add(CreateGizmo_Test(__instance, pawnData));
 
             if (hediffSet.HasHediff(WTH_DefOf.WTH_SelfDestruct))
             {
@@ -172,25 +171,6 @@ namespace WhatTheHack.Harmony
             }
 
         }
-
-        private static Gizmo CreateGizmo_Test(Pawn pawn, ExtendedPawnData pawnData)
-        {
-
-            Gizmo gizmo = new Command_Target
-            {
-                defaultLabel = "test",
-                defaultDesc = "testDesc",
-                icon = ContentFinder<Texture2D>.Get(("Things/" + "Mote_Charging"), true), //TODO: other icon
-                targetingParams = GetTargetingParametersForTurret(),
-                action = delegate (Thing target) {
-                    Building b = target as Building;
-                    CompMountable comp = b.TryGetComp<CompMountable>();
-                    comp.MountToPawn(pawn);
-                }
-            };
-            return gizmo;
-        }
-
         private static TargetingParameters GetTargetingParametersForTurret()
         {
             return new TargetingParameters

@@ -1,9 +1,11 @@
-﻿using RimWorld;
+﻿using Harmony;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
+using Verse.AI;
 
 namespace WhatTheHack.Comps
 {
@@ -31,6 +33,22 @@ namespace WhatTheHack.Comps
             Configure();
             //parent.holdingOwner = pawn.inventory.innerContainer;
         }
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
+        {
+            Uninstall();
+            base.PostDestroy(mode, previousMap);
+        }
+        public void Uninstall()
+        {
+            if (Active && mountedTo.health != null)
+            {
+                if (mountedTo.health.hediffSet.HasHediff(WTH_DefOf.WTH_MountedTurret))
+                {
+                    mountedTo.health.RemoveHediff(mountedTo.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.WTH_MountedTurret));
+                }
+                mountedTo = null;
+            }
+        }
 
         public override void CompTick()
         {
@@ -43,6 +61,22 @@ namespace WhatTheHack.Comps
                 }
                 Configure();
             }
+            if (Active)
+            {
+                Building_TurretGun turret = (Building_TurretGun)parent;
+                if (turret.Map.reservationManager.IsReservedByAnyoneOf(turret, Faction.OfPlayer))
+                {
+                    if(mountedTo.CurJobDef != JobDefOf.Wait_Combat)
+                    {
+                        mountedTo.jobs.StartJob(new Job(JobDefOf.Wait_Combat) { expiryInterval = 20 }, JobCondition.InterruptForced);
+                    }
+                }
+            }
+        }
+        public override void CompTickRare()
+        {
+            base.CompTickRare();
+
         }
 
         private void Configure()
@@ -56,7 +90,6 @@ namespace WhatTheHack.Comps
             {
                 parent = (ThingWithComps)parent.SplitOff(1);
                 //mountedTo.Map.spawnedThings.TryAdd(parent, 1);
-                Log.Message("calling GenSpawn.Spawn");
                 GenSpawn.Spawn(parent, mountedTo.Position, mountedTo.Map, Rot4.North, WipeMode.Vanish, false);
             }
             SetPowerComp();

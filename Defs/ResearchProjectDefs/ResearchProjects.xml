@@ -116,7 +116,7 @@
 	
 	<ResearchProjectDef>
 		<defName>WTH_TurretModule_GunTurrets</defName>
-		<label>Mount gun turrets</label>
+		<label>Gun turret mounting</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>Learn how to mount gun turrets on the turret module. Any gun turret that can be uninstalled after building, can be installed on the turret module.</description>
@@ -130,7 +130,7 @@
 	
 	<ResearchProjectDef>
 		<defName>WTH_TurretModule_Mortars</defName>
-		<label>Mount mortars</label>
+		<label>Mortar mounting</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>Learn how to mount mortars on the turret module. Mortars still have to be operated manually by colonists and don't draw any power from the mechanoid. This upgrade has only a few benefits compared to using traditional mortars (quicker setup when raiding, less space needed). However, having a few mortars installed on mechanoids is a good way to impress your enemies.</description>

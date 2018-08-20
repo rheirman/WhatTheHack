@@ -99,6 +99,7 @@ namespace WhatTheHack
                 r.surgerySuccessChanceFactor = 99999f;
                 r.modContentPack = def.modContentPack;
                 r.workAmount = 2000f;
+                r.addsHediff = WTH_DefOf.WTH_MountedTurret;
                 IngredientCount ic = new IngredientCount();
                 ic.SetBaseCount(1f);
                 ic.filter.SetAllow(def, true);
