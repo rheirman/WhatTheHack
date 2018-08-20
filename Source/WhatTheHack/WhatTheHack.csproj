@@ -77,6 +77,7 @@
     <Compile Include="Harmony\LordToil_Siege.cs" />
     <Compile Include="Harmony\LovePartnerRelationUtility.cs" />
     <Compile Include="Harmony\MassUtility.cs" />
+    <Compile Include="Harmony\MinifyUtility.cs" />
     <Compile Include="Harmony\PawnCapacitiesHandler.cs" />
     <Compile Include="Harmony\PowerConnectionMaker.cs" />
     <Compile Include="Harmony\TransferableUIUtility.cs" />

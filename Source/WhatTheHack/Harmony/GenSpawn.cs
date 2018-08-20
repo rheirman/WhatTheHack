@@ -16,13 +16,8 @@ namespace WhatTheHack.Harmony
     {
         static bool Prefix(ref Thing newThing, ref WipeMode wipeMode, bool respawningAfterLoad)
         {
-            if(newThing is Building)
-            {
-                Log.Message("spawned building with def: " + newThing.def.defName);
-            }
             if (newThing is Building_TurretGun && respawningAfterLoad)
             {
-                Log.Message("------ spawned Building_TurretGun ------");
                 if (newThing.TryGetComp<CompMountable>() is CompMountable comp && comp.Active)
                 {
                     comp.mountedTo.inventory.innerContainer.TryAdd(newThing, 1);
