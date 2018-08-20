@@ -12,5 +12,6 @@ namespace WhatTheHack
         public float deathOnFailedSurgeryChance = -1f;
         public bool requireBed;
         public HediffDef requiredHediff;
+        public float minBodySize = -1f;
     }
 }

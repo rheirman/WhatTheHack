@@ -17,6 +17,7 @@ namespace WhatTheHack.Recipes
         protected override bool CanApplyOn(Pawn pawn)
         {
             bool hasRequiredHediff = true;
+            bool hasRequiredBodySize = true;
             if (recipe.HasModExtension<DefModExtension_Recipe>()) {
 
                 DefModExtension_Recipe ext = recipe.GetModExtension<DefModExtension_Recipe>();
@@ -24,8 +25,13 @@ namespace WhatTheHack.Recipes
                 {
                     hasRequiredHediff = false;
                 }
+                if(pawn.BodySize < ext.minBodySize)
+                {
+                    hasRequiredBodySize = false;
+                }
             }
-            return pawn.IsHacked() && !pawn.health.hediffSet.HasHediff(recipe.addsHediff) && hasRequiredHediff;
+
+            return pawn.IsHacked() && !pawn.health.hediffSet.HasHediff(recipe.addsHediff) && hasRequiredHediff && hasRequiredBodySize;
         }
         public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {

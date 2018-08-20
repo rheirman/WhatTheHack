@@ -288,6 +288,7 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
+				<minBodySize>2.0</minBodySize>
 			</li>
 		</modExtensions>
 		<addsHediff>WTH_TurretModule</addsHediff>
