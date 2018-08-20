@@ -14,8 +14,26 @@ namespace WhatTheHack.Harmony
     [HarmonyPatch(new Type[] { typeof(Thing), typeof(IntVec3), typeof(Map), typeof(Rot4), typeof(WipeMode), typeof(bool) })]
     class GenSpawn_Spawn
     {
+        static bool Prefix(ref Thing newThing, ref WipeMode wipeMode, bool respawningAfterLoad)
+        {
+            if(newThing is Building)
+            {
+                Log.Message("spawned building with def: " + newThing.def.defName);
+            }
+            if (newThing is Building_TurretGun && respawningAfterLoad)
+            {
+                Log.Message("------ spawned Building_TurretGun ------");
+                if (newThing.TryGetComp<CompMountable>() is CompMountable comp && comp.Active)
+                {
+                    comp.mountedTo.inventory.innerContainer.TryAdd(newThing, 1);
+                    return false;
+                }
+            }
+            return true;
+        }
+
         //Only initialize the refeulcomp of mechanoids that have a repairmodule. 
-        static void Postfix(ref Thing newThing)
+        static void Postfix(ref Thing newThing, bool respawningAfterLoad)
         {
             if (!(newThing is ThingWithComps thingWithComps))
             {
@@ -46,12 +64,6 @@ namespace WhatTheHack.Harmony
 
         public static void Modified_WipeExistingThings(IntVec3 thingPos, Rot4 thingRot, BuildableDef thingDef, Map map, DestroyMode mode, Thing thing)
         {
-            if(thing is Building_TurretGun)
-            {
-                Log.Message("spawning Building_TurretGun");
-                Log.Message("CompMountable: " + (thing.TryGetComp<CompMountable>() != null));
-                Log.Message("CompMountable mountedTo is not null: " + (thing.TryGetComp<CompMountable>() is CompMountable test && test.mountedTo != null));
-            }
             if (!(thing.TryGetComp<CompMountable>() is CompMountable comp && comp.Active))
             {
                 GenSpawn.WipeExistingThings(thingPos, thingRot, thingDef, map, mode);

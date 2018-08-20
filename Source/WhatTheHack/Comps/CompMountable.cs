@@ -35,6 +35,7 @@ namespace WhatTheHack.Comps
         public override void CompTick()
         {
             base.CompTick();
+            Log.Message("calling CompTick!");
             if (Active)
             {
                 if (parent.Spawned)
