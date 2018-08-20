@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using Verse;
 using Verse.AI;
+using WhatTheHack.Needs;
 
 namespace WhatTheHack.Comps
 {
@@ -64,7 +65,7 @@ namespace WhatTheHack.Comps
             if (Active)
             {
                 Building_TurretGun turret = (Building_TurretGun)parent;
-                if (turret.Map.reservationManager.IsReservedByAnyoneOf(turret, Faction.OfPlayer))
+                if (turret.Map != null && turret.Map.reservationManager.IsReservedByAnyoneOf(turret, Faction.OfPlayer))
                 {
                     if(mountedTo.CurJobDef != JobDefOf.Wait_Combat)
                     {
@@ -72,12 +73,20 @@ namespace WhatTheHack.Comps
                     }
                 }
             }
+            if (Active && parent.IsHashIntervalTick(120))
+            {
+                CompPowerTrader compPower = parent.GetComp<CompPowerTrader>();
+                CompFlickable compFlickable = parent.GetComp<CompFlickable>();
+                if (compPower != null && compFlickable != null && compFlickable.SwitchIsOn && parent.Spawned)
+                {
+                    if (mountedTo.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) is Need_Power powerNeed && !powerNeed.DirectlyPowered(mountedTo))
+                    {
+                        powerNeed.CurLevel -= compPower.Props.basePowerConsumption * 0.008f;
+                    }
+                }
+            }
         }
-        public override void CompTickRare()
-        {
-            base.CompTickRare();
 
-        }
 
         private void Configure()
         {

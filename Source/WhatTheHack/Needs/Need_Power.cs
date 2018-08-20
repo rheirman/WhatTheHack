@@ -162,7 +162,7 @@ namespace WhatTheHack.Needs
             {
                 return 0;
             }
-            if(!base.pawn.IsActivated() && base.pawn.OnBaseMechanoidPlatform() && ((Building_BaseMechanoidPlatform)base.pawn.CurrentBed()).HasPowerNow())
+            if(DirectlyPowered(pawn))
             {
                 return 0;
             }
@@ -171,6 +171,10 @@ namespace WhatTheHack.Needs
                 return 0;
             }
             return 2.66666666E-05f * this.PowerRate;
+        }
+        public bool DirectlyPowered(Pawn pawn)
+        {
+            return !base.pawn.IsActivated() && base.pawn.OnBaseMechanoidPlatform() && ((Building_BaseMechanoidPlatform)base.pawn.CurrentBed()).HasPowerNow();
         }
 
         public override void NeedInterval()
