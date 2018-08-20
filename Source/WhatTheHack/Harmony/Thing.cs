@@ -32,7 +32,7 @@ namespace WhatTheHack.Harmony
             if(!__instance.Destroyed && __instance.TryGetComp<CompMountable>() is CompMountable comp && comp.Active)
             {
                 Vector3 drawPos = comp.mountedTo.DrawPos;
-                drawPos.z = comp.mountedTo.DrawPos.z + 0.7f;
+                drawPos.z = comp.mountedTo.DrawPos.z + comp.drawOffset;
                 drawPos.y = comp.mountedTo.DrawPos.y + 1;
                 __result = drawPos;
                 return false;

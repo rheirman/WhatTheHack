@@ -23,7 +23,7 @@ namespace WhatTheHack.Recipes
                     hasRequiredHediff = false;
                 }
             }
-            bool isArtillery = recipe.ingredients.FirstOrDefault((IngredientCount ic) => ic.FixedIngredient is ThingDef td && td.placeWorkers.FirstOrDefault((Type t) => t == typeof(PlaceWorker_NotUnderRoof)) != null) != null;
+            bool isArtillery = recipe.ingredients.FirstOrDefault((IngredientCount ic) => ic.FixedIngredient is ThingDef td && td.placeWorkers != null && td.placeWorkers.FirstOrDefault((Type t) => t == typeof(PlaceWorker_NotUnderRoof)) != null) != null;
             bool mortarResearchCompleted = DefDatabase<ResearchProjectDef>.AllDefs.FirstOrDefault((ResearchProjectDef rp) => rp == WTH_DefOf.WTH_TurretModule_Mortars && rp.IsFinished) != null;
             bool isTurretGun = !isArtillery;
             bool turretGunResearchCompleted = DefDatabase<ResearchProjectDef>.AllDefs.FirstOrDefault((ResearchProjectDef rp) => rp == WTH_DefOf.WTH_TurretModule_GunTurrets && rp.IsFinished) != null;
