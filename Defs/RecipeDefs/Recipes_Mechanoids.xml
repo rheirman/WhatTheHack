@@ -110,7 +110,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>Turret_MiniTurret</li>
+						<li>AIPersonaCore</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>

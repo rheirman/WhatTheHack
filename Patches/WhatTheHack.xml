@@ -37,8 +37,6 @@
 					  </thingDefs>
 					</fuelFilter>
 					<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-					 <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
-					<initialConfigurableTargetFuelLevel>10.0</initialConfigurableTargetFuelLevel>
 				</li>
 			</value>
 		</li> 
@@ -61,8 +59,6 @@
 						  </thingDefs>
 						</fuelFilter>
 						<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-						 <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
-						<initialConfigurableTargetFuelLevel>10.0</initialConfigurableTargetFuelLevel>
 					</li>
 				</comps>
 			</value>
