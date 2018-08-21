@@ -114,7 +114,7 @@ namespace WhatTheHack.Harmony
                     TryHealRandomInjury(__instance, pawn, WTH_DefOf.WTH_MechanoidPlatform.building.bed_healPerDay * 10 / RimWorld.GenDate.TicksPerDay , platform);
                 }
             }
-            if (platform.RegenerateActive && pawn.IsHashIntervalTick(100) && platform.refuelableComp.Fuel > 4f) //TODO: no magic number
+            if (!__instance.hediffSet.HasNaturallyHealingInjury() && platform.RegenerateActive && pawn.IsHashIntervalTick(100) && platform.refuelableComp.Fuel > 4f) //TODO: no magic number
             {
                 TryRegeneratePart(pawn, platform);
                 RegainWeapon(pawn);

@@ -70,7 +70,6 @@ namespace WhatTheHack.Recipes
                     billDoer,
                     pawn
                 });
-                Find.LetterStack.ReceiveLetter("WTH_Letter_Success_Label".Translate(), "WTH_Letter_Success_Label_Description".Translate(), LetterDefOf.PositiveEvent, pawn);
             }
             if(this.recipe.addsHediff != null)
             {
@@ -78,7 +77,9 @@ namespace WhatTheHack.Recipes
             }
             billDoer.skills.Learn(SkillDefOf.Crafting, pawn.kindDef.combatPower * learnfactor, false);
             billDoer.skills.Learn(SkillDefOf.Intellectual, pawn.kindDef.combatPower * learnfactor, false);
+            PostSuccessfulApply(pawn, part, billDoer, ingredients, bill);
         }
+        protected abstract void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill);
 
         private bool CheckHackingFail(Pawn hackee, Pawn hacker, BodyPartRecord part)
         {

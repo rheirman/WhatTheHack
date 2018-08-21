@@ -20,10 +20,10 @@ namespace WhatTheHack.Recipes
             return pawn.Faction != Faction.OfPlayer;
         }
 
-        public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
+        protected override void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
-            base.ApplyOnPawn(pawn, part, billDoer, ingredients, bill);
             pawn.SetFaction(Faction.OfPlayer);
+            Find.LetterStack.ReceiveLetter("WTH_Letter_Success_Label".Translate(), "WTH_Letter_Success_Label_Description".Translate(), LetterDefOf.PositiveEvent, pawn);
             if (pawn.relations == null)
             {
                 pawn.relations = new Pawn_RelationsTracker(pawn);
@@ -37,7 +37,6 @@ namespace WhatTheHack.Recipes
                 pawn.story = new Pawn_StoryTracker(pawn);
             }
         }
-
         protected override void HackingFailEvent(Pawn hackee, BodyPartRecord part, System.Random r)
         {
             int randInt = r.Next(1, 100);
@@ -162,6 +161,8 @@ namespace WhatTheHack.Recipes
             Find.LetterStack.ReceiveLetter("WTH_Letter_HealedToStanding_Label".Translate(), "WTH_Letter_HealedToStanding_Description".Translate(), LetterDefOf.ThreatBig, pawn);
 
         }
+
+
     }
     
 }

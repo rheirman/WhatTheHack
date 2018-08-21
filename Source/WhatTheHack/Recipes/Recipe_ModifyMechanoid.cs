@@ -33,9 +33,9 @@ namespace WhatTheHack.Recipes
 
             return pawn.IsHacked() && !pawn.health.hediffSet.HasHediff(recipe.addsHediff) && hasRequiredHediff && hasRequiredBodySize;
         }
-        public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
+
+        protected override void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
-            base.ApplyOnPawn(pawn, part, billDoer, ingredients, bill);
             if (this.recipe.addsHediff == WTH_DefOf.WTH_RepairModule)
             {
                 pawn.InitializeComps();
