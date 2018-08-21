@@ -45,7 +45,7 @@
 	<WTH_Gizmo_RemoteControlDeactivate_Description>Deactivates the remote control device, giving control back to the mechanoid</WTH_Gizmo_RemoteControlDeactivate_Description>
 	
 	<WTH_Gizmo_Regenerate_Label>Regenerate body parts</WTH_Gizmo_Regenerate_Label>
-	<WTH_Gizmo_Regenerate_Description>When this is active, the platform regenerates body parts of the mechanoid that are missing. Regenerating body parts consumes {0} mechanoid parts for each body part.</WTH_Gizmo_Regenerate_Description>
+	<WTH_Gizmo_Regenerate_Description>When this is active, the platform regenerates body parts of the mechanoid that are missing. Regenerating body parts consumes {0} mechanoid parts for each body part. Parts only start to regenerate when the mech has no other damage</WTH_Gizmo_Regenerate_Description>
 	<WTH_Gizmo_Repair_Label>Repair mechanoid</WTH_Gizmo_Repair_Label>
 	<WTH_Gizmo_Repair_Description>When this is active, the platform repairs any mechanoid on the platform by activating its internal mechanites by providing enough power, and material to work with. The mechanites consume mechanoid parts stored in the platform in the process.</WTH_Gizmo_Repair_Description>
 
