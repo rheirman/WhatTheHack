@@ -72,6 +72,16 @@ namespace WhatTheHack
             }
             return null;
         }
+
+        public static BodyPartRecord TryGetReactor(this Pawn pawn)
+        {
+            BodyPartRecord result = null;
+            if (pawn.health != null)
+            {
+                result = pawn.health.hediffSet.GetNotMissingParts().FirstOrDefault((BodyPartRecord bpr) => bpr.def.defName == "Reactor");
+            }
+            return result;
+        }
         /*
         public static Building_HackingTable HackingTable(this Pawn pawn)
         {

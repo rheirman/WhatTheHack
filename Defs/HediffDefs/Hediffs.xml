@@ -150,6 +150,14 @@
 		<defName>WTH_TargetingHacked</defName>
 		<label>targeting hacked</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<causesNeed>WTH_Mechanoid_Maintenance</causesNeed>
+		<isBad>false</isBad>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>WTH_BackupBattery</defName>
+		<label>running on backup battery</label>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<causesNeed>WTH_Mechanoid_Power</causesNeed>
 		<isBad>false</isBad>
 	  </HediffDef>
@@ -175,6 +183,50 @@
 		<label>targeting destroyed</label>
 		<defaultLabelColor>(1.0, 0.5, 0.1)</defaultLabelColor>
 		<isBad>false</isBad>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>WTH_LowMaintenance</defName>
+		<label>poorly maintained</label>
+		<isBad>true</isBad>
+		<stages>
+		  <li>
+			<capMods>
+			  <li>
+				<capacity>Moving</capacity>
+				<offset>-0.10</offset>
+			  </li>
+			  <li>
+			  	<capacity>Manipulation</capacity>
+				<offset>-0.10</offset>
+			  </li>
+			</capMods>
+		  </li>
+		</stages>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>WTH_VeryLowMaintenance</defName>
+		<label>very poorly maintained</label>
+		<isBad>true</isBad>
+		<stages>
+		  <li>
+			<capMods>
+			  <li>
+				<capacity>Moving</capacity>
+				<offset>-0.20</offset>
+			  </li>
+			  <li>
+			  	<capacity>Manipulation</capacity>
+				<offset>-0.20</offset>
+			  </li>
+			  <li>
+			  	<capacity>Consciousness</capacity>
+				<offset>-0.20</offset>
+			  </li>
+			</capMods>
+		  </li>
+		</stages>
 	  </HediffDef>
 	  
 	  <HediffDef>

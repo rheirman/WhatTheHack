@@ -12,9 +12,12 @@ namespace WhatTheHack
     class WTH_DefOf
     {
         public static HediffDef WTH_TargetingHacked;
+        public static HediffDef WTH_BackupBattery;
         public static HediffDef WTH_ReplacedAI;
         public static HediffDef WTH_VeryLowPower;
         public static HediffDef WTH_NoPower;
+        public static HediffDef WTH_LowMaintenance;
+        public static HediffDef WTH_VeryLowMaintenance;
         public static HediffDef WTH_TargetingHackedPoorly;
         public static HediffDef WTH_LocomotionHacked;
         public static HediffDef WTH_RegeneratedPart;

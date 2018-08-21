@@ -20,6 +20,20 @@ namespace WhatTheHack.Needs
 
         //private const float BaseMalnutritionSeverityPerInterval = 0.00113333331f;
 
+        public Need_Power(Pawn pawn) : base(pawn)
+        {
+        }
+
+        public override void NeedInterval()
+        {
+            if (!base.IsFrozen)
+            {
+                this.lastLevel = CurLevel;
+                this.CurLevel -= this.PowerFallPerTick * 150f;
+            }
+            SetHediffs();
+        }
+
         public bool OutOfPower
         {
             get
@@ -146,10 +160,6 @@ namespace WhatTheHack.Needs
             }
         }
 
-        public Need_Power(Pawn pawn) : base(pawn)
-        {
-        }
-
         public override void ExposeData()
         {
             base.ExposeData();
@@ -175,16 +185,6 @@ namespace WhatTheHack.Needs
         public bool DirectlyPowered(Pawn pawn)
         {
             return !base.pawn.IsActivated() && base.pawn.OnBaseMechanoidPlatform() && ((Building_BaseMechanoidPlatform)base.pawn.CurrentBed()).HasPowerNow();
-        }
-
-        public override void NeedInterval()
-        {
-            if (!base.IsFrozen)
-            {
-                this.lastLevel = CurLevel;
-                this.CurLevel -= this.PowerFallPerTick * 150f;
-            }
-            SetHediffs();
         }
 
         public override void SetInitialLevel()

@@ -88,6 +88,8 @@
     <Compile Include="ModExtension\DefModExtension_PawnCapacity.cs" />
     <Compile Include="ModExtension\DefModExtension_PawnMassCapacity.cs" />
     <Compile Include="ModExtension\DefModExtension_Recipe.cs" />
+    <Compile Include="Needs\MaintenanceCategory.cs" />
+    <Compile Include="Needs\Need_Maintenance.cs" />
     <Compile Include="Recipes\Recipe_Hacking.cs" />
     <Compile Include="Recipes\Recipe_MountTurret.cs" />
     <Compile Include="Recipes\Recipe_ShutDown.cs" />

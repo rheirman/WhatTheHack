@@ -22,6 +22,7 @@ namespace WhatTheHack.Recipes
 
         protected override void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
+            pawn.health.AddHediff(WTH_DefOf.WTH_BackupBattery, pawn.TryGetReactor());
             pawn.SetFaction(Faction.OfPlayer);
             Find.LetterStack.ReceiveLetter("WTH_Letter_Success_Label".Translate(), "WTH_Letter_Success_Label_Description".Translate(), LetterDefOf.PositiveEvent, pawn);
             if (pawn.relations == null)
@@ -37,6 +38,8 @@ namespace WhatTheHack.Recipes
                 pawn.story = new Pawn_StoryTracker(pawn);
             }
         }
+        
+
         protected override void HackingFailEvent(Pawn hackee, BodyPartRecord part, System.Random r)
         {
             int randInt = r.Next(1, 100);

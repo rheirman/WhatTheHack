@@ -27,8 +27,14 @@ namespace WhatTheHack.Harmony
             return true;
         }
 
-        //Only initialize the refeulcomp of mechanoids that have a repairmodule. 
         static void Postfix(ref Thing newThing, bool respawningAfterLoad)
+        {
+            AddBatteryHediffIfNeeded(newThing);
+            RemoveConditionalComps(newThing);
+        }
+
+        //Only initialize the refeulcomp of mechanoids that have a repairmodule. 
+        private static void RemoveConditionalComps(Thing newThing)
         {
             if (!(newThing is ThingWithComps thingWithComps))
             {
@@ -39,6 +45,18 @@ namespace WhatTheHack.Harmony
                 Base.RemoveComps(ref thingWithComps);
             }
         }
+        //For backwards compatbility, add the battery hediff to hacked mechs without one on load. 
+        private static void AddBatteryHediffIfNeeded(Thing newThing)
+        {
+            if (newThing is Pawn pawn && pawn.IsHacked())
+            {
+                if (pawn.health != null && !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_BackupBattery))
+                {
+                    pawn.health.AddHediff(WTH_DefOf.WTH_BackupBattery, pawn.TryGetReactor());
+                }
+            }
+        }
+
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var instructionsList = new List<CodeInstruction>(instructions);
