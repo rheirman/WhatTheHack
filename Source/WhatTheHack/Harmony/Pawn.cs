@@ -87,7 +87,7 @@ namespace WhatTheHack.Harmony
                 !__instance.RemoteControlLink().Drafted &&
                 (float)__instance.pather.Destination.Cell.DistanceToSquared(__instance.RemoteControlLink().Position) <= 30f * 30f))
             {
-                if (!__instance.Dead)
+                if (__instance.Faction == Faction.OfPlayer && __instance.IsHacked() && !__instance.Dead)
                 {
                     __result = true;
                     return false;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 	<WTH_Letter_Success_Label>Hacking successful</WTH_Letter_Success_Label>
-	<WTH_Letter_Success_Label_Description>A mechanoid has successfully been hacked. It's targeting system now targets your enemy instead of your pawns.</WTH_Letter_Success_Label_Description>
+	<WTH_Letter_Success_Label_Description>{0} has successfully hacked a mechanoid and named it {1}. Targeting system of {1} now targets your enemies instead of your pawns. However, to avoid detection by the Mechanoid Hive, {1} has to rely on its internal backup batteries.</WTH_Letter_Success_Label_Description>
 	<WTH_Letter_Nothing_Label>Hacking failed - just some damage</WTH_Letter_Nothing_Label>
 	<WTH_Letter_Nothing_Description>Hacking failed but apart from some damage nothing serious happened</WTH_Letter_Nothing_Description>
 	<WTH_Letter_HackedPoorly_Label>Hacking failed - poor job</WTH_Letter_HackedPoorly_Label>
@@ -66,8 +66,11 @@
 	<WTH_Alert_NotEnoughPlatforms_Label>Not enough mechanoid platforms</WTH_Alert_NotEnoughPlatforms_Label>
 	<WTH_Alert_NotEnoughPlatforms_Description>You have more hacked mechanoids than mechanoid platforms in your main base. Make sure to make more mechanoid platforms</WTH_Alert_NotEnoughPlatforms_Description>
 	<WTH_Alert_Power_Low_Label>Mechanoids low on power</WTH_Alert_Power_Low_Label>
-	<WTH_Alert_Power_Low_Description>The following mechanoids are low on power:{0} deactivate them so they go back to a mechanoid platform</WTH_Alert_Power_Low_Description>
-
+	<WTH_Alert_Power_Low_Description>The following mechanoids are low on power:{0}Deactivate them so they go back to a mechanoid platform</WTH_Alert_Power_Low_Description>
+	<WTH_Alert_Maintenance_Low_Label>Mechanoids poorly maintained</WTH_Alert_Maintenance_Low_Label>
+	<WTH_Alert_Maintenance_Low_Description>The hacked hardware of the following mechanoids is poorly maintained:{0}Make sure your hackers take a look at them.</WTH_Alert_Maintenance_Low_Description>
+	<WTH_Alert_Maintenance_VeryLow_Label>Mechanoids very poorly maintained</WTH_Alert_Maintenance_VeryLow_Label>
+	<WTH_Alert_Maintenance_VeryLow_Description>The hacked hardware of the following mechanoids is very poorly maintained and they pose a threat to your colony:{0}The hack can stop working at any time now, so make sure the mechanoids are either maintained, or shut down.</WTH_Alert_Maintenance_VeryLow_Description>
 	<WTH_FactionRestrictions_OK>Allow</WTH_FactionRestrictions_OK>
 	<WTH_FactionRestrictions_NOK>Disallow</WTH_FactionRestrictions_NOK>
 	<WTH_FactionRestrictions_Label>Configure which mechanoids each faction can hack</WTH_FactionRestrictions_Label>

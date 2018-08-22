@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using Verse;
+using Verse.AI.Group;
+using WhatTheHack.Duties;
 
 namespace WhatTheHack.Needs
 {
@@ -54,7 +56,20 @@ namespace WhatTheHack.Needs
             if (!base.IsFrozen)
             {
                 this.lastLevel = CurLevel;
-                this.CurLevel -= FallPerTick() * 1500f;
+                this.CurLevel -= FallPerTick() * 150f;
+            }
+            if (this.CurCategory == MaintenanceCategory.VeryLowMaintenance)
+            {
+                System.Random rand = new System.Random(DateTime.Now.Millisecond);
+                int rndInt = rand.Next(1, 1000);
+                float maxChanceProm = 10;
+                float maxVeryLow = PercentageThreshVeryLowMaintenance * MaxLevel;
+                float factor = 1f - (CurLevel / maxVeryLow);
+                int chanceProm = Mathf.RoundToInt(factor * maxChanceProm);
+                if (rndInt <= chanceProm) 
+                {
+                    UnHackMechanoid(pawn);
+                }
             }
             SetHediffs();
         }
@@ -177,5 +192,23 @@ namespace WhatTheHack.Needs
             Scribe_Values.Look<float>(ref lastLevel, "lastLevel");
         }
 
+        private static void UnHackMechanoid(Pawn pawn)
+        {
+            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_TargetingHackedPoorly))
+            {
+                pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.WTH_TargetingHackedPoorly));
+            }
+            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_TargetingHacked))
+            {
+                pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.WTH_TargetingHacked));
+            }
+            pawn.SetFaction(Faction.OfMechanoids);
+            pawn.story = null;
+            if (pawn.GetLord() == null || pawn.GetLord().LordJob == null)
+            {
+                LordMaker.MakeNewLord(Faction.OfMechanoids, new LordJob_AssaultColony(Faction.OfMechanoids, true, true, false, false, true), pawn.Map, new List<Pawn> { pawn});
+            }
+            Find.LetterStack.ReceiveLetter("WTH_Letter_Mech_Reverted_Label".Translate(), "WTH_Letter_Mech_Reverted_Description".Translate(), LetterDefOf.ThreatBig, pawn);
+        }
     }
 }

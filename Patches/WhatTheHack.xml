@@ -16,6 +16,18 @@
 		</recipes>		
 	</value>
 </Operation> 
+<Operation Class="PatchOperationSequence">
+	<success>Always</success>
+	<operations>
+		<li Class="PatchOperationAdd">
+			<xpath>*/ThingDef/race[fleshType = "Mechanoid" and not(nameGenerator)]</xpath>
+			<value>
+				<nameGenerator>NamerAnimalUtility</nameGenerator>
+			</value>
+		</li> 
+	</operations>
+</Operation>
+
 <Operation Class="PatchOperationAdd">
 	<xpath>*/ThingDef[thingClass = "Building_TurretGun" and minifiedDef]/comps</xpath>
 	<value>

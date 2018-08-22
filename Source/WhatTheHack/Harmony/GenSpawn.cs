@@ -31,6 +31,7 @@ namespace WhatTheHack.Harmony
         {
             AddBatteryHediffIfNeeded(newThing);
             RemoveConditionalComps(newThing);
+            NameUnnamedMechs(newThing);
         }
 
         //Only initialize the refeulcomp of mechanoids that have a repairmodule. 
@@ -45,6 +46,14 @@ namespace WhatTheHack.Harmony
                 Base.RemoveComps(ref thingWithComps);
             }
         }
+        private static void NameUnnamedMechs(Thing newThing)
+        {
+            if(newThing is Pawn pawn && pawn.IsHacked() && (pawn.Name == null || !pawn.Name.IsValid))
+            {
+                pawn.Name = PawnBioAndNameGenerator.GeneratePawnName(pawn, NameStyle.Full);
+            }
+        }
+
         //For backwards compatbility, add the battery hediff to hacked mechs without one on load. 
         private static void AddBatteryHediffIfNeeded(Thing newThing)
         {

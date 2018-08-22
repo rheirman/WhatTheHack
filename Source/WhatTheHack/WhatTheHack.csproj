@@ -54,6 +54,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alerts\Alert_MaintenanceLow.cs" />
+    <Compile Include="Alerts\Alert_MaintenanceVeryLow.cs" />
     <Compile Include="Alerts\Alert_NotEnoughPlatforms.cs" />
     <Compile Include="Alerts\Alert_PowerLow.cs" />
     <Compile Include="Buildings\Building_BaseMechanoidPlatform.cs" />

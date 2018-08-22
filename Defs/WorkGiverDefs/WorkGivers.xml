@@ -51,7 +51,7 @@
     <workType>WTH_Hack</workType>
     <priorityInType>120</priorityInType>
     <verb>perform maintenance</verb>
-    <gerund>performing maintenance</gerund>
+    <gerund>performing maintenance on</gerund>
     <requiredCapacities>
       <li>Manipulation</li>
     </requiredCapacities>

@@ -36,10 +36,6 @@ namespace WhatTheHack.Recipes
 
         protected override void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
-            if (this.recipe.addsHediff == WTH_DefOf.WTH_RepairModule)
-            {
-                pawn.InitializeComps();
-            }
             pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
         }
     }

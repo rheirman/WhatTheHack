@@ -24,7 +24,6 @@ namespace WhatTheHack.Recipes
         {
             pawn.health.AddHediff(WTH_DefOf.WTH_BackupBattery, pawn.TryGetReactor());
             pawn.SetFaction(Faction.OfPlayer);
-            Find.LetterStack.ReceiveLetter("WTH_Letter_Success_Label".Translate(), "WTH_Letter_Success_Label_Description".Translate(), LetterDefOf.PositiveEvent, pawn);
             if (pawn.relations == null)
             {
                 pawn.relations = new Pawn_RelationsTracker(pawn);
@@ -37,8 +36,10 @@ namespace WhatTheHack.Recipes
             {
                 pawn.story = new Pawn_StoryTracker(pawn);
             }
+            pawn.Name = PawnBioAndNameGenerator.GeneratePawnName(pawn, NameStyle.Full);
+            Find.LetterStack.ReceiveLetter("WTH_Letter_Success_Label".Translate(), "WTH_Letter_Success_Label_Description".Translate(new object[]{billDoer.Name, pawn.Name}), LetterDefOf.PositiveEvent, pawn);
         }
-        
+
 
         protected override void HackingFailEvent(Pawn hackee, BodyPartRecord part, System.Random r)
         {

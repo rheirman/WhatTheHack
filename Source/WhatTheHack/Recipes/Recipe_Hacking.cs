@@ -75,8 +75,13 @@ namespace WhatTheHack.Recipes
             {
                 pawn.health.AddHediff(this.recipe.addsHediff, part, null);
             }
+            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule) && pawn.GetComp<CompRefuelable>() == null)
+            {
+                pawn.InitializeComps();
+            }
             billDoer.skills.Learn(SkillDefOf.Crafting, pawn.kindDef.combatPower * learnfactor, false);
             billDoer.skills.Learn(SkillDefOf.Intellectual, pawn.kindDef.combatPower * learnfactor, false);
+
             PostSuccessfulApply(pawn, part, billDoer, ingredients, bill);
         }
         protected abstract void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill);
