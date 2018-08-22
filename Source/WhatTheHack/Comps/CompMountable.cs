@@ -35,7 +35,6 @@ namespace WhatTheHack.Comps
             SetPowerComp();
             Configure();
             SetDrawOffset();
-            Log.Message("drawOffset: " + drawOffset);
             //parent.holdingOwner = pawn.inventory.innerContainer;
         }
         public override void PostDestroy(DestroyMode mode, Map previousMap)

@@ -26,6 +26,8 @@
 	<WTH_FailureChance_HealToStanding_Description>Relative chance a mechanoid is healed until it can stand when hacking fails</WTH_FailureChance_HealToStanding_Description>
 	<WTH_FailureChance_HackPoorly_Title>Failure chance: hacked poorly</WTH_FailureChance_HackPoorly_Title>
 	<WTH_FailureChance_HackPoorly_Description>Relative chance a mechanoid is hacked poorly when hacking fails</WTH_FailureChance_HackPoorly_Description>
+	<WTH_MaintenanceDedayEnabled_Title>Maintenance decay enabled</WTH_MaintenanceDedayEnabled_Title>
+	<WTH_MaintenanceDedayEnabled_Description>Uncheck this if you don't want to regularly maintain your mechanoids. With this unchecked, the maintenance need bar will still be shown, but it won't decrease over time. There are still certain events that can deplete the maintenance bar of mechanoids.</WTH_MaintenanceDedayEnabled_Description>
 	
 	<WTH_Menu_ClearTable>Clear hacking table</WTH_Menu_ClearTable>
 	<WTH_Menu_CarryToTable>Carry to hacking table</WTH_Menu_CarryToTable>

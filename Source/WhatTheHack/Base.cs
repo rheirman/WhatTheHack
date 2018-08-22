@@ -22,6 +22,7 @@ namespace WhatTheHack
 
         //settings
         internal static SettingHandle<String> tabsHandler;
+        internal static SettingHandle<bool> maintenanceDecayEnabled;
         internal static SettingHandle<int> failureChanceNothing;
         internal static SettingHandle<int> failureChanceCauseRaid;
         internal static SettingHandle<int> failureChanceShootRandomDirection;
@@ -66,6 +67,8 @@ namespace WhatTheHack
             failureChanceShootRandomDirection = Settings.GetHandle<int>("failureChanceShootRandomDirection", "WTH_FailureChance_ShootRandomDirection_Title".Translate(), "WTH_FailureChance_ShootRandomDirection_Description".Translate(), 10);
             failureChanceHealToStanding = Settings.GetHandle<int>("failureChanceHealToStanding", "WTH_FailureChance_HealToStanding_Title".Translate(), "WTH_FailureChance_HealToStanding_Description".Translate(), 5);
             failureChanceHackPoorly = Settings.GetHandle<int>("failureChanceHackPoorly", "WTH_FailureChance_HackPoorly_Title".Translate(), "WTH_FailureChance_HackPoorly_Description".Translate(), 10);
+            maintenanceDecayEnabled = Settings.GetHandle<bool>("maintenanceDecayEnabled", "WTH_MaintenanceDedayEnabled_Title".Translate(), "WTH_MaintenanceDedayEnabled_Description".Translate(), true);
+
             factionRestrictions = GetDefaultForFactionRestrictions(factionRestrictions, allMechs, allFactionNames);
 
             GenerateImpliedRecipeDefs();
