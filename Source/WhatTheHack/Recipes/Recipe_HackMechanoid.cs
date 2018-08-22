@@ -37,7 +37,7 @@ namespace WhatTheHack.Recipes
                 pawn.story = new Pawn_StoryTracker(pawn);
             }
             pawn.Name = PawnBioAndNameGenerator.GeneratePawnName(pawn, NameStyle.Full);
-            Find.LetterStack.ReceiveLetter("WTH_Letter_Success_Label".Translate(), "WTH_Letter_Success_Label_Description".Translate(new object[]{billDoer.Name, pawn.Name}), LetterDefOf.PositiveEvent, pawn);
+            Find.LetterStack.ReceiveLetter("WTH_Letter_Success_Label".Translate(), "WTH_Letter_Success_Label_Description".Translate(new object[]{billDoer.Name.ToStringShort, pawn.Name}), LetterDefOf.PositiveEvent, pawn);
         }
 
 

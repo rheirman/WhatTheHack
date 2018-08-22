@@ -40,7 +40,6 @@ namespace WhatTheHack.Needs
         public void RestoreUsingParts(int partCount)
         {
             float restoreFraction =  (float) partCount / (float)NeededPartsForFullRecovery;
-            Log.Message("restoring using parts, partCount: " + partCount + ", restoreFraction: " + restoreFraction);
             CurLevel += MaxLevel * restoreFraction;
         }
         private float FallPerTick()
