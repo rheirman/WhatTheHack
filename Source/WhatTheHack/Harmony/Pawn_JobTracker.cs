@@ -76,7 +76,7 @@ namespace WhatTheHack.Harmony
 
             if(pawn.IsHacked() && pawn.IsActivated() && pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_TargetingHackedPoorly))
             {
-                UnHackMechanoid(pawn);
+                HackedPoorlyEvent(pawn);
             }
             if (pawn.Faction == Faction.OfPlayer && pawn.IsHacked() && !pawn.IsActivated() && !pawn.OnBaseMechanoidPlatform() && __result.Job.def != WTH_DefOf.WTH_Mechanoid_Rest)
             {
@@ -90,20 +90,15 @@ namespace WhatTheHack.Harmony
 
         }
 
-        private static void UnHackMechanoid(Pawn pawn)
+        private static void HackedPoorlyEvent(Pawn pawn)
         {
             Random rand = new Random(DateTime.Now.Millisecond);
             int rndInt = rand.Next(1, 1000);
             if (rndInt <= 5) //TODO: no magic number
             {
-                pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.WTH_TargetingHackedPoorly));
-                pawn.SetFaction(Faction.OfMechanoids);
-                pawn.story = null;
-                if (pawn.GetLord() == null || pawn.GetLord().LordJob == null)
-                {
-                    LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_SearchAndDestroy(), pawn.Map, new List<Pawn> { pawn });
-                }
-                Find.LetterStack.ReceiveLetter("WTH_Letter_Mech_Reverted_Label".Translate(), "WTH_Letter_Mech_Reverted_Description".Translate(), LetterDefOf.ThreatBig, pawn);
+                Need_Maintenance need = pawn.needs.TryGetNeed<Need_Maintenance>();
+                need.CurLevel = 0;
+                Find.LetterStack.ReceiveLetter("WTH_Letter_HackedPoorlyEvent_Label".Translate(), "WTH_Letter_HackedPoorlyEvent_Description".Translate(), LetterDefOf.ThreatBig, pawn);
             }
         }
     }

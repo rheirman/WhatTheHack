@@ -16,6 +16,7 @@ namespace WhatTheHack.Needs
 
         public Need_Maintenance(Pawn pawn) : base(pawn)
         {
+            
         }
 
         public override void SetInitialLevel()
@@ -60,19 +61,25 @@ namespace WhatTheHack.Needs
             }
             if (this.CurCategory == MaintenanceCategory.VeryLowMaintenance)
             {
-                System.Random rand = new System.Random(DateTime.Now.Millisecond);
-                int rndInt = rand.Next(1, 1000);
-                float maxChanceProm = 10;
-                float maxVeryLow = PercentageThreshVeryLowMaintenance * MaxLevel;
-                float factor = 1f - (CurLevel / maxVeryLow);
-                int chanceProm = Mathf.RoundToInt(factor * maxChanceProm);
-                if (rndInt <= chanceProm) 
-                {
-                    UnHackMechanoid(pawn);
-                }
+                MaybeUnhackMechanoid();
             }
             SetHediffs();
         }
+
+        private void MaybeUnhackMechanoid()
+        {
+            System.Random rand = new System.Random(DateTime.Now.Millisecond);
+            int rndInt = rand.Next(1, 1000);
+            float maxChanceProm = 10;
+            float maxVeryLow = PercentageThreshVeryLowMaintenance * MaxLevel;
+            float factor = 1f - (CurLevel / maxVeryLow);
+            int chanceProm = Mathf.RoundToInt(factor * maxChanceProm);
+            if (rndInt <= chanceProm)
+            {
+                UnHackMechanoid(pawn);
+            }
+        }
+
         public void SetHediffs()
         {
             TrySetHediff(MaintenanceCategory.LowMaintenance, WTH_DefOf.WTH_LowMaintenance);
