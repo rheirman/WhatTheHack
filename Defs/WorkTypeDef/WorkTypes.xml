@@ -6,7 +6,7 @@
 		<gerundLabel>hacking</gerundLabel>
 		<description>hack and modify mechanoids</description>
 		<verb>Hack</verb>
-		<naturalPriority>150</naturalPriority>
+		<naturalPriority>1250</naturalPriority>
 		<requireCapableColonist>true</requireCapableColonist>
 		<relevantSkills>
 		  <li>Intellectual</li>

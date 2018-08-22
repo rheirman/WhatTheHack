@@ -42,8 +42,10 @@ namespace WhatTheHack
         public static JobDef WTH_ControlMechanoid_Goto;
         public static JobDef WTH_Ability;
         public static JobDef WTH_Explode;
+        public static JobDef WTH_PerformMaintenance;
 
         public static NeedDef WTH_Mechanoid_Power;
+        public static NeedDef WTH_Mechanoid_Maintenance;
 
         public static ThingDef WTH_HackingTable;
         public static ThingDef WTH_MechanoidPlatform;

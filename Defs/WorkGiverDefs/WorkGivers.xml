@@ -17,12 +17,41 @@
   
   <WorkGiverDef>
     <defName>WTH_HaulMechanoid</defName>
-    <label>haul mechanoid to hacking table</label>
+    <label>haul mechanoids</label>
     <giverClass>WhatTheHack.Jobs.WorkGiver_HaulMechanoid</giverClass>
     <workType>Hauling</workType>
     <priorityInType>110</priorityInType>
     <verb>haul</verb>
     <gerund>hauling</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+  
+    
+  <WorkGiverDef>
+    <defName>WTH_MaintainMechanoid</defName>
+    <label>maintenance on mechanoids</label>
+    <giverClass>WhatTheHack.Jobs.WorkGiver_PerformMaintenance</giverClass>
+    <workType>WTH_Hack</workType>
+    <priorityInType>100</priorityInType>
+    <verb>perform maintenance</verb>
+    <gerund>performing maintenance</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+  
+  <WorkGiverDef>
+    <defName>WTH_MaintainMechanoid_Urgent</defName>
+    <label>urgent maintenance on mechanoids</label>
+    <giverClass>WhatTheHack.Jobs.WorkGiver_PerformMaintenanceUrgent</giverClass>
+    <workType>WTH_Hack</workType>
+    <priorityInType>120</priorityInType>
+    <verb>perform maintenance</verb>
+    <gerund>performing maintenance</gerund>
     <requiredCapacities>
       <li>Manipulation</li>
     </requiredCapacities>

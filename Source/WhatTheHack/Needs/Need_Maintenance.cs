@@ -21,7 +21,25 @@ namespace WhatTheHack.Needs
             base.CurLevelPercentage = 1.0f;
             lastLevel = 1.0f;
         }
-
+        
+        public int PartsNeededToRestore()
+        {
+            float totalParts = NeededPartsForFullRecovery;
+            float fractionNeeded = MaintenanceWanted/MaxLevel;
+            return Mathf.RoundToInt(totalParts * fractionNeeded);
+        }
+        private int NeededPartsForFullRecovery {
+            get
+            {
+                return Mathf.RoundToInt(pawn.kindDef.combatPower / 50f);
+            }
+        }
+        public void RestoreUsingParts(int partCount)
+        {
+            float restoreFraction =  (float) partCount / (float)NeededPartsForFullRecovery;
+            Log.Message("restoring using parts, partCount: " + partCount + ", restoreFraction: " + restoreFraction);
+            CurLevel += MaxLevel * restoreFraction;
+        }
         private float FallPerTick()
         {
             if (pawn.health != null && pawn.health.hediffSet.HasNaturallyHealingInjury()) //damaged pawns detoriate quicker
@@ -36,7 +54,7 @@ namespace WhatTheHack.Needs
             if (!base.IsFrozen)
             {
                 this.lastLevel = CurLevel;
-                this.CurLevel -= FallPerTick() * 150f;
+                this.CurLevel -= FallPerTick() * 1500f;
             }
             SetHediffs();
         }
@@ -114,7 +132,7 @@ namespace WhatTheHack.Needs
         {
             get
             {
-                return pawn.BodySize * 100;//TODO
+                return 100f;
             }
         }
         public float MaintenanceWanted
