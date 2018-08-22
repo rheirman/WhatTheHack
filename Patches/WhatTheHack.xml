@@ -128,4 +128,16 @@
 			</li>
 		</value>
 	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/TraderKindDef[defName = "Base_Outlander_Standard"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_SingleDef">
+					<thingDef>WTH_MechanoidParts</thingDef>
+					<countRange>
+						<min>0</min>
+						<max>100</max>
+					</countRange>
+			</li>
+		</value>
+	</Operation>
 </Patch>
