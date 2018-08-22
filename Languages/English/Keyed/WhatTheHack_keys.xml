@@ -92,4 +92,6 @@
 	<WTH_Mount>Mount {0}</WTH_Mount>
 	<WTH_Mount_Jobstring>Mounting {0}</WTH_Mount_Jobstring>
 	
+	<WTH_TextMote_MaintenanceFailed>Maintenance failed (success chance: {0})</WTH_TextMote_MaintenanceFailed>
+	
 </LanguageData>

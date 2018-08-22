@@ -56,6 +56,7 @@ namespace WhatTheHack
         public static ThingDef WTH_Mote_HealingCrossGreen;
 
         public static StatDef WTH_HackingSuccessChance;
+        public static StatDef WTH_HackingMaintenanceSpeed;
 
         public static ResearchProjectDef WTH_TurretModule_GunTurrets;
         public static ResearchProjectDef WTH_TurretModule_Mortars;

@@ -19,7 +19,7 @@ namespace WhatTheHack.Jobs
                 return (Pawn)this.job.targetA.Thing;
             }
         }
-        protected Thing MedicineUsed
+        protected Thing PartUsed
 		{
 			get
 			{
@@ -38,11 +38,11 @@ namespace WhatTheHack.Jobs
             else
             {
 
-                int numReservable = this.pawn.Map.reservationManager.CanReserveStack(this.pawn, this.MedicineUsed, 10, null, false);
+                int numReservable = this.pawn.Map.reservationManager.CanReserveStack(this.pawn, this.PartUsed, 10, null, false);
                 if (numReservable > 0 && Deliveree.needs != null && Deliveree.needs.TryGetNeed<Need_Maintenance>() is Need_Maintenance need)
                 {
                     pawn = this.pawn;
-                    target = this.MedicineUsed;
+                    target = this.PartUsed;
                     job = this.job;
                     int maxPawns = 10;
                     int stackCount = Mathf.Min(numReservable, need.PartsNeededToRestore());
@@ -72,13 +72,13 @@ namespace WhatTheHack.Jobs
 
             PathEndMode interactionCell = (this.Deliveree != this.pawn) ? PathEndMode.InteractionCell : PathEndMode.OnCell;
             yield return Toils_Goto.GotoThing(TargetIndex.A, interactionCell);
-            int duration = (int)(1f / this.pawn.GetStatValue(StatDefOf.MedicalTendSpeed, true) * 600f);
+            int duration = (int)(1f / this.pawn.GetStatValue(WTH_DefOf.WTH_HackingMaintenanceSpeed, true) * 600f);
             EffecterDef effect = DefDatabase<EffecterDef>.AllDefs.FirstOrDefault((EffecterDef ed) => ed.defName == "Repair");
             yield return Toils_General.Wait(duration, TargetIndex.None).FailOnCannotTouch(TargetIndex.A, interactionCell).WithProgressBarToilDelay(TargetIndex.A, false, -0.5f).WithEffect(effect, TargetIndex.A);
-            yield return FinalizeMaintenance(this.Deliveree, need);
+            yield return FinalizeMaintenance(this.Deliveree, need, reserveParts);
         }
 
-        private static Toil FinalizeMaintenance(Pawn targetPawn, Need_Maintenance need)
+        private static Toil FinalizeMaintenance(Pawn targetPawn, Need_Maintenance need, Toil jumpToIfFailed)
         {
             Toil toil = new Toil();
             toil.initAction = delegate
@@ -86,13 +86,29 @@ namespace WhatTheHack.Jobs
 
                 Pawn actor = toil.actor;
                 float combatPower = targetPawn.kindDef.combatPower;
-                actor.skills.Learn(SkillDefOf.Crafting, combatPower * 0.5f, false);
-                actor.skills.Learn(SkillDefOf.Intellectual, combatPower * 0.5f, false);
-                need.RestoreUsingParts(actor.carryTracker.CarriedThing.stackCount);
-                Thing part = actor.CurJob.targetB.Thing;
-                if (!part.Destroyed)
+                float successChance = actor.GetStatValue(WTH_DefOf.WTH_HackingSuccessChance, true);
+                if (Rand.Chance(successChance))
                 {
-                    part.Destroy(DestroyMode.Vanish);
+                    actor.skills.Learn(SkillDefOf.Crafting, combatPower * 0.5f, false);
+                    actor.skills.Learn(SkillDefOf.Intellectual, combatPower * 0.5f, false);
+                    need.RestoreUsingParts(actor.carryTracker.CarriedThing.stackCount);
+                    Thing part = actor.CurJob.targetB.Thing;
+                    if (!part.Destroyed)
+                    {
+                        part.Destroy(DestroyMode.Vanish);
+                    }
+                }
+                else
+                {
+                    actor.skills.Learn(SkillDefOf.Crafting, combatPower * 0.25f, false);
+                    actor.skills.Learn(SkillDefOf.Intellectual, combatPower * 0.25f, false);
+                    MoteMaker.ThrowText((actor.DrawPos + targetPawn.DrawPos) / 2f, actor.Map, "WTH_TextMote_MaintenanceFailed".Translate(new object[]{ successChance.ToStringPercent() }), 8f);
+                    Thing part = actor.CurJob.targetB.Thing;
+                    if (!part.Destroyed)
+                    {
+                        part.Destroy(DestroyMode.Vanish);
+                    }
+                    actor.jobs.curDriver.JumpToToil(jumpToIfFailed);
                 }
             };
             return toil;
