@@ -68,6 +68,7 @@ namespace WhatTheHack.Harmony
                     IntVec3 loc = CellFinder.RandomClosewalkCellNear(parms.spawnCenter, map, 8, null);
                     GenSpawn.Spawn(mechanoid, loc, map, parms.spawnRotation);
                     mechanoid.health.AddHediff(WTH_DefOf.WTH_TargetingHacked);
+                    mechanoid.health.AddHediff(WTH_DefOf.WTH_BackupBattery);
                     Need_Power powerNeed = (Need_Power) mechanoid.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power);
                     powerNeed.CurLevel = powerNeed.MaxLevel;
                     list.Add(mechanoid);

@@ -1,4 +1,22 @@
 <Defs>
+
+  <WorkGiverDef>
+    <defName>DoBillsMachiningTable</defName>
+    <label>make things at machining table</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>WTH_Hack</workType>
+    <priorityInType>75</priorityInType>
+    <fixedBillGiverDefs>
+      <li>WTH_TableMechanoidWorkshop</li>
+    </fixedBillGiverDefs>
+    <verb>work</verb>
+    <gerund>working at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
   <WorkGiverDef>
     <defName>WTH_DoBillsMedicalMechanoidOperation</defName>
     <label>operate on mechanoids</label>
