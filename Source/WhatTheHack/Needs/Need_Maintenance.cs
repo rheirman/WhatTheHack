@@ -46,9 +46,9 @@ namespace WhatTheHack.Needs
         {
             if (pawn.health != null && pawn.health.hediffSet.HasNaturallyHealingInjury()) //damaged pawns detoriate quicker
             {
-                return MaxLevel / (GenDate.TicksPerDay * 4f);
+                return MaxLevel / (GenDate.TicksPerDay * 8f);
             }
-            return MaxLevel / (GenDate.TicksPerDay * 6f);
+            return MaxLevel / (GenDate.TicksPerDay * 12f);
         }
 
         public override void NeedInterval()
