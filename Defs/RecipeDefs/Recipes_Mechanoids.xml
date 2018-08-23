@@ -5,7 +5,7 @@
 		<description>Scrap advanded mechanoid chip</description>
 		<jobString>Scrapping</jobString>
 		<workSpeedStat>WTH_HackingMaintenanceSpeed</workSpeedStat>
-		<effectWorking>Cook</effectWorking>
+		<effectWorking>Repair</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>1000</workAmount>
 		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
@@ -33,15 +33,62 @@
 		<workSkill>Crafting</workSkill>
 		<researchPrerequisite>WTH_MechanoidWorkshop</researchPrerequisite>
   </RecipeDef>
+  
   <RecipeDef>
-	<defName>WTH_Craft_RepairModule</defName>
-	<label>craft repair module</label>
-	<description>Craft a repair module</description>
+	<defName>WTH_Craft_SelfDestructModule</defName>
+	<label>craft selft-destruct module</label>
+	<description>Craft a selft-destruct module</description>
 	<jobString>Crafting</jobString>
 	<workSpeedStat>WTH_HackingMaintenanceSpeed</workSpeedStat>
-	<effectWorking>Cook</effectWorking>
+	<effectWorking>Repair</effectWorking>
 	<soundWorking>Recipe_Machining</soundWorking>
-	<workAmount>1000</workAmount>
+	<workAmount>1500</workAmount>
+	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>10</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Shell_HighExplosive</li>
+				</thingDefs>
+			</filter>
+			<count>2</count>
+		</li>
+	</ingredients>
+	<products>
+	  <WTH_SelfDestructModule>1</WTH_SelfDestructModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_SelfDestruct</researchPrerequisite>
+  </RecipeDef>
+  
+  <RecipeDef>
+	<defName>WTH_Craft_TurretModule</defName>
+	<label>craft turret module</label>
+	<description>Craft a turret module</description>
+	<jobString>Crafting</jobString>
+	<workSpeedStat>WTH_HackingMaintenanceSpeed</workSpeedStat>
+	<effectWorking>Repair</effectWorking>
+	<soundWorking>Recipe_Machining</soundWorking>
+	<workAmount>6000</workAmount>
 	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 	<ingredients>
 		<li>
@@ -70,6 +117,52 @@
 		</li>
 	</ingredients>
 	<products>
+	  <WTH_TurretModule>1</WTH_TurretModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_TurretModule</researchPrerequisite>
+  </RecipeDef>
+  
+  <RecipeDef>
+	<defName>WTH_Craft_RepairModule</defName>
+	<label>craft repair module</label>
+	<description>Craft a repair module</description>
+	<jobString>Crafting</jobString>
+	<workSpeedStat>WTH_HackingMaintenanceSpeed</workSpeedStat>
+	<effectWorking>Repair</effectWorking>
+	<soundWorking>Recipe_Machining</soundWorking>
+	<workAmount>4000</workAmount>
+	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>50</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>20</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+	</ingredients>
+	<products>
 	  <WTH_RepairModule>1</WTH_RepairModule>
 	</products>
 		<skillRequirements>
@@ -78,15 +171,16 @@
 	<workSkill>Crafting</workSkill>
 	<researchPrerequisite>WTH_RepairModule</researchPrerequisite>
   </RecipeDef>
+  
   <RecipeDef>
 	<defName>WTH_Craft_RepairArm</defName>
 	<label>craft repair arm</label>
 	<description>Craft a repair arm</description>
 	<jobString>Crafting</jobString>
 	<workSpeedStat>WTH_HackingMaintenanceSpeed</workSpeedStat>
-	<effectWorking>Cook</effectWorking>
+	<effectWorking>Repair</effectWorking>
 	<soundWorking>Recipe_Machining</soundWorking>
-	<workAmount>1000</workAmount>
+	<workAmount>3500</workAmount>
 	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 		<ingredients>
 			<li>
@@ -95,7 +189,7 @@
 						<li>Plasteel</li>
 					</thingDefs>
 				</filter>
-				<count>50</count>
+				<count>40</count>
 			</li>
 			<li>
 				<filter>
@@ -287,26 +381,10 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>Plasteel</li>
+						<li>WTH_RepairArm</li>
 					</thingDefs>
 				</filter>
-				<count>50</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>WTH_MechanoidParts</li>
-					</thingDefs>
-				</filter>
-				<count>10</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>WTH_MechanoidChip</li>
-					</thingDefs>
-				</filter>
-				<count>5</count>
+				<count>1</count>
 			</li>
 		</ingredients>		
 		<appliedOnFixedBodyParts>
@@ -336,41 +414,17 @@
 			<Intellectual>5</Intellectual>
 		</skillRequirements>
 		<workSkill>Intellectual</workSkill>
-		<effectWorking>Repair</effectWorking>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>Plasteel</li>
+						<li>WTH_TurretModule</li>
 					</thingDefs>
 				</filter>
-				<count>50</count>
+				<count>1</count>
 			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>WTH_MechanoidParts</li>
-					</thingDefs>
-				</filter>
-				<count>10</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>WTH_MechanoidChip</li>
-					</thingDefs>
-				</filter>
-				<count>5</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>ComponentSpacer</li>
-					</thingDefs>
-				</filter>
-				<count>2</count>
-			</li>
-		</ingredients>
+		</ingredients>	
+		<effectWorking>Repair</effectWorking>
 		<appliedOnFixedBodyParts>
 			<li>Reactor</li>
 		</appliedOnFixedBodyParts>
@@ -442,26 +496,10 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>WTH_MechanoidParts</li>
+						<li>WTH_SelfDestructModule</li>
 					</thingDefs>
 				</filter>
-				<count>10</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Plasteel</li>
-					</thingDefs>
-				</filter>
-				<count>10</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Shell_HighExplosive</li>
-					</thingDefs>
-				</filter>
-				<count>2</count>
+				<count>1</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>

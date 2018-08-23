@@ -108,6 +108,8 @@
       <li>WTH_Scrap_AdvancedMechanoidChip</li>
 	  <li>WTH_Craft_RepairModule</li>
 	  <li>WTH_Craft_RepairArm</li>
+	  <li>WTH_Craft_TurretModule</li>
+	  <li>WTH_Craft_SelfDestructModule</li>
     </recipes>
     <comps>
       <li Class="CompProperties_Power">
