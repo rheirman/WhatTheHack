@@ -49,6 +49,7 @@ namespace WhatTheHack.Needs
                 return MaxLevel / (GenDate.TicksPerDay * 8f);
             }
             return MaxLevel / (GenDate.TicksPerDay * 12f);
+
         }
 
         public override void NeedInterval()
