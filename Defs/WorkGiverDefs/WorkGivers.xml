@@ -1,7 +1,7 @@
 <Defs>
 
   <WorkGiverDef>
-    <defName>DoBillsMachiningTable</defName>
+    <defName>WTH_DoBillsHackingTable</defName>
     <label>make things at machining table</label>
     <giverClass>WorkGiver_DoBill</giverClass>
     <workType>WTH_Hack</workType>
