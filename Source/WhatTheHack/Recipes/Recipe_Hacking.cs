@@ -75,6 +75,14 @@ namespace WhatTheHack.Recipes
             {
                 pawn.health.AddHediff(this.recipe.addsHediff, part, null);
             }
+            if(this.recipe.GetModExtension<DefModExtension_Recipe>() is DefModExtension_Recipe extension && extension.addsAdditionalHediff != null){
+                BodyPartRecord additionalHediffBodyPart = null;
+                if(extension.additionalHediffBodyPart != null)
+                {
+                    additionalHediffBodyPart = pawn.health.hediffSet.GetNotMissingParts().FirstOrDefault((BodyPartRecord bpr) => bpr.def == extension.additionalHediffBodyPart);
+                }
+                pawn.health.AddHediff(extension.addsAdditionalHediff, additionalHediffBodyPart);
+            }
             if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule) && pawn.GetComp<CompRefuelable>() == null)
             {
                 pawn.InitializeComps();

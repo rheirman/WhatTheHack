@@ -256,6 +256,8 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
+				<addsAdditionalHediff>WTH_BackupBattery</addsAdditionalHediff>
+				<additionalHediffBodyPart>Reactor</additionalHediffBodyPart>
 			</li>
 		</modExtensions>
 	</RecipeDef>

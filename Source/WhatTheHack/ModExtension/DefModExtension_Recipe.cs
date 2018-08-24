@@ -13,6 +13,7 @@ namespace WhatTheHack
         public bool requireBed;
         public HediffDef requiredHediff;
         public HediffDef addsAdditionalHediff;
+        public BodyPartDef additionalHediffBodyPart;
         public float minBodySize = -1f;
     }
 }
