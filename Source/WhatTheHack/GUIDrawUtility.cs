@@ -215,8 +215,13 @@ namespace WhatTheHack
             return DefDatabase<FactionDef>.AllDefs.FirstOrDefault((FactionDef fd) => fd.defName == name);
         }
 
-        public static bool CustomDrawer_MatchingPawns_active(Rect wholeRect, SettingHandle<Dict2DRecordHandler> setting, List<ThingDef> allPawns, SettingHandle<string> filter = null, int filterCount = 0, string yesText = "Is a mount", string noText = "Is not a mount")
+        public static bool CustomDrawer_MatchingPawns_active(Rect wholeRect, SettingHandle<Dict2DRecordHandler> setting, List<ThingDef> allPawns, List<string> allFactionNames, SettingHandle<string> filter = null,  string yesText = "Is a mount", string noText = "Is not a mount")
         {
+            if(setting.Value == null)
+            {
+                setting.Value = Base.GetDefaultForFactionRestrictions(new Dict2DRecordHandler(), allPawns, allFactionNames);
+            }
+
             drawBackground(wholeRect, background);
 
 
@@ -257,7 +262,7 @@ namespace WhatTheHack
             Dictionary<String, Dictionary<String, Record>> innerDict = setting.Value.InnerList;
             int biggerRows = Math.Max( numSelected/ iconsPerRow, (selection.Count - numSelected) / iconsPerRow);
             float neededHightSelector = biggerRows * (rowHeight + BottomMargin) + TextMargin;
-            float neededHightFilter = filterCount * buttonHeight + TextMargin;
+            float neededHightFilter = allFactionNames.Count * buttonHeight + TextMargin;
             setting.CustomDrawerHeight = Math.Max(neededHightSelector, neededHightFilter);
 
 

@@ -30,6 +30,9 @@ namespace WhatTheHack
         internal static SettingHandle<int> failureChanceHackPoorly;
         internal static SettingHandle<Dict2DRecordHandler> factionRestrictions;
 
+        internal static List<ThingDef> allMechs;
+        internal static List<String> allFactionNames;
+
         //temp accessible storage
         internal float daysOfFuel = 0;
         internal string daysOfFuelReason = "";
@@ -49,18 +52,14 @@ namespace WhatTheHack
             base.DefsLoaded();
             Predicate<ThingDef> isMech = (ThingDef d) => d.race != null && d.race.IsMechanoid;
             Predicate<FactionDef> isHackingFaction = (FactionDef d) => !d.isPlayer && d != FactionDefOf.Mechanoid && d != FactionDefOf.Insect;
-            List<ThingDef> allMechs = (from td in DefDatabase<ThingDef>.AllDefs where isMech(td) select td).ToList();
-            List<string> allFactionNames = (from td
-                                            in DefDatabase<FactionDef>.AllDefs
+            allMechs = (from td in DefDatabase<ThingDef>.AllDefs where isMech(td) select td).ToList();
+            allFactionNames = (from td  in DefDatabase<FactionDef>.AllDefs
                                             where isHackingFaction(td)
                                             select td.defName).ToList();
-
             tabsHandler = Settings.GetHandle<String>("tabs", "WTH_FactionRestrictions_Label".Translate(), "WTH_FactionRestrictions_Description".Translate(), allFactionNames.First());
             tabsHandler.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_Tabs(rect, tabsHandler, allFactionNames.ToArray(), true, (int)-rect.width, (int)rect.height + 5); };
-
-
             factionRestrictions = Settings.GetHandle<Dict2DRecordHandler>("factionRestrictions", "", "", null);
-            factionRestrictions.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_MatchingPawns_active(rect, factionRestrictions, allMechs, tabsHandler, allFactionNames.Count, "WTH_FactionRestrictions_OK".Translate(), "WTH_FactionRestrictions_NOK".Translate()); };
+            factionRestrictions.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_MatchingPawns_active(rect, factionRestrictions, allMechs, allFactionNames, tabsHandler, "WTH_FactionRestrictions_OK".Translate(), "WTH_FactionRestrictions_NOK".Translate()); };
 
             failureChanceNothing = Settings.GetHandle<int>("failureChanceNothing", "WTH_FailureChance_Nothing_Title".Translate(), "WTH_FailureChance_Nothing_Description".Translate(), 70);
             failureChanceCauseRaid = Settings.GetHandle<int>("failureChanceCauseRaid", "WTH_FailureChance_CauseRaid_Title".Translate(), "WTH_FailureChance_CauseRaid_Description".Translate(), 5);
@@ -70,7 +69,6 @@ namespace WhatTheHack
             maintenanceDecayEnabled = Settings.GetHandle<bool>("maintenanceDecayEnabled", "WTH_MaintenanceDedayEnabled_Title".Translate(), "WTH_MaintenanceDedayEnabled_Description".Translate(), true);
 
             factionRestrictions = GetDefaultForFactionRestrictions(factionRestrictions, allMechs, allFactionNames);
-
             GenerateImpliedRecipeDefs();
             DefDatabase<ThingDef>.ResolveAllReferences(true);
             SetMechMarketValue();
@@ -135,34 +133,40 @@ namespace WhatTheHack
             }
         }
 
-        private static SettingHandle<Dict2DRecordHandler> GetDefaultForFactionRestrictions(SettingHandle<Dict2DRecordHandler> factionRestrictions, List<ThingDef> allMechs, List<string> allFactionNames)
+        public static SettingHandle<Dict2DRecordHandler> GetDefaultForFactionRestrictions(SettingHandle<Dict2DRecordHandler> factionRestrictions, List<ThingDef> allMechs, List<string> allFactionNames)
         {
-            if (factionRestrictions.Value == null)
+            factionRestrictions.Value = GetDefaultForFactionRestrictions(factionRestrictions.Value, allMechs, allFactionNames);
+            return factionRestrictions;
+        }
+        public static Dict2DRecordHandler GetDefaultForFactionRestrictions(Dict2DRecordHandler factionRestrictionsDict, List<ThingDef> allMechs, List<string> allFactionNames)
+        {
+            if (factionRestrictionsDict == null)
             {
-                factionRestrictions.Value = new Dict2DRecordHandler();
+                factionRestrictionsDict = new Dict2DRecordHandler();
             }
 
-            if (factionRestrictions.Value.InnerList == null)
+            if (factionRestrictionsDict.InnerList == null)
             {
-                factionRestrictions.Value.InnerList = new Dictionary<String, Dictionary<String, Record>>();    
+                factionRestrictionsDict.InnerList = new Dictionary<String, Dictionary<String, Record>>();
             }
             foreach (FactionDef factionDef in from td in DefDatabase<FactionDef>.AllDefs
                                               where allFactionNames.Contains(td.defName)
                                               select td)
             {
-                if (!factionRestrictions.Value.InnerList.ContainsKey(factionDef.defName))
+                if (!factionRestrictionsDict.InnerList.ContainsKey(factionDef.defName))
                 {
-                    factionRestrictions.Value.InnerList.Add(factionDef.defName, new Dictionary<string, Record>());
+                    factionRestrictionsDict.InnerList.Add(factionDef.defName, new Dictionary<string, Record>());
                 }
             }
             foreach (string name in allFactionNames)
             {
-                Dictionary<string, Record> selection = factionRestrictions.Value.InnerList[name];
+                Dictionary<string, Record> selection = factionRestrictionsDict.InnerList[name];
                 GUIDrawUtility.FilterSelection(ref selection, allMechs, name);
-                factionRestrictions.Value.InnerList[name] = selection;
+                factionRestrictionsDict.InnerList[name] = selection;
             }
-            return factionRestrictions;
+            return factionRestrictionsDict;
         }
+
 
         public override void WorldLoaded()
         {
