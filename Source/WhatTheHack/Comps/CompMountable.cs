@@ -44,7 +44,7 @@ namespace WhatTheHack.Comps
         }
         public void Uninstall()
         {
-            if (Active && mountedTo.health != null)
+            if (this.mountedTo != null && mountedTo.health != null)
             {
                 if (mountedTo.health.hediffSet.HasHediff(WTH_DefOf.WTH_MountedTurret))
                 {
