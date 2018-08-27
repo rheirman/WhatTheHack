@@ -18,6 +18,7 @@ namespace WhatTheHack.Recipes
         protected abstract bool CanApplyOn(Pawn pawn);
         public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
         {
+            bool partFound = false;
             if (CanApplyOn(pawn))
             {
                 //Copy from vanilla. Much more complex than needed, but does the trick
@@ -40,13 +41,19 @@ namespace WhatTheHack.Recipes
                                     if (!pawn.health.hediffSet.PartOrAnyAncestorHasDirectlyAddedParts(record) || pawn.health.hediffSet.HasDirectlyAddedPartFor(record))
                                     {
                                         yield return record;
+                                        partFound = true;
                                     }
                                 }
                             }
                         }
                     }
                 }
+                if (recipe.GetModExtension<DefModExtension_Recipe>() is DefModExtension_Recipe ext && !ext.needsFixedBodyPart && !partFound)
+                {
+                    yield return null;
+                }
             }
+
         }
         public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {

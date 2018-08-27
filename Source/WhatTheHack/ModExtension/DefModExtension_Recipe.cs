@@ -15,5 +15,6 @@ namespace WhatTheHack
         public HediffDef addsAdditionalHediff;
         public BodyPartDef additionalHediffBodyPart;
         public float minBodySize = -1f;
+        public bool needsFixedBodyPart = false;
     }
 }

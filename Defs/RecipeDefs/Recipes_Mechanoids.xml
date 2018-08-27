@@ -398,6 +398,7 @@
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
 				<requiredHediff>WTH_RepairModule</requiredHediff>
+				<needsFixedBodyPart>true</needsFixedBodyPart>
 			</li>
 		</modExtensions>
 	</RecipeDef>
