@@ -126,7 +126,7 @@ namespace WhatTheHack
         {
             foreach (PawnKindDef kind in (from kd in DefDatabase<PawnKindDef>.AllDefs where kd.RaceProps.IsMechanoid select kd))
             {
-                if (kind.race.BaseMarketValue < 1.0f)
+                if (kind.race.BaseMarketValue < 1.0f && kind.combatPower < 10000f)
                 {
                     kind.race.BaseMarketValue = kind.combatPower * 3.0f;
                 }
