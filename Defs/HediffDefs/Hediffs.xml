@@ -22,20 +22,10 @@
 		  <painPerSeverity>0.01</painPerSeverity>
 		</injuryProps>
 	</HediffDef>
-  
-  <!--
+	
 	<HediffDef>
-		<tendable>true</tendable>
-		<displayWound>true</displayWound>
-		<defName>WTH_ReplacedPart</defName>
-		<label>regenerating part</label>
-		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
-		<labelNoun>a freshly replaced part that is regenerating</labelNoun>
-	</HediffDef>
-  -->
-       <HediffDef>
-		<defName>WTH_AdditionalBattery</defName>
-		<label>Additional battery</label>
+		<defName>WTH_BatteryExpansionModule</defName>
+		<label>Battery expanded</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>
 		<stages>
@@ -48,7 +38,7 @@
 				</capMods>  
 			</li>
 		</stages>
-	  </HediffDef>
+	</HediffDef>
   
       <HediffDef>
 		<defName>WTH_SelfDestruct</defName>
@@ -191,7 +181,7 @@
 		<defName>WTH_TargetingHackedPoorly</defName>
 		<label>targeting hacked poorly</label>
 		<defaultLabelColor>(1.0, 0.5, 0.1)</defaultLabelColor>
-		<causesNeed>WTH_Mechanoid_Power</causesNeed>
+		<causesNeed>WTH_Mechanoid_Maintenance</causesNeed>
 		<isBad>false</isBad>
 	  </HediffDef>
 	  

@@ -149,13 +149,13 @@ namespace WhatTheHack.Harmony
 
         private static void RechargeMechanoid(Pawn pawn, Need powerNeed, float powerPerTick)
         {
-            if (powerNeed.CurLevel + powerPerTick < powerNeed.MaxLevel)
+            if (powerNeed.CurLevel + powerPerTick * 100 < powerNeed.MaxLevel)
             {
                 if (pawn.IsHashIntervalTick(100))
                 {
                     MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, WTH_DefOf.WTH_Mote_Charging);
+                    powerNeed.CurLevel += powerPerTick * 100;
                 }
-                powerNeed.CurLevel += powerPerTick;
             }
             else if (powerNeed.CurLevel < powerNeed.MaxLevel)
             {

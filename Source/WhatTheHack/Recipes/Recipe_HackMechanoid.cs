@@ -75,9 +75,19 @@ namespace WhatTheHack.Recipes
             HealthUtility.GiveInjuriesOperationFailureMinor(pawn, part);
         }
 
-        private static void HackPoorly(Pawn pawn, BodyPartRecord part)
+        private void HackPoorly(Pawn pawn, BodyPartRecord part)
         {
             pawn.health.AddHediff(WTH_DefOf.WTH_TargetingHackedPoorly, part, null);
+            if (this.recipe.GetModExtension<DefModExtension_Recipe>() is DefModExtension_Recipe extension && extension.addsAdditionalHediff != null)
+            {
+                BodyPartRecord additionalHediffBodyPart = null;
+                if (extension.additionalHediffBodyPart != null)
+                {
+                    additionalHediffBodyPart = pawn.health.hediffSet.GetNotMissingParts().FirstOrDefault((BodyPartRecord bpr) => bpr.def == extension.additionalHediffBodyPart);
+                }
+                pawn.health.AddHediff(extension.addsAdditionalHediff, additionalHediffBodyPart);
+            }
+
             pawn.SetFaction(Faction.OfPlayer);
             if (pawn.jobs.curDriver != null)
             {

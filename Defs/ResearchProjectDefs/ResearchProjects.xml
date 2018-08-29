@@ -141,21 +141,21 @@
 		<researchViewX>3</researchViewX>
 		<researchViewY>3</researchViewY>
 	</ResearchProjectDef>
-	<!--
+	
 	<ResearchProjectDef>
-		<defName>WTH_AdditionalBattery</defName>
-		<label>Additional battery module</label>
+		<defName>WTH_BatteryExpansionModule</defName>
+		<label>Battery expansion module</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>A module that increased the total power a mechanoid can store by 50%.</description>
-		<baseCost>3000</baseCost>
+		<description>A module that increased the total power a mechanoid can store, at the cost of a small movement penalty.</description>
+		<baseCost>2000</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
 		<researchViewX>2</researchViewX>
-		<researchViewY>3</researchViewY>
+		<researchViewY>4</researchViewY>
 	</ResearchProjectDef>
-	-->
+	
 	<ResearchProjectDef>
 	<defName>WTH_HackingAdvanced</defName>
 	<label>AI implanting</label>

@@ -35,6 +35,60 @@
   </RecipeDef>
   
   <RecipeDef>
+	<defName>WTH_Craft_AdditionalBatteryModule</defName>
+	<label>craft battery expansion module</label>
+	<description>Craft a battery expansion module</description>
+	<jobString>Crafting</jobString>
+	<workSpeedStat>WTH_HackingMaintenanceSpeed</workSpeedStat>
+	<effectWorking>Repair</effectWorking>
+	<soundWorking>Recipe_Machining</soundWorking>
+	<workAmount>2500</workAmount>
+	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+	<ingredients>
+		<li>
+			<filter>
+			  <thingDefs>
+				<li>WTH_MechanoidChip</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>ComponentIndustrial</li>
+				</thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>25</count>
+		</li>
+	</ingredients>
+	<products>
+	  <WTH_BatteryExpansionModule>1</WTH_BatteryExpansionModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_BatteryExpansionModule</researchPrerequisite>
+  </RecipeDef>
+  
+  <RecipeDef>
 	<defName>WTH_Craft_SelfDestructModule</defName>
 	<label>craft selft-destruct module</label>
 	<description>Craft a selft-destruct module</description>
@@ -486,7 +540,7 @@
 		<description>Adds the ability to let the mechanoid self destruct by short-circuiting installed high explosive mortar shells. A plasteel casing prevents that the explosives go off unintentionally.</description>
 		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
 		<jobString>Modifying mechanoid</jobString>
-		<workAmount>4000</workAmount>
+		<workAmount>2000</workAmount>
 		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
 		<deathOnFailedSurgeryChance>0.2</deathOnFailedSurgeryChance>		
 		<skillRequirements>
@@ -522,6 +576,47 @@
 		</modExtensions>
 	</RecipeDef>
 	
+	<RecipeDef>
+		<defName>WTH_InstallBatteryExpansionModule</defName>
+		<label>install battery expansion module</label>
+		<description>Gives the mechanoid extra battery capacity at the cost of a small movement penalty.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Modifying mechanoid</jobString>
+		<workAmount>3000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.2</deathOnFailedSurgeryChance>		
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<effectWorking>Repair</effectWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_BatteryExpansionModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_BatteryExpansionModule</addsHediff>
+		<researchPrerequisite>WTH_BatteryExpansionModule</researchPrerequisite>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
 	
   <RecipeDef>
     <defName>WTH_ShutDownMechanoid</defName>

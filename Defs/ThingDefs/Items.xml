@@ -100,6 +100,31 @@
   </ThingDef>
   
   <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_BatteryExpansionModule</defName>
+    <label>Battery expansion module</label>
+    <description>Can be installed in mechanoids to give them extra battery capacity, at the cost of a small movement penalty.</description>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItemNatural</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>250</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartBase">
     <defName>WTH_RepairModule</defName>
     <label>repair module</label>
     <description>Can be installed in mechanoids to give them the ability to repair themselves on the field.</description>

@@ -140,15 +140,12 @@ namespace WhatTheHack.Needs
         {
             get
             {
-                return 100 +  pawn.BodySize * 100;//TODO
-            }
-        }
-
-        public float NutritionWanted
-        {
-            get
-            {
-                return this.MaxLevel - this.CurLevel;
+                float result = 100 + pawn.BodySize * 100;
+                if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_BatteryExpansionModule))
+                {
+                    result *= 1.5f;
+                }
+                return result;//TODO
             }
         }
 
