@@ -58,26 +58,28 @@ namespace WhatTheHack.Recipes
         public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
             float learnfactor = 1f / recipe.surgerySuccessChanceFactor;
-            if (billDoer != null)
+            //Let random bad events happen when hacking fails
+            if (CheckHackingFail(pawn, billDoer, part))
             {
-                //Let random bad events happen when hacking fails
-                if (CheckHackingFail(pawn, billDoer, part))
+                learnfactor *= 0.5f;
+                if (pawn.Dead)
                 {
-                    learnfactor *= 0.5f;
-                    if (pawn.Dead)
-                    {
-                        return;
-                    }
-                    //Re-add surgery bill
-                    ((Building_HackingTable)pawn.CurrentBed()).TryAddPawnForModification(pawn, WTH_DefOf.WTH_HackMechanoid);
                     return;
                 }
-                TaleRecorder.RecordTale(TaleDefOf.DidSurgery, new object[]
+                //Re-add surgery bill
+                if (!pawn.IsHacked())
                 {
-                    billDoer,
-                    pawn
-                });
+                    ((Building_HackingTable)pawn.CurrentBed()).TryAddPawnForModification(pawn, WTH_DefOf.WTH_HackMechanoid);
+                }
+                billDoer.skills.Learn(SkillDefOf.Crafting, pawn.kindDef.combatPower * learnfactor, false);
+                billDoer.skills.Learn(SkillDefOf.Intellectual, pawn.kindDef.combatPower * learnfactor, false);
+                return;
             }
+            TaleRecorder.RecordTale(TaleDefOf.DidSurgery, new object[]
+            {
+                billDoer,
+                pawn
+            });
             if(this.recipe.addsHediff != null)
             {
                 pawn.health.AddHediff(this.recipe.addsHediff, part, null);

@@ -88,6 +88,11 @@ namespace WhatTheHack.Recipes
                 pawn.health.AddHediff(extension.addsAdditionalHediff, additionalHediffBodyPart);
             }
 
+            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule) && pawn.GetComp<CompRefuelable>() == null)
+            {
+                pawn.InitializeComps();
+            }
+
             pawn.SetFaction(Faction.OfPlayer);
             if (pawn.jobs.curDriver != null)
             {
