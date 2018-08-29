@@ -39,7 +39,24 @@
 			</li>
 		</stages>
 	</HediffDef>
-  
+	
+  	<HediffDef>
+		<defName>WTH_VanometricModule</defName>
+		<label>Vanometric module installed</label>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Moving</capacity>
+					  <offset>-0.1</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>
+	</HediffDef>
+	
       <HediffDef>
 		<defName>WTH_SelfDestruct</defName>
 		<label>self destruct module installed</label>

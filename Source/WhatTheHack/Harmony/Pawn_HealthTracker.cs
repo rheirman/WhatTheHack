@@ -91,6 +91,10 @@ namespace WhatTheHack.Harmony
                 float powerPerTick = 0.5f * WTH_DefOf.WTH_PortableChargingPlatform.GetCompProperties<CompProperties_Refuelable>().fuelConsumptionRate * 15 / GenDate.TicksPerDay; //TODO: no magic number
                 RechargeMechanoid(pawn, pawn.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power), powerPerTick);
             }
+            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_VanometricModule))
+            {
+                RechargeMechanoid(pawn, pawn.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power), 0.005f);//TODO: no magic number
+            }
 
             if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing))
             {

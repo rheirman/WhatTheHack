@@ -113,7 +113,15 @@ namespace WhatTheHack.Needs
         {
             get
             {
-                return this.PowerFallPerTickAssumingCategory(this.CurCategory);
+
+                if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_VanometricModule))
+                {
+                    return 0f;
+                }
+                else
+                {
+                    return this.PowerFallPerTickAssumingCategory(this.CurCategory);
+                }
             }
         }
 

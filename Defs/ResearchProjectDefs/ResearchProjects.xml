@@ -157,6 +157,20 @@
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
+		<defName>WTH_VanometricModule</defName>
+		<label>Vanometric power module</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>A module that contains a vanometric power cell to provide a mechanoid with an infinite power supply, at the cost of a small movement penalty.</description>
+		<baseCost>3500</baseCost>
+		<prerequisites>
+		  <li>WTH_BatteryExpansionModule</li>
+		</prerequisites>
+		<researchViewX>3</researchViewX>
+		<researchViewY>4</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
 	<defName>WTH_HackingAdvanced</defName>
 	<label>AI implanting</label>
 	<tab>WTH_ResearchTab</tab>

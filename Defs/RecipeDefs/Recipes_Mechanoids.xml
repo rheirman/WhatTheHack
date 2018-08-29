@@ -87,6 +87,60 @@
 	<workSkill>Crafting</workSkill>
 	<researchPrerequisite>WTH_BatteryExpansionModule</researchPrerequisite>
   </RecipeDef>
+
+  <RecipeDef>
+	<defName>WTH_Craft_VanometricModule</defName>
+	<label>craft vanometric module</label>
+	<description>Craft a vanometric power cell module</description>
+	<jobString>Crafting</jobString>
+	<workSpeedStat>WTH_HackingMaintenanceSpeed</workSpeedStat>
+	<effectWorking>Repair</effectWorking>
+	<soundWorking>Recipe_Machining</soundWorking>
+	<workAmount>4000</workAmount>
+	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+	<ingredients>
+		<li>
+			<filter>
+			  <thingDefs>
+				<li>WTH_MechanoidChip</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>ComponentSpacer</li>
+				</thingDefs>
+			</filter>
+			<count>1</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>VanometricPowerCell</li>
+				</thingDefs>
+			</filter>
+			<count>1</count>
+		</li>
+	</ingredients>
+	<products>
+	  <WTH_BatteryExpansionModule>1</WTH_BatteryExpansionModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_BatteryExpansionModule</researchPrerequisite>
+  </RecipeDef>
   
   <RecipeDef>
 	<defName>WTH_Craft_SelfDestructModule</defName>
@@ -168,6 +222,14 @@
 				</thingDefs>
 			</filter>
 			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>ComponentSpacer</li>
+				</thingDefs>
+			</filter>
+			<count>1</count>
 		</li>
 	</ingredients>
 	<products>
@@ -617,6 +679,49 @@
 			</li>
 		</modExtensions>
 	</RecipeDef>
+	
+		<RecipeDef>
+		<defName>WTH_InstallVanometricModule</defName>
+		<label>install vanometric power cell module</label>
+		<description>Gives the mechanoid infinite power supply at the cost of a small movement penalty.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Modifying mechanoid</jobString>
+		<workAmount>4000</workAmount>
+		<surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.2</deathOnFailedSurgeryChance>		
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<effectWorking>Repair</effectWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_VanometricModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_VanometricModule</addsHediff>
+		<researchPrerequisite>WTH_VanometricModule</researchPrerequisite>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
 	
   <RecipeDef>
     <defName>WTH_ShutDownMechanoid</defName>

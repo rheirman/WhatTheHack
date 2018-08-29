@@ -14,6 +14,7 @@
 			<li>WTH_InstallSelfDestruct</li>
 			<li>WTH_InstallTurretModule</li>
 			<li>WTH_InstallBatteryExpansionModule</li>
+			<li>WTH_InstallVanometricModule</li>
 		</recipes>		
 	</value>
 </Operation> 

@@ -110,6 +110,9 @@
 	  <li>WTH_Craft_RepairArm</li>
 	  <li>WTH_Craft_TurretModule</li>
 	  <li>WTH_Craft_SelfDestructModule</li>
+	  <li>WTH_Craft_SelfDestructModule</li>
+	  <li>WTH_Craft_AdditionalBatteryModule</li>
+	  <li>WTH_Craft_VanometricModule</li>
     </recipes>
     <comps>
       <li Class="CompProperties_Power">
