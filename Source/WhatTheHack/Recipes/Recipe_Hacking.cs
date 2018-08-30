@@ -59,6 +59,8 @@ namespace WhatTheHack.Recipes
         {
             float learnfactor = 1f / recipe.surgerySuccessChanceFactor;
             //Let random bad events happen when hacking fails
+            float combatPowerCapped = pawn.kindDef.combatPower <= 10000 ? pawn.kindDef.combatPower : 300;
+
             if (CheckHackingFail(pawn, billDoer, part))
             {
                 learnfactor *= 0.5f;
@@ -71,8 +73,8 @@ namespace WhatTheHack.Recipes
                 {
                     ((Building_HackingTable)pawn.CurrentBed()).TryAddPawnForModification(pawn, WTH_DefOf.WTH_HackMechanoid);
                 }
-                billDoer.skills.Learn(SkillDefOf.Crafting, pawn.kindDef.combatPower * learnfactor, false);
-                billDoer.skills.Learn(SkillDefOf.Intellectual, pawn.kindDef.combatPower * learnfactor, false);
+                billDoer.skills.Learn(SkillDefOf.Crafting, combatPowerCapped * learnfactor, false);
+                billDoer.skills.Learn(SkillDefOf.Intellectual, combatPowerCapped * learnfactor, false);
                 return;
             }
             TaleRecorder.RecordTale(TaleDefOf.DidSurgery, new object[]
@@ -96,8 +98,8 @@ namespace WhatTheHack.Recipes
             {
                 pawn.InitializeComps();
             }
-            billDoer.skills.Learn(SkillDefOf.Crafting, pawn.kindDef.combatPower * learnfactor, false);
-            billDoer.skills.Learn(SkillDefOf.Intellectual, pawn.kindDef.combatPower * learnfactor, false);
+            billDoer.skills.Learn(SkillDefOf.Crafting, combatPowerCapped * learnfactor, false);
+            billDoer.skills.Learn(SkillDefOf.Intellectual, combatPowerCapped * learnfactor, false);
 
             PostSuccessfulApply(pawn, part, billDoer, ingredients, bill);
         }

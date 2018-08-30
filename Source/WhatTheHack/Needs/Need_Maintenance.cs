@@ -34,7 +34,8 @@ namespace WhatTheHack.Needs
         private int NeededPartsForFullRecovery {
             get
             {
-                return Mathf.RoundToInt(pawn.kindDef.combatPower / 50f);
+                float combatPowerCapped = pawn.kindDef.combatPower <= 10000 ? pawn.kindDef.combatPower : 300;
+                return Mathf.RoundToInt(combatPowerCapped / 50f);
             }
         }
         public void RestoreUsingParts(int partCount)

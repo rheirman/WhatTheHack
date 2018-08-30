@@ -84,14 +84,16 @@ namespace WhatTheHack.Harmony
             }
             System.Random random = new System.Random(DateTime.Now.Millisecond);
 
-            int partsCount = random.Next(GenMath.RoundRandom(pawn.kindDef.combatPower * 0.03f * efficiency), GenMath.RoundRandom(pawn.kindDef.combatPower * 0.06f * efficiency)); //TODO: no magic number
+            float combatpowerCapped = pawn.kindDef.combatPower <= 10000 ? pawn.kindDef.combatPower : 300;
+
+            int partsCount = random.Next(GenMath.RoundRandom(combatpowerCapped * 0.03f * efficiency), GenMath.RoundRandom(combatpowerCapped * 0.06f * efficiency)); //TODO: no magic number
             if (partsCount > 0)
             {
                 Thing parts = ThingMaker.MakeThing(WTH_DefOf.WTH_MechanoidParts, null);
                 parts.stackCount = partsCount;
                 yield return parts;
             }
-            int chipCount = random.Next(0, GenMath.RoundRandom(pawn.kindDef.combatPower * 0.012f * efficiency));//TODO: no magic number
+            int chipCount = random.Next(0, GenMath.RoundRandom(combatpowerCapped * 0.012f * efficiency));//TODO: no magic number
             if (chipCount > 0) 
             {
                 Thing chips = ThingMaker.MakeThing(WTH_DefOf.WTH_MechanoidChip, null);

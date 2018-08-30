@@ -85,12 +85,12 @@ namespace WhatTheHack.Jobs
             {
 
                 Pawn actor = toil.actor;
-                float combatPower = targetPawn.kindDef.combatPower;
+                float combatPowerCapped = targetPawn.kindDef.combatPower <= 10000 ? targetPawn.kindDef.combatPower : 300;
                 float successChance = actor.GetStatValue(WTH_DefOf.WTH_HackingSuccessChance, true);
                 if (Rand.Chance(successChance))
                 {
-                    actor.skills.Learn(SkillDefOf.Crafting, combatPower * 0.5f, false);
-                    actor.skills.Learn(SkillDefOf.Intellectual, combatPower * 0.5f, false);
+                    actor.skills.Learn(SkillDefOf.Crafting, combatPowerCapped * 0.5f, false);
+                    actor.skills.Learn(SkillDefOf.Intellectual, combatPowerCapped * 0.5f, false);
                     need.RestoreUsingParts(actor.carryTracker.CarriedThing.stackCount);
                     Thing part = actor.CurJob.targetB.Thing;
                     if (!part.Destroyed)
@@ -100,8 +100,8 @@ namespace WhatTheHack.Jobs
                 }
                 else
                 {
-                    actor.skills.Learn(SkillDefOf.Crafting, combatPower * 0.25f, false);
-                    actor.skills.Learn(SkillDefOf.Intellectual, combatPower * 0.25f, false);
+                    actor.skills.Learn(SkillDefOf.Crafting, combatPowerCapped * 0.25f, false);
+                    actor.skills.Learn(SkillDefOf.Intellectual, combatPowerCapped * 0.25f, false);
                     MoteMaker.ThrowText((actor.DrawPos + targetPawn.DrawPos) / 2f, actor.Map, "WTH_TextMote_MaintenanceFailed".Translate(new object[]{ successChance.ToStringPercent() }), 8f);
                     Thing part = actor.CurJob.targetB.Thing;
                     if (!part.Destroyed)
