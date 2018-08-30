@@ -54,7 +54,7 @@
     <label>turret module</label>
     <description>Can be installed in mechanoids and allows turrets and mortars to be installed on it.</description>
     <graphicData>
-      <texPath>Things/Item/Health/HealthItemNatural</texPath>
+      <texPath>Things/TurretModule</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Metal_Drop</soundInteract>
@@ -79,7 +79,7 @@
     <label>Self destruct module</label>
     <description>Can be installed in mechanoids to give them a deadly self-destruct option.</description>
     <graphicData>
-      <texPath>Things/Item/Health/HealthItemNatural</texPath>
+      <texPath>Things/SelfDestructModule</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Metal_Drop</soundInteract>
