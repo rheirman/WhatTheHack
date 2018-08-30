@@ -104,7 +104,7 @@
     <label>Battery expansion module</label>
     <description>Can be installed in mechanoids to give them extra battery capacity, at the cost of a small movement penalty.</description>
     <graphicData>
-      <texPath>Things/Item/Health/HealthItemNatural</texPath>
+      <texPath>Things/BatteryExpansionModule</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Metal_Drop</soundInteract>
@@ -130,7 +130,7 @@
     <label>Vanometric power cell module</label>
     <description>Can be installed in mechanoids to give them an infinite power supply, at the cost of a small movement penalty.</description>
     <graphicData>
-      <texPath>Things/Item/Health/HealthItemNatural</texPath>
+      <texPath>Things/VanometricModule</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Metal_Drop</soundInteract>

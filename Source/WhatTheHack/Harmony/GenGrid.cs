@@ -8,6 +8,7 @@ using WhatTheHack.Comps;
 
 namespace WhatTheHack.Harmony
 {
+    //TODO: transpile this for better performance. 
     [HarmonyPatch(typeof(GenGrid), "Standable")]
     class GenGrid_Standable
     {
@@ -15,10 +16,15 @@ namespace WhatTheHack.Harmony
         {
             if (!__result)
             {
-                List<Thing> list = map.thingGrid.ThingsListAt(c);
-                for (int i = 0; i < list.Count; i++)
+                if (!map.pathGrid.Walkable(c))
                 {
-                    if (list[i] is ThingWithComps twc && twc.GetComp<CompMountable>() is CompMountable comp && comp.Active)
+                    __result = false;
+                    return;
+                }
+                List<Thing> list = map.thingGrid.ThingsListAt(c);
+                foreach (Thing t in list)
+                {
+                    if (t is ThingWithComps twc && twc.GetComp<CompMountable>() is CompMountable comp && comp.Active)
                     {
                         __result = true;
                     }
