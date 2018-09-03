@@ -18,6 +18,7 @@ namespace WhatTheHack.Storage
         public bool isHacked = false;
         public bool isActive = false;
         public bool shouldAutoRecharge = true;
+        public bool shouldExplodeNow = false;
 
         public Pawn remoteControlLink = null;
         public Building_PortableChargingPlatform caravanPlatform = null;
@@ -25,6 +26,7 @@ namespace WhatTheHack.Storage
         public void ExposeData()
         {
             Scribe_Values.Look(ref isHacked, "isHacked", false);
+            Scribe_Values.Look(ref shouldExplodeNow, "shouldExplodeNow", false);
             Scribe_Values.Look(ref isActive, "isActive", false);
             Scribe_Values.Look(ref shouldAutoRecharge, "shouldAutoRecharge", true);
             Scribe_References.Look(ref remoteControlLink, "remoteControlLink");

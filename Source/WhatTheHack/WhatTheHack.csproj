@@ -87,7 +87,6 @@
     <Compile Include="Harmony\TransferableUIUtility.cs" />
     <Compile Include="Harmony\TransferableUtility.cs" />
     <Compile Include="Jobs\JobDriver_Ability.cs" />
-    <Compile Include="Jobs\JobDriver_Explode.cs" />
     <Compile Include="Jobs\JobDriver_PerformMaintenance.cs" />
     <Compile Include="Jobs\WorkGiver_HaulMechanoid.cs" />
     <Compile Include="Jobs\WorkGiver_PerformMaintenance.cs" />

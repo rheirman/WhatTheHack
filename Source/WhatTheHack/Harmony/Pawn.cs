@@ -317,7 +317,7 @@ namespace WhatTheHack.Harmony
                         if (pawn.jobs.curDriver is JobDriver_Ability jobDriver && !pawn.Dead && jobDriver.finished)
                         {
                             powerNeed.CurLevel -= powerDrain;
-                            pawn.jobs.jobQueue.EnqueueFirst(new Job(WTH_DefOf.WTH_Explode) { count = 1});
+                            pawnData.shouldExplodeNow = true;
                         }
                     });
                 }

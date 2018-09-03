@@ -86,6 +86,18 @@ namespace WhatTheHack.Harmony
             {
                 return;
             }
+
+            ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+            if (pawnData.shouldExplodeNow)
+            {
+                GenExplosion.DoExplosion(pawn.Position, pawn.Map, 4.5f, DamageDefOf.Bomb, pawn, DamageDefOf.Bomb.defaultDamage, DamageDefOf.Bomb.defaultArmorPenetration, DamageDefOf.Bomb.soundExplosion, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+                pawn.jobs.startingNewJob = false;
+                BodyPartRecord reactorPart = pawn.health.hediffSet.GetNotMissingParts().FirstOrDefault((BodyPartRecord r) => r.def.defName == "Reactor");
+                pawn.TakeDamage(new DamageInfo(DamageDefOf.Bomb, reactorPart.def.GetMaxHealth(pawn), 9999, -1, null, reactorPart));
+                pawnData.shouldExplodeNow = false;
+            }
+
+
             if (pawn.HasValidCaravanPlatform() && pawn.GetCaravan() != null && pawn.GetCaravan().HasFuel())
             {
                 float powerPerTick = 0.5f * WTH_DefOf.WTH_PortableChargingPlatform.GetCompProperties<CompProperties_Refuelable>().fuelConsumptionRate * 15 / GenDate.TicksPerDay; //TODO: no magic number
