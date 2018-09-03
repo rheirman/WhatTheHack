@@ -67,29 +67,48 @@ namespace WhatTheHack.Comps
             }
             if (Active)
             {
-                Building_TurretGun turret = (Building_TurretGun)parent;
-                if (turret.Map != null && turret.Map.reservationManager.IsReservedByAnyoneOf(turret, Faction.OfPlayer))
-                {
-                    if(mountedTo.CurJobDef != JobDefOf.Wait_Combat)
-                    {
-                        mountedTo.jobs.StartJob(new Job(JobDefOf.Wait_Combat) { expiryInterval = 20 }, JobCondition.InterruptForced);
-                    }
-                }
+                LetMountedToWaitIfReserved();
             }
             if (Active && parent.IsHashIntervalTick(120))
             {
-                CompPowerTrader compPower = parent.GetComp<CompPowerTrader>();
-                CompFlickable compFlickable = parent.GetComp<CompFlickable>();
-                if (compPower != null && compFlickable != null && compFlickable.SwitchIsOn && parent.Spawned)
+                ConsumePowerIfNeeded();
+            }
+        }
+
+        private void ConsumePowerIfNeeded()
+        {
+            CompPowerTrader compPower = parent.GetComp<CompPowerTrader>();
+            CompFlickable compFlickable = parent.GetComp<CompFlickable>();
+            if (compPower != null && compFlickable != null && compFlickable.SwitchIsOn && parent.Spawned)
+            {
+                if (mountedTo.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) is Need_Power powerNeed && !powerNeed.DirectlyPowered(mountedTo))
                 {
-                    if (mountedTo.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) is Need_Power powerNeed && !powerNeed.DirectlyPowered(mountedTo))
-                    {
-                        powerNeed.CurLevel -= compPower.Props.basePowerConsumption * 0.008f;
-                    }
+                    powerNeed.CurLevel -= compPower.Props.basePowerConsumption * 0.008f;
                 }
             }
         }
 
+        private void LetMountedToWaitIfReserved()
+        {
+            Building_TurretGun turret = (Building_TurretGun)parent;
+            if (turret.Map != null && turret.Map.reservationManager.IsReservedByAnyoneOf(turret, Faction.OfPlayer))
+            {
+                if (mountedTo.CurJobDef != JobDefOf.Wait_Combat && mountedTo.CurJobDef != WTH_DefOf.WTH_Mechanoid_Rest)
+                {
+                    mountedTo.jobs.StartJob(new Job(JobDefOf.Wait_Combat) { expiryInterval = 10000}, JobCondition.InterruptForced);
+                    mountedTo.jobs.curDriver.AddFailCondition(delegate { return !turret.Map.reservationManager.IsReservedByAnyoneOf(turret, Faction.OfPlayer); });
+                }
+            }
+            /*
+            if (turret.Map != null && !turret.Map.reservationManager.IsReservedByAnyoneOf(turret, Faction.OfPlayer))
+            {
+                if (mountedTo.CurJobDef == JobDefOf.Wait_Combat)
+                {
+                    mountedTo.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                }
+            }
+            */
+        }
 
         private void Configure()
         {
