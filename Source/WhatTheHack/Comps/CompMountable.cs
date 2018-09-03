@@ -99,15 +99,6 @@ namespace WhatTheHack.Comps
                     mountedTo.jobs.curDriver.AddFailCondition(delegate { return !turret.Map.reservationManager.IsReservedByAnyoneOf(turret, Faction.OfPlayer); });
                 }
             }
-            /*
-            if (turret.Map != null && !turret.Map.reservationManager.IsReservedByAnyoneOf(turret, Faction.OfPlayer))
-            {
-                if (mountedTo.CurJobDef == JobDefOf.Wait_Combat)
-                {
-                    mountedTo.jobs.EndCurrentJob(JobCondition.InterruptForced);
-                }
-            }
-            */
         }
 
         private void Configure()

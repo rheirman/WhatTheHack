@@ -11,7 +11,7 @@
     </costList>
     <graphicData>
       <texPath>Things/HackingTable</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+      <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(7,4)</drawSize>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>
@@ -29,7 +29,7 @@
       <WorkToBuild>5000</WorkToBuild>
       <Flammability>1.0</Flammability>
     </statBases>
-	<rotatable>false</rotatable>
+	<rotatable>true</rotatable>
     <comps>
 	  <li Class="CompProperties_Glower">
 		<glowRadius>5</glowRadius>
@@ -110,9 +110,9 @@
 	  <li>WTH_Craft_RepairArm</li>
 	  <li>WTH_Craft_TurretModule</li>
 	  <li>WTH_Craft_SelfDestructModule</li>
-	  <li>WTH_Craft_SelfDestructModule</li>
 	  <li>WTH_Craft_AdditionalBatteryModule</li>
 	  <li>WTH_Craft_VanometricModule</li>
+	  <li>WTH_Craft_BeltModule</li>
     </recipes>
     <comps>
       <li Class="CompProperties_Power">
