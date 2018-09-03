@@ -308,7 +308,7 @@ namespace WhatTheHack.Harmony
                 {
                     Job job = new Job(WTH_DefOf.WTH_Ability, pawn)
                     {
-                        count = 250,
+                        count = 150,
                         playerForced = true                       
                     };
                     pawn.jobs.StartJob(job, JobCondition.InterruptForced);
@@ -374,7 +374,7 @@ namespace WhatTheHack.Harmony
                 disabledReason = disabledReason,
                 action = delegate
                 {
-                    StartRepairJob(__instance, __instance, compRefuelable, powerNeed, powerDrain, fuelConsumption, 400);
+                    StartRepairJob(__instance, __instance, compRefuelable, powerNeed, powerDrain, fuelConsumption, 300);
                 }
             };
             return gizmo;
@@ -420,7 +420,7 @@ namespace WhatTheHack.Harmony
                 action = delegate(Thing target) {
                     if (target is Pawn mech)
                     {
-                        StartRepairJob(__instance, mech, compRefuelable, powerNeed, powerDrain, fuelConsumption, 500);
+                        StartRepairJob(__instance, mech, compRefuelable, powerNeed, powerDrain, fuelConsumption, 400);
                     }
 
                 }

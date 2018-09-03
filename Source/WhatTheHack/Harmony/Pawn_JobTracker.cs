@@ -53,6 +53,7 @@ namespace WhatTheHack.Harmony
                 if (powerNeed != null &&
                     powerNeed.CurCategory >= PowerCategory.LowPower &&
                     pawnData.shouldAutoRecharge && 
+                    __result.Job.def != WTH_DefOf.WTH_Explode && 
                     pawn.IsActivated()
                     )
                 {
