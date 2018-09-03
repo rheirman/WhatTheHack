@@ -71,6 +71,13 @@
 		<isBad>false</isBad>
 	  </HediffDef>
 	  
+	   <HediffDef>
+		<defName>WTH_BeltModule</defName>
+		<label>belt module installed</label>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+	  </HediffDef>
+	  
 	  <HediffDef>
 		<defName>WTH_TurretModule</defName>
 		<label>turret module installed</label>

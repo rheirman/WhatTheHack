@@ -29,6 +29,7 @@ namespace WhatTheHack
         public static HediffDef WTH_MountedTurret;
         public static HediffDef WTH_BatteryExpansionModule;
         public static HediffDef WTH_VanometricModule;
+        public static HediffDef WTH_BeltModule;
 
         public static DamageDef WTH_RegeneratedPartDamage;
 
@@ -56,6 +57,7 @@ namespace WhatTheHack
         public static ThingDef WTH_MechanoidChip;
         public static ThingDef WTH_Mote_Charging;
         public static ThingDef WTH_Mote_HealingCrossGreen;
+        public static ThingDef WTH_Apparel_MechControllerBelt;
 
         public static StatDef WTH_HackingSuccessChance;
         public static StatDef WTH_HackingMaintenanceSpeed;
@@ -65,5 +67,7 @@ namespace WhatTheHack
 
         //vanilla
         public static BodyPartDef Reactor;
+        public static BodyPartGroupDef Waist;
+
     }
 }

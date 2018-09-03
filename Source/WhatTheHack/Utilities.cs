@@ -12,6 +12,16 @@ namespace WhatTheHack
 {
     static class Utilities
     {
+        public static bool IsBelt(ApparelProperties apparel)
+        {
+            //Apparel is a belt when it can only be attached to a waist and nothing else. 
+            if (apparel != null && apparel.bodyPartGroups.Count == 1 && apparel.bodyPartGroups[0] == WTH_DefOf.Waist)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public static bool IsAllowedInModOptions(String pawnName, Faction faction)
         {
             bool found = Base.factionRestrictions.Value.InnerList[faction.def.defName].TryGetValue(pawnName, out Record value);

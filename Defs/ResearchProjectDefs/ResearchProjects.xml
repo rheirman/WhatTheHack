@@ -147,7 +147,7 @@
 		<label>Battery expansion module</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>A module that increased the total power a mechanoid can store, at the cost of a small movement penalty.</description>
+		<description>A module that increases the total power a mechanoid can store, at the cost of a small movement penalty.</description>
 		<baseCost>2000</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
@@ -168,6 +168,21 @@
 		</prerequisites>
 		<researchViewX>3</researchViewX>
 		<researchViewY>4</researchViewY>
+	</ResearchProjectDef>
+	
+		
+	<ResearchProjectDef>
+		<defName>WTH_BeltModule</defName>
+		<label>Belt interface module</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>A module installable on any hacked mechanoid, which acts as an interface to technically advanced belts like shield belts and smokepop belts normally worn by humanoids.</description>
+		<baseCost>3000</baseCost>
+		<prerequisites>
+		  <li>WTH_MechanoidWorkshop</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>5</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>

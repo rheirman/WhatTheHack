@@ -334,6 +334,53 @@
 	<researchPrerequisite>WTH_RepairArm</researchPrerequisite>
   </RecipeDef>  
   
+  <RecipeDef>
+	<defName>WTH_Craft_BeltModule</defName>
+	<label>craft belt module</label>
+	<description>Craft a belt module</description>
+	<jobString>Crafting</jobString>
+	<workSpeedStat>WTH_HackingMaintenanceSpeed</workSpeedStat>
+	<effectWorking>Repair</effectWorking>
+	<soundWorking>Recipe_Machining</soundWorking>
+	<workAmount>3500</workAmount>
+	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_MechanoidParts</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_MechanoidChip</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+	<products>
+	  <WTH_BeltModule>1</WTH_BeltModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_BeltModule</researchPrerequisite>
+  </RecipeDef>  
+  
+  
 	<RecipeDef>
 		<defName>WTH_HackMechanoid</defName>
 		<label>hack mechanoid targeting device</label>
@@ -637,6 +684,49 @@
 			</li>
 		</modExtensions>
 	</RecipeDef>
+		
+	<RecipeDef>
+		<defName>WTH_InstallBeltModule</defName>
+		<label>install belt module</label>
+		<description>Install a module that allows mechanoids to equip belts like shield belts and smokepop belts.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_BeltModule</workerClass>
+		<jobString>Modifying mechanoid</jobString>
+		<workAmount>3000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>		
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<effectWorking>Repair</effectWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_BeltModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_BeltModule</addsHediff>
+		<researchPrerequisite>WTH_BeltModule</researchPrerequisite>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
 	
 	<RecipeDef>
 		<defName>WTH_InstallBatteryExpansionModule</defName>
@@ -680,7 +770,7 @@
 		</modExtensions>
 	</RecipeDef>
 	
-		<RecipeDef>
+	<RecipeDef>
 		<defName>WTH_InstallVanometricModule</defName>
 		<label>install vanometric power cell module</label>
 		<description>Gives the mechanoid infinite power supply at the cost of a small movement penalty.</description>

@@ -35,7 +35,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="HugsLib">
@@ -49,7 +49,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -62,6 +62,7 @@
     <Compile Include="Buildings\Building_PortableChargingPlatform.cs" />
     <Compile Include="Comps\CompMountable.cs" />
     <Compile Include="Comps\CompProperties_Mountable.cs" />
+    <Compile Include="Harmony\ApparelUtility.cs" />
     <Compile Include="Harmony\Bill.cs" />
     <Compile Include="Harmony\Building_TurretGun.cs" />
     <Compile Include="Harmony\Caravan.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Harmony\LovePartnerRelationUtility.cs" />
     <Compile Include="Harmony\MassUtility.cs" />
     <Compile Include="Harmony\MinifyUtility.cs" />
+    <Compile Include="Harmony\OutfitDatabase.cs" />
     <Compile Include="Harmony\PawnCapacitiesHandler.cs" />
     <Compile Include="Harmony\PowerConnectionMaker.cs" />
     <Compile Include="Harmony\TransferableUIUtility.cs" />
@@ -95,6 +97,7 @@
     <Compile Include="ModExtension\DefModExtension_Recipe.cs" />
     <Compile Include="Needs\MaintenanceCategory.cs" />
     <Compile Include="Needs\Need_Maintenance.cs" />
+    <Compile Include="Recipes\Recipe_BeltModule.cs" />
     <Compile Include="Recipes\Recipe_Hacking.cs" />
     <Compile Include="Recipes\Recipe_MountTurret.cs" />
     <Compile Include="Recipes\Recipe_ShutDown.cs" />
@@ -133,6 +136,7 @@
     <Compile Include="Needs\Need_Power.cs" />
     <Compile Include="Needs\PowerCategory.cs" />
     <Compile Include="Recipes\Recipe_ModifyMechanoid.cs" />
+    <Compile Include="Thinknode\ThinkNode_ConditionalShieldBeltModule.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="Jobs\JobDriver_CarryToHackingTable.cs" />
     <Compile Include="Recipes\RecipeUtility.cs" />

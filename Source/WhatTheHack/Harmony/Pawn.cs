@@ -169,6 +169,10 @@ namespace WhatTheHack.Harmony
             {
                 gizmoList.Add(CreateGizmo_Repair(__instance, pawnData));
             }
+            if (hediffSet.HasHediff(WTH_DefOf.WTH_BeltModule))
+            {
+                gizmoList.Add(CreateGizmo_EquipBelt(__instance, pawnData));
+            }
 
         }
         private static TargetingParameters GetTargetingParametersForTurret()
@@ -414,6 +418,40 @@ namespace WhatTheHack.Harmony
             return gizmo;
         }
 
+        private static Gizmo CreateGizmo_EquipBelt(Pawn pawn, ExtendedPawnData pawnData)
+        {
+            bool notActicated = !pawn.IsActivated();
+            bool isDisabled = notActicated;
+            string disabledReason = "";
+            if (isDisabled)
+            {
+                if (notActicated)
+                {
+                    disabledReason = "WTH_Reason_NotActivated".Translate();
+                }
+            }
+
+            Gizmo gizmo = new Command_Target
+            {
+                defaultLabel = "WTH_Gizmo_Mech_EquipBelt_Label".Translate(),
+                defaultDesc = "WTH_Gizmo_Mech_EquipBelt_Description".Translate(),
+                icon = ContentFinder<Texture2D>.Get(("Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt"), true), //TODO: other icon
+                disabled = isDisabled,
+                targetingParams = GetTargetingParametersForEquipBelt(pawn),
+                disabledReason = disabledReason,
+                action = delegate (Thing target) {
+                    if (target is Apparel apparel && Utilities.IsBelt(apparel.def.apparel))
+                    {
+                        apparel.SetForbidden(false, true);
+                        Job job = new Job(JobDefOf.Wear, apparel);
+                        pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                    }
+
+                }
+            };
+            return gizmo;
+        }
+
 
         private static void StartRepairJob(Pawn pawn, Pawn target, CompRefuelable compRefuelable, Need_Power powerNeed, float powerDrain, float fuelConsumption, int duration)
         {
@@ -440,6 +478,7 @@ namespace WhatTheHack.Harmony
                 canTargetPawns = true,
                 canTargetBuildings = false,
                 mapObjectTargetsMustBeAutoAttackable = false,
+                
                 validator = delegate (TargetInfo targ)
                 {
                     if (!targ.HasThing)
@@ -453,6 +492,33 @@ namespace WhatTheHack.Harmony
                     && pawn.health != null
                     && pawn.health.hediffSet.HasNaturallyHealingInjury()
                     && !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing);
+                }
+            };
+        }
+        private static TargetingParameters GetTargetingParametersForEquipBelt(Pawn pawn)
+        {
+            return new TargetingParameters
+            {
+                canTargetPawns = false,
+                canTargetItems = true,
+                canTargetBuildings = false,
+                mapObjectTargetsMustBeAutoAttackable = false,
+                validator = delegate (TargetInfo targ)
+                {
+                    if (!targ.HasThing)
+                    {
+                        return false;
+                    }         
+                    Apparel apparel = targ.Thing as Apparel;
+                    if(apparel == null)
+                    {
+                        return false;
+                    }
+                    if(!pawn.HasReplacedAI() && apparel.def == WTH_DefOf.WTH_Apparel_MechControllerBelt)
+                    {
+                        return false;
+                    }
+                    return Utilities.IsBelt(apparel.def.apparel) && pawn.CanReach(apparel, PathEndMode.ClosestTouch, Danger.Deadly);
                 }
             };
         }

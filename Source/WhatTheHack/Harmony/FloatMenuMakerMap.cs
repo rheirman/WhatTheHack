@@ -14,18 +14,6 @@ using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
 {
-    /*This Harmony Postfix makes the creature respond to clicks on the map screen, so it can be controlled
- */
-     /*
-    [HarmonyPatch(typeof(FloatMenuMakerMap), "CanTakeOrder")]
-    public static class FloatMenuMakerMap_CanTakeOrder
-    {
-        public static void Postfix(Pawn pawn, ref bool __result)
-        {
-            __result = pawn.CanTakeOrder();
-        }
-    }
-    */
 
     [HarmonyPatch(typeof(FloatMenuMakerMap), "AddJobGiverWorkOrders")]
     static class FloatMenuMakerMap_AddJobGiverWorkOrders
@@ -66,28 +54,6 @@ namespace WhatTheHack.Harmony
                     };
                     __result.Add(new FloatMenuOption("WTH_Menu_ClearTable".Translate(), action, MenuOptionPriority.Low));
                 }
-                /*
-                if ((!targetPawn.IsHacked() || targetPawn.Faction != Faction.OfPlayer) && targetPawn.Downed && !targetPawn.OnHackingTable())
-                {
-
-                    Building_HackingTable closestAvailableTable = Utilities.GetAvailableHackingTable(pawn, targetPawn);
-                    if (closestAvailableTable != null)
-                    {
-                        Action action = delegate
-                        {
-                            Job job = new Job(WTH_DefOf.WTH_CarryToHackingTable, targetPawn, closestAvailableTable);
-                            job.count = 1;
-                            pawn.jobs.TryTakeOrderedJob(job);
-                        };
-                        __result.Add(new FloatMenuOption("WTH_Menu_CarryToTable".Translate(), action, MenuOptionPriority.Low));
-                    }                
-                    else if (!pawn.OnHackingTable())
-                    {
-                        __result.Add(new FloatMenuOption("WTH_Menu_CarryToTable_Disabled".Translate(), null, MenuOptionPriority.Low));
-                    }
-                } 
-                */
-
             }
         }
 

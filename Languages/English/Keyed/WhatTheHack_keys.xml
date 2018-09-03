@@ -61,6 +61,9 @@
 	<WTH_Gizmo_SelfRepair_Label>Self repair</WTH_Gizmo_SelfRepair_Label>
 	<WTH_Gizmo_SelfRepair_Description>Orders the mech to activate the repair module, which causes surge of energy, activating the mechanoid's internal mechanites. These start to repair immediately using the parts stored in the module.</WTH_Gizmo_SelfRepair_Description>
 	
+	<WTH_Gizmo_Mech_EquipBelt_Label>Equip belt</WTH_Gizmo_Mech_EquipBelt_Label>
+	<WTH_Gizmo_Mech_EquipBelt_Description>Orders the mech to use its belt module to equip any type of belt normally used by humanoids.</WTH_Gizmo_Mech_EquipBelt_Description>
+	
 	<WTH_Reason_AlreadyRepairing>This mechanoid is already injected with charged repairing mechanoids.</WTH_Reason_AlreadyRepairing>
 	<WTH_Reason_NeedsMorePower>At least {0} power is needed to activate this.</WTH_Reason_NeedsMorePower>
 	<WTH_Reason_NeedsMoreFuel>At least {0} fuel is needed to activate this.</WTH_Reason_NeedsMoreFuel>
