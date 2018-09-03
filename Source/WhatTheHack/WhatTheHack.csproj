@@ -83,6 +83,7 @@
     <Compile Include="Harmony\MinifyUtility.cs" />
     <Compile Include="Harmony\PawnCapacitiesHandler.cs" />
     <Compile Include="Harmony\PowerConnectionMaker.cs" />
+    <Compile Include="Harmony\ShieldBelt.cs" />
     <Compile Include="Harmony\TransferableUIUtility.cs" />
     <Compile Include="Harmony\TransferableUtility.cs" />
     <Compile Include="Jobs\JobDriver_Ability.cs" />

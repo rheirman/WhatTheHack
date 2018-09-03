@@ -157,6 +157,16 @@ namespace WhatTheHack.Harmony
             gizmoList.Add(CreateGizmo_AutoRecharge(__instance, pawnData));
             HediffSet hediffSet = __instance.health.hediffSet;
 
+            if (!__instance.IsColonistPlayerControlled)
+            {
+                if (__instance.apparel != null)
+                {
+                    foreach (Gizmo apparelGizmo in __instance.apparel.GetGizmos())
+                    {
+                        gizmoList.Add(apparelGizmo);
+                    }
+                }
+            }
             if (hediffSet.HasHediff(WTH_DefOf.WTH_SelfDestruct))
             {
                 gizmoList.Add(CreateGizmo_SelfDestruct(__instance, pawnData));
