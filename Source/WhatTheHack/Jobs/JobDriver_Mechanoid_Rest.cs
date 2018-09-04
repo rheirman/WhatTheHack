@@ -25,7 +25,7 @@ namespace WhatTheHack.Jobs
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            
+            this.FailOnDespawnedOrNull(TargetIndex.A);
             Toil goToPlatform = Toils_Bed.GotoBed(TargetIndex.A);
             yield return goToPlatform;
 
