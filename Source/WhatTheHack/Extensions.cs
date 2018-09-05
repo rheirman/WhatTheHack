@@ -50,6 +50,7 @@ namespace WhatTheHack
                 return false;
             }
         }
+        /*
         public static bool HasHackedLocomotion(this Pawn pawn)
         {
             if (pawn.health != null && (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_LocomotionHacked)))
@@ -61,6 +62,7 @@ namespace WhatTheHack
                 return false;
             }
         }
+        */
 
         public static Pawn RemoteControlLink(this Pawn pawn)
         {

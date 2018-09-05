@@ -479,7 +479,7 @@
 			</li>
 		</modExtensions>
 	</RecipeDef>
-	
+	<!--
 	<RecipeDef>
 		<defName>WTH_HackLocomotion</defName>
 		<label>hack mechanoid locomotion system</label>
@@ -531,7 +531,7 @@
 			</li>
 		</modExtensions>
 	</RecipeDef>
-
+	-->
 	
 	<RecipeDef>
 		<defName>WTH_InstallRepairArm</defName>

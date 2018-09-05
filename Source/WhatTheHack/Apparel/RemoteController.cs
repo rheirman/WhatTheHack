@@ -98,7 +98,7 @@ namespace WhatTheHack
                         return false;
                     }
                     Pawn pawn = targ.Thing as Pawn;
-                    return pawn != null && !pawn.Downed && pawn.IsHacked() && pawn.HasHackedLocomotion();
+                    return pawn != null && !pawn.Downed && pawn.IsHacked();
                 }
             };
         }

@@ -19,7 +19,6 @@ namespace WhatTheHack
         public static HediffDef WTH_LowMaintenance;
         public static HediffDef WTH_VeryLowMaintenance;
         public static HediffDef WTH_TargetingHackedPoorly;
-        public static HediffDef WTH_LocomotionHacked;
         public static HediffDef WTH_RegeneratedPart;
         public static HediffDef WTH_RepairModule;
         public static HediffDef WTH_Repairing;
