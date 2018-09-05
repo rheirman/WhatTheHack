@@ -413,6 +413,7 @@
 		<appliedOnFixedBodyParts>
 			<li>ArtificialBrain</li>
 			<li>Brain</li>
+			<li>MechanicalHead</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>WTH_TargetingHacked</addsHediff>
 		<researchPrerequisite>WTH_HackingBasics</researchPrerequisite>
@@ -467,6 +468,8 @@
 		</ingredients>
 		<appliedOnFixedBodyParts>
 			<li>ArtificialBrain</li>
+			<li>Brain</li>
+			<li>MechanicalHead</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>WTH_ReplacedAI</addsHediff>
 		<researchPrerequisite>WTH_HackingAdvanced</researchPrerequisite>
@@ -517,6 +520,8 @@
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
 			<li>ArtificialBrain</li>
+			<li>Brain</li>
+			<li>MechanicalHead</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>WTH_LocomotionHacked</addsHediff>
 		<researchPrerequisite>WTH_HackingRemoteControl</researchPrerequisite>

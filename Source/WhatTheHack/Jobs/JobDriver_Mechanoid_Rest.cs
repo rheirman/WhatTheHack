@@ -40,6 +40,10 @@ namespace WhatTheHack.Jobs
                 {
                     ReadyForNextToil();
                 }
+                if(pawn.jobs.posture == PawnPosture.Standing)
+                {
+                    RotateToSouth();
+                }
             });
             yield return layDownToil;
             Toil toil = new Toil();
@@ -48,11 +52,16 @@ namespace WhatTheHack.Jobs
             {
                 pawn.jobs.posture = PawnPosture.Standing;
                 pawn.Position = RestingPlace.GetSleepingSlotPos(RestingPlace is Building_HackingTable ? Building_HackingTable.SLOTINDEX : Building_BaseMechanoidPlatform.SLOTINDEX);
-                pawn.CurJob.SetTarget(TargetIndex.C, new LocalTargetInfo(new IntVec3(pawn.Position.x, pawn.Position.y, pawn.Position.z - 1)));
-                this.rotateToFace = TargetIndex.C;
+                RotateToSouth();
             };
             yield return toil;
 
+        }
+
+        private void RotateToSouth()
+        {
+            pawn.CurJob.SetTarget(TargetIndex.C, new LocalTargetInfo(new IntVec3(pawn.Position.x, pawn.Position.y, pawn.Position.z - 1)));
+            this.rotateToFace = TargetIndex.C;
         }
     }
 }

@@ -13,10 +13,7 @@ namespace WhatTheHack.Buildings
     {
         public CompPowerTrader powerComp;
         public const float MINFUELREGENERATE = 4.0f;
-        private bool regenerateActive;
-        private bool repairActive;
-        
-        
+         
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
