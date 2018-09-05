@@ -15,6 +15,7 @@ namespace WhatTheHack.Recipes
 {
     abstract class Recipe_Hacking : RecipeWorker
     {
+        protected bool allowMultipleParts = false;
         protected abstract bool CanApplyOn(Pawn pawn);
         public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
         {
@@ -29,7 +30,7 @@ namespace WhatTheHack.Recipes
                     for (int j = 0; j < bpList.Count; j++)
                     {
                         BodyPartRecord record = bpList[j];
-                        if (record.def == part)
+                        if (record.def == part && !partFound || allowMultipleParts)
                         {
                             IEnumerable<Hediff> diffs = from x in pawn.health.hediffSet.hediffs
                                                         where x.Part == record

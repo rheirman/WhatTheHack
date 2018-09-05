@@ -15,6 +15,7 @@ namespace WhatTheHack.Recipes
 {
     class Recipe_HackMechanoid : Recipe_Hacking
     {
+        protected new bool allowMultipleParts = false;
         protected override bool CanApplyOn(Pawn pawn)
         {
             return pawn.Faction != Faction.OfPlayer;

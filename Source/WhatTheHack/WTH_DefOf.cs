@@ -64,6 +64,8 @@ namespace WhatTheHack
         public static ResearchProjectDef WTH_TurretModule_GunTurrets;
         public static ResearchProjectDef WTH_TurretModule_Mortars;
 
+        public static WorkTypeDef WTH_Hack;
+
         //vanilla
         public static BodyPartDef Reactor;
         public static BodyPartGroupDef Waist;

@@ -22,25 +22,67 @@ namespace WhatTheHack.Harmony
             {
                 ConsumeFuelIfNeeded(__instance);
             }
-            if (__instance.IsHashIntervalTick(240))
+            if (__instance.IsHashIntervalTick(480))
             {
-                RepairMechsIfNeeded(__instance);
+                List<Thing> allParts = __instance.AllThings.Where((Thing t) => t.def == WTH_DefOf.WTH_MechanoidParts).ToList();
+                if (!allParts.NullOrEmpty())
+                {
+                    List<Pawn> allHackedMechs = __instance.AllThings.Where((Thing t) => t is Pawn pawn && !pawn.Dead && pawn.IsHacked()).Cast<Pawn>().ToList();
+                    if (!allHackedMechs.NullOrEmpty())
+                    {
+                        RepairMechsIfNeeded(__instance, allParts, allHackedMechs);
+                        MaintainMechsIfNeeded(__instance, allParts, allHackedMechs);
+                    }
+                }
             }
         }
 
-        private static void RepairMechsIfNeeded(Caravan __instance)
+        private static void MaintainMechsIfNeeded(Caravan caravan, List<Thing> allParts, List<Pawn> allHackedMechs)
         {
-            List<Thing> allParts = __instance.AllThings.Where((Thing t) => t.def == WTH_DefOf.WTH_MechanoidParts).ToList();
-            if (allParts.NullOrEmpty())
+            Thing partItem = allParts.First();
+            List<Pawn> allPawnsCapableOfMaintenance = caravan.AllThings.Where((Thing t) => t is Pawn pawn && !pawn.Dead && !pawn.Downed && pawn.workSettings.WorkIsActive(WTH_DefOf.WTH_Hack)).Cast<Pawn>().ToList();
+            if (allPawnsCapableOfMaintenance.NullOrEmpty())
             {
                 return;
             }
+            List<Pawn> allMechsNeedingMaintenance = allHackedMechs.Where((Pawn p) => p.needs.TryGetNeed<Need_Maintenance>() is Need_Maintenance needM && needM.CurCategory >= MaintenanceCategory.LowMaintenance).ToList();
+            if (allMechsNeedingMaintenance.NullOrEmpty())
+            {
+                return;
+            }
+            Pawn bestPawn = allPawnsCapableOfMaintenance.MaxBy((Pawn p) => p.skills.AverageOfRelevantSkillsFor(WTH_DefOf.WTH_Hack));
+            float successChance = bestPawn.GetStatValue(WTH_DefOf.WTH_HackingSuccessChance, true);
+            if(successChance < 0.20f)
+            {
+                return;
+            }
+
+            Pawn chosenMech = allMechsNeedingMaintenance.RandomElement();
+            Need_Maintenance need = chosenMech.needs.TryGetNeed<Need_Maintenance>();
+            int partsAvailable = Math.Min(need.PartsNeededToRestore(), partItem.stackCount);
+            float combatPowerCapped = chosenMech.kindDef.combatPower <= 10000 ? chosenMech.kindDef.combatPower : 300;
+
+            if (Rand.Chance(successChance))
+            {
+                bestPawn.skills.Learn(SkillDefOf.Crafting, combatPowerCapped * 0.5f, false);
+                bestPawn.skills.Learn(SkillDefOf.Intellectual, combatPowerCapped * 0.5f, false);
+                need.RestoreUsingParts(partsAvailable);
+            }
+            else
+            {
+                bestPawn.skills.Learn(SkillDefOf.Crafting, combatPowerCapped * 0.25f, false);
+                bestPawn.skills.Learn(SkillDefOf.Intellectual, combatPowerCapped * 0.25f, false);
+            }
+            partItem.SplitOff(partsAvailable);
+        }
+
+        private static void RepairMechsIfNeeded(Caravan caravan, List<Thing> allParts, List<Pawn> allHackedMechs)
+        {
             Thing partItem = allParts.First();
             if(partItem.stackCount < 5)
             {
                 return;
             }
-            List<Pawn> allHackedMechs = __instance.AllThings.Where((Thing t) => t is Pawn pawn && !pawn.Dead && pawn.IsHacked()).Cast<Pawn>().ToList();
             if (allHackedMechs.NullOrEmpty())
             {
                 return;
