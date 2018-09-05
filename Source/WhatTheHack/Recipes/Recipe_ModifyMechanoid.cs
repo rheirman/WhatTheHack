@@ -36,7 +36,10 @@ namespace WhatTheHack.Recipes
 
         protected override void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
-            pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
+            if(pawn.BillStack.Bills.Count == 0)
+            {
+                pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
+            }
         }
     }
 }
