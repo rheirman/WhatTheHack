@@ -205,7 +205,7 @@
     <label>belt module</label>
     <description>Can be installed in mechanoids so they can equip belts like shield belts and smokepop belts.</description>
     <graphicData>
-      <texPath>Things/Item/Health/HealthItemBionic</texPath>
+      <texPath>Things/BeltModule</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Metal_Drop</soundInteract>
