@@ -61,8 +61,8 @@
     <soundDrop>Standard_Drop</soundDrop>
     <stackLimit>1</stackLimit>
     <statBases>
+	  <WorkToMake>8000</WorkToMake>
       <MaxHitPoints>70</MaxHitPoints>
-      <MarketValue>800</MarketValue>
       <Mass>0.6</Mass>
       <Flammability>1.0</Flammability>
 	  <DeteriorationRate>2.0</DeteriorationRate>
@@ -86,8 +86,8 @@
     <soundDrop>Standard_Drop</soundDrop>
     <stackLimit>1</stackLimit>
     <statBases>
+	  <WorkToMake>3000</WorkToMake>
       <MaxHitPoints>70</MaxHitPoints>
-      <MarketValue>100</MarketValue>
       <Mass>0.6</Mass>
       <Flammability>1.0</Flammability>
 	  <DeteriorationRate>2.0</DeteriorationRate>
@@ -111,8 +111,8 @@
     <soundDrop>Standard_Drop</soundDrop>
     <stackLimit>1</stackLimit>
     <statBases>
+	  <WorkToMake>6000</WorkToMake>
       <MaxHitPoints>70</MaxHitPoints>
-      <MarketValue>250</MarketValue>
       <Mass>0.6</Mass>
       <Flammability>1.0</Flammability>
 	  <DeteriorationRate>2.0</DeteriorationRate>
@@ -137,8 +137,8 @@
     <soundDrop>Standard_Drop</soundDrop>
     <stackLimit>1</stackLimit>
     <statBases>
+	  <WorkToMake>10000</WorkToMake>
       <MaxHitPoints>70</MaxHitPoints>
-      <MarketValue>1400</MarketValue>
       <Mass>0.6</Mass>
       <Flammability>1.0</Flammability>
 	  <DeteriorationRate>2.0</DeteriorationRate>
@@ -162,8 +162,8 @@
     <soundDrop>Standard_Drop</soundDrop>
     <stackLimit>1</stackLimit>
     <statBases>
+	  <WorkToMake>5000</WorkToMake>
       <MaxHitPoints>70</MaxHitPoints>
-      <MarketValue>350</MarketValue>
       <Mass>0.6</Mass>
       <Flammability>1.0</Flammability>
 	  <DeteriorationRate>2.0</DeteriorationRate>
@@ -187,8 +187,8 @@
     <soundDrop>Standard_Drop</soundDrop>
     <stackLimit>1</stackLimit>
     <statBases>
+	  <WorkToMake>4000</WorkToMake>
       <MaxHitPoints>70</MaxHitPoints>
-      <MarketValue>300</MarketValue>
       <Mass>0.6</Mass>
       <Flammability>1.0</Flammability>
 	  <DeteriorationRate>2.0</DeteriorationRate>
@@ -212,8 +212,8 @@
     <soundDrop>Standard_Drop</soundDrop>
     <stackLimit>1</stackLimit>
     <statBases>
+	  <WorkToMake>7000</WorkToMake>
       <MaxHitPoints>70</MaxHitPoints>
-      <MarketValue>300</MarketValue>
       <Mass>0.6</Mass>
       <Flammability>1.0</Flammability>
 	  <DeteriorationRate>2.0</DeteriorationRate>

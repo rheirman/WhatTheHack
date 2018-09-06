@@ -11,7 +11,7 @@
     <tickerType>Normal</tickerType>
     <statBases>
 		<Mass>3</Mass>
-		<WorkToMake>15000</WorkToMake>
+		<WorkToMake>12000</WorkToMake>
 		<WTH_ControllerBeltRadius>22</WTH_ControllerBeltRadius>
     </statBases>
 		<costList>
