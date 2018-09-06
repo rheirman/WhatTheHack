@@ -72,7 +72,7 @@ namespace WhatTheHack.Needs
 
         private void MaybeUnhackMechanoid()
         {
-            if(pawn.Map != null)//TODO make unhacking during caravan possible
+            if(pawn.Map != null && !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_ReplacedAI))//TODO make unhacking during caravan possible
             {
                 System.Random rand = new System.Random(DateTime.Now.Millisecond);
                 int rndInt = rand.Next(1, 1000);
