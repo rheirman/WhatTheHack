@@ -59,6 +59,7 @@ namespace WhatTheHack
 
         public static StatDef WTH_HackingSuccessChance;
         public static StatDef WTH_HackingMaintenanceSpeed;
+        public static StatDef WTH_ControllerBeltRadius;
 
         public static ResearchProjectDef WTH_TurretModule_GunTurrets;
         public static ResearchProjectDef WTH_TurretModule_Mortars;

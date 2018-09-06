@@ -30,6 +30,15 @@ namespace WhatTheHack
             }
         }
 
+        public int ControlRadius
+        {
+            get {
+                float radius = this.GetStatValue(WTH_DefOf.WTH_ControllerBeltRadius, true);
+                return Mathf.RoundToInt(radius);
+            }
+        }
+
+
         private static Gizmo GetRemoteControlDeActivateGizmo(Pawn pawn)
         {
             Command_Action command = new Command_Action();

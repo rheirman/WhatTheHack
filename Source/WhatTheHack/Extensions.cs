@@ -37,7 +37,7 @@ namespace WhatTheHack
         }
         public static bool UnableToControl(this Pawn pawn)
         {
-            return  pawn.DestroyedOrNull() || pawn.Downed || pawn.InMentalState || pawn.IsBurning() || pawn.RemoteControlLink() == null;
+            return  pawn.DestroyedOrNull() || pawn.Downed || pawn.InMentalState || pawn.IsBurning() || pawn.RemoteControlLink() == null || pawn.apparel == null || pawn.apparel.WornApparel.FirstOrDefault((Apparel app) => app.def == WTH_DefOf.WTH_Apparel_MechControllerBelt) == null;
         }
         public static bool HasReplacedAI(this Pawn pawn)
         {

@@ -54,11 +54,11 @@ namespace WhatTheHack.Harmony
                 {
                     if (pawn.IsHacked())
                     {
-                        GenDraw.DrawRadiusRing(pawn.RemoteControlLink().Position, 30f);
+                        GenDraw.DrawRadiusRing(pawn.RemoteControlLink().Position, Utilities.GetRemoteControlRadius(pawn.RemoteControlLink()));
                     }
                     else
                     {
-                        GenDraw.DrawRadiusRing(pawn.Position, 30f);
+                        GenDraw.DrawRadiusRing(pawn.Position, Utilities.GetRemoteControlRadius(pawn));
                     }
                     GenDraw.DrawLineBetween(pawn.Position.ToVector3Shifted(), pawn.RemoteControlLink().Position.ToVector3Shifted());
                 }

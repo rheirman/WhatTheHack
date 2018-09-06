@@ -26,14 +26,14 @@ namespace WhatTheHack.Jobs
             Pawn followee = pawn.RemoteControlLink();
             if (followee == null)
             {
-                Log.Warning(base.GetType() + "has null followee.");
+                //Log.Warning(base.GetType() + "has null followee.");
                 return null;
             }
             //if (!GenAI.CanInteractPawn(pawn, followee))
            // {
             //    return null;
           //  }
-            float radius = 25;//TODO: no magic number
+            float radius = Utilities.GetRemoteControlRadius(pawn) - 5f;//TODO: no magic number
             if ((!followee.pather.Moving || (float)followee.pather.Destination.Cell.DistanceToSquared(pawn.Position) <= radius * radius) && (float)followee.Position.DistanceToSquared(pawn.Position) <= radius * radius)
             {
                 return null;

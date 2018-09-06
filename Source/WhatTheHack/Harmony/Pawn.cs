@@ -82,10 +82,7 @@ namespace WhatTheHack.Harmony
     {
         public static bool Prefix(Pawn __instance, ref bool __result)
         {
-            if (__instance.HasReplacedAI() || (__instance.RaceProps.IsMechanoid &&
-                __instance.RemoteControlLink() != null &&
-                !__instance.RemoteControlLink().Drafted &&
-                (float)__instance.pather.Destination.Cell.DistanceToSquared(__instance.RemoteControlLink().Position) <= 30f * 30f))
+            if (__instance.HasReplacedAI() || IsControlled(__instance))
             {
                 if (__instance.Faction == Faction.OfPlayer && __instance.IsHacked() && !__instance.Dead)
                 {
@@ -94,6 +91,20 @@ namespace WhatTheHack.Harmony
                 }
             }
             return true;
+        }
+
+        private static bool IsControlled(Pawn pawn)
+        {
+            if (!pawn.RaceProps.IsMechanoid)
+            {
+                return false;
+            }
+            if(pawn.RemoteControlLink() != null && !pawn.RemoteControlLink().Drafted)
+            {
+                float radius = Utilities.GetRemoteControlRadius(pawn.RemoteControlLink());
+                return pawn.Position.DistanceToSquared(pawn.RemoteControlLink().Position) <= radius * radius;
+            }
+            return false;
         }
     }
 

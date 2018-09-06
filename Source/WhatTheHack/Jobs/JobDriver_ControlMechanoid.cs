@@ -31,8 +31,8 @@ namespace WhatTheHack.Jobs
             });
             toil.tickAction = new Action(delegate {
 
-
-                if(Utilities.QuickDistanceSquared(pawn.Position, this.Mech.Position) > 25 * 25)
+                int radius = Utilities.GetRemoteControlRadius(pawn) - 5;
+                if (Utilities.QuickDistanceSquared(pawn.Position, this.Mech.Position) > radius * radius)
                 {
                     ReadyForNextToil();
                     return;

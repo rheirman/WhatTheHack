@@ -12,6 +12,16 @@ namespace WhatTheHack
 {
     static class Utilities
     {
+        public static int GetRemoteControlRadius(Pawn pawn)
+        {
+            Apparel apparel = pawn.apparel.WornApparel.FirstOrDefault((Apparel app) => app.def == WTH_DefOf.WTH_Apparel_MechControllerBelt);
+            if (apparel is RemoteController rc)
+            {
+                return rc.ControlRadius;
+            }
+            return 0;
+        }
+
         public static bool IsBelt(ApparelProperties apparel)
         {
             //Apparel is a belt when it can only be attached to a waist and nothing else. 

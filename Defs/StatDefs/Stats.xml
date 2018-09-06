@@ -1,4 +1,26 @@
 <Defs> 
+
+	<StatDef>
+		<defName>WTH_ControllerBeltRadius</defName>
+		<label>Control radius</label>
+		<description>The maximum radius from which mechanoids can be controlled using this belt</description>
+		<category>Apparel</category>
+		<minValue>0</minValue>
+		<toStringStyle>Integer</toStringStyle>
+		<showIfUndefined>false</showIfUndefined>
+		<parts>
+		  <li Class="StatPart_Quality">
+			<factorAwful>0.6</factorAwful>
+			<factorPoor>0.8</factorPoor>
+			<factorNormal>1</factorNormal>
+			<factorGood>1.1</factorGood>
+			<factorExcellent>1.2</factorExcellent>
+			<factorMasterwork>1.4</factorMasterwork>
+			<factorLegendary>1.7</factorLegendary>
+		  </li>
+		</parts>
+	</StatDef>
+	  
 	<StatDef>
 		<defName>WTH_HackingMaintenanceSpeed</defName>
 		<label>maintenance speed</label>
