@@ -59,10 +59,6 @@ namespace WhatTheHack.Comps
             base.CompTick();
             if (Active)
             {
-                if (parent.Spawned)
-                {
-                    parent.Position = mountedTo.Position;
-                }
                 Configure();
             }
             if (Active)
@@ -103,19 +99,48 @@ namespace WhatTheHack.Comps
 
         private void Configure()
         {
-            if ((mountedTo.Map == null && parent.Spawned) || mountedTo.Downed)
+            if ((mountedTo.Map == null && parent.Spawned) || mountedTo.Downed || (mountedTo.Spawned && OutOfBounds(mountedTo, parent)))
             {
-                parent = (ThingWithComps)parent.SplitOff(1);
-                mountedTo.inventory.innerContainer.TryAdd(parent, 1);
+                ToInventory();
             }
-            else if (mountedTo.Map != parent.Map)
+            else if (mountedTo.Map != parent.Map && mountedTo.Spawned && !OutOfBounds(mountedTo, parent))
             {
-                parent = (ThingWithComps)parent.SplitOff(1);
-                //mountedTo.Map.spawnedThings.TryAdd(parent, 1);
-                GenSpawn.Spawn(parent, mountedTo.Position, mountedTo.Map, Rot4.North, WipeMode.Vanish, false);
+                OutOfInventory();
             }
             SetPowerComp();
+            if (parent.Spawned)
+            {
+                parent.Position = mountedTo.Position;
+            }
+        }
 
+        private bool OutOfBounds(Pawn mountedTo, ThingWithComps parent)
+        {
+            CellRect cellRect = GenAdj.OccupiedRect(mountedTo.Position, parent.Rotation, parent.def.Size);
+            CellRect.CellRectIterator iterator = cellRect.GetIterator();
+            while (!iterator.Done())
+            {
+                IntVec3 current = iterator.Current;
+                if (!current.InBounds(mountedTo.Map))
+                {
+                    return true;
+                }
+                iterator.MoveNext();
+            }
+            return false;
+        }
+
+
+        public void OutOfInventory()
+        {
+            parent = (ThingWithComps)parent.SplitOff(1);
+            GenSpawn.Spawn(parent, mountedTo.Position, mountedTo.Map, Rot4.North, WipeMode.Vanish, false);
+        }
+
+        public void ToInventory()
+        {
+            parent = (ThingWithComps)parent.SplitOff(1);
+            mountedTo.inventory.innerContainer.TryAdd(parent, 1);
         }
 
         private void SetPowerComp()

@@ -7,11 +7,55 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 using WhatTheHack.Buildings;
+using WhatTheHack.Storage;
 
 namespace WhatTheHack
 {
     static class Utilities
     {
+        public static List<TransferableOneWay> LinkPortablePlatforms(List<TransferableOneWay> transferables)
+        {
+            List<Pawn> pawns = TransferableUtility.GetPawnsFromTransferables(transferables);
+            Predicate<Thing> isChargingPlatform = (Thing t) => t != null && t.GetInnerIfMinified().def == WTH_DefOf.WTH_PortableChargingPlatform;
+
+            List<TransferableOneWay> chargingPlatformTows = transferables.FindAll((TransferableOneWay x) => x.CountToTransfer > 0 && x.HasAnyThing && isChargingPlatform(x.AnyThing));
+            List<Building_PortableChargingPlatform> platforms = new List<Building_PortableChargingPlatform>();
+
+            foreach (TransferableOneWay tow in chargingPlatformTows)
+            {
+                foreach (Thing t in tow.things)
+                {
+                    Building_PortableChargingPlatform platform = (Building_PortableChargingPlatform)t.GetInnerIfMinified();
+                    platform.CaravanPawn = null;
+                }
+            }
+
+            //Find and assign platform for each pawn. 
+            foreach (Pawn pawn in pawns)
+            {
+                if (pawn.IsHacked())
+                {
+                    bool foundPlatform = false;
+                    for (int j = 0; j < chargingPlatformTows.Count && !foundPlatform; j++)
+                    {
+                        for (int i = 0; i < chargingPlatformTows[j].things.Count && !foundPlatform; i++)
+                        {
+                            Building_PortableChargingPlatform platform = (Building_PortableChargingPlatform)chargingPlatformTows[j].things[i].GetInnerIfMinified();
+                            if (platform != null && platform.CaravanPawn == null)
+                            {
+                                platform.CaravanPawn = pawn;
+                                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+                                pawnData.caravanPlatform = platform;
+                                foundPlatform = true;
+                            }
+                        }
+
+                    }
+                }
+            }
+            return transferables;
+        }
+
         public static int GetRemoteControlRadius(Pawn pawn)
         {
             Apparel apparel = pawn.apparel.WornApparel.FirstOrDefault((Apparel app) => app.def == WTH_DefOf.WTH_Apparel_MechControllerBelt);

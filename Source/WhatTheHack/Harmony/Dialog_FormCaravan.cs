@@ -7,55 +7,35 @@ using System.Reflection.Emit;
 using System.Text;
 using Verse;
 using WhatTheHack.Buildings;
+using WhatTheHack.Comps;
 using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
 {
-    
+    [HarmonyPatch(typeof(Dialog_FormCaravan), "TryReformCaravan")]
+    class Dialog_FormCaravan_TryReformCaravan
+    {
+        //Make sure mounted turrets are brought along with the caravan. 
+        static void Prefix(Dialog_FormCaravan __instance)
+        {
+            List<TransferableOneWay> mountedTurretTows = __instance.transferables.Where((TransferableOneWay tow) => tow.AnyThing is ThingWithComps twc && twc.TryGetComp<CompMountable>() is CompMountable comp && comp.mountedTo != null).ToList();
+
+            foreach (TransferableOneWay tow in mountedTurretTows)
+            {
+                CompMountable comp = tow.AnyThing.TryGetComp<CompMountable>();
+                comp.ToInventory();
+                Traverse.Create(tow).Property("CountToTransfer").SetValue(1);
+            }
+        }
+    }
+
+
     [HarmonyPatch(typeof(Dialog_FormCaravan), "TryFormAndSendCaravan")]
     class Dialog_FormCaravan_TryFormAndSendCaravan
     {
         static void Postfix(Dialog_FormCaravan __instance, bool __result)
         {
-            List<Pawn> pawns = TransferableUtility.GetPawnsFromTransferables(__instance.transferables);
-            Predicate<Thing> isChargingPlatform = (Thing t) => t != null && t.GetInnerIfMinified().def == WTH_DefOf.WTH_PortableChargingPlatform;
-            List<TransferableOneWay> chargingPlatformTows = __instance.transferables.FindAll((TransferableOneWay x) => x.CountToTransfer > 0 && x.HasAnyThing && isChargingPlatform(x.AnyThing));
-            List<Building_PortableChargingPlatform> platforms = new List<Building_PortableChargingPlatform>();
-
-            foreach (TransferableOneWay tow in chargingPlatformTows)
-            {
-                foreach (Thing t in tow.things)
-                {
-                    Building_PortableChargingPlatform platform = (Building_PortableChargingPlatform)t.GetInnerIfMinified();
-                    platform.CaravanPawn = null;
-                    //TODO: prevent stacking here so each pawn can have an associated platform
-                    //platforms.Add(platform);
-                }
-            }
-
-            //Find and assign platform for each pawn. 
-            foreach (Pawn pawn in pawns)
-            {
-                if (pawn.IsHacked())
-                {
-                    bool foundPlatform = false;
-                    for(int j = 0; j < chargingPlatformTows.Count && !foundPlatform; j++)
-                    {
-                        for(int i = 0; i < chargingPlatformTows[j].things.Count && !foundPlatform; i++)
-                        {
-                            Building_PortableChargingPlatform platform = (Building_PortableChargingPlatform)chargingPlatformTows[j].things[i].GetInnerIfMinified();
-                            if (platform != null && platform.CaravanPawn == null)
-                            {
-                                platform.CaravanPawn = pawn;
-                                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
-                                pawnData.caravanPlatform = platform;
-                                foundPlatform = true;
-                            }
-                        }
-
-                    }
-                }
-            }
+            Utilities.LinkPortablePlatforms(__instance.transferables);
         }
     }
 

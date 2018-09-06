@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using Verse;
 using WhatTheHack.Buildings;
+using WhatTheHack.Comps;
 
 namespace WhatTheHack.Harmony
 {
@@ -17,6 +18,11 @@ namespace WhatTheHack.Harmony
             if((thing is Pawn && ((Pawn)thing).IsHacked()) || thing is Building_PortableChargingPlatform)
             {
                 __result = false; 
+                return false;
+            }
+            if(thing is ThingWithComps twc && twc.TryGetComp<CompMountable>() is CompMountable comp && comp.mountedTo != null)
+            {
+                __result = false;
                 return false;
             }
             return true;
