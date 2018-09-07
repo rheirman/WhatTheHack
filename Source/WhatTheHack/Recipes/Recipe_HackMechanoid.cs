@@ -29,16 +29,19 @@ namespace WhatTheHack.Recipes
             {
                 pawn.relations = new Pawn_RelationsTracker(pawn);
             }
+            /*
             if (pawn.jobs.curDriver != null)
             {
                 pawn.jobs.posture = PawnPosture.LayingOnGroundNormal;
             }
+            */
             if (pawn.story == null)
             {
                 pawn.story = new Pawn_StoryTracker(pawn);
             }
             pawn.Name = PawnBioAndNameGenerator.GeneratePawnName(pawn, NameStyle.Full);
             Find.LetterStack.ReceiveLetter("WTH_Letter_Success_Label".Translate(), "WTH_Letter_Success_Label_Description".Translate(new object[]{billDoer.Name.ToStringShort, pawn.Name}), LetterDefOf.PositiveEvent, pawn);
+            billDoer.jobs.jobQueue.EnqueueFirst(new Job(WTH_DefOf.WTH_ClearHackingTable, pawn, pawn.CurrentBed()) {count = 1});
         }
 
 
