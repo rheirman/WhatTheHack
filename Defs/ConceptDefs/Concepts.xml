@@ -27,4 +27,18 @@
     <helpText>Mechanoids can also be used when caravanning. However, as always, they need power and maintenance. By bringing a portable mechanoid platform for each mechanoid in the caravan, and enough chemfuel, a steady power supply is ensured during the trip. If you want your mechanoids maintained during the trip, bring along some mechanoid parts, and a colonist capable of hacking. Mechanoids with repair modules installed will also repair themselves during the trip, and mechanoids with repair arms will repair any other mechanoid. If you don't want mechanoids to be repaired, go to their health tab, and set medical care to none.</helpText>
     <needsOpportunity>true</needsOpportunity>
   </ConceptDef>
+  <ConceptDef>
+    <defName>WTH_Maintenance</defName>
+    <label>Mechanoid maintenance</label>
+    <priority>50</priority>
+    <helpText>Hacking is a delicate business. Therefore, hacked mechanoids require regular maintenance, for which mechanoid parts are needed. Colonists with hacking assigned will automatically maintain your mechanoids, provided that you have enough parts available. Poorly maintained mechanoids won't function as well as properly maintained ones. Totally neglecting maintenance can result in the hack failing, with catastrophic consequences.</helpText>
+    <needsOpportunity>true</needsOpportunity>
+  </ConceptDef>
+  <ConceptDef>
+    <defName>WTH_Power</defName>
+    <label>Keeping mechanoids powered</label>
+    <priority>50</priority>
+    <helpText>Unlike "wild" mechanoids, hacked ones cannot use their reactor, as using it would result in detection by the mechanoid hive. Therefore, they rely on internal backup batteries, which can be charged on mechanoid platforms. Portable charging platforms can be used to supply mechanoids with power during world trips. Finally, there exist ways of improving the battery capacity, or installing an alternate power supply using the mechanoid workshop.</helpText>
+    <needsOpportunity>true</needsOpportunity>
+  </ConceptDef>
 </Defs>

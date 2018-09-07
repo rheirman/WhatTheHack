@@ -71,7 +71,8 @@ namespace WhatTheHack
         public static ConceptDef WTH_Modification;
         public static ConceptDef WTH_Caravanning;
         public static ConceptDef WTH_Platform;
-
+        public static ConceptDef WTH_Maintenance;
+        public static ConceptDef WTH_Power;
 
         //vanilla
         public static BodyPartDef Reactor;

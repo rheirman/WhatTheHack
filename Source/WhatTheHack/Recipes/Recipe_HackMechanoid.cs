@@ -42,6 +42,9 @@ namespace WhatTheHack.Recipes
             pawn.Name = PawnBioAndNameGenerator.GeneratePawnName(pawn, NameStyle.Full);
             Find.LetterStack.ReceiveLetter("WTH_Letter_Success_Label".Translate(), "WTH_Letter_Success_Label_Description".Translate(new object[]{billDoer.Name.ToStringShort, pawn.Name}), LetterDefOf.PositiveEvent, pawn);
             billDoer.jobs.jobQueue.EnqueueFirst(new Job(WTH_DefOf.WTH_ClearHackingTable, pawn, pawn.CurrentBed()) {count = 1});
+            LessonAutoActivator.TeachOpportunity(WTH_DefOf.WTH_Power, OpportunityType.Important);
+            LessonAutoActivator.TeachOpportunity(WTH_DefOf.WTH_Maintenance, OpportunityType.Important);
+
         }
 
 
@@ -107,6 +110,8 @@ namespace WhatTheHack.Recipes
                 pawn.story = new Pawn_StoryTracker(pawn);
             }
             Find.LetterStack.ReceiveLetter("WTH_Letter_HackedPoorly_Label".Translate(), "WTH_Letter_HackedPoorly_Description".Translate(), LetterDefOf.NegativeEvent, pawn);
+            LessonAutoActivator.TeachOpportunity(WTH_DefOf.WTH_Power, OpportunityType.Important);
+            LessonAutoActivator.TeachOpportunity(WTH_DefOf.WTH_Maintenance, OpportunityType.Important);
         }
 
         private static void CauseMechanoidRaid(Pawn pawn, BodyPartRecord part)
