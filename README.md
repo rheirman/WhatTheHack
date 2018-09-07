@@ -1,6 +1,14 @@
-# WhatTheHack(Work in progress)
+# WhatTheHack
 
+## Install
 
+Download the zip from one of the releases, unpack and place the unpacked folder in the Rimworld mods folder. 
 
-# Licence
-Do not release any of this work elsewhere before the official release. Ask permission before using any of the code or textures in other projects. This licence will change when the project is oficially released. 
+## Contributing
+
+Translations are always very welcome. Just create a pull request.
+
+## Licence
+Feel free to add this mod to modpacks or to use the code or icons for other projects, though please credit me when doing so. 
+Do however not release exact copies of my project, or exact copies with minor adjustments without my consent.
+Code is derivate from Ludeon Studio.
