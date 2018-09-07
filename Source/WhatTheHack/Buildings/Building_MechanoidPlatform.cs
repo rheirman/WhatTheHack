@@ -18,7 +18,8 @@ namespace WhatTheHack.Buildings
         {
             base.SpawnSetup(map, respawningAfterLoad);
             this.refuelableComp = base.GetComp<CompRefuelable>();
-            this.powerComp = base.GetComp<CompPowerTrader>();            
+            this.powerComp = base.GetComp<CompPowerTrader>();
+            LessonAutoActivator.TeachOpportunity(WTH_DefOf.WTH_Platform, OpportunityType.Important);
         }
         public override bool RegenerateActive {
             get

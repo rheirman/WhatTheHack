@@ -21,6 +21,10 @@ namespace WhatTheHack.Harmony
                                                      select x;
 
             widget.AddSection("WTH_MechanoidsSection".Translate(), mechs);
+            if(mechs != null && mechs.Count() > 0)
+            {
+                LessonAutoActivator.TeachOpportunity(WTH_DefOf.WTH_Caravanning, OpportunityType.Important);
+            }
         }
     }
 }

@@ -32,6 +32,10 @@ namespace WhatTheHack.Harmony
             AddBatteryHediffIfNeeded(newThing);
             RemoveConditionalComps(newThing);
             NameUnnamedMechs(newThing);
+            if(newThing.def == WTH_DefOf.WTH_TableMechanoidWorkshop)
+            {
+                LessonAutoActivator.TeachOpportunity(WTH_DefOf.WTH_Modification, OpportunityType.Important);
+            }
         }
 
         //Only initialize the refeulcomp of mechanoids that have a repairmodule. 

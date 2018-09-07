@@ -70,6 +70,7 @@ namespace WhatTheHack.Harmony
                 }
                 else
                 {
+                    JobFailReason.Is("WTH_Reason_NotOnTable".Translate(), null);
                     __result = false;
                 }
             }

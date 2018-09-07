@@ -21,6 +21,7 @@ namespace WhatTheHack.Buildings
         {
             base.SpawnSetup(map, respawningAfterLoad);
             this.powerComp = base.GetComp<CompPowerTrader>();
+            LessonAutoActivator.TeachOpportunity(WTH_DefOf.WTH_Hacking, OpportunityType.Important);
         }
 
         public bool TryAddPawnForModification(Pawn pawn, RecipeDef recipeDef)

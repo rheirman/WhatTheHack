@@ -27,6 +27,7 @@ namespace WhatTheHack.Buildings
         {
             base.SpawnSetup(map, respawningAfterLoad);
             this.refuelableComp = base.GetComp<CompRefuelable>();
+            LessonAutoActivator.TeachOpportunity(WTH_DefOf.WTH_Caravanning, OpportunityType.Important);
         }
 
         public override bool CanHealNow()

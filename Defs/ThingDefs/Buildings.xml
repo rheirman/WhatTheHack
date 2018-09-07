@@ -237,7 +237,7 @@
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
-		<interactionCellOffset>(0,0,0)</interactionCellOffset>
+		<interactionCellOffset>(1,0,0)</interactionCellOffset>
 		<designationCategory>Misc</designationCategory>
 		<surfaceType>Item</surfaceType>
 		 <researchPrerequisites>

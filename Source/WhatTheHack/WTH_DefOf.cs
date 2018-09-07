@@ -48,6 +48,7 @@ namespace WhatTheHack
         public static NeedDef WTH_Mechanoid_Power;
         public static NeedDef WTH_Mechanoid_Maintenance;
 
+        public static ThingDef WTH_TableMechanoidWorkshop;
         public static ThingDef WTH_HackingTable;
         public static ThingDef WTH_MechanoidPlatform;
         public static ThingDef WTH_PortableChargingPlatform;
@@ -65,6 +66,12 @@ namespace WhatTheHack
         public static ResearchProjectDef WTH_TurretModule_Mortars;
 
         public static WorkTypeDef WTH_Hack;
+
+        public static ConceptDef WTH_Hacking;
+        public static ConceptDef WTH_Modification;
+        public static ConceptDef WTH_Caravanning;
+        public static ConceptDef WTH_Platform;
+
 
         //vanilla
         public static BodyPartDef Reactor;

@@ -561,7 +561,6 @@
 		<appliedOnFixedBodyParts>
 			<li>MechanicalShoulder</li>
 		</appliedOnFixedBodyParts>
-		<researchPrerequisite>WTH_RepairArm</researchPrerequisite>
 		<addsHediff>WTH_RepairArm</addsHediff>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
@@ -600,7 +599,6 @@
 		<appliedOnFixedBodyParts>
 			<li>Reactor</li>
 		</appliedOnFixedBodyParts>
-		<researchPrerequisite>WTH_TurretModule</researchPrerequisite>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
@@ -640,7 +638,6 @@
 			<li>Reactor</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>WTH_RepairModule</addsHediff>
-		<researchPrerequisite>WTH_RepairModule</researchPrerequisite>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
@@ -683,7 +680,6 @@
 			<li>Reactor</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>WTH_SelfDestruct</addsHediff>
-		<researchPrerequisite>WTH_SelfDestruct</researchPrerequisite>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
@@ -725,7 +721,6 @@
 			<li>Reactor</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>WTH_BeltModule</addsHediff>
-		<researchPrerequisite>WTH_BeltModule</researchPrerequisite>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
@@ -768,7 +763,6 @@
 			<li>Reactor</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>WTH_BatteryExpansionModule</addsHediff>
-		<researchPrerequisite>WTH_BatteryExpansionModule</researchPrerequisite>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
@@ -810,7 +804,6 @@
 			<li>Reactor</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>WTH_VanometricModule</addsHediff>
-		<researchPrerequisite>WTH_VanometricModule</researchPrerequisite>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>

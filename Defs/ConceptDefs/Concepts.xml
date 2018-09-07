@@ -1,0 +1,30 @@
+<Defs>
+ <ConceptDef>
+    <defName>WTH_Hacking</defName>
+    <label>Mechanoid hacking</label>
+    <priority>50</priority>
+    <helpText>To hack mechanoids, go to the modifications section in the health tab of a downed mechanoid, and select the "Hack mechanoid targeting device" option. Your haulers will bring the mechanoid to the hacking facility (make sure you have one!), and a colonist with hacking assigned will start hacking the mechanoid. Don't forget to build mechanoid platforms so the mechanoid can be powered and repaired. Beware, hacking is dangerous!</helpText>
+    <needsOpportunity>true</needsOpportunity>
+  </ConceptDef>
+  <ConceptDef>
+    <defName>WTH_Platform</defName>
+    <label>Mechanoid platform</label>
+    <priority>50</priority>
+    <helpText>A mechanoid platform is a place where mechanoids are powered and repaired. The platform should be loaded with mechanoid parts and supplied with power. This way, mechanites inside the mechanoid are activated due to the large power supply and start repairing the mechanoid using the offered parts.</helpText>
+    <needsOpportunity>true</needsOpportunity>
+  </ConceptDef>
+  <ConceptDef>
+    <defName>WTH_Modification</defName>
+    <label>Mechanoid modification</label>
+    <priority>50</priority>
+    <helpText>In order to upgrade and modify mechanoids, you can craft upgrade modules at the hacking facility. To install these modules, go to the modifications section in the health tab of a hacked mechanoid, and select the appropriate modification.</helpText>
+    <needsOpportunity>true</needsOpportunity>
+  </ConceptDef>
+  <ConceptDef>
+    <defName>WTH_Caravanning</defName>
+    <label>Caravanning with mechanoids</label>
+    <priority>50</priority>
+    <helpText>Mechanoids can also be used when caravanning. However, as always, they need power and maintenance. By bringing a portable mechanoid platform for each mechanoid in the caravan, and enough chemfuel, a steady power supply is ensured during the trip. If you want your mechanoids maintained during the trip, bring along some mechanoid parts, and a colonist capable of hacking. Mechanoids with repair modules installed will also repair themselves during the trip, and mechanoids with repair arms will repair any other mechanoid. If you don't want mechanoids to be repaired, go to their health tab, and set medical care to none.</helpText>
+    <needsOpportunity>true</needsOpportunity>
+  </ConceptDef>
+</Defs>
