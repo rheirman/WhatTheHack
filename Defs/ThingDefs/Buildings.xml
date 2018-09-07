@@ -184,8 +184,10 @@
       </li>
       <li Class="CompProperties_Flickable"/>
 	  <li Class="CompProperties_Refuelable">
+		<fuelLabel>Loaded mechanoid parts</fuelLabel>
+		<fuelGizmoLabel>Loaded mechanoid parts</fuelGizmoLabel>
         <fuelConsumptionRate>40.0</fuelConsumptionRate>
-        <fuelCapacity>20.0</fuelCapacity>
+        <fuelCapacity>40.0</fuelCapacity>
         <fuelFilter>
           <thingDefs>
             <li>WTH_MechanoidParts</li>

@@ -43,8 +43,10 @@
 			<xpath>*/ThingDef[race/fleshType = "Mechanoid"]/comps[not(descendant::li[@Class = "CompProperties_Refuelable"])]</xpath>
 			<value>
 				<li Class="CompProperties_Refuelable">
+				    <fuelLabel>Loaded mechanoid parts</fuelLabel>
+					<fuelGizmoLabel>Loaded mechanoid parts</fuelGizmoLabel>
 					<fuelConsumptionRate>40.0</fuelConsumptionRate>
-					<fuelCapacity>10.0</fuelCapacity>
+					<fuelCapacity>15.0</fuelCapacity>
 					<fuelFilter>
 					  <thingDefs>
 						<li>WTH_MechanoidParts</li>
@@ -65,8 +67,10 @@
 			<value>
 				<comps>
 					<li Class="CompProperties_Refuelable">
+						<fuelLabel>Loaded mechanoid parts</fuelLabel>
+						<fuelGizmoLabel>Loaded mechanoid parts</fuelGizmoLabel>
 						<fuelConsumptionRate>40.0</fuelConsumptionRate>
-						<fuelCapacity>10.0</fuelCapacity>
+						<fuelCapacity>15.0</fuelCapacity>
 						<fuelFilter>
 						  <thingDefs>
 							<li>WTH_MechanoidParts</li>
