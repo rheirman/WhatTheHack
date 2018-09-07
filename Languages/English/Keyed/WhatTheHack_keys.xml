@@ -11,7 +11,7 @@
 	<WTH_Letter_ShotRandomDirection_Label>Hacking failed - whoops</WTH_Letter_ShotRandomDirection_Label>
 	<WTH_Letter_ShotRandomDirection_Description>One of your pawns accidentally triggered the mechanoids main weapon. Whoops.</WTH_Letter_ShotRandomDirection_Description>
 	<WTH_Letter_HealedToStanding_Label>Hacking failed - mechanoid standing again</WTH_Letter_HealedToStanding_Label>
-	<WTH_Letter_HealedToStanding_Description>The mechanoid wasn't really disabled after all, while being hacked, it managed to recover and it is now your colony.</WTH_Letter_HealedToStanding_Description>
+	<WTH_Letter_HealedToStanding_Description>The mechanoid wasn't really disabled after all, while being hacked, it managed to recover and it is now a danger to your colony.</WTH_Letter_HealedToStanding_Description>
 	<WTH_Letter_Mech_Reverted_Label>Hack stopped working</WTH_Letter_Mech_Reverted_Label>
 	<WTH_Letter_Mech_Reverted_Description>A mechanoid that was poorly maintained reverted to its original deadly behaviour.</WTH_Letter_Mech_Reverted_Description>
 	<WTH_Letter_HackedPoorlyEvent_Label>Something snapped</WTH_Letter_HackedPoorlyEvent_Label>
@@ -29,22 +29,23 @@
 	<WTH_MaintenanceDedayEnabled_Title>Maintenance decay enabled</WTH_MaintenanceDedayEnabled_Title>
 	<WTH_MaintenanceDedayEnabled_Description>Uncheck this if you don't want to regularly maintain your mechanoids. With this unchecked, the maintenance need bar will still be shown, but it won't decrease over time. There are still certain events that can deplete the maintenance bar of mechanoids.</WTH_MaintenanceDedayEnabled_Description>
 	
-	<WTH_Reason_NotOnTable>Not on functioning hacking facility</WTH_Reason_NotOnTable>
+	<WTH_Menu_ClearTable>Clear hacking table</WTH_Menu_ClearTable>
 	
+	<WTH_Reason_NotOnTable>Not on functioning hacking facility</WTH_Reason_NotOnTable>	
 	<WTH_Reason_MechanoidDowned>Cannot enable downed mechanoid</WTH_Reason_MechanoidDowned>
 	<WTH_Reason_PowerLow>Cannot enable mechanoid, power too low (disable auto-recharge to override this)</WTH_Reason_PowerLow>
 	<WTH_Reason_PawnCannotBeDrafted>Cannot enable operate mechanoid controller belt when drafted</WTH_Reason_PawnCannotBeDrafted>
 	<WTH_Reason_NotEnoughParts>Regenerating body parts costs {0} mechanoids parts per body part, not enough parts loaded to the platform to regenerate a single part</WTH_Reason_NotEnoughParts>
 	
 	<WTH_Gizmo_SearchAndDestroy_Label>Activate</WTH_Gizmo_SearchAndDestroy_Label>
-	<WTH_Gizmo_SearchAndDestroy_Description>Activate search and destroy mod. The mechanoid will automatically attack any enemies near your colony. When disabled, the mechanoid will return to a mechanoid platform when possible.</WTH_Gizmo_SearchAndDestroy_Description>
+	<WTH_Gizmo_SearchAndDestroy_Description>Activate the mechanoid. It will automatically attack any enemies near your colony. When disabled, the mechanoid will return to a mechanoid platform when possible.</WTH_Gizmo_SearchAndDestroy_Description>
 	<WTH_Gizmo_AutoRecharge_Label>Auto recharge</WTH_Gizmo_AutoRecharge_Label>
-	<WTH_Gizmo_AutoRecharge_Description>With this mode enabled, mechanoids automatically go back to a mechanoid platform when they have low power.</WTH_Gizmo_AutoRecharge_Description>
+	<WTH_Gizmo_AutoRecharge_Description>With this mode enabled, mechanoids automatically go back to a mechanoid platform when they are running low on power.</WTH_Gizmo_AutoRecharge_Description>
 	
-	<WTH_Gizmo_RemoteControlActivate_Label>Activate remote</WTH_Gizmo_RemoteControlActivate_Label>
-	<WTH_Gizmo_RemoteControlActivate_Description>Use the remote control device to control a mechanoid with a hacked locomotion system directly</WTH_Gizmo_RemoteControlActivate_Description>
-	<WTH_Gizmo_RemoteControlDeactivate_Label>Deactivate remote</WTH_Gizmo_RemoteControlDeactivate_Label>
-	<WTH_Gizmo_RemoteControlDeactivate_Description>Deactivates the remote control device, giving control back to the mechanoid</WTH_Gizmo_RemoteControlDeactivate_Description>
+	<WTH_Gizmo_RemoteControlActivate_Label>Activate</WTH_Gizmo_RemoteControlActivate_Label>
+	<WTH_Gizmo_RemoteControlActivate_Description>Use the mechanoid controller belt to control a mechanoid directly</WTH_Gizmo_RemoteControlActivate_Description>
+	<WTH_Gizmo_RemoteControlDeactivate_Label>Deactivate</WTH_Gizmo_RemoteControlDeactivate_Label>
+	<WTH_Gizmo_RemoteControlDeactivate_Description>Deactivates mechanoid controller belt, giving control back to the mechanoid</WTH_Gizmo_RemoteControlDeactivate_Description>
 	
 	<WTH_Gizmo_Regenerate_Label>Regenerate body parts</WTH_Gizmo_Regenerate_Label>
 	<WTH_Gizmo_Regenerate_Description>When this is active, the platform regenerates body parts of the mechanoid that are missing. Regenerating body parts consumes {0} mechanoid parts for each body part. Parts only start to regenerate when the mech has no other damage</WTH_Gizmo_Regenerate_Description>
@@ -52,12 +53,12 @@
 	<WTH_Gizmo_Repair_Description>When this is active, the platform repairs any mechanoid on the platform by activating its internal mechanites by providing enough power, and material to work with. The mechanites consume mechanoid parts stored in the platform in the process.</WTH_Gizmo_Repair_Description>
 
 	<WTH_Gizmo_SelfDestruct_Label>Self destruct</WTH_Gizmo_SelfDestruct_Label>
-	<WTH_Gizmo_SelfDestruct_Description>Let the mech go with a bang.</WTH_Gizmo_SelfDestruct_Description>
+	<WTH_Gizmo_SelfDestruct_Description>Let the mechanoid go with a bang.</WTH_Gizmo_SelfDestruct_Description>
 	
 	<WTH_Gizmo_Mech_Repair_Label>Repair</WTH_Gizmo_Mech_Repair_Label>
-	<WTH_Gizmo_Mech_Repair_Description>Orders the mech to use its repair arm to transfer mechanoids charged by the repair module to the other mechs, repairing them.</WTH_Gizmo_Mech_Repair_Description>
+	<WTH_Gizmo_Mech_Repair_Description>Orders the mechanoid to use its repair arm to transfer mechanites charged by the repair module to other mechs, repairing them.</WTH_Gizmo_Mech_Repair_Description>
 	<WTH_Gizmo_SelfRepair_Label>Self repair</WTH_Gizmo_SelfRepair_Label>
-	<WTH_Gizmo_SelfRepair_Description>Orders the mech to activate the repair module, which causes surge of energy, activating the mechanoid's internal mechanites. These start to repair immediately using the parts stored in the module.</WTH_Gizmo_SelfRepair_Description>
+	<WTH_Gizmo_SelfRepair_Description>Orders the mechanoid to activate the repair module, which causes surge of energy, activating the mechanoid's internal mechanites. These start to repair immediately using the parts stored in the module.</WTH_Gizmo_SelfRepair_Description>
 	
 	<WTH_Gizmo_Mech_EquipBelt_Label>Equip belt</WTH_Gizmo_Mech_EquipBelt_Label>
 	<WTH_Gizmo_Mech_EquipBelt_Description>Orders the mech to use its belt module to equip any type of belt normally used by humanoids.</WTH_Gizmo_Mech_EquipBelt_Description>
