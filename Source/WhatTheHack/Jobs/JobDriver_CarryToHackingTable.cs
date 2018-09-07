@@ -47,7 +47,6 @@ namespace WhatTheHack.Jobs
                 {
                     this.pawn.carryTracker.TryDropCarriedThing(HackingTable.GetSleepingSlotPos(Building_HackingTable.SLOTINDEX), ThingPlaceMode.Direct, out Thing thing, null);
                     this.pawn.ClearAllReservations();
-                    HackingTable.TryAddPawnForModification(Takee, WTH_DefOf.WTH_HackMechanoid);
                     Takee.Position = HackingTable.GetSleepingSlotPos(Building_HackingTable.SLOTINDEX);
                 },
                 defaultCompleteMode = ToilCompleteMode.Instant
