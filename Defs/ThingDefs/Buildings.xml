@@ -63,12 +63,12 @@
   <ThingDef ParentName="BenchBase">
     <defName>WTH_TableMechanoidWorkshop</defName>
     <label>mechanoid workshop</label>
-    <description>A workshop for fabricating all kinds of mechanoid related contraptions, and for scrapping advanced mechanoid chips</description>
+    <description>A workshop for fabricating all kinds of mechanoid related upgrades and contraptions, and for scrapping advanced mechanoid chips to retrieve mechanoid parts.</description>
     <thingClass>Building_WorkTable</thingClass>
     <graphicData>
       <texPath>Things/MechanoidWorkshop</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(3.5,1.5)</drawSize>
+      <drawSize>(6,4)</drawSize>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>
         <cornerTR>Damage/Corner</cornerTR>
@@ -76,10 +76,9 @@
         <cornerBR>Damage/Corner</cornerBR>
       </damageData>
     </graphicData>
-    <castEdgeShadows>true</castEdgeShadows>
-    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <castEdgeShadows>false</castEdgeShadows>
     <costList>
-      <Steel>150</Steel>
+      <Steel>250</Steel>
       <ComponentIndustrial>8</ComponentIndustrial>
 	  <WTH_MechanoidParts>15</WTH_MechanoidParts>
 	  <WTH_MechanoidChip>15</WTH_MechanoidChip>
@@ -93,7 +92,7 @@
       <Flammability>1.0</Flammability>
       <Cleanliness>-2</Cleanliness>
     </statBases>
-    <size>(3,1)</size>
+    <size>(5,2)</size>
     <designationCategory>Production</designationCategory>
     <passability>PassThroughOnly</passability>
     <pathCost>70</pathCost>
