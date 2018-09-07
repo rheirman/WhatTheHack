@@ -59,7 +59,7 @@
   <StatDef>
     <defName>WTH_HackingSuccessChance</defName>
     <label>hacking success chance</label>
-    <description>The chance that a character will succeed when hacking or modifying a mechanoid. The actual success chance is also affected by the difficulty of the hack.</description>
+    <description>The chance that a character will succeed when hacking or modifying a mechanoid. The actual success chance is also affected by the difficulty of the hack and how powerful the mechanoid is.</description>
     <category>PawnWork</category>
     <defaultBaseValue>1.00</defaultBaseValue>
     <minValue>0.01</minValue>

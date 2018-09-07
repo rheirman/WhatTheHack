@@ -388,7 +388,7 @@
 		<description>Hacks the targeting device of a mechanoid so it targets your enemies instead of yourself</description>
 		<workerClass>WhatTheHack.Recipes.Recipe_HackMechanoid</workerClass>
 		<jobString>Hacking mechanoid</jobString>
-		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<surgerySuccessChanceFactor>1.0</surgerySuccessChanceFactor>
 		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
 		<workAmount>1500</workAmount>
 		<skillRequirements>

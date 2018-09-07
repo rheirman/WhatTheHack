@@ -18,10 +18,6 @@ namespace WhatTheHack.Harmony
                 List<TransferableOneWay> transferables = Traverse.Create(__instance).Field("transferables").GetValue<List<TransferableOneWay>>();
                 Traverse.Create(__instance).Field("transferables").SetValue(Utilities.LinkPortablePlatforms(transferables));
             }
-            else
-            {
-                Log.Message("TryAccept returned false");
-            }
         }
     }
 

@@ -46,7 +46,7 @@ namespace WhatTheHack.Harmony
                 if(flag && instruction.opcode == OpCodes.Ldc_R4)
                 {
                     //yield return new CodeInstruction(OpCodes.Call, typeof(Pawn_HealthTracker_CheckForStateChange).GetMethod(""))
-                    yield return new CodeInstruction(OpCodes.Ldc_R4,0.5f);//TODO: no magic number? 
+                    yield return new CodeInstruction(OpCodes.Ldc_R4,0.4f);//TODO: no magic number? 
                     flag = false;
                 }
                 else

@@ -18,7 +18,6 @@ namespace WhatTheHack.Harmony
         {
             if (trad.AnyThing is ThingWithComps twc && twc.TryGetComp<CompMountable>() is CompMountable comp && comp.mountedTo != null)
             {
-                Log.Message("skipping row");
                 if (comp.parent.Spawned)
                 {
                     comp.ToInventory();
