@@ -23,6 +23,10 @@ namespace WhatTheHack
         //settings
         internal static SettingHandle<String> tabsHandler;
         internal static SettingHandle<bool> maintenanceDecayEnabled;
+        internal static SettingHandle<int> hackedMechChance;
+        internal static SettingHandle<int> minHackedMechPoints;
+        internal static SettingHandle<int> maxHackedMechPoints;
+
         internal static SettingHandle<int> failureChanceNothing;
         internal static SettingHandle<int> failureChanceCauseRaid;
         internal static SettingHandle<int> failureChanceShootRandomDirection;
@@ -60,6 +64,10 @@ namespace WhatTheHack
             tabsHandler.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_Tabs(rect, tabsHandler, allFactionNames.ToArray(), true, (int)-rect.width, (int)rect.height + 5); };
             factionRestrictions = Settings.GetHandle<Dict2DRecordHandler>("factionRestrictions", "", "", null);
             factionRestrictions.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_MatchingPawns_active(rect, factionRestrictions, allMechs, allFactionNames, tabsHandler, "WTH_FactionRestrictions_OK".Translate(), "WTH_FactionRestrictions_NOK".Translate()); };
+
+            hackedMechChance = Settings.GetHandle<int>("hackedMechChance", "WTH_HackedMechChance_Title".Translate(), "WTH_HackedMechChance_Description".Translate(), 60, Validators.IntRangeValidator(0,100));
+            maxHackedMechPoints = Settings.GetHandle<int>("maxHackedMechPoints", "WTH_MaxHackedMechPoints_Title".Translate(), "WTH_MaxHackedMechPoints_Description".Translate(), 50, Validators.IntRangeValidator(0,500));
+            minHackedMechPoints = Settings.GetHandle<int>("minHackedMechPoints", "WTH_MinHackedMechPoints_Title".Translate(), "WTH_MinHackedMechPoints_Description".Translate(), 0, Validators.IntRangeValidator(0, 500));
 
             failureChanceNothing = Settings.GetHandle<int>("failureChanceNothing", "WTH_FailureChance_Nothing_Title".Translate(), "WTH_FailureChance_Nothing_Description".Translate(), 70);
             failureChanceCauseRaid = Settings.GetHandle<int>("failureChanceCauseRaid", "WTH_FailureChance_CauseRaid_Title".Translate(), "WTH_FailureChance_CauseRaid_Description".Translate(), 5);

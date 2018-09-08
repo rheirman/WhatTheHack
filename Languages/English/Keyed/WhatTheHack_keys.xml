@@ -29,6 +29,13 @@
 	<WTH_MaintenanceDedayEnabled_Title>Maintenance decay enabled</WTH_MaintenanceDedayEnabled_Title>
 	<WTH_MaintenanceDedayEnabled_Description>Uncheck this if you don't want to regularly maintain your mechanoids. With this unchecked, the maintenance need bar will still be shown, but it won't decrease over time. There are still certain events that can deplete the maintenance bar of mechanoids.</WTH_MaintenanceDedayEnabled_Description>
 	
+	<WTH_HackedMechChance_Title>Chance enemies use hacked mechs (%)</WTH_HackedMechChance_Title>
+	<WTH_HackedMechChance_Description>The chance that factions allowed in the mod options use hacked mechanoids when raiding your base.</WTH_HackedMechChance_Description>
+	<WTH_MaxHackedMechPoints_Title>Maximum extra points for hacked mechs (%)</WTH_MaxHackedMechPoints_Title>
+	<WTH_MaxHackedMechPoints_Description>This determines the point budget for spawning hacked enemy mechanoids. If an enemy raid spawns with hacked mechanoids, a random number between the minimum hacked points setting and this setting determines how much % of the raid points will be available for spawning mechanoids. Example: If a raid has a point budget of 1000, this setting is set to 50%, and the minimum set to 20%, 200 to 500 points worth of hacked mechanoids will spawn in addition to the original raid. </WTH_MaxHackedMechPoints_Description>
+	<WTH_MinHackedMechPoints_Title>Minimum extra points for hacked mechs (%)</WTH_MinHackedMechPoints_Title>
+	<WTH_MinHackedMechPoints_Description>This determines the point budget for spawning hacked enemy mechanoids. If an enemy raid spawns with hacked mechanoids, a random number between this setting and the maximum hacking points setting determines how much % of the raid points will be available for spawning mechanoids. Example :If a raid has a point budget of 1000, the maximum is set to 50% and this setting is set to 20%, 200 to 500 points worth of hacked mechanoids will spawn in addition to the original raid. </WTH_MinHackedMechPoints_Description>
+	
 	<WTH_Menu_ClearTable>Clear hacking table</WTH_Menu_ClearTable>
 	
 	<WTH_Reason_NotOnTable>Not on functioning hacking facility</WTH_Reason_NotOnTable>	

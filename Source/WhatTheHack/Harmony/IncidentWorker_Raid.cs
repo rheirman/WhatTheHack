@@ -43,12 +43,13 @@ namespace WhatTheHack.Harmony
                 return;
             }
             Random rand = new Random(DateTime.Now.Millisecond);
-            if(rand.Next(0, 100) < 40)//TODO: no magic number
+            if(rand.Next(0, 100) > Base.hackedMechChance)
             {
-                //return; 
+                return;
             }
 
-            float maxMechPoints = parms.points * ((float)rand.Next(0, 50))/100; //TODO: no magic numbers
+            int minHackedMechPoints = Math.Min(Base.minHackedMechPoints, Base.maxHackedMechPoints);
+            float maxMechPoints = parms.points * ((float)rand.Next(minHackedMechPoints, Base.maxHackedMechPoints))/100; //TODO: no magic numbers
             float cumulativePoints = 0;
             Map map = parms.target as Map;
 
