@@ -80,8 +80,7 @@
     <costList>
       <Steel>250</Steel>
       <ComponentIndustrial>8</ComponentIndustrial>
-	  <WTH_MechanoidParts>15</WTH_MechanoidParts>
-	  <WTH_MechanoidChip>15</WTH_MechanoidChip>
+	  <ComponentSpacer>2</ComponentSpacer>
     </costList>
     <altitudeLayer>Building</altitudeLayer>
     <fillPercent>0.5</fillPercent>
