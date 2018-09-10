@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_HackingTable.label>ハッキング施設</WTH_HackingTable.label>
+  <WTH_HackingTable.description>メカノイドのハッキングと修理のための施設です。</WTH_HackingTable.description>
+  <設計_WTH_HackingTable.label>ハッキング施設(設計)</設計_WTH_HackingTable.label>
+  <Frame_WTH_HackingTable.label>ハッキング施設(施工)</Frame_WTH_HackingTable.label>
+  <Frame_WTH_HackingTable.description>メカノイドのハッキングと修理のための施設です。</Frame_WTH_HackingTable.description>
+
+  <WTH_TableMechanoidWorkshop.label>メカノイド工作台</WTH_TableMechanoidWorkshop.label>
+  <WTH_TableMechanoidWorkshop.description>すべての種類のメカノイド関係のアップグレード部品とモジュールを加工したり、先進メカノイドチップを解体してメカノイドパーツを回収するための作業台です。</WTH_TableMechanoidWorkshop.description>
+  <設計_WTH_TableMechanoidWorkshop.label>メカノイド工作台(設計)</設計_WTH_TableMechanoidWorkshop.label>
+  <設計_Install_WTH_TableMechanoidWorkshop.label>メカノイド工作台(設計)</設計_Install_WTH_TableMechanoidWorkshop.label>
+  <Frame_WTH_TableMechanoidWorkshop.label>メカノイド工作台(施工)</Frame_WTH_TableMechanoidWorkshop.label>
+  <Frame_WTH_TableMechanoidWorkshop.description>すべての種類のメカノイド関係のアップグレード部品とモジュールを加工したり、先進メカノイドチップを解体してメカノイドパーツを回収するための作業台です。</Frame_WTH_TableMechanoidWorkshop.description>
+
+  <WTH_MechanoidPlatform.label>メカノイドベッド</WTH_MechanoidPlatform.label>
+  <WTH_MechanoidPlatform.description>メカノイドの充電と修理に使用されるプラットフォームベッドです。</WTH_MechanoidPlatform.description>
+  <設計_WTH_MechanoidPlatform.label>メカノイドベッド(設計)</設計_WTH_MechanoidPlatform.label>
+  <Frame_WTH_MechanoidPlatform.label>メカノイドベッド(施工)</Frame_WTH_MechanoidPlatform.label>
+  <Frame_WTH_MechanoidPlatform.description>メカノイドの充電と修理に使用されるプラットフォームベッドです。</Frame_WTH_MechanoidPlatform.description>
+  <WTH_MechanoidPlatform.comps.CompRefuelable.fuelGizmoLabel>予備メカノイドパーツ</WTH_MechanoidPlatform.comps.CompRefuelable.fuelGizmoLabel>
+  <WTH_MechanoidPlatform.comps.CompRefuelable.fuelLabel>予備メカノイドパーツ</WTH_MechanoidPlatform.comps.CompRefuelable.fuelLabel>
+
+  <WTH_PortableChargingPlatform.label>メカノイド携帯ベッド</WTH_PortableChargingPlatform.label>
+  <WTH_PortableChargingPlatform.description>ワールドマップを移動する旅で、メカノイドを充電するための携帯プラットフォームベッドです。</WTH_PortableChargingPlatform.description>
+  <設計_WTH_PortableChargingPlatform.label>メカノイド携帯ベッド(設計)</設計_WTH_PortableChargingPlatform.label>
+  <設計_Install_WTH_PortableChargingPlatform.label>メカノイド携帯ベッド(設計)</設計_Install_WTH_PortableChargingPlatform.label>
+  <Frame_WTH_PortableChargingPlatform.label>メカノイド携帯ベッド(施工)</Frame_WTH_PortableChargingPlatform.label>
+  <Frame_WTH_PortableChargingPlatform.description>ワールドマップを移動する旅で、メカノイドを充電するための携帯プラットフォームベッドです。</Frame_WTH_PortableChargingPlatform.description>
+
+
+</LanguageData>

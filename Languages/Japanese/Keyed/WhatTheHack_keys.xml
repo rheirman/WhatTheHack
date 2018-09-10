@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <WTH_Letter_Success_Label>ハッキング成功</WTH_Letter_Success_Label>
+  <WTH_Letter_Success_Label_Description>{0}はメカノイドをハックに成功して{1}と名前を付けました。\n\n{1}の敵味方識別システムは、コロニーのポーン(入植者)の代わりに、あなたの敵を目標にします。\nしかし、メカノイドのハイブ(集合体意識)によるハッキング検出を避けるために、{1}は内蔵予備バッテリに依存して充電する必要があります。</WTH_Letter_Success_Label_Description>
+  <WTH_Letter_Nothing_Label>ハッキング失敗－少し負傷した</WTH_Letter_Nothing_Label>
+  <WTH_Letter_Nothing_Description>ハッキングには失敗しましたが、致命的ではない程度のダメージを受けるだけで済みました。</WTH_Letter_Nothing_Description>
+  <WTH_Letter_HackedPoorly_Label>ハッキング失敗－不完全</WTH_Letter_HackedPoorly_Label>
+  <WTH_Letter_HackedPoorly_Description>今のところメカノイドはハックされているようですが、仕事は完ぺきとは言えません。\n\nこの半端な状態のメカノイドは反乱する危険性を承知で、自己責任で使用するか、または破棄した方が良いでしょう</WTH_Letter_HackedPoorly_Description>
+  <WTH_Letter_CausedMechanoidRaid_Label>ハッキング失敗－emergency signal transmitted</WTH_Letter_CausedMechanoidRaid_Label>
+  <WTH_Letter_CausedMechanoidRaid_Description>コロニーのポーンの1人が、誤ってセキュリティ機構を作動させてしまい、近くに居るメカノイドへ緊急信号を広域発信させてしまったようです。\n\n壊れていないメカノイドたちがやって来る前に準備する必要があります...</WTH_Letter_CausedMechanoidRaid_Description>
+  <WTH_Letter_ShotRandomDirection_Label>ハッキング失敗－大惨事だ！</WTH_Letter_ShotRandomDirection_Label>
+  <WTH_Letter_ShotRandomDirection_Description>コロニーのポーンの1人が、誤ってメカノイドの主力武器を誤って起動しました。\n\n大変だ！！うわぁー！。</WTH_Letter_ShotRandomDirection_Description>
+  <WTH_Letter_HealedToStanding_Label>ハッキング失敗－メカノイドが再起動</WTH_Letter_HealedToStanding_Label>
+  <WTH_Letter_HealedToStanding_Description>結果的に、メカノイドは実は機能停止していませんでした。\nハッキングされたことで機能を回復して、現在あなたのコロニーにとって危険な状況です。</WTH_Letter_HealedToStanding_Description>
+  <WTH_Letter_Mech_Reverted_Label>ハックが機能しなくなった！</WTH_Letter_Mech_Reverted_Label>
+  <WTH_Letter_Mech_Reverted_Description>ハックの整備が行われていなかったメカノイドが、元の危険な存在に戻りました。\n彼らはコロニーのポーン(入植者)を敵と認識しています。</WTH_Letter_Mech_Reverted_Description>
+  <WTH_Letter_HackedPoorlyEvent_Label>緊急整備が必要</WTH_Letter_HackedPoorlyEvent_Label>
+  <WTH_Letter_HackedPoorlyEvent_Description>不完全にハッキングされたメカノイドの頭で何かがはじけました。\n緊急整備が必要です。</WTH_Letter_HackedPoorlyEvent_Description>
+  <WTH_FailureChance_Nothing_Title>失敗時：何も起きない確率(%)</WTH_FailureChance_Nothing_Title>
+  <WTH_FailureChance_Nothing_Description>ハッキングが失敗した際、何も発生しない相対的な確率\n</WTH_FailureChance_Nothing_Description>
+  <WTH_FailureChance_CauseRaid_Title>失敗時：襲撃発生率(%)</WTH_FailureChance_CauseRaid_Title>
+  <WTH_FailureChance_CauseRaid_Description>ハッキングが失敗した際、襲撃が発生する相対的な確率</WTH_FailureChance_CauseRaid_Description>
+  <WTH_FailureChance_ShootRandomDirection_Title>失敗時：武器稼働率(%)</WTH_FailureChance_ShootRandomDirection_Title>
+  <WTH_FailureChance_ShootRandomDirection_Description>ハッキングが失敗した際、メカノイドの主力武器がランダムな方向に発射される相対的な確率</WTH_FailureChance_ShootRandomDirection_Description>
+  <WTH_FailureChance_HealToStanding_Title>失敗時：再起動率(%)</WTH_FailureChance_HealToStanding_Title>
+  <WTH_FailureChance_HealToStanding_Description>ハッキングが失敗した際、メカノイドの機能が修復されて再起動する相対的な確率</WTH_FailureChance_HealToStanding_Description>
+  <WTH_FailureChance_HackPoorly_Title>失敗時：不完全ハック率(%)</WTH_FailureChance_HackPoorly_Title>
+  <WTH_FailureChance_HackPoorly_Description>ハッキングが失敗した際、メカノイドが不完全なハッキング状態になる相対的な確率</WTH_FailureChance_HackPoorly_Description>
+  <WTH_MaintenanceDedayEnabled_Title>時間経過による整備の消耗を有効にする</WTH_MaintenanceDedayEnabled_Title>
+  <WTH_MaintenanceDedayEnabled_Description>定期的にメカノイドを整備したくない場合、これをオフにします。\nこのチェックを外すと、整備の必要性が表示されますが、時間の経過により減少することは無くなります。\nただし、メカノイドの整備状態を枯渇させる可能性のある事件は依然として存在します。</WTH_MaintenanceDedayEnabled_Description>
+
+  <WTH_Menu_ClearTable>ハッキング施設を片付ける</WTH_Menu_ClearTable>
+  <WTH_HackedMechChance_Title>敵のメカノイド使用率(%)</WTH_HackedMechChance_Title>
+  <WTH_HackedMechChance_Description>Modオプションで許可された派閥が、あなたのコロニーを襲撃する際にハックしたメカノイドを連れてくる可能性があります。</WTH_HackedMechChance_Description>
+  <WTH_MaxHackedMechPoints_Title>襲撃用の最大追加ポイント(%)</WTH_MaxHackedMechPoints_Title>
+  <WTH_MaxHackedMechPoints_Description>これは、ハッキングされた敵メカノイドを発生させるための予算ポイントを決定します。\nハッキングされたメカノイドによる敵の襲撃が発生した場合、ハッキングされたメカノイドに割り振られる最小追加ポイント(%)から、この設定との範囲内に収まる乱数によって、襲撃ポイントのうちどの程度が、ハックされたメカノイドを発生させるために使用できるかが決定されます。\n例：襲撃の予算ポイントが1000の場合、設定された最小ポイント値は20％(1000x0.2=200)、この設定が50％に設定されてる時(1000x0.5=500)には、元の襲撃に加えて、200から500ポイント相当のハックされたメカノイドが生成されます</WTH_MaxHackedMechPoints_Description>
+  <WTH_MinHackedMechPoints_Title>襲撃用の最小追加ポイント(%)</WTH_MinHackedMechPoints_Title>
+  <WTH_MinHackedMechPoints_Description>これは、ハッキングされた敵メカノイドを発生させるための予算ポイントを決定します。\nハッキングされたメカノイドによる敵の襲撃が発生した場合、この設定からハッキングされたメカノイドに割り振られる最大追加ポイント(%)までの範囲内に収まる乱数によって、襲撃ポイントのうちどの程度が、ハックされたメカノイドを発生させるために使用できるかが決定されます。\n例：襲撃の予算ポイントが1000の場合、設定された最小ポイント値は20％(1000x0.2=200)、この設定が50％に設定されてる時(1000x0.5=500)には、元の襲撃に加えて、200から500ポイント相当のハックされたメカノイドが生成されます。</WTH_MinHackedMechPoints_Description>
+
+  <WTH_Reason_NotOnTable>機能しているハッキング施設がありません</WTH_Reason_NotOnTable>
+  <WTH_Reason_MechanoidDowned>倒れているメカノイドを有効にすることはできません</WTH_Reason_MechanoidDowned>
+  <WTH_Reason_PowerLow>メカノイドを有効にできません。残存電力が低すぎます（自動充電を無効にするとこのメッセージは無効になります）。</WTH_Reason_PowerLow>
+  <WTH_Reason_PawnCannotBeDrafted>徴兵された時でないと、メカノイド制御ベルトを動作させることはできません</WTH_Reason_PawnCannotBeDrafted>
+  <WTH_Reason_NotEnoughParts>破損した部分を修復するには、ダメージを負った部分ごとにメカノイドパーツが{0}必要です。メカノイドベッドに補給されたメカノイドパーツが不足しているので修復されません</WTH_Reason_NotEnoughParts>
+
+  <WTH_Gizmo_SearchAndDestroy_Label>警備</WTH_Gizmo_SearchAndDestroy_Label>
+  <WTH_Gizmo_SearchAndDestroy_Description>メカノイドを動作させます。\nあなたのコロニーゾーンの近くに居る敵を自動的に攻撃します。\n\n無効にすると、メカノイドは可能な限りメカノイドベッドに戻ります。</WTH_Gizmo_SearchAndDestroy_Description>
+  <WTH_Gizmo_AutoRecharge_Label>自動充電</WTH_Gizmo_AutoRecharge_Label>
+  <WTH_Gizmo_AutoRecharge_Description>このモードを有効にすると、メカノイドは内臓バッテリーの電力が低下した状態になった場合、自動的にメカノイドベッドに戻ります。</WTH_Gizmo_AutoRecharge_Description>
+
+  <WTH_Gizmo_RemoteControlActivate_Label>制御開始</WTH_Gizmo_RemoteControlActivate_Label>
+  <WTH_Gizmo_RemoteControlActivate_Description>メカノイド制御ベルトを使用してメカノイドを直接制御します</WTH_Gizmo_RemoteControlActivate_Description>
+  <WTH_Gizmo_RemoteControlDeactivate_Label>制御解除</WTH_Gizmo_RemoteControlDeactivate_Label>
+  <WTH_Gizmo_RemoteControlDeactivate_Description>メカノイド制御ベルトを無効にして、メカノイドを自動制御に戻します。</WTH_Gizmo_RemoteControlDeactivate_Description>
+
+  <WTH_Gizmo_Regenerate_Label>損傷を再生</WTH_Gizmo_Regenerate_Label>
+  <WTH_Gizmo_Regenerate_Description>これが有効になると、メカノイドベッドは、損傷しているメカノイドの身体パーツを再生します。\n身体パーツを再生する際、各身体パーツに必要なメカノイドパーツが{0}消費されます。\nメカノイドが他者から攻撃によるダメージを受けていない状態な時だけ身体パーツは再生を開始します</WTH_Gizmo_Regenerate_Description>
+  <WTH_Gizmo_Repair_Label>修理を行う</WTH_Gizmo_Repair_Label>
+  <WTH_Gizmo_Repair_Description>これが有効になると、メカノイドベッドは、十分な電力と作業するためのメカノイドパーツを提供されると内部機構が動作して、ベッド上のメカノイドをゆっくりと修復します。\n修復中にメカノイドベッドに格納されたメカノイドパーツを消費します。</WTH_Gizmo_Repair_Description>
+
+  <WTH_Gizmo_SelfDestruct_Label>自爆装置</WTH_Gizmo_SelfDestruct_Label>
+  <WTH_Gizmo_SelfDestruct_Description>あなたのメカノイドを派手に自爆させます。</WTH_Gizmo_SelfDestruct_Description>
+
+  <WTH_Gizmo_Mech_Repair_Label>修理アーム</WTH_Gizmo_Mech_Repair_Label>
+  <WTH_Gizmo_Mech_Repair_Description>メカノイドに修理アームを使用するように命令して、他のメカノイドに対して修理モジュールで充電された内臓バッテリーを他のメカに移して修理を行わせます。</WTH_Gizmo_Mech_Repair_Description>
+  <WTH_Gizmo_SelfRepair_Label>自己修理</WTH_Gizmo_SelfRepair_Label>
+  <WTH_Gizmo_SelfRepair_Description>メカノイドに修理モジュールを作動させるよう命令して、電力エネルギーの急速回復を発生されて、メカノイドの内部機構を活性化させます。\nこれらは、モジュールに格納されたメカノイドパーツを消費して直ちに修理を開始します。</WTH_Gizmo_SelfRepair_Description>
+
+  <WTH_Gizmo_Mech_EquipBelt_Label>ベルト装備</WTH_Gizmo_Mech_EquipBelt_Label>
+  <WTH_Gizmo_Mech_EquipBelt_Description>普通のヒューマノイドが装着できるタイプのベルトを装備するために、ベルト装着モジュールを使用するように命令します。</WTH_Gizmo_Mech_EquipBelt_Description>
+
+  <WTH_Reason_AlreadyRepairing>このメカノイドは、修理メカノイドによってすでに修理(充電)中です。</WTH_Reason_AlreadyRepairing>
+  <WTH_Reason_NeedsMorePower>これを有効にするには最低でも{0}以上の電力が必要です。</WTH_Reason_NeedsMorePower>
+  <WTH_Reason_NeedsMoreFuel>これを有効にするには最低でも燃料が{0}必要です。</WTH_Reason_NeedsMoreFuel>
+  <WTH_Reason_NotActivated>これは制御解除したメカノイドでは使用できません。</WTH_Reason_NotActivated>
+  <WTH_Reason_NoDamage>修理を行うダメージはありません。</WTH_Reason_NoDamage>
+
+  <WTH_Alert_NotEnoughPlatforms_Label>メカノイドベッドの数が不足している</WTH_Alert_NotEnoughPlatforms_Label>
+  <WTH_Alert_NotEnoughPlatforms_Description>あなたのコロニーには、整備基地にあるメカノイドベッドの数よりも多くのハック済メカノイドが居ます。\nより多くのメカノイドベッドを建設するようにしてください</WTH_Alert_NotEnoughPlatforms_Description>
+  <WTH_Alert_Power_Low_Label>メカノイドの残存電気量が低下</WTH_Alert_Power_Low_Label>
+  <WTH_Alert_Power_Low_Description>次のメカノイドは残存電気が低下しています：{0}\nメカノイドベッドに戻るように制御解除します</WTH_Alert_Power_Low_Description>
+  <WTH_Alert_Maintenance_Low_Label>メカノイドの整備が不足</WTH_Alert_Maintenance_Low_Label>
+  <WTH_Alert_Maintenance_Low_Description>次のメカノイドのハッキングされた敵味方識別システムは整備されていません：{0}\nハッカーに割り当てた入植者の誰かが、メカノイドのハッキング状態を整備できるか確認してください。</WTH_Alert_Maintenance_Low_Description>
+  <WTH_Alert_Maintenance_VeryLow_Label>メカノイドの整備が危険状態</WTH_Alert_Maintenance_VeryLow_Label>
+  <WTH_Alert_Maintenance_VeryLow_Description>次のメカノイドのハッキングされた敵味方識別システムは全く整備されておらず、彼らはあなたのコロニーに脅威を与えるでしょう：{0}\nハック状態はいつ機能しなくなってもおかしくないので、メカノイドが整備されているか、シャットダウン可能か確認してください。</WTH_Alert_Maintenance_VeryLow_Description>
+  <WTH_FactionRestrictions_OK>許可</WTH_FactionRestrictions_OK>
+  <WTH_FactionRestrictions_NOK>禁止</WTH_FactionRestrictions_NOK>
+  <WTH_FactionRestrictions_Label>各派閥がハックできるメカノイドを設定する</WTH_FactionRestrictions_Label>
+  <WTH_FactionRestrictions_Description>この設定では、各派閥の襲撃時に敵として登場可能なハックされたメカノイドを設定できます</WTH_FactionRestrictions_Description>
+
+  <WTH_MechanoidsSection>メカノイド</WTH_MechanoidsSection>
+
+  <WTH_Explanation_BonusCapacity>このポーンタイプのボーナス容量</WTH_Explanation_BonusCapacity>
+  <WTH_Explanation_NumMechs>メカノイドの数</WTH_Explanation_NumMechs>
+  <WTH_Explanation_NumPlatforms>メカノイドベッドの数</WTH_Explanation_NumPlatforms>
+  <WTH_Explanation_FuelConsumption>メカノイドベッド1つあたりの燃料消費量</WTH_Explanation_FuelConsumption>
+  <WTH_Explanation_TotalFuel>燃料の合計</WTH_Explanation_TotalFuel>
+  <WTH_Explanation_DaysOfFuel>燃料の日数</WTH_Explanation_DaysOfFuel>
+  <WTH_Explanation_NotEnoughPlatforms>あなたは、選択したメカノイドの数にあった十分なメカノイド携帯ベッドを持っていません。\nメカノイド1体ごとに1つずつ用意してください。</WTH_Explanation_NotEnoughPlatforms>
+  <WTH_ExtraInfoKey_DaysOfFuel>燃料の日数(メカノイド)</WTH_ExtraInfoKey_DaysOfFuel>
+
+  <WTH_Warning_NotEnoughPlatforms>あなたのキャラバン隊には、すべてのメカノイドを充電するのに十分な数のメカノイド携帯ベッドがありません。\nメカノイド1体ごとに1つずつ用意してください。</WTH_Warning_NotEnoughPlatforms>
+  <WTH_Warning_DaysOfFuel>このキャラバン隊には、メカノイドに電力を供給するのに{0}日分の燃料しか用意していません。メカノイドはすぐに電力を失って行動不能になるかもしれません。</WTH_Warning_DaysOfFuel>
+  <WTH_Message_CaravanOutOfFuel>{0}の燃料を使い果たしました。</WTH_Message_CaravanOutOfFuel>
+  <WTH_Message_CannotDrop>この装備はポーンに取り付けられているため、捨てることができません</WTH_Message_CannotDrop>
+
+  <WTH_Mount>{0}を搭載</WTH_Mount>
+  <WTH_Mount_Jobstring>{0}を搭載中</WTH_Mount_Jobstring>
+
+  <WTH_TextMote_MaintenanceFailed>整備失敗（成功率：{0}）</WTH_TextMote_MaintenanceFailed>
+
+</LanguageData>

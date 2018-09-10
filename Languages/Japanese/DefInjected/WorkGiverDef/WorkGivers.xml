@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_DoBillsMechanoidWorkshop.label>メカノイド工作台で作業する</WTH_DoBillsMechanoidWorkshop.label>
+  <WTH_DoBillsMechanoidWorkshop.verb>で作業する</WTH_DoBillsMechanoidWorkshop.verb>
+  <WTH_DoBillsMechanoidWorkshop.gerund>で作業する</WTH_DoBillsMechanoidWorkshop.gerund>
+
+  <WTH_DoBillsMedicalMechanoidOperation.label>メカノイドを改造する</WTH_DoBillsMedicalMechanoidOperation.label>
+  <WTH_DoBillsMedicalMechanoidOperation.verb>を改造する</WTH_DoBillsMedicalMechanoidOperation.verb>
+  <WTH_DoBillsMedicalMechanoidOperation.gerund>を改造する</WTH_DoBillsMedicalMechanoidOperation.gerund>
+
+  <WTH_HaulMechanoid.label>メカノイドを運ぶ</WTH_HaulMechanoid.label>
+  <WTH_HaulMechanoid.verb>を運ぶ</WTH_HaulMechanoid.verb>
+  <WTH_HaulMechanoid.gerund>を運搬する</WTH_HaulMechanoid.gerund>
+
+  <WTH_MaintainMechanoid.label>メカノイドを整備する</WTH_MaintainMechanoid.label>
+  <WTH_MaintainMechanoid.verb>で整備を行う</WTH_MaintainMechanoid.verb>
+  <WTH_MaintainMechanoid.gerund>で整備を行う</WTH_MaintainMechanoid.gerund>
+
+  <WTH_MaintainMechanoid_Urgent.label>メカノイドを緊急点検する</WTH_MaintainMechanoid_Urgent.label>
+  <WTH_MaintainMechanoid_Urgent.verb>で整備を行う</WTH_MaintainMechanoid_Urgent.verb>
+  <WTH_MaintainMechanoid_Urgent.gerund>で整備を行う</WTH_MaintainMechanoid_Urgent.gerund>
+
+
+</LanguageData>

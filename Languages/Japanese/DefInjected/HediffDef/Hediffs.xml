@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_ShutDown.label>シャットダウン</WTH_ShutDown.label>
+  <WTH_ShutDown.labelNoun>シャットダウン命令</WTH_ShutDown.labelNoun>
+
+  <WTH_RegeneratedPart.label>身体パーツ再生</WTH_RegeneratedPart.label>
+  <WTH_RegeneratedPart.labelNoun>新規再生部品</WTH_RegeneratedPart.labelNoun>
+
+  <WTH_BatteryExpansionModule.label>拡張バッテリー</WTH_BatteryExpansionModule.label>
+  <WTH_VanometricModule.label>自家発電モジュール搭載済</WTH_VanometricModule.label>
+  <WTH_SelfDestruct.label>自爆モジュール搭載済</WTH_SelfDestruct.label>
+  <WTH_RepairModule.label>修理モジュール搭載済</WTH_RepairModule.label>
+  <WTH_BeltModule.label>ベルト装着モジュール搭載済</WTH_BeltModule.label>
+  <WTH_TurretModule.label>タレットモジュール搭載済</WTH_TurretModule.label>
+  <WTH_MountedTurret.label>タレット搭載済</WTH_MountedTurret.label>
+
+  <WTH_RepairArm.label>修理アーム</WTH_RepairArm.label>
+  <WTH_RepairArm.comps.0.tools.0.label>こぶし(修理アーム)</WTH_RepairArm.comps.0.tools.0.label>
+  <WTH_RepairArm.labelNoun>修理アーム</WTH_RepairArm.labelNoun>
+
+  <WTH_Repairing.label>重要部に電力を供給</WTH_Repairing.label>
+
+  <!-- <WTH_Overcharged.label>overcharged</WTH_Overcharged.label> -->
+
+  <WTH_ReplacedAI.label>AI人格コア搭載済</WTH_ReplacedAI.label>
+  <WTH_TargetingHacked.label>敵味方識別装置ハック済</WTH_TargetingHacked.label>
+  <WTH_BackupBattery.label>予備バッテリーで稼働中</WTH_BackupBattery.label>
+  <WTH_LocomotionHacked.label>位置情報装置ハック済</WTH_LocomotionHacked.label>
+  <WTH_TargetingHackedPoorly.label>敵味方識別装置が整備不足</WTH_TargetingHackedPoorly.label>
+  <WTH_TargetingDestroyed.label>敵味方識別装置が故障</WTH_TargetingDestroyed.label>
+  <WTH_LowMaintenance.label>整備不足</WTH_LowMaintenance.label>
+  <WTH_VeryLowMaintenance.label>危機的整備状態</WTH_VeryLowMaintenance.label>
+  <WTH_VeryLowPower.label>電力残量低下</WTH_VeryLowPower.label>
+  <WTH_NoPower.label>電力残量なし</WTH_NoPower.label>
+
+
+</LanguageData>

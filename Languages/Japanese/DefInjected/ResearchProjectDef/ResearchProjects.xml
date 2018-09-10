@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_HackingBasics.label>基本的な メカノイドハック</WTH_HackingBasics.label>
+  <WTH_HackingBasics.description>ハッキング施設とメカノイドベッドを建設できるようになります。ハッキング施設では、メカノイドの敵味方識別システムをハッキングすることができ、ハック済のメカノイドを起動した時に「味方」であるあなたのコロニーではなく、あなたの「敵」を攻撃するようにします。また、修理やメカノイドの充電を行う場所として必要なメカノイドベッドを建設することもできます。</WTH_HackingBasics.description>
+
+  <WTH_PortableChemfuelPlatform.label>メカノイド携帯ベッド</WTH_PortableChemfuelPlatform.label>
+  <WTH_PortableChemfuelPlatform.description>ワールドマップ上を旅する間、メカノイドに電力を供給するためにバイオ化学燃料を燃料に自家発電する携帯型のメカノイドベッドが建設可能になります。あなたのメカノイド用として一時的なメカノイドベッドとして展示(再展示)したり撤去することもできます。</WTH_PortableChemfuelPlatform.description>
+
+  <WTH_MechanoidWorkshop.label>メカノイド工作台</WTH_MechanoidWorkshop.label>
+  <WTH_MechanoidWorkshop.description>全種類のメカノイドに関連する作業と改良に使う部品やモジュールを製造したり、高度なメカノイド部品を回収するために使用されるメカノイド工作台を建設できるようになります。</WTH_MechanoidWorkshop.description>
+
+  <WTH_HackingRemoteControl.label>メカノイド制御ベルト</WTH_HackingRemoteControl.label>
+  <WTH_HackingRemoteControl.description>メカノイド工作台で作成可能な「メカノイド制御ベルト」を使用して、入植者が直接メカノイドを制御する方法を学びます。ちなみに、コロニーの非暴力主義の入植者たちはコレを使用する事で罪を感じることなく、戦闘に参加することができます。結局のところ、殺しをやっているのはメカノイドなので、暴力じゃありませんよね？</WTH_HackingRemoteControl.description>
+
+  <WTH_RepairModule.label>修理モジュール</WTH_RepairModule.label>
+  <WTH_RepairModule.description>修理モジュールは、メカノイドの反応炉に取り付けることができます。メカノイドパーツを収納することができ、電力を大量に素早く引き出して、メカの内部機構に再接続することができます。これは、メカノイドを作動させて、部品を消費する代わりにダメージを修復しますが、一時的にメカノイドを減速させます。</WTH_RepairModule.description>
+
+  <WTH_RepairArm.label>修理アーム</WTH_RepairArm.label>
+  <WTH_RepairArm.description>修理モジュールが取り付けられたメカノイドのアームを交換することができます。この修理アームは、修理モジュールによって充電されたメカパーツを他のメカノイドに移すことで、他のメカノイドを修復できるようになります。しかし、この腕は戦闘にはあまり適していません。</WTH_RepairArm.description>
+
+  <WTH_SelfDestruct.label>自爆モジュール</WTH_SelfDestruct.label>
+  <WTH_SelfDestruct.description>2個の迫撃砲弾と、活性化されたときに点火するワイヤーで出来ている単純な改良パーツです。プラスチール製のケースで、爆発物が不発しないように保護しています。あなたのメカノイドを派手に爆発させよう！</WTH_SelfDestruct.description>
+
+  <WTH_TurretModule.label>タレットモジュール</WTH_TurretModule.label>
+  <WTH_TurretModule.description>タレットと迫撃砲を搭載するための支持構造と操作関係の両方を提供するモジュールです。各タイプのタレットの研究には、より多くの研究期間が必要です。</WTH_TurretModule.description>
+
+  <WTH_TurretModule_GunTurrets.label>タレット砲搭載</WTH_TurretModule_GunTurrets.label>
+  <WTH_TurretModule_GunTurrets.description>タレットモジュールにタレット砲を搭載する方法を学びます。建設後に撤去できるタレット砲は、タレットモジュールに取り付けることができます。このモジュールは、大きなメカノイドにだけ取り付けることができます。</WTH_TurretModule_GunTurrets.description>
+
+  <WTH_TurretModule_Mortars.label>迫撃砲搭載</WTH_TurretModule_Mortars.label>
+  <WTH_TurretModule_Mortars.description>タレットモジュールに迫撃砲を搭載する方法を学びます。ただし迫撃砲は依然として入植者によって手動で操作されなければならず、メカノイドからは電力を引き出しません。このアップグレードには、通常の迫撃砲と比べてわずかな利点しかありません。しかし、メカノイドに数個の迫撃砲を搭載することは、敵を驚かせる良い方法でしょう。</WTH_TurretModule_Mortars.description>
+
+  <WTH_BatteryExpansionModule.label>バッテリー 増設モジュール</WTH_BatteryExpansionModule.label>
+  <WTH_BatteryExpansionModule.description>メカノイドが内部に蓄えることができる総電力を増加させるモジュールであり、運動性を少し犠牲にしています。</WTH_BatteryExpansionModule.description>
+
+  <WTH_VanometricModule.label>自家発電モジュール</WTH_VanometricModule.label>
+  <WTH_VanometricModule.description>運動性を少し犠牲にして、メカノイドに無限の電力を供給するために、ワノメトリック発電器を含むモジュールです。</WTH_VanometricModule.description>
+
+  <WTH_BeltModule.label>ベルト装着モジュール</WTH_BeltModule.label>
+  <WTH_BeltModule.description>普通のヒューマノイドが着用するシールドベルトやスモークポップベルトのような、高度な技術で作られたベルトを取り付けるインターフェースとして機能します。ハッキングされたメカノイドに取り付け可能なモジュールです。</WTH_BeltModule.description>
+
+  <WTH_HackingAdvanced.label>AI人格コア搭載</WTH_HackingAdvanced.label>
+  <WTH_HackingAdvanced.description>AI人格コアを、ハックしたメカノイドに埋め込むことを可能にする研究を行って、戦闘用としてAI人格コアを完全に制御します。</WTH_HackingAdvanced.description>
+
+
+</LanguageData>

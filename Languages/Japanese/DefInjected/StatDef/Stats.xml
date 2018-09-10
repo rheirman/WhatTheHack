@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_ControllerBeltRadius.label>制御半径</WTH_ControllerBeltRadius.label>
+  <WTH_ControllerBeltRadius.description>このベルトを使用してメカノイドを制御できる最大範囲(半径)です。</WTH_ControllerBeltRadius.description>
+
+  <WTH_HackingMaintenanceSpeed.label>整備速度</WTH_HackingMaintenanceSpeed.label>
+  <WTH_HackingMaintenanceSpeed.description>入植者がハック済のメカノイドを整備する速度です。</WTH_HackingMaintenanceSpeed.description>
+
+  <WTH_HackingSuccessChance.label>ハッキング成功率</WTH_HackingSuccessChance.label>
+  <WTH_HackingSuccessChance.description>メカノイドをハッキングまたは改良するときに、入植者が成功する確率です。実際の成功率は、ハックの難易度とメカノイドがどれくらい強力であるかによっても影響されます。</WTH_HackingSuccessChance.description>
+
+
+</LanguageData>
