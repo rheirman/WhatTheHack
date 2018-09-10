@@ -3,13 +3,13 @@
 	<WTH_Letter_Success_Label>Hacking successful</WTH_Letter_Success_Label>
 	<WTH_Letter_Success_Label_Description>{0} has successfully hacked a mechanoid and named it {1}. Targeting system of {1} now targets your enemies instead of your pawns. However, to avoid detection by the Mechanoid Hive, {1} has to rely on its internal backup batteries.</WTH_Letter_Success_Label_Description>
 	<WTH_Letter_Nothing_Label>Hacking failed - just some damage</WTH_Letter_Nothing_Label>
-	<WTH_Letter_Nothing_Description>Hacking failed but apart from some damage nothing serious happened</WTH_Letter_Nothing_Description>
-	<WTH_Letter_HackedPoorly_Label>Hacking failed - poor job</WTH_Letter_HackedPoorly_Label>
+	<WTH_Letter_Nothing_Description>Hacking failed, but apart from some damage to the mechanoid nothing serious happened</WTH_Letter_Nothing_Description>
+	<WTH_Letter_HackedPoorly_Label>Hacking barely succeeded</WTH_Letter_HackedPoorly_Label>
 	<WTH_Letter_HackedPoorly_Description>While the mechanoid is hacked for now, the job isn't done well. Use this mechanoid at your own risk, or discard it</WTH_Letter_HackedPoorly_Description>
 	<WTH_Letter_CausedMechanoidRaid_Label>Hacking failed - emergency signal transmitted</WTH_Letter_CausedMechanoidRaid_Label>
-	<WTH_Letter_CausedMechanoidRaid_Description>One of your pawns somehow managed to activate a security mechanism that broadcasted a signal to nearby mechanoids. Prepare for more flesh machines...</WTH_Letter_CausedMechanoidRaid_Description>
+	<WTH_Letter_CausedMechanoidRaid_Description>One of your colonists somehow managed to activate a security mechanism that broadcasted a signal to nearby mechanoids. Prepare for more flesh machines...</WTH_Letter_CausedMechanoidRaid_Description>
 	<WTH_Letter_ShotRandomDirection_Label>Hacking failed - whoops</WTH_Letter_ShotRandomDirection_Label>
-	<WTH_Letter_ShotRandomDirection_Description>One of your pawns accidentally triggered the mechanoids main weapon. Whoops.</WTH_Letter_ShotRandomDirection_Description>
+	<WTH_Letter_ShotRandomDirection_Description>One of your colonists accidentally triggered the mechanoids main weapon. Whoops.</WTH_Letter_ShotRandomDirection_Description>
 	<WTH_Letter_HealedToStanding_Label>Hacking failed - mechanoid standing again</WTH_Letter_HealedToStanding_Label>
 	<WTH_Letter_HealedToStanding_Description>The mechanoid wasn't really disabled after all, while being hacked, it managed to recover and it is now a danger to your colony.</WTH_Letter_HealedToStanding_Description>
 	<WTH_Letter_Mech_Reverted_Label>Hack stopped working</WTH_Letter_Mech_Reverted_Label>
@@ -42,7 +42,6 @@
 	<WTH_Reason_MechanoidDowned>Cannot enable downed mechanoid</WTH_Reason_MechanoidDowned>
 	<WTH_Reason_PowerLow>Cannot enable mechanoid, power too low (disable auto-recharge to override this)</WTH_Reason_PowerLow>
 	<WTH_Reason_PawnCannotBeDrafted>Cannot enable operate mechanoid controller belt when drafted</WTH_Reason_PawnCannotBeDrafted>
-	<WTH_Reason_NotEnoughParts>Regenerating body parts costs {0} mechanoids parts per body part, not enough parts loaded to the platform to regenerate a single part</WTH_Reason_NotEnoughParts>
 	
 	<WTH_Gizmo_SearchAndDestroy_Label>Activate</WTH_Gizmo_SearchAndDestroy_Label>
 	<WTH_Gizmo_SearchAndDestroy_Description>Activate the mechanoid. It will automatically attack any enemies near your colony. When disabled, the mechanoid will return to a mechanoid platform when possible.</WTH_Gizmo_SearchAndDestroy_Description>
@@ -55,7 +54,7 @@
 	<WTH_Gizmo_RemoteControlDeactivate_Description>Deactivates mechanoid controller belt, giving control back to the mechanoid</WTH_Gizmo_RemoteControlDeactivate_Description>
 	
 	<WTH_Gizmo_Regenerate_Label>Regenerate body parts</WTH_Gizmo_Regenerate_Label>
-	<WTH_Gizmo_Regenerate_Description>When this is active, the platform regenerates body parts of the mechanoid that are missing. Regenerating body parts consumes {0} mechanoid parts for each body part. Parts only start to regenerate when the mech has no other damage</WTH_Gizmo_Regenerate_Description>
+	<WTH_Gizmo_Regenerate_Description>When this is active, the platform regenerates body parts of the mechanoid that are missing. Regenerating body parts consumes a maximum {0} mechanoid parts for each body part (small body parts require less). Parts only start to regenerate when the mech has no other damage</WTH_Gizmo_Regenerate_Description>
 	<WTH_Gizmo_Repair_Label>Repair mechanoid</WTH_Gizmo_Repair_Label>
 	<WTH_Gizmo_Repair_Description>When this is active, the platform repairs any mechanoid on the platform by activating its internal mechanites by providing enough power, and material to work with. The mechanites consume mechanoid parts stored in the platform in the process.</WTH_Gizmo_Repair_Description>
 

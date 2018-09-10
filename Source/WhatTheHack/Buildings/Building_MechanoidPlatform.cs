@@ -54,8 +54,6 @@ namespace WhatTheHack.Buildings
                 defaultDesc = "WTH_Gizmo_Regenerate_Description".Translate(new object[] { MINFUELREGENERATE }),
                 icon = ContentFinder<Texture2D>.Get(("Things/Mote_HealingCrossGreen"), true),
                 isActive = () => regenerateActive,
-                disabled = this.refuelableComp.Fuel < MINFUELREGENERATE,
-                disabledReason = "WTH_Reason_NotEnoughParts".Translate(new object[]{ MINFUELREGENERATE }),
                 toggleAction = () =>
                 {
                     regenerateActive = !regenerateActive;

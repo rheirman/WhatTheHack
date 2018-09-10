@@ -79,7 +79,7 @@ namespace WhatTheHack.Comps
             {
                 if (mountedTo.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) is Need_Power powerNeed && !powerNeed.DirectlyPowered(mountedTo))
                 {
-                    powerNeed.CurLevel -= compPower.Props.basePowerConsumption * 0.008f;
+                    powerNeed.CurLevel -= 0.48f + compPower.Props.basePowerConsumption * 0.002f;
                 }
             }
         }

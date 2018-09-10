@@ -18,11 +18,12 @@ namespace WhatTheHack.Harmony
             {
                 Predicate<Thing> isMounted = (Thing t) => t.TryGetComp<CompMountable>() is CompMountable comp && comp.Active;
                 Thing thing = pawn.Map.spawnedThings.FirstOrDefault(
-                    (Thing t) => (t.GetInnerIfMinified() is Building_TurretGun) && 
+                    (Thing t) => (t.GetInnerIfMinified() is Building_TurretGun) &&
                     bill.IsFixedOrAllowedIngredient(t) &&
-                    pawn.CanReach(t, Verse.AI.PathEndMode.Touch, Danger.Deadly) && 
+                    pawn.CanReach(t, Verse.AI.PathEndMode.Touch, Danger.Deadly) &&
                     !t.IsForbidden(pawn) &&
-                    !isMounted(t));
+                    !isMounted(t) &&
+                    t is MinifiedThing);
                 if(thing != null)
                 {
                     ThingCountUtility.AddToList(chosen, thing, 1);

@@ -105,7 +105,7 @@ namespace WhatTheHack.Harmony
             }
             if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_VanometricModule))
             {
-                RechargeMechanoid(pawn, pawn.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power), 0.005f);//TODO: no magic number
+                RechargeMechanoid(pawn, pawn.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power), 0.0085f);//TODO: no magic number
             }
 
             if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing))
@@ -188,7 +188,10 @@ namespace WhatTheHack.Harmony
             }
             
             pawn.health.RemoveHediff(hediff);
-            platform.refuelableComp.ConsumeFuel(4f);
+            float partHealth = hediff.Part.def.GetMaxHealth(pawn);
+            float fuelNeeded = Math.Min(4f, partHealth / 5f);//body parts with less health need less parts to regenerate, capped at 4. 
+
+            platform.refuelableComp.ConsumeFuel(fuelNeeded);
             //Hediff_Injury injury = new Hediff_Injury();
             DamageWorker_AddInjury addInjury = new DamageWorker_AddInjury();
             addInjury.Apply(new DamageInfo(WTH_DefOf.WTH_RegeneratedPartDamage, hediff.Part.def.GetMaxHealth(pawn) - 1, 0, -1, pawn, hediff.Part), pawn);

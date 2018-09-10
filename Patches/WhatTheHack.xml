@@ -1,23 +1,48 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 <!--Add mechanoid specific operations-->
-<Operation Class="PatchOperationAdd">
-	<xpath>*/ThingDef[race/fleshType = "Mechanoid"]</xpath>
-	<value>
-		<recipes>
-			<li>WTH_HackMechanoid</li>
-			<li>WTH_ImplantAI</li>
-			<li>WTH_ShutDownMechanoid</li>
-			<li>WTH_InstallRepairModule</li>
-			<li>WTH_InstallRepairArm</li>
-			<li>WTH_InstallSelfDestruct</li>
-			<li>WTH_InstallTurretModule</li>
-			<li>WTH_InstallBatteryExpansionModule</li>
-			<li>WTH_InstallVanometricModule</li>
-			<li>WTH_InstallBeltModule</li>
-		</recipes>		
-	</value>
-</Operation> 
+<Operation Class="PatchOperationSequence">
+	<success>Always</success>
+	<operations>
+		<li Class="PatchOperationAdd">
+			<xpath>*/ThingDef[race/fleshType = "Mechanoid"]/recipes</xpath>
+			<value>
+				<li>WTH_HackMechanoid</li>
+				<li>WTH_ImplantAI</li>
+				<li>WTH_ShutDownMechanoid</li>
+				<li>WTH_InstallRepairModule</li>
+				<li>WTH_InstallRepairArm</li>
+				<li>WTH_InstallSelfDestruct</li>
+				<li>WTH_InstallTurretModule</li>
+				<li>WTH_InstallBatteryExpansionModule</li>
+				<li>WTH_InstallVanometricModule</li>
+				<li>WTH_InstallBeltModule</li>
+			</value>
+		</li> 
+	</operations>
+</Operation>
+<Operation Class="PatchOperationSequence">
+	<success>Always</success>
+	<operations>
+		<li Class="PatchOperationAdd">
+			<xpath>*/ThingDef[race/fleshType = "Mechanoid" and not (recipes)]</xpath>
+			<value>
+				<recipes>
+					<li>WTH_HackMechanoid</li>
+					<li>WTH_ImplantAI</li>
+					<li>WTH_ShutDownMechanoid</li>
+					<li>WTH_InstallRepairModule</li>
+					<li>WTH_InstallRepairArm</li>
+					<li>WTH_InstallSelfDestruct</li>
+					<li>WTH_InstallTurretModule</li>
+					<li>WTH_InstallBatteryExpansionModule</li>
+					<li>WTH_InstallVanometricModule</li>
+					<li>WTH_InstallBeltModule</li>
+				</recipes>		
+			</value>
+		</li> 
+	</operations>
+</Operation>
 <Operation Class="PatchOperationSequence">
 	<success>Always</success>
 	<operations>
