@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_CarryToHackingTable.reportString>メカノイドをハッキング施設に運ぶ</WTH_CarryToHackingTable.reportString>
+  <WTH_ClearHackingTable.reportString>メカノイド工作台からメカノイドを取り外して場所を空ける</WTH_ClearHackingTable.reportString>
+  <WTH_Mechanoid_Rest.reportString>施設に接続する</WTH_Mechanoid_Rest.reportString>
+  <WTH_ControlMechanoid.reportString>メカノイドを制御中</WTH_ControlMechanoid.reportString>
+  <WTH_ControlMechanoid_Goto.reportString>メカノイドを制御中(移動中)</WTH_ControlMechanoid_Goto.reportString>
+  <WTH_Ability.reportString>能力を使用した</WTH_Ability.reportString>
+  <WTH_PerformMaintenance.reportString>整備を実行中</WTH_PerformMaintenance.reportString>
+
+
+</LanguageData>

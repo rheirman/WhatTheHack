@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Scrap_AdvancedMechanoidChip.label>先進メカノイドチップを解体</WTH_Scrap_AdvancedMechanoidChip.label>
+  <WTH_Scrap_AdvancedMechanoidChip.description>先進メカノイドチップを解体する。</WTH_Scrap_AdvancedMechanoidChip.description>
+  <WTH_Scrap_AdvancedMechanoidChip.jobString>チップを解体中</WTH_Scrap_AdvancedMechanoidChip.jobString>
+
+  <WTH_Craft_AdditionalBatteryModule.label>バッテリー増設モジュールを作る</WTH_Craft_AdditionalBatteryModule.label>
+  <WTH_Craft_AdditionalBatteryModule.description>バッテリー増設モジュールを作成する。</WTH_Craft_AdditionalBatteryModule.description>
+  <WTH_Craft_AdditionalBatteryModule.jobString>モジュールを製作中</WTH_Craft_AdditionalBatteryModule.jobString>
+
+  <WTH_Craft_VanometricModule.label>自家発電モジュールを作る</WTH_Craft_VanometricModule.label>
+  <WTH_Craft_VanometricModule.description>自家発電モジュールを作成する。</WTH_Craft_VanometricModule.description>
+  <WTH_Craft_VanometricModule.jobString>モジュールを製作中</WTH_Craft_VanometricModule.jobString>
+
+  <WTH_Craft_SelfDestructModule.label>自爆モジュール</WTH_Craft_SelfDestructModule.label>
+  <WTH_Craft_SelfDestructModule.description>自爆モジュールを作成する。</WTH_Craft_SelfDestructModule.description>
+  <WTH_Craft_SelfDestructModule.jobString>モジュールを製作中</WTH_Craft_SelfDestructModule.jobString>
+
+  <WTH_Craft_TurretModule.label>タレットモジュールを作る</WTH_Craft_TurretModule.label>
+  <WTH_Craft_TurretModule.description>タレットモジュールを作成する。</WTH_Craft_TurretModule.description>
+  <WTH_Craft_TurretModule.jobString>モジュールを製作中</WTH_Craft_TurretModule.jobString>
+
+  <WTH_Craft_RepairModule.label>修理モジュールを作る</WTH_Craft_RepairModule.label>
+  <WTH_Craft_RepairModule.description>修理モジュールを作成する。</WTH_Craft_RepairModule.description>
+  <WTH_Craft_RepairModule.jobString>モジュールを製作中</WTH_Craft_RepairModule.jobString>
+
+  <WTH_Craft_RepairArm.label>修理アームを作る</WTH_Craft_RepairArm.label>
+  <WTH_Craft_RepairArm.description>修理アームを作成する。</WTH_Craft_RepairArm.description>
+  <WTH_Craft_RepairArm.jobString>アームを製作中</WTH_Craft_RepairArm.jobString>
+
+  <WTH_Craft_BeltModule.label>ベルト装着モジュールを作る</WTH_Craft_BeltModule.label>
+  <WTH_Craft_BeltModule.description>ベルト装着モジュールを作成する。</WTH_Craft_BeltModule.description>
+  <WTH_Craft_BeltModule.jobString>モジュールを製作中</WTH_Craft_BeltModule.jobString>
+
+  <WTH_HackMechanoid.label>敵味方識別装置をハックする</WTH_HackMechanoid.label>
+  <WTH_HackMechanoid.description>メカノイドの敵味方識別システムをハッキングして、ハック済のメカノイドを起動した時に「味方」であるあなたのコロニーではなく、あなたの「敵」を攻撃するようにします。</WTH_HackMechanoid.description>
+  <WTH_HackMechanoid.jobString>メカノイドをハック中</WTH_HackMechanoid.jobString>
+
+  <WTH_ImplantAI.label>AI人格コアを搭載</WTH_ImplantAI.label>
+  <WTH_ImplantAI.description>AI人格コアを、ハックしたメカノイドに埋め込み、戦闘用の完全な制御を可能にします。</WTH_ImplantAI.description>
+  <WTH_ImplantAI.jobString>メカノイドをハック中</WTH_ImplantAI.jobString>
+
+  <!-- <WTH_HackLocomotion.label>hack mechanoid locomotion system</WTH_HackLocomotion.label> -->
+  <!-- <WTH_HackLocomotion.description>Hacks the locomotion system of the mechanoid and adds a receiver to the mechanoid to allow the it to be operated by a colonist using a remote control device</WTH_HackLocomotion.description> -->
+  <!-- <WTH_HackLocomotion.jobString>メカノイドをハック中</WTH_HackLocomotion.jobString> -->
+
+  <WTH_InstallRepairArm.label>修理アームを装着</WTH_InstallRepairArm.label>
+  <WTH_InstallRepairArm.description>修理アームを装着する。</WTH_InstallRepairArm.description>
+  <WTH_InstallRepairArm.jobString>修理アームを装着中</WTH_InstallRepairArm.jobString>
+
+  <WTH_InstallTurretModule.label>タレットモジュールを搭載</WTH_InstallTurretModule.label>
+  <WTH_InstallTurretModule.description>タレットと迫撃砲を増設するための構造的な土台とインターフェースの両方を提供するモジュールです。撤去可能なタレットは、このモジュールと接続することができます。これは強力な改良ですが、タレットは余分に電力を消費しますし、破壊される時に爆発する可能性があります。これはサイズが大きなメカノイドだけに取り付けることができます。</WTH_InstallTurretModule.description>
+  <WTH_InstallTurretModule.jobString>メカノイド改良中</WTH_InstallTurretModule.jobString>
+
+  <WTH_InstallRepairModule.label>修理モジュールを搭載</WTH_InstallRepairModule.label>
+  <WTH_InstallRepairModule.description>メカノイドパーツを搭載することが可能なモジュールで、メカノイドのメイン電源を内部に取り付けられたモジュールに再接続することができます。これは、メカノイドを再起動させたり、修理しますが、その作業中は移動も戦闘も何もできません。</WTH_InstallRepairModule.description>
+  <WTH_InstallRepairModule.jobString>メカノイド改良中</WTH_InstallRepairModule.jobString>
+
+  <WTH_InstallSelfDestruct.label>自爆モジュールを搭載</WTH_InstallSelfDestruct.label>
+  <WTH_InstallSelfDestruct.description>取り付けられたHE迫撃砲弾を短絡させることによって、メカノイドを自爆させる能力を追加します。プラスチール製のケースで、爆発物が不発しないように保護しています。</WTH_InstallSelfDestruct.description>
+  <WTH_InstallSelfDestruct.jobString>メカノイド改良中</WTH_InstallSelfDestruct.jobString>
+
+  <WTH_InstallBeltModule.label>ベルト装着モジュールを搭載</WTH_InstallBeltModule.label>
+  <WTH_InstallBeltModule.description>メカノイドがシールドベルトやスモークポップベルトなどのベルトを装備できるようにするモジュールを取り付けます。</WTH_InstallBeltModule.description>
+  <WTH_InstallBeltModule.jobString>メカノイド改良中</WTH_InstallBeltModule.jobString>
+
+  <WTH_InstallBatteryExpansionModule.label>バッテリー増設モジュールを搭載</WTH_InstallBatteryExpansionModule.label>
+  <WTH_InstallBatteryExpansionModule.description>メカノイドが内部に蓄えることができる総電力を増加させるモジュールを取り付けます。運動性を少し犠牲にします。</WTH_InstallBatteryExpansionModule.description>
+  <WTH_InstallBatteryExpansionModule.jobString>メカノイド改良中</WTH_InstallBatteryExpansionModule.jobString>
+
+  <WTH_InstallVanometricModule.label>自家発電モジュールを搭載</WTH_InstallVanometricModule.label>
+  <WTH_InstallVanometricModule.description>運動性を少し犠牲にして、メカノイドに無限の電力源を与えます。</WTH_InstallVanometricModule.description>
+  <WTH_InstallVanometricModule.jobString>メカノイド改良中</WTH_InstallVanometricModule.jobString>
+
+  <WTH_ShutDownMechanoid.label>シャットダウン</WTH_ShutDownMechanoid.label>
+  <WTH_ShutDownMechanoid.description>メカノイドをシャットダウンして完全に活動を停止します。</WTH_ShutDownMechanoid.description>
+  <WTH_ShutDownMechanoid.jobString>メカノイドをシャットダウン中</WTH_ShutDownMechanoid.jobString>
+
+
+</LanguageData>

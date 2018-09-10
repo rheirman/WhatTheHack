@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Hack.label>ハック</WTH_Hack.label>
+  <WTH_Hack.description>メカノイドをハックしたり改良や整備したりします。</WTH_Hack.description>
+  <WTH_Hack.labelShort>ハック</WTH_Hack.labelShort>
+  <WTH_Hack.pawnLabel>ハッカー</WTH_Hack.pawnLabel>
+  <WTH_Hack.gerundLabel>ハックする</WTH_Hack.gerundLabel>
+  <WTH_Hack.verb>ハック</WTH_Hack.verb>
+
+
+</LanguageData>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_MechanoidParts.label>メカノイドパーツ</WTH_MechanoidParts.label>
+  <WTH_MechanoidParts.description>破壊されたメカノイドから回収した身体パーツです。メカノイドの修理やハッキングに必要です。</WTH_MechanoidParts.description>
+
+  <WTH_MechanoidChip.label>先進メカノイドチップ</WTH_MechanoidChip.label>
+  <WTH_MechanoidChip.description>先進的なチップは、機能が停止したか破壊されたメカノイドから回収されます。より複雑なハッキング操作に必要です。</WTH_MechanoidChip.description>
+
+  <WTH_TurretModule.label>タレットモジュール</WTH_TurretModule.label>
+  <WTH_TurretModule.description>メカノイドに取り付けることができ、タレットや迫撃砲を搭載することができます。</WTH_TurretModule.description>
+
+  <WTH_SelfDestructModule.label>自爆モジュール</WTH_SelfDestructModule.label>
+  <WTH_SelfDestructModule.description>これらは致命的な自爆オプションを与えるためにメカノイドに内蔵することができます。</WTH_SelfDestructModule.description>
+
+  <WTH_BatteryExpansionModule.label>バッテリー増設モジュール</WTH_BatteryExpansionModule.label>
+  <WTH_BatteryExpansionModule.description>メカノイドに取り付けることでバッテリー容量の最大値を増設して、より長い行動時間を確保します。運動性能を少し犠牲にすることになります。</WTH_BatteryExpansionModule.description>
+
+  <WTH_VanometricModule.label>自家発電モジュール</WTH_VanometricModule.label>
+  <WTH_VanometricModule.description>メカノイドに取り付けることでバッテリー容量を気にせず、無限に行動可能にします。運動性能を少し犠牲にすることになります。</WTH_VanometricModule.description>
+
+  <WTH_RepairModule.label>修理モジュール</WTH_RepairModule.label>
+  <WTH_RepairModule.description>これらをメカノイドに取り付けると、メカノイドが屋外で自分自身を修理する能力を与えます。</WTH_RepairModule.description>
+
+  <WTH_RepairArm.label>修理アーム</WTH_RepairArm.label>
+  <WTH_RepairArm.description>他のメカノイドを屋外で修理できるようになる、修理モジュールをメカノイドに取り付けることができます.</WTH_RepairArm.description>
+
+  <WTH_BeltModule.label>ベルト装着モジュール</WTH_BeltModule.label>
+  <WTH_BeltModule.description>メカノイドに取り付けることでシールドベルトやスモークポップベルトのような人間用のベルトをメカノイドに装備させることができます。</WTH_BeltModule.description>
+
+
+</LanguageData>
