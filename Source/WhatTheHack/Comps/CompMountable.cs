@@ -103,7 +103,7 @@ namespace WhatTheHack.Comps
             {
                 ToInventory();
             }
-            else if (mountedTo.Map != parent.Map && mountedTo.Spawned && !OutOfBounds(mountedTo, parent))
+            else if (mountedTo.Map != parent.Map && mountedTo.Spawned && !OutOfBounds(mountedTo, parent.GetInnerIfMinified()))
             {
                 OutOfInventory();
             }
@@ -114,9 +114,10 @@ namespace WhatTheHack.Comps
             }
         }
 
-        private bool OutOfBounds(Pawn mountedTo, ThingWithComps parent)
+        private bool OutOfBounds(Pawn mountedTo, Thing parent)
         {
-            CellRect cellRect = GenAdj.OccupiedRect(mountedTo.Position, parent.Rotation, parent.def.Size);
+
+            CellRect cellRect = GenAdj.OccupiedRect(mountedTo.Position, mountedTo.Rotation, parent.def.Size + new IntVec2(1,1));
             CellRect.CellRectIterator iterator = cellRect.GetIterator();
             while (!iterator.Done())
             {
