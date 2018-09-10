@@ -67,7 +67,7 @@ namespace WhatTheHack
             command_Target.hotKey = KeyBindingDefOf.Misc5;
             if (pawn.Drafted)
             {
-                command_Target.Disable("WTH_Reaon_PawnCannotBeDrafted".Translate());
+                command_Target.Disable("WTH_Reason_PawnCannotBeDrafted".Translate());
             }
             command_Target.icon = ContentFinder<Texture2D>.Get(("Things/MechControllerBelt"));
             command_Target.action = delegate (Thing target)

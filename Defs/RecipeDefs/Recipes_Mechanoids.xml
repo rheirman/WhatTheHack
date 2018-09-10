@@ -536,7 +536,7 @@
 	
 	<RecipeDef>
 		<defName>WTH_InstallRepairArm</defName>
-		<label>install repair arm arm</label>
+		<label>install repair arm</label>
 		<description>Install a repair arm.</description>
 		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
 		<jobString>Installing repair arm.</jobString>
