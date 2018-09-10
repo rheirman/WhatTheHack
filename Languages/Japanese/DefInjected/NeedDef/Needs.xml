@@ -2,10 +2,10 @@
 <LanguageData>
 
   <WTH_Mechanoid_Power.label>電力</WTH_Mechanoid_Power.label>
-  <WTH_Mechanoid_Power.description>ハッキングされるとメカノイドハイブへの接続は切断され、ハイブが提供していた無限の電力も同じように切断されます。\nその結果、ハックされたメカノイドは、内部の予備バッテリーに依存しています。メカノイドベッドで充電可能です</WTH_Mechanoid_Power.description>
+  <WTH_Mechanoid_Power.description>ハッキングされるとメカノイドハイブへの情報接続は切断され、ハイブが提供していた無限の電力も同じように切断されます。その結果、ハックされたメカノイドは、内部の予備バッテリーに依存しています。メカノイドベッドで充電可能です</WTH_Mechanoid_Power.description>
 
   <WTH_Mechanoid_Maintenance.label>整備</WTH_Mechanoid_Maintenance.label>
-  <WTH_Mechanoid_Maintenance.description>ハッキングは繊細な働きをしています。\nハッキングされた敵味方識別装置は定期的に点検したり交換する必要があります。整備が不十分なメカノイドは、不完全であるだけでなく、コロニーにとっても危険です。戦闘などで破損したメカノイドはより早く劣化します。</WTH_Mechanoid_Maintenance.description>
+  <WTH_Mechanoid_Maintenance.description>ハッキングは繊細な働きをしています。\nハッキングされた敵味方識別装置は定期的に点検したり交換が必要です。\n整備が不十分なメカノイドは、不完全であるだけでなく、コロニーにとっても危険です。戦闘などで破損したメカノイドはより早く劣化します。</WTH_Mechanoid_Maintenance.description>
 
 
 </LanguageData>
