@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <WTH_Letter_Success_Label>骇入成功</WTH_Letter_Success_Label>
+  <WTH_Letter_Success_Label_Description>{0}成功骇入了一个机械族并将它命名为{1}.{1}现在会攻击你的敌人而不是你的士兵. 然而,为了避免被机械族发现, {1}现在不得不使用内部的备用电池.</WTH_Letter_Success_Label_Description>
+  <WTH_Letter_Nothing_Label>骇入失败(造成损伤)e</WTH_Letter_Nothing_Label>
+  <WTH_Letter_Nothing_Description>骇入失败了,不过除了对机械造成了一点损伤并没有发生什么严重的事.</WTH_Letter_Nothing_Description>
+  <WTH_Letter_HackedPoorly_Label>骇入失败(勉强控制)</WTH_Letter_HackedPoorly_Label>
+  <WTH_Letter_HackedPoorly_Description>虽然成功骇入了机械族,但软件方面存在一些问题,你可能会因为使用这个机械而付出一些代价,不过你可以选择丢掉它</WTH_Letter_HackedPoorly_Description>
+  <WTH_Letter_CausedMechanoidRaid_Label>骇入失败(触发袭击)</WTH_Letter_CausedMechanoidRaid_Label>
+  <WTH_Letter_CausedMechanoidRaid_Description>你的殖民者触发了一个安全系统,导致了一个信号被发送至附近的机械族巢穴,更多的机械族可能降临...</WTH_Letter_CausedMechanoidRaid_Description>
+  <WTH_Letter_ShotRandomDirection_Label>骇入失败(导致攻击)</WTH_Letter_ShotRandomDirection_Label>
+  <WTH_Letter_ShotRandomDirection_Description>你的殖民者意外触发了机械族的武器,哎呀!</WTH_Letter_ShotRandomDirection_Description>
+  <WTH_Letter_HealedToStanding_Label>骇入失败(机械复苏)</WTH_Letter_HealedToStanding_Label>
+  <WTH_Letter_HealedToStanding_Description>这个机械族并没有完全失效,骇入的时候它成功的进行了自启动,现在它对你来说将是一个威胁.</WTH_Letter_HealedToStanding_Description>
+  <WTH_Letter_Mech_Reverted_Label>骇入中止</WTH_Letter_Mech_Reverted_Label>
+  <WTH_Letter_Mech_Reverted_Description>一个没有得到妥善维护的机械现在恢复了它的危险行为.</WTH_Letter_Mech_Reverted_Description>
+  <WTH_Letter_HackedPoorlyEvent_Label>什么东西坏了</WTH_Letter_HackedPoorlyEvent_Label>
+  <WTH_Letter_HackedPoorlyEvent_Description>一台机械的脑部中什么东西损坏了,需要进行紧急维护</WTH_Letter_HackedPoorlyEvent_Description>
+  <WTH_FailureChance_Nothing_Title>失败状态几率-无事发生</WTH_FailureChance_Nothing_Title>
+  <WTH_FailureChance_Nothing_Description>骇入机械失败时无事发生的几率</WTH_FailureChance_Nothing_Description>
+  <WTH_FailureChance_CauseRaid_Title>失败状态几率-机械入侵</WTH_FailureChance_CauseRaid_Title>
+  <WTH_FailureChance_CauseRaid_Description>骇入机械失败时被机械族袭击的几率</WTH_FailureChance_CauseRaid_Description>
+  <WTH_FailureChance_ShootRandomDirection_Title>失败状态几率-武器开火</WTH_FailureChance_ShootRandomDirection_Title>
+  <WTH_FailureChance_ShootRandomDirection_Description>骇入机械失败时机械族武器开火的几率</WTH_FailureChance_ShootRandomDirection_Description>
+  <WTH_FailureChance_HealToStanding_Title>失败状态几率-机械重启</WTH_FailureChance_HealToStanding_Title>
+  <WTH_FailureChance_HealToStanding_Description>骇入机械失败时机械族重启的几率</WTH_FailureChance_HealToStanding_Description>
+  <WTH_FailureChance_HackPoorly_Title>失败状态几率-勉强控制</WTH_FailureChance_HackPoorly_Title>
+  <WTH_FailureChance_HackPoorly_Description>骇入机械失败时勉强控制机械族的概率</WTH_FailureChance_HackPoorly_Description>
+  <WTH_MaintenanceDedayEnabled_Title>机械需要定期维护</WTH_MaintenanceDedayEnabled_Title>
+  <WTH_MaintenanceDedayEnabled_Description>如果你不想经常维护你的机械装置,请关闭这个选项,不过在关闭这个选项的时候维护需求条仍会显示,因为有一些事件会导致机械的维护值下降</WTH_MaintenanceDedayEnabled_Description>
+
+  <WTH_HackedMechChance_Title>敌人使用被骇入机械族的概率(%)</WTH_HackedMechChance_Title>
+  <WTH_HackedMechChance_Description>其他派系的敌人攻击你时使用机械族的几率</WTH_HackedMechChance_Description>
+  <WTH_MaxHackedMechPoints_Title>最高被骇入机械族比例(%)</WTH_MaxHackedMechPoints_Title>
+  <WTH_MaxHackedMechPoints_Description>这将决定其他派系敌人袭击你时所携带的机械族的点数的最大值,敌人将携带这个值和最小值之间随机值点数的机械族.例如:假如一次袭击的点数为1000,这个选项设置为50%,最小值设置为20%,那敌人将在原有士兵的基础上多出200到500点数的机械族. </WTH_MaxHackedMechPoints_Description>
+  <WTH_MinHackedMechPoints_Title>最低被骇入机械族比例(%)</WTH_MinHackedMechPoints_Title>
+  <WTH_MinHackedMechPoints_Description>这将决定其他派系敌人袭击你时所携带的机械族的点数的最小值,敌人将携带这个值和最大值之间随机值点数的机械族.例如:假如一次袭击的点数为1000,最大值设置为50%,这个选项设置为20%,那敌人将在原有士兵的基础上多出200到500点数的机械族.</WTH_MinHackedMechPoints_Description>
+
+  <WTH_Menu_ClearTable>清理骇入设备</WTH_Menu_ClearTable>
+
+  <WTH_Reason_NotOnTable>没有正在运作的骇入设备</WTH_Reason_NotOnTable>
+  <WTH_Reason_MechanoidDowned>无法启用无法行动的机械</WTH_Reason_MechanoidDowned>
+  <WTH_Reason_PowerLow>无法启用电力不足的机械</WTH_Reason_PowerLow>
+  <WTH_Reason_PawnCannotBeDrafted>不能给正在修改的设备安装腰带</WTH_Reason_PawnCannotBeDrafted>
+
+  <WTH_Gizmo_SearchAndDestroy_Label>激活</WTH_Gizmo_SearchAndDestroy_Label>
+  <WTH_Gizmo_SearchAndDestroy_Description>激活机械是他们自动攻击附近的敌人,当关闭时,它们会试图返回机械平台.</WTH_Gizmo_SearchAndDestroy_Description>
+  <WTH_Gizmo_AutoRecharge_Label>自动充电</WTH_Gizmo_AutoRecharge_Label>
+  <WTH_Gizmo_AutoRecharge_Description>启用此项使机械会在电量不足时自动返回机械平台.</WTH_Gizmo_AutoRecharge_Description>
+
+  <WTH_Gizmo_RemoteControlActivate_Label>激活</WTH_Gizmo_RemoteControlActivate_Label>
+  <WTH_Gizmo_RemoteControlActivate_Description>使用机械腰带直接控制机械</WTH_Gizmo_RemoteControlActivate_Description>
+  <WTH_Gizmo_RemoteControlDeactivate_Label>关闭</WTH_Gizmo_RemoteControlDeactivate_Label>
+  <WTH_Gizmo_RemoteControlDeactivate_Description>关闭机械控制腰带,将控制权还给机械</WTH_Gizmo_RemoteControlDeactivate_Description>
+
+  <WTH_Gizmo_Regenerate_Label>再生身体部件</WTH_Gizmo_Regenerate_Label>
+  <WTH_Gizmo_Regenerate_Description>激活时平台将自动修复缺失的身体不见,再生身体部件需要消耗一个最大的{0}来再生其他部件.只有当机械臂没有损伤时才会再生</WTH_Gizmo_Regenerate_Description>
+  <WTH_Gizmo_Repair_Label>修复机械</WTH_Gizmo_Repair_Label>
+  <WTH_Gizmo_Repair_Description>激活时平台会使用平台储存的机械部件来修复机械.</WTH_Gizmo_Repair_Description>
+
+  <WTH_Gizmo_SelfDestruct_Label>自毁</WTH_Gizmo_SelfDestruct_Label>
+  <WTH_Gizmo_SelfDestruct_Description>让机械装置自爆.</WTH_Gizmo_SelfDestruct_Description>
+
+  <WTH_Gizmo_Mech_Repair_Label>修复</WTH_Gizmo_Mech_Repair_Label>
+  <WTH_Gizmo_Mech_Repair_Description>命令机械装置使用其机械臂将修理模块负责的机械装置转移到其他机械,修复他们.</WTH_Gizmo_Mech_Repair_Description>
+  <WTH_Gizmo_SelfRepair_Label>自修复</WTH_Gizmo_SelfRepair_Label>
+  <WTH_Gizmo_SelfRepair_Description>激活机械装置的维护模块使其使用储存的部件进行自我修复</WTH_Gizmo_SelfRepair_Description>
+
+  <WTH_Gizmo_Mech_EquipBelt_Label>装备腰带</WTH_Gizmo_Mech_EquipBelt_Label>
+  <WTH_Gizmo_Mech_EquipBelt_Description>命令机械将腰带安装到它们的腰带模块</WTH_Gizmo_Mech_EquipBelt_Description>
+
+  <WTH_Reason_AlreadyRepairing>这个机械已经注入了电力修理装置</WTH_Reason_AlreadyRepairing>
+  <WTH_Reason_NeedsMorePower>至少需要{0}的电力才能激活</WTH_Reason_NeedsMorePower>
+  <WTH_Reason_NeedsMoreFuel>至少需要{0}的燃料才能激活</WTH_Reason_NeedsMoreFuel>
+  <WTH_Reason_NotActivated>不能和失活的机器一起使用</WTH_Reason_NotActivated>
+  <WTH_Reason_NoDamage>不需要修复</WTH_Reason_NoDamage>
+
+  <WTH_Alert_NotEnoughPlatforms_Label>没有足够的机械平台</WTH_Alert_NotEnoughPlatforms_Label>
+  <WTH_Alert_NotEnoughPlatforms_Description>你基地的骇入机械多于机械平台,请制作更多的机械平台</WTH_Alert_NotEnoughPlatforms_Description>
+  <WTH_Alert_Power_Low_Label>机械电力不足</WTH_Alert_Power_Low_Label>
+  <WTH_Alert_Power_Low_Description>以下机械功率不足:{0}关闭它们是它们回到机械平台</WTH_Alert_Power_Low_Description>
+  <WTH_Alert_Maintenance_Low_Label>机械维护不良</WTH_Alert_Maintenance_Low_Label>
+  <WTH_Alert_Maintenance_Low_Description>以下机械的维护不好:{0}确保你的黑客盯着它们.</WTH_Alert_Maintenance_Low_Description>
+  <WTH_Alert_Maintenance_VeryLow_Label>机械维护非常差</WTH_Alert_Maintenance_VeryLow_Label>
+  <WTH_Alert_Maintenance_VeryLow_Description>以下这些被骇入的机械维护得非常差,它们可能对你的基地造成威胁:{0}及时的通关黑客关闭他们或者保证维护以避免风险.</WTH_Alert_Maintenance_VeryLow_Description>
+  <WTH_FactionRestrictions_OK>允许</WTH_FactionRestrictions_OK>
+  <WTH_FactionRestrictions_NOK>不允许</WTH_FactionRestrictions_NOK>
+  <WTH_FactionRestrictions_Label>设置可以被骇入的机械</WTH_FactionRestrictions_Label>
+  <WTH_FactionRestrictions_Description>设置派系在袭击时可以使用的被骇入的机械</WTH_FactionRestrictions_Description>
+
+  <WTH_MechanoidsSection>机械</WTH_MechanoidsSection>
+
+  <WTH_Explanation_BonusCapacity>这个机械的额外能力</WTH_Explanation_BonusCapacity>
+  <WTH_Explanation_NumMechs>机械的数量</WTH_Explanation_NumMechs>
+  <WTH_Explanation_NumPlatforms>便携机械平台的数量</WTH_Explanation_NumPlatforms>
+  <WTH_Explanation_FuelConsumption>机械平台的油耗</WTH_Explanation_FuelConsumption>
+  <WTH_Explanation_TotalFuel>总燃料量</WTH_Explanation_TotalFuel>
+  <WTH_Explanation_DaysOfFuel>每日消耗燃油量</WTH_Explanation_DaysOfFuel>
+  <WTH_Explanation_NotEnoughPlatforms>你没有携带足够的便携机械平台来容纳机械,请为每一个机械携带一个机械平台</WTH_Explanation_NotEnoughPlatforms>
+  <WTH_ExtraInfoKey_DaysOfFuel>每日消耗燃油量(机械)</WTH_ExtraInfoKey_DaysOfFuel>
+
+  <WTH_Warning_NotEnoughPlatforms>你的远征队没有足够的充电平台为所有的维护充电,你应该至少为每个机械携带一个平台,否则电量将很快就耗尽</WTH_Warning_NotEnoughPlatforms>
+  <WTH_Warning_DaysOfFuel>你的远征队只有{0}天的燃料用于机械,你的机械可能在很短时间内耗尽能量</WTH_Warning_DaysOfFuel>
+  <WTH_Message_CaravanOutOfFuel>{0}耗尽燃料.</WTH_Message_CaravanOutOfFuel>
+  <WTH_Message_CannotDrop>这个装备时安装在机械身上的,你不能将其抛下</WTH_Message_CannotDrop>
+
+  <WTH_Mount>装备{0}</WTH_Mount>
+  <WTH_Mount_Jobstring>装备{0}中</WTH_Mount_Jobstring>
+
+  <WTH_TextMote_MaintenanceFailed>维护失败(成功率: {0})</WTH_TextMote_MaintenanceFailed>
+
+</LanguageData>

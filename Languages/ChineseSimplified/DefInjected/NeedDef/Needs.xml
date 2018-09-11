@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Mechanoid_Power.label>电力</WTH_Mechanoid_Power.label>
+  <WTH_Mechanoid_Power.description>当机械被骇入后会关闭内部的反应堆而避免被机械族巢穴发现,因此它们的活动将依赖于内部的电池,可以在机械平台上进行充电</WTH_Mechanoid_Power.description>
+
+  <WTH_Mechanoid_Maintenance.label>维护</WTH_Mechanoid_Maintenance.label>
+  <WTH_Mechanoid_Maintenance.description>骇入是一项微妙的工作,被骇入的部分需要定期的检查和更换,一个管理不善的机械装置不仅无法达到最佳效果,而且可能对你的殖民地造成威胁,受损的机械将以更快的速度恶化.</WTH_Mechanoid_Maintenance.description>
+
+
+</LanguageData>

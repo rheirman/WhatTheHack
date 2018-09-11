@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_HackingTable.label>机械骇入设备</WTH_HackingTable.label>
+  <WTH_HackingTable.description>用于骇入和修理机械装置的设备</WTH_HackingTable.description>
+  <WTH_HackingTable_Blueprint.label>机械骇入设备(蓝图)</WTH_HackingTable_Blueprint.label>
+  <WTH_HackingTable_Frame.label>机械骇入设备(建造中)</WTH_HackingTable_Frame.label>
+  <WTH_HackingTable_Frame.description>用于骇入和修理机械装置的设备</WTH_HackingTable_Frame.description>
+
+  <WTH_TableMechanoidWorkshop.label>机械工坊</WTH_TableMechanoidWorkshop.label>
+  <WTH_TableMechanoidWorkshop.description>用于制作各种机械零件,分解先进机械芯片或回收机械零件的设施.</WTH_TableMechanoidWorkshop.description>
+  <WTH_TableMechanoidWorkshop_Blueprint.label>机械工坊(蓝图)</WTH_TableMechanoidWorkshop_Blueprint.label>
+  <WTH_TableMechanoidWorkshop_Blueprint_Install.label>机械工坊(蓝图)</WTH_TableMechanoidWorkshop_Blueprint_Install.label>
+  <WTH_TableMechanoidWorkshop_Frame.label>机械工坊(建造中)</WTH_TableMechanoidWorkshop_Frame.label>
+  <WTH_TableMechanoidWorkshop_Frame.description>用于制作各种机械零件,分解先进机械芯片或回收机械零件的设施.</WTH_TableMechanoidWorkshop_Frame.description>
+
+  <WTH_MechanoidPlatform.label>机械平台</WTH_MechanoidPlatform.label>
+  <WTH_MechanoidPlatform.description>机械用于充电和维修的平台.</WTH_MechanoidPlatform.description>
+  <WTH_MechanoidPlatform_Blueprint.label>mechanoid 机械平台 (蓝图)</WTH_MechanoidPlatform_Blueprint.label>
+  <WTH_MechanoidPlatform_Frame.label>mechanoid 机械平台 (建造中)</WTH_MechanoidPlatform_Frame.label>
+  <WTH_MechanoidPlatform_Frame.description>机械用于充电和维修的平台.</WTH_MechanoidPlatform_Frame.description>
+
+  <WTH_PortableChargingPlatform.label>便携机械平台</WTH_PortableChargingPlatform.label>
+  <WTH_PortableChargingPlatform.description>一个便携式的机械用于充电和维修的平台,通常时出行时携带的.</WTH_PortableChargingPlatform.description>
+  <WTH_PortableChargingPlatform_Blueprint.label>便携机械平台(蓝图)</WTH_PortableChargingPlatform_Blueprint.label>
+  <WTH_PortableChargingPlatform_Blueprint_Install.label>便携机械平台(蓝图)</WTH_PortableChargingPlatform_Blueprint_Install.label>
+  <WTH_PortableChargingPlatform_Frame.label>便携机械平台(建造中)</WTH_PortableChargingPlatform_Frame.label>
+  <WTH_PortableChargingPlatform_Frame.description>一个便携式的机械用于充电和维修的平台,通常时出行时携带的.</WTH_PortableChargingPlatform_Frame.description>
+
+
+</LanguageData>
