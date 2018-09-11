@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_ControllerBeltRadius.label>控制半径</WTH_ControllerBeltRadius.label>
+  <WTH_ControllerBeltRadius.description>这个腰带可以控制机械的最远距离.</WTH_ControllerBeltRadius.description>
+
+  <WTH_HackingMaintenanceSpeed.label>骇入速度</WTH_HackingMaintenanceSpeed.label>
+  <WTH_HackingMaintenanceSpeed.description>角色骇入和维护机械体的速度.</WTH_HackingMaintenanceSpeed.description>
+
+  <WTH_HackingSuccessChance.label>骇入成功几率</WTH_HackingSuccessChance.label>
+  <WTH_HackingSuccessChance.description>角色进行骇入机械时的成功率,实际几率会受到骇入难度和机械装置的影响</WTH_HackingSuccessChance.description>
+
+
+</LanguageData>

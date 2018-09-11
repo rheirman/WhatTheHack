@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_HackingBasics.label>基础机械骇入</WTH_HackingBasics.label>
+  <WTH_HackingBasics.description>让你可以制作机械骇入设备和机械平台,骇入设备可以是你骇入机械族让他们帮你对敌,而机械平台可以用于给机械充电</WTH_HackingBasics.description>
+
+  <WTH_PortableChemfuelPlatform.label>便携式燃料充电平台</WTH_PortableChemfuelPlatform.label>
+  <WTH_PortableChemfuelPlatform.description>让你可以建造使用使用化合燃料的便携式机械平台,使你可以不需要电力设备就能为机械充电.</WTH_PortableChemfuelPlatform.description>
+
+  <WTH_MechanoidWorkshop.label>机械工坊</WTH_MechanoidWorkshop.label>
+  <WTH_MechanoidWorkshop.description>让你可以建造一台机械工坊,机械工坊可以用于制作各种机械零件,分解先进机械芯片或回收机械零件.</WTH_MechanoidWorkshop.description>
+
+  <WTH_HackingRemoteControl.label>机械控制腰带</WTH_HackingRemoteControl.label>
+  <WTH_HackingRemoteControl.description>学习如何在机械工坊制作机械控制腰带.这将使你不愿意战斗的小人参与战斗而不感到内疚,毕竟,是机械在杀人,而不是他们,对吧(译者注:非我也,兵也)</WTH_HackingRemoteControl.description>
+
+  <WTH_RepairModule.label>维护模组</WTH_RepairModule.label>
+  <WTH_RepairModule.description>修复模块可以安装在机械的反应器中,它能够非常快的将能量分配至需要的组件,使反应堆可以自我维护,同时将减慢机体恶化速度.</WTH_RepairModule.description>
+
+  <WTH_RepairArm.label>维护臂</WTH_RepairArm.label>
+  <WTH_RepairArm.description>可用于替换机械臂的工作类机械臂,这种机械臂能够将修护模块转移至需要的地方使得机械可以自我维护.然而,这条手臂并不那么适合战斗.</WTH_RepairArm.description>
+
+  <WTH_SelfDestruct.label>自毁模组</WTH_SelfDestruct.label>
+  <WTH_SelfDestruct.description>一个简单的改装,由两个迫击炮弹何一根电线组成,玻璃钢的外壳可以有效的防止误触,这个升级会使你的机械在需要的时候爆炸.</WTH_SelfDestruct.description>
+
+  <WTH_TurretModule.label>炮塔模组</WTH_TurretModule.label>
+  <WTH_TurretModule.description>为炮塔和迫击炮提供结构支撑和接口,每一种炮塔都需要额外研究</WTH_TurretModule.description>
+
+  <WTH_TurretModule_GunTurrets.label>炮塔安装</WTH_TurretModule_GunTurrets.label>
+  <WTH_TurretModule_GunTurrets.description>学习如何在炮塔模组上安装炮塔,任何可以卸载的炮塔都可以安装在炮塔模组上,这个模块只能用于大型的机械体</WTH_TurretModule_GunTurrets.description>
+
+  <WTH_TurretModule_Mortars.label>迫击炮安装</WTH_TurretModule_Mortars.label>
+  <WTH_TurretModule_Mortars.description>了解如何在炮塔模组上安装迫击炮,不过迫击炮仍然需要殖民者手动操作,不能从机械体那里获得帮助,这个升级只有很小的好处,不够仍然可以给敌人留下深刻的印象.</WTH_TurretModule_Mortars.description>
+
+  <WTH_BatteryExpansionModule.label>扩容电池模组</WTH_BatteryExpansionModule.label>
+  <WTH_BatteryExpansionModule.description>一个增大机械电量的模组,代价是减少少量的移动能力</WTH_BatteryExpansionModule.description>
+
+  <WTH_VanometricModule.label>脉境电池模组</WTH_VanometricModule.label>
+  <WTH_VanometricModule.description>一个使机械不需要再充电的模组,代价是减少少量的移动能力</WTH_VanometricModule.description>
+
+  <WTH_BeltModule.label>腰带接口</WTH_BeltModule.label>
+  <WTH_BeltModule.description>一个腰带接口,使得机械可以安装护盾腰带或烟罐腰带</WTH_BeltModule.description>
+
+  <WTH_HackingAdvanced.label>AI移植</WTH_HackingAdvanced.label>
+  <WTH_HackingAdvanced.description>研究更好的AI核心,使得机械的战斗行为可以完全被控制.</WTH_HackingAdvanced.description>
+
+
+</LanguageData>

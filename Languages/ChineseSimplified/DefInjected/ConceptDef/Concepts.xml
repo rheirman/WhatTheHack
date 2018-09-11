@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Hacking.label>骇入机械</WTH_Hacking.label>
+  <WTH_Hacking.helpText>要骇入一个机械,请先将其击倒,然后打开健康选项卡并选择骇入机械,你的殖民者会将其搬运至机械骇入设备(确保你至少拥有一个!),然后被分配了骇入任务的殖民者就会开始试图骇入.不要忘记建立机械平台,这样你才可以维护骇入的机械.小心,骇入机械并不是一个安全的行为.</WTH_Hacking.helpText>
+
+  <WTH_Platform.label>机械平台</WTH_Platform.label>
+  <WTH_Platform.helpText>机械平台是一个为机械提供电力和修理的设备,平台应该通电并有充足的机械零件.通过这种方式机械内部的修复系统将被电源激活而开始修复机械</WTH_Platform.helpText>
+
+  <WTH_Modification.label>机械改装</WTH_Modification.label>
+  <WTH_Modification.helpText>为了升级或改装机械,你可以在机械工坊制作升级模块,然后打开机械的改造菜单对它们进行改造.</WTH_Modification.helpText>
+
+  <WTH_Caravanning.label>远程与露营(机械)</WTH_Caravanning.label>
+  <WTH_Caravanning.helpText>机械也可以曹禺远征,然而和平常一样它们需要充电和维护,你可以通过携带足够的便携式机械平台和足够的燃料来保证供能,如果你想在旅途中修复机械,请确保有足够的机械零件和一个有能力执行的殖民者,安装了维护模块的机械会在旅途中自行维护,安装了机械臂的机械会主动维护其他机械,如果你不想让它们被维护请在医疗界面进行设置.</WTH_Caravanning.helpText>
+
+  <WTH_Maintenance.label>机械维护</WTH_Maintenance.label>
+  <WTH_Maintenance.helpText>骇入是一项微妙的工作,因此骇入的机械需要定期的维护,而在这个过程中机械零件是必不可少的,只要你拥有足够的零件,你的机械就会很好的工作,维护不良的机械可能无法很好的工作,而完全忽略维护的机械可能会出现骇入失败的情况,并带来灾难性的后果</WTH_Maintenance.helpText>
+
+  <WTH_Power.label>保持机械电力充足</WTH_Power.label>
+  <WTH_Power.helpText>不像"野生"的机器人那样,被骇入的机器人不能使用它们内部的反应堆,因为这样会被机械族巢穴检测到,因此他们依靠内部电源工作,它们可以在机械平台上补充电力,最后,它们可以通过改装来提高电池容量.</WTH_Power.helpText>
+
+
+</LanguageData>
