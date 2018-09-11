@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_HackingBasics.label>基礎機械駭入</WTH_HackingBasics.label>
+  <WTH_HackingBasics.description>讓你可以製作機械駭入設備和機械平台，駭入設備可以是你駭入機械族讓他們幫你對敵，而機械平台可以用於給機械充電。</WTH_HackingBasics.description>
+
+  <WTH_PortableChemfuelPlatform.label>便攜式燃料充電平台</WTH_PortableChemfuelPlatform.label>
+  <WTH_PortableChemfuelPlatform.description>讓你可以建造使用使用化合燃料的便攜式機械平台，使你可以不需要電力設備就能為機械充電。</WTH_PortableChemfuelPlatform.description>
+
+  <WTH_MechanoidWorkshop.label>機械工坊</WTH_MechanoidWorkshop.label>
+  <WTH_MechanoidWorkshop.description>讓你可以建造一台機械工坊，機械工坊可以用於製作各種機械零件，分解先進機械芯片或回收機械零件。</WTH_MechanoidWorkshop.description>
+
+  <WTH_HackingRemoteControl.label>機械控制腰帶</WTH_HackingRemoteControl.label>
+  <WTH_HackingRemoteControl.description>學習如何在機械工坊製作機械控制腰帶。這將使你不願意戰鬥的小人蔘與戰鬥而不感到內疚，畢竟，是機械在殺人，而不是他們，對吧(譯者注：非我也，兵也)</WTH_HackingRemoteControl.description>
+
+  <WTH_RepairModule.label>維護模組</WTH_RepairModule.label>
+  <WTH_RepairModule.description>修復模塊可以安裝在機械的反應器中，它能夠非常快的將能量分配至需要的組件，使反應堆可以自我維護，同時將減慢機體惡化速度。</WTH_RepairModule.description>
+
+  <WTH_RepairArm.label>維護臂</WTH_RepairArm.label>
+  <WTH_RepairArm.description>可用於替換機械臂的工作類機械臂，這種機械臂能夠將修護模塊轉移至需要的地方使得機械可以自我維護.然而，這條手臂並不那麼適合戰鬥。</WTH_RepairArm.description>
+
+  <WTH_SelfDestruct.label>自毀模組</WTH_SelfDestruct.label>
+  <WTH_SelfDestruct.description>一個簡單的改裝，由兩個迫擊炮彈何一根電線組成，玻璃鋼的外殼可以有效的防止誤觸，這個升級會使你的機械在需要的時候爆炸。</WTH_SelfDestruct.description>
+
+  <WTH_TurretModule.label>炮塔模組</WTH_TurretModule.label>
+  <WTH_TurretModule.description>為炮塔和迫擊炮提供結構支撐和接口，每一種炮塔都需要額外研究</WTH_TurretModule.description>
+
+  <WTH_TurretModule_GunTurrets.label>炮塔安裝</WTH_TurretModule_GunTurrets.label>
+  <WTH_TurretModule_GunTurrets.description>學習如何在炮塔模組上安裝炮塔，任何可以卸載的炮塔都可以安裝在炮塔模組上，這個模塊只能用於大型的機械體</WTH_TurretModule_GunTurrets.description>
+
+  <WTH_TurretModule_Mortars.label>迫擊炮安裝</WTH_TurretModule_Mortars.label>
+  <WTH_TurretModule_Mortars.description>了解如何在炮塔模組上安裝迫擊炮，不過迫擊炮仍然需要殖民者手動操作，不能從機械體那裡獲得幫助，這個升級只有很小的好處，不夠仍然可以給敵人留下深刻的印象。</WTH_TurretModule_Mortars.description>
+
+  <WTH_BatteryExpansionModule.label>擴容電池模組</WTH_BatteryExpansionModule.label>
+  <WTH_BatteryExpansionModule.description>一個增大機械電量的模組，代價是減少少量的移動能力。</WTH_BatteryExpansionModule.description>
+
+  <WTH_VanometricModule.label>脈境電池模組</WTH_VanometricModule.label>
+  <WTH_VanometricModule.description>一個使機械不需要再充電的模組，代價是減少少量的移動能力。</WTH_VanometricModule.description>
+
+  <WTH_BeltModule.label>腰帶接口</WTH_BeltModule.label>
+  <WTH_BeltModule.description>一個腰帶接口，使得機械可以安裝護盾腰帶或煙罐腰帶</WTH_BeltModule.description>
+
+  <WTH_HackingAdvanced.label>AI移植</WTH_HackingAdvanced.label>
+  <WTH_HackingAdvanced.description>研究更好的AI核心，使得機械的戰鬥行為可以完全被控制。</WTH_HackingAdvanced.description>
+
+
+</LanguageData>

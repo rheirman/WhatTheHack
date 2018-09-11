@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_HackingTable.label>機械駭入設備</WTH_HackingTable.label>
+  <WTH_HackingTable.description>用於駭入和修理機械裝置的設備。</WTH_HackingTable.description>
+  <WTH_HackingTable_Blueprint.label>機械駭入設備(藍圖)</WTH_HackingTable_Blueprint.label>
+  <WTH_HackingTable_Frame.label>機械駭入設備(建造中)</WTH_HackingTable_Frame.label>
+  <WTH_HackingTable_Frame.description>用於駭入和修理機械裝置的設備。</WTH_HackingTable_Frame.description>
+
+  <WTH_TableMechanoidWorkshop.label>機械工坊</WTH_TableMechanoidWorkshop.label>
+  <WTH_TableMechanoidWorkshop.description>用於製作各種機械零件，分解先進機械芯片或回收機械零件的設施。</WTH_TableMechanoidWorkshop.description>
+  <WTH_TableMechanoidWorkshop_Blueprint.label>機械工坊(藍圖)</WTH_TableMechanoidWorkshop_Blueprint.label>
+  <WTH_TableMechanoidWorkshop_Blueprint_Install.label>機械工坊(藍圖)</WTH_TableMechanoidWorkshop_Blueprint_Install.label>
+  <WTH_TableMechanoidWorkshop_Frame.label>機械工坊(建造中)</WTH_TableMechanoidWorkshop_Frame.label>
+  <WTH_TableMechanoidWorkshop_Frame.description>用於製作各種機械零件，分解先進機械芯片或回收機械零件的設施。</WTH_TableMechanoidWorkshop_Frame.description>
+
+  <WTH_MechanoidPlatform.label>機械平台</WTH_MechanoidPlatform.label>
+  <WTH_MechanoidPlatform.description>機械用於充電和維修的平台。</WTH_MechanoidPlatform.description>
+  <WTH_MechanoidPlatform_Blueprint.label>機械平台 (藍圖)</WTH_MechanoidPlatform_Blueprint.label>
+  <WTH_MechanoidPlatform_Frame.label>機械平台 (建造中)</WTH_MechanoidPlatform_Frame.label>
+  <WTH_MechanoidPlatform_Frame.description>機械用於充電和維修的平台。</WTH_MechanoidPlatform_Frame.description>
+
+  <WTH_PortableChargingPlatform.label>便攜機械平台</WTH_PortableChargingPlatform.label>
+  <WTH_PortableChargingPlatform.description>一個便攜式的機械用於充電和維修的平台，通常時出行時攜帶的。</WTH_PortableChargingPlatform.description>
+  <WTH_PortableChargingPlatform_Blueprint.label>便攜機械平台(藍圖)</WTH_PortableChargingPlatform_Blueprint.label>
+  <WTH_PortableChargingPlatform_Blueprint_Install.label>便攜機械平台(藍圖)</WTH_PortableChargingPlatform_Blueprint_Install.label>
+  <WTH_PortableChargingPlatform_Frame.label>便攜機械平台(建造中)</WTH_PortableChargingPlatform_Frame.label>
+  <WTH_PortableChargingPlatform_Frame.description>一個便攜式的機械用於充電和維修的平台，通常時出行時攜帶的。</WTH_PortableChargingPlatform_Frame.description>
+
+
+</LanguageData>

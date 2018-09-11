@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_MechanoidParts.label>機械組件</WTH_MechanoidParts.label>
+  <WTH_MechanoidParts.description>廢棄的機械零件，用於維護或駭入機械。</WTH_MechanoidParts.description>
+
+  <WTH_MechanoidChip.label>先進機械組件</WTH_MechanoidChip.label>
+  <WTH_MechanoidChip.description>從機械體中獲得的更高級的芯片，可用於高級的駭入行為。</WTH_MechanoidChip.description>
+
+  <WTH_TurretModule.label>炮塔模組</WTH_TurretModule.label>
+  <WTH_TurretModule.description>安裝於機械體，使之可以安裝炮塔或迫擊炮。</WTH_TurretModule.description>
+
+  <WTH_SelfDestructModule.label>自毀模組</WTH_SelfDestructModule.label>
+  <WTH_SelfDestructModule.description>可以安裝在機械體上是他們在合適的時機自爆。</WTH_SelfDestructModule.description>
+
+  <WTH_BatteryExpansionModule.label>擴容電池模組</WTH_BatteryExpansionModule.label>
+  <WTH_BatteryExpansionModule.description>給機械帶來額外的電量，但消耗一點移動能力。</WTH_BatteryExpansionModule.description>
+
+  <WTH_VanometricModule.label>脈境電池模組</WTH_VanometricModule.label>
+  <WTH_VanometricModule.description>給機械帶來無限的電量，但消耗一點移動能力。</WTH_VanometricModule.description>
+
+  <WTH_RepairModule.label>維護模組</WTH_RepairModule.label>
+  <WTH_RepairModule.description>可以安裝在機械身上使得它們可以自我修復。</WTH_RepairModule.description>
+
+  <WTH_RepairArm.label>維護臂</WTH_RepairArm.label>
+  <WTH_RepairArm.description>可以安裝在機械身上，配合維護模組使得它們可以自我維護所有組件</WTH_RepairArm.description>
+
+  <WTH_BeltModule.label>腰帶模組</WTH_BeltModule.label>
+  <WTH_BeltModule.description>可以安裝在機械身上使得它們可以安裝護盾腰帶或煙霧腰帶。</WTH_BeltModule.description>
+
+
+</LanguageData>

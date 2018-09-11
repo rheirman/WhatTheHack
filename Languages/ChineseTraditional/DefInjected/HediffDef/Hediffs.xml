@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_ShutDown.label>關機</WTH_ShutDown.label>
+  <WTH_ShutDown.labelNoun>關機命令</WTH_ShutDown.labelNoun>
+
+  <WTH_RegeneratedPart.label>組件再生中</WTH_RegeneratedPart.label>
+  <WTH_RegeneratedPart.labelNoun>新更替的組件正在再生</WTH_RegeneratedPart.labelNoun>
+
+  <WTH_BatteryExpansionModule.label>擴容電池</WTH_BatteryExpansionModule.label>
+  <WTH_VanometricModule.label>脈境電池模塊</WTH_VanometricModule.label>
+  <WTH_SelfDestruct.label>自毀模塊</WTH_SelfDestruct.label>
+  <WTH_RepairModule.label>維護模塊</WTH_RepairModule.label>
+  <WTH_BeltModule.label>護盾模塊</WTH_BeltModule.label>
+  <WTH_TurretModule.label>炮塔模塊</WTH_TurretModule.label>
+  <WTH_MountedTurret.label>炮塔</WTH_MountedTurret.label>
+
+  <WTH_RepairArm.label>維護臂</WTH_RepairArm.label>
+  <WTH_RepairArm.comps.0.tools.0.label>臂</WTH_RepairArm.comps.0.tools.0.label>
+  <WTH_RepairArm.labelNoun>一條維護臂</WTH_RepairArm.labelNoun>
+
+  <WTH_Repairing.label>電力維護裝置</WTH_Repairing.label>
+
+
+  <!-- <HediffDef>
+		<defName>WTH_Overcharged</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>overcharged</label>
+		<defaultLabelColor>(0.5， 0.5， 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+		<maxSeverity>1.0</maxSeverity>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-5</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+        <li>
+			<capMods>
+				<li>
+				  <capacity>Moving</capacity>
+				  <offset>0.30</offset>
+				  <capacity>Consciousness</capacity>
+				  <offset>0.10</offset>
+				  <capacity>Manipulation</capacity>
+				  <offset>0.20</offset>
+				</li>
+			</capMods>  
+		</li>
+      </stages>
+	  </HediffDef> -->
+
+  <WTH_ReplacedAI.label>AI移植</WTH_ReplacedAI.label>
+  <WTH_TargetingHacked.label>目標選擇邏輯駭入</WTH_TargetingHacked.label>
+  <WTH_BackupBattery.label>備用電池運行</WTH_BackupBattery.label>
+  <WTH_LocomotionHacked.label>運轉裝置駭入</WTH_LocomotionHacked.label>
+  <WTH_TargetingHackedPoorly.label>目標選擇邏輯駭入(不完美的)</WTH_TargetingHackedPoorly.label>
+  <WTH_TargetingDestroyed.label>目標選擇邏輯被摧毀</WTH_TargetingDestroyed.label>
+  <WTH_LowMaintenance.label>維護不善</WTH_LowMaintenance.label>
+  <WTH_VeryLowMaintenance.label>維護極差</WTH_VeryLowMaintenance.label>
+  <WTH_VeryLowPower.label>電力不足</WTH_VeryLowPower.label>
+  <WTH_NoPower.label>無電力</WTH_NoPower.label>
+
+
+</LanguageData>

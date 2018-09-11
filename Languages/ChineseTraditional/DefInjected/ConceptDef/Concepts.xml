@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Hacking.label>駭入機械</WTH_Hacking.label>
+  <WTH_Hacking.helpText>要駭入一個機械，請先將其擊倒，然後打開健康選項卡並選擇駭入機械，你的殖民者會將其搬運至機械駭入設備(確保你至少擁有一個！)，然後被分配了駭入任務的殖民者就會開始試圖駭入。不要忘記建立機械平台，這樣你才可以維護駭入的機械。小心，駭入機械並不是一個安全的行為。</WTH_Hacking.helpText>
+
+  <WTH_Platform.label>機械平台</WTH_Platform.label>
+  <WTH_Platform.helpText>機械平台是一個為機械提供電力和修理的設備，平台應該通電並有充足的機械零件.通過這種方式機械內部的修復系統將被電源激活而開始修復機械。</WTH_Platform.helpText>
+
+  <WTH_Modification.label>機械改裝</WTH_Modification.label>
+  <WTH_Modification.helpText>為了升級或改裝機械，你可以在機械工坊製作升級模塊，然後打開機械的改造菜單對它們進行改造。</WTH_Modification.helpText>
+
+  <WTH_Caravanning.label>遠程與露營(機械)</WTH_Caravanning.label>
+  <WTH_Caravanning.helpText>機械也可以曹禺遠征，然而和平常一樣它們需要充電和維護，你可以通過攜帶足夠的便攜式機械平台和足夠的燃料來保證供能，如果你想在旅途中修復機械，請確保有足夠的機械零件和一個有能力執行的殖民者，安裝了維護模塊的機械會在旅途中自行維護，安裝了機械臂的機械會主動維護其他機械，如果你不想讓它們被維護請在醫療界面進行設置。</WTH_Caravanning.helpText>
+
+  <WTH_Maintenance.label>機械維護</WTH_Maintenance.label>
+  <WTH_Maintenance.helpText>駭入是一項微妙的工作，因此駭入的機械需要定期的維護，而在這個過程中機械零件是必不可少的，只要你擁有足夠的零件，你的機械就會很好的工作，維護不良的機械可能無法很好的工作，而完全忽略維護的機械可能會出現駭入失敗的情況，並帶來災難性的後果</WTH_Maintenance.helpText>
+
+  <WTH_Power.label>保持機械電力充足</WTH_Power.label>
+  <WTH_Power.helpText>不像"野生"的機器人那樣，被駭入的機器人不能使用它們內部的反應堆，因為這樣會被機械族巢穴檢測到，因此他們依靠內部電源工作，它們可以在機械平台上補充電力，最後，它們可以通過改裝來提高電池容量。</WTH_Power.helpText>
+
+
+</LanguageData>
