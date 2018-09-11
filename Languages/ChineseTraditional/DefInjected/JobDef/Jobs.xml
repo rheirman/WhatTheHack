@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_CarryToHackingTable.reportString>將機械族搬運至機械修理設備</WTH_CarryToHackingTable.reportString>
+  <WTH_ClearHackingTable.reportString>將機械從機械修理設備上取下以騰出空間</WTH_ClearHackingTable.reportString>
+  <WTH_Mechanoid_Rest.reportString>連接至設備</WTH_Mechanoid_Rest.reportString>
+  <WTH_ControlMechanoid.reportString>控制機械族</WTH_ControlMechanoid.reportString>
+  <WTH_ControlMechanoid_Goto.reportString>控制機械族(移動)</WTH_ControlMechanoid_Goto.reportString>
+  <WTH_Ability.reportString>使用能力</WTH_Ability.reportString>
+  <WTH_PerformMaintenance.reportString>進行維護</WTH_PerformMaintenance.reportString>
+
+
+</LanguageData>

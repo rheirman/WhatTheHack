@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <WTH_Letter_Success_Label>駭入成功</WTH_Letter_Success_Label>
+  <WTH_Letter_Success_Label_Description>{0}成功駭入了一個機械族並將它命名為{1}。{1}現在會攻擊你的敵人而不是你的士兵. 然而，為了避免被機械族發現， {1}現在不得不使用內部的備用電池。</WTH_Letter_Success_Label_Description>
+  <WTH_Letter_Nothing_Label>駭入失敗(造成損傷)</WTH_Letter_Nothing_Label>
+  <WTH_Letter_Nothing_Description>駭入失敗了，不過除了對機械造成了一點損傷並沒有發生什麼嚴重的事。</WTH_Letter_Nothing_Description>
+  <WTH_Letter_HackedPoorly_Label>駭入失敗(勉強控制)</WTH_Letter_HackedPoorly_Label>
+  <WTH_Letter_HackedPoorly_Description>雖然成功駭入了機械族，但軟件方面存在一些問題，你可能會因為使用這個機械而付出一些代價，不過你可以選擇丟掉它</WTH_Letter_HackedPoorly_Description>
+  <WTH_Letter_CausedMechanoidRaid_Label>駭入失敗(觸發襲擊)</WTH_Letter_CausedMechanoidRaid_Label>
+  <WTH_Letter_CausedMechanoidRaid_Description>你的殖民者觸發了一個安全系統，導致了一個信號被發送至附近的機械族巢穴，更多的機械族可能降臨..。</WTH_Letter_CausedMechanoidRaid_Description>
+  <WTH_Letter_ShotRandomDirection_Label>駭入失敗(導致攻擊)</WTH_Letter_ShotRandomDirection_Label>
+  <WTH_Letter_ShotRandomDirection_Description>你的殖民者意外觸發了機械族的武器，哎呀！</WTH_Letter_ShotRandomDirection_Description>
+  <WTH_Letter_HealedToStanding_Label>駭入失敗(機械復甦)</WTH_Letter_HealedToStanding_Label>
+  <WTH_Letter_HealedToStanding_Description>這個機械族並沒有完全失效，駭入的時候它成功的進行了自啟動，現在它對你來說將是一個威脅。</WTH_Letter_HealedToStanding_Description>
+  <WTH_Letter_Mech_Reverted_Label>駭入中止</WTH_Letter_Mech_Reverted_Label>
+  <WTH_Letter_Mech_Reverted_Description>一個沒有得到妥善維護的機械現在恢復了它的危險行為。</WTH_Letter_Mech_Reverted_Description>
+  <WTH_Letter_HackedPoorlyEvent_Label>什麼東西壞了</WTH_Letter_HackedPoorlyEvent_Label>
+  <WTH_Letter_HackedPoorlyEvent_Description>一台機械的腦部中什麼東西損壞了，需要進行緊急維護</WTH_Letter_HackedPoorlyEvent_Description>
+  <WTH_FailureChance_Nothing_Title>失敗狀態機率-無事發生</WTH_FailureChance_Nothing_Title>
+  <WTH_FailureChance_Nothing_Description>駭入機械失敗時無事發生的機率</WTH_FailureChance_Nothing_Description>
+  <WTH_FailureChance_CauseRaid_Title>失敗狀態機率-機械入侵</WTH_FailureChance_CauseRaid_Title>
+  <WTH_FailureChance_CauseRaid_Description>駭入機械失敗時被機械族襲擊的機率</WTH_FailureChance_CauseRaid_Description>
+  <WTH_FailureChance_ShootRandomDirection_Title>失敗狀態機率-武器開火</WTH_FailureChance_ShootRandomDirection_Title>
+  <WTH_FailureChance_ShootRandomDirection_Description>駭入機械失敗時機械族武器開火的機率</WTH_FailureChance_ShootRandomDirection_Description>
+  <WTH_FailureChance_HealToStanding_Title>失敗狀態機率-機械重啟</WTH_FailureChance_HealToStanding_Title>
+  <WTH_FailureChance_HealToStanding_Description>駭入機械失敗時機械族重啟的機率</WTH_FailureChance_HealToStanding_Description>
+  <WTH_FailureChance_HackPoorly_Title>失敗狀態機率-勉強控制</WTH_FailureChance_HackPoorly_Title>
+  <WTH_FailureChance_HackPoorly_Description>駭入機械失敗時勉強控制機械族的概率</WTH_FailureChance_HackPoorly_Description>
+  <WTH_MaintenanceDedayEnabled_Title>機械需要定期維護</WTH_MaintenanceDedayEnabled_Title>
+  <WTH_MaintenanceDedayEnabled_Description>如果你不想經常維護你的機械裝置，請關閉這個選項，不過在關閉這個選項的時候維護需求條仍會顯示，因為有一些事件會導致機械的維護值下降</WTH_MaintenanceDedayEnabled_Description>
+
+  <WTH_HackedMechChance_Title>敵人使用被駭入機械族的概率(%)</WTH_HackedMechChance_Title>
+  <WTH_HackedMechChance_Description>其他勢力的敵人攻擊你時使用機械族的機率</WTH_HackedMechChance_Description>
+  <WTH_MaxHackedMechPoints_Title>最高被駭入機械族比例(%)</WTH_MaxHackedMechPoints_Title>
+  <WTH_MaxHackedMechPoints_Description>這將決定其他勢力敵人襲擊你時所攜帶的機械族的點數的最大值，敵人將攜帶這個值和最小值之間隨機值點數的機械族。例如：假如一次襲擊的點數為1000，這個選項設置為50%，最小值設置為20%，那敵人將在原有士兵的基礎上多出200到500點數的機械族. </WTH_MaxHackedMechPoints_Description>
+  <WTH_MinHackedMechPoints_Title>最低被駭入機械族比例(%)</WTH_MinHackedMechPoints_Title>
+  <WTH_MinHackedMechPoints_Description>這將決定其他勢力敵人襲擊你時所攜帶的機械族的點數的最小值，敵人將攜帶這個值和最大值之間隨機值點數的機械族。例如：假如一次襲擊的點數為1000，最大值設置為50%，這個選項設置為20%，那敵人將在原有士兵的基礎上多出200到500點數的機械族。</WTH_MinHackedMechPoints_Description>
+
+  <WTH_Menu_ClearTable>清理駭入設備</WTH_Menu_ClearTable>
+
+  <WTH_Reason_NotOnTable>沒有正在運作的駭入設備</WTH_Reason_NotOnTable>
+  <WTH_Reason_MechanoidDowned>無法啟用無法行動的機械</WTH_Reason_MechanoidDowned>
+  <WTH_Reason_PowerLow>無法啟用電力不足的機械</WTH_Reason_PowerLow>
+  <WTH_Reason_PawnCannotBeDrafted>不能給正在修改的設備安裝腰帶</WTH_Reason_PawnCannotBeDrafted>
+
+  <WTH_Gizmo_SearchAndDestroy_Label>激活</WTH_Gizmo_SearchAndDestroy_Label>
+  <WTH_Gizmo_SearchAndDestroy_Description>激活機械是他們自動攻擊附近的敵人，當關閉時，它們會試圖返回機械平台。</WTH_Gizmo_SearchAndDestroy_Description>
+  <WTH_Gizmo_AutoRecharge_Label>自動充電</WTH_Gizmo_AutoRecharge_Label>
+  <WTH_Gizmo_AutoRecharge_Description>啟用此項使機械會在電量不足時自動返回機械平台。</WTH_Gizmo_AutoRecharge_Description>
+
+  <WTH_Gizmo_RemoteControlActivate_Label>激活</WTH_Gizmo_RemoteControlActivate_Label>
+  <WTH_Gizmo_RemoteControlActivate_Description>使用機械腰帶直接控制機械</WTH_Gizmo_RemoteControlActivate_Description>
+  <WTH_Gizmo_RemoteControlDeactivate_Label>關閉</WTH_Gizmo_RemoteControlDeactivate_Label>
+  <WTH_Gizmo_RemoteControlDeactivate_Description>關閉機械控制腰帶，將控制權還給機械</WTH_Gizmo_RemoteControlDeactivate_Description>
+
+  <WTH_Gizmo_Regenerate_Label>再生身體部件</WTH_Gizmo_Regenerate_Label>
+  <WTH_Gizmo_Regenerate_Description>激活時平台將自動修復缺失的身體不見，再生身體部件需要消耗一個最大的{0}來再生其他部件。只有當機械臂沒有損傷時才會再生</WTH_Gizmo_Regenerate_Description>
+  <WTH_Gizmo_Repair_Label>修復機械</WTH_Gizmo_Repair_Label>
+  <WTH_Gizmo_Repair_Description>激活時平台會使用平台儲存的機械部件來修復機械。</WTH_Gizmo_Repair_Description>
+
+  <WTH_Gizmo_SelfDestruct_Label>自毀</WTH_Gizmo_SelfDestruct_Label>
+  <WTH_Gizmo_SelfDestruct_Description>讓機械裝置自爆。</WTH_Gizmo_SelfDestruct_Description>
+
+  <WTH_Gizmo_Mech_Repair_Label>修復</WTH_Gizmo_Mech_Repair_Label>
+  <WTH_Gizmo_Mech_Repair_Description>命令機械裝置使用其機械臂將修理模塊負責的機械裝置轉移到其他機械，修復他們。</WTH_Gizmo_Mech_Repair_Description>
+  <WTH_Gizmo_SelfRepair_Label>自修復</WTH_Gizmo_SelfRepair_Label>
+  <WTH_Gizmo_SelfRepair_Description>激活機械裝置的維護模塊使其使用儲存的部件進行自我修復</WTH_Gizmo_SelfRepair_Description>
+
+  <WTH_Gizmo_Mech_EquipBelt_Label>裝備腰帶</WTH_Gizmo_Mech_EquipBelt_Label>
+  <WTH_Gizmo_Mech_EquipBelt_Description>命令機械將腰帶安裝到它們的腰帶模塊</WTH_Gizmo_Mech_EquipBelt_Description>
+
+  <WTH_Reason_AlreadyRepairing>這個機械已經注入了電力修理裝置</WTH_Reason_AlreadyRepairing>
+  <WTH_Reason_NeedsMorePower>至少需要{0}的電力才能激活</WTH_Reason_NeedsMorePower>
+  <WTH_Reason_NeedsMoreFuel>至少需要{0}的燃料才能激活</WTH_Reason_NeedsMoreFuel>
+  <WTH_Reason_NotActivated>不能和失活的機器一起使用</WTH_Reason_NotActivated>
+  <WTH_Reason_NoDamage>不需要修復</WTH_Reason_NoDamage>
+
+  <WTH_Alert_NotEnoughPlatforms_Label>沒有足夠的機械平台</WTH_Alert_NotEnoughPlatforms_Label>
+  <WTH_Alert_NotEnoughPlatforms_Description>你基地的駭入機械多於機械平台，請製作更多的機械平台</WTH_Alert_NotEnoughPlatforms_Description>
+  <WTH_Alert_Power_Low_Label>機械電力不足</WTH_Alert_Power_Low_Label>
+  <WTH_Alert_Power_Low_Description>以下機械功率不足:{0}關閉它們是它們回到機械平台</WTH_Alert_Power_Low_Description>
+  <WTH_Alert_Maintenance_Low_Label>機械維護不良</WTH_Alert_Maintenance_Low_Label>
+  <WTH_Alert_Maintenance_Low_Description>以下機械的維護不好:{0}確保你的黑客盯著它們。</WTH_Alert_Maintenance_Low_Description>
+  <WTH_Alert_Maintenance_VeryLow_Label>機械維護非常差</WTH_Alert_Maintenance_VeryLow_Label>
+  <WTH_Alert_Maintenance_VeryLow_Description>以下這些被駭入的機械維護得非常差，它們可能對你的基地造成威脅:{0}及時的通關黑客關閉他們或者保證維護以避免風險。</WTH_Alert_Maintenance_VeryLow_Description>
+  <WTH_FactionRestrictions_OK>允許</WTH_FactionRestrictions_OK>
+  <WTH_FactionRestrictions_NOK>不允許</WTH_FactionRestrictions_NOK>
+  <WTH_FactionRestrictions_Label>設置可以被駭入的機械</WTH_FactionRestrictions_Label>
+  <WTH_FactionRestrictions_Description>設置勢力在襲擊時可以使用的被駭入的機械</WTH_FactionRestrictions_Description>
+
+  <WTH_MechanoidsSection>機械</WTH_MechanoidsSection>
+
+  <WTH_Explanation_BonusCapacity>這個機械的額外能力</WTH_Explanation_BonusCapacity>
+  <WTH_Explanation_NumMechs>機械的數量</WTH_Explanation_NumMechs>
+  <WTH_Explanation_NumPlatforms>便攜機械平台的數量</WTH_Explanation_NumPlatforms>
+  <WTH_Explanation_FuelConsumption>機械平台的油耗</WTH_Explanation_FuelConsumption>
+  <WTH_Explanation_TotalFuel>總燃料量</WTH_Explanation_TotalFuel>
+  <WTH_Explanation_DaysOfFuel>每日消耗燃油量</WTH_Explanation_DaysOfFuel>
+  <WTH_Explanation_NotEnoughPlatforms>你沒有攜帶足夠的便攜機械平台來容納機械，請為每一個機械攜帶一個機械平台</WTH_Explanation_NotEnoughPlatforms>
+  <WTH_ExtraInfoKey_DaysOfFuel>每日消耗燃油量(機械)</WTH_ExtraInfoKey_DaysOfFuel>
+
+  <WTH_Warning_NotEnoughPlatforms>你的遠征隊沒有足夠的充電平台為所有的維護充電，你應該至少為每個機械攜帶一個平台，否則電量將很快就耗盡</WTH_Warning_NotEnoughPlatforms>
+  <WTH_Warning_DaysOfFuel>你的遠征隊只有{0}天的燃料用於機械，你的機械可能在很短時間內耗盡能量</WTH_Warning_DaysOfFuel>
+  <WTH_Message_CaravanOutOfFuel>{0}耗盡燃料。</WTH_Message_CaravanOutOfFuel>
+  <WTH_Message_CannotDrop>這個裝備時安裝在機械身上的，你不能將其拋下</WTH_Message_CannotDrop>
+
+  <WTH_Mount>裝備{0}</WTH_Mount>
+  <WTH_Mount_Jobstring>裝備{0}中</WTH_Mount_Jobstring>
+
+  <WTH_TextMote_MaintenanceFailed>維護失敗(成功率: {0})</WTH_TextMote_MaintenanceFailed>
+
+</LanguageData>

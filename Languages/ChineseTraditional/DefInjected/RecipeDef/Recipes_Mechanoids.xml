@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Scrap_AdvancedMechanoidChip.label>銷毀先進機械芯片</WTH_Scrap_AdvancedMechanoidChip.label>
+  <WTH_Scrap_AdvancedMechanoidChip.description>銷毀先進機械芯片。</WTH_Scrap_AdvancedMechanoidChip.description>
+  <WTH_Scrap_AdvancedMechanoidChip.jobString>銷毀中。</WTH_Scrap_AdvancedMechanoidChip.jobString>
+
+  <WTH_Craft_AdditionalBatteryModule.label>製作擴容電池模組</WTH_Craft_AdditionalBatteryModule.label>
+  <WTH_Craft_AdditionalBatteryModule.description>製作擴容電池模組。</WTH_Craft_AdditionalBatteryModule.description>
+  <WTH_Craft_AdditionalBatteryModule.jobString>製作中。</WTH_Craft_AdditionalBatteryModule.jobString>
+
+  <WTH_Craft_VanometricModule.label>製作脈境模組</WTH_Craft_VanometricModule.label>
+  <WTH_Craft_VanometricModule.description>製作脈境電池模組。</WTH_Craft_VanometricModule.description>
+  <WTH_Craft_VanometricModule.jobString>製作中。</WTH_Craft_VanometricModule.jobString>
+
+  <WTH_Craft_SelfDestructModule.label>製作自毀模組</WTH_Craft_SelfDestructModule.label>
+  <WTH_Craft_SelfDestructModule.description>製作自毀模組。</WTH_Craft_SelfDestructModule.description>
+  <WTH_Craft_SelfDestructModule.jobString>製作中。</WTH_Craft_SelfDestructModule.jobString>
+
+  <WTH_Craft_TurretModule.label>製作炮塔模組</WTH_Craft_TurretModule.label>
+  <WTH_Craft_TurretModule.description>製作炮塔模組。</WTH_Craft_TurretModule.description>
+  <WTH_Craft_TurretModule.jobString>製作中。</WTH_Craft_TurretModule.jobString>
+
+  <WTH_Craft_RepairModule.label>製作維護模組</WTH_Craft_RepairModule.label>
+  <WTH_Craft_RepairModule.description>製作維護模組。</WTH_Craft_RepairModule.description>
+  <WTH_Craft_RepairModule.jobString>製作中。</WTH_Craft_RepairModule.jobString>
+
+  <WTH_Craft_RepairArm.label>製作維護臂</WTH_Craft_RepairArm.label>
+  <WTH_Craft_RepairArm.description>製作維護臂。</WTH_Craft_RepairArm.description>
+  <WTH_Craft_RepairArm.jobString>製作中。</WTH_Craft_RepairArm.jobString>
+
+  <WTH_Craft_BeltModule.label>製作腰帶模組</WTH_Craft_BeltModule.label>
+  <WTH_Craft_BeltModule.description>製作腰帶模組。</WTH_Craft_BeltModule.description>
+  <WTH_Craft_BeltModule.jobString>製作中。</WTH_Craft_BeltModule.jobString>
+
+  <WTH_HackMechanoid.label>駭入機械目標選擇邏輯</WTH_HackMechanoid.label>
+  <WTH_HackMechanoid.description>將機械的目標設置為敵人而不是你的士兵。</WTH_HackMechanoid.description>
+  <WTH_HackMechanoid.jobString>駭入機械中。</WTH_HackMechanoid.jobString>
+
+  <WTH_ImplantAI.label>植入AI</WTH_ImplantAI.label>
+  <WTH_ImplantAI.description>在機械中植入AI，使得在戰鬥中可以完全控制機械。</WTH_ImplantAI.description>
+  <WTH_ImplantAI.jobString>駭入機械中。</WTH_ImplantAI.jobString>
+
+  <WTH_InstallRepairArm.label>安裝維護臂</WTH_InstallRepairArm.label>
+  <WTH_InstallRepairArm.description>安裝維護臂。</WTH_InstallRepairArm.description>
+  <WTH_InstallRepairArm.jobString>安裝維護臂中。</WTH_InstallRepairArm.jobString>
+
+  <WTH_InstallTurretModule.label>安裝炮塔模組</WTH_InstallTurretModule.label>
+  <WTH_InstallTurretModule.description>安裝一個可以裝載炮塔的接口，不過這個模塊在受到摧毀時可能爆炸，只能安裝在大型機械上。</WTH_InstallTurretModule.description>
+  <WTH_InstallTurretModule.jobString>改裝機械中。</WTH_InstallTurretModule.jobString>
+
+  <WTH_InstallRepairModule.label>安裝維護模塊</WTH_InstallRepairModule.label>
+  <WTH_InstallRepairModule.description>一個可以儲存機械零件的模塊，可以利用電源修復機械，不過在修復的時候沒有行動能力。</WTH_InstallRepairModule.description>
+  <WTH_InstallRepairModule.jobString>改裝機械中。</WTH_InstallRepairModule.jobString>
+
+  <WTH_InstallSelfDestruct.label>安裝自毀模組</WTH_InstallSelfDestruct.label>
+  <WTH_InstallSelfDestruct.description>添加一個由高爆彈為主義的自毀裝置，玻璃鋼外殼用於防止誤觸。</WTH_InstallSelfDestruct.description>
+  <WTH_InstallSelfDestruct.jobString>改裝機械中。</WTH_InstallSelfDestruct.jobString>
+
+  <WTH_InstallBeltModule.label>安裝腰帶模組</WTH_InstallBeltModule.label>
+  <WTH_InstallBeltModule.description>安裝這個模組在機械身上使得它們可以安裝護盾腰帶或煙霧腰帶。</WTH_InstallBeltModule.description>
+  <WTH_InstallBeltModule.jobString>改裝機械中。</WTH_InstallBeltModule.jobString>
+
+  <WTH_InstallBatteryExpansionModule.label>安裝擴容電池模組</WTH_InstallBatteryExpansionModule.label>
+  <WTH_InstallBatteryExpansionModule.description>安裝這個模組以給機械帶來額外的電量，但消耗一點移動能力。</WTH_InstallBatteryExpansionModule.description>
+  <WTH_InstallBatteryExpansionModule.jobString>改裝機械中。</WTH_InstallBatteryExpansionModule.jobString>
+
+  <WTH_InstallVanometricModule.label>安裝脈境電池模組</WTH_InstallVanometricModule.label>
+  <WTH_InstallVanometricModule.description>安裝這個模組以給機械帶來無限的電量，但消耗一點移動能力。</WTH_InstallVanometricModule.description>
+  <WTH_InstallVanometricModule.jobString>改裝機械中。</WTH_InstallVanometricModule.jobString>
+
+  <WTH_ShutDownMechanoid.label>關機</WTH_ShutDownMechanoid.label>
+  <WTH_ShutDownMechanoid.description>關閉機械。</WTH_ShutDownMechanoid.description>
+  <WTH_ShutDownMechanoid.jobString>關閉機械。</WTH_ShutDownMechanoid.jobString>
+
+
+</LanguageData>
