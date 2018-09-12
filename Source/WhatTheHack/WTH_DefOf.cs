@@ -9,7 +9,7 @@ using Verse.AI;
 namespace WhatTheHack
 {
     [DefOf]
-    class WTH_DefOf
+    public class WTH_DefOf
     {
         public static HediffDef WTH_TargetingHacked;
         public static HediffDef WTH_BackupBattery;
@@ -33,7 +33,8 @@ namespace WhatTheHack
         public static DamageDef WTH_RegeneratedPartDamage;
 
         public static RecipeDef WTH_HackMechanoid;
-        
+        public static RecipeDef WTH_Craft_VanometricModule;
+
         public static DutyDef WTH_SearchAndDestroy;
         public static DutyDef WTH_ControlMechanoidDuty;
 

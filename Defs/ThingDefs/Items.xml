@@ -144,7 +144,6 @@
 	  <DeteriorationRate>2.0</DeteriorationRate>
 	  <SellPriceFactor>0.70</SellPriceFactor>
 	</statBases>
-    <intricate>true</intricate>
     <thingCategories>
       <li>Manufactured</li>
     </thingCategories>

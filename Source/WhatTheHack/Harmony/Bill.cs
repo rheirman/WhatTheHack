@@ -14,6 +14,23 @@ namespace WhatTheHack.Harmony
     {
         static bool Prefix(WorkGiver_DoBill __instance, Bill bill, Pawn pawn, ref List<ThingCount> chosen, ref bool __result)
         {
+            if(bill.recipe == WTH_DefOf.WTH_Craft_VanometricModule)
+            {
+                Thing thing = pawn.Map.spawnedThings.FirstOrDefault(
+                    (Thing t) => (t.GetInnerIfMinified().def == ThingDefOf.VanometricPowerCell) &&
+                    bill.IsFixedOrAllowedIngredient(t) &&
+                    pawn.CanReach(t, Verse.AI.PathEndMode.Touch, Danger.Deadly) &&
+                    !t.IsForbidden(pawn) &&
+                    t is MinifiedThing);
+                if (thing != null)
+                {
+                    ThingCountUtility.AddToList(chosen, thing, 1);
+                    __result = true;
+                    return false;
+                }
+            }
+
+
             if (bill.recipe.defName.Contains("WTH_Mount"))
             {
                 Predicate<Thing> isMounted = (Thing t) => t.TryGetComp<CompMountable>() is CompMountable comp && comp.Active;

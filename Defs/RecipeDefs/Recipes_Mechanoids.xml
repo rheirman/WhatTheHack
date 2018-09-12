@@ -130,6 +130,14 @@
 			<count>1</count>
 		</li>
 	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>VanometricPowerCell</li>
+			<li>ComponentSpacer</li>
+			<li>WTH_MechanoidParts</li>
+			<li>VanometricPowerCell</li>
+		</thingDefs>
+	</fixedIngredientFilter>
 	<products>
 	  <WTH_VanometricModule>1</WTH_VanometricModule>
 	</products>
