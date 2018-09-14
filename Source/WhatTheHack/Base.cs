@@ -61,7 +61,7 @@ namespace WhatTheHack
                                             where isHackingFaction(td)
                                             select td.defName).ToList();
             tabsHandler = Settings.GetHandle<String>("tabs", "WTH_FactionRestrictions_Label".Translate(), "WTH_FactionRestrictions_Description".Translate(), allFactionNames.First());
-            //tabsHandler.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_Tabs(rect, tabsHandler, allFactionNames.ToArray(), true, (int)-rect.width, (int)rect.height + 5); };
+            tabsHandler.CustomDrawer = rect => { return false; };
             factionRestrictions = Settings.GetHandle<Dict2DRecordHandler>("factionRestrictions", "", "", null);
             factionRestrictions.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_MatchingPawns_active(rect, factionRestrictions, allMechs, allFactionNames, tabsHandler, "WTH_FactionRestrictions_OK".Translate(), "WTH_FactionRestrictions_NOK".Translate()); };
 
