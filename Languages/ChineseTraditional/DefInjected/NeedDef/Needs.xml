@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Mechanoid_Power.label>電力</WTH_Mechanoid_Power.label>
+  <WTH_Mechanoid_Power.description>當機械被駭入後會關閉內部的反應堆而避免被機械族巢穴發現，因此它們的活動將依賴於內部的電池，可以在機械平台上進行充電。</WTH_Mechanoid_Power.description>
+
+  <WTH_Mechanoid_Maintenance.label>維護</WTH_Mechanoid_Maintenance.label>
+  <WTH_Mechanoid_Maintenance.description>駭入是一項微妙的工作，被駭入的部分需要定期的檢查和更換，一個管理不善的機械裝置不僅無法達到最佳效果，而且可能對你的殖民地造成威脅，受損的機械將以更快的速度惡化。</WTH_Mechanoid_Maintenance.description>
+
+
+</LanguageData>
