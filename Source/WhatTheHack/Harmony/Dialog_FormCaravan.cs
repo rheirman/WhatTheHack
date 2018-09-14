@@ -63,7 +63,7 @@ namespace WhatTheHack.Harmony
             int numPlatforms = 0;
             foreach (TransferableOneWay tow in instance.transferables)
             {
-                if (tow.ThingDef.race != null && tow.ThingDef.race.IsMechanoid)
+                if (tow.ThingDef.race != null && tow.ThingDef.race.IsMechanoid && tow.AnyThing is Pawn pawn && pawn.IsHacked() && !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_VanometricModule))
                 {
                     numMechanoids += tow.CountToTransfer;
                 }

@@ -24,7 +24,7 @@ namespace WhatTheHack.Harmony
 
             foreach (Thing thing in caravan.AllThings)
             {
-                if (thing.def.race != null && thing.def.race.IsMechanoid)
+                if (thing.def.race != null && thing.def.race.IsMechanoid && thing is Pawn pawn && pawn.IsHacked() && !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_VanometricModule))
                 {
                     numMechanoids += thing.stackCount;
                 }

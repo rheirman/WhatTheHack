@@ -33,7 +33,7 @@ namespace WhatTheHack
             //Find and assign platform for each pawn. 
             foreach (Pawn pawn in pawns)
             {
-                if (pawn.IsHacked())
+                if (pawn.IsHacked() && !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_VanometricModule))
                 {
                     bool foundPlatform = false;
                     for (int j = 0; j < chargingPlatformTows.Count && !foundPlatform; j++)
@@ -153,7 +153,7 @@ namespace WhatTheHack
 
             foreach (TransferableOneWay tow in transferables)
             {
-                if (tow.ThingDef != null && tow.ThingDef.race != null && tow.ThingDef.race.IsMechanoid)
+                if (tow.ThingDef != null && tow.ThingDef.race != null && tow.ThingDef.race.IsMechanoid && tow.AnyThing is Pawn pawn && pawn.IsHacked() && !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_VanometricModule))
                 {
                     numMechanoids += tow.CountToTransfer;
                 }

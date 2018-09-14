@@ -120,7 +120,7 @@ namespace WhatTheHack.Harmony
             int numPlatforms = 0;
             foreach (Thing thing in __instance.AllThings)
             {
-                if (thing is Pawn && ((Pawn)thing).IsHacked())
+                if (thing is Pawn pawn && pawn.IsHacked() && !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_VanometricModule))
                 {
                     numMechanoids++;
                 }
