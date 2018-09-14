@@ -61,9 +61,10 @@ namespace WhatTheHack
                                             where isHackingFaction(td)
                                             select td.defName).ToList();
             tabsHandler = Settings.GetHandle<String>("tabs", "WTH_FactionRestrictions_Label".Translate(), "WTH_FactionRestrictions_Description".Translate(), allFactionNames.First());
-            tabsHandler.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_Tabs(rect, tabsHandler, allFactionNames.ToArray(), true, (int)-rect.width, (int)rect.height + 5); };
+            //tabsHandler.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_Tabs(rect, tabsHandler, allFactionNames.ToArray(), true, (int)-rect.width, (int)rect.height + 5); };
             factionRestrictions = Settings.GetHandle<Dict2DRecordHandler>("factionRestrictions", "", "", null);
             factionRestrictions.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_MatchingPawns_active(rect, factionRestrictions, allMechs, allFactionNames, tabsHandler, "WTH_FactionRestrictions_OK".Translate(), "WTH_FactionRestrictions_NOK".Translate()); };
+
 
             hackedMechChance = Settings.GetHandle<int>("hackedMechChance", "WTH_HackedMechChance_Title".Translate(), "WTH_HackedMechChance_Description".Translate(), 60, Validators.IntRangeValidator(0,100));
             maxHackedMechPoints = Settings.GetHandle<int>("maxHackedMechPoints", "WTH_MaxHackedMechPoints_Title".Translate(), "WTH_MaxHackedMechPoints_Description".Translate(), 50, Validators.IntRangeValidator(0,500));

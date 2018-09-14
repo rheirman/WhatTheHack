@@ -17,7 +17,6 @@ namespace WhatTheHack
 
         private const float TextMargin = 20f;
         private const float BottomMargin = 2f;
-        private const float rowHeight = 20f;
         private const float buttonHeight = 28f;
         private static readonly Color iconBaseColor = new Color(0.5f, 0.5f, 0.5f, 1f);
         private static readonly Color iconMouseOverColor = new Color(0.6f, 0.6f, 0.4f, 1f);
@@ -59,9 +58,9 @@ namespace WhatTheHack
             return Color.white;
         }
 
-        private static bool DrawTileForPawn(KeyValuePair<String, Record> pawn, Rect contentRect, Vector2 iconOffset, int buttonID)
+        private static bool DrawTileForPawn(KeyValuePair<String, Record> pawn, Rect contentRect, Vector2 iconOffset, int buttonID, float tileHeight)
         {
-            var iconRect = new Rect(contentRect.x + iconOffset.x, contentRect.y + iconOffset.y, contentRect.width, rowHeight);
+            var iconRect = new Rect(contentRect.x + iconOffset.x, contentRect.y + iconOffset.y, contentRect.width, tileHeight);
             MouseoverSounds.DoRegion(iconRect, SoundDefOf.Mouseover_Command);
             Color save = GUI.color;
 
@@ -95,7 +94,8 @@ namespace WhatTheHack
 
         public static bool CustomDrawer_Tabs(Rect rect, SettingHandle<String> setting, String[] defaultValues, bool vertical = false, int xOffset = 0, int yOffset = 0)
         {
-            int labelWidth = 140;
+            int labelWidth = (int)rect.width - 20;
+
             int horizontalOffset = 0;
             int verticalOffset = 0;
             
@@ -132,7 +132,7 @@ namespace WhatTheHack
                 if (vertical)
                 {
                     verticalOffset += (int) buttonRect.height;
-                }
+                } 
                 else
                 {
                     horizontalOffset += labelWidth;
@@ -217,11 +217,14 @@ namespace WhatTheHack
 
         public static bool CustomDrawer_MatchingPawns_active(Rect wholeRect, SettingHandle<Dict2DRecordHandler> setting, List<ThingDef> allPawns, List<string> allFactionNames, SettingHandle<string> filter = null,  string yesText = "Is a mount", string noText = "Is not a mount")
         {
+            //TODO: refactor this mess, remove redundant and quircky things.
+
+            float rowHeight = 20f;
             if(setting.Value == null)
             {
                 setting.Value = Base.GetDefaultForFactionRestrictions(new Dict2DRecordHandler(), allPawns, allFactionNames);
             }
-
+            CustomDrawer_Tabs(new Rect(wholeRect.x,wholeRect.y, (float)wholeRect.width, buttonHeight), filter, allFactionNames.ToArray(), true, (int)-wholeRect.width, 0);
             drawBackground(wholeRect, background);
 
 
@@ -242,48 +245,37 @@ namespace WhatTheHack
             leftRect.position = new Vector2(leftRect.position.x, leftRect.position.y + TextMargin);
             rightRect.position = new Vector2(rightRect.position.x, rightRect.position.y + TextMargin);
 
-            int iconsPerRow = 1;
             bool change = false;
-            int numSelected = 0;
-
-
-
-
-
             bool factionFound = setting.Value.InnerList.TryGetValue(filter.Value, out Dictionary<string, Record> selection);
             FilterSelection(ref selection, allPawns, filter.Value);
-            foreach (KeyValuePair<String, Record> item in selection)
-            {
-                if (item.Value.isSelected)
-                {
-                    numSelected++;
-                }
-            }
-            Dictionary<String, Dictionary<String, Record>> innerDict = setting.Value.InnerList;
-            int biggerRows = Math.Max( numSelected/ iconsPerRow, (selection.Count - numSelected) / iconsPerRow);
-            float neededHightSelector = biggerRows * (rowHeight + BottomMargin) + TextMargin;
-            float neededHightFilter = allFactionNames.Count * buttonHeight + TextMargin;
-            setting.CustomDrawerHeight = Math.Max(neededHightSelector, neededHightFilter);
 
+            Dictionary<String, Dictionary<String, Record>> innerDict = setting.Value.InnerList;
 
             int indexLeft = 0;
             int indexRight = 0;
+            float leftHeight = 0;
+            float rightHeight = 0;
             foreach (KeyValuePair<String, Record> item in selection)
             {
                 Rect rect = item.Value.isSelected ? leftRect : rightRect;
                 int index = item.Value.isSelected ? indexLeft : indexRight;
+                float tileHeight = item.Value.label.Count() > 16 ? 2 * rowHeight : rowHeight;
+                leftRect.height = tileHeight;
+                rightRect.height = tileHeight;
+                float offset = item.Value.isSelected ? leftHeight : rightHeight;
+
                 if (item.Value.isSelected)
                 {
+                    leftHeight += tileHeight + BottomMargin;
                     indexLeft++;
                 }
                 else
                 {
+                    rightHeight += tileHeight + BottomMargin;
                     indexRight++;
                 }
 
-                int collum = (index % iconsPerRow);
-                int row = (index / iconsPerRow);
-                bool interacted = DrawTileForPawn(item, rect, new Vector2(0, rowHeight * row + row * BottomMargin), index);
+                bool interacted = DrawTileForPawn(item, rect, new Vector2(0, offset), index, tileHeight);
                 if (interacted)
                 {
                     change = true;
@@ -291,6 +283,11 @@ namespace WhatTheHack
                     item.Value.isException = !item.Value.isException;
                 }
             }
+            float neededHightSelector = Math.Max(leftHeight, rightHeight) + TextMargin;
+            float neededHightFilter = allFactionNames.Count * buttonHeight + TextMargin + 5f;
+            setting.CustomDrawerHeight = Math.Max(neededHightSelector, neededHightFilter);
+
+
             if (change)
             {
                 setting.Value.InnerList[filter.Value] = selection;
