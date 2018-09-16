@@ -26,27 +26,25 @@ namespace WhatTheHack.Buildings
 
         public bool TryAddPawnForModification(Pawn pawn, RecipeDef recipeDef)
         {
-            if((!pawn.IsHacked() || (pawn.IsHacked() && pawn.Faction != Faction.OfPlayer)))
+            Bill_Medical bill = new Bill_Medical(recipeDef);
+            IEnumerable<BodyPartRecord> bodyparts = RecipeUtility.GetPartsToApplyOn(pawn, bill.recipe);
+            if(bodyparts.Count() == 0)
             {
-
-                Bill_Medical bill = new Bill_Medical(recipeDef);
-                IEnumerable<BodyPartRecord> bodyparts = RecipeUtility.GetPartsToApplyOn(pawn, bill.recipe);
-                if(bodyparts.Count() == 0)
-                {
-                    return false;
-                }
-                if(pawn.health.surgeryBills.FirstShouldDoNow == null || pawn.health.surgeryBills.FirstShouldDoNow.recipe != WTH_DefOf.WTH_HackMechanoid)
-                {
-                    pawn.health.surgeryBills.AddBill(bill);
-                    bill.Part = bodyparts.First();
-                }
+                return false;
             }
+            if(pawn.health.surgeryBills.FirstShouldDoNow == null || pawn.health.surgeryBills.FirstShouldDoNow.recipe != WTH_DefOf.WTH_HackMechanoid)
+            {
+                pawn.health.surgeryBills.AddBill(bill);
+                bill.Part = bodyparts.First();
+            }
+            /*
             Need_Power powerNeed = pawn.needs.TryGetNeed<Need_Power>();
             if (powerNeed != null)
             {
                 //discharge mech battery so pawns can work safely. 
                 powerNeed.CurLevel = 0;
             }
+            */
 
             pawn.jobs.TryTakeOrderedJob(new Job(WTH_DefOf.WTH_Mechanoid_Rest, this));
             if (pawn.jobs.curDriver != null)

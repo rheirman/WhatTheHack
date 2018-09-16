@@ -13,7 +13,7 @@ using WhatTheHack.Duties;
 
 namespace WhatTheHack.Recipes
 {
-    class Recipe_HackMechanoid : Recipe_Hacking
+    public class Recipe_HackMechanoid : Recipe_Hacking
     {
         protected new bool allowMultipleParts = false;
         protected override bool CanApplyOn(Pawn pawn)
@@ -48,22 +48,25 @@ namespace WhatTheHack.Recipes
         }
 
 
-        protected override void HackingFailEvent(Pawn hackee, BodyPartRecord part, System.Random r)
+        protected override void HackingFailEvent(Pawn hacker, Pawn hackee, BodyPartRecord part, System.Random r)
         {
-            int randInt = r.Next(1, 100);
-            //Applying syntactic sugar. Short, but not very readable.
             int[] chances = { Base.failureChanceHackPoorly, Base.failureChanceCauseRaid, Base.failureChanceShootRandomDirection, Base.failureChanceHealToStanding, Base.failureChanceNothing };
-            Action<Pawn, BodyPartRecord>[] functions = { HackPoorly, CauseMechanoidRaid, ShootRandomDirection, HealToStanding, Nothing };
             int totalChance = chances.Sum();
+            int randInt = r.Next(1, totalChance);
+            Action<Pawn, BodyPartRecord>[] functions = { HackPoorly, CauseMechanoidRaid, ShootRandomDirection, HealToStanding, Nothing };
             int acc = 0;
             for (int i = 0; i < chances.Count(); i++)
             {
-                if (randInt < ((acc + chances[i]) * totalChance) / 100)
+                if (randInt < ((acc + chances[i])))
                 {
                     functions[i].Invoke(hackee, part);
                     break;
                 }
                 acc += chances[i];
+            }
+            if (hackee.Downed && !hackee.IsHacked())
+            {
+                ((Building_HackingTable)hackee.CurrentBed()).TryAddPawnForModification(hackee, recipe);
             }
         }
 

@@ -13,7 +13,7 @@ using WhatTheHack.Duties;
 
 namespace WhatTheHack.Recipes
 {
-    abstract class Recipe_Hacking : RecipeWorker
+    public abstract class Recipe_Hacking : RecipeWorker
     {
         protected bool allowMultipleParts = false;
         protected abstract bool CanApplyOn(Pawn pawn);
@@ -68,11 +68,6 @@ namespace WhatTheHack.Recipes
                 if (pawn.Dead)
                 {
                     return;
-                }
-                //Re-add surgery bill
-                if (!pawn.IsHacked())
-                {
-                    ((Building_HackingTable)pawn.CurrentBed()).TryAddPawnForModification(pawn, WTH_DefOf.WTH_HackMechanoid);
                 }
                 billDoer.skills.Learn(SkillDefOf.Crafting, combatPowerCapped * learnfactor, false);
                 billDoer.skills.Learn(SkillDefOf.Intellectual, combatPowerCapped * learnfactor, false);
@@ -129,18 +124,23 @@ namespace WhatTheHack.Recipes
                         hacker.LabelShort,
                         this.recipe.LabelCap
                     }), hackee, MessageTypeDefOf.NegativeHealthEvent, true);
+
+                    foreach (IngredientCount ic in recipe.ingredients)
+                    {
+                        Thing t = ThingMaker.MakeThing(ic.filter.AnyAllowedDef, null);
+                        GenSpawn.Spawn(t, hackee.Position, hackee.Map);
+                    }
                 }
                 else
                 {
-                    HackingFailEvent(hackee, part, r);
+                    HackingFailEvent(hacker, hackee, part, r);
                 }
                 return true;
             }
             return false;
         }
 
-        protected virtual void HackingFailEvent(Pawn hackee, BodyPartRecord part, System.Random r) {
-            HealthUtility.GiveInjuriesOperationFailureMinor(hackee, part);
+        protected virtual void HackingFailEvent(Pawn hacker, Pawn hackee, BodyPartRecord part, System.Random r) {
         }
 
         //Used to make hacking more powerful mechs more difficult. Capped at 1000 points. At this value, hacking is 50% more difficult.  

@@ -9,7 +9,7 @@ using WhatTheHack.Comps;
 
 namespace WhatTheHack.Recipes
 {
-    class Recipe_MountTurret : Recipe_Hacking
+    public class Recipe_MountTurret : Recipe_Hacking
     {
         protected override bool CanApplyOn(Pawn pawn)
         {

@@ -216,6 +216,11 @@ namespace WhatTheHack.Needs
             {
                 pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.WTH_TargetingHacked));
             }
+            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_BackupBattery))
+            {
+                //pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.WTH_BackupBattery));
+            }
+
             pawn.SetFaction(Faction.OfMechanoids);
             pawn.story = null;
             if (pawn.GetLord() == null || pawn.GetLord().LordJob == null)

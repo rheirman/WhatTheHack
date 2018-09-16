@@ -29,6 +29,7 @@ namespace WhatTheHack.Harmony
 
     //Make sure mechanoids can be downed like other pawns. 
     [HarmonyPatch(typeof(Pawn_HealthTracker), "CheckForStateChange")]
+    [HarmonyPriority(Priority.High)]
     static class Pawn_HealthTracker_CheckForStateChange
     {
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)

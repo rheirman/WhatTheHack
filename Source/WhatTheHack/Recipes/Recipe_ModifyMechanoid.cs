@@ -12,7 +12,7 @@ using WhatTheHack.Duties;
 
 namespace WhatTheHack.Recipes
 {
-    class Recipe_ModifyMechanoid : Recipe_Hacking
+    public class Recipe_ModifyMechanoid : Recipe_Hacking
     {
         protected override bool CanApplyOn(Pawn pawn)
         {
@@ -36,10 +36,22 @@ namespace WhatTheHack.Recipes
 
         protected override void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
-            if(pawn.BillStack.Bills.Count == 0)
+            if(pawn.BillStack.Bills.Count <= 1)
             {
                 pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
             }
+        }
+
+        protected override void HackingFailEvent(Pawn hacker, Pawn hackee, BodyPartRecord part, Random r)
+        {
+            base.HackingFailEvent(hacker, hackee, part, r);
+            Messages.Message("MessageMedicalOperationFailureMinor".Translate(new object[]{ hacker.LabelShort, hackee.LabelShort }), hackee, MessageTypeDefOf.NegativeHealthEvent, true);
+            foreach (IngredientCount ic in recipe.ingredients)
+            {
+                Thing t = ThingMaker.MakeThing(ic.filter.AnyAllowedDef, null);
+                GenSpawn.Spawn(t, hackee.Position, hackee.Map);
+            }
+            ((Building_HackingTable)hackee.CurrentBed()).TryAddPawnForModification(hackee, recipe);
         }
     }
 }

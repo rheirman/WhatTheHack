@@ -85,8 +85,8 @@ namespace WhatTheHack.Harmony
             System.Random random = new System.Random(DateTime.Now.Millisecond);
 
             float combatpowerCapped = pawn.kindDef.combatPower <= 10000 ? pawn.kindDef.combatPower : 300;
-
             int partsCount = random.Next(GenMath.RoundRandom(combatpowerCapped * 0.03f * efficiency), GenMath.RoundRandom(combatpowerCapped * 0.06f * efficiency)); //TODO: no magic number
+            //int partsCount = random.Next(GenMath.RoundRandom(combatpowerCapped * 0.04f * efficiency), GenMath.RoundRandom(combatpowerCapped * 0.07f * efficiency)); //TODO: no magic number
             if (partsCount > 0)
             {
                 Thing parts = ThingMaker.MakeThing(WTH_DefOf.WTH_MechanoidParts, null);

@@ -7,7 +7,7 @@ using Verse;
 
 namespace WhatTheHack.Recipes
 {
-    class Recipe_BeltModule : Recipe_ModifyMechanoid
+    public class Recipe_BeltModule : Recipe_ModifyMechanoid
     {
         protected override void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
