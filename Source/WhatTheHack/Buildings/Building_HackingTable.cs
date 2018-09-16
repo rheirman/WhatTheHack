@@ -26,17 +26,17 @@ namespace WhatTheHack.Buildings
 
         public bool TryAddPawnForModification(Pawn pawn, RecipeDef recipeDef)
         {
+            Log.Message("TryAddPawnForModification called");
             Bill_Medical bill = new Bill_Medical(recipeDef);
             IEnumerable<BodyPartRecord> bodyparts = RecipeUtility.GetPartsToApplyOn(pawn, bill.recipe);
             if(bodyparts.Count() == 0)
             {
+                Log.Message("no found body parts for mech");
                 return false;
             }
-            if(pawn.health.surgeryBills.FirstShouldDoNow == null || pawn.health.surgeryBills.FirstShouldDoNow.recipe != WTH_DefOf.WTH_HackMechanoid)
-            {
-                pawn.health.surgeryBills.AddBill(bill);
-                bill.Part = bodyparts.First();
-            }
+
+            pawn.health.surgeryBills.AddBill(bill);
+            bill.Part = bodyparts.First();
             /*
             Need_Power powerNeed = pawn.needs.TryGetNeed<Need_Power>();
             if (powerNeed != null)

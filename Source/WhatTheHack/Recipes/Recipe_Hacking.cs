@@ -124,12 +124,6 @@ namespace WhatTheHack.Recipes
                         hacker.LabelShort,
                         this.recipe.LabelCap
                     }), hackee, MessageTypeDefOf.NegativeHealthEvent, true);
-
-                    foreach (IngredientCount ic in recipe.ingredients)
-                    {
-                        Thing t = ThingMaker.MakeThing(ic.filter.AnyAllowedDef, null);
-                        GenSpawn.Spawn(t, hackee.Position, hackee.Map);
-                    }
                 }
                 else
                 {

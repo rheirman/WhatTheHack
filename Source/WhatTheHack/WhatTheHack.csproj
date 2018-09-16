@@ -68,6 +68,7 @@
     <Compile Include="Harmony\Caravan.cs" />
     <Compile Include="Harmony\CaravanFormingUtility.cs" />
     <Compile Include="Harmony\CaravanUIUtility.cs" />
+    <Compile Include="Harmony\CharacterCardUtility.cs" />
     <Compile Include="Harmony\CollectionsMassCalculator.cs" />
     <Compile Include="Harmony\DaysWorthOfFoodCalculator.cs" />
     <Compile Include="Harmony\Dialog_FormCaravan.cs" />

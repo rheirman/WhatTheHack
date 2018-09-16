@@ -128,7 +128,7 @@ namespace WhatTheHack
         }
         public static bool OnBaseMechanoidPlatform(this Pawn pawn)
         {
-            if (pawn.CurrentBed() != null && pawn.CurrentBed() is Building_BaseMechanoidPlatform && pawn.CurJob.def == WTH_DefOf.WTH_Mechanoid_Rest)
+            if (pawn.CurrentBed() != null && pawn.CurrentBed() is Building_BaseMechanoidPlatform)
             {
                 return true;
             }
