@@ -97,7 +97,7 @@ namespace WhatTheHack
                 !b.IsForbidden(pawn) &&
                 pawn.CanReserve(b))
                 {
-                    if (ht.GetCurOccupant(Building_HackingTable.SLOTINDEX) == null)
+                    if (!(ht.GetCurOccupant(Building_HackingTable.SLOTINDEX) is Pawn pawnOnTable && pawnOnTable.OnHackingTable()))
                     {
                         return true;
                     }

@@ -64,6 +64,15 @@ namespace WhatTheHack.Recipes
                 }
                 acc += chances[i];
             }
+            if (!hackee.Downed)
+            {
+                Log.Message("hackee not downed, hackee:  " + hackee.Label);
+            }
+            if (hackee.IsHacked())
+            {
+                Log.Message("hackee is hacked, hackee: " + hackee.Label);
+            }
+
             if (hackee.Downed && !hackee.IsHacked())
             {
                 ((Building_HackingTable)hackee.CurrentBed()).TryAddPawnForModification(hackee, recipe);

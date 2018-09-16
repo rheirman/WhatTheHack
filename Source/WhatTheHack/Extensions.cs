@@ -120,7 +120,7 @@ namespace WhatTheHack
         */
         public static bool OnHackingTable(this Pawn pawn)
         {
-            if (pawn.CurrentBed() != null && pawn.CurrentBed() is Building_HackingTable)
+            if (pawn.CurrentBed() != null && pawn.CurrentBed() is Building_HackingTable && pawn.jobs.posture == PawnPosture.LayingInBed)
             {
                 return true;
             }
@@ -128,7 +128,7 @@ namespace WhatTheHack
         }
         public static bool OnBaseMechanoidPlatform(this Pawn pawn)
         {
-            if (pawn.CurrentBed() != null && pawn.CurrentBed() is Building_BaseMechanoidPlatform)
+            if (pawn.CurrentBed() != null && pawn.CurrentBed() is Building_BaseMechanoidPlatform && pawn.CurJob.def == WTH_DefOf.WTH_Mechanoid_Rest)
             {
                 return true;
             }

@@ -18,7 +18,9 @@ namespace WhatTheHack.Jobs
             if (targetPawn != null && targetPawn.needs != null && targetPawn.needs.TryGetNeed<Need_Maintenance>() is Need_Maintenance need && targetPawn.OnBaseMechanoidPlatform())
             {
                 LocalTargetInfo target = targetPawn;
-                if (pawn.CanReserve(target, 1, -1, null, forced) && need.CurLevel < GetThresHold(need) && FindMechanoidParts(pawn, targetPawn) != null)
+                if (pawn.CanReserveAndReach(target, PathEndMode.ClosestTouch, Danger.Deadly, 10, 1, null, forced) &&
+                    need.CurLevel < GetThresHold(need) &&
+                    FindMechanoidParts(pawn, targetPawn, forced) != null)
                 {
                     result = true;
                     return result;
@@ -30,7 +32,7 @@ namespace WhatTheHack.Jobs
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             Pawn targetPawn = t as Pawn;
-            Thing thing = FindMechanoidParts(pawn, targetPawn);
+            Thing thing = FindMechanoidParts(pawn, targetPawn, forced);
             return new Job(WTH_DefOf.WTH_PerformMaintenance, targetPawn, thing);
         }
 
@@ -59,12 +61,12 @@ namespace WhatTheHack.Jobs
             return Danger.Deadly;
         }
 
-        private static Thing FindMechanoidParts(Pawn hacker, Pawn targetPawn)
+        private static Thing FindMechanoidParts(Pawn hacker, Pawn targetPawn, bool forced)
         {
             Thing result = null;
             if (targetPawn.needs.TryGetNeed<Need_Maintenance>() is Need_Maintenance need)
             {
-                Predicate<Thing> predicate = (Thing m) => !m.IsForbidden(hacker) && hacker.CanReserve(m, 10, 1, null, false);
+                Predicate<Thing> predicate = (Thing m) => !m.IsForbidden(hacker) && hacker.CanReserveAndReach(m, PathEndMode.ClosestTouch, Danger.Deadly, 10, 1, null, forced);
                 IntVec3 position = targetPawn.Position;
                 Map map = targetPawn.Map;
                 List<Thing> searchSet = targetPawn.Map.listerThings.ThingsOfDef(WTH_DefOf.WTH_MechanoidParts);
