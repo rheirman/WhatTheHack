@@ -55,6 +55,11 @@
 				</capMods>  
 			</li>
 		</stages>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_VanometricModule</extraButcherProduct>
+			</li>
+		</modExtensions>
 	</HediffDef>
 	
       <HediffDef>
@@ -69,20 +74,35 @@
 		<label>repair module installed</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_RepairModule</extraButcherProduct>
+			</li>
+		</modExtensions>
 	  </HediffDef>
 	  
 	   <HediffDef>
 		<defName>WTH_BeltModule</defName>
 		<label>belt module installed</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
-		<isBad>false</isBad>
+		<isBad>false</isBad>		
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_BeltModule</extraButcherProduct>
+			</li>
+		</modExtensions>
 	  </HediffDef>
 	  
 	  <HediffDef>
 		<defName>WTH_TurretModule</defName>
 		<label>turret module installed</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
-		<isBad>false</isBad>
+		<isBad>false</isBad>		
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_TurretModule</extraButcherProduct>
+			</li>
+		</modExtensions>
 	  </HediffDef>
 	  
 	  <HediffDef>
@@ -114,6 +134,11 @@
 			</tools>
 		  </li>
 		</comps>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_RepairArm</extraButcherProduct>
+			</li>
+		</modExtensions>
 	  </HediffDef>
 	  
 	  <HediffDef>
@@ -175,6 +200,11 @@
 		<label>AI replaced</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>AIPersonaCore</extraButcherProduct>
+			</li>
+		</modExtensions>
 	  </HediffDef>
 	  
 	  <HediffDef>

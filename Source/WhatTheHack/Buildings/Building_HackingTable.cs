@@ -34,9 +34,11 @@ namespace WhatTheHack.Buildings
                 Log.Message("no found body parts for mech");
                 return false;
             }
-
-            pawn.health.surgeryBills.AddBill(bill);
-            bill.Part = bodyparts.First();
+            if(pawn.health.surgeryBills.FirstShouldDoNow == null || pawn.health.surgeryBills.FirstShouldDoNow.recipe != WTH_DefOf.WTH_HackMechanoid)
+            {
+                pawn.health.surgeryBills.AddBill(bill);
+                bill.Part = bodyparts.First();
+            }
             /*
             Need_Power powerNeed = pawn.needs.TryGetNeed<Need_Power>();
             if (powerNeed != null)

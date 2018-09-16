@@ -100,10 +100,17 @@ namespace WhatTheHack.Harmony
                 chips.stackCount = chipCount;
                 yield return chips;
             }
-            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_ReplacedAI))
+            foreach(Hediff hediff in pawn.health.hediffSet.hediffs)
             {
-                Thing AICore = ThingMaker.MakeThing(ThingDefOf.AIPersonaCore);
-                yield return AICore;
+                Log.Message("found hediff: " + hediff);
+                if(hediff.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff ext)
+                {
+                    if(ext.extraButcherProduct != null)
+                    {
+                        Log.Message("found extra butchery product, spawning " + ext.extraButcherProduct);
+                        yield return ThingMaker.MakeThing(ext.extraButcherProduct);
+                    }
+                }
             }
         }
     }
