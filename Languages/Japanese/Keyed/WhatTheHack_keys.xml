@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <WTH_Letter_Success_Label>ハッキング成功</WTH_Letter_Success_Label>
   <WTH_Letter_Success_Label_Description>{0}はメカノイドをハックに成功して{1}と名前を付けました。\n\n{1}の敵味方識別システムは、コロニーのポーン(入植者)の代わりに、あなたの敵を目標にします。\nしかし、メカノイドのハイブ(集合体意識)によるハッキング検出を避けるために、{1}は内蔵予備バッテリに依存して充電する必要があります。</WTH_Letter_Success_Label_Description>
@@ -29,7 +29,6 @@
   <WTH_MaintenanceDedayEnabled_Title>時間経過による整備の消耗を有効にする</WTH_MaintenanceDedayEnabled_Title>
   <WTH_MaintenanceDedayEnabled_Description>定期的にメカノイドを整備したくない場合、これをオフにします。\nこのチェックを外すと、整備の必要性が表示されますが、時間の経過により減少することは無くなります。\nただし、メカノイドの整備状態を枯渇させる可能性のある事件は依然として存在します。</WTH_MaintenanceDedayEnabled_Description>
 
-  <WTH_Menu_ClearTable>ハッキング施設を片付ける</WTH_Menu_ClearTable>
   <WTH_HackedMechChance_Title>敵のメカノイド使用率(%)</WTH_HackedMechChance_Title>
   <WTH_HackedMechChance_Description>Modオプションで許可された派閥が、あなたのコロニーを襲撃する際にハックしたメカノイドを連れてくる可能性があります。</WTH_HackedMechChance_Description>
   <WTH_MaxHackedMechPoints_Title>襲撃用の最大追加ポイント(%)</WTH_MaxHackedMechPoints_Title>
@@ -37,11 +36,12 @@
   <WTH_MinHackedMechPoints_Title>襲撃用の最小追加ポイント(%)</WTH_MinHackedMechPoints_Title>
   <WTH_MinHackedMechPoints_Description>これは、ハッキングされた敵メカノイドを発生させるための予算ポイントを決定します。\nハッキングされたメカノイドによる敵の襲撃が発生した場合、この設定からハッキングされたメカノイドに割り振られる最大追加ポイント(%)までの範囲内に収まる乱数によって、襲撃ポイントのうちどの程度が、ハックされたメカノイドを発生させるために使用できるかが決定されます。\n例：襲撃の予算ポイントが1000の場合、設定された最小ポイント値は20％(1000x0.2=200)、この設定が50％に設定されてる時(1000x0.5=500)には、元の襲撃に加えて、200から500ポイント相当のハックされたメカノイドが生成されます。</WTH_MinHackedMechPoints_Description>
 
+  <WTH_Menu_ClearTable>ハッキング施設を片付ける</WTH_Menu_ClearTable>
+
   <WTH_Reason_NotOnTable>機能しているハッキング施設がありません</WTH_Reason_NotOnTable>
   <WTH_Reason_MechanoidDowned>倒れているメカノイドを有効にすることはできません</WTH_Reason_MechanoidDowned>
   <WTH_Reason_PowerLow>メカノイドを有効にできません。残存電力が低すぎます（自動充電を無効にするとこのメッセージは無効になります）。</WTH_Reason_PowerLow>
   <WTH_Reason_PawnCannotBeDrafted>徴兵された時でないと、メカノイド制御ベルトを動作させることはできません</WTH_Reason_PawnCannotBeDrafted>
-  <WTH_Reason_NotEnoughParts>破損した部分を修復するには、ダメージを負った部分ごとにメカノイドパーツが{0}必要です。メカノイドベッドに補給されたメカノイドパーツが不足しているので修復されません</WTH_Reason_NotEnoughParts>
 
   <WTH_Gizmo_SearchAndDestroy_Label>警備</WTH_Gizmo_SearchAndDestroy_Label>
   <WTH_Gizmo_SearchAndDestroy_Description>メカノイドを動作させます。\nあなたのコロニーゾーンの近くに居る敵を自動的に攻撃します。\n\n無効にすると、メカノイドは可能な限りメカノイドベッドに戻ります。</WTH_Gizmo_SearchAndDestroy_Description>
