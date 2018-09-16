@@ -102,12 +102,10 @@ namespace WhatTheHack.Harmony
             }
             foreach(Hediff hediff in pawn.health.hediffSet.hediffs)
             {
-                Log.Message("found hediff: " + hediff);
                 if(hediff.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff ext)
                 {
                     if(ext.extraButcherProduct != null)
                     {
-                        Log.Message("found extra butchery product, spawning " + ext.extraButcherProduct);
                         yield return ThingMaker.MakeThing(ext.extraButcherProduct);
                     }
                 }

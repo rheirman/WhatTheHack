@@ -24,7 +24,6 @@ namespace WhatTheHack.Harmony
             {
                 if(instruction.operand == typeof(Pawn).GetMethod("get_IsColonist"))
                 {
-                    Log.Message("IsColonist property call found");
                     yield return new CodeInstruction(OpCodes.Call, typeof(CharacterCardUtility_DrawCharacterCard).GetMethod("IsColonistOrHackedMech"));
                 }
                 else
@@ -50,10 +49,8 @@ namespace WhatTheHack.Harmony
 
         public static bool IsColonistOrHackedMech(Pawn pawn)
         {
-            Log.Message("isColonistOrHackedMech called");
             if (pawn.IsColonist || pawn.IsHacked())
             {
-                Log.Message("returning true");
                 return true;
             }
             return false;
