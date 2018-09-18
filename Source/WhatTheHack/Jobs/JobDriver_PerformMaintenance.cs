@@ -70,11 +70,10 @@ namespace WhatTheHack.Jobs
             yield return PickupParts(TargetIndex.B, need).FailOnDestroyedOrNull(TargetIndex.B);
             yield return Toils_Haul.CheckForGetOpportunityDuplicate(reserveParts, TargetIndex.B, TargetIndex.None, true, null);
 
-            PathEndMode interactionCell = (this.Deliveree != this.pawn) ? PathEndMode.InteractionCell : PathEndMode.OnCell;
-            yield return Toils_Goto.GotoThing(TargetIndex.A, interactionCell);
+            yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch);
             int duration = (int)(1f / this.pawn.GetStatValue(WTH_DefOf.WTH_HackingMaintenanceSpeed, true) * 600f);
             EffecterDef effect = DefDatabase<EffecterDef>.AllDefs.FirstOrDefault((EffecterDef ed) => ed.defName == "Repair");
-            yield return Toils_General.Wait(duration, TargetIndex.None).FailOnCannotTouch(TargetIndex.A, interactionCell).WithProgressBarToilDelay(TargetIndex.A, false, -0.5f).WithEffect(effect, TargetIndex.A);
+            yield return Toils_General.Wait(duration, TargetIndex.None).FailOnCannotTouch(TargetIndex.A, PathEndMode.ClosestTouch).WithProgressBarToilDelay(TargetIndex.A, false, -0.5f).WithEffect(effect, TargetIndex.A);
             yield return FinalizeMaintenance(this.Deliveree, need, reserveParts);
         }
 
