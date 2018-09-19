@@ -24,9 +24,9 @@ namespace WhatTheHack.Buildings
         //make sure if you place the platform on a downed mech, the mech will get an opportunity to start the rest job again. 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
+            base.SpawnSetup(map, respawningAfterLoad);
             if (!respawningAfterLoad)
             {
-                base.SpawnSetup(map, respawningAfterLoad);
                 Pawn curOccupant = GetCurOccupant(SLOTINDEX);
                 if(curOccupant != null && curOccupant.IsHacked())
                 {
