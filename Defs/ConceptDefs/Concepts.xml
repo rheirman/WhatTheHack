@@ -17,7 +17,7 @@
     <defName>WTH_Modification</defName>
     <label>Mechanoid modification</label>
     <priority>50</priority>
-    <helpText>In order to upgrade and modify mechanoids, you can craft upgrade modules at the hacking facility. To install these modules, go to the modifications section in the health tab of a hacked mechanoid, and select the appropriate modification.</helpText>
+    <helpText>In order to upgrade and modify mechanoids, you can craft upgrade modules at the mechanoid workshop. To install these modules, go to the modifications section in the health tab of a hacked mechanoid, and select the appropriate modification.</helpText>
     <needsOpportunity>true</needsOpportunity>
   </ConceptDef>
   <ConceptDef>

@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Verse;
+using Verse.AI;
 
 namespace WhatTheHack.Buildings
 {
@@ -18,6 +20,20 @@ namespace WhatTheHack.Buildings
 
         public abstract bool CanHealNow();
         public abstract bool HasPowerNow();
+
+        //make sure if you place the platform on a downed mech, the mech will get an opportunity to start the rest job again. 
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            if (!respawningAfterLoad)
+            {
+                base.SpawnSetup(map, respawningAfterLoad);
+                Pawn curOccupant = GetCurOccupant(SLOTINDEX);
+                if(curOccupant != null && curOccupant.IsHacked())
+                {
+                    curOccupant.jobs.StartJob(new Job(WTH_DefOf.WTH_Mechanoid_Rest, this) {count = 1}, JobCondition.InterruptForced);
+                }
+            }
+        }
 
     }
 }

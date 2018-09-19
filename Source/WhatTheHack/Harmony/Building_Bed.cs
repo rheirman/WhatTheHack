@@ -49,7 +49,11 @@ namespace WhatTheHack.Harmony
                 Pawn pawn = list[i] as Pawn;
                 if (pawn != null)
                 {
-                    if (pawn.CurJob != null)
+                    if(__instance is Building_BaseMechanoidPlatform && pawn.IsHacked())
+                    {
+                        __result = pawn;
+                    }
+                    else if (pawn.CurJob != null)
                     {
                         __result = pawn;
                     }
