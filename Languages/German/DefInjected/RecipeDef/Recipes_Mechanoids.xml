@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <WTH_Scrap_AdvancedMechanoidChip.label>Zerlege Hightech-Mechanoiden Chip</WTH_Scrap_AdvancedMechanoidChip.label>
-  <WTH_Scrap_AdvancedMechanoidChip.description>Zerlege Hightech-Mechanoiden Chips</WTH_Scrap_AdvancedMechanoidChip.description>
+  <WTH_Scrap_AdvancedMechanoidChip.label>Zerlege Hightech-Mechanoiden-Chip</WTH_Scrap_AdvancedMechanoidChip.label>
+  <WTH_Scrap_AdvancedMechanoidChip.description>Zerlege Hightech-Mechanoiden-Chips</WTH_Scrap_AdvancedMechanoidChip.description>
   <WTH_Scrap_AdvancedMechanoidChip.jobString>Zerlegt</WTH_Scrap_AdvancedMechanoidChip.jobString>
 
   <WTH_Craft_AdditionalBatteryModule.label>Stelle Batterie Erweiterung her</WTH_Craft_AdditionalBatteryModule.label>
@@ -107,7 +107,7 @@
   <WTH_InstallRepairModule.jobString>Modifiziert Mechanoiden</WTH_InstallRepairModule.jobString>
 
   <WTH_InstallSelfDestruct.label>Selbstzerstörungs-Modul installieren</WTH_InstallSelfDestruct.label>
-  <WTH_InstallSelfDestruct.description>Fügt die Fähigkeit hinzu eine Selbstzerstörung auszulösen, indem ein Kurzschluss in installierten Mörser-Granaten #. Eine Plastahl-Hülle vermeidet, dass die Granaten unabsichtlich ausgelöst werden.</WTH_InstallSelfDestruct.description>
+  <WTH_InstallSelfDestruct.description>Fügt die Fähigkeit hinzu eine Selbstzerstörung auszulösen, indem ein Kurzschluss in installierten Mörser-Granaten ausgelöst wird. Eine Plastahl-Hülle vermeidet, dass die Granaten unabsichtlich ausgelöst werden.</WTH_InstallSelfDestruct.description>
   <WTH_InstallSelfDestruct.jobString>Modifiziert Mechanoiden</WTH_InstallSelfDestruct.jobString>
 
   <WTH_InstallBeltModule.label>Gürtel-Modul installieren</WTH_InstallBeltModule.label>
