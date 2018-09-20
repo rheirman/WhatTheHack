@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_DoBillsMechanoidWorkshop.label>Dinge-Produzieren an der Mechanoiden-Werkbank </WTH_DoBillsMechanoidWorkshop.label>
+  <WTH_DoBillsMechanoidWorkshop.verb>Arbeiten</WTH_DoBillsMechanoidWorkshop.verb>
+  <WTH_DoBillsMechanoidWorkshop.gerund>Arbeitet an</WTH_DoBillsMechanoidWorkshop.gerund>
+
+  <WTH_DoBillsMedicalMechanoidOperation.label>An Mechanoiden operieren</WTH_DoBillsMedicalMechanoidOperation.label>
+  <WTH_DoBillsMedicalMechanoidOperation.verb>Modifizieren</WTH_DoBillsMedicalMechanoidOperation.verb>
+  <WTH_DoBillsMedicalMechanoidOperation.gerund>Modifiziert</WTH_DoBillsMedicalMechanoidOperation.gerund>
+
+  <WTH_HaulMechanoid.label>Mechanoide wegtragen</WTH_HaulMechanoid.label>
+  <WTH_HaulMechanoid.verb>Tragen</WTH_HaulMechanoid.verb>
+  <WTH_HaulMechanoid.gerund>Tragen von</WTH_HaulMechanoid.gerund>
+
+  <WTH_MaintainMechanoid.label>Mechanoide warten</WTH_MaintainMechanoid.label>
+  <WTH_MaintainMechanoid.verb>Warten</WTH_MaintainMechanoid.verb>
+  <WTH_MaintainMechanoid.gerund>Wartet</WTH_MaintainMechanoid.gerund>
+
+  <WTH_MaintainMechanoid_Urgent.label>Mechanoide dringend warten</WTH_MaintainMechanoid_Urgent.label>
+  <WTH_MaintainMechanoid_Urgent.verb>Warten</WTH_MaintainMechanoid_Urgent.verb>
+  <WTH_MaintainMechanoid_Urgent.gerund>Wartet</WTH_MaintainMechanoid_Urgent.gerund>
+
+
+</LanguageData>
