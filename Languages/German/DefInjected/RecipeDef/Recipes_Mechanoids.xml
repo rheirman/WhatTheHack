@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Scrap_AdvancedMechanoidChip.label>Zerlege Hightech-Mechanoiden Chip</WTH_Scrap_AdvancedMechanoidChip.label>
+  <WTH_Scrap_AdvancedMechanoidChip.description>Zerlege Hightech-Mechanoiden Chips</WTH_Scrap_AdvancedMechanoidChip.description>
+  <WTH_Scrap_AdvancedMechanoidChip.jobString>Zerlegt</WTH_Scrap_AdvancedMechanoidChip.jobString>
+
+  <WTH_Craft_AdditionalBatteryModule.label>Stelle Batterie Erweiterung her</WTH_Craft_AdditionalBatteryModule.label>
+  <WTH_Craft_AdditionalBatteryModule.description>Stellt ein Batterie-Erweiterungs-Modul her</WTH_Craft_AdditionalBatteryModule.description>
+  <WTH_Craft_AdditionalBatteryModule.jobString>Erstellt</WTH_Craft_AdditionalBatteryModule.jobString>
+
+  <WTH_Craft_VanometricModule.label>Stelle Vanometrische Energiezelle her</WTH_Craft_VanometricModule.label>
+  <WTH_Craft_VanometricModule.description>Stellt eine Vanometrische Energiezelle her</WTH_Craft_VanometricModule.description>
+  <WTH_Craft_VanometricModule.jobString>Erstellt</WTH_Craft_VanometricModule.jobString>
+
+  <WTH_Craft_SelfDestructModule.label>Stelle Selbstzerstörungs-Modul her</WTH_Craft_SelfDestructModule.label>
+  <WTH_Craft_SelfDestructModule.description>Stellt ein Selbstzerstörungs-Modul her</WTH_Craft_SelfDestructModule.description>
+  <WTH_Craft_SelfDestructModule.jobString>Erstellt</WTH_Craft_SelfDestructModule.jobString>
+
+  <WTH_Craft_TurretModule.label>Stelle Geschütz-Modul her</WTH_Craft_TurretModule.label>
+  <WTH_Craft_TurretModule.description>Stellt ein Geschütz-Modul her</WTH_Craft_TurretModule.description>
+  <WTH_Craft_TurretModule.jobString>Erstellt</WTH_Craft_TurretModule.jobString>
+
+  <WTH_Craft_RepairModule.label>Stelle Reparatur-Modul her</WTH_Craft_RepairModule.label>
+  <WTH_Craft_RepairModule.description>Stellt ein Reparatur-Modul her</WTH_Craft_RepairModule.description>
+  <WTH_Craft_RepairModule.jobString>Erstellt</WTH_Craft_RepairModule.jobString>
+
+  <WTH_Craft_RepairArm.label>Stelle Reparatur-Arm her</WTH_Craft_RepairArm.label>
+  <WTH_Craft_RepairArm.description>Stellt einen Reparatur-Arm her</WTH_Craft_RepairArm.description>
+  <WTH_Craft_RepairArm.jobString>Erstellt</WTH_Craft_RepairArm.jobString>
+
+  <WTH_Craft_BeltModule.label>Stelle Gürtel-Modul her</WTH_Craft_BeltModule.label>
+  <WTH_Craft_BeltModule.description>Stellt ein Gürtel-Modul her</WTH_Craft_BeltModule.description>
+  <WTH_Craft_BeltModule.jobString>Erstellt</WTH_Craft_BeltModule.jobString>
+
+  <WTH_HackMechanoid.label>Mechanoiden Zielvorrichtung hacken</WTH_HackMechanoid.label>
+  <WTH_HackMechanoid.description>Hack die Zielvorrichtung eines Mechanoiden, damit er auf die Gegner schießt, anstatt auf die Kolonisten.</WTH_HackMechanoid.description>
+  <WTH_HackMechanoid.jobString>Hackt Mechanoid</WTH_HackMechanoid.jobString>
+
+  <WTH_ImplantAI.label>KI einbauen</WTH_ImplantAI.label>
+  <WTH_ImplantAI.description>Verbaut einen KI-Kern in den Mechanoiden, um volle Kontrolle für Kampfsituationen zu erhalten.</WTH_ImplantAI.description>
+  <WTH_ImplantAI.jobString>Hackt Machanoid</WTH_ImplantAI.jobString>
+
+
+  <!-- <RecipeDef>
+		<defName>WTH_HackLocomotion</defName>
+		<label>hack mechanoid locomotion system</label>
+		<description>Hacks the locomotion system of the mechanoid and adds a receiver to the mechanoid to allow the it to be operated by a colonist using a remote control device</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Hacking mechanoid</jobString>
+		<workAmount>4000</workAmount>				
+		<surgerySuccessChanceFactor>1.5</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<effectWorking>Repair</effectWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_MechanoidParts</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_MechanoidChip</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+			<li>Brain</li>
+			<li>MechanicalHead</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_LocomotionHacked</addsHediff>
+		<researchPrerequisite>WTH_HackingRemoteControl</researchPrerequisite>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef> -->
+
+  <WTH_InstallRepairArm.label>Reparatur-Arm installieren</WTH_InstallRepairArm.label>
+  <WTH_InstallRepairArm.description>Installiert einen Reparatur-Arm.</WTH_InstallRepairArm.description>
+  <WTH_InstallRepairArm.jobString>Installiert einen Reparatur-Arm.</WTH_InstallRepairArm.jobString>
+
+  <WTH_InstallTurretModule.label>Geschütz-Modul installieren</WTH_InstallTurretModule.label>
+  <WTH_InstallTurretModule.description>Ein Modul, das als strukturelle Unterstützung dient und ein Interface für Geschütze und Mörser bietet. Jedes Geschütz, das deinstalliert werden kann, kann mit diesem Modul verwendet werden. Das Geschütz-Modul ist ein mächtiges Upgrade, daher erfordert es zusätzliche Energie und tendiert dazu zu explodieren, wenn es zerstört wird. Kann nur in großen Mechanoiden installiert werden.</WTH_InstallTurretModule.description>
+  <WTH_InstallTurretModule.jobString>Modifiziert Mechanoiden</WTH_InstallTurretModule.jobString>
+
+  <WTH_InstallRepairModule.label>Reparatur-Modul installieren</WTH_InstallRepairModule.label>
+  <WTH_InstallRepairModule.description>Das Modul kann mit Mechanoiden-Teilen gefüllt werden um die Energieversorgung des Mechanoiden auf seine internen Mechaniten umzuleiten. Dies aktiviert die Mechaniten, die den Mechanoiden dann mit Hilfe der Teile reparieren. Währenddessen ist der Mechanoid nicht zu anderen Aktionen fähig.</WTH_InstallRepairModule.description>
+  <WTH_InstallRepairModule.jobString>Modifiziert Mechanoiden</WTH_InstallRepairModule.jobString>
+
+  <WTH_InstallSelfDestruct.label>Selbstzerstörungs-Modul installieren</WTH_InstallSelfDestruct.label>
+  <WTH_InstallSelfDestruct.description>Fügt die Fähigkeit hinzu eine Selbstzerstörung auszulösen, indem ein Kurzschluss in installierten Mörser-Granaten #. Eine Plastahl-Hülle vermeidet, dass die Granaten unabsichtlich ausgelöst werden.</WTH_InstallSelfDestruct.description>
+  <WTH_InstallSelfDestruct.jobString>Modifiziert Mechanoiden</WTH_InstallSelfDestruct.jobString>
+
+  <WTH_InstallBeltModule.label>Gürtel-Modul installieren</WTH_InstallBeltModule.label>
+  <WTH_InstallBeltModule.description>Installiert ein Modul, das Mechanoiden erlaubt Gürtel, wie den Schildgürtel und den Rauchwandgürtel, zu tragen.</WTH_InstallBeltModule.description>
+  <WTH_InstallBeltModule.jobString>Modifiziert Mechanoiden</WTH_InstallBeltModule.jobString>
+
+  <WTH_InstallBatteryExpansionModule.label>Batterie-Erweiterungs-Modul installieren</WTH_InstallBatteryExpansionModule.label>
+  <WTH_InstallBatteryExpansionModule.description>Gibt dem Mechanoiden zusätzliche Batterie-Kapazität auf Kosten einer kleinen Einschränkung der Laufgeschwindigkeit.</WTH_InstallBatteryExpansionModule.description>
+  <WTH_InstallBatteryExpansionModule.jobString>Modifiziert Mechanoiden</WTH_InstallBatteryExpansionModule.jobString>
+
+  <WTH_InstallVanometricModule.label>Vanometrische Energiezelle installieren</WTH_InstallVanometricModule.label>
+  <WTH_InstallVanometricModule.description>Gibt dem Mechanoiden eine endlose Energiequelle auf Kosten einer kleinen Einschränkung der Laufgeschwindigkeit.</WTH_InstallVanometricModule.description>
+  <WTH_InstallVanometricModule.jobString>Modifiziert Mechanoiden</WTH_InstallVanometricModule.jobString>
+
+  <WTH_ShutDownMechanoid.label>Herunterfahren</WTH_ShutDownMechanoid.label>
+  <WTH_ShutDownMechanoid.description>Fährt einen Mechanoiden herunter.</WTH_ShutDownMechanoid.description>
+  <WTH_ShutDownMechanoid.jobString>Fährt Mechanoiden herunter.</WTH_ShutDownMechanoid.jobString>
+
+
+</LanguageData>
