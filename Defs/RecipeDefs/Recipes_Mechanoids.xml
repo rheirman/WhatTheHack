@@ -77,6 +77,14 @@
 			<count>25</count>
 		</li>
 	</ingredients>
+	<fixedIngredientFilter>
+	  <thingDefs>
+		<li>WTH_MechanoidChip</li>
+		<li>WTH_MechanoidParts</li>
+		<li>ComponentIndustrial</li>
+		<li>Plasteel</li>
+	  </thingDefs>
+	</fixedIngredientFilter>
 	<products>
 	  <WTH_BatteryExpansionModule>1</WTH_BatteryExpansionModule>
 	</products>
@@ -183,6 +191,13 @@
 			<count>2</count>
 		</li>
 	</ingredients>
+	<fixedIngredientFilter>
+	  <thingDefs>
+		<li>WTH_MechanoidParts</li>
+		<li>Shell_HighExplosive</li>
+		<li>Plasteel</li>
+	  </thingDefs>
+	</fixedIngredientFilter>
 	<products>
 	  <WTH_SelfDestructModule>1</WTH_SelfDestructModule>
 	</products>
@@ -236,6 +251,14 @@
 			<count>1</count>
 		</li>
 	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>Plasteel</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+			<li>ComponentSpacer</li>
+		</thingDefs>
+	</fixedIngredientFilter>
 	<products>
 	  <WTH_TurretModule>1</WTH_TurretModule>
 	</products>
@@ -281,6 +304,13 @@
 			<count>5</count>
 		</li>
 	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>Plasteel</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+		</thingDefs>
+	</fixedIngredientFilter>
 	<products>
 	  <WTH_RepairModule>1</WTH_RepairModule>
 	</products>
@@ -300,32 +330,39 @@
 	<effectWorking>Repair</effectWorking>
 	<soundWorking>Recipe_Machining</soundWorking>
 	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Plasteel</li>
-					</thingDefs>
-				</filter>
-				<count>25</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>WTH_MechanoidParts</li>
-					</thingDefs>
-				</filter>
-				<count>10</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>WTH_MechanoidChip</li>
-					</thingDefs>
-				</filter>
-				<count>2</count>
-			</li>
-		</ingredients>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>25</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>10</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>2</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>Plasteel</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+		</thingDefs>
+	</fixedIngredientFilter>
 	<products>
 	  <WTH_RepairArm>1</WTH_RepairArm>
 	</products>
@@ -345,40 +382,48 @@
 	<effectWorking>Repair</effectWorking>
 	<soundWorking>Recipe_Machining</soundWorking>
 	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Plasteel</li>
-					</thingDefs>
-				</filter>
-				<count>20</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>WTH_MechanoidParts</li>
-					</thingDefs>
-				</filter>
-				<count>5</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>WTH_MechanoidChip</li>
-					</thingDefs>
-				</filter>
-				<count>5</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>ComponentSpacer</li>
-					</thingDefs>
-				</filter>
-				<count>1</count>
-			</li>
-		</ingredients>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>20</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>ComponentSpacer</li>
+				</thingDefs>
+			</filter>
+			<count>1</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>Plasteel</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+			<li>ComponentSpacer</li>
+		</thingDefs>
+	</fixedIngredientFilter>
 	<products>
 	  <WTH_BeltModule>1</WTH_BeltModule>
 	</products>
@@ -414,11 +459,6 @@
 				<count>10</count>
 			</li>
 		</ingredients>
-		<fixedIngredientFilter>
-			<categories>
-				<li>Medicine</li>
-			</categories>
-		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
 			<li>ArtificialBrain</li>
 			<li>Brain</li>
@@ -679,11 +719,6 @@
 				<count>1</count>
 			</li>
 		</ingredients>
-		<fixedIngredientFilter>
-			<categories>
-				<li>Medicine</li>
-			</categories>
-		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
 			<li>Reactor</li>
 		</appliedOnFixedBodyParts>
@@ -720,11 +755,6 @@
 				<count>1</count>
 			</li>
 		</ingredients>
-		<fixedIngredientFilter>
-			<categories>
-				<li>Medicine</li>
-			</categories>
-		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
 			<li>Reactor</li>
 		</appliedOnFixedBodyParts>
@@ -762,11 +792,6 @@
 				<count>1</count>
 			</li>
 		</ingredients>
-		<fixedIngredientFilter>
-			<categories>
-				<li>Medicine</li>
-			</categories>
-		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
 			<li>Reactor</li>
 		</appliedOnFixedBodyParts>
@@ -803,11 +828,6 @@
 				<count>1</count>
 			</li>
 		</ingredients>
-		<fixedIngredientFilter>
-			<categories>
-				<li>Medicine</li>
-			</categories>
-		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
 			<li>Reactor</li>
 		</appliedOnFixedBodyParts>
