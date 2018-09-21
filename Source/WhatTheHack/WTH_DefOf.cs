@@ -79,5 +79,12 @@ namespace WhatTheHack
         public static BodyPartDef Reactor;
         public static BodyPartGroupDef Waist;
 
+        public static DifficultyDef Peaceful;
+        public static DifficultyDef Easy;
+        public static DifficultyDef Medium;
+        public static DifficultyDef Rough;
+        public static DifficultyDef Hard;
+        public static DifficultyDef Extreme;
+
     }
 }

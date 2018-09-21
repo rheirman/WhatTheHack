@@ -64,7 +64,7 @@
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>The repair module can be installed in the reactor of mechanoids. It can be loaded with mechanoid parts, and is capable of very rapidly drawing a large amount of power from the mechanoid, and redirecting it the the mech's internal mechanites. This activates the mechanites, which can repair damage consuming the parts, while slowing down the mechanoid temporarily.</description>
-		<baseCost>2400</baseCost>
+		<baseCost>1600</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
@@ -78,7 +78,7 @@
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>Can be used to replace the arm of a mechanoid that has a repair module installed. This arm is capable of transferring mechanites charged by the repair module to other mechanoids, resulting in the other mechanoids being repaired. The arm is however not very suitable for combat.</description>
-		<baseCost>1800</baseCost>
+		<baseCost>1200</baseCost>
 		<prerequisites>
 		  <li>WTH_RepairModule</li>
 		</prerequisites>
@@ -106,7 +106,7 @@
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>A module that provides both structural support and and interface for gun turrets and mortars. More research is required for installing each type of turret.</description>
-		<baseCost>3000</baseCost>
+		<baseCost>2400</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
@@ -120,7 +120,7 @@
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>Learn how to mount gun turrets on the turret module. Any gun turret that can be uninstalled after building, can be installed on the turret module. This module can only be installed on large mechanoids.</description>
-		<baseCost>2000</baseCost>
+		<baseCost>1600</baseCost>
 		<prerequisites>
 		  <li>WTH_TurretModule</li>
 		</prerequisites>
@@ -134,7 +134,7 @@
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>Learn how to mount mortars on the turret module. Mortars still have to be operated manually by colonists and don't draw any power from the mechanoid. This upgrade has only a few benefits compared to using traditional mortars (quicker setup when raiding, less space needed). However, having a few mortars installed on mechanoids is a good way to impress your enemies.</description>
-		<baseCost>1000</baseCost>
+		<baseCost>800</baseCost>
 		<prerequisites>
 		  <li>WTH_TurretModule</li>
 		</prerequisites>
@@ -148,7 +148,7 @@
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>A module that increases the total power a mechanoid can store, at the cost of a small movement penalty.</description>
-		<baseCost>2000</baseCost>
+		<baseCost>1600</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
@@ -162,7 +162,7 @@
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>A module that contains a vanometric power cell to provide a mechanoid with an infinite power supply, at the cost of a small movement penalty.</description>
-		<baseCost>3500</baseCost>
+		<baseCost>3000</baseCost>
 		<prerequisites>
 		  <li>WTH_BatteryExpansionModule</li>
 		</prerequisites>
@@ -177,7 +177,7 @@
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>A module installable on any hacked mechanoid, which acts as an interface to technically advanced belts like shield belts and smokepop belts normally worn by humanoids.</description>
-		<baseCost>3000</baseCost>
+		<baseCost>2800</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>

@@ -79,13 +79,16 @@ namespace WhatTheHack.Harmony
 
         private static IEnumerable<Thing> GenerateExtraButcherProducts(IEnumerable<Thing> things, Pawn pawn, float efficiency)
         {
-            foreach( Thing thing in things){
+            foreach (Thing thing in things)
+            {
                 yield return thing;
             }
             System.Random random = new System.Random(DateTime.Now.Millisecond);
 
             float combatpowerCapped = pawn.kindDef.combatPower <= 10000 ? pawn.kindDef.combatPower : 300;
-            int partsCount = random.Next(GenMath.RoundRandom(combatpowerCapped * 0.03f * efficiency), GenMath.RoundRandom(combatpowerCapped * 0.06f * efficiency)); //TODO: no magic number
+            float baseSpawnRate = combatpowerCapped * GetDifficultyFactor();
+
+            int partsCount = random.Next(GenMath.RoundRandom(baseSpawnRate * 0.03f * efficiency), GenMath.RoundRandom(baseSpawnRate * 0.06f * efficiency)); //TODO: no magic number
             //int partsCount = random.Next(GenMath.RoundRandom(combatpowerCapped * 0.04f * efficiency), GenMath.RoundRandom(combatpowerCapped * 0.07f * efficiency)); //TODO: no magic number
             if (partsCount > 0)
             {
@@ -93,23 +96,49 @@ namespace WhatTheHack.Harmony
                 parts.stackCount = partsCount;
                 yield return parts;
             }
-            int chipCount = random.Next(0, GenMath.RoundRandom(combatpowerCapped * 0.012f * efficiency));//TODO: no magic number
-            if (chipCount > 0) 
+            int chipCount = random.Next(0, GenMath.RoundRandom(baseSpawnRate * 0.012f * efficiency));//TODO: no magic number
+            if (chipCount > 0)
             {
                 Thing chips = ThingMaker.MakeThing(WTH_DefOf.WTH_MechanoidChip, null);
                 chips.stackCount = chipCount;
                 yield return chips;
             }
-            foreach(Hediff hediff in pawn.health.hediffSet.hediffs)
+            foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
             {
-                if(hediff.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff ext)
+                if (hediff.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff ext)
                 {
-                    if(ext.extraButcherProduct != null)
+                    if (ext.extraButcherProduct != null)
                     {
                         yield return ThingMaker.MakeThing(ext.extraButcherProduct);
                     }
                 }
             }
+        }
+
+        static private float GetDifficultyFactor()
+        {
+            float difficultyFactor = 1.0f;
+            if (Find.Storyteller.difficulty == WTH_DefOf.Peaceful)
+            {
+                difficultyFactor = 2.0f;
+            }
+            else if (Find.Storyteller.difficulty == WTH_DefOf.Easy)
+            {
+                difficultyFactor = 1.5f;
+            }
+            else if (Find.Storyteller.difficulty == WTH_DefOf.Medium)
+            {
+                difficultyFactor = 1.35f;
+            }
+            else if (Find.Storyteller.difficulty == WTH_DefOf.Rough)
+            {
+                difficultyFactor = 1.2f;
+            }
+            else if (Find.Storyteller.difficulty == WTH_DefOf.Hard)
+            {
+                difficultyFactor = 1.1f;
+            }
+            return difficultyFactor;
         }
     }
 }

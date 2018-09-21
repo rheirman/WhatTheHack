@@ -218,7 +218,15 @@ namespace WhatTheHack.Needs
             }
             if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_BackupBattery))
             {
-                //pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.WTH_BackupBattery));
+                pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.WTH_BackupBattery));
+            }
+            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_VeryLowPower))
+            {
+                pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.WTH_VeryLowPower));
+            }
+            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_NoPower))
+            {
+                pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.WTH_NoPower));
             }
 
             pawn.SetFaction(Faction.OfMechanoids);
