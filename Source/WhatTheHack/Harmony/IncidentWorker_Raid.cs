@@ -12,7 +12,7 @@ namespace WhatTheHack.Harmony
 {
     //Spawn hacked mechnoids in enemy raids
     [HarmonyPatch(typeof(IncidentWorker_Raid), "TryExecuteWorker")]
-    static class IncidentWorker_Raid_TryExecuteWorker
+    public static class IncidentWorker_Raid_TryExecuteWorker
     {
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
