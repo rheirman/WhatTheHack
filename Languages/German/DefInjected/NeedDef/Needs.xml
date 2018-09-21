@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Mechanoid_Power.label>Energie</WTH_Mechanoid_Power.label>
+  <WTH_Mechanoid_Power.description>Wenn ein Mechanoid gehackt wurde, deaktiviert sich sein interner Reaktor um nicht vom Mechanoiden-Schwarm entdeck zu werden. Deshalb müssen sie sich auf eine Ersatzbatterie verlassen, die an Mechanoiden-Stationen aufgeladen werden kann.</WTH_Mechanoid_Power.description>
+
+  <WTH_Mechanoid_Maintenance.label>Wartung</WTH_Mechanoid_Maintenance.label>
+  <WTH_Mechanoid_Maintenance.description>Hacken ist ein delikates Geschäft. Die gehackten Teile müssen regelmäßig überprüft und ersetzt werden. Ein schlecht gewarteter Mechanoiden ist nicht voll einsatzbereit und kann sogar eine Gefahr für die Kolonie darstellen. Beschädigte Mechanoide benötigen öfter Wartung.</WTH_Mechanoid_Maintenance.description>
+
+
+</LanguageData>

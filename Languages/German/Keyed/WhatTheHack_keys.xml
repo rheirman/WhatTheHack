@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<WTH_Letter_Success_Label>Hacken war erfolgreich</WTH_Letter_Success_Label>
+	<WTH_Letter_Success_Label_Description>{0} hat erfolgreich einen Mechanoiden gehackt und nannte ihn {1}. Die Zielvorrichtung von {1} zielt jetzt auf deine Feinde, anstelle deiner Kolonisten. Um jedoch nicht von dem Mechanoiden-Schwarm entdeckt zu werden, muss sich {1} auf seine internen Baterrien verlassen.</WTH_Letter_Success_Label_Description>
+	<WTH_Letter_Nothing_Label>Hacken fehlgeschlagen - kleinere Schäden</WTH_Letter_Nothing_Label>
+	<WTH_Letter_Nothing_Description>Hacken ist fehlgeschlagen, aber außer ein paar kleineren Schäden an dem Mechanoiden ist nichts ernstes passiert.</WTH_Letter_Nothing_Description>
+	<WTH_Letter_HackedPoorly_Label>Hacken gerade noch erfolgreich</WTH_Letter_HackedPoorly_Label>
+	<WTH_Letter_HackedPoorly_Description>Der Mechanoid ist zwar gehackt, aber nicht mit dem besten Ergebnis. Benutze den Mechanoiden auf eigene Gefahr, oder verwerfe ihn.</WTH_Letter_HackedPoorly_Description>
+	<WTH_Letter_CausedMechanoidRaid_Label>Hacken fehlgeschlagen - Notsignal entsandt</WTH_Letter_CausedMechanoidRaid_Label>
+	<WTH_Letter_CausedMechanoidRaid_Description>Ein Kolonist hat es irgendwie geschafft, einen Sicherheitsmechanismus zu aktivieren, der ein Signal an benachbarte Mechanoiden sendet. Weitere Fleischmaschinen sind auf dem Weg...</WTH_Letter_CausedMechanoidRaid_Description>
+	<WTH_Letter_ShotRandomDirection_Label>Hacken fehlgeschlagen - hoppla</WTH_Letter_ShotRandomDirection_Label>
+	<WTH_Letter_ShotRandomDirection_Description>Ein Kolonist hat versehentlich die Mechanoiden-Hauptwaffe ausgelöst. Hoppla.</WTH_Letter_ShotRandomDirection_Description>
+	<WTH_Letter_HealedToStanding_Label>Hacken fehlgeschlagen - Mechanoid steht wieder auf</WTH_Letter_HealedToStanding_Label>
+	<WTH_Letter_HealedToStanding_Description>Der Mechanoid war scheinbar nicht deaktiviert. Während er gehackt wurde, konnte er sich erholen und stellt nun eine Gefahr für die Kolonie dar.</WTH_Letter_HealedToStanding_Description>
+	<WTH_Letter_Mech_Reverted_Label>Hack funktioniert nicht mehr</WTH_Letter_Mech_Reverted_Label>
+	<WTH_Letter_Mech_Reverted_Description>Ein schlecht gewarteter Mechanoid kehrte zu seinem ursprünglichen tödlichen Verhalten zurück.</WTH_Letter_Mech_Reverted_Description>
+	<WTH_Letter_HackedPoorlyEvent_Label>Mechanoid schnappt über</WTH_Letter_HackedPoorlyEvent_Label>
+	<WTH_Letter_HackedPoorlyEvent_Description>Ein schlecht gehackter Mechanoid schnappt über. Dringende Wartung erforderlich.</WTH_Letter_HackedPoorlyEvent_Description>
+	<WTH_FailureChance_Nothing_Title>Chance bei Fehlschlag: Nichts passiert</WTH_FailureChance_Nothing_Title>
+	<WTH_FailureChance_Nothing_Description>Relative Chance, dass nichts negatives passiert, wenn Hacken fehlschlägt.</WTH_FailureChance_Nothing_Description>
+	<WTH_FailureChance_CauseRaid_Title>Chance bei Fehlschlag: Überfall</WTH_FailureChance_CauseRaid_Title>
+	<WTH_FailureChance_CauseRaid_Description>Relative Chance, dass ein Überfall stattfindet, wenn Hacken fehlschlägt.</WTH_FailureChance_CauseRaid_Description>
+	<WTH_FailureChance_ShootRandomDirection_Title>Chance bei Fehlschlag: Waffe ausgelöst</WTH_FailureChance_ShootRandomDirection_Title>	
+	<WTH_FailureChance_ShootRandomDirection_Description>Relative Chance, dass die Hauptwaffe des Mechanoiden in eine zufällige Richtung schießt, wenn Hacken fehlschlägt.</WTH_FailureChance_ShootRandomDirection_Description>
+	<WTH_FailureChance_HealToStanding_Title>Chance bei Fehlschlag: Erholen und Aufwachen</WTH_FailureChance_HealToStanding_Title>
+	<WTH_FailureChance_HealToStanding_Description>Relative Chance, dass ein Mechanoid sich erholt, bis er wieder aufstehen kann, wenn Hacken fehlschlägt.</WTH_FailureChance_HealToStanding_Description>
+	<WTH_FailureChance_HackPoorly_Title>Chance bei Fehlschlag: Schlecht gehackt</WTH_FailureChance_HackPoorly_Title>
+	<WTH_FailureChance_HackPoorly_Description>Relative Chance, dass ein Mechanoid schlecht gehackt wurde, wenn Hacken fehlschlägt.</WTH_FailureChance_HackPoorly_Description>
+	<WTH_MaintenanceDedayEnabled_Title>Wartung aktivieren</WTH_MaintenanceDedayEnabled_Title>
+	<WTH_MaintenanceDedayEnabled_Description>Deaktiviere diese Option, wenn die Mechanoiden keine regelmäßige Wartung benötigen sollen. Die Leiste der Wartung wird weiterhin angezeigt, jedoch nimmt sie nicht ab. Es gibt trotzdem bestimmte Ereignisse, die die Wartungsleiste abnehmen lassen können.</WTH_MaintenanceDedayEnabled_Description>
+	
+	<WTH_HackedMechChance_Title>Chance, dass Feinde gehackte Mechanoiden benutzen (%)</WTH_HackedMechChance_Title>
+	<WTH_HackedMechChance_Description>Die Chance, dass andere Fraktionen gehackte Mechanoiden während eines Überfalls benutzen.</WTH_HackedMechChance_Description>
+	<WTH_MaxHackedMechPoints_Title>Maximale extra-Punkte für gehackte Mechanoiden (%)</WTH_MaxHackedMechPoints_Title>
+	<WTH_MaxHackedMechPoints_Description>Dies stellt das Punkte-Budget für gegnerische, gehackte Mechanoiden dar. Wenn ein gegnerischer Überfall mit gehackten Mechanoiden erstellt wird, wird eine zufällige Zahl zusätzlichen Punkten zwischen dieser und der minimalen Punktezahl als prozentualer Anteil der Punkte des Überfalls zur zusätzlichen Erstellung von Mechanoiden benutzt. Beispiel: Ein Überfall mit einem Budget von 1000 Punkten, dieser Einstellung auf 50% und dem Minimum auf 20%, bekommt 200 bis 500 zusätzliche Punkte, die zur Erstellung von gehackten Mechanoiden benutzt werden.</WTH_MaxHackedMechPoints_Description>
+	<WTH_MinHackedMechPoints_Title>Minimale extra-Punkte für gehackte Mechanoiden (%)</WTH_MinHackedMechPoints_Title>
+	<WTH_MinHackedMechPoints_Description>Dies stellt das Punkte-Budget für gegnerische, gehackte Mechanoiden dar. Wenn ein gegnerischer Überfall mit gehackten Mechanoiden erstellt wird, wird eine zufällige Zahl zusätzlichen Punkten zwischen dieser und der maximalen Punktezahl als prozentualer Anteil der Punkte des Überfalls zur zusätzlichen Erstellung von Mechanoiden benutzt. Beispiel: Ein Überfall mit einem Budget von 1000 Punkten, dem Maximum auf 50% und dieser Einstellung auf 20%, bekommt 200 bis 500 zusätzliche Punkte, die zur Erstellung von gehackten Mechanoiden benutzt werden.</WTH_MinHackedMechPoints_Description>
+	
+	<WTH_Menu_ClearTable>Hacking-Tabelle bereinigen</WTH_Menu_ClearTable>
+	
+	<WTH_Reason_NotOnTable>Nicht in funktionierender Hacking-Anlage</WTH_Reason_NotOnTable>	
+	<WTH_Reason_MechanoidDowned>Bewusstloser Mechanoid kann nicht aktiviert werden</WTH_Reason_MechanoidDowned>
+	<WTH_Reason_PowerLow>Mechanoid kann nicht aktiviert werden. Nicht genügend Energie vorhanden (deaktiviere automatisches Aufladen zum Überschreiben)</WTH_Reason_PowerLow>
+	<WTH_Reason_PawnCannotBeDrafted>Mechanoiden-Kontrollgürtel kann im Kampfmodus nicht aktiviert werden.</WTH_Reason_PawnCannotBeDrafted>
+	
+	<WTH_Gizmo_SearchAndDestroy_Label>Aktivieren</WTH_Gizmo_SearchAndDestroy_Label>
+	<WTH_Gizmo_SearchAndDestroy_Description>Aktiviere diesen Mechanoiden. Er greift automatisch Gegner in der Nähe der Kolonie an. Der Mechanoid kehrt - wenn möglich - zu einer Mechanoiden-Station zurück, wenn deaktiviert.</WTH_Gizmo_SearchAndDestroy_Description>
+	<WTH_Gizmo_AutoRecharge_Label>Automatisches Aufladen</WTH_Gizmo_AutoRecharge_Label>
+	<WTH_Gizmo_AutoRecharge_Description>Wenn dieser Modus aktiviert ist, kehren Mechanoiden automatisch zu ihrer Station zurück, wenn sie niedrige Energie haben.</WTH_Gizmo_AutoRecharge_Description>
+	
+	<WTH_Gizmo_RemoteControlActivate_Label>Aktivieren</WTH_Gizmo_RemoteControlActivate_Label>
+	<WTH_Gizmo_RemoteControlActivate_Description>Benutze den Mechanoiden-Kontrollgürtek um einen Mechanoiden direkt zu steuern.</WTH_Gizmo_RemoteControlActivate_Description>
+	<WTH_Gizmo_RemoteControlDeactivate_Label>Deaktivieren</WTH_Gizmo_RemoteControlDeactivate_Label>
+	<WTH_Gizmo_RemoteControlDeactivate_Description>Deaktiviere den Mechanoiden-Kontrollgürtel um dem Mechanoiden wieder die Kontrolle zu überlassen.</WTH_Gizmo_RemoteControlDeactivate_Description>
+	
+	<WTH_Gizmo_Regenerate_Label>Körperteile regenerieren</WTH_Gizmo_Regenerate_Label>
+	<WTH_Gizmo_Regenerate_Description>Wenn diese Option aktiviert ist, regeneriert die Station fehlende Körperteile des Mechanoiden. Körperteile Regenerieren verbraucht maximal {0} Mechanoiden-Teile pro Körperteil (kleine Körperteile brauchen weniger). Körperteile werden erst regeneriert, wenn der Mechanoid keine sonstigen Schäden hat.</WTH_Gizmo_Regenerate_Description>
+	<WTH_Gizmo_Repair_Label>Mechanoid reparieren</WTH_Gizmo_Repair_Label>
+	<WTH_Gizmo_Repair_Description>Wenn diese Option aktiviert ist, repariert die Station den Mechanoiden auf der Platform, indem sie interne Mechaniten mit Material und Energie versorgt. Die mechaniten verbrauchen dabei Mechanoid-Teile in der Station.</WTH_Gizmo_Repair_Description>
+
+	<WTH_Gizmo_SelfDestruct_Label>Selbstzerstörung</WTH_Gizmo_SelfDestruct_Label>
+	<WTH_Gizmo_SelfDestruct_Description>Der Mechanoid verabschiedet sich mit einem lauten Knall.</WTH_Gizmo_SelfDestruct_Description>
+	
+	<WTH_Gizmo_Mech_Repair_Label>Reparieren</WTH_Gizmo_Mech_Repair_Label>
+	<WTH_Gizmo_Mech_Repair_Description>Befiehlt dem Mechanoiden seinen Reparatur-Arm zu benutzen, um Mechaniten auf andere Mechanoide zu übertragen, die diese reparieren.</WTH_Gizmo_Mech_Repair_Description>
+	<WTH_Gizmo_SelfRepair_Label>Selbst-Reparatur</WTH_Gizmo_SelfRepair_Label>
+	<WTH_Gizmo_SelfRepair_Description>Befiehlt dem Mechanoiden sein Reparatur-Modul zu aktiveren, was einen Energieschub verursacht, der die internen Mechaniten aktiviert. Diese beginnen sofort mit der Reparatur und benutzen Teile aus dem Reparatur-Modul.</WTH_Gizmo_SelfRepair_Description>
+	
+	<WTH_Gizmo_Mech_EquipBelt_Label>Gürtel ausrüsten</WTH_Gizmo_Mech_EquipBelt_Label>
+	<WTH_Gizmo_Mech_EquipBelt_Description>Befiehlt dem Mechanoiden sein Gürtel-Modul zu benutzen, um Gürtel auszurüsten, die normalerweise nur von Menschen benutzt werden können.</WTH_Gizmo_Mech_EquipBelt_Description>
+	
+	<WTH_Reason_AlreadyRepairing>Dieser Mechanoid wurde bereits mit aufgeladenen Mechaniten injiziert.</WTH_Reason_AlreadyRepairing>
+	<WTH_Reason_NeedsMorePower>Mindestens {0} Energie wird zum Aktivieren benötigt.</WTH_Reason_NeedsMorePower>
+	<WTH_Reason_NeedsMoreFuel>Mindestens {0} Treibstoff wird zum Aktivieren benötigt.</WTH_Reason_NeedsMoreFuel>
+	<WTH_Reason_NotActivated>Das kann nicht bei einem deaktivierten Mechanoiden benutzt werden.</WTH_Reason_NotActivated>
+	<WTH_Reason_NoDamage>Keine Schäden, die repariert werden müssen.</WTH_Reason_NoDamage>
+	
+	<WTH_Alert_NotEnoughPlatforms_Label>Nicht genügend Mechanoid-Stationen</WTH_Alert_NotEnoughPlatforms_Label>
+	<WTH_Alert_NotEnoughPlatforms_Description>Es sind mehr gehackte Mechanoiden als Mechanoid-Stationen in der Kolonie. Baue weitere Mechanoid-Stationen.</WTH_Alert_NotEnoughPlatforms_Description>
+	<WTH_Alert_Power_Low_Label>Mechanoid hat niedrige Energie</WTH_Alert_Power_Low_Label>
+	<WTH_Alert_Power_Low_Description>Die folgenden Mechanoiden haben niedrige Energie:{0}Deaktivere sie, damit sie zu einer Mechanoid-Station zurückkehren.</WTH_Alert_Power_Low_Description>
+	<WTH_Alert_Maintenance_Low_Label>Mechanoid benötigt Wartung</WTH_Alert_Maintenance_Low_Label>
+	<WTH_Alert_Maintenance_Low_Description>Die gehackte Hardware der folgenden Mechanoiden benötigt Wartung:{0}Stelle sicher, dass ein Hacker sie wartet.</WTH_Alert_Maintenance_Low_Description>
+	<WTH_Alert_Maintenance_VeryLow_Label>Mechanoid benötigt dringende Wartung</WTH_Alert_Maintenance_VeryLow_Label>
+	<WTH_Alert_Maintenance_VeryLow_Description>Die gehackte Hardware der folgenden Mechanoiden benötigt dringende Wartung, sonst stellt er eine Gefahr für die Kolonie dar:{0}Der Hack kann jederzeit aufhören zu funktionieren, also stelle sicher, dass der Mechanoid gewartet wird, oder deaktiviere ihn.</WTH_Alert_Maintenance_VeryLow_Description>
+	<WTH_FactionRestrictions_OK>Erlauben</WTH_FactionRestrictions_OK>
+	<WTH_FactionRestrictions_NOK>Verbieten</WTH_FactionRestrictions_NOK>
+	<WTH_FactionRestrictions_Label>Stelle ein, welche Mechanoiden von welcher Fraktion gehackt werden können</WTH_FactionRestrictions_Label>
+	<WTH_FactionRestrictions_Description>Diese Einstellung erlaubt es zu bestimmen, welche Fraktion welche Art von Mechanoiden bei einem Überfall benutzen kann.</WTH_FactionRestrictions_Description>
+	
+	<WTH_MechanoidsSection>Mechanoiden</WTH_MechanoidsSection>
+	
+	<WTH_Explanation_BonusCapacity>Bonus Kapazität für diese Rasse</WTH_Explanation_BonusCapacity>	
+	<WTH_Explanation_NumMechs>Anzahl an Mechanoiden</WTH_Explanation_NumMechs>
+	<WTH_Explanation_NumPlatforms>Anzahl an tragbaren Stationen</WTH_Explanation_NumPlatforms>
+	<WTH_Explanation_FuelConsumption>Treibstoffverbrauch pro Station</WTH_Explanation_FuelConsumption>
+	<WTH_Explanation_TotalFuel>Gesamter Treibstoff</WTH_Explanation_TotalFuel>
+	<WTH_Explanation_DaysOfFuel>Treibstoffreserven in Tagen</WTH_Explanation_DaysOfFuel>
+	<WTH_Explanation_NotEnoughPlatforms>Nicht genug tragbare Mechanoid-Stationen für die ausgewählten Mechanoiden. Jeder Mechanoid sollte eine haben.</WTH_Explanation_NotEnoughPlatforms>
+	<WTH_ExtraInfoKey_DaysOfFuel>Treibstoffreserven in Tagen (Mechanoide)</WTH_ExtraInfoKey_DaysOfFuel>
+	
+	<WTH_Warning_NotEnoughPlatforms>Die Karawane hat nicht genügend Stationen für alle Mechanoiden. Jeder sollte eine Station haben, da einigen Mechanoiden sonst sehr schnell die Energie ausgeht.</WTH_Warning_NotEnoughPlatforms>
+	<WTH_Warning_DaysOfFuel>Die Karawane hat nur genug Treibstoff für {0} Tage. Den Mechanoiden kann sehr schnell die Energie ausgehen.</WTH_Warning_DaysOfFuel>
+	<WTH_Message_CaravanOutOfFuel>{0} besitzt keinen Treibstoff mehr.</WTH_Message_CaravanOutOfFuel>
+	<WTH_Message_CannotDrop>Diese Ausrüstung wird derzeit benutzt, also kann sie nicht abgeworfen werden.</WTH_Message_CannotDrop>
+	
+	<WTH_Mount>Auf {0} aufsteigen</WTH_Mount>
+	<WTH_Mount_Jobstring>Steigt auf {0}</WTH_Mount_Jobstring>
+	
+	<WTH_TextMote_MaintenanceFailed>Wartung fehlgeschlagen (Erfolgschance: {0})</WTH_TextMote_MaintenanceFailed>
+	
+</LanguageData>

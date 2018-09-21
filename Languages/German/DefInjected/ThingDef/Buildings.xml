@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_HackingTable.label>Mechanoiden Hacking-Einrichtung</WTH_HackingTable.label>
+  <WTH_HackingTable.description>Einrichtung zum Hacken und Reparieren von Mechanoiden.</WTH_HackingTable.description>
+  <WTH_HackingTable_Blueprint.label>Mechanoiden Hacking-Einrichtung (Entwurf)</WTH_HackingTable_Blueprint.label>
+  <WTH_HackingTable_Frame.label>Mechanoiden Hacking-Einrichtung (wird gebaut)</WTH_HackingTable_Frame.label>
+  <WTH_HackingTable_Frame.description>Einrichtung zum Hacken und Reparieren von Mechanoiden.</WTH_HackingTable_Frame.description>
+
+  <WTH_TableMechanoidWorkshop.label>Mechanoiden-Werkbank</WTH_TableMechanoidWorkshop.label>
+  <WTH_TableMechanoidWorkshop.description>Eine Werkbank zum Erstellen von Upgrades und Modulen für Mechanoide und zum Zerlegen von Hightech-Mechanoiden-Chips.</WTH_TableMechanoidWorkshop.description>
+  <WTH_TableMechanoidWorkshop_Blueprint.label>Mechanoiden-Werkbank (Entwurf)</WTH_TableMechanoidWorkshop_Blueprint.label>
+  <WTH_TableMechanoidWorkshop_Blueprint_Install.label>Mechanoiden-Werkbank (Entwurf)</WTH_TableMechanoidWorkshop_Blueprint_Install.label>
+  <WTH_TableMechanoidWorkshop_Frame.label>Mechanoiden-Werkbank (wird gebaut)</WTH_TableMechanoidWorkshop_Frame.label>
+  <WTH_TableMechanoidWorkshop_Frame.description>Eine Werkbank zum Erstellen von Upgrades und Modulen für Mechanoide und zum Zerlegen von Hightech-Mechanoiden-Chips.</WTH_TableMechanoidWorkshop_Frame.description>
+
+  <WTH_MechanoidPlatform.label>Mechanoiden-Station</WTH_MechanoidPlatform.label>
+  <WTH_MechanoidPlatform.description>Station zum Aufladen und Reparieren von Mechanoiden.</WTH_MechanoidPlatform.description>
+  <WTH_MechanoidPlatform_Blueprint.label>Mechanoiden-Station (Entwurf)</WTH_MechanoidPlatform_Blueprint.label>
+  <WTH_MechanoidPlatform_Frame.label>Mechanoiden-Station (wird gebaut)</WTH_MechanoidPlatform_Frame.label>
+  <WTH_MechanoidPlatform_Frame.description>Station zum Aufladen und Reparieren von Mechanoiden.</WTH_MechanoidPlatform_Frame.description>
+
+  <WTH_PortableChargingPlatform.label>Tragbare Auflade-Station</WTH_PortableChargingPlatform.label>
+  <WTH_PortableChargingPlatform.description>Tragbare Station um Mechanoide auf Reisen aufzuladen.</WTH_PortableChargingPlatform.description>
+  <WTH_PortableChargingPlatform_Blueprint.label>Tragbare Auflade-Station (Entwurf)</WTH_PortableChargingPlatform_Blueprint.label>
+  <WTH_PortableChargingPlatform_Blueprint_Install.label>Tragbare Auflade-Station (Entwurf)</WTH_PortableChargingPlatform_Blueprint_Install.label>
+  <WTH_PortableChargingPlatform_Frame.label>Tragbare Auflade-Station (wird gebaut)</WTH_PortableChargingPlatform_Frame.label>
+  <WTH_PortableChargingPlatform_Frame.description>Tragbare Station um Mechanoide auf Reisen aufzuladen.</WTH_PortableChargingPlatform_Frame.description>
+
+
+</LanguageData>
