@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_HackingBasics.label>Grundlagen Mechanoide Hacken</WTH_HackingBasics.label>
+  <WTH_HackingBasics.description>Gewährt Zugriff auf die Hacking-Einrichtung und die Mechanoiden-Station.Die Hacking-Einrichtung kann verwendet werden um die Zielvorrichtung eines Mechanoiden zu hacken, um sicherzustellen, dass er Gegner anstelle der Kolonisten angreift, wenn der Mechanoid wieder aktiviert wird. Erlaubt auch das Aufstellen von Mechanoiden-Stationen, die benötigt werden um Mechanoide zu reparieren und mit Energie zu versorgen.</WTH_HackingBasics.description>
+
+  <WTH_PortableChemfuelPlatform.label>Tragbare Auflade-Station</WTH_PortableChemfuelPlatform.label>
+  <WTH_PortableChemfuelPlatform.description>Erlaubt das Erstellen von tragbaren Auflade-Stationen, die mit Biotreibstoff betrieben werden. Diese versorgen Mechanoiden mit Energie, wenn sie die Welt erkunden. Kann auch als temporäre Energieversorgung installiert/ deinstalliert werden.</WTH_PortableChemfuelPlatform.description>
+
+  <WTH_MechanoidWorkshop.label>Mechanoiden-Werkbank</WTH_MechanoidWorkshop.label>
+  <WTH_MechanoidWorkshop.description>Stelle eine Mechanoiden-Werkbank auf, um Upgrades und Modul für die Mechanoiden herzustellen und um Hightech-Mechanoiden-Chips zu zerlegen.</WTH_MechanoidWorkshop.description>
+
+  <WTH_HackingRemoteControl.label>Mechanoiden Kontroll-Gürtel</WTH_HackingRemoteControl.label>
+  <WTH_HackingRemoteControl.description>Lerne Mechanoiden direkt zu steuern, indem Kolonisten den Mechanoiden Kontroll-Gürtel benutzen, der an der Mechanoiden-Werkbank hergestellt werden kann. Endlich können pazifistische Kolonisten am Kampfgeschehen teilnehmen, ohne sich schuldig zu fühlen. Schließlich sind es ja die Mechanoiden, die töten, nicht wahr?</WTH_HackingRemoteControl.description>
+
+  <WTH_RepairModule.label>Reparatur-Modul</WTH_RepairModule.label>
+  <WTH_RepairModule.description>Das Reparatur-Modul kann in den Reaktor eines Mechanoiden installiert werden. Es wird mit Mechanoiden-Teilen beladen und ist der Lage sehr schnell große Mengen Energie aus dem Mechanoiden zu entziehen um die internen Mechaniten aufzuladen. Dies aktiviert die Mechaniten, die Schäden am Mechanoiden mit Hilfe der Teile zu reparieren.</WTH_RepairModule.description>
+
+  <WTH_RepairArm.label>Reparatur-Arm</WTH_RepairArm.label>
+  <WTH_RepairArm.description>Kann benutzt werden um den Arm eines Mechanoiden zu ersetzen. Der neue Arm ist in der Lage vom Reparatur-Modul aufgeladene Mechaniten auf andere Mechanoide zu übertragen, um diese zu reparieren. Der Arm ist jedoch nicht für den Kampf geeignet.</WTH_RepairArm.description>
+
+  <WTH_SelfDestruct.label>Selbstzerstörungs-Modul</WTH_SelfDestruct.label>
+  <WTH_SelfDestruct.description>Ein simples Upgrade, bestehend aus zwei Mörser-Granaten und einem Kabel, das man kurzschließen kann. Ein Plastahl Behälter sorgt dafür, dass die Granaten versehentlich gezündet werden. Verabschiede die Mechanoiden mit einem Knall!</WTH_SelfDestruct.description>
+
+  <WTH_TurretModule.label>Geschütz-Modul</WTH_TurretModule.label>
+  <WTH_TurretModule.description>Ein Modul, das sowohl strukturelle Unterstützung als auch einen Sockel für Geschütze und Mörser bietet. Weitere Forschung ist für die einzelnen Geschütze erforderlich.</WTH_TurretModule.description>
+
+  <WTH_TurretModule_GunTurrets.label>Mini-Geschütz anbringen</WTH_TurretModule_GunTurrets.label>
+  <WTH_TurretModule_GunTurrets.description>Lerne Mini-Geschütze an das Geschütz-Modul anzubringen. Jedes Geschütz das deinstalliert werden kann, kann an das Modul angebracht werden. Dieses Modul kann nur in großen Mechanoiden verbaut werden.</WTH_TurretModule_GunTurrets.description>
+
+  <WTH_TurretModule_Mortars.label>Mörser anbringen</WTH_TurretModule_Mortars.label>
+  <WTH_TurretModule_Mortars.description>Lerne Mörser an das Geschütz-Modul anzubringen. Mörser müssen immernoch manuell von einem Kolonisten bedient werden, verbrauchen jedoch keine zusätzliche Energie des Mechanoiden. Dieses Upgrade hat nur wenige Vorteile im Vergleich zum traditionellen Einsatz der Mörser (schneller Einsatzbereit bei Überfällen, weniger Platzverbrauch). Ein Mechanoid mit ein Paar installierten Mörsern wird jedoch sicherlich ein paar Feinde beeindrucken.</WTH_TurretModule_Mortars.description>
+
+  <WTH_BatteryExpansionModule.label>Batterie-Erweiterungs-Modul</WTH_BatteryExpansionModule.label>
+  <WTH_BatteryExpansionModule.description>Ein Modul, das die Menge an Energie, die ein Mechanoid lagern kann vergrößert, mit kleinen Einschränkungen auf die Laufgeschwindigkeit</WTH_BatteryExpansionModule.description>
+
+  <WTH_VanometricModule.label>Vanometrisches Energiemodul</WTH_VanometricModule.label>
+  <WTH_VanometricModule.description>Ein Modul, das eine vanometrische Energiezelle beinhaltet um einen Mechanoiden mit endloser Energie zu versorgen, mit kleinen Einschränkungen auf die Laufgeschwindigkeit.</WTH_VanometricModule.description>
+
+  <WTH_BeltModule.label>Gürtel-Modul</WTH_BeltModule.label>
+  <WTH_BeltModule.description>Ein Modul, das bei jedem gehackten Mechanoiden installiert werden kann, um ihm das Tragen von Gürteln, wie dem Schildgürtel und dem Rauchwandgürtel, zu ermöglichen.</WTH_BeltModule.description>
+
+  <WTH_HackingAdvanced.label>KI Implantate</WTH_HackingAdvanced.label>
+  <WTH_HackingAdvanced.description>Erforsche die Möglichkeit KI-Kerne in gehackte Mechanoide einzubauen, um volle Kontrolle über Kampfverhalten zu ermöglichen.</WTH_HackingAdvanced.description>
+
+
+</LanguageData>

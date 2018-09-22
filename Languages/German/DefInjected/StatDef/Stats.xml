@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_ControllerBeltRadius.label>Kontroll-Reichweite</WTH_ControllerBeltRadius.label>
+  <WTH_ControllerBeltRadius.description>Die maximale Reichweite, in der Mechanoide mit diesem Gürtel kontrolliert werden können.</WTH_ControllerBeltRadius.description>
+
+  <WTH_HackingMaintenanceSpeed.label>Wartungsgeschwindigkeit</WTH_HackingMaintenanceSpeed.label>
+  <WTH_HackingMaintenanceSpeed.description>Geschwindigkeit mit der der Charakter gehackte Mechanoide wartet.</WTH_HackingMaintenanceSpeed.description>
+
+  <WTH_HackingSuccessChance.label>Erfolgschance beim Hacken</WTH_HackingSuccessChance.label>
+  <WTH_HackingSuccessChance.description>Die Chance, dass ein Charakter erfolgreich einen Mechanoiden hackt oder modifiziert. Die tatsächliche Erfolgschance wird auch von der Schwierigkeit des Hacks und der Stärke des Mechanoiden beeinflusst.</WTH_HackingSuccessChance.description>
+
+
+</LanguageData>

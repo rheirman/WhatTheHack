@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Hack.label>Hacken</WTH_Hack.label>
+  <WTH_Hack.description>Hacke und modifiziere Mechanoide</WTH_Hack.description>
+  <WTH_Hack.labelShort>Hacken</WTH_Hack.labelShort>
+  <WTH_Hack.pawnLabel>Hacker</WTH_Hack.pawnLabel>
+  <WTH_Hack.gerundLabel>hackt</WTH_Hack.gerundLabel>
+  <WTH_Hack.verb>hacken</WTH_Hack.verb>
+
+
+</LanguageData>

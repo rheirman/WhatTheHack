@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_MechanoidParts.label>Mechanoiden-Teile</WTH_MechanoidParts.label>
+  <WTH_MechanoidParts.description>Teile, die aus zerstörten Mechanoiden gesammelt wurden. Wird zum Hacken und Reparieren von Mechanoiden benötigt.</WTH_MechanoidParts.description>
+
+  <WTH_MechanoidChip.label>Hightech-Mechanoiden-Chip</WTH_MechanoidChip.label>
+  <WTH_MechanoidChip.description>Hightech-Chips, die aus zerstörten oder bewusstlosen Mechanoiden gesammelt werden. Wird für kompliziertere Hacks benötigt.</WTH_MechanoidChip.description>
+
+  <WTH_TurretModule.label>Geschütz-Modul</WTH_TurretModule.label>
+  <WTH_TurretModule.description>Kann installiert werden, um Mechanoiden zu ermöglichen Geschütze und Mörser zu tragen.</WTH_TurretModule.description>
+
+  <WTH_SelfDestructModule.label>Selbstzerstörungs-Modul</WTH_SelfDestructModule.label>
+  <WTH_SelfDestructModule.description> Kann in Mechanoiden installiert werden, um ihnen eine tödliche Selbstzerstörung zu ermöglichen.</WTH_SelfDestructModule.description>
+
+  <WTH_BatteryExpansionModule.label>Batterie-Erweiterungs-Modul</WTH_BatteryExpansionModule.label>
+  <WTH_BatteryExpansionModule.description>Kann in Mechanoiden installiert werden, um ihnen eine größere Batterie-Kapazität zu geben, auf Kosten der Laufgeschwindigkeit.</WTH_BatteryExpansionModule.description>
+
+  <WTH_VanometricModule.label>Vanometrisches Energiezellen-Modul</WTH_VanometricModule.label>
+  <WTH_VanometricModule.description>Kann in Mechanoiden installiert werden, um ihnen eine endlose Energiequelle zu verleihen, auf Kosten der Laufgeschwindigkeit.</WTH_VanometricModule.description>
+
+  <WTH_RepairModule.label>Reparatur-Modul</WTH_RepairModule.label>
+  <WTH_RepairModule.description>Kann in Mechanoiden installiert werden, um ihnen zu ermöglichen, sich selbst zu reparieren.</WTH_RepairModule.description>
+
+  <WTH_RepairArm.label>Reparatur-Arm</WTH_RepairArm.label>
+  <WTH_RepairArm.description>Kann in Mechanoiden installiert werden, um ihnen zu ermöglichen, andere Mechanoide zu reparieren.</WTH_RepairArm.description>
+
+  <WTH_BeltModule.label>Gürtel-Modul</WTH_BeltModule.label>
+  <WTH_BeltModule.description>Kann in Mechanoiden installiert werden, um ihnen zu ermöglichen Gürtel, wie den Schildgürtel und Rauchwandgürtel, zu tragen.</WTH_BeltModule.description>
+
+
+</LanguageData>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_CarryToHackingTable.reportString>Trägt Mechanoiden zur Hacking-Einrichtung.</WTH_CarryToHackingTable.reportString>
+  <WTH_ClearHackingTable.reportString>Räumt den Mechanoiden von der Hacking-Einrichtung um Platz zu schaffen.</WTH_ClearHackingTable.reportString>
+  <WTH_Mechanoid_Rest.reportString>Mit Station verbunden.</WTH_Mechanoid_Rest.reportString>
+  <WTH_ControlMechanoid.reportString>Steuert Mechanoiden.</WTH_ControlMechanoid.reportString>
+  <WTH_ControlMechanoid_Goto.reportString>Steuert Mechanoiden (folgen).</WTH_ControlMechanoid_Goto.reportString>
+  <WTH_Ability.reportString>Benutzt Fähigkeit.</WTH_Ability.reportString>
+  <WTH_PerformMaintenance.reportString>Führt Wartung durch.</WTH_PerformMaintenance.reportString>
+
+
+</LanguageData>
