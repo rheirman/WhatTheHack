@@ -8,7 +8,7 @@
 	<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
 		<defName>WhatTheHack_0_19_5</defName>
 		<assemblyVersion>0.19.5</assemblyVersion>
-		<content>Hi there, evil hackers of the rim. Do you to be able to let your colonists ride the mechanoids you've hacked, or even let your hacked mechanoids ride other hacked mechanoids? Go check out the freshly released &lt;color=orange&gt;Giddy-up! Mechanoids&lt;/color&gt; mod on the workshop or the forums. 
+		<content>Hi there, evil hackers of the Rim. Do you want to be able to let your colonists ride the mechanoids you've hacked, or even let your hacked mechanoids ride other hacked mechanoids? Go check out the freshly released &lt;color=orange&gt;Giddy-up! Mechanoids&lt;/color&gt; mod on the workshop or the forums. 
 
 I'd also like to warn you for the update I just released, before it catches you by surprise: 
 &lt;color=orange&gt;- Mechanoids now revert to their reactor when their hack stops working due to poor maintenance. No longer you can drain their battery when you're running out of parts! You can however store them in cryptosleep caskets.&lt;/color&gt;
@@ -24,14 +24,14 @@ I'm definitely not only making things more difficult:
 
 Throughout the past two weeks, many other changes and fixes sneaked in. In case you didn't notice yet I'll summarize them: 
 
-Additions:
+&lt;b&gt;Additions:&lt;/b&gt;
 - Added Bio tab for hacked mechanoids, and the possibility to rename mechs there. 
 - When a modification fails, you should get back the upgrade module. 
 - You get back most upgrade modules installed in a mech when disassembling the mech now. 
 - The raid point budget of enemy hacked mechs can be configured in the mod options.
 - Added Japanse (by Proxyer), simplified Chinese(by LingLuo), traditional chinese (by biscuit), and german translations (by Roffelchen). 
 
-Tweaks:
+&lt;b&gt;Tweaks:&lt;/b&gt;
 - Buffed vanometric power module.
 - Decreased how much a mounted turret's power consumption affects mech power drain.
 - Part regeneration of smaller body parts consumes less mechanoid parts. This makes mechanoids that are likely to loose small parts much more viable.
@@ -39,7 +39,7 @@ Tweaks:
 - Rebalanced mechanoid workshop costs.
 - Small changes in descriptions.
 
-Fixes:
+&lt;b&gt;Fixes:&lt;/b&gt;
 - Fixed: impossible to remove a mech that is downed on a hacking table from it. 
 - Fixed issue causing colonists to get stuck while performing maintenance when the mechanoid platform on which the mech resides is surrounded by impassable terrain.
 - Fixed issue that arose when you build a mechanoid platform on a downed hacked mechanoid. 
