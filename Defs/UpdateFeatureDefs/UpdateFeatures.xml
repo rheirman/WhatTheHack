@@ -11,7 +11,7 @@
 		<content>Hi there, evil hackers of the rim. Do you to be able to let your colonists ride the mechanoids you've hacked, or even let your hacked mechanoids ride other hacked mechanoids? Go check out the freshly released &lt;color=orange&gt;Giddy-up! Mechanoids&lt;/color&gt; mod on the workshop or the forums. 
 
 I'd also like to warn you for the update I just released, before it catches you by surprise: 
-&lt;color=orange&gt;- Mechanoids now revert to their reactor when the hacking breaks. No longer you can drain their battery when you're running out of parts! You can however store them in cryptosleep caskets.&lt;/color&gt;
+&lt;color=orange&gt;- Mechanoids now revert to their reactor when their hack stops working due to poor maintenance. No longer you can drain their battery when you're running out of parts! You can however store them in cryptosleep caskets.&lt;/color&gt;
 I'm definitely not only making things more difficult: 
 - Adjusted drop chance of mechanoid chips and parts to difficulty level. 
 	basebuilder: 2x 
