@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HugsLib.UpdateFeatureDef Abstract="true" Name="UpdateFeatureBase">
+		<modNameReadable>What the Hack?!</modNameReadable>
+		<modIdentifier>WhatTheHack</modIdentifier>
+		<linkUrl>https://ludeon.com/forums/index.php?topic=44082.0</linkUrl>
+	</HugsLib.UpdateFeatureDef>
+	<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+		<defName>WhatTheHack_0_19_5</defName>
+		<assemblyVersion>0.19.5</assemblyVersion>
+		<content>Hi there, evil hackers of the rim. Do you to be able to let your colonists ride the mechanoids you've hacked, or even let your hacked mechanoids ride other hacked mechanoids? Go check out the freshly released &lt;color=orange&gt;Giddy-up! Mechanoids&lt;/color&gt; mod on the workshop or the forums. 
+
+I'd also like to warn you for the update I just released, before it catches you by surprise: 
+&lt;color=orange&gt;- Mechanoids now revert to their reactor when the hacking breaks. No longer you can drain their battery when you're running out of parts! You can however store them in cryptosleep caskets.&lt;/color&gt;
+I'm definitely not only making things more difficult: 
+- Adjusted drop chance of mechanoid chips and parts to difficulty level. 
+	basebuilder: 2x 
+	easy: 1.5x
+	medium: 1.35x
+	rough: 1.2x
+	hard: 1.1x
+	extreme: 1.0x 
+- Lowered research costs of quite some modules. 
+
+Throughout the past two weeks, many other changes and fixes sneaked in. In case you didn't notice yet I'll summarize them: 
+
+Additions:
+- Added Bio tab for hacked mechanoids, and the possibility to rename mechs there. 
+- When a modification fails, you should get back the upgrade module. 
+- You get back most upgrade modules installed in a mech when disassembling the mech now. 
+- The raid point budget of enemy hacked mechs can be configured in the mod options.
+- Added Japanse (by Proxyer), simplified Chinese(by LingLuo), traditional chinese (by biscuit), and german translations (by Roffelchen). 
+
+Tweaks:
+- Buffed vanometric power module.
+- Decreased how much a mounted turret's power consumption affects mech power drain.
+- Part regeneration of smaller body parts consumes less mechanoid parts. This makes mechanoids that are likely to loose small parts much more viable.
+- Several fixes for how bills are assigned at hacking benches. If a hack or modification fails, the bill should be re-added appropriately. 
+- Rebalanced mechanoid workshop costs.
+- Small changes in descriptions.
+
+Fixes:
+- Fixed: impossible to remove a mech that is downed on a hacking table from it. 
+- Fixed issue causing colonists to get stuck while performing maintenance when the mechanoid platform on which the mech resides is surrounded by impassable terrain.
+- Fixed issue that arose when you build a mechanoid platform on a downed hacked mechanoid. 
+- Fixed: mod options not able to handle a lot of factions and factions/mechs with very long names. 
+- Fixed: mechs with vanometric module using mechanoid platforms during caravanning while they have plenty of power. 
+- Fixed problem with mounted turrets dissapearing when a mech walks near the map edge.
+- Fixed problem involving colonists trying to mount deployed turrets on mechs, resulting in things despawning.
+- Partially fixed problem involving the mass usage calculation being inaccurate for mechs with turrets mounted on them during caravanning.
+- Small fixes in text descriptions.
+
+So what's up next? I'll focus on adding more active ways of getting mechanoid parts now, as that part is still lacking a bit. After that I'll be adding some nice extra upgrade modules. 
+
+Have fun! And if you really like my mods, please consider supporting me on ko-fi. You'll find a link to it on the workshop page of What the Hack!?. 
+
+
+		</content>
+	</HugsLib.UpdateFeatureDef>
+	
+</Defs>
