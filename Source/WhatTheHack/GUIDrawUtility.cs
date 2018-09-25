@@ -30,7 +30,7 @@ namespace WhatTheHack
 
 
 
-        private static void drawBackground(Rect rect, Color background)
+        private static void DrawBackground(Rect rect, Color background)
         {
             Color save = GUI.color;
             GUI.color = background;
@@ -49,7 +49,7 @@ namespace WhatTheHack
             Text.Anchor = TextAnchor.UpperLeft;
             GUI.color = Color.white;
         }
-        private static Color getColor(ThingDef mech)
+        private static Color GetColor(ThingDef mech)
         {
             if (mech.graphicData != null)
             {
@@ -177,7 +177,7 @@ namespace WhatTheHack
 
         public static bool CustomDrawer_Filter(Rect rect, SettingHandle<float> slider, bool def_isPercentage, float def_min, float def_max, Color background)
         {
-            drawBackground(rect, background);
+            DrawBackground(rect, background);
             int labelWidth = 50;
 
             Rect sliderPortion = new Rect(rect);
@@ -222,7 +222,7 @@ namespace WhatTheHack
                 }
                 else
                 {
-                    FactionDef factionDef = getFactionByName(factionName);
+                    FactionDef factionDef = GetFactionByName(factionName);
                     if (factionDef != null && (factionDef.techLevel == TechLevel.Spacer || factionDef.techLevel == TechLevel.Archotech || factionDef.techLevel == TechLevel.Ultra))
                     {
                         shouldSelect.Add(td.defName, new Record(true, false, td.label));
@@ -238,7 +238,7 @@ namespace WhatTheHack
             }
             selection = shouldSelect.OrderBy(d => d.Value.label).ToDictionary(d => d.Key, d => d.Value);
         }
-        private static FactionDef getFactionByName(string name)
+        private static FactionDef GetFactionByName(string name)
         {
             return DefDatabase<FactionDef>.AllDefs.FirstOrDefault((FactionDef fd) => fd.defName == name);
         }
@@ -253,7 +253,7 @@ namespace WhatTheHack
                 setting.Value = Base.GetDefaultForFactionRestrictions(new Dict2DRecordHandler(), allPawns, allFactionNames);
             }
             CustomDrawer_Tabs(new Rect(wholeRect.x,wholeRect.y, (float)wholeRect.width, buttonHeight), filter, allFactionNames.ToArray(), true, (int)-wholeRect.width, 0);
-            drawBackground(wholeRect, background);
+            DrawBackground(wholeRect, background);
 
 
             GUI.color = Color.white;
