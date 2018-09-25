@@ -29,6 +29,29 @@
 	<WTH_MaintenanceDedayEnabled_Title>Maintenance decay enabled</WTH_MaintenanceDedayEnabled_Title>
 	<WTH_MaintenanceDedayEnabled_Description>Uncheck this if you don't want to regularly maintain your mechanoids. With this unchecked, the maintenance need bar will still be shown, but it won't decrease over time. There are still certain events that can deplete the maintenance bar of mechanoids.</WTH_MaintenanceDedayEnabled_Description>
 	
+	<!--BEGIN: added in v0.19.6 -->
+	<WTH_Expand>Expand</WTH_Expand>
+	<WTH_Collapse>Collapse</WTH_Collapse>
+	<WTH_SettingsGroup_Raids_Title>Raid settings</WTH_SettingsGroup_Raids_Title>
+	<WTH_SettingsGroup_Raids_Description>Configure the mechanoid usage chance for enemy raids.</WTH_SettingsGroup_Raids_Description>
+	<WTH_SettingsGroup_HackFailure_Title>Hacking failure settings (contains spoilers)</WTH_SettingsGroup_HackFailure_Title>
+	<WTH_SettingsGroup_HackFailure_Description>Configure the chances of different events that can occur when hacking fails.</WTH_SettingsGroup_HackFailure_Description>
+	<WTH_SettingsGroup_Balance_Title>Balance altering settings</WTH_SettingsGroup_Balance_Title>
+	<WTH_SettingsGroup_Balance_Description>These settings have a high impact on how balanced the mod is. You can tweak them to suit your needs, but it's recommended to first try the mod on default settings for the intended experience. If you think the defaults aren't reasonable, please report this on the workshop or forum page of this mod.</WTH_SettingsGroup_Balance_Description>	
+	<WTH_MaintenanceDedayModifier_Title>Maintenance decay modifier</WTH_MaintenanceDedayModifier_Title>
+	<WTH_MaintenanceDedayModifier_Description>Modify the maintenance decay rate with this option. Example: setting this to 0.5 would result in maintenance decaying twice as slow.</WTH_MaintenanceDedayModifier_Description>
+	<WTH_RepairConsumptionModifier_Title>Repair part consumption modifier</WTH_RepairConsumptionModifier_Title>
+	<WTH_RepairConsumptionModifier_Description>Modify the amount of parts required for repairing your mechs (on platforms or with upgrade modules). Example: setting this to 0.5 would make repairing twice as cheap.</WTH_RepairConsumptionModifier_Description>
+	<WTH_PartDropRateModifier_Title>Part drop rate modifier</WTH_PartDropRateModifier_Title>
+	<WTH_PartDropRateModifier_Description>Modify the drop rate of mechanoid parts. Example: setting this to 2.0 would result in twice the amount of parts being dropped when a mechanoid is disassembled.</WTH_PartDropRateModifier_Description>
+	<WTH_ChipDropRateModifier_Title>Chip drop rate modifier</WTH_ChipDropRateModifier_Title>
+	<WTH_ChipDropRateModifier_Description></WTH_ChipDropRateModifier_Description>
+	<WTH_PowerFallModifier_Title>Power fall modifier</WTH_PowerFallModifier_Title>
+	<WTH_PowerFallModifier_Description>Modify how quickly mechanoids drain power from their batteries. Example: setting this to 0.5 would result in the power dropping twice as slowly.</WTH_PowerFallModifier_Description>
+	<WTH_PowerChargeModifier_Title>Power charge modifier </WTH_PowerChargeModifier_Title>
+	<WTH_PowerChargeModifier_Description>Modify how quickly mechanoids charge their batteries. Example: setting this to 2.0 would result in the power charging twice as fast.</WTH_PowerChargeModifier_Description>
+	<!--END: added in v0.19.6 -->
+	
 	<WTH_HackedMechChance_Title>Chance enemies use hacked mechs (%)</WTH_HackedMechChance_Title>
 	<WTH_HackedMechChance_Description>The chance that factions allowed in the mod options use hacked mechanoids when raiding your base.</WTH_HackedMechChance_Description>
 	<WTH_MaxHackedMechPoints_Title>Maximum extra points for hacked mechs (%)</WTH_MaxHackedMechPoints_Title>

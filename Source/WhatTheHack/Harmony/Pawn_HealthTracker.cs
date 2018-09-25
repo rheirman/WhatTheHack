@@ -166,6 +166,7 @@ namespace WhatTheHack.Harmony
 
         private static void RechargeMechanoid(Pawn pawn, Need powerNeed, float powerPerTick)
         {
+            powerPerTick *= Base.powerChargeModifier;
             if (powerNeed.CurLevel + powerPerTick * 100 < powerNeed.MaxLevel)
             {
                 if (pawn.IsHashIntervalTick(100))
@@ -237,7 +238,7 @@ namespace WhatTheHack.Harmony
             }
             if(platform != null)
             {
-                platform.refuelableComp.ConsumeFuel(0.002f);//TODO no magic number
+                platform.refuelableComp.ConsumeFuel(0.002f * Base.repairConsumptionModifier);//TODO no magic number
             }
         }
 

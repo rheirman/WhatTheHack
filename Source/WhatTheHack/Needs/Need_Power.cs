@@ -161,7 +161,7 @@ namespace WhatTheHack.Needs
         {
             get
             {
-                return 150 + pawn.BodySize * 150;//TODO - no magic number
+                return 150 + pawn.BodySize * 150 * Base.powerFallModifier;//TODO - no magic number
             }
         }
 

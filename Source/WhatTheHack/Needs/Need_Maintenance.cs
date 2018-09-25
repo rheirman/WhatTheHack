@@ -60,7 +60,7 @@ namespace WhatTheHack.Needs
                 this.lastLevel = CurLevel;
                 if (Base.maintenanceDecayEnabled)
                 {
-                    this.CurLevel -= FallPerTick() * 150f;
+                    this.CurLevel -= FallPerTick() * 150f * Base.maintenanceDecayModifier;
                 }
             }
             if (this.CurCategory == MaintenanceCategory.VeryLowMaintenance)

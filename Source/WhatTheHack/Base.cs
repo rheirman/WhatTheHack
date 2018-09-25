@@ -11,6 +11,7 @@ using RimWorld;
 using Harmony;
 using WhatTheHack.Comps;
 using WhatTheHack.Recipes;
+using UnityEngine;
 
 namespace WhatTheHack
 {
@@ -21,18 +22,32 @@ namespace WhatTheHack
 
 
         //settings
+        internal static SettingHandle<bool> settingsGroup_Factions;
         internal static SettingHandle<String> tabsHandler;
-        internal static SettingHandle<bool> maintenanceDecayEnabled;
+        internal static SettingHandle<Dict2DRecordHandler> factionRestrictions;
+
+        internal static SettingHandle<bool> settingsGroup_Raids;
         internal static SettingHandle<int> hackedMechChance;
         internal static SettingHandle<int> minHackedMechPoints;
         internal static SettingHandle<int> maxHackedMechPoints;
 
+        internal static SettingHandle<bool> settingsGroup_HackFailure;
         internal static SettingHandle<int> failureChanceNothing;
         internal static SettingHandle<int> failureChanceCauseRaid;
         internal static SettingHandle<int> failureChanceShootRandomDirection;
         internal static SettingHandle<int> failureChanceHealToStanding;
         internal static SettingHandle<int> failureChanceHackPoorly;
-        internal static SettingHandle<Dict2DRecordHandler> factionRestrictions;
+
+        internal static SettingHandle<bool> settingsGroup_Balance;
+        internal static SettingHandle<bool> maintenanceDecayEnabled;
+        internal static SettingHandle<float> maintenanceDecayModifier;
+        internal static SettingHandle<float> repairConsumptionModifier;
+        internal static SettingHandle<float> partDropRateModifier;
+        internal static SettingHandle<float> chipDropRateModifier;
+        internal static SettingHandle<float> powerFallModifier;
+        internal static SettingHandle<float> powerChargeModifier;
+
+
 
         internal static List<ThingDef> allMechs;
         internal static List<String> allFactionNames;
@@ -41,7 +56,7 @@ namespace WhatTheHack
         internal float daysOfFuel = 0;
         internal string daysOfFuelReason = "";
 
-        //List<String> tabNames = new List<String>();
+        private static Color highlight1 = new Color(0.5f, 0, 0, 0.1f);
 
         public override string ModIdentifier
         {
@@ -60,22 +75,75 @@ namespace WhatTheHack
             allFactionNames = (from td  in DefDatabase<FactionDef>.AllDefs
                                             where isHackingFaction(td)
                                             select td.defName).ToList();
+
+            //Factions
             tabsHandler = Settings.GetHandle<String>("tabs", "WTH_FactionRestrictions_Label".Translate(), "WTH_FactionRestrictions_Description".Translate(), allFactionNames.First());
             tabsHandler.CustomDrawer = rect => { return false; };
             factionRestrictions = Settings.GetHandle<Dict2DRecordHandler>("factionRestrictions", "", "", null);
             factionRestrictions.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_MatchingPawns_active(rect, factionRestrictions, allMechs, allFactionNames, tabsHandler, "WTH_FactionRestrictions_OK".Translate(), "WTH_FactionRestrictions_NOK".Translate()); };
 
+            //raids
+            settingsGroup_Raids = Settings.GetHandle<bool>("settingsGroup_Raids", "WTH_SettingsGroup_Raids_Title".Translate(), "WTH_SettingsGroup_Raids_Description".Translate(), false);
+            settingsGroup_Raids.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_Button(rect, settingsGroup_Raids, "WTH_Expand".Translate() + "..", "WTH_Collapse".Translate()); };
 
             hackedMechChance = Settings.GetHandle<int>("hackedMechChance", "WTH_HackedMechChance_Title".Translate(), "WTH_HackedMechChance_Description".Translate(), 60, Validators.IntRangeValidator(0,100));
+            hackedMechChance.VisibilityPredicate = delegate { return settingsGroup_Raids; };
+
             maxHackedMechPoints = Settings.GetHandle<int>("maxHackedMechPoints", "WTH_MaxHackedMechPoints_Title".Translate(), "WTH_MaxHackedMechPoints_Description".Translate(), 50, Validators.IntRangeValidator(0,500));
+            maxHackedMechPoints.VisibilityPredicate = delegate { return settingsGroup_Raids; };
+
             minHackedMechPoints = Settings.GetHandle<int>("minHackedMechPoints", "WTH_MinHackedMechPoints_Title".Translate(), "WTH_MinHackedMechPoints_Description".Translate(), 0, Validators.IntRangeValidator(0, 500));
+            minHackedMechPoints.VisibilityPredicate = delegate { return settingsGroup_Raids; };
+
+            //hack failure
+            settingsGroup_HackFailure = Settings.GetHandle<bool>("settingsGroup_HackFailure", "WTH_SettingsGroup_HackFailure_Title".Translate(), "WTH_SettingsGroup_HackFailure_Title".Translate(), false);
+            settingsGroup_HackFailure.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_Button(rect, settingsGroup_HackFailure, "WTH_Expand".Translate() + "..", "WTH_Collapse".Translate()); };
 
             failureChanceNothing = Settings.GetHandle<int>("failureChanceNothing", "WTH_FailureChance_Nothing_Title".Translate(), "WTH_FailureChance_Nothing_Description".Translate(), 55);
+            failureChanceNothing.VisibilityPredicate = delegate { return settingsGroup_HackFailure; };
+
             failureChanceCauseRaid = Settings.GetHandle<int>("failureChanceCauseRaid", "WTH_FailureChance_CauseRaid_Title".Translate(), "WTH_FailureChance_CauseRaid_Description".Translate(), 7);
+            failureChanceCauseRaid.VisibilityPredicate = delegate { return settingsGroup_HackFailure; };
+
             failureChanceShootRandomDirection = Settings.GetHandle<int>("failureChanceShootRandomDirection", "WTH_FailureChance_ShootRandomDirection_Title".Translate(), "WTH_FailureChance_ShootRandomDirection_Description".Translate(), 15);
+            failureChanceShootRandomDirection.VisibilityPredicate = delegate { return settingsGroup_HackFailure; };
+
             failureChanceHealToStanding = Settings.GetHandle<int>("failureChanceHealToStanding", "WTH_FailureChance_HealToStanding_Title".Translate(), "WTH_FailureChance_HealToStanding_Description".Translate(), 8);
+            failureChanceHealToStanding.VisibilityPredicate = delegate { return settingsGroup_HackFailure; };
+
             failureChanceHackPoorly = Settings.GetHandle<int>("failureChanceHackPoorly", "WTH_FailureChance_HackPoorly_Title".Translate(), "WTH_FailureChance_HackPoorly_Description".Translate(), 10);
+            failureChanceHackPoorly.VisibilityPredicate = delegate { return settingsGroup_HackFailure; };
+
+            //balance
+            settingsGroup_Balance = Settings.GetHandle<bool>("settingsGroup_Balance", "WTH_SettingsGroup_Balance_Title".Translate(), "WTH_SettingsGroup_Balance_Description".Translate(), true);
+            settingsGroup_Balance.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_Button(rect, settingsGroup_Balance, "WTH_Expand".Translate() + "..", "WTH_Collapse".Translate()); };
+
             maintenanceDecayEnabled = Settings.GetHandle<bool>("maintenanceDecayEnabled", "WTH_MaintenanceDedayEnabled_Title".Translate(), "WTH_MaintenanceDedayEnabled_Description".Translate(), true);
+            maintenanceDecayEnabled.VisibilityPredicate = delegate { return settingsGroup_Balance; };
+
+            maintenanceDecayModifier = Settings.GetHandle<float>("maintenanceDecayModifier", "WTH_MaintenanceDedayModifier_Title".Translate(), "WTH_MaintenanceDedayModifier_Description".Translate(), 1.0f, Validators.FloatRangeValidator(0f, 2f));
+            maintenanceDecayModifier.VisibilityPredicate = delegate { return maintenanceDecayEnabled && settingsGroup_Balance; };
+            maintenanceDecayModifier.CustomDrawer = rect => GUIDrawUtility.CustomDrawer_Filter(rect, maintenanceDecayModifier, false, 0f, 2f, highlight1);
+
+            repairConsumptionModifier = Settings.GetHandle<float>("repairConsumptionModifier", "WTH_RepairConsumptionModifier_Title".Translate(), "WTH_RepairConsumptionModifier_Description".Translate(), 1.0f, Validators.FloatRangeValidator(0.05f, 2f));
+            repairConsumptionModifier.CustomDrawer = rect => GUIDrawUtility.CustomDrawer_Filter(rect, repairConsumptionModifier, false, 0.05f, 2f, highlight1);
+            repairConsumptionModifier.VisibilityPredicate = delegate { return settingsGroup_Balance; };
+
+            partDropRateModifier = Settings.GetHandle<float>("partDropRateModifier", "WTH_PartDropRateModifier_Title".Translate(), "WTH_PartDropRateModifier_Description".Translate(), 1.0f, Validators.FloatRangeValidator(0.05f, 5f));
+            partDropRateModifier.CustomDrawer = rect => GUIDrawUtility.CustomDrawer_Filter(rect, partDropRateModifier, false, 0.05f, 5f, highlight1);
+            partDropRateModifier.VisibilityPredicate = delegate { return settingsGroup_Balance; };
+
+            chipDropRateModifier = Settings.GetHandle<float>("chipDropRateModifier", "WTH_ChipDropRateModifier_Title".Translate(), "WTH_ChipDropRateModifier_Description".Translate(), 1.0f, Validators.FloatRangeValidator(0.05f, 5f));
+            chipDropRateModifier.CustomDrawer = rect => GUIDrawUtility.CustomDrawer_Filter(rect, chipDropRateModifier, false, 0.05f, 5f, highlight1);
+            chipDropRateModifier.VisibilityPredicate = delegate { return settingsGroup_Balance; };
+
+            powerFallModifier = Settings.GetHandle<float>("powerFallModifier", "WTH_PowerFallModifier_Title".Translate(), "WTH_PowerFallModifier_Description".Translate(), 1.0f, Validators.FloatRangeValidator(0.05f, 5f));
+            powerFallModifier.CustomDrawer = rect => GUIDrawUtility.CustomDrawer_Filter(rect, powerFallModifier, false, 0.05f, 5f, highlight1);
+            powerFallModifier.VisibilityPredicate = delegate { return settingsGroup_Balance; };
+
+            powerChargeModifier = Settings.GetHandle<float>("powerChargeModifier", "WTH_PowerChargeModifier_Title".Translate(), "WTH_PowerChargeModifier_Description".Translate(), 1.0f, Validators.FloatRangeValidator(0.05f, 5f));
+            powerChargeModifier.CustomDrawer = rect => GUIDrawUtility.CustomDrawer_Filter(rect, powerChargeModifier, false, 0.05f, 5f, highlight1);
+            powerChargeModifier.VisibilityPredicate = delegate { return settingsGroup_Balance; };
 
             factionRestrictions = GetDefaultForFactionRestrictions(factionRestrictions, allMechs, allFactionNames);
             GenerateImpliedRecipeDefs();

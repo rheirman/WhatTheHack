@@ -486,7 +486,7 @@ namespace WhatTheHack.Harmony
             {
                 if (pawn.jobs.curDriver is JobDriver_Ability jobDriver && !pawn.Dead && jobDriver.finished)
                 {
-                    compRefuelable.ConsumeFuel(fuelConsumption);
+                    compRefuelable.ConsumeFuel(fuelConsumption * Base.repairConsumptionModifier);
                     powerNeed.CurLevel -= powerDrain;
                     target.health.AddHediff(WTH_DefOf.WTH_Repairing);
                 }

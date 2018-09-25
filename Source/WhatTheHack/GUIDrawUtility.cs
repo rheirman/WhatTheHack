@@ -92,6 +92,34 @@ namespace WhatTheHack
 
         }
 
+
+        public static bool CustomDrawer_Button(Rect rect, SettingHandle<bool> setting, String activateText, String deactivateText, int xOffset = 0, int yOffset = 0)
+        {
+            int labelWidth = (int)rect.width - 20;
+            int horizontalOffset = 0;
+            int verticalOffset = 0;
+            bool change = false;
+            Rect buttonRect = new Rect(rect);
+            buttonRect.width = labelWidth;
+            buttonRect.position = new Vector2(buttonRect.position.x + horizontalOffset + xOffset, buttonRect.position.y + verticalOffset + yOffset);
+            Color activeColor = GUI.color;
+            bool isSelected = setting.Value;
+            String text = setting ? deactivateText : activateText;
+
+            if (isSelected)
+                GUI.color = SelectedOptionColor;
+            bool clicked = Widgets.ButtonText(buttonRect, text);
+            if (isSelected)
+                GUI.color = activeColor;
+
+            if (clicked)
+            {
+                setting.Value = !setting.Value;
+                change = true;
+            } 
+            return change;
+        }
+
         public static bool CustomDrawer_Tabs(Rect rect, SettingHandle<String> setting, String[] defaultValues, bool vertical = false, int xOffset = 0, int yOffset = 0)
         {
             int labelWidth = (int)rect.width - 20;
