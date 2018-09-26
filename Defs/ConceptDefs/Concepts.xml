@@ -41,4 +41,12 @@
     <helpText>Unlike "wild" mechanoids, hacked ones cannot use their reactor, as using it would result in detection by the mechanoid hive. Therefore, they rely on internal backup batteries, which can be charged on mechanoid platforms. Portable charging platforms can be used to supply mechanoids with power during world trips. Finally, there exist ways of improving the battery capacity, or installing an alternate power supply using the mechanoid workshop.</helpText>
     <needsOpportunity>true</needsOpportunity>
   </ConceptDef>
+  <!--Added in v0.19.6 -->
+  <ConceptDef>
+    <defName>WTH_MechanoidParts</defName>
+    <label>Getting mechanoid parts</label>
+    <priority>50</priority>
+    <helpText>It is very important to always have some mechanoid parts in store for repairing, and more importantly, maintaining your mechanoids. Disassembling mechanoids is the primary way to get parts, but you can also buy them from exotic goods traders, and outlander towns. A way to get more mechanoids to disassemble, is by performing the "induce emergency signal" operation on a downed non-hacked mechanoid. You need to research "attracting mechanoids" to be able to do this. </helpText>
+    <needsOpportunity>true</needsOpportunity>
+  </ConceptDef>
 </Defs>

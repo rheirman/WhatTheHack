@@ -8,6 +8,7 @@
 			<xpath>*/ThingDef[race/fleshType = "Mechanoid"]/recipes</xpath>
 			<value>
 				<li>WTH_HackMechanoid</li>
+				<li>WTH_InduceEmergencySignal</li>
 				<li>WTH_ImplantAI</li>
 				<li>WTH_ShutDownMechanoid</li>
 				<li>WTH_InstallRepairModule</li>
@@ -16,7 +17,7 @@
 				<li>WTH_InstallTurretModule</li>
 				<li>WTH_InstallBatteryExpansionModule</li>
 				<li>WTH_InstallVanometricModule</li>
-				<li>WTH_InstallBeltModule</li>
+				<li>WTH_InstallBeltModule</li>	
 			</value>
 		</li> 
 	</operations>
@@ -29,6 +30,7 @@
 			<value>
 				<recipes>
 					<li>WTH_HackMechanoid</li>
+					<li>WTH_InduceEmergencySignal</li>
 					<li>WTH_ImplantAI</li>
 					<li>WTH_ShutDownMechanoid</li>
 					<li>WTH_InstallRepairModule</li>

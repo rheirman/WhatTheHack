@@ -17,25 +17,31 @@
 	<WTH_Letter_HackedPoorlyEvent_Label>Something snapped</WTH_Letter_HackedPoorlyEvent_Label>
 	<WTH_Letter_HackedPoorlyEvent_Description>Something snapped in the head of a mechanoid that was hacked poorly. Urgent maintenance is needed.</WTH_Letter_HackedPoorlyEvent_Description>
 	<WTH_FailureChance_Nothing_Title>Failure chance: nothing happens</WTH_FailureChance_Nothing_Title>
-	<WTH_FailureChance_Nothing_Description>Relative chance that nothing escalates when hacking fails</WTH_FailureChance_Nothing_Description>
+	<WTH_FailureChance_Nothing_Description>Chance that nothing escalates when hacking fails</WTH_FailureChance_Nothing_Description>
 	<WTH_FailureChance_CauseRaid_Title>Failure chance: cause raid</WTH_FailureChance_CauseRaid_Title>
-	<WTH_FailureChance_CauseRaid_Description>Relative chance that a raid is caused when hacking fails</WTH_FailureChance_CauseRaid_Description>
+	<WTH_FailureChance_CauseRaid_Description>Chance that a raid is caused when hacking fails</WTH_FailureChance_CauseRaid_Description>
 	<WTH_FailureChance_ShootRandomDirection_Title>Failure chance: weapon fire</WTH_FailureChance_ShootRandomDirection_Title>	
-	<WTH_FailureChance_ShootRandomDirection_Description>Relative chance a mechanoid's main weapons fires in a random direction when hacking fails</WTH_FailureChance_ShootRandomDirection_Description>
+	<WTH_FailureChance_ShootRandomDirection_Description>Chance a mechanoid's main weapons fires in a random direction when hacking fails</WTH_FailureChance_ShootRandomDirection_Description>
 	<WTH_FailureChance_HealToStanding_Title>Failure chance: heal to standing</WTH_FailureChance_HealToStanding_Title>
-	<WTH_FailureChance_HealToStanding_Description>Relative chance a mechanoid is healed until it can stand when hacking fails</WTH_FailureChance_HealToStanding_Description>
+	<WTH_FailureChance_HealToStanding_Description>Chance a mechanoid is healed until it can stand when hacking fails</WTH_FailureChance_HealToStanding_Description>
 	<WTH_FailureChance_HackPoorly_Title>Failure chance: hacked poorly</WTH_FailureChance_HackPoorly_Title>
-	<WTH_FailureChance_HackPoorly_Description>Relative chance a mechanoid is hacked poorly when hacking fails</WTH_FailureChance_HackPoorly_Description>
+	<WTH_FailureChance_HackPoorly_Description>Chance a mechanoid is hacked poorly when hacking fails</WTH_FailureChance_HackPoorly_Description>
 	<WTH_MaintenanceDedayEnabled_Title>Maintenance decay enabled</WTH_MaintenanceDedayEnabled_Title>
 	<WTH_MaintenanceDedayEnabled_Description>Uncheck this if you don't want to regularly maintain your mechanoids. With this unchecked, the maintenance need bar will still be shown, but it won't decrease over time. There are still certain events that can deplete the maintenance bar of mechanoids.</WTH_MaintenanceDedayEnabled_Description>
 	
 	<!--BEGIN: added in v0.19.6 -->
+	<WTH_Letter_CausedIntendedMechanoidRaid_Label>Emergency signal successfully transmitted</WTH_Letter_CausedIntendedMechanoidRaid_Label>
+	<WTH_Letter_CausedIntendedMechanoidRaid_Description>Your hacker succeeded in intentionally letting a mechanoid transmit an emergency signal, but he damaged the mechanoid in the process. Was it a good idea though?</WTH_Letter_CausedIntendedMechanoidRaid_Description>
+	<WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label>Emergency signal too powerful</WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label>
+	<WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description>After your hacker fiddled around with the mechanism capable of emitting signals a deafening loud shriek emerged from the mechanoid. Due to the incompetence of your hacker to predict this outcome, the transmitted emergency signal was much more strong than anticipated. Prepare for the worst.</WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description>
 	<WTH_Expand>Expand</WTH_Expand>
 	<WTH_Collapse>Collapse</WTH_Collapse>
 	<WTH_SettingsGroup_Raids_Title>Raid settings</WTH_SettingsGroup_Raids_Title>
 	<WTH_SettingsGroup_Raids_Description>Configure the mechanoid usage chance for enemy raids.</WTH_SettingsGroup_Raids_Description>
 	<WTH_SettingsGroup_HackFailure_Title>Hacking failure settings (contains spoilers)</WTH_SettingsGroup_HackFailure_Title>
-	<WTH_SettingsGroup_HackFailure_Description>Configure the chances of different events that can occur when hacking fails.</WTH_SettingsGroup_HackFailure_Description>
+	<WTH_SettingsGroup_HackFailure_Description>Configure the chances of different events that can occur when hacking fails. The chances are normalised in case they don't add up to 100.</WTH_SettingsGroup_HackFailure_Description>
+	<WTH_FailureChance_IntRaidTooLarge_Title>Failure chance: cause big raid</WTH_FailureChance_IntRaidTooLarge_Title>
+	<WTH_FailureChance_IntRaidTooLarge_Description>The chance that a much too strong emergency signal is emitted when a pawn tries to deliberately trigger an emergency signal. Note: this event can not occur during regular hacking.</WTH_FailureChance_IntRaidTooLarge_Description>
 	<WTH_SettingsGroup_Balance_Title>Balance altering settings</WTH_SettingsGroup_Balance_Title>
 	<WTH_SettingsGroup_Balance_Description>These settings have a high impact on how balanced the mod is. You can tweak them to suit your needs, but it's recommended to first try the mod on default settings for the intended experience. If you think the defaults aren't reasonable, please report this on the workshop or forum page of this mod.</WTH_SettingsGroup_Balance_Description>	
 	<WTH_MaintenanceDedayModifier_Title>Maintenance decay modifier</WTH_MaintenanceDedayModifier_Title>

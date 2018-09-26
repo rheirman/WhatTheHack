@@ -59,6 +59,7 @@
     <Compile Include="Alerts\Alert_NotEnoughPlatforms.cs" />
     <Compile Include="Alerts\Alert_PowerLow.cs" />
     <Compile Include="Buildings\Building_BaseMechanoidPlatform.cs" />
+    <Compile Include="Buildings\Building_MechanoidBeacon.cs" />
     <Compile Include="Buildings\Building_PortableChargingPlatform.cs" />
     <Compile Include="Comps\CompMountable.cs" />
     <Compile Include="Comps\CompProperties_Mountable.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Needs\Need_Maintenance.cs" />
     <Compile Include="Recipes\Recipe_BeltModule.cs" />
     <Compile Include="Recipes\Recipe_Hacking.cs" />
+    <Compile Include="Recipes\Recipe_InduceEmergencySignal.cs" />
     <Compile Include="Recipes\Recipe_MountTurret.cs" />
     <Compile Include="Recipes\Recipe_ShutDown.cs" />
     <Compile Include="Record.cs" />

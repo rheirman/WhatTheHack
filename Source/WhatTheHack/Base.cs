@@ -37,6 +37,7 @@ namespace WhatTheHack
         internal static SettingHandle<int> failureChanceShootRandomDirection;
         internal static SettingHandle<int> failureChanceHealToStanding;
         internal static SettingHandle<int> failureChanceHackPoorly;
+        internal static SettingHandle<int> failureChanceIntRaidTooLarge;
 
         internal static SettingHandle<bool> settingsGroup_Balance;
         internal static SettingHandle<bool> maintenanceDecayEnabled;
@@ -113,6 +114,9 @@ namespace WhatTheHack
 
             failureChanceHackPoorly = Settings.GetHandle<int>("failureChanceHackPoorly", "WTH_FailureChance_HackPoorly_Title".Translate(), "WTH_FailureChance_HackPoorly_Description".Translate(), 10);
             failureChanceHackPoorly.VisibilityPredicate = delegate { return settingsGroup_HackFailure; };
+
+            failureChanceIntRaidTooLarge = Settings.GetHandle<int>("failureChanceIntRaidTooLarge", "WTH_FailureChance_IntRaidTooLarge_Title".Translate(), "WTH_FailureChance_IntRaidTooLarge_Description".Translate(), 20);
+            failureChanceIntRaidTooLarge.VisibilityPredicate = delegate { return settingsGroup_HackFailure; };
 
             //balance
             settingsGroup_Balance = Settings.GetHandle<bool>("settingsGroup_Balance", "WTH_SettingsGroup_Balance_Title".Translate(), "WTH_SettingsGroup_Balance_Description".Translate(), true);

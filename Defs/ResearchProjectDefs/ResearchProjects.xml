@@ -26,7 +26,7 @@
 	  <li>WTH_HackingBasics</li>
 	</prerequisites>
 	<researchViewX>1</researchViewX>
-	<researchViewY>2</researchViewY>
+	<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -40,7 +40,7 @@
 		  <li>WTH_HackingBasics</li>
 		</prerequisites>
 		<researchViewX>1</researchViewX>
-		<researchViewY>0</researchViewY>
+		<researchViewY>3</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -54,7 +54,7 @@
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
 		<researchViewX>2</researchViewX>
-		<researchViewY>0</researchViewY>
+		<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 	
 	
@@ -69,7 +69,7 @@
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
 		<researchViewX>2</researchViewX>
-		<researchViewY>1</researchViewY>
+		<researchViewY>2</researchViewY>
 	</ResearchProjectDef>
 		
 	<ResearchProjectDef>
@@ -83,7 +83,7 @@
 		  <li>WTH_RepairModule</li>
 		</prerequisites>
 		<researchViewX>3</researchViewX>
-		<researchViewY>1</researchViewY>
+		<researchViewY>2</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -97,7 +97,7 @@
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
 		<researchViewX>2</researchViewX>
-		<researchViewY>2</researchViewY>
+		<researchViewY>3</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -111,7 +111,7 @@
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
 		<researchViewX>2</researchViewX>
-		<researchViewY>3</researchViewY>
+		<researchViewY>4</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -125,7 +125,7 @@
 		  <li>WTH_TurretModule</li>
 		</prerequisites>
 		<researchViewX>3</researchViewX>
-		<researchViewY>2</researchViewY>
+		<researchViewY>3</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -139,7 +139,7 @@
 		  <li>WTH_TurretModule</li>
 		</prerequisites>
 		<researchViewX>3</researchViewX>
-		<researchViewY>3</researchViewY>
+		<researchViewY>4</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -153,7 +153,7 @@
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
 		<researchViewX>2</researchViewX>
-		<researchViewY>4</researchViewY>
+		<researchViewY>5</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -167,7 +167,7 @@
 		  <li>WTH_BatteryExpansionModule</li>
 		</prerequisites>
 		<researchViewX>3</researchViewX>
-		<researchViewY>4</researchViewY>
+		<researchViewY>5</researchViewY>
 	</ResearchProjectDef>
 	
 		
@@ -182,21 +182,35 @@
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
 		<researchViewX>2</researchViewX>
-		<researchViewY>5</researchViewY>
+		<researchViewY>6</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
-	<defName>WTH_HackingAdvanced</defName>
-	<label>AI implanting</label>
-	<tab>WTH_ResearchTab</tab>
-	<techLevel>Spacer</techLevel>
-	<description>Research the possibility to implant AI Persona Cores in hacked mechanoids, giving full control over them for combat purposes.</description>
-	<baseCost>2400</baseCost>
-	<prerequisites>
-	  <li>WTH_HackingRemoteControl</li>
-	</prerequisites>
-	<researchViewX>3</researchViewX>
-	<researchViewY>0</researchViewY>
+		<defName>WTH_HackingAdvanced</defName>
+		<label>AI implanting</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Research the possibility to implant AI Persona Cores in hacked mechanoids, giving full control over them for combat purposes.</description>
+		<baseCost>2400</baseCost>
+		<prerequisites>
+		  <li>WTH_HackingRemoteControl</li>
+		</prerequisites>
+		<researchViewX>3</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_InduceEmergencySignal</defName>
+		<label>Attracting mechanoids</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Makes it possible to let your colonists deliberately try to trigger a self-defence mechanism in a downed, non-hacked mechanoid. This mechanism then transmits an emergency signal to nearby mechanoids, attracting them. This is a reliable, but deadly way of getting some extra mechanoid parts.</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+		  <li>WTH_HackingBasics</li>
+		</prerequisites>
+		<researchViewX>1</researchViewX>
+		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 	
 
