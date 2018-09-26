@@ -111,6 +111,7 @@ namespace WhatTheHack.Recipes
             successChance *= combatPowerFactorCapped;
             if (!Rand.Chance(successChance))
             {
+                MoteMaker.ThrowText((hacker.DrawPos + hackee.DrawPos) / 2f, hacker.Map, "WTH_TextMote_OperationFailed".Translate(new object[] { successChance.ToStringPercent() }), 8f);
                 if (Rand.Chance(this.recipe.deathOnFailedSurgeryChance))
                 {
                     HealthUtility.GiveInjuriesOperationFailureCatastrophic(hackee, part);

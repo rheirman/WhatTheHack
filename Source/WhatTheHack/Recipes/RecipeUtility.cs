@@ -72,19 +72,19 @@ namespace WhatTheHack.Recipes
         }
         public static void CauseIntendedMechanoidRaid(Pawn pawn, BodyPartRecord part, RecipeDef recipe)
         {
-            CauseMechanoidRaid(pawn, part, recipe, 1.0f);
+            CauseMechanoidRaid(pawn, part, recipe, 0.9f);
             Find.LetterStack.ReceiveLetter("WTH_Letter_CausedIntendedMechanoidRaid_Label".Translate(), "WTH_Letter_CausedIntendedMechanoidRaid_Description".Translate(), LetterDefOf.PositiveEvent, pawn);
-            HealthUtility.GiveInjuriesOperationFailureCatastrophic(pawn, part); //Damage mech for balancing purposes. 
+            HealthUtility.GiveInjuriesOperationFailureRidiculous(pawn); //Damage mech for balancing purposes. 
 
         }
         public static void CauseIntendedMechanoidRaidTooLarge(Pawn pawn, BodyPartRecord part, RecipeDef recipe)
         {
-            CauseMechanoidRaid(pawn, part, recipe, 1.4f);
+            CauseMechanoidRaid(pawn, part, recipe, 1.35f);
             Find.LetterStack.ReceiveLetter("WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label".Translate(), "WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description".Translate(), LetterDefOf.ThreatBig, pawn);
-            HealthUtility.GiveInjuriesOperationFailureCatastrophic(pawn, part); //Damage mech for balancing purposes. 
+            HealthUtility.GiveInjuriesOperationFailureRidiculous(pawn); //Damage mech for balancing purposes. 
         }
 
-        public static void CauseMechanoidRaid(Pawn pawn, BodyPartRecord part, RecipeDef recipe, float points = 1.35f)
+        public static void CauseMechanoidRaid(Pawn pawn, BodyPartRecord part, RecipeDef recipe, float points = 1.25f)
         {
             IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, pawn.Map);
             IntVec3 spawnSpot;

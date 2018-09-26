@@ -58,4 +58,18 @@ Have fun! And if you really like my mods, please consider supporting me on ko-fi
 		</content>
 	</HugsLib.UpdateFeatureDef>
 	
+		<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+		<defName>WhatTheHack_0_19_6</defName>
+		<assemblyVersion>0.19.6</assemblyVersion>
+		<content>Hi there fellow hackers. We can all agree there should be more ways to get mechanoid parts actively. This update is a step in the right direction. The following is added:
+- New operation called "induce emergency signal" is added, its discription: The colonist deliberately tries to trigger a self-defence mechanism in the mechanoid that transmits an emergency signal to nearby mechanoids when activated, attracting them. This is a good way of getting some extra mechanoid parts, but also a good way to get your base blown up.
+- Make sure to research "mechanoid attraction" first. 
+- Many new settings to tweak the balance are added in the mod options, and the options are redesigned. 
+- When an operation fails, you'll see what the chance of succes was now. 
+- The drop rate of mechanoid parts is increased slightly for all difficulty levels. 
+
+The following update will continue in this direction, and even more ways of getting the precious mechanoid parts will be added in it. 
+		</content>
+	</HugsLib.UpdateFeatureDef>
+	
 </Defs>

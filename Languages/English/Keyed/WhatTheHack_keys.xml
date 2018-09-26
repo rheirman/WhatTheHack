@@ -30,6 +30,7 @@
 	<WTH_MaintenanceDedayEnabled_Description>Uncheck this if you don't want to regularly maintain your mechanoids. With this unchecked, the maintenance need bar will still be shown, but it won't decrease over time. There are still certain events that can deplete the maintenance bar of mechanoids.</WTH_MaintenanceDedayEnabled_Description>
 	
 	<!--BEGIN: added in v0.19.6 -->
+	<WTH_TextMote_OperationFailed>Operation failed (success chance: {0})</WTH_TextMote_OperationFailed>
 	<WTH_Letter_CausedIntendedMechanoidRaid_Label>Emergency signal successfully transmitted</WTH_Letter_CausedIntendedMechanoidRaid_Label>
 	<WTH_Letter_CausedIntendedMechanoidRaid_Description>Your hacker succeeded in intentionally letting a mechanoid transmit an emergency signal, but he damaged the mechanoid in the process. Was it a good idea though?</WTH_Letter_CausedIntendedMechanoidRaid_Description>
 	<WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label>Emergency signal too powerful</WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label>

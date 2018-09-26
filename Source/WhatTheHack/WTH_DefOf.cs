@@ -33,6 +33,7 @@ namespace WhatTheHack
         public static DamageDef WTH_RegeneratedPartDamage;
 
         public static RecipeDef WTH_HackMechanoid;
+        public static RecipeDef WTH_InduceEmergencySignal;
         public static RecipeDef WTH_Craft_VanometricModule;
 
         public static DutyDef WTH_SearchAndDestroy;

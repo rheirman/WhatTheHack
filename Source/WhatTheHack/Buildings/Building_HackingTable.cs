@@ -32,7 +32,7 @@ namespace WhatTheHack.Buildings
             {
                 return false;
             }
-            if(pawn.health.surgeryBills.FirstShouldDoNow == null || pawn.health.surgeryBills.FirstShouldDoNow.recipe != WTH_DefOf.WTH_HackMechanoid)
+            if(pawn.health.surgeryBills.FirstShouldDoNow == null || pawn.health.surgeryBills.FirstShouldDoNow.recipe != WTH_DefOf.WTH_HackMechanoid && pawn.health.surgeryBills.FirstShouldDoNow.recipe != WTH_DefOf.WTH_InduceEmergencySignal)
             {
                 pawn.health.surgeryBills.AddBill(bill);
                 bill.Part = bodyparts.First();
