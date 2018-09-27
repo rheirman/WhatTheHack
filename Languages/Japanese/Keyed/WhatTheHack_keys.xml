@@ -105,6 +105,9 @@
   <WTH_Reason_NotActivated>これは制御解除したメカノイドでは使用できません。</WTH_Reason_NotActivated>
   <WTH_Reason_NoDamage>修理を行うダメージはありません。</WTH_Reason_NoDamage>
 
+  <WTH_Alert_EmergencySignalTransmitted_Label>メカノイドの襲撃が来る</WTH_Alert_EmergencySignalTransmitted_Label>
+  <WTH_Alert_EmergencySignalTransmitted_Description>あなたのコロニー周辺のメカノイドたちは、すでに以前発信された緊急信号に反応しており、すぐに到着するでしょう。</WTH_Alert_EmergencySignalTransmitted_Description>
+
   <WTH_Alert_NotEnoughPlatforms_Label>メカノイドベッドの数が不足している</WTH_Alert_NotEnoughPlatforms_Label>
   <WTH_Alert_NotEnoughPlatforms_Description>あなたのコロニーには、整備基地にあるメカノイドベッドの数よりも多くのハック済メカノイドが居ます。\nより多くのメカノイドベッドを建設するようにしてください</WTH_Alert_NotEnoughPlatforms_Description>
   <WTH_Alert_Power_Low_Label>メカノイドの残存電気量が低下</WTH_Alert_Power_Low_Label>
@@ -133,6 +136,7 @@
   <WTH_Warning_DaysOfFuel>このキャラバン隊には、メカノイドに電力を供給するのに{0}日分の燃料しか用意していません。メカノイドはすぐに電力を失って行動不能になるかもしれません。</WTH_Warning_DaysOfFuel>
   <WTH_Message_CaravanOutOfFuel>{0}の燃料を使い果たしました。</WTH_Message_CaravanOutOfFuel>
   <WTH_Message_CannotDrop>この装備はポーンに取り付けられているため、捨てることができません</WTH_Message_CannotDrop>
+  <WTH_Message_CannotDoEmergencySignal>あなたのコロニー周辺のメカノイドたちは、すでに以前発信された緊急信号に反応しており、既に向かっています。従って、この操作は効果は無いので、加工命令は取り消されました。</WTH_Message_CannotDoEmergencySignal>
 
   <WTH_Mount>{0}を搭載</WTH_Mount>
   <WTH_Mount_Jobstring>{0}を搭載中</WTH_Mount_Jobstring>
