@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
   <WTH_HackingBasics.label>基本的な メカノイドハック</WTH_HackingBasics.label>
@@ -42,6 +42,9 @@
 
   <WTH_HackingAdvanced.label>AI人格コア搭載</WTH_HackingAdvanced.label>
   <WTH_HackingAdvanced.description>AI人格コアを、ハックしたメカノイドに埋め込むことを可能にする研究を行って、戦闘用としてAI人格コアを完全に制御します。</WTH_HackingAdvanced.description>
+
+  <WTH_InduceEmergencySignal.label>メカノイドの誘導</WTH_InduceEmergencySignal.label>
+  <WTH_InduceEmergencySignal.description>あなたの入植者が意図的に、倒れた状態(シャットダウンされてない)で、未ハッキングなメカノイドの自己防衛システムを利用して緊急信号を出させてメカノイドの襲撃を誘発することを可能にします。この自己防衛システムは、付近にいるメカノイドに対して緊急信号を送信して、彼らを呼び寄せます。これは、在庫のメカノイドパーツを入手できる確実な方法ですが、同時に危険な手段です。</WTH_InduceEmergencySignal.description>
 
 
 </LanguageData>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
   <WTH_Scrap_AdvancedMechanoidChip.label>先進メカノイドチップを解体</WTH_Scrap_AdvancedMechanoidChip.label>
@@ -36,6 +36,10 @@
   <WTH_HackMechanoid.label>敵味方識別装置をハックする</WTH_HackMechanoid.label>
   <WTH_HackMechanoid.description>メカノイドの敵味方識別システムをハッキングして、ハック済のメカノイドを起動した時に「味方」であるあなたのコロニーではなく、あなたの「敵」を攻撃するようにします。</WTH_HackMechanoid.description>
   <WTH_HackMechanoid.jobString>メカノイドをハック中</WTH_HackMechanoid.jobString>
+
+  <WTH_InduceEmergencySignal.label>緊急信号を出して誘引する</WTH_InduceEmergencySignal.label>
+  <WTH_InduceEmergencySignal.description>入植者たちは、メカノイドの内部に存在する自己防衛機構を意図的に動作させて、付近に存在するメカノイドに対して緊急信号を送信させて、メカノイドたちを誘引します。これは、在庫に十分なメカノイドパーツを手に入れる良い方法ですが、同時にあなたのコロニーを破壊する最良の方法でもあります。この操作は非常に難しく、正常に実行されたとしても、対象のメカノイドは修理不可能なレベルでダメージを受けます。</WTH_InduceEmergencySignal.description>
+  <WTH_InduceEmergencySignal.jobString>メカノイドをハック中</WTH_InduceEmergencySignal.jobString>
 
   <WTH_ImplantAI.label>AI人格コアを搭載</WTH_ImplantAI.label>
   <WTH_ImplantAI.description>AI人格コアを、ハックしたメカノイドに埋め込み、戦闘用の完全な制御を可能にします。</WTH_ImplantAI.description>

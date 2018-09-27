@@ -17,17 +17,47 @@
   <WTH_Letter_HackedPoorlyEvent_Label>緊急整備が必要</WTH_Letter_HackedPoorlyEvent_Label>
   <WTH_Letter_HackedPoorlyEvent_Description>不完全にハッキングされたメカノイドの頭で何かがはじけました。\n緊急整備が必要です。</WTH_Letter_HackedPoorlyEvent_Description>
   <WTH_FailureChance_Nothing_Title>失敗時：何も起きない確率(%)</WTH_FailureChance_Nothing_Title>
-  <WTH_FailureChance_Nothing_Description>ハッキングが失敗した際、何も発生しない相対的な確率\n</WTH_FailureChance_Nothing_Description>
+  <WTH_FailureChance_Nothing_Description>ハッキングが失敗しても、何も発生しない確率\n</WTH_FailureChance_Nothing_Description>
   <WTH_FailureChance_CauseRaid_Title>失敗時：襲撃発生率(%)</WTH_FailureChance_CauseRaid_Title>
-  <WTH_FailureChance_CauseRaid_Description>ハッキングが失敗した際、襲撃が発生する相対的な確率</WTH_FailureChance_CauseRaid_Description>
+  <WTH_FailureChance_CauseRaid_Description>ハッキングが失敗した場合、襲撃が発生する確率</WTH_FailureChance_CauseRaid_Description>
   <WTH_FailureChance_ShootRandomDirection_Title>失敗時：武器稼働率(%)</WTH_FailureChance_ShootRandomDirection_Title>
   <WTH_FailureChance_ShootRandomDirection_Description>ハッキングが失敗した際、メカノイドの主力武器がランダムな方向に発射される相対的な確率</WTH_FailureChance_ShootRandomDirection_Description>
   <WTH_FailureChance_HealToStanding_Title>失敗時：再起動率(%)</WTH_FailureChance_HealToStanding_Title>
-  <WTH_FailureChance_HealToStanding_Description>ハッキングが失敗した際、メカノイドの機能が修復されて再起動する相対的な確率</WTH_FailureChance_HealToStanding_Description>
+  <WTH_FailureChance_HealToStanding_Description>ハッキングが失敗した場合、メカノイドの機能が修復されて再起動する確率</WTH_FailureChance_HealToStanding_Description>
   <WTH_FailureChance_HackPoorly_Title>失敗時：不完全ハック率(%)</WTH_FailureChance_HackPoorly_Title>
-  <WTH_FailureChance_HackPoorly_Description>ハッキングが失敗した際、メカノイドが不完全なハッキング状態になる相対的な確率</WTH_FailureChance_HackPoorly_Description>
+  <WTH_FailureChance_HackPoorly_Description>ハッキングが失敗した場合、メカノイドが不完全なハッキング状態になる確率</WTH_FailureChance_HackPoorly_Description>
   <WTH_MaintenanceDedayEnabled_Title>時間経過による整備の消耗を有効にする</WTH_MaintenanceDedayEnabled_Title>
   <WTH_MaintenanceDedayEnabled_Description>定期的にメカノイドを整備したくない場合、これをオフにします。\nこのチェックを外すと、整備の必要性が表示されますが、時間の経過により減少することは無くなります。\nただし、メカノイドの整備状態を枯渇させる可能性のある事件は依然として存在します。</WTH_MaintenanceDedayEnabled_Description>
+
+  <!--BEGIN: added in v0.19.6 -->
+  <WTH_TextMote_OperationFailed>ハック操作に失敗しました（成功確率：{0}）</WTH_TextMote_OperationFailed>
+  <WTH_Letter_CausedIntendedMechanoidRaid_Label>緊急信号が正常に発信されました</WTH_Letter_CausedIntendedMechanoidRaid_Label>
+  <WTH_Letter_CausedIntendedMechanoidRaid_Description>あなたのハッカーは、意図的にメカノイドに緊急信号を送信させることに成功しましたが、その操作過程でメカノイドは故障しました。本当にそれは良い考えだったのだろうか？</WTH_Letter_CausedIntendedMechanoidRaid_Description>
+  <WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label>緊急信号が強力すぎた</WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label>
+  <WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description>あなたのハッカーが緊急信号を発する自己防衛システムで手間取った結果、巨大で騒々しい叫び声がメカノイドから発せられました。この事態を予測できなかったハッカーの無能さが原因で、送信された緊急信号は予期された規模よりもはるかに強力で広範囲に届くものとなりました。\n最悪な事態に備えるべきです。</WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description>
+  <WTH_Expand>開く</WTH_Expand>
+  <WTH_Collapse>閉じる</WTH_Collapse>
+  <WTH_SettingsGroup_Raids_Title>襲撃の設定</WTH_SettingsGroup_Raids_Title>
+  <WTH_SettingsGroup_Raids_Description>襲撃時に敵によるメカノイドの使用率を設定します。</WTH_SettingsGroup_Raids_Description>
+  <WTH_SettingsGroup_HackFailure_Title>ハッキング失敗時の設定（ネタバレ含）</WTH_SettingsGroup_HackFailure_Title>
+  <WTH_SettingsGroup_HackFailure_Description>ハッキングが失敗したときに発生するさまざまなイベントの確率を設定します。\n確率の合計が100%にならない場合は自動的に100%に調整されます。</WTH_SettingsGroup_HackFailure_Description>
+  <WTH_FailureChance_IntRaidTooLarge_Title>失敗時の設定：大規模襲撃の発生率</WTH_FailureChance_IntRaidTooLarge_Title>
+  <WTH_FailureChance_IntRaidTooLarge_Description>ポーンが意図的に緊急信号を発信しようとして、非常に強い緊急信号が発せられる可能性です。\n注意：このイベントは通常のハッキング失敗では発生しません。</WTH_FailureChance_IntRaidTooLarge_Description>
+  <WTH_SettingsGroup_Balance_Title>バランス変更の設定</WTH_SettingsGroup_Balance_Title>
+  <WTH_SettingsGroup_Balance_Description>これらの設定は、Modの影響バランスに大きな影響を与えます。\nあなたの必要性に合わせて調整することが可能ですが、最初はこちらの意図したデフォルト設定で、Modを実際に体験してから試してみることをお勧めします。\nもしデフォルトが妥当ではないと感じた場合は、このModのワークショップページまたはフォーラムのModページで報告してください。</WTH_SettingsGroup_Balance_Description>
+  <WTH_MaintenanceDedayModifier_Title>整備の減衰率設定</WTH_MaintenanceDedayModifier_Title>
+  <WTH_MaintenanceDedayModifier_Description>このオプションを使用して整備状態の減衰率を変更します。\n例：これを0.5に設定すると整備の減少率が半分に低下します。</WTH_MaintenanceDedayModifier_Description>
+  <WTH_RepairConsumptionModifier_Title>修理パーツ消費率設定</WTH_RepairConsumptionModifier_Title>
+  <WTH_RepairConsumptionModifier_Description>メカノイドを修復するために必要なメカノイドパーツの量を変更します（メカノイドベッドまたは拡張モジュール(修理モジュール)を使用した場合）。\n例：これを0.5に設定すると、1つのメカノイドパーツで修復できるダメージが2倍になります。</WTH_RepairConsumptionModifier_Description>
+  <WTH_PartDropRateModifier_Title>パーツ入手率設定</WTH_PartDropRateModifier_Title>
+  <WTH_PartDropRateModifier_Description>メカノイドパーツのドロップ率を変更します。\n例：これを2.0に設定すると、メカノイドを分解したときに2倍のメカノイドパーツを入手できます。</WTH_PartDropRateModifier_Description>
+  <WTH_ChipDropRateModifier_Title>チップ入手率設定</WTH_ChipDropRateModifier_Title>
+  <WTH_ChipDropRateModifier_Description>先進メカノイドチップのドロップ率を変更します。\n例：これを2.0に設定すると、メカノイドを分解したときに2倍の先進メカノイドチップを入手できます。</WTH_ChipDropRateModifier_Description>
+  <WTH_PowerFallModifier_Title>電力の消費率設定</WTH_PowerFallModifier_Title>
+  <WTH_PowerFallModifier_Description>メカノイドがどのくらい早くバッテリーの電気を消費するかを変更します。\n例：これを0.5に設定すると、電力消費が半分に低下します。</WTH_PowerFallModifier_Description>
+  <WTH_PowerChargeModifier_Title>電力の充電率設定</WTH_PowerChargeModifier_Title>
+  <WTH_PowerChargeModifier_Description>メカノイドがバッテリーをどれくらい早く充電できるかを変更します。\n例：これを2.0に設定すると、充電にかかる時間が半分になります。</WTH_PowerChargeModifier_Description>
+  <!--END: added in v0.19.6 -->
 
   <WTH_HackedMechChance_Title>敵のメカノイド使用率(%)</WTH_HackedMechChance_Title>
   <WTH_HackedMechChance_Description>Modオプションで許可された派閥が、あなたのコロニーを襲撃する際にハックしたメカノイドを連れてくる可能性があります。</WTH_HackedMechChance_Description>
