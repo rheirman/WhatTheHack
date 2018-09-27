@@ -138,7 +138,6 @@ namespace WhatTheHack.Recipes
 
         public static void HealToStanding(Pawn pawn, BodyPartRecord part, RecipeDef recipe)
         {
-            Log.Message("called heal to standing");
             bool shouldStop = false;
             float extraHealth = 100f; //TODO: no magic number;
             extraHealth *= pawn.HealthScale;
