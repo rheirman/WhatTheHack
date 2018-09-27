@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
   <WTH_HackingBasics.label>Grundlagen Mechanoide Hacken</WTH_HackingBasics.label>
@@ -42,6 +42,9 @@
 
   <WTH_HackingAdvanced.label>KI Implantate</WTH_HackingAdvanced.label>
   <WTH_HackingAdvanced.description>Erforsche die Möglichkeit KI-Kerne in gehackte Mechanoide einzubauen, um volle Kontrolle über Kampfverhalten zu ermöglichen.</WTH_HackingAdvanced.description>
+
+  <WTH_InduceEmergencySignal.label>Mechanoide anlocken</WTH_InduceEmergencySignal.label>
+  <WTH_InduceEmergencySignal.description>Ermöglicht es den Kolonisten einen Selbstverteidigungs-Mechanismus bei bewusstlosen, nicht gehackten Mechanoiden auszulösen. Dieser Mechanismus sendet ein Notsignal an in der Nähe befindliche Mechanoiden, das diese anlockt. Das Anlocken von Mechanoiden ist eine zuverlässige, aber gefährliche Methode, um Mechanoiden-Teile zu bekommen.</WTH_InduceEmergencySignal.description>
 
 
 </LanguageData>

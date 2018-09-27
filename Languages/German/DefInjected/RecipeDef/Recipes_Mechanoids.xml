@@ -37,9 +37,13 @@
   <WTH_HackMechanoid.description>Hack die Zielvorrichtung eines Mechanoiden, damit er auf die Gegner schießt, anstatt auf die Kolonisten.</WTH_HackMechanoid.description>
   <WTH_HackMechanoid.jobString>Hackt Mechanoid</WTH_HackMechanoid.jobString>
 
+  <WTH_InduceEmergencySignal.label>Ein Notsignal verursachen</WTH_InduceEmergencySignal.label>
+  <WTH_InduceEmergencySignal.description>Der Kolonist versucht einen Selbstverdeidigungs-Mechanismus auszulösen, der in der Nähe befindliche Mechanoiden signalisiert und somit anlockt. Eine gute Möglichkeit um Mechanoiden-Teile zu bekommen, jedoch auch um die Kolonie zu zerstören. Die Operation ist erstaunlich schwierig und selbst erfolgreiche Operationen lassen einen irreparablen Mechanoiden zurück.</WTH_InduceEmergencySignal.description>
+  <WTH_InduceEmergencySignal.jobString>Hacking mechanoid</WTH_InduceEmergencySignal.jobString>
+
   <WTH_ImplantAI.label>KI einbauen</WTH_ImplantAI.label>
   <WTH_ImplantAI.description>Verbaut einen KI-Kern in den Mechanoiden, um volle Kontrolle für Kampfsituationen zu erhalten.</WTH_ImplantAI.description>
-  <WTH_ImplantAI.jobString>Hackt Machanoid</WTH_ImplantAI.jobString>
+  <WTH_ImplantAI.jobString>Hackt Mechanoid</WTH_ImplantAI.jobString>
 
 
   <!-- <RecipeDef>

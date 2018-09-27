@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Hacking.label>Mechanoide hacken</WTH_Hacking.label>
+  <WTH_Hacking.helpText>Um einen Mechanoiden zu hacken, gehe in den Körper Tab eines bewusstlosen Mechanoiden und wähle im Abschnitt Modifikationen "Mechanoiden-Zielvorrichtung hacken" aus. Ein Transport-Kolonist bringt diesen dann an eine Hacking-Anlage (wenn eine vorhanden ist!) und ein Kolonist, dem Hacken zugewiesen wurde beginnt den Mechanoiden zu hacken. Vergiss nicht eine Mechanoiden-Station zu bauen, damit der Mechanoid mit Energie versorgt wird, und repariert werden kann. Vorsicht, Hacken ist gefährlich!</WTH_Hacking.helpText>
+
+  <WTH_Platform.label>Mechanoiden-Station</WTH_Platform.label>
+  <WTH_Platform.helpText>Eine Mechanoiden-Station ist ein Ort an dem Mechanoiden beladen und repariert werden. Die Station sollte mit Mechanoiden-Teilen gefüllt und mit Energie versorgt werden. So können die Mechaniten in den Mechanoiden mit Energie versorgt werden und die Mechanoiden mit den bereitgestellten Teilen reparieren.</WTH_Platform.helpText>
+
+  <WTH_Modification.label>Mechanoide modifizieren</WTH_Modification.label>
+  <WTH_Modification.helpText>Um Mechanoide zu verbessern und zu modifizieren, kann man Upgrade-Module an der Mechanoiden-Werkbank herstellen. Um diese Module einzubauen, gehe im Körper Tab des Mechanoiden zum Abschnitt Modifikationen und wähle die passende Modifikation aus.</WTH_Modification.helpText>
+
+  <WTH_Caravanning.label>Karawanen mit Mechanoiden</WTH_Caravanning.label>
+  <WTH_Caravanning.helpText>Mechanoide können auch in Karawanen benutzt werden. Jedoch müssen sie, wie immer, mit Energie versorgt und gewartet werden. Dazu benötigt man tragbare Mechanoid-Stationen für jeden Mechanoiden in der Karawane und genügend Treibstoff, um ständige Energieversorgung zu gewährleisten. Wenn die Mechanoiden während der Reise gewartet werden sollen, benötigt man außerdem Mechanoiden-Teile und einen Kolonisten, der Hacken kann. Mechanoide mit Reparatur-Modulen können sich außerdem selbst reparieren und Mechanoide mit einem Reparatur-Arm können andere Mechanoide reparieren. Wenn die Mechanoide nicht repariert werden sollen, setze die medizinische Versorgung im Körper Tab auf "keine".</WTH_Caravanning.helpText>
+
+  <WTH_Maintenance.label>Mechanoide warten</WTH_Maintenance.label>
+  <WTH_Maintenance.helpText>Hacken ist ein delikates Geschäft. Deshalb benötigen gehackte Mechanoide regelmäßige Wartung, für die Mechanoiden-Teile benötigt werden. Kolonisten, denen Hacken zugewiesen wurde warten automatisch Mechanoide, solange genügend Teile zur Verfügung stehen. Schlecht gewartete Mechanoide funktionieren nicht so gut, wie ordentlich gewartete. Die Wartung zu vernachlässigen führt zu einem aussetzen des Hacks, was katastrophale Folgen haben kann.</WTH_Maintenance.helpText>
+
+  <WTH_Power.label>Mechanoide mit Energie versorgen</WTH_Power.label>
+  <WTH_Power.helpText>Anders als die "wilden" Mechanoiden können gehackte nicht ihren eingebauten Reaktor benutzen, da sonst der Mechanoiden-Schwarm auf sie aufmerksam wird. Deshalb verlassen sie sich auf ihre Ersatzbatterien, die an einer Mechanoiden-Station aufgeladen werden können. Tragbare Stationen können benutzt werden um Mechanoide auf Reisen mit Energie zu versorgen. Es gibt außerdem die Möglichkeit an der Mechanoiden-Werkbank die Kapazität der Batterien zu verbessern, oder eine alternative Energieversorgung zu installieren.</WTH_Power.helpText>
+
+
+  <!-- Added in v0.19.6 -->
+
+  <WTH_Concept_MechanoidParts.label>Mehr Mechanoiden-Teile bekommen</WTH_Concept_MechanoidParts.label>
+  <WTH_Concept_MechanoidParts.helpText>Es ist sehr wichtig, immer genügend Mechanoiden-Teile für Reparaturen, und viel wichtiger: Wartung, gelagert zu haben. Mechanoide zu zerlegen ist die einfachste Art, um an Teile zu kommen. Sie können jedoch auch von einem Exotischen Güter-Händler gekauft werden. Eine Möglichkeit, um an mehr Mechanoide zum zerlegen zu kommen, ist die "Notsignal auslösen" Operation an einem bewusstlosen, nicht gehackten Mechanoiden durchzuführen. Dazu wird die Forschung "Mechanoide anlocken" benötigt.</WTH_Concept_MechanoidParts.helpText>
+
+
+</LanguageData>
