@@ -74,7 +74,7 @@ namespace WhatTheHack.Recipes
         }
         public static void CauseIntendedMechanoidRaid(Pawn pawn, BodyPartRecord part, RecipeDef recipe)
         {
-            CauseMechanoidRaid(pawn, part, recipe, 0.9f);
+            CauseMechanoidRaid(pawn, part, recipe, 0.9f, 2000, 60000);
             Find.LetterStack.ReceiveLetter("WTH_Letter_CausedIntendedMechanoidRaid_Label".Translate(), "WTH_Letter_CausedIntendedMechanoidRaid_Description".Translate(), LetterDefOf.PositiveEvent, pawn);
             HealthUtility.GiveInjuriesOperationFailureCatastrophic(pawn, part); //Kill mech for balancing purposes. 
             if (!pawn.Dead)
@@ -84,7 +84,7 @@ namespace WhatTheHack.Recipes
         }
         public static void CauseIntendedMechanoidRaidTooLarge(Pawn pawn, BodyPartRecord part, RecipeDef recipe)
         {
-            CauseMechanoidRaid(pawn, part, recipe, 1.35f);
+            CauseMechanoidRaid(pawn, part, recipe, 1.35f, 2000, 10000);
             Find.LetterStack.ReceiveLetter("WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label".Translate(), "WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description".Translate(), LetterDefOf.ThreatBig, pawn);
             HealthUtility.GiveInjuriesOperationFailureCatastrophic(pawn, part); //Kill mech for balancing purposes. 
             SoundDefOf.PsychicPulseGlobal.PlayOneShotOnCamera(pawn.Map);
@@ -94,7 +94,7 @@ namespace WhatTheHack.Recipes
             }
         }
 
-        public static void CauseMechanoidRaid(Pawn pawn, BodyPartRecord part, RecipeDef recipe, float points = 1.25f)
+        public static void CauseMechanoidRaid(Pawn pawn, BodyPartRecord part, RecipeDef recipe, float points = 1.25f, int minTicks = 2000, int maxTicks = 4000)
         {
             IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, pawn.Map);
             IntVec3 spawnSpot;
@@ -103,6 +103,7 @@ namespace WhatTheHack.Recipes
                 Nothing(pawn, null, recipe);
                 return;
             }
+
             incidentParms.forced = true;
             incidentParms.faction = Faction.OfMechanoids;
             incidentParms.raidStrategy = RaidStrategyDefOf.ImmediateAttack;
@@ -110,9 +111,12 @@ namespace WhatTheHack.Recipes
             incidentParms.spawnCenter = spawnSpot;
             incidentParms.points *= points;
 
-            QueuedIncident qi = new QueuedIncident(new FiringIncident(IncidentDefOf.RaidEnemy, null, incidentParms), Find.TickManager.TicksGame + new IntRange(1000, 2500).RandomInRange);
+            int delay = new IntRange(minTicks, maxTicks).RandomInRange;
+            QueuedIncident qi = new QueuedIncident(new FiringIncident(IncidentDefOf.RaidEnemy, null, incidentParms), Find.TickManager.TicksGame + delay);
             Find.Storyteller.incidentQueue.Add(qi);
-
+            
+            Base.Instance.GetExtendedDataStorage().lastEmergencySignalTick = Find.TickManager.TicksGame;
+            Base.Instance.GetExtendedDataStorage().lastEmergencySignalDelay = delay;
         }
 
 

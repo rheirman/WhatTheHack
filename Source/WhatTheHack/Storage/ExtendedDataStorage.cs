@@ -16,6 +16,8 @@ namespace WhatTheHack.Storage
 
         private List<ExtendedPawnData> _extendedPawnDataWorkingList;
 
+        internal int lastEmergencySignalTick = 0;
+        internal int lastEmergencySignalDelay = 0;
 
         public override void ExposeData()
         {
@@ -24,6 +26,8 @@ namespace WhatTheHack.Storage
                 ref _store, "store",
                 LookMode.Value, LookMode.Deep,
                 ref _idWorkingList, ref _extendedPawnDataWorkingList);
+            Scribe_Values.Look(ref lastEmergencySignalTick, "lastEmergencySignalTick");
+            Scribe_Values.Look(ref lastEmergencySignalDelay, "lastEmergencySignalTick");
         }
 
         // Return the associate extended data for a given Pawn, creating a new association

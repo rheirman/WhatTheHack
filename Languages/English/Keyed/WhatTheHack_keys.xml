@@ -52,12 +52,14 @@
 	<WTH_PartDropRateModifier_Title>Part drop rate modifier</WTH_PartDropRateModifier_Title>
 	<WTH_PartDropRateModifier_Description>Modify the drop rate of mechanoid parts. Example: setting this to 2.0 would result in twice the amount of parts being dropped when a mechanoid is disassembled.</WTH_PartDropRateModifier_Description>
 	<WTH_ChipDropRateModifier_Title>Chip drop rate modifier</WTH_ChipDropRateModifier_Title>
-	<WTH_ChipDropRateModifier_Description></WTH_ChipDropRateModifier_Description>
+	<WTH_ChipDropRateModifier_Description>Modify the drop rate of advanced mechanoid chips. Example: setting this to 2.0 would result in twice the amount of chips being dropped when a mechanoid is disassembled.</WTH_ChipDropRateModifier_Description>
 	<WTH_PowerFallModifier_Title>Power fall modifier</WTH_PowerFallModifier_Title>
 	<WTH_PowerFallModifier_Description>Modify how quickly mechanoids drain power from their batteries. Example: setting this to 0.5 would result in the power dropping twice as slowly.</WTH_PowerFallModifier_Description>
 	<WTH_PowerChargeModifier_Title>Power charge modifier </WTH_PowerChargeModifier_Title>
 	<WTH_PowerChargeModifier_Description>Modify how quickly mechanoids charge their batteries. Example: setting this to 2.0 would result in the power charging twice as fast.</WTH_PowerChargeModifier_Description>
 	<!--END: added in v0.19.6 -->
+	
+	
 	
 	<WTH_HackedMechChance_Title>Chance enemies use hacked mechs (%)</WTH_HackedMechChance_Title>
 	<WTH_HackedMechChance_Description>The chance that factions allowed in the mod options use hacked mechanoids when raiding your base.</WTH_HackedMechChance_Description>
@@ -105,6 +107,9 @@
 	<WTH_Reason_NotActivated>This cannot be used with a deactivated mechanoid.</WTH_Reason_NotActivated>
 	<WTH_Reason_NoDamage>No damage to be repaired.</WTH_Reason_NoDamage>
 	
+	<WTH_Alert_EmergencySignalTransmitted_Label>Mechanoid raid imminent</WTH_Alert_EmergencySignalTransmitted_Label>
+	<WTH_Alert_EmergencySignalTransmitted_Description>Mechanoids near your base are currently responding to the emergency signal that was transmitted and will arrive at your base soon.</WTH_Alert_EmergencySignalTransmitted_Description>
+	
 	<WTH_Alert_NotEnoughPlatforms_Label>Not enough mechanoid platforms</WTH_Alert_NotEnoughPlatforms_Label>
 	<WTH_Alert_NotEnoughPlatforms_Description>You have more hacked mechanoids than mechanoid platforms in your main base. Make sure to make more mechanoid platforms</WTH_Alert_NotEnoughPlatforms_Description>
 	<WTH_Alert_Power_Low_Label>Mechanoids low on power</WTH_Alert_Power_Low_Label>
@@ -133,6 +138,7 @@
 	<WTH_Warning_DaysOfFuel>You caravan has only {0} days worth of fuel for powering your mechanoids, and your mechanoids might run out of power quickly.</WTH_Warning_DaysOfFuel>
 	<WTH_Message_CaravanOutOfFuel>{0} has run out of fuel.</WTH_Message_CaravanOutOfFuel>
 	<WTH_Message_CannotDrop>This equipment is attached to the pawn, therefore you cannot drop it</WTH_Message_CannotDrop>
+	<WTH_Message_CannotDoEmergencySignal>The mechanoids near your base are already reacting to an earlier emergency signal and are on their way to your base. The operation therefore has no effect and the bill is cancelled.</WTH_Message_CannotDoEmergencySignal>
 	
 	<WTH_Mount>Mount {0}</WTH_Mount>
 	<WTH_Mount_Jobstring>Mounting {0}</WTH_Mount_Jobstring>

@@ -109,6 +109,15 @@ namespace WhatTheHack.Recipes
             System.Random r = new System.Random(DateTime.Now.Millisecond);
             float combatPowerFactorCapped = CalcCombatPowerFactorCapped(hackee);
             successChance *= combatPowerFactorCapped;
+            if(recipe.GetModExtension<DefModExtension_Recipe> () is DefModExtension_Recipe ext && ext.surgerySuccessCap > 0)
+            {
+                if(successChance > 1.0f)
+                {
+                    successChance = 1.0f; 
+                }
+                successChance *= ext.surgerySuccessCap;
+                Log.Message("succesChance was: " + successChance);
+            }
             if (!Rand.Chance(successChance))
             {
                 MoteMaker.ThrowText((hacker.DrawPos + hackee.DrawPos) / 2f, hacker.Map, "WTH_TextMote_OperationFailed".Translate(new object[] { successChance.ToStringPercent() }), 8f);

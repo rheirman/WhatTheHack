@@ -47,7 +47,7 @@ namespace WhatTheHack
         internal static SettingHandle<float> chipDropRateModifier;
         internal static SettingHandle<float> powerFallModifier;
         internal static SettingHandle<float> powerChargeModifier;
-
+        
 
 
         internal static List<ThingDef> allMechs;
@@ -115,7 +115,7 @@ namespace WhatTheHack
             failureChanceHackPoorly = Settings.GetHandle<int>("failureChanceHackPoorly", "WTH_FailureChance_HackPoorly_Title".Translate(), "WTH_FailureChance_HackPoorly_Description".Translate(), 10);
             failureChanceHackPoorly.VisibilityPredicate = delegate { return settingsGroup_HackFailure; };
 
-            failureChanceIntRaidTooLarge = Settings.GetHandle<int>("failureChanceIntRaidTooLarge", "WTH_FailureChance_IntRaidTooLarge_Title".Translate(), "WTH_FailureChance_IntRaidTooLarge_Description".Translate(), 20);
+            failureChanceIntRaidTooLarge = Settings.GetHandle<int>("failureChanceIntRaidTooLarge", "WTH_FailureChance_IntRaidTooLarge_Title".Translate(), "WTH_FailureChance_IntRaidTooLarge_Description".Translate(), 10);
             failureChanceIntRaidTooLarge.VisibilityPredicate = delegate { return settingsGroup_HackFailure; };
 
             //balance
@@ -248,6 +248,17 @@ namespace WhatTheHack
             return factionRestrictionsDict;
         }
 
+        public bool CanDoEmergencySignal()
+        {
+            if(GetExtendedDataStorage() != null)
+            {
+                return Find.TickManager.TicksGame > 0 && Find.TickManager.TicksGame > GetExtendedDataStorage().lastEmergencySignalTick + GetExtendedDataStorage().lastEmergencySignalDelay;
+            }
+            else
+            {
+                return true; 
+            }
+        }
 
         public override void WorldLoaded()
         {

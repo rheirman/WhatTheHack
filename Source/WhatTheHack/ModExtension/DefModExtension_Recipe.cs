@@ -8,6 +8,7 @@ namespace WhatTheHack
 {
     public class DefModExtension_Recipe : DefModExtension
     {
+        public float surgerySuccessCap = -1f;
         public float surgerySuccessChanceFactor = -1f;
         public float deathOnFailedSurgeryChance = -1f;
         public bool requireBed;
