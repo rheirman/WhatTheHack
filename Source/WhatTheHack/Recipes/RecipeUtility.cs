@@ -7,6 +7,7 @@ using System.Text;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
+using Verse.Sound;
 using WhatTheHack.Duties;
 
 namespace WhatTheHack.Recipes
@@ -68,6 +69,7 @@ namespace WhatTheHack.Recipes
         public static void CauseMechanoidRaidByHackingFailure(Pawn pawn, BodyPartRecord part, RecipeDef recipe)
         {
             CauseMechanoidRaid(pawn, part, recipe);
+            SoundDefOf.PsychicPulseGlobal.PlayOneShotOnCamera(pawn.Map);
             Find.LetterStack.ReceiveLetter("WTH_Letter_CausedMechanoidRaid_Label".Translate(), "WTH_Letter_CausedMechanoidRaid_Description".Translate(), LetterDefOf.ThreatBig, pawn);
         }
         public static void CauseIntendedMechanoidRaid(Pawn pawn, BodyPartRecord part, RecipeDef recipe)
@@ -85,6 +87,7 @@ namespace WhatTheHack.Recipes
             CauseMechanoidRaid(pawn, part, recipe, 1.35f);
             Find.LetterStack.ReceiveLetter("WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label".Translate(), "WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description".Translate(), LetterDefOf.ThreatBig, pawn);
             HealthUtility.GiveInjuriesOperationFailureCatastrophic(pawn, part); //Kill mech for balancing purposes. 
+            SoundDefOf.PsychicPulseGlobal.PlayOneShotOnCamera(pawn.Map);
             if (!pawn.Dead)
             {
                 pawn.Kill(null, null);
