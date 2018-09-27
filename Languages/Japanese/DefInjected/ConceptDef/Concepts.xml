@@ -1,23 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LanguageData>
-
-  <WTH_Hacking.label>メカノイドハック</WTH_Hacking.label>
-  <WTH_Hacking.helpText>メカノイドをハックするには、機能停止したメカノイドの「健康」タブから「改造手術」セクションに移動して、「敵味方識別装置をハックする」を選択します。運搬を指定された入植者は、機能停止したメカノイドを「ハッキング施設」に運び入れます（その設備があることを確認してください！）、ハッキングの仕事を割り当てられた入植者によって、機能停止したメカノイドに対してハッキングを開始します。メカノイドに電力を与えて修理できるように、「メカノイドベッド」を建設することを忘れないでください。用心してください、ハッキング行為は大変危険です！</WTH_Hacking.helpText>
-
-  <WTH_Platform.label>メカノイドベッド</WTH_Platform.label>
-  <WTH_Platform.helpText>メカノイドのベッドは、メカノイドに電力を与えて修理する場所です。メカノイドベッドには電力が必要であり、また燃料の様に修理用の「メカノイドパーツ」が補充される必要があります。こうして接続されたメカノイドの内部機械システムは、大電力によって充電され、供給されたメカノイドパーツを使用してメカノイドを修理を開始します。</WTH_Platform.helpText>
-
-  <WTH_Modification.label>メカノイド改造</WTH_Modification.label>
-  <WTH_Modification.helpText>メカノイドをアップグレードして改造するために、メカノイド工作台でメカノイド強化部品を作ることができます。これらの強化部品をインストールするには、ハッキングされたメカノイドの「健康」タブから「改造手術」セクションに移動して、適切な変更を選択します。</WTH_Modification.helpText>
-
-  <WTH_Caravanning.label>メカノイドのキャラバン隊</WTH_Caravanning.label>
-  <WTH_Caravanning.helpText>メカノイドは、キャラバン隊の編成をする際にも利用できます。しかし、常に彼らには電力と整備が必要です。キャラバン内の各メカノイドのためのメカノイド携帯ベッドと、十分なバイオ化学燃料を運ぶことによって、旅行中に安定した電力供給が保証されます。あなたのメカノイドを旅行中に整備したい場合は、メカノイドパーツとハッキングの仕事が可能な入植者をキャラバン隊に入れてください。修理モジュールが取り付けられたメカノイドも旅行中に自動的に修理され、修理アームが装着されたメカノイドは他のメカノイドも修理します。メカノイドが修復されないようにするには、キャラバン隊の編成を開き、「健康」タブを開き、「病気の時に運ぶ」のチェックを外します。</WTH_Caravanning.helpText>
-
-  <WTH_Maintenance.label>メカノイドの整備</WTH_Maintenance.label>
-  <WTH_Maintenance.helpText>ハッキングは繊細な仕事です。したがって、ハッキングされたメカノイドは定期的な整備(メンテナンス)が必要となり、整備の際にメカノイドパーツが必要になります。ハッキングを割り当てられた植民者は、利用可能な部品が十分にある場合は、自動的にメカノイドを整備してハッキング状態を維持します。整備がされずハッキング状態が低下したメカノイドは、適切に整備されたメカノイドと同じ様には機能しません。もし、整備を完全に行わない場合、敵味方識別装置のハックに失敗して、致命的な結果が生じる可能性があります。</WTH_Maintenance.helpText>
-
-  <WTH_Power.label>メカノイドの動力源</WTH_Power.label>
-  <WTH_Power.helpText>「野生」状態のメカノイドとは異なり、ハッキングされたメカノイドは搭載された反応炉を使用できません。もし使用すると、メカノイドハイブによる位置検出に繋がります。したがって、ハック済の彼らは、メカノイドベッドで充電することができる内部予備バッテリに依存しています。キャラバン隊の編成時にメカノイド携帯ベッドを持っていくことで、ワールドマップ旅行中にメカノイドに対して電力を供給することができます。最後に、バッテリ容量を改良する方法と、「ハッキング施設」を使用して代替電源を取り付ける方法が存在します。</WTH_Power.helpText>
-
-
-</LanguageData>
+<Defs>
+ <ConceptDef>
+    <defName>WTH_Hacking</defName>
+    <label>Mechanoid hacking</label>
+    <priority>50</priority>
+    <helpText>To hack mechanoids, go to the modifications section in the health tab of a downed mechanoid, and select the "Hack mechanoid targeting device" option. Your haulers will bring the mechanoid to the hacking facility (make sure you have one!), and a colonist with hacking assigned will start hacking the mechanoid. Don't forget to build mechanoid platforms so the mechanoid can be powered and repaired. Beware, hacking is dangerous!</helpText>
+    <needsOpportunity>true</needsOpportunity>
+  </ConceptDef>
+  <ConceptDef>
+    <defName>WTH_Platform</defName>
+    <label>Mechanoid platform</label>
+    <priority>50</priority>
+    <helpText>A mechanoid platform is a place where mechanoids are powered and repaired. The platform should be loaded with mechanoid parts and supplied with power. This way, mechanites inside the mechanoid are activated due to the large power supply and start repairing the mechanoid using the offered parts.</helpText>
+    <needsOpportunity>true</needsOpportunity>
+  </ConceptDef>
+  <ConceptDef>
+    <defName>WTH_Modification</defName>
+    <label>Mechanoid modification</label>
+    <priority>50</priority>
+    <helpText>In order to upgrade and modify mechanoids, you can craft upgrade modules at the mechanoid workshop. To install these modules, go to the modifications section in the health tab of a hacked mechanoid, and select the appropriate modification.</helpText>
+    <needsOpportunity>true</needsOpportunity>
+  </ConceptDef>
+  <ConceptDef>
+    <defName>WTH_Caravanning</defName>
+    <label>Caravanning with mechanoids</label>
+    <priority>50</priority>
+    <helpText>Mechanoids can also be used when caravanning. However, as always, they need power and maintenance. By bringing a portable mechanoid platform for each mechanoid in the caravan, and enough chemfuel, a steady power supply is ensured during the trip. If you want your mechanoids maintained during the trip, bring along some mechanoid parts, and a colonist capable of hacking. Mechanoids with repair modules installed will also repair themselves during the trip, and mechanoids with repair arms will repair any other mechanoid. If you don't want mechanoids to be repaired, go to their health tab, and set medical care to none.</helpText>
+    <needsOpportunity>true</needsOpportunity>
+  </ConceptDef>
+  <ConceptDef>
+    <defName>WTH_Maintenance</defName>
+    <label>Mechanoid maintenance</label>
+    <priority>50</priority>
+    <helpText>Hacking is a delicate business. Therefore, hacked mechanoids require regular maintenance, for which mechanoid parts are needed. Colonists with hacking assigned will automatically maintain your mechanoids, provided that you have enough parts available. Poorly maintained mechanoids won't function as well as properly maintained ones. Totally neglecting maintenance can result in the hack failing, with catastrophic consequences.</helpText>
+    <needsOpportunity>true</needsOpportunity>
+  </ConceptDef>
+  <ConceptDef>
+    <defName>WTH_Power</defName>
+    <label>Keeping mechanoids powered</label>
+    <priority>50</priority>
+    <helpText>Unlike "wild" mechanoids, hacked ones cannot use their reactor, as using it would result in detection by the mechanoid hive. Therefore, they rely on internal backup batteries, which can be charged on mechanoid platforms. Portable charging platforms can be used to supply mechanoids with power during world trips. Finally, there exist ways of improving the battery capacity, or installing an alternate power supply using the mechanoid workshop.</helpText>
+    <needsOpportunity>true</needsOpportunity>
+  </ConceptDef>
+  <!--Added in v0.19.6 -->
+  <ConceptDef>
+    <defName>WTH_Concept_MechanoidParts</defName>
+    <label>Getting mechanoid parts</label>
+    <priority>50</priority>
+    <helpText>It is very important to always have some mechanoid parts in store for repairing, and more importantly, maintaining your mechanoids. Disassembling mechanoids is the primary way to get parts, but you can also buy them from exotic goods traders, and outlander towns. A way to get more mechanoids to disassemble, is by performing the "induce emergency signal" operation on a downed non-hacked mechanoid. You need to research "attracting mechanoids" to be able to do this. </helpText>
+    <needsOpportunity>true</needsOpportunity>
+  </ConceptDef>
+</Defs>
