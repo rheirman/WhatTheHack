@@ -477,11 +477,11 @@
 	<RecipeDef>
 		<defName>WTH_InduceEmergencySignal</defName>
 		<label>try inducing an emergency signal</label>
-		<description>The colonist will deliberately try to trigger a self-defence mechanism in the mechanoid that transmits an emergency signal to nearby mechanoids when activated, attracting them. This is a good way of getting some extra mechanoid parts, but also a good way to get your base blown up.</description>
+		<description>The colonist will deliberately try to trigger a self-defence mechanism in the mechanoid that transmits an emergency signal to nearby mechanoids when activated, attracting them. This is a good way of getting some extra mechanoid parts, but also a good way to get your base blown up. The operation is remarkably difficult, and even if it is performed successfully, the mechanoid will be heavily damaged.</description>
 		<workerClass>WhatTheHack.Recipes.Recipe_InduceEmergencySignal</workerClass>
 		<jobString>Hacking mechanoid</jobString>
-		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
-		<deathOnFailedSurgeryChance>0.25</deathOnFailedSurgeryChance>
+		<surgerySuccessChanceFactor>0.75</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.20</deathOnFailedSurgeryChance>
 		<workAmount>1500</workAmount>
 		<skillRequirements>
 			<Crafting>5</Crafting>

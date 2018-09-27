@@ -43,7 +43,7 @@
   </ConceptDef>
   <!--Added in v0.19.6 -->
   <ConceptDef>
-    <defName>WTH_MechanoidParts</defName>
+    <defName>WTH_Concept_MechanoidParts</defName>
     <label>Getting mechanoid parts</label>
     <priority>50</priority>
     <helpText>It is very important to always have some mechanoid parts in store for repairing, and more importantly, maintaining your mechanoids. Disassembling mechanoids is the primary way to get parts, but you can also buy them from exotic goods traders, and outlander towns. A way to get more mechanoids to disassemble, is by performing the "induce emergency signal" operation on a downed non-hacked mechanoid. You need to research "attracting mechanoids" to be able to do this. </helpText>

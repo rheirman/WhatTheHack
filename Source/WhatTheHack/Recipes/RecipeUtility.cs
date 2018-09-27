@@ -74,14 +74,21 @@ namespace WhatTheHack.Recipes
         {
             CauseMechanoidRaid(pawn, part, recipe, 0.9f);
             Find.LetterStack.ReceiveLetter("WTH_Letter_CausedIntendedMechanoidRaid_Label".Translate(), "WTH_Letter_CausedIntendedMechanoidRaid_Description".Translate(), LetterDefOf.PositiveEvent, pawn);
-            HealthUtility.GiveInjuriesOperationFailureRidiculous(pawn); //Damage mech for balancing purposes. 
-
+            HealthUtility.GiveInjuriesOperationFailureCatastrophic(pawn, part); //Kill mech for balancing purposes. 
+            if (!pawn.Dead)
+            {
+                pawn.Kill(null, null);
+            }
         }
         public static void CauseIntendedMechanoidRaidTooLarge(Pawn pawn, BodyPartRecord part, RecipeDef recipe)
         {
             CauseMechanoidRaid(pawn, part, recipe, 1.35f);
             Find.LetterStack.ReceiveLetter("WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label".Translate(), "WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description".Translate(), LetterDefOf.ThreatBig, pawn);
-            HealthUtility.GiveInjuriesOperationFailureRidiculous(pawn); //Damage mech for balancing purposes. 
+            HealthUtility.GiveInjuriesOperationFailureCatastrophic(pawn, part); //Kill mech for balancing purposes. 
+            if (!pawn.Dead)
+            {
+                pawn.Kill(null, null);
+            }
         }
 
         public static void CauseMechanoidRaid(Pawn pawn, BodyPartRecord part, RecipeDef recipe, float points = 1.25f)
