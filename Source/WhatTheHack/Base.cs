@@ -248,15 +248,26 @@ namespace WhatTheHack
             return factionRestrictionsDict;
         }
 
-        public bool CanDoEmergencySignal()
+        public bool EmergencySignalRaidInbound()
         {
             if(GetExtendedDataStorage() != null)
             {
-                return Find.TickManager.TicksGame > 0 && Find.TickManager.TicksGame > GetExtendedDataStorage().lastEmergencySignalTick + GetExtendedDataStorage().lastEmergencySignalDelay;
+                return Find.TickManager.TicksGame > 0 && Find.TickManager.TicksGame <= GetExtendedDataStorage().lastEmergencySignalTick + GetExtendedDataStorage().lastEmergencySignalDelay;
             }
             else
             {
-                return true; 
+                return false; 
+            }
+        }
+        public bool EmergencySignalRaidCoolingDown()
+        {
+            if (GetExtendedDataStorage() != null)
+            {
+                return Find.TickManager.TicksGame > 0 && Find.TickManager.TicksGame <= GetExtendedDataStorage().lastEmergencySignalTick + GetExtendedDataStorage().lastEmergencySignalCooldown;
+            }
+            else
+            {
+                return false;
             }
         }
 

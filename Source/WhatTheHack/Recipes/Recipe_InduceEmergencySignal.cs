@@ -14,16 +14,10 @@ namespace WhatTheHack.Recipes
         {
             return !pawn.IsHacked();
         }
+
         public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
-            if (Base.Instance.CanDoEmergencySignal())
-            {
-                base.ApplyOnPawn(pawn, part, billDoer, ingredients, bill);
-            }
-            else
-            {
-                Messages.Message("WTH_Message_CannotDoEmergencySignal".Translate(), new RimWorld.Planet.GlobalTargetInfo(pawn.Position, pawn.Map), MessageTypeDefOf.RejectInput);
-            }
+            base.ApplyOnPawn(pawn, part, billDoer, ingredients, bill);
         }
         protected override void HackingFailEvent(Pawn hacker, Pawn hackee, BodyPartRecord part, System.Random r)
         {
@@ -46,6 +40,8 @@ namespace WhatTheHack.Recipes
         protected override void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
             RecipeUtility.CauseIntendedMechanoidRaid(pawn, part, recipe);
+            int cooldown = new IntRange(GenDate.TicksPerQuadrum/2, GenDate.TicksPerQuadrum).RandomInRange;
+            Base.Instance.GetExtendedDataStorage().lastEmergencySignalCooldown = cooldown;
         }
     }
 }

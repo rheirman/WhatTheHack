@@ -136,7 +136,7 @@
   <WTH_Warning_DaysOfFuel>このキャラバン隊には、メカノイドに電力を供給するのに{0}日分の燃料しか用意していません。メカノイドはすぐに電力を失って行動不能になるかもしれません。</WTH_Warning_DaysOfFuel>
   <WTH_Message_CaravanOutOfFuel>{0}の燃料を使い果たしました。</WTH_Message_CaravanOutOfFuel>
   <WTH_Message_CannotDrop>この装備はポーンに取り付けられているため、捨てることができません</WTH_Message_CannotDrop>
-  <WTH_Message_CannotDoEmergencySignal>あなたのコロニー周辺のメカノイドたちは、すでに以前発信された緊急信号に反応しており、既に向かっています。従って、この操作は効果は無いので、加工命令は取り消されました。</WTH_Message_CannotDoEmergencySignal>
+  <WTH_Message_EmergencySignalRaidInbound>あなたのコロニー周辺のメカノイドたちは、すでに以前発信された緊急信号に反応しており、既に向かっています。従って、この操作は効果は無いので、加工命令は取り消されました。</WTH_Message_EmergencySignalRaidInbound>
 
   <WTH_Mount>{0}を搭載</WTH_Mount>
   <WTH_Mount_Jobstring>{0}を搭載中</WTH_Mount_Jobstring>

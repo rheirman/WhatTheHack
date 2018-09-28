@@ -21,4 +21,31 @@ namespace WhatTheHack.Harmony
             }
         }
     }
+    [HarmonyPatch(typeof(Bill_Medical), "Notify_DoBillStarted")]
+    class Bill_Medical_Notify_DoBillStarted
+    {
+        static void Prefix(Bill_Medical __instance, Pawn billDoer)
+        {
+            Pawn pawn = Traverse.Create(__instance).Property("GiverPawn").GetValue<Pawn>();
+            if (__instance.recipe == WTH_DefOf.WTH_InduceEmergencySignal)
+            {
+                bool shouldCancel = false;
+                if (Base.Instance.EmergencySignalRaidInbound())
+                {
+                    Messages.Message("WTH_Message_EmergencySignalRaidInbound".Translate(), new RimWorld.Planet.GlobalTargetInfo(pawn.Position, pawn.Map), MessageTypeDefOf.RejectInput);
+                    shouldCancel = true;
+                }
+                else if (Base.Instance.EmergencySignalRaidCoolingDown())
+                {
+                    Messages.Message("WTH_Message_EmgergencySignalRaidCoolingDown".Translate(), new RimWorld.Planet.GlobalTargetInfo(pawn.Position, pawn.Map), MessageTypeDefOf.RejectInput);
+                    shouldCancel = true;
+                }
+                if (shouldCancel)
+                {
+                    __instance.billStack.Delete(__instance);
+                    billDoer.jobs.EndCurrentJob(Verse.AI.JobCondition.Incompletable);
+                }
+            }
+        }
+    }
 }

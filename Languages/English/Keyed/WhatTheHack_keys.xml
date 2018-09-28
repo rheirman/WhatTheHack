@@ -109,6 +109,9 @@
 	
 	<WTH_Alert_EmergencySignalTransmitted_Label>Mechanoid raid imminent</WTH_Alert_EmergencySignalTransmitted_Label>
 	<WTH_Alert_EmergencySignalTransmitted_Description>Mechanoids near your base are currently responding to the emergency signal that was transmitted and will arrive at your base soon.</WTH_Alert_EmergencySignalTransmitted_Description>
+	<WTH_Alert_EmergencySignalCooldown_Label>Mechanoids suspicious</WTH_Alert_EmergencySignalCooldown_Label>
+	<WTH_Alert_EmergencySignalCooldown_Description>Because of your recent success of drawing nearby mechanoids to your base by transmitting an emergency signal, there simply aren't many mechanoids left in the surroundings, and the ones that are left have become suspicious. You have to wait a while until new mechanoids arrive and until the suspicion wears of. This may take up to a quadrum.</WTH_Alert_EmergencySignalCooldown_Description>
+	
 	
 	<WTH_Alert_NotEnoughPlatforms_Label>Not enough mechanoid platforms</WTH_Alert_NotEnoughPlatforms_Label>
 	<WTH_Alert_NotEnoughPlatforms_Description>You have more hacked mechanoids than mechanoid platforms in your main base. Make sure to make more mechanoid platforms</WTH_Alert_NotEnoughPlatforms_Description>
@@ -138,7 +141,8 @@
 	<WTH_Warning_DaysOfFuel>You caravan has only {0} days worth of fuel for powering your mechanoids, and your mechanoids might run out of power quickly.</WTH_Warning_DaysOfFuel>
 	<WTH_Message_CaravanOutOfFuel>{0} has run out of fuel.</WTH_Message_CaravanOutOfFuel>
 	<WTH_Message_CannotDrop>This equipment is attached to the pawn, therefore you cannot drop it</WTH_Message_CannotDrop>
-	<WTH_Message_CannotDoEmergencySignal>The mechanoids near your base are already reacting to an earlier emergency signal and are on their way to your base. The operation therefore has no effect and the bill is cancelled.</WTH_Message_CannotDoEmergencySignal>
+	<WTH_Message_EmergencySignalRaidInbound>The mechanoids near your base are already reacting to an earlier emergency signal and are on their way to your base. The operation therefore has no effect and the bill is cancelled.</WTH_Message_EmergencySignalRaidInbound>
+	<WTH_Message_EmgergencySignalRaidCoolingDown>There aren't many mechanoids left in the surroundings, and the ones that are left have become suspicious. The operation therefore has no effect and the bill is cancelled.</WTH_Message_EmgergencySignalRaidCoolingDown>
 	
 	<WTH_Mount>Mount {0}</WTH_Mount>
 	<WTH_Mount_Jobstring>Mounting {0}</WTH_Mount_Jobstring>

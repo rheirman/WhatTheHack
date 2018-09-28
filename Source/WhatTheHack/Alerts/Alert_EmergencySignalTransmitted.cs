@@ -13,7 +13,7 @@ namespace WhatTheHack.Alerts
         public Alert_EmergencySignalTransmitted()
         {
             this.defaultLabel = "WTH_Alert_EmergencySignalTransmitted_Label".Translate();
-            this.defaultPriority = AlertPriority.High;
+            this.defaultPriority = AlertPriority.Critical;
         }
 
         public override string GetExplanation()
@@ -28,7 +28,7 @@ namespace WhatTheHack.Alerts
 
         private bool ShouldAlert()
         {
-            return !Base.Instance.CanDoEmergencySignal();
+            return Base.Instance.EmergencySignalRaidInbound();
         }
     }
 }

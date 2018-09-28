@@ -54,6 +54,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alerts\Alert_EmergencySignalCooldown.cs" />
     <Compile Include="Alerts\Alert_EmergencySignalTransmitted.cs" />
     <Compile Include="Alerts\Alert_MaintenanceLow.cs" />
     <Compile Include="Alerts\Alert_MaintenanceVeryLow.cs" />
