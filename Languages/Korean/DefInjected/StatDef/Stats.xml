@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_ControllerBeltRadius.label>원격제어 범위</WTH_ControllerBeltRadius.label>
+  <WTH_ControllerBeltRadius.description>이 벨트를 사용하여 메카노이드를 제어할 수 있는 최대 범위</WTH_ControllerBeltRadius.description>
+
+  <WTH_HackingMaintenanceSpeed.label>정비 속도</WTH_HackingMaintenanceSpeed.label>
+  <WTH_HackingMaintenanceSpeed.description>해킹된 메카노이드의 정비를 수행하는 속도입니다.</WTH_HackingMaintenanceSpeed.description>
+
+  <WTH_HackingSuccessChance.label>해킹 성공 확률</WTH_HackingSuccessChance.label>
+  <WTH_HackingSuccessChance.description>메카노이드를 해킹하거나 개조할 때 성공할 확률입니다. 실제 성공 가능성은 해킹의 어려움과 기계적인 요소가 얼마나 강력한지에 의해 영향을 받습니다.</WTH_HackingSuccessChance.description>
+
+
+</LanguageData>

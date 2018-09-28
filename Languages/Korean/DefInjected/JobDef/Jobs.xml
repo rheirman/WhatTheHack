@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_CarryToHackingTable.reportString>메카노이드를 해킹 작업대로 운송</WTH_CarryToHackingTable.reportString>
+  <WTH_ClearHackingTable.reportString>해킹 작업대에서 메카노이드를 치우고, 다른 작업이 가능하게합니다.</WTH_ClearHackingTable.reportString>
+  <WTH_Mechanoid_Rest.reportString>메카노이드 정비고(충전소)에 연결됨</WTH_Mechanoid_Rest.reportString>
+  <WTH_ControlMechanoid.reportString>메카노이드 제어</WTH_ControlMechanoid.reportString>
+  <WTH_ControlMechanoid_Goto.reportString>메카노이드 제어 (이동중)</WTH_ControlMechanoid_Goto.reportString>
+  <WTH_Ability.reportString>능력 사용</WTH_Ability.reportString>
+  <WTH_PerformMaintenance.reportString>유지관리 수행</WTH_PerformMaintenance.reportString>
+
+
+</LanguageData>
