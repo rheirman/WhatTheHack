@@ -107,6 +107,8 @@
 
   <WTH_Alert_EmergencySignalTransmitted_Label>メカノイドの襲撃が来る</WTH_Alert_EmergencySignalTransmitted_Label>
   <WTH_Alert_EmergencySignalTransmitted_Description>あなたのコロニー周辺のメカノイドたちは、すでに以前発信された緊急信号に反応しており、すぐに到着するでしょう。</WTH_Alert_EmergencySignalTransmitted_Description>
+  <WTH_Alert_EmergencySignalCooldown_Label>メカノイドに警戒された</WTH_Alert_EmergencySignalCooldown_Label>
+  <WTH_Alert_EmergencySignalCooldown_Description>つい最近、緊急信号を発信して付近のメカノイドたちをあなたのコロニーに呼び寄せることに成功したため、この周辺にはメカノイドがほとんど残っておらず、残っているメカノイドたちはこの場所からの緊急信号を疑って警戒しています。あなたは、新しいメカノイドたちが周囲に到着して、緊急信号への警戒がなくなるまで、しばらく待たなければなりません。この冷却期間には1シーズン(季節)かかることがあります。</WTH_Alert_EmergencySignalCooldown_Description>
 
   <WTH_Alert_NotEnoughPlatforms_Label>メカノイドベッドの数が不足している</WTH_Alert_NotEnoughPlatforms_Label>
   <WTH_Alert_NotEnoughPlatforms_Description>あなたのコロニーには、整備基地にあるメカノイドベッドの数よりも多くのハック済メカノイドが居ます。\nより多くのメカノイドベッドを建設するようにしてください</WTH_Alert_NotEnoughPlatforms_Description>
@@ -136,6 +138,9 @@
   <WTH_Warning_DaysOfFuel>このキャラバン隊には、メカノイドに電力を供給するのに{0}日分の燃料しか用意していません。メカノイドはすぐに電力を失って行動不能になるかもしれません。</WTH_Warning_DaysOfFuel>
   <WTH_Message_CaravanOutOfFuel>{0}の燃料を使い果たしました。</WTH_Message_CaravanOutOfFuel>
   <WTH_Message_CannotDrop>この装備はポーンに取り付けられているため、捨てることができません</WTH_Message_CannotDrop>
+  <WTH_Message_EmergencySignalRaidInbound>あなたのコロニー周辺のメカノイドたちは、すでに以前発信された緊急信号に反応しており、既に向かっています。従って、この操作は効果は無いので、加工命令は取り消されました。</WTH_Message_EmergencySignalRaidInbound>
+  <WTH_Message_EmgergencySignalRaidCoolingDown>あなたのコロニー周辺にはもうメカノイドたちがほとんど残っておらず、しかも残っているメカノイドたちも、この地からの緊急信号に対して警戒しています。したがって、この操作は効果を期待できない為、加工命令は取り消されます。</WTH_Message_EmgergencySignalRaidCoolingDown>
+
   <WTH_Message_EmergencySignalRaidInbound>あなたのコロニー周辺のメカノイドたちは、すでに以前発信された緊急信号に反応しており、既に向かっています。従って、この操作は効果は無いので、加工命令は取り消されました。</WTH_Message_EmergencySignalRaidInbound>
 
   <WTH_Mount>{0}を搭載</WTH_Mount>
