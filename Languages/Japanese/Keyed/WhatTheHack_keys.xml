@@ -141,8 +141,6 @@
   <WTH_Message_EmergencySignalRaidInbound>あなたのコロニー周辺のメカノイドたちは、すでに以前発信された緊急信号に反応しており、既に向かっています。従って、この操作は効果は無いので、加工命令は取り消されました。</WTH_Message_EmergencySignalRaidInbound>
   <WTH_Message_EmgergencySignalRaidCoolingDown>あなたのコロニー周辺にはもうメカノイドたちがほとんど残っておらず、しかも残っているメカノイドたちも、この地からの緊急信号に対して警戒しています。したがって、この操作は効果を期待できない為、加工命令は取り消されます。</WTH_Message_EmgergencySignalRaidCoolingDown>
 
-  <WTH_Message_EmergencySignalRaidInbound>あなたのコロニー周辺のメカノイドたちは、すでに以前発信された緊急信号に反応しており、既に向かっています。従って、この操作は効果は無いので、加工命令は取り消されました。</WTH_Message_EmergencySignalRaidInbound>
-
   <WTH_Mount>{0}を搭載</WTH_Mount>
   <WTH_Mount_Jobstring>{0}を搭載中</WTH_Mount_Jobstring>
 
