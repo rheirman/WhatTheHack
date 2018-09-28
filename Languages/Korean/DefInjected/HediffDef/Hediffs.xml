@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_ShutDown.label>전원 정지</WTH_ShutDown.label>
+  <WTH_ShutDown.labelNoun>전원을 정지합니다.</WTH_ShutDown.labelNoun>
+
+  <WTH_RegeneratedPart.label>부위 재생</WTH_RegeneratedPart.label>
+  <WTH_RegeneratedPart.labelNoun>파손된 부위를 대체하도록 부품을 재생성합니다.</WTH_RegeneratedPart.labelNoun>
+
+  <WTH_BatteryExpansionModule.label>배터리 확장됨</WTH_BatteryExpansionModule.label>
+  <WTH_VanometricModule.label>베노메트릭 모듈 설치됨</WTH_VanometricModule.label>
+  <WTH_SelfDestruct.label>자폭 모듈 설치됨</WTH_SelfDestruct.label>
+  <WTH_RepairModule.label>수리 모듈 설치됨</WTH_RepairModule.label>
+  <WTH_BeltModule.label>벨트 모듈 설치됨</WTH_BeltModule.label>
+  <WTH_TurretModule.label>포탑 모듈 설치됨</WTH_TurretModule.label>
+  <WTH_MountedTurret.label>포탑 탑재됨</WTH_MountedTurret.label>
+
+  <WTH_RepairArm.label>정비용 팔</WTH_RepairArm.label>
+  <WTH_RepairArm.comps.0.tools.0.label>주먹</WTH_RepairArm.comps.0.tools.0.label>
+  <WTH_RepairArm.labelNoun>정비용 팔</WTH_RepairArm.labelNoun>
+
+  <WTH_Repairing.label>메카나이트 수리</WTH_Repairing.label>
+
+
+  <!-- <HediffDef>
+		<defName>WTH_Overcharged</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>overcharged</label>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+		<maxSeverity>1.0</maxSeverity>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-5</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+        <li>
+			<capMods>
+				<li>
+				  <capacity>Moving</capacity>
+				  <offset>0.30</offset>
+				  <capacity>Consciousness</capacity>
+				  <offset>0.10</offset>
+				  <capacity>Manipulation</capacity>
+				  <offset>0.20</offset>
+				</li>
+			</capMods>  
+		</li>
+      </stages>
+	  </HediffDef> -->
+
+  <WTH_ReplacedAI.label>AI 대체됨</WTH_ReplacedAI.label>
+  <WTH_TargetingHacked.label>목표 해킹됨</WTH_TargetingHacked.label>
+  <WTH_BackupBattery.label>백업 배터리로 가동</WTH_BackupBattery.label>
+  <WTH_LocomotionHacked.label>이동력 해킹</WTH_LocomotionHacked.label>
+  <WTH_TargetingHackedPoorly.label>목표물 해킹이 잘못됨</WTH_TargetingHackedPoorly.label>
+  <WTH_TargetingDestroyed.label>목표물 파괴</WTH_TargetingDestroyed.label>
+  <WTH_LowMaintenance.label>약간의 정비 부족</WTH_LowMaintenance.label>
+  <WTH_VeryLowMaintenance.label>심각한 정비 부족</WTH_VeryLowMaintenance.label>
+  <WTH_VeryLowPower.label>매우 낮은 전력</WTH_VeryLowPower.label>
+  <WTH_NoPower.label>전력 부족</WTH_NoPower.label>
+
+
+</LanguageData>

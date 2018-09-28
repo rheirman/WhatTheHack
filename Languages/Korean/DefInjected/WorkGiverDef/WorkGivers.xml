@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_DoBillsMechanoidWorkshop.label>메카노이드 작업대에서 물건 제작</WTH_DoBillsMechanoidWorkshop.label>
+  <WTH_DoBillsMechanoidWorkshop.verb>작업</WTH_DoBillsMechanoidWorkshop.verb>
+  <WTH_DoBillsMechanoidWorkshop.gerund>작업하기</WTH_DoBillsMechanoidWorkshop.gerund>
+
+  <WTH_DoBillsMedicalMechanoidOperation.label>메카노이드 개조</WTH_DoBillsMedicalMechanoidOperation.label>
+  <WTH_DoBillsMedicalMechanoidOperation.verb>개조</WTH_DoBillsMedicalMechanoidOperation.verb>
+  <WTH_DoBillsMedicalMechanoidOperation.gerund>개조하기</WTH_DoBillsMedicalMechanoidOperation.gerund>
+
+  <WTH_HaulMechanoid.label>메카노이드 운반</WTH_HaulMechanoid.label>
+  <WTH_HaulMechanoid.verb>운반</WTH_HaulMechanoid.verb>
+  <WTH_HaulMechanoid.gerund>운반하기</WTH_HaulMechanoid.gerund>
+
+  <WTH_MaintainMechanoid.label>메카노이드 정비</WTH_MaintainMechanoid.label>
+  <WTH_MaintainMechanoid.verb>메카노이드 정비</WTH_MaintainMechanoid.verb>
+  <WTH_MaintainMechanoid.gerund>메카노이드 정비하기</WTH_MaintainMechanoid.gerund>
+
+  <WTH_MaintainMechanoid_Urgent.label>메카노이드 긴급정비</WTH_MaintainMechanoid_Urgent.label>
+  <WTH_MaintainMechanoid_Urgent.verb>메카노이드 긴급정비</WTH_MaintainMechanoid_Urgent.verb>
+  <WTH_MaintainMechanoid_Urgent.gerund>메카노이드 긴급정비하기</WTH_MaintainMechanoid_Urgent.gerund>
+
+
+</LanguageData>

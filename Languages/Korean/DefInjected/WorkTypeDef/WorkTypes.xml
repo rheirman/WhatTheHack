@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Hack.label>해킹</WTH_Hack.label>
+  <WTH_Hack.description>메카노이드 해킹 및 개조</WTH_Hack.description>
+  <WTH_Hack.labelShort>해킹</WTH_Hack.labelShort>
+  <WTH_Hack.pawnLabel>해킹</WTH_Hack.pawnLabel>
+  <WTH_Hack.gerundLabel>해킹하기</WTH_Hack.gerundLabel>
+  <WTH_Hack.verb>해킹</WTH_Hack.verb>
+
+
+</LanguageData>

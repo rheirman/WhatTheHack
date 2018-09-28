@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Scrap_AdvancedMechanoidChip.label>고급 메카노이드 칩 분해</WTH_Scrap_AdvancedMechanoidChip.label>
+  <WTH_Scrap_AdvancedMechanoidChip.description>고급 메카노이드 칩을 분해하여 사용가능한 메카노이드 부품으로 만듭니다.</WTH_Scrap_AdvancedMechanoidChip.description>
+  <WTH_Scrap_AdvancedMechanoidChip.jobString>분해</WTH_Scrap_AdvancedMechanoidChip.jobString>
+
+  <WTH_Craft_AdditionalBatteryModule.label>배터리 확장 모듈 제작</WTH_Craft_AdditionalBatteryModule.label>
+  <WTH_Craft_AdditionalBatteryModule.description>설치시 내장 배터리 용량을 확장 할 수있는 모듈을 제작합니다.</WTH_Craft_AdditionalBatteryModule.description>
+  <WTH_Craft_AdditionalBatteryModule.jobString>제작</WTH_Craft_AdditionalBatteryModule.jobString>
+
+  <WTH_Craft_VanometricModule.label>베노메트릭 모듈 제작</WTH_Craft_VanometricModule.label>
+  <WTH_Craft_VanometricModule.description>설치시 기동력을 약간 낮추는 대신 무한히 전력을 공급 받을 수 있는 베노메트릭 전력 생산 모듈을 제작합니다.</WTH_Craft_VanometricModule.description>
+  <WTH_Craft_VanometricModule.jobString>제작</WTH_Craft_VanometricModule.jobString>
+
+  <WTH_Craft_SelfDestructModule.label>자폭 모듈 제작</WTH_Craft_SelfDestructModule.label>
+  <WTH_Craft_SelfDestructModule.description>자폭 모듈을 제작합니다.</WTH_Craft_SelfDestructModule.description>
+  <WTH_Craft_SelfDestructModule.jobString>제작</WTH_Craft_SelfDestructModule.jobString>
+
+  <WTH_Craft_TurretModule.label>포탑 모듈 제작</WTH_Craft_TurretModule.label>
+  <WTH_Craft_TurretModule.description>설치시 포탑을 탑재할 수 있는 모듈을 제작합니다.</WTH_Craft_TurretModule.description>
+  <WTH_Craft_TurretModule.jobString>제작</WTH_Craft_TurretModule.jobString>
+
+  <WTH_Craft_RepairModule.label>수리 모듈 제작</WTH_Craft_RepairModule.label>
+  <WTH_Craft_RepairModule.description>설치시 자가 수리가 가능한 수리 모듈을 제작합니다.</WTH_Craft_RepairModule.description>
+  <WTH_Craft_RepairModule.jobString>제작</WTH_Craft_RepairModule.jobString>
+
+  <WTH_Craft_RepairArm.label>정비용 팔 제작</WTH_Craft_RepairArm.label>
+  <WTH_Craft_RepairArm.description>설치시 다른 메카노이드 기체를 수리할 수 있는 정비용 팔을 제작합니다.</WTH_Craft_RepairArm.description>
+  <WTH_Craft_RepairArm.jobString>제작</WTH_Craft_RepairArm.jobString>
+
+  <WTH_Craft_BeltModule.label>벨트 모듈 제작</WTH_Craft_BeltModule.label>
+  <WTH_Craft_BeltModule.description>설치시 방어 벨트 또는 연막 벨트 등을 장착 할 수 있는 벨트 모듈을 제작합니다.</WTH_Craft_BeltModule.description>
+  <WTH_Craft_BeltModule.jobString>제작</WTH_Craft_BeltModule.jobString>
+
+  <WTH_HackMechanoid.label>해킹 장비로 메카노이드 해킹 시도</WTH_HackMechanoid.label>
+  <WTH_HackMechanoid.description>메카노이드의 표적 감지기를 해킹하여 아군 대신 적을 목표로 삼게 만듭니다.</WTH_HackMechanoid.description>
+  <WTH_HackMechanoid.jobString>메카노이드 해킹</WTH_HackMechanoid.jobString>
+
+  <WTH_ImplantAI.label>AI 보조통제장치</WTH_ImplantAI.label>
+  <WTH_ImplantAI.description>인공자아핵을 조정한 장치를 메카노이드에 삽입합니다. 이로써 해당 메카노이드를 모든 전투 상황에 맞게 완벽히 제어할 수 있습니다.</WTH_ImplantAI.description>
+  <WTH_ImplantAI.jobString>메카노이드 해킹</WTH_ImplantAI.jobString>
+
+
+  <!-- <RecipeDef>
+		<defName>WTH_HackLocomotion</defName>
+		<label>hack mechanoid locomotion system</label>
+		<description>Hacks the locomotion system of the mechanoid and adds a receiver to the mechanoid to allow the it to be operated by a colonist using a remote control device</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Hacking mechanoid</jobString>
+		<workAmount>4000</workAmount>				
+		<surgerySuccessChanceFactor>1.5</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<effectWorking>Repair</effectWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_MechanoidParts</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_MechanoidChip</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+			<li>Brain</li>
+			<li>MechanicalHead</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_LocomotionHacked</addsHediff>
+		<researchPrerequisite>WTH_HackingRemoteControl</researchPrerequisite>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef> -->
+
+  <WTH_InstallRepairArm.label>정비용 팔 설치</WTH_InstallRepairArm.label>
+  <WTH_InstallRepairArm.description>정비용 팔을 설치합니다..</WTH_InstallRepairArm.description>
+  <WTH_InstallRepairArm.jobString>정비용 팔 설치.</WTH_InstallRepairArm.jobString>
+
+  <WTH_InstallTurretModule.label>포탑 모듈 설치</WTH_InstallTurretModule.label>
+  <WTH_InstallTurretModule.description>포탑과 박격포에 구조적인 지지와 인터페이스를 모두 제공하는 모듈입니다. 포장할 수 있는 모든 포탑은 이 모듈과 호환될 수 있습니다. 이것은 강력한 업그레이드이지만, 포탑은 추가 전력을 요구하고 파괴되었을 때는 폭발하는 경향을 보입니다. 대형 메카노이드에만 탑재할 수 있습니다.</WTH_InstallTurretModule.description>
+  <WTH_InstallTurretModule.jobString>메카노이드 개조</WTH_InstallTurretModule.jobString>
+
+  <WTH_InstallRepairModule.label>수리 모듈 설치</WTH_InstallRepairModule.label>
+  <WTH_InstallRepairModule.description>메카노이드 부품을 적재할 수 있고 메카노이드 장치의 전원 공급을 내부 기계로 재전송할 수 있는 모듈입니다. 해당 모듈을 사용하면 메카나이트가 활성화되며, 메카노이드는 적재된 부품을 사용하여 수리되지만 수리 절차 중에는 어떤 행동도 할 수 없게 됩니다.</WTH_InstallRepairModule.description>
+  <WTH_InstallRepairModule.jobString>메카노이드 개조</WTH_InstallRepairModule.jobString>
+
+  <WTH_InstallSelfDestruct.label>자폭 모듈 설치</WTH_InstallSelfDestruct.label>
+  <WTH_InstallSelfDestruct.description>고폭탄이 설치된 자폭 모듈입니다. 유사시 고폭탄 뇌관을 단락시켜 메카노이드를 자폭시키는 기능을 추가합니다. 플라스틸로 구성된 보호장치는 폭발물이 의도치 않게 터지는 것을 방지합니다.</WTH_InstallSelfDestruct.description>
+  <WTH_InstallSelfDestruct.jobString>메카노이드 개조</WTH_InstallSelfDestruct.jobString>
+
+  <WTH_InstallBeltModule.label>벨트 모듈 설치</WTH_InstallBeltModule.label>
+  <WTH_InstallBeltModule.description>메카노이드에 방어 벨트나 연막 벨트 등의 장비를 장착할 수 있는 모듈을 설치합니다.</WTH_InstallBeltModule.description>
+  <WTH_InstallBeltModule.jobString>메카노이드 개조</WTH_InstallBeltModule.jobString>
+
+  <WTH_InstallBatteryExpansionModule.label>배터리 확장 모듈 설치</WTH_InstallBatteryExpansionModule.label>
+  <WTH_InstallBatteryExpansionModule.description>약간의 기동성을 희생하는 대가로 메카노이드에 추가 배터리 용량을 제공하는 모듈을 설치합니다.</WTH_InstallBatteryExpansionModule.description>
+  <WTH_InstallBatteryExpansionModule.jobString>메카노이드 개조</WTH_InstallBatteryExpansionModule.jobString>
+
+  <WTH_InstallVanometricModule.label>베노메트릭 모듈 설치</WTH_InstallVanometricModule.label>
+  <WTH_InstallVanometricModule.description>약간의 기동성을 희생하는 대가로 메카노이드에 무한히 전력을 공급하는 베노메트릭 모듈을 설치합니다.</WTH_InstallVanometricModule.description>
+  <WTH_InstallVanometricModule.jobString>메카노이드 개조</WTH_InstallVanometricModule.jobString>
+
+  <WTH_ShutDownMechanoid.label>전원 정지</WTH_ShutDownMechanoid.label>
+  <WTH_ShutDownMechanoid.description>메카노이드의 전원을 정지합니다.</WTH_ShutDownMechanoid.description>
+  <WTH_ShutDownMechanoid.jobString>메카노이드 전원 정지하기.</WTH_ShutDownMechanoid.jobString>
+
+
+</LanguageData>
