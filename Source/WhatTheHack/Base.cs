@@ -97,7 +97,7 @@ namespace WhatTheHack
             minHackedMechPoints.VisibilityPredicate = delegate { return settingsGroup_Raids; };
 
             //hack failure
-            settingsGroup_HackFailure = Settings.GetHandle<bool>("settingsGroup_HackFailure", "WTH_SettingsGroup_HackFailure_Title".Translate(), "WTH_SettingsGroup_HackFailure_Title".Translate(), false);
+            settingsGroup_HackFailure = Settings.GetHandle<bool>("settingsGroup_HackFailure", "WTH_SettingsGroup_HackFailure_Title".Translate(), "WTH_SettingsGroup_HackFailure_Description".Translate(), false);
             settingsGroup_HackFailure.CustomDrawer = rect => { return GUIDrawUtility.CustomDrawer_Button(rect, settingsGroup_HackFailure, "WTH_Expand".Translate() + "..", "WTH_Collapse".Translate()); };
 
             failureChanceNothing = Settings.GetHandle<int>("failureChanceNothing", "WTH_FailureChance_Nothing_Title".Translate(), "WTH_FailureChance_Nothing_Description".Translate(), 55);
