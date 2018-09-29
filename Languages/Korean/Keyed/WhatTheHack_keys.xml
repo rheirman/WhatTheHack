@@ -1,54 +1,86 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <WTH_Letter_Success_Label>해킹 성공</WTH_Letter_Success_Label>
-  <WTH_Letter_Success_Label_Description>메카노이드가 성공적으로 해킹되었습니다. 이제 메카노이드의 피아구분 시스템이 정착민이 아닌 습격자들을 적으로 인식합니다.</WTH_Letter_Success_Label_Description>
+  <WTH_Letter_Success_Label_Description> 메카노이드가 성공적으로 해킹되었습니다. \n 이제 메카노이드의 피아구분 시스템이 정착민이 아닌 습격자들을 적으로 인식합니다.</WTH_Letter_Success_Label_Description>
   <WTH_Letter_Nothing_Label>해킹 실패 - 약간의 손상</WTH_Letter_Nothing_Label>
   <WTH_Letter_Nothing_Description>해킹은 실패했지만, 심각한 피해는 발생하지 않았습니다.</WTH_Letter_Nothing_Description>
   <WTH_Letter_HackedPoorly_Label>해킹 실패 - 불안정</WTH_Letter_HackedPoorly_Label>
-  <WTH_Letter_HackedPoorly_Description>메카노이드를 해킹하는 동안 뭔가 일이 잘 풀리지 않은 것 같습니다. 위험을 감수하고서라도 이 메카노이드를 사용하거나, 혹은 폐기해야만 할 것 같습니다.</WTH_Letter_HackedPoorly_Description>
-  <WTH_Letter_CausedMechanoidRaid_Label>해킹 실패 - 긴급신호 전송</WTH_Letter_CausedMechanoidRaid_Label>
-  <WTH_Letter_CausedMechanoidRaid_Description>해킹을 시도하던 정착민이 실수로 근처의 메카노이드에게 긴급신호를 보내는 보안장치를 작동시켰습니다! 또 다른 메카노이드에 대비해야 합니다...</WTH_Letter_CausedMechanoidRaid_Description>
+  <WTH_Letter_HackedPoorly_Description> 메카노이드를 해킹하는 동안 뭔가 일이 잘 풀리지 않은 것 같습니다. \n 위험을 감수하고서라도 이 메카노이드를 사용하거나, 혹은 폐기해야만 할 것 같습니다.</WTH_Letter_HackedPoorly_Description>
+  <WTH_Letter_CausedMechanoidRaid_Label>해킹 실패 - 비상 신호 송출</WTH_Letter_CausedMechanoidRaid_Label>
+  <WTH_Letter_CausedMechanoidRaid_Description> 해킹을 시도하던 정착민이 실수로 근처의 메카노이드에게 비상 신호를 보내는 보안장치를 작동시켰습니다! \n 또 다른 메카노이드 습격에 대비해야 합니다...</WTH_Letter_CausedMechanoidRaid_Description>
   <WTH_Letter_ShotRandomDirection_Label>해킹 실패 - 무기 오작동</WTH_Letter_ShotRandomDirection_Label>
-  <WTH_Letter_ShotRandomDirection_Description>메카노이드를 해킹하려던 정착민이 뜻하지 않게 메카노이드의 주 무기를 작동시켰습니다. 으아악;..</WTH_Letter_ShotRandomDirection_Description>
+  <WTH_Letter_ShotRandomDirection_Description> 메카노이드를 해킹하려던 정착민이 뜻하지 않게 메카노이드의 주 무기를 작동시켰습니다. 으아악;..</WTH_Letter_ShotRandomDirection_Description>
   <WTH_Letter_HealedToStanding_Label>해킹 실패 - 메카노이드가 다시 일어섬</WTH_Letter_HealedToStanding_Label>
-  <WTH_Letter_HealedToStanding_Description>메카노이드는 해킹하는 동안 완전히 무력화되지 않았던 것 같습니다. 놈은 우리가 해킹을 시도하는 동안 시스템을 복구시켰고, 이제는 멀쩡해진 메카노이드가 우리 개척지 한복판에서 다시 일어섰습니다.</WTH_Letter_HealedToStanding_Description>
+  <WTH_Letter_HealedToStanding_Description> 메카노이드는 해킹하는 동안 완전히 무력화되지 않았던 것 같습니다. \n 놈은 우리가 해킹을 시도하는 동안 시스템을 복구시켰고, 이제는 멀쩡해진 메카노이드가 우리 정착지 한복판에서 다시 일어섰습니다.</WTH_Letter_HealedToStanding_Description>
   <WTH_Letter_Mech_Reverted_Label>해킹 풀림</WTH_Letter_Mech_Reverted_Label>
-  <WTH_Letter_Mech_Reverted_Description>제대로 관리 받지 못한 어떤 메카노이드의 해킹이 풀렸습니다. 해당 메카노이드는 다시 군락의 통제를 받습니다.</WTH_Letter_Mech_Reverted_Description>
+  <WTH_Letter_Mech_Reverted_Description> 제대로 관리 받지 못한 어떤 메카노이드의 해킹이 풀렸습니다. \n 해당 메카노이드는 다시 군락의 통제를 받습니다.</WTH_Letter_Mech_Reverted_Description>
   <WTH_Letter_HackedPoorlyEvent_Label>잘못된 해킹 - 부서짐</WTH_Letter_HackedPoorlyEvent_Label>
-  <WTH_Letter_HackedPoorlyEvent_Description>제대로 해킹되지 않은 메카노이드의 머리부분이 기능고장을 일으켰습니다. 긴급정비가 필요합니다.</WTH_Letter_HackedPoorlyEvent_Description>
-  <WTH_FailureChance_Nothing_Title>실패 확률: 아무일도 일어나지 않음</WTH_FailureChance_Nothing_Title>
+  <WTH_Letter_HackedPoorlyEvent_Description>제대로 해킹되지 않은 메카노이드의 머리부분이 기능고장을 일으켰습니다. \n 긴급정비가 필요합니다.</WTH_Letter_HackedPoorlyEvent_Description>
+  <WTH_FailureChance_Nothing_Title>실패 확률 : 아무일도 일어나지 않음</WTH_FailureChance_Nothing_Title>
   <WTH_FailureChance_Nothing_Description>해킹 실패시 해당 사건이 일어날 확률</WTH_FailureChance_Nothing_Description>
-  <WTH_FailureChance_CauseRaid_Title>실패 확률: 습격 발생</WTH_FailureChance_CauseRaid_Title>
+  <WTH_FailureChance_CauseRaid_Title>실패 확률 : 습격 발생</WTH_FailureChance_CauseRaid_Title>
   <WTH_FailureChance_CauseRaid_Description>해킹 실패시 해당 사건이 일어날 확률</WTH_FailureChance_CauseRaid_Description>
   <WTH_FailureChance_ShootRandomDirection_Title>해킹 실패 : 무기 오작동</WTH_FailureChance_ShootRandomDirection_Title>	
   <WTH_FailureChance_ShootRandomDirection_Description>해킹 실패시 메카노이드의 주 무기가 무작위 방향으로 발사될 확률</WTH_FailureChance_ShootRandomDirection_Description>
-  <WTH_FailureChance_HealToStanding_Title>실패 확률: 시스템 복구됨</WTH_FailureChance_HealToStanding_Title>
+  <WTH_FailureChance_HealToStanding_Title>실패 확률 : 시스템 복구됨</WTH_FailureChance_HealToStanding_Title>
   <WTH_FailureChance_HealToStanding_Description>해킹 실패시 메카노이드가 시스템을 복구하고 다시 일어설 확률</WTH_FailureChance_HealToStanding_Description>
-  <WTH_FailureChance_HackPoorly_Title>실패 확률: 잘못된 해킹</WTH_FailureChance_HackPoorly_Title>
+  <WTH_FailureChance_HackPoorly_Title>실패 확률 : 잘못된 해킹</WTH_FailureChance_HackPoorly_Title>
   <WTH_FailureChance_HackPoorly_Description>해킹 실패시 해당 사건이 일어날 확률</WTH_FailureChance_HackPoorly_Description>
   <WTH_MaintenanceDedayEnabled_Title>정비 수치 감소 활성화</WTH_MaintenanceDedayEnabled_Title>
-  <WTH_MaintenanceDedayEnabled_Description>정기적으로 기계 장치를 정비(유지보수)하지 않으려면 이 옵션을 선택 해제하십시오. 이 옵션을 선택하지 않으면 정비 필요 표시줄이 계속 표시되지만 시간이 지남에 따라 줄어들지는 않습니다. 하지만 여전히 메카노이드의 정비 수치를 고갈시킬 수 있는 특정한 사건들이 존재합니다.</WTH_MaintenanceDedayEnabled_Description>
+  <WTH_MaintenanceDedayEnabled_Description> 정기적으로 기계 장치를 정비(유지보수)하지 않으려면 이 옵션을 선택 해제하십시오. \n 이 옵션을 선택하지 않으면 정비 필요 표시줄이 계속 표시되지만 시간이 지남에 따라 줄어들지는 않습니다. \n 하지만 여전히 메카노이드의 정비 수치를 고갈시킬 수 있는 특정한 사건들이 존재합니다.</WTH_MaintenanceDedayEnabled_Description>
 
-  <WTH_HackedMechChance_Title>적대세력이 해킹한 메카노이드를 사용할 가능성 (%)</WTH_HackedMechChance_Title>
-  <WTH_HackedMechChance_Description>적대세력이 당신의 기지를 공격할 때 해킹한 메카노이드를 사용할 가능성</WTH_HackedMechChance_Description>
+  <!--BEGIN: added in v0.19.6 -->
+  <WTH_TextMote_OperationFailed>작업에 실패했습니다.(성공 가능성 : {0})</WTH_TextMote_OperationFailed>
+  <WTH_Letter_CausedIntendedMechanoidRaid_Label>비상 신호가 성공적으로 송출됨.</WTH_Letter_CausedIntendedMechanoidRaid_Label>
+  <WTH_Letter_CausedIntendedMechanoidRaid_Description> 당신의 해커는 무력화된 메카노이드를 조작해 의도적으로 '비상 신호'를 송출하는 데 성공했지만, \n 그(그녀)는 그 과정에서 메카노이드를 고장내버렸습니다. 음... 이런 일을 한 게 '진짜' 좋은 생각이였을까요?</WTH_Letter_CausedIntendedMechanoidRaid_Description>
+  <WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label>비상 신호가 너무 강력함.</WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label>
+  <WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description> 당신의 해커가 신호를 송출할 수 있는 기계 장치를 만지작거리는 도중, \n 갑작스럽게 메카노이드에서 귀청이 터질듯한 비상 신호가 터져나와 정착지를 뒤흔들었습니다. \n 해커가 이러한 결과를 예측할 수 없었기 때문에 송출된 비상 신호는 기존 예상보다 훨씬 강력했습니다. \n 이제... 우리는 최악의 사태에 대비하고, 만일의 경우를 생각해둬야 할 것 같습니다...</WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description>
+  <WTH_Expand>열기</WTH_Expand>
+  <WTH_Collapse>접기</WTH_Collapse>
+  <WTH_SettingsGroup_Raids_Title>습격 설정</WTH_SettingsGroup_Raids_Title>
+  <WTH_SettingsGroup_Raids_Description>적의 습격에 메카노이드가 사용될 확률을 설정합니다.</WTH_SettingsGroup_Raids_Description>
+  <WTH_SettingsGroup_HackFailure_Title>해킹 실패 설정\n (!이벤트 발생정보 포함)</WTH_SettingsGroup_HackFailure_Title>
+  <WTH_SettingsGroup_HackFailure_Description> 해킹 실패 시 발생할 수 있는 여러 가지 이벤트의 확률을 설정합니다. \n 각 설정들의 확률을 합산해서 그 값이 100%를 넘지 않으면, 확률은 정상화 됩니다.</WTH_SettingsGroup_HackFailure_Description>
+  <WTH_FailureChance_IntRaidTooLarge_Title>실패 확률 : 대규모 습격 발생</WTH_FailureChance_IntRaidTooLarge_Title>
+  <WTH_FailureChance_IntRaidTooLarge_Description> 폰이 의도적으로 비상 신호를 송출하려고 할 때 너무 강한 비상 신호가 방출될 확률. \n (!참고 : 이 이벤트는 일반적인 해킹 시 발생할 수 없습니다.)</WTH_FailureChance_IntRaidTooLarge_Description>
+  <WTH_SettingsGroup_Balance_Title>중요 수치 설정</WTH_SettingsGroup_Balance_Title>
+  <WTH_SettingsGroup_Balance_Description> 이러한 설정은 모드의 밸런스에 큰 영향을 미칩니다. 필요에 맞게 수정할 수 있지만, 먼저 기본 설정으로 모드를 사용해 보는 것이 좋습니다. \n 기본값이 합리적이지 않다고 생각될 경우 그러한 내용을 이 모드의 창작마당(워크샵) 또는 포럼 페이지에 보고해 주십시오.</WTH_SettingsGroup_Balance_Description>
+  <WTH_MaintenanceDedayModifier_Title>정비 수치 감소 속도 설정</WTH_MaintenanceDedayModifier_Title>
+  <WTH_MaintenanceDedayModifier_Description> 이 설정을 조정하면, 정비 수치의 감소 속도를 수정 할 수 있습니다. \n 예시 : 이 값을 0.5로 설정하면 기본값(1)과 비교해 정비 수치의 감소 속도가 50%만큼 느려집니다.</WTH_MaintenanceDedayModifier_Description>
+  <WTH_RepairConsumptionModifier_Title>수리시 부품 소비량 설정</WTH_RepairConsumptionModifier_Title>
+  <WTH_RepairConsumptionModifier_Description>이 설정을 조정하면, 메카노이드를 수리하는데 필요한 부품의 양을 수정할 수 있습니다. (정비고 또는 업그레이드 모듈) \n 예시 : 이 값을 0.5로 설정하면 기본값(1)과 비교해 수리에 들어가는 부품이 50% 감소합니다.</WTH_RepairConsumptionModifier_Description>
+  <WTH_PartDropRateModifier_Title>메카노이드 부품 획득비율 설정</WTH_PartDropRateModifier_Title>
+  <WTH_PartDropRateModifier_Description> 이 설정을 조정하면, 메카노이드 부품의 획득비율을 수정할 수 있습니다. \n 예시 : 이 값을 2.0으로 설정하면 기본값(1)과 비교해 메카노이드 분해시 얻을 수 있는 메카노이드 부품의 양이 대략 두 배 가량 증가합니다.</WTH_PartDropRateModifier_Description>
+  <WTH_ChipDropRateModifier_Title>고급 메카노이드 칩 획득비율 설정</WTH_ChipDropRateModifier_Title>
+  <WTH_ChipDropRateModifier_Description> 이 설정을 조정하면, 고급 메카노이드 칩의 획득비율을 수정할 수 있습니다. \n 예시 : 이 값을 2.0으로 설정하면 기본값(1)과 비교해 메카노이드 분해시 얻을 수 있는 고급 메카노이드 칩의 양이 대략 두 배 가량 증가합니다.</WTH_ChipDropRateModifier_Description>
+  <WTH_PowerFallModifier_Title>전력 수치 소모 속도 설정</WTH_PowerFallModifier_Title>
+  <WTH_PowerFallModifier_Description> 이 설정을 조정하면, 메카노이드의 배터리에서 전력이 소모되는 속도를 수정할 수 있습니다. \n 예시 : 이 값을 0.5로 설정하면 기본값(1)과 비교해 전력 수치의 소모 속도가 50%만큼 느려집니다.</WTH_PowerFallModifier_Description>
+  <WTH_PowerChargeModifier_Title>전력 수치 충전 속도 설정</WTH_PowerChargeModifier_Title>
+  <WTH_PowerChargeModifier_Description> 이 설정을 조정하면, 메카노이드의 배터리를 충전하는 속도를 수정할 수 있습니다. \n 예시 : 이 값을 2.0으로 설정하면 기본값(1)과 비교해 배터리 전력 충전 속도가 두 배 가량 빨라집니다.</WTH_PowerChargeModifier_Description>
+  <!--END: added in v0.19.6 -->
+
+
+
+  <WTH_HackedMechChance_Title>적대세력이 해킹한 메카노이드를 사용할 확률 (%)</WTH_HackedMechChance_Title>
+  <WTH_HackedMechChance_Description>적대세력이 당신의 기지를 공격할 때 해킹한 메카노이드를 사용할 확률</WTH_HackedMechChance_Description>
   <WTH_MaxHackedMechPoints_Title>적 메카노이드 생성비율 - 숨겨진 습격 수치 '최대' (%)</WTH_MaxHackedMechPoints_Title>
-  <WTH_MaxHackedMechPoints_Description>이것은 적대세력의 습격 시 해킹된 적 메카노이드를 생성해내기 위한 포인트 예산을 결정합니다. 해킹당한 기계로 적의 침입이 발생할 경우 최소 해킹 지점 설정과 이 설정 사이의 무작위 숫자에 따라 메카노이드 생성에 사용할 수 있는 습격 지수의 비율이 결정됩니다. ( 예시 : 급습에 1,000 포인트 예산이 할당되었습니다. 이 '최대'치 설정은 50%로 설정되어 있고 '최소'치 설정은 20%라고 한다면, 해킹 당한 메카노이드의 생성비율은 최소 200 에서 500 포인트 가량으로. 기존 공격에 추가로 발생합니다.) </WTH_MaxHackedMechPoints_Description>
+  <WTH_MaxHackedMechPoints_Description> 이것은 적대세력의 습격 시 해킹된 적 메카노이드를 생성해내기 위한 포인트 예산을 결정합니다. \n 해킹당한 기계로 적의 침입이 발생할 경우 최소 해킹 지점 설정과 이 설정 사이의 무작위 숫자에 따라 \n 메카노이드 생성에 사용할 수 있는 습격 지수의 비율이 결정됩니다. \n ( 예시 : 급습에 1,000 포인트 예산이 할당되었습니다. 이 '최대'치 설정은 50%로 설정되어 있고 '최소'치 설정은 20%라고 한다면, \n 해킹 당한 메카노이드의 생성비율은 최소 200 에서 500 포인트 가량으로. 기존 공격과 같이 발생합니다.) </WTH_MaxHackedMechPoints_Description>
   <WTH_MinHackedMechPoints_Title>적 메카노이드 생성비율 - 숨겨진 습격 수치 '최소' (%)</WTH_MinHackedMechPoints_Title>
-  <WTH_MinHackedMechPoints_Description>이것은 적대세력의 습격 시 해킹된 적 메카노이드를 생성해내기 위한 포인트 예산을 결정합니다. 해킹당한 기계로 적의 침입이 발생할 경우 최소 해킹 지점 설정과 이 설정 사이의 무작위 숫자에 따라 메카노이드 생성에 사용할 수 있는 습격 지수의 비율이 결정됩니다. ( 예시 : 급습에 1,000 포인트 예산이 할당되었습니다. 이 '최대'치 설정은 50%로 설정되어 있고 '최소'치 설정은 20%라고 한다면, 해킹 당한 메카노이드의 생성비율은 최소 200 에서 500 포인트 가량으로. 기존 공격에 추가로 발생합니다.) </WTH_MinHackedMechPoints_Description>
+  <WTH_MinHackedMechPoints_Description> 이것은 적대세력의 습격 시 해킹된 적 메카노이드를 생성해내기 위한 포인트 예산을 결정합니다. \n 해킹당한 기계로 적의 침입이 발생할 경우 최소 해킹 지점 설정과 이 설정 사이의 무작위 숫자에 따라 \n 메카노이드 생성에 사용할 수 있는 습격 지수의 비율이 결정됩니다. \n ( 예시 : 급습에 1,000 포인트 예산이 할당되었습니다. 이 '최대'치 설정은 50%로 설정되어 있고 '최소'치 설정은 20%라고 한다면, \n 해킹 당한 메카노이드의 생성비율은 최소 200 에서 500 포인트 가량으로. 기존 공격과 같이 발생합니다.) </WTH_MinHackedMechPoints_Description>
 
   <WTH_Menu_ClearTable>해킹 작업대에서 치우기</WTH_Menu_ClearTable>
   <WTH_Menu_CarryToTable>해킹 작업대로 운반</WTH_Menu_CarryToTable>
-  <WTH_Menu_CarryToTable_Disabled>해킹 작업대로 운반 (이용가능한, 비어있는 해킹 작업대가 없음.)</WTH_Menu_CarryToTable_Disabled>
+  <WTH_Menu_CarryToTable_Disabled>해킹 작업대로 운반 \n (이용가능한, 비어있는 해킹 작업대가 없음.)</WTH_Menu_CarryToTable_Disabled>
 
   <WTH_Reason_NotOnTable>이용가능한 해킹 작업대 없음.</WTH_Reason_NotOnTable>
   <WTH_Reason_MechanoidDowned>다운된 메카노이드를 사용할 수 없음</WTH_Reason_MechanoidDowned>
-  <WTH_Reason_PowerLow>메카노이드를 사용할 수 없습니다. 전력이 너무 낮습니다. (자동 충전을 비활성화하면 이를 무시할 수 있습니다.)</WTH_Reason_PowerLow>
+  <WTH_Reason_PowerLow>메카노이드를 사용할 수 없습니다. 전력이 너무 낮습니다. \n (자동 충전을 비활성화하면 이를 무시할 수 있습니다.)</WTH_Reason_PowerLow>
   <WTH_Reaon_PawnCannotBeDrafted>미완성 원격제어 벨트로는 메카노이드를 작동할 수 없습니다.</WTH_Reaon_PawnCannotBeDrafted>
 
   <WTH_Gizmo_SearchAndDestroy_Label>활성화</WTH_Gizmo_SearchAndDestroy_Label>
-  <WTH_Gizmo_SearchAndDestroy_Description>수색 파괴 모드를 활성화합니다. 메카노이드가 자동으로 개척지 근처의 적을 공격합니다. 비활성화시 메카노이드는 가능하다면 메카노이드 정비고(또는 충전소)로 되돌아갑니다.</WTH_Gizmo_SearchAndDestroy_Description>
+  <WTH_Gizmo_SearchAndDestroy_Description>수색 파괴 모드를 활성화합니다. 메카노이드가 자동으로 개척지 근처의 적을 공격합니다. \n 비활성화시 메카노이드는 가능하다면 메카노이드 정비고(또는 충전소)로 되돌아갑니다.</WTH_Gizmo_SearchAndDestroy_Description>
   <WTH_Gizmo_AutoRecharge_Label>자동 충전</WTH_Gizmo_AutoRecharge_Label>
-  <WTH_Gizmo_AutoRecharge_Description>이 모드가 활성화되면, 메카노이드는 전력이 부족할 때 메카노이드 정비고(또는 충전소)로 자동으로 복귀할 것입니다.</WTH_Gizmo_AutoRecharge_Description>
+  <WTH_Gizmo_AutoRecharge_Description> 이 모드가 활성화되면, 메카노이드는 전력이 부족할 때 \n 메카노이드 정비고(또는 충전소)로 자동으로 복귀할 것입니다.</WTH_Gizmo_AutoRecharge_Description>
   
   <WTH_Gizmo_RemoteControlActivate_Label>원격제어 활성화</WTH_Gizmo_RemoteControlActivate_Label>
   <WTH_Gizmo_RemoteControlActivate_Description>해킹된 이동 시스템을 원격 제어장치를 사용하여 직접 조종할 수 있게 합니다.</WTH_Gizmo_RemoteControlActivate_Description>
@@ -56,17 +88,17 @@
   <WTH_Gizmo_RemoteControlDeactivate_Description>원격 제어 장치를 비활성화하여 제어권한을 다시 메카노이드에게 맡깁니다.</WTH_Gizmo_RemoteControlDeactivate_Description>
 
   <WTH_Gizmo_Regenerate_Label>신체 부위 수복</WTH_Gizmo_Regenerate_Label>
-  <WTH_Gizmo_Regenerate_Description>이 기능이 활성화되면 정비고는 누락된 메카노이드의 신체 부위를 수복합니다. 차체 부품을 수복하면 각 차체 부품에 대해 최대 {0}개의 메카노이드 부품을 소비합니다(소형 본체 부품은 더 적게 필요함). 다른 손상이 없을 때만 부품이 수복되기 시작합니다.</WTH_Gizmo_Regenerate_Description>
+  <WTH_Gizmo_Regenerate_Description>이 기능이 활성화되면 정비고는 누락된 메카노이드의 신체 부위를 수복합니다. \n 차체 부품을 수복하면 각 차체 부품에 대해 최대 {0}개의 메카노이드 부품을 소비합니다(소형 본체 부품은 더 적게 필요함). \n 다른 손상이 없을 때만 파괴된 부분이 수복되기 시작합니다.</WTH_Gizmo_Regenerate_Description>
   <WTH_Gizmo_Repair_Label>메카노이드 수리</WTH_Gizmo_Repair_Label>
-  <WTH_Gizmo_Repair_Description>이 기능이 활성화되면, 정비고에서 충분한 전력과 작업 재료를 제공하고, 이것은 내부 수복 장치들을 활성화함으로써 메카노이드의 모든 손상을 복구합니다. 메카노이드는 이 과정에서 정비고에 저장된 메카노이드 부품을 소비합니다.</WTH_Gizmo_Repair_Description>
+  <WTH_Gizmo_Repair_Description> 이 기능이 활성화되면, 정비고에서 충분한 전력과 작업 재료를 제공하고, \n 이것은 내부 수복 장치들을 활성화함으로써 메카노이드의 모든 손상을 복구합니다. \n 메카노이드는 이 과정에서 정비고에 저장된 메카노이드 부품을 소비합니다.</WTH_Gizmo_Repair_Description>
 
   <WTH_Gizmo_SelfDestruct_Label>자폭</WTH_Gizmo_SelfDestruct_Label>
   <WTH_Gizmo_SelfDestruct_Description>메카노이드. 펑 소리와 함께 사라지다. 어흑 마이깟...</WTH_Gizmo_SelfDestruct_Description>
 
   <WTH_Gizmo_Mech_Repair_Label>수리</WTH_Gizmo_Mech_Repair_Label>
-  <WTH_Gizmo_Mech_Repair_Description>수리 모듈에 의해 충전된 기계적 성질을 다른 메카노이드 기체로 이송합니다. 정비용 팔을 사용하여 다른 메카노이드를 수리하도록 명령합니다.</WTH_Gizmo_Mech_Repair_Description>
+  <WTH_Gizmo_Mech_Repair_Description>수리 모듈에 의해 충전된 기계적 성질을 다른 메카노이드 기체로 이송합니다. \n 정비용 팔을 사용하여 다른 메카노이드를 수리하도록 명령합니다.</WTH_Gizmo_Mech_Repair_Description>
   <WTH_Gizmo_SelfRepair_Label>자가 수리</WTH_Gizmo_SelfRepair_Label>
-  <WTH_Gizmo_SelfRepair_Description>수리 모듈을 작동시켜 에너지를 급증시키고 메카노이드의 내부 기계들이 재활성화되도록 합니다. 이러한 구성 요소는 모듈에 저장된 부품을 사용하여 즉시 수리하기 시작합니다. 다만 수복 절차를 진행할 시 다른 어떠한 행동도 할 수 없습니다.</WTH_Gizmo_SelfRepair_Description>
+  <WTH_Gizmo_SelfRepair_Description> 수리 모듈을 작동시켜 에너지를 급증시키고 메카노이드의 내부 기계들이 재활성화되도록 합니다. \n 이러한 구성 요소는 모듈에 저장된 부품을 사용하여 즉시 수리하기 시작합니다. \n 다만 수복 절차를 진행할 시 다른 어떠한 행동도 할 수 없습니다.</WTH_Gizmo_SelfRepair_Description>
 
   <WTH_Gizmo_Mech_EquipBelt_Label>벨트 장비</WTH_Gizmo_Mech_EquipBelt_Label>
   <WTH_Gizmo_Mech_EquipBelt_Description>보통은 사람들이 사용하는 모든 유형의 벨트를 메카노이드가 장착하도록 명령합니다.</WTH_Gizmo_Mech_EquipBelt_Description>
@@ -76,19 +108,25 @@
   <WTH_Reason_NeedsMoreFuel>이 기능을 활성화하려면 최소 {0}개의 연료가 필요합니다.</WTH_Reason_NeedsMoreFuel>
   <WTH_Reason_NotActivated>비활성화된 메카노이드와 함께 사용할 수 없습니다..</WTH_Reason_NotActivated>
   <WTH_Reason_NoDamage>수리할 손상이 없습니다.</WTH_Reason_NoDamage>
+  
+  <WTH_Alert_EmergencySignalTransmitted_Label>메카노이드 습격 임박함</WTH_Alert_EmergencySignalTransmitted_Label>
+  <WTH_Alert_EmergencySignalTransmitted_Description>정착지 근처의 메카노이드 군락은 현재 송출된 비상 신호에 반응하고 있으며, 곧 정착지에 도착할 것입니다.</WTH_Alert_EmergencySignalTransmitted_Description>
+  <WTH_Alert_EmergencySignalCooldown_Label>의심스러워하는\n 메카노이드 군락</WTH_Alert_EmergencySignalCooldown_Label>
+  <WTH_Alert_EmergencySignalCooldown_Description> 최근 당신은 무력화된 메카노이드를 조작하여 비상 신호를 송출하였고, 근처의 메카노이드들을 끌어들이는데 성공했습니다.\n 메카노이드 군락은 파견한 병력들이 당신의 정착지 주변에서 모습을 감춘 것을 눈치 챘고, 거기에 더해 몇몇 의심스러운 정황들을 포착한듯 보입니다.\n 당신은 새로운 메카노이드 군락 세력이 도착하거나, 그들의 의심이 사라질 때까지 '비상 신호 송출하기' 작업을 할 수 없습니다.\n 이러한 상황은 최대 한 분기 동안 이어질 수 있습니다.</WTH_Alert_EmergencySignalCooldown_Description>
 
+  
   <WTH_Alert_NotEnoughPlatforms_Label>메카노이드 정비고가 충분하지 않음</WTH_Alert_NotEnoughPlatforms_Label>
-  <WTH_Alert_NotEnoughPlatforms_Description>정착지에 메카노이드 정비고보다 더 많은 해킹된 메카노이드가 있습니다. 메카노이드 정비고가 더 필요합니다.</WTH_Alert_NotEnoughPlatforms_Description>
+  <WTH_Alert_NotEnoughPlatforms_Description> 정착지에 메카노이드 정비고보다 더 많은 해킹된 메카노이드가 있습니다. \n 메카노이드 정비고가 더 필요합니다.</WTH_Alert_NotEnoughPlatforms_Description>
   <WTH_Alert_Power_Low_Label>전력이 부족한 메카노이드</WTH_Alert_Power_Low_Label>
-  <WTH_Alert_Power_Low_Description>해당 메카노이드의 전력이 부족합니다.:{0} 메카노이드 작업대로 돌아가기 위해 이들을 비활성화 하십시오.</WTH_Alert_Power_Low_Description>
+  <WTH_Alert_Power_Low_Description> 해당 메카노이드의 전력이 부족합니다.:{0} 메카노이드 작업대로 돌아가기 위해 이들을 비활성화 하십시오.</WTH_Alert_Power_Low_Description>
   <WTH_Alert_Maintenance_Low_Label>정비가 필요한 메카노이드</WTH_Alert_Maintenance_Low_Label>
-  <WTH_Alert_Maintenance_Low_Description>해당 메카노이드는 제대로 관리되지 않고 있습니다. :{0} 되도록이면 기술자들이 관심을 가지고, 정비를 할 수 있게 하십시오.</WTH_Alert_Maintenance_Low_Description>
+  <WTH_Alert_Maintenance_Low_Description> 해당 메카노이드는 제대로 관리되지 않고 있습니다. :{0} 되도록이면 기술자들이 관심을 가지고, 정비를 할 수 있게 하십시오.</WTH_Alert_Maintenance_Low_Description>
   <WTH_Alert_Maintenance_VeryLow_Label>극심한 정비 부족</WTH_Alert_Maintenance_VeryLow_Label>
-  <WTH_Alert_Maintenance_VeryLow_Description>해당 메카노이드의 해킹된 장비들은 매우 형편없이 유지되고 있으며, 당신의 정착지에 잠재적인 위협이 되어가고 있습니다.:{0} 해킹이 언제든지 풀릴 수 있는 위험한 상황입니다. 메카노이드를 정비하거나 전원을 정지시키는 것. 이 두가지 방법 중 하나는 반드시 조치해야합니다.</WTH_Alert_Maintenance_VeryLow_Description>
+  <WTH_Alert_Maintenance_VeryLow_Description> 해당 메카노이드의 해킹된 장비들은 매우 형편없이 유지되고 있으며, 당신의 정착지에 잠재적인 위협이 되어가고 있습니다.:{0} 해킹이 언제든지 풀릴 수 있는 위험한 상황입니다. 메카노이드를 정비하거나 전원을 정지시키는 것. 이 두가지 방법 중 하나는 반드시 조치해야합니다.</WTH_Alert_Maintenance_VeryLow_Description>
   <WTH_FactionRestrictions_OK>허용</WTH_FactionRestrictions_OK>
   <WTH_FactionRestrictions_NOK>비허용</WTH_FactionRestrictions_NOK>
   <WTH_FactionRestrictions_Label>각 세력에서 해킹할 수 있는 메카노이드 구성.</WTH_FactionRestrictions_Label>
-  <WTH_FactionRestrictions_Description>이 설정은 각 세력이 습격해올 시 사용가능한 메카노이드의 종류를 설정 할 수 있습니다.</WTH_FactionRestrictions_Description>
+  <WTH_FactionRestrictions_Description> 이 설정은 각 세력이 습격해올 시 사용가능한 메카노이드의 종류를 설정 할 수 있습니다.</WTH_FactionRestrictions_Description>
 
   <WTH_MechanoidsSection>메카노이드</WTH_MechanoidsSection>
 
@@ -98,14 +136,16 @@
   <WTH_Explanation_FuelConsumption>충전소당 연료 소비량</WTH_Explanation_FuelConsumption>
   <WTH_Explanation_TotalFuel>총 연료</WTH_Explanation_TotalFuel>
   <WTH_Explanation_DaysOfFuel>일일 연료소비량</WTH_Explanation_DaysOfFuel>
-  <WTH_Explanation_NotEnoughPlatforms>선택한 메카노이드의 수에 비해 휴대용 충전소가 부족합니다. 각 메카노이드마다 하나씩 할당되어야 합니다.</WTH_Explanation_NotEnoughPlatforms>
+  <WTH_Explanation_NotEnoughPlatforms> 선택한 메카노이드의 수에 비해 휴대용 충전소가 부족합니다. \n 각 메카노이드마다 하나씩 할당되어야 합니다.</WTH_Explanation_NotEnoughPlatforms>
   <WTH_ExtraInfoKey_DaysOfFuel>일일 연료소비량 (메카노이드)</WTH_ExtraInfoKey_DaysOfFuel>
 
-  <WTH_Warning_NotEnoughPlatforms>당신의 상단은 모든 메카노이드를 충전하기에 충분한 충전소가 없습니다. 여러분 각각의 메카노이드에 할당할 수 있는 충전소를 가져야 합니다. 그렇지 않으면 어떤 메카노이드들은 매우 빨리 전력이 떨어질 것입니다.</WTH_Warning_NotEnoughPlatforms>
-  <WTH_Warning_DaysOfFuel>당신의 상단은 메카노이드의 전력을 공급할 수 있는 {0} 일치 정도의 연료만 가지고 있습니다, 그렇기에 당신의 메카노이드들은 전력이 빠르게 부족해질 수 있습니다.</WTH_Warning_DaysOfFuel>
+  <WTH_Warning_NotEnoughPlatforms> 당신의 상단은 모든 메카노이드를 충전하기에 충분한 충전소가 없습니다. \n 여러분 각각의 메카노이드에 할당할 수 있는 충전소를 가져야 합니다. 그렇지 않으면 어떤 메카노이드들은 매우 빨리 전력이 떨어질 것입니다.</WTH_Warning_NotEnoughPlatforms>
+  <WTH_Warning_DaysOfFuel> 당신의 상단은 메카노이드의 전력을 공급할 수 있는 {0} 일치 정도의 연료만 가지고 있습니다, \n 그렇기에 당신의 메카노이드들은 전력이 빠르게 부족해질 수 있습니다.</WTH_Warning_DaysOfFuel>
   <WTH_Message_CaravanOutOfFuel>{0} 연료가 모두 떨어졌습니다.</WTH_Message_CaravanOutOfFuel>
   <WTH_Message_CannotDrop>이 장비는 폰에 장비되어 있으므로 떨어뜨릴 수 없습니다.</WTH_Message_CannotDrop>
-
+  <WTH_Message_EmergencySignalRaidInbound> 정착지 주변의 메카노이드 군락 병력은 이미 초기 비상신호에 반응하여 당신의 정착지로 가고 있습니다.\n따라서 비상 신호 송출은 현재 아무런 효과가 없으며 작업은 취소되었습니다.</WTH_Message_EmergencySignalRaidInbound>
+  <WTH_Message_EmgergencySignalRaidCoolingDown> 메카노이드 군락은 파견한 병력들이 당신의 정착지 주변에서 모습을 감춘 것을 눈치 챘고,\n거기에 더해 몇몇 의심스러운 정황들을 포착한듯 보입니다. 따라서 비상 신호 송출은 현재 아무런 효과가 없으며 작업은 취소되었습니다.</WTH_Message_EmgergencySignalRaidCoolingDown>
+  
   <WTH_Mount>탑재 {0}</WTH_Mount>
   <WTH_Mount_Jobstring>탑재중 {0}</WTH_Mount_Jobstring>
 

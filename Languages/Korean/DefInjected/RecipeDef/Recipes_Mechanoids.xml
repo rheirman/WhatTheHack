@@ -34,11 +34,15 @@
   <WTH_Craft_BeltModule.jobString>제작</WTH_Craft_BeltModule.jobString>
 
   <WTH_HackMechanoid.label>해킹 장비로 메카노이드 해킹 시도</WTH_HackMechanoid.label>
-  <WTH_HackMechanoid.description>메카노이드의 표적 감지기를 해킹하여 아군 대신 적을 목표로 삼게 만듭니다.</WTH_HackMechanoid.description>
+  <WTH_HackMechanoid.description>무력화된 메카노이드의 표적 감지기를 해킹하여 아군 대신 적을 목표로 삼게 만듭니다.</WTH_HackMechanoid.description>
   <WTH_HackMechanoid.jobString>메카노이드 해킹</WTH_HackMechanoid.jobString>
+  
+  <WTH_InduceEmergencySignal.label>비상 신호 송출하기</WTH_InduceEmergencySignal.label>
+  <WTH_InduceEmergencySignal.description> 무력화된 메카노이드의 자기 방어 매커니즘을 일부 해킹하여,\n 인근 메카노이드 군락에 비상 신호를 송출합니다.(위험할 수 있음!)</WTH_InduceEmergencySignal.description>
+  <WTH_InduceEmergencySignal.jobString>메카노이드 해킹</WTH_InduceEmergencySignal.jobString>
 
-  <WTH_ImplantAI.label>AI 보조통제장치</WTH_ImplantAI.label>
-  <WTH_ImplantAI.description>인공자아핵을 조정한 장치를 메카노이드에 삽입합니다. 이로써 해당 메카노이드를 모든 전투 상황에 맞게 완벽히 제어할 수 있습니다.</WTH_ImplantAI.description>
+  <WTH_ImplantAI.label>AI 보조통제장치 삽입</WTH_ImplantAI.label>
+  <WTH_ImplantAI.description> 인공자아핵을 조정한 장치를 메카노이드에 삽입합니다.\n 이로써 해당 메카노이드를 모든 전투 상황에 맞게 완벽히 제어할 수 있습니다.</WTH_ImplantAI.description>
   <WTH_ImplantAI.jobString>메카노이드 해킹</WTH_ImplantAI.jobString>
 
 
@@ -99,15 +103,15 @@
   <WTH_InstallRepairArm.jobString>정비용 팔 설치.</WTH_InstallRepairArm.jobString>
 
   <WTH_InstallTurretModule.label>포탑 모듈 설치</WTH_InstallTurretModule.label>
-  <WTH_InstallTurretModule.description>포탑과 박격포에 구조적인 지지와 인터페이스를 모두 제공하는 모듈입니다. 포장할 수 있는 모든 포탑은 이 모듈과 호환될 수 있습니다. 이것은 강력한 업그레이드이지만, 포탑은 추가 전력을 요구하고 파괴되었을 때는 폭발하는 경향을 보입니다. 대형 메카노이드에만 탑재할 수 있습니다.</WTH_InstallTurretModule.description>
+  <WTH_InstallTurretModule.description> 포탑과 박격포에 구조적인 지지와 인터페이스를 모두 제공하는 모듈입니다.\n 포장할 수 있는 모든 포탑은 이 모듈과 호환될 수 있습니다. 이것은 강력한 업그레이드이지만, 포탑은 추가 전력을 요구하고 파괴되었을 때는 폭발하는 경향을 보입니다.\n 대형 메카노이드에만 탑재할 수 있습니다.</WTH_InstallTurretModule.description>
   <WTH_InstallTurretModule.jobString>메카노이드 개조</WTH_InstallTurretModule.jobString>
 
   <WTH_InstallRepairModule.label>수리 모듈 설치</WTH_InstallRepairModule.label>
-  <WTH_InstallRepairModule.description>메카노이드 부품을 적재할 수 있고 메카노이드 장치의 전원 공급을 내부 기계로 재전송할 수 있는 모듈입니다. 해당 모듈을 사용하면 메카나이트가 활성화되며, 메카노이드는 적재된 부품을 사용하여 수리되지만 수리 절차 중에는 어떤 행동도 할 수 없게 됩니다.</WTH_InstallRepairModule.description>
+  <WTH_InstallRepairModule.description> 메카노이드 부품을 적재할 수 있고 메카노이드 장치의 전원 공급을 내부 기계로 재전송할 수 있는 모듈입니다.\n 해당 모듈을 사용하면 메카나이트가 활성화되며, 메카노이드는 적재된 부품을 사용하여 수리되지만 수리 절차 중에는 어떤 행동도 할 수 없게 됩니다.</WTH_InstallRepairModule.description>
   <WTH_InstallRepairModule.jobString>메카노이드 개조</WTH_InstallRepairModule.jobString>
 
   <WTH_InstallSelfDestruct.label>자폭 모듈 설치</WTH_InstallSelfDestruct.label>
-  <WTH_InstallSelfDestruct.description>고폭탄이 설치된 자폭 모듈입니다. 유사시 고폭탄 뇌관을 단락시켜 메카노이드를 자폭시키는 기능을 추가합니다. 플라스틸로 구성된 보호장치는 폭발물이 의도치 않게 터지는 것을 방지합니다.</WTH_InstallSelfDestruct.description>
+  <WTH_InstallSelfDestruct.description> 고폭탄이 설치된 자폭 모듈입니다. 유사시 고폭탄 뇌관을 단락시켜 메카노이드를 자폭시키는 기능을 추가합니다.\n 플라스틸로 구성된 보호장치는 폭발물이 의도치 않게 터지는 것을 방지합니다.</WTH_InstallSelfDestruct.description>
   <WTH_InstallSelfDestruct.jobString>메카노이드 개조</WTH_InstallSelfDestruct.jobString>
 
   <WTH_InstallBeltModule.label>벨트 모듈 설치</WTH_InstallBeltModule.label>
