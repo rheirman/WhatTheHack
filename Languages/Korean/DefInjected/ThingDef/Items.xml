@@ -5,13 +5,13 @@
   <WTH_MechanoidParts.description>파괴된 메카노이드에게서 떼어낸 부품입니다. 메카노이드를 해킹하고 수리하는데 필요합니다.</WTH_MechanoidParts.description>
 
   <WTH_MechanoidChip.label>고급 메카노이드 칩</WTH_MechanoidChip.label>
-  <WTH_MechanoidChip.description>무력화되거나 파괴된 메카노이드에게서 찾아낸 고급 메카노이드 칩입니다. 좀 더 복잡한 해킹 작업이나, 고급 모듈 제작에 필요합니다.</WTH_MechanoidChip.description>
+  <WTH_MechanoidChip.description>무력화되거나 파괴된 메카노이드에게서 찾아낸 고급 메카노이드 칩입니다. \n좀 더 복잡한 해킹 작업이나, 고급 모듈 제작에 필요합니다.</WTH_MechanoidChip.description>
 
   <WTH_TurretModule.label>포탑 모듈</WTH_TurretModule.label>
-  <WTH_TurretModule.description>해킹된 메카노이드에 설치할 수 있으며, 이 모듈이 설치된 메카노이드는 포탑과 박격포를 탑재할 수 있습니다.</WTH_TurretModule.description>
+  <WTH_TurretModule.description>해킹된 메카노이드에 설치할 수 있으며, \n이 모듈이 설치된 메카노이드는 포탑과 박격포를 탑재할 수 있습니다.</WTH_TurretModule.description>
 
   <WTH_SelfDestructModule.label>자폭 모듈</WTH_SelfDestructModule.label>
-  <WTH_SelfDestructModule.description>치명적인 자폭 옵션을 제공하기 위해 해킹된 메카노이드에 설치할 수 있는 자폭 모듈입니다. 평소에는 플라스틸 보호장치로 의도치않은 폭발을 막습니다.</WTH_SelfDestructModule.description>
+  <WTH_SelfDestructModule.description>치명적인 자폭 옵션을 제공하기 위해 해킹된 메카노이드에 설치할 수 있는 자폭 모듈입니다. \n평소에는 플라스틸 보호장치로 의도치않은 폭발을 막습니다.</WTH_SelfDestructModule.description>
 
   <WTH_BatteryExpansionModule.label>배터리 확장 모듈</WTH_BatteryExpansionModule.label>
   <WTH_BatteryExpansionModule.description>약간의 기동성을 희생하는 대가로 메카노이드에 추가 배터리 용량을 제공하는 모듈입니다.</WTH_BatteryExpansionModule.description>
@@ -20,13 +20,13 @@
   <WTH_VanometricModule.description>약간의 기동성을 희생하는 대가로 메카노이드에 무한히 전력을 공급하는 베노메트릭 모듈입니다.</WTH_VanometricModule.description>
 
   <WTH_RepairModule.label>수리 모듈</WTH_RepairModule.label>
-  <WTH_RepairModule.description>해킹된 메카노이드가 현장에서 자가 수리할 수 있는 능력을 제공하기 위해 메카노이드에 설치할 수 있습니다. 단 수복 절차가 진행중일 시 어떠한 다른 행동도 할 수 없습니다.</WTH_RepairModule.description>
+  <WTH_RepairModule.description>해킹된 메카노이드가 현장에서 자가 수리할 수 있는 능력을 제공하기 위해 메카노이드에 설치할 수 있습니다. \n단 수복 절차가 진행중일 시 어떠한 다른 행동도 할 수 없습니다.</WTH_RepairModule.description>
 
   <WTH_RepairArm.label>정비용 팔</WTH_RepairArm.label>
-  <WTH_RepairArm.description>해킹된 메카노이드가 현장에 있는 다른 메카노이드 기체를 수리할 수 있는 능력을 제공하기 위해 수리 모듈과 함께 메카노이드에 설치할 수 있습니다.</WTH_RepairArm.description>
+  <WTH_RepairArm.description>해킹된 메카노이드에게 현장에 있는 다른 메카노이드 기체를 수리할 수 있는 능력을 제공합니다. \n수리 모듈과 함께 메카노이드에 설치할 수 있습니다.</WTH_RepairArm.description>
 
   <WTH_BeltModule.label>벨트 모듈</WTH_BeltModule.label>
-  <WTH_BeltModule.description>해킹된 메카노이드에 방어 벨트나 연막 벨트 등의 벨트를 장착할 수 있도록 메카노이드에 설치할 수 있습니다.</WTH_BeltModule.description>
+  <WTH_BeltModule.description>해킹된 메카노이드에 방어 벨트나 연막 벨트 등. \n벨트를 장착할 수 있도록 메카노이드에 설치할 수 있습니다.</WTH_BeltModule.description>
 
 
 </LanguageData>

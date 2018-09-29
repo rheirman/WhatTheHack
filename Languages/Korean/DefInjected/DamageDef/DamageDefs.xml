@@ -2,7 +2,7 @@
 <LanguageData>
 
   <WTH_RegeneratedPartDamage.label>부분 재생성중</WTH_RegeneratedPartDamage.label>
-  <WTH_RegeneratedPartDamage.deathMessage>{0} 은 죽었습니다.</WTH_RegeneratedPartDamage.deathMessage>
+  <WTH_RegeneratedPartDamage.deathMessage>{0} 은(는) 죽었습니다.</WTH_RegeneratedPartDamage.deathMessage>
 
 
 </LanguageData>

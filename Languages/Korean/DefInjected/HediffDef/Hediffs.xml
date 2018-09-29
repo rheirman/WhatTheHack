@@ -51,15 +51,15 @@
 	  </HediffDef> -->
 
   <WTH_ReplacedAI.label>AI 대체됨</WTH_ReplacedAI.label>
-  <WTH_TargetingHacked.label>목표 해킹됨</WTH_TargetingHacked.label>
+  <WTH_TargetingHacked.label>해킹됨</WTH_TargetingHacked.label>
   <WTH_BackupBattery.label>백업 배터리로 가동</WTH_BackupBattery.label>
-  <WTH_LocomotionHacked.label>이동력 해킹</WTH_LocomotionHacked.label>
-  <WTH_TargetingHackedPoorly.label>목표물 해킹이 잘못됨</WTH_TargetingHackedPoorly.label>
-  <WTH_TargetingDestroyed.label>목표물 파괴</WTH_TargetingDestroyed.label>
+  <WTH_LocomotionHacked.label>이동 시스템 해킹됨</WTH_LocomotionHacked.label>
+  <WTH_TargetingHackedPoorly.label>잘못된 해킹</WTH_TargetingHackedPoorly.label>
+  <WTH_TargetingDestroyed.label>파괴됨</WTH_TargetingDestroyed.label>
   <WTH_LowMaintenance.label>약간의 정비 부족</WTH_LowMaintenance.label>
   <WTH_VeryLowMaintenance.label>심각한 정비 부족</WTH_VeryLowMaintenance.label>
   <WTH_VeryLowPower.label>매우 낮은 전력</WTH_VeryLowPower.label>
-  <WTH_NoPower.label>전력 부족</WTH_NoPower.label>
+  <WTH_NoPower.label>전력 고갈</WTH_NoPower.label>
 
 
 </LanguageData>
