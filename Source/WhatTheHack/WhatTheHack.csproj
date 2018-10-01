@@ -63,6 +63,7 @@
     <Compile Include="Buildings\Building_BaseMechanoidPlatform.cs" />
     <Compile Include="Buildings\Building_MechanoidBeacon.cs" />
     <Compile Include="Buildings\Building_PortableChargingPlatform.cs" />
+    <Compile Include="Buildings\MinifiedThing_Custom.cs" />
     <Compile Include="Comps\CompMountable.cs" />
     <Compile Include="Comps\CompProperties_Mountable.cs" />
     <Compile Include="Harmony\ApparelUtility.cs" />

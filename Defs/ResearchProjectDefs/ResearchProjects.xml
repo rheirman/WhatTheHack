@@ -6,7 +6,7 @@
 	<tab>WTH_ResearchTab</tab>
 	<techLevel>Spacer</techLevel>
 	<description>Gives access to the hacking table and the mechanoid platform. The hacking table can be used to hack into the targeting system of mechanoids, making sure they attack your enemy instead of your colony when activated. Also allows you to build mechanoid platforms, which are needed as a repair and as a power station for mechanoids.</description>
-	<baseCost>1000</baseCost>
+	<baseCost>1600</baseCost>
 	<prerequisites>
 	  <li>MicroelectronicsBasics</li>
 	</prerequisites>
@@ -15,18 +15,32 @@
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
-	<defName>WTH_PortableChemfuelPlatform</defName>
-	<label>Portable chemfuel charging platform</label>
-	<tab>WTH_ResearchTab</tab>
-	<techLevel>Spacer</techLevel>
-	<description>Allows the creation of portable chemfuel charging platforms, which supply your mechanoids with power while they explore the world. Can also be installed/uninstalled for a temporary power solution for your mechanoids.</description>
-	<baseCost>500</baseCost>
-	<prerequisites>
-	  <li>BiofuelRefining</li>
-	  <li>WTH_HackingBasics</li>
-	</prerequisites>
-	<researchViewX>1</researchViewX>
-	<researchViewY>1</researchViewY>
+		<defName>WTH_PortableChemfuelPlatform</defName>
+		<label>Portable chemfuel charging platform</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Allows the creation of portable chemfuel charging platforms, which supply your mechanoids with power while they explore the world. Can also be installed/uninstalled for a temporary power solution for your mechanoids.</description>
+		<baseCost>800</baseCost>
+		<prerequisites>
+		  <li>BiofuelRefining</li>
+		  <li>WTH_HackingBasics</li>
+		</prerequisites>
+		<researchViewX>0</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_PortableDisassemblingBench</defName>
+		<label>Portable disassembling bench</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<baseCost>1200</baseCost>
+		<description>A sturdy and portable bench used for disassembling mechanoids during trips. Its tools don't depend on power, which is convenient for trips, but also makes it slightly less efficient.</description>
+		<prerequisites>
+		  <li>WTH_HackingBasics</li>
+		</prerequisites>
+		<researchViewX>0</researchViewX>
+		<researchViewY>2</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -35,7 +49,7 @@
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>Build a mechanoid workshop, which is used to construct all kinds of mechanoid related contraptions and upgrades, and also for scrapping advanced mechanoid parts.</description>
-		<baseCost>2400</baseCost>
+		<baseCost>2000</baseCost>
 		<prerequisites>
 		  <li>WTH_HackingBasics</li>
 		</prerequisites>

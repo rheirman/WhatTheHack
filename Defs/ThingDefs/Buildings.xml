@@ -140,7 +140,7 @@
   </ThingDef>
   
   
-  <ThingDef ParentName="BuildingBase">
+  <ThingDef ParentName="BenchBase">
     <defName>WTH_MechanoidPlatform</defName>
     <label>mechanoid platform</label>
     <description>Platform used for charging and repairing mechanoids.</description>
@@ -150,6 +150,7 @@
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2,4)</drawSize>
     </graphicData>
+	<minifiedDef>MinifiedThing</minifiedDef>
     <castEdgeShadows>false</castEdgeShadows>
     <costList>
       <Steel>125</Steel>
@@ -227,7 +228,7 @@
 		<fillPercent>0.5</fillPercent>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-		  <WorkToBuild>1000</WorkToBuild>
+		  <WorkToBuild>3500</WorkToBuild>
 		  <MaxHitPoints>250</MaxHitPoints>
 		  <Flammability>1.0</Flammability>
 		  <Mass>25</Mass>
@@ -266,17 +267,96 @@
 			<ai_chillDestination>false</ai_chillDestination>
 		</building>
 	</ThingDef>
- 
-<!--
+	
+    <ThingDef ParentName="FurnitureBase">
+		<defName>WTH_PortableDisassemblingBench</defName>
+		<thingClass>Building_WorkTable</thingClass>
+	    <designationCategory>Production</designationCategory>
+		<label>portable disassembling bench</label>
+		<description>A sturdy and portable bench that contains everything needed for disassembling the mechanoids that didn't welcome your colonists with much hospitality during their trip. Its tools don't depend on power, which is convenient for trips, but also makes it slightly less efficient.</description>
+		<graphicData>
+		  <texPath>Things/PortableDisassemblingBench</texPath>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <drawSize>(2,1)</drawSize>
+		</graphicData>	
+		<minifiedDef>WTH_DisassemblingBenchMinified</minifiedDef>
+		<castEdgeShadows>false</castEdgeShadows>
+		<costList>
+		  <Plasteel>40</Plasteel>
+		  <Steel>25</Steel>
+		  <ComponentIndustrial>5</ComponentIndustrial>
+		</costList>
+		<rotatable>true</rotatable>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+		  <WorkToBuild>3500</WorkToBuild>
+		  <MaxHitPoints>250</MaxHitPoints>
+		  <Flammability>1.0</Flammability>
+		  <Mass>15</Mass>
+		  <WorkTableWorkSpeedFactor>0.25</WorkTableWorkSpeedFactor>
+		</statBases>
+		<size>(2,1)</size>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(1,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		 <researchPrerequisites>
+		  <li>WTH_PortableDisassemblingBench</li>
+		</researchPrerequisites>	
+		<comps>
+		  <li Class="CompProperties_Forbiddable" />
+		</comps>
+		<inspectorTabs>
+		  <li>ITab_Bills</li>
+		</inspectorTabs>
+		<recipes>
+		  <li>ButcherCorpseMechanoid</li>
+		</recipes>
+		<building>
+			<canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+			<ai_chillDestination>false</ai_chillDestination>
+		</building>
+  </ThingDef>
+  
+  <ThingDef>
+    <defName>WTH_DisassemblingBenchMinified</defName>
+    <label>folded disassembling bench</label>
+    <thingClass>WhatTheHack.Buildings.MinifiedThing_Custom</thingClass>
+	<graphicData>
+	  <texPath>Things/PortableDisassemblingBench_uninstalled</texPath>
+	  <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>(1,1)</drawSize>
+	</graphicData>
+    <category>Item</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <tickerType>Normal</tickerType>
+    <!-- for CompForbiddable -->
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+    <alwaysHaulable>true</alwaysHaulable>
+	<statBases>
+	  <Mass>15</Mass>
+	</statBases>
+    <rotatable>false</rotatable>
+    <pathCost>15</pathCost>
+  </ThingDef>
+  
+	
   <ThingDef ParentName="BuildingBase">
     <defName>WTH_MechanoidBeacon</defName>
     <label>Mechanoid beacon</label>
     <description>TODO</description>
-    <thingClass>WhatTheHack.Buildings.Building_MechanoidBeacon</thingClass>
     <graphicData>
       <texPath>Things/MechanoidBeacon</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(2,3)</drawSize>
+      <drawSize>(3,6.6875)</drawSize>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>
         <cornerTR>Damage/Corner</cornerTR>
@@ -296,7 +376,7 @@
       <Flammability>0</Flammability>
     </statBases>
     <tickerType>Normal</tickerType>
-    <size>(2,2)</size>
+    <size>(3,3)</size>
     <costList>
       <Steel>300</Steel>
       <Plasteel>140</Plasteel>
@@ -318,8 +398,8 @@
 	<designationCategory>Misc</designationCategory>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
-	<researchPrerequisites><li>WTH_MechanoidBeacon</li></researchPrerequisites>
+	<!--<researchPrerequisites><li>WTH_MechanoidBeacon</li></researchPrerequisites>-->
   </ThingDef>
-  -->
+  
 
 </Defs>
