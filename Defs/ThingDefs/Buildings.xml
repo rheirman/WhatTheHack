@@ -352,6 +352,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>WTH_MechanoidBeacon</defName>
     <label>Mechanoid beacon</label>
+	<thingClass>WhatTheHack.Buildings.Building_MechanoidBeacon</thingClass>
     <description>TODO</description>
     <graphicData>
       <texPath>Things/MechanoidBeacon</texPath>
@@ -386,6 +387,7 @@
     <comps>
       <li Class="CompProperties_Hibernatable">
         <incidentTargetWhileStarting>Map_RaidBeacon</incidentTargetWhileStarting>
+		<startupDays>8</startupDays>
       </li>
 	  <li Class="CompProperties_Glower">
 		<glowRadius>5</glowRadius>

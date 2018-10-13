@@ -6,7 +6,7 @@
 	<tab>WTH_ResearchTab</tab>
 	<techLevel>Spacer</techLevel>
 	<description>Gives access to the hacking table and the mechanoid platform. The hacking table can be used to hack into the targeting system of mechanoids, making sure they attack your enemy instead of your colony when activated. Also allows you to build mechanoid platforms, which are needed as a repair and as a power station for mechanoids.</description>
-	<baseCost>1600</baseCost>
+	<baseCost>1000</baseCost>
 	<prerequisites>
 	  <li>MicroelectronicsBasics</li>
 	</prerequisites>
@@ -20,7 +20,7 @@
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>Allows the creation of portable chemfuel charging platforms, which supply your mechanoids with power while they explore the world. Can also be installed/uninstalled for a temporary power solution for your mechanoids.</description>
-		<baseCost>800</baseCost>
+		<baseCost>500</baseCost>
 		<prerequisites>
 		  <li>BiofuelRefining</li>
 		  <li>WTH_HackingBasics</li>
