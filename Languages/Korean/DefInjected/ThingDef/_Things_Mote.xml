@@ -3,8 +3,8 @@
 
   <!-- These are Mote ThingDefs. Remain the same, DO NOT translate them. -->
 
-  <WTH_Mote_Charging.label>티끌</WTH_Mote_Charging.label>
-  <WTH_Mote_HealingCrossGreen.label>티끌</WTH_Mote_HealingCrossGreen.label>
+  <WTH_Mote_Charging.label>Mote</WTH_Mote_Charging.label>
+  <WTH_Mote_HealingCrossGreen.label>Mote</WTH_Mote_HealingCrossGreen.label>
 
 
 </LanguageData>
