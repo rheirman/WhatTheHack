@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_ShutDown.label>Wyłącz mechanoida</WTH_ShutDown.label>
+  <WTH_ShutDown.labelNoun>Komenda wyłączająca mechanoida</WTH_ShutDown.labelNoun>
+
+  <WTH_RegeneratedPart.label>Regenerowanie części</WTH_RegeneratedPart.label>
+  <WTH_RegeneratedPart.labelNoun>Świeżo wstawiona część jest regenerowana</WTH_RegeneratedPart.labelNoun>
+
+  <WTH_BatteryExpansionModule.label>Powiększono baterię</WTH_BatteryExpansionModule.label>
+  <WTH_VanometricModule.label>Zainstalowano moduł vanometryczny</WTH_VanometricModule.label>
+  <WTH_SelfDestruct.label>Zainstalowano moduł samodestrukcji</WTH_SelfDestruct.label>
+  <WTH_RepairModule.label>Zainstalowano moduł naprawczy</WTH_RepairModule.label>
+  <WTH_BeltModule.label>Zainstalowano moduł pasa użytkowego</WTH_BeltModule.label>
+  <WTH_TurretModule.label>Zainstalowano moduł wieżyczki</WTH_TurretModule.label>
+  <WTH_MountedTurret.label>Zainstalowano wieżyczkę</WTH_MountedTurret.label>
+
+  <WTH_RepairArm.label>Ramię naprawcze</WTH_RepairArm.label>
+  <WTH_RepairArm.comps.0.tools.0.label>こぶし(修理アーム)</WTH_RepairArm.comps.0.tools.0.label>
+  <WTH_RepairArm.labelNoun>Ramię naprawcze</WTH_RepairArm.labelNoun>
+
+  <WTH_Repairing.label>Naładowane mechanity naprawcze</WTH_Repairing.label>
+
+  <!-- <WTH_Overcharged.label>overcharged</WTH_Overcharged.label> -->
+
+  <WTH_ReplacedAI.label>Ulepszona SI</WTH_ReplacedAI.label>
+  <WTH_TargetingHacked.label>Zhakowano systemy celownicze</WTH_TargetingHacked.label>
+  <WTH_BackupBattery.label>Załączona zapasowy akumulator</WTH_BackupBattery.label>
+  <WTH_LocomotionHacked.label>Zhakowano poruszanie się</WTH_LocomotionHacked.label>
+  <WTH_TargetingHackedPoorly.label>Słabo zhakowane systemy celownicze</WTH_TargetingHackedPoorly.label>
+  <WTH_TargetingDestroyed.label>Zepsuto systemy celownicze</WTH_TargetingDestroyed.label>
+  <WTH_LowMaintenance.label>Zły stan</WTH_LowMaintenance.label>
+  <WTH_VeryLowMaintenance.label>Bardzo zły stan</WTH_VeryLowMaintenance.label>
+  <WTH_VeryLowPower.label>Bardzo niski poziom energii</WTH_VeryLowPower.label>
+  <WTH_NoPower.label>Brak mocy</WTH_NoPower.label>
+
+
+</LanguageData>

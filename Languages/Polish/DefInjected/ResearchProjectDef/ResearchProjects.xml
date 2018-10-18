@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_HackingBasics.label>Podstawy hakowania mechanoidów</WTH_HackingBasics.label>
+  <WTH_HackingBasics.description>Umożliwia dostęp do stołu hakerskiego oraz platformy mechanoidów. Stół hakerski umożliwia hakowanie mechanoidów, dzięki czemu są przyjazne. To badanie również umożliwia dostęp do platformy mechanoidów, która pozwala ładować, oraz naprawiać twoje mechanoidy.</WTH_HackingBasics.description>
+
+  <WTH_PortableChemfuelPlatform.label>Przenośna platforma mechanoidów</WTH_PortableChemfuelPlatform.label>
+  <WTH_PortableChemfuelPlatform.description>Pozwala na tworzenie przenośnych platform mechanoidów, które zasilają mechanoidy energią podczas podróżowania. Można go także zainstalować / odinstalować, aby uzyskać tymczasowe zasilenie dla mechanoidów.(再展示)したり撤去することもできます。</WTH_PortableChemfuelPlatform.description>
+
+  <WTH_MechanoidWorkshop.label>Warsztat mechanoidów</WTH_MechanoidWorkshop.label>
+  <WTH_MechanoidWorkshop.description>Pozwala zbudować warsztat mechanoidów, który jest używany do konstruowania wszelkiego rodzaju urządzeń i ulepszeń, a także do rozbierania zaawansowanych części mechanicznych.</WTH_MechanoidWorkshop.description>
+
+  <WTH_HackingRemoteControl.label>Pas kontroli mechanoidów</WTH_HackingRemoteControl.label>
+  <WTH_HackingRemoteControl.description>Dowiedz się, jak kontrolować mechanoidy bezpośrednio przez kolonistów. Za pomocą pasa kontroli mechanoida, który można wykonać w warsztacie mechanoidów. W końcu twoi niewalczący koloniści mogą brać udział w bitwie bez poczucia winy. W końcu to mechanoidy zabijają, nie oni, prawda?</WTH_HackingRemoteControl.description>
+
+  <WTH_RepairModule.label>Moduł naprawczy</WTH_RepairModule.label>
+  <WTH_RepairModule.description>Moduł naprawczy można zainstalować w reaktorze mechanoidów. Może być załadowany częściami mechanoidów. Potrafi bardzo szybko pobierać dużą ilość energii z mechanoida i przekierowywać ją do mechanitów mechanoida, To aktywuje mechanity, które mogą naprawić uszkodzone części zużywając części. Podcas tego procesu mechanoid nie może się ruszać.</WTH_RepairModule.description>
+
+  <WTH_RepairArm.label>Ramię naprawcze</WTH_RepairArm.label>
+  <WTH_RepairArm.description>Może być użyty do wymiany ramienia mechanoida, który ma zainstalowany moduł naprawczy. Ramię to jest zdolne do przenoszenia mechanitów naładowanych przez moduł naprawczy na inne mechanoidy, co powoduje naprawę innych mechanoidów. Ramię nie jest jednak odpowiednie do walki.</WTH_RepairArm.description>
+
+  <WTH_SelfDestruct.label>Samodestrukcja</WTH_SelfDestruct.label>
+  <WTH_SelfDestruct.description>Prosty moduł, składający się z dwóch pocisków moździerzowych i drutu, który powoduje zwarcie po aktywacji. Osłona z plastali zapobiega przypadkowemu wybuchowi materiałów wybuchowych. Niech twoje mechy pójdą z hukiem!</WTH_SelfDestruct.description>
+
+  <WTH_TurretModule.label>Moduł wieżyczek obronnych</WTH_TurretModule.label>
+  <WTH_TurretModule.description>Moduł zapewniający zarówno wsparcie strukturalne, jak i interfejs do wieżyczek i moździerzy. Konieczne są dalsze badania w celu zainstalowania każdego typu wieżyczki.</WTH_TurretModule.description>
+
+  <WTH_TurretModule_GunTurrets.label>Zakładanie wieżyczek na mechanoida</WTH_TurretModule_GunTurrets.label>
+  <WTH_TurretModule_GunTurrets.description>Dowiedz się, jak założyć wieżyczki na module wieżyczek obronnych. Każda wieżyczka, którą można zdemontować po zbudowaniu, może być zainstalowana na module wieżyczek obronnych. Ten moduł może być zainstalowany tylko na dużych mechanoidach.</WTH_TurretModule_GunTurrets.description>
+
+  <WTH_TurretModule_Mortars.label>Zakładanie moździerzy</WTH_TurretModule_Mortars.label>
+  <WTH_TurretModule_Mortars.description>Dowiedz się, jak zakładać moździerze na module wieżyczek obronnych. Moździerze nadal muszą być obsługiwane ręcznie przez kolonistów i nie pobierają żadnej mocy z mechanoida. To ulepszenie ma tylko kilka zalet w porównaniu z tradycyjnymi moździerzami (szybsza konfiguracja podczas raidowania, potrzebne jest mniej miejsca). Jednak posiadanie kilku moździerzy zainstalowanych na mechanoidach jest dobrym sposobem na zaimponowanie wrogom.</WTH_TurretModule_Mortars.description>
+
+  <WTH_BatteryExpansionModule.label>Moduł powiększania pojemności akumulatora</WTH_BatteryExpansionModule.label>
+  <WTH_BatteryExpansionModule.description>Moduł zwiększający pojemność akumulatora mechanoida, kosztem lekko obniżonej prędkości ruchu.</WTH_BatteryExpansionModule.description>
+
+  <WTH_VanometricModule.label>Moduł vanometryczny</WTH_VanometricModule.label>
+  <WTH_VanometricModule.description>Moduł pozwalający mechanoidowi posiadać neskończoną ilość energii, kosztem lekko zmniejszonej prędkości ruchu.</WTH_VanometricModule.description>
+
+  <WTH_BeltModule.label>Moduł pasa użytkowego</WTH_BeltModule.label>
+  <WTH_BeltModule.description>Moduł możliwy do zainstalowania na każdym zhakowanym mechanoidzie, który działa jako interfejs dla technicznie zaawansowanych pasów, takich jak pasy energetyczne i pasy dymne normalnie noszone przez kolonistów.</WTH_BeltModule.description>
+
+  <WTH_HackingAdvanced.label>Wszczepianie AI</WTH_HackingAdvanced.label>
+  <WTH_HackingAdvanced.description>Zbadaj możliwość wszczepienia rdzeni z osobowością SI w zhakowane mechanoidy, dając pełną kontrolę nad nimi w celach bojowych.</WTH_HackingAdvanced.description>
+
+
+</LanguageData>

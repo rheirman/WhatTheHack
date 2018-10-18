@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Mechanoid_Power.label>Energia</WTH_Mechanoid_Power.label>
+  <WTH_Mechanoid_Power.description>Kiedy mechanoid zostaje zhakowany, jego wewnętrzny reaktor zostaje wyłączony, aby uniknąć wykrycia przez rój mechanoidów. W rezultacie, zhakowane mechanoidy polegają na swoim wenętrznym akumulatorze, który można naładować na platformach mechanoidów</WTH_Mechanoid_Power.description>
+
+  <WTH_Mechanoid_Maintenance.label>Stan fizyczny</WTH_Mechanoid_Maintenance.label>
+  <WTH_Mechanoid_Maintenance.description> Hakowanie to jest delikatna sprawa. Zhakowany mechanoid musi być co jakiś czas sprawdzany. Popsuty mechanoid nie tylko działa nienagannie, lecz może być zagrożeniem dla kolonii. Źle utrzymane mechanoidy psują się szybciej.</WTH_Mechanoid_Maintenance.description>
+
+
+</LanguageData>

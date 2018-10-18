@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_CarryToHackingTable.reportString>Zanoszenie mechanoida do stołu hakerskiego</WTH_CarryToHackingTable.reportString>
+  <WTH_ClearHackingTable.reportString> Zdejmij mechanoida z stołu hakerskiego, żeby zrobić miejsce na nowego</WTH_ClearHackingTable.reportString>
+  <WTH_Mechanoid_Rest.reportString>Zwiąż ze zLinked to facility</WTH_Mechanoid_Rest.reportString>
+  <WTH_ControlMechanoid.reportString>Kontrolowanie mechanoida</WTH_ControlMechanoid.reportString>
+  <WTH_ControlMechanoid_Goto.reportString>Kontrolowanie mechanoida (W ruchu)</WTH_ControlMechanoid_Goto.reportString>
+  <WTH_Ability.reportString>Używa umiejętności</WTH_Ability.reportString>
+  <WTH_PerformMaintenance.reportString>Naprawia mechanoida</WTH_PerformMaintenance.reportString>
+
+
+</LanguageData>

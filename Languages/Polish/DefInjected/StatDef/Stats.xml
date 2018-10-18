@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_ControllerBeltRadius.label>Zasięg kontroli</WTH_ControllerBeltRadius.label>
+  <WTH_ControllerBeltRadius.description>Maksymalny zasięg, z którego mechanoid może być kontrolowany przez ten pas.</WTH_ControllerBeltRadius.description>
+
+  <WTH_HackingMaintenanceSpeed.label>Szybkość napraw</WTH_HackingMaintenanceSpeed.label>
+  <WTH_HackingMaintenanceSpeed.description>Prędkość naprawiania mechanoidów przez kolonistę</WTH_HackingMaintenanceSpeed.description>
+
+  <WTH_HackingSuccessChance.label>Szansa na udane zhakowanie mechanoida</WTH_HackingSuccessChance.label>
+  <WTH_HackingSuccessChance.description>Szansa, że postać odniesie sukces podczas hakowania lub modyfikowania mechanoida. Na rzeczywistą szansę powodzenia ma również wpływ trudność hakowania i siła tego mechanoida.</WTH_HackingSuccessChance.description>
+
+
+</LanguageData>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Hacking.label>Hakowanie mechanoidów</WTH_Hacking.label>
+  <WTH_Hacking.helpText>Żeby hakować mechanoidy, wejdź do sekcji "modyfikacje" w zakładce "zdrowie" powalonego mechanoida, oraz wybierz opcję: "Zhakuj mechanoida". Twoi tragarze zaniosą mechanoida do stołu hakerskiego (Upewnij się, że masz taki!),a Twój haker zacznie hakowanie mechanoida. Nie zapomnij o zbudowaniu platformy mechanoidów, dzięki czemu mechanoid będzie mógł być naprawiany i ładowany. Uważaj, hakowanie może być niebezpieczne!</WTH_Hacking.helpText>
+
+  <WTH_Platform.label>Platforma mechanoidów</WTH_Platform.label>
+  <WTH_Platform.helpText> Platforma mechanoidów jest miejscem, gdzie mechanoidy są naprawiane i ładowane. Platforma musi być zaopatrywana w części mechanoidów i energię The platform should be loaded with mechanoid parts and supplied with power. This way, mechanites inside the mechanoid are activated due to the large power supply and start repairing the mechanoid using the offered parts.</WTH_Platform.helpText>
+
+  <WTH_Modification.label>Modyfikowanie mechanoidów</WTH_Modification.label>
+  <WTH_Modification.helpText> Żeby modyfikować, oraz ulepszać mechanoidy, możesz tworzyć moduły ulepszające w stole hakerskim. Aby móc zainstalować te moduły, wejdź w zakładkę "Zdrowie" zhakowanego mechanoida, oraz wybierz odpowiednią modyfikację.</WTH_Modification.helpText>
+
+  <WTH_Caravanning.label>Tworzenie karawan z mechanoidami</WTH_Caravanning.label>
+  <WTH_Caravanning.helpText>Mechanoidy mogą również zostać użyte, w tworzeniu karawan.Jednakże, jak zwykle będą potrzebowały zasilania, oraz napraw. Jeśli karawana będzie posiadała jedną przenośną platformę mechanoidów na każdego mechanoida,oraz paliwa chemicznego, zapewnione będzie stałe zasilanie. Gdybyś chciał, żeby twoje mechanoidy były naprawiane podczas przemieszczanie się po mapie, weź trochę częśi mechanoidów, oraz kolonistę zdolnego do hakowania. Mechanoidy z modułami naprawczymi będą naprawiać siebie, a mechanoidy z ramieniem naprawczym będą naprawiać inne mechanoidy. Jeśli nie chcesz, żeby mechanoidy były naprawiane ustaw ich opiekę medyczną na "brak pomocy medycznej".</WTH_Caravanning.helpText>
+
+  <WTH_Maintenance.label>Naprawianie mechanoidów</WTH_Maintenance.label>
+  <WTH_Maintenance.helpText>Hakowanie to delikatna sprawa. Zhakowane mechanoidy potrzebuja regularnych napraw, które kosztują części mechanoidów. Koloniści zajmujący się hakowaniem będą automatycznie naprawiać Twoje mechanoidy, tylko kiedy będziesz miał wystarczającą liczbę części mechanoidów. Mechanoidy w złym stanie będą funkcjonować gorzej niż te w dobrym stanie. Totalny brak napraw może skutkować błędem w pogramie mechanoida, co może skutkować katastrofalnymi konsekwencjami.</WTH_Maintenance.helpText>
+
+  <WTH_Power.label>Zasilanie mechanoidów</WTH_Power.label>
+  <WTH_Power.helpText>Inaczej niż "dzikie" mechanoidy, zhakowane mechanoidy nie mogą używać ich reaktora, ponieważ użycie go powiadomiłoby rój mechanoidów. Przez to muszą polegać na swoich zapasowych akumulatorach, które ładuje sie na platformie mechanoidów. Przenośne platformy mechanoidów zaopatrują mechanoidy w energię podczas podróży po mapie. Ostanią metodą jest, żeby powiększyć pojemność akumulatorów, albo, żeby zainstalować alternatywne źródło energii używając warsztatu mechanoidów.</WTH_Power.helpText>
+
+
+</LanguageData>

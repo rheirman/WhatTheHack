@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Centipede -->
+
+  <Mech_Centipede.comps.CompRefuelable.fuelGizmoLabel>Załadowane części mechanoidów</Mech_Centipede.comps.CompRefuelable.fuelGizmoLabel>
+  <Mech_Centipede.comps.CompRefuelable.fuelLabel>Załadowane części mechanoidów</Mech_Centipede.comps.CompRefuelable.fuelLabel>
+
+  <!-- Lancer - fast sniper -->
+
+  <Mech_Lancer.comps.CompRefuelable.fuelGizmoLabel>Załadowane części mechanoidów</Mech_Lancer.comps.CompRefuelable.fuelGizmoLabel>
+  <Mech_Lancer.comps.CompRefuelable.fuelLabel>Załadowane części mechanoidów</Mech_Lancer.comps.CompRefuelable.fuelLabel>
+
+  <!-- Scyther - fast melee -->
+
+  <Mech_Scyther.comps.CompRefuelable.fuelGizmoLabel>Załadowane części mechanoidów</Mech_Scyther.comps.CompRefuelable.fuelGizmoLabel>
+  <Mech_Scyther.comps.CompRefuelable.fuelLabel>Załadowane części mechanoidów</Mech_Scyther.comps.CompRefuelable.fuelLabel>
+
+
+</LanguageData>

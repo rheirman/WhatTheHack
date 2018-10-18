@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<WTH_Letter_Success_Label>Hakowanie zakończone sukcesem</WTH_Letter_Success_Label>
+
+<WTH_Letter_Success_Label_Description> Twój kolonista zhakował mechanoida i nazwał go {1}. {1} będzie atakować wrogów zamiast Twoich kolonistów. Jednakże,żeby uniknąć wykrycia przez Rój Mechanoidów, {1} musi polegać na swoich zapasowych akumulatorach.</WTH_Letter_Success_Label_Description>
+
+<WTH_Letter_Nothing_Label>Hakowanie nieudane - mechanoid został trochę uszkodzony</WTH_Letter_Nothing_Label>
+
+<WTH_Letter_Nothing_Description>Hakowanie nieudane, ale poza lekkimi uszkodzeniami nic poważnego się nie stało</WTH_Letter_Nothing_Description>
+
+<WTH_Letter_HackedPoorly_Label>Hakowanie połowicznie udane</WTH_Letter_HackedPoorly_Label>   
+
+<WTH_Letter_HackedPoorly_Description>Mimo tego, że mechanoid został zhakowany, pamiętaj, że podczas hakowania coś poszło nie tak. Możesz użyć tego mechanoida na własne ryzyko, albo go wyłączyć.</WTH_Letter_HackedPoorly_Description>
+
+<WTH_Letter_CausedMechanoidRaid_Label>Hakowanie nieudane - wysłano sygnał alarmowy</WTH_Letter_CausedMechanoidRaid_Label>
+
+<WTH_Letter_CausedMechanoidRaid_Description>Twojemu koloniście jakoś udało się uruchomić systemy bezpieczeństwa, które wysłały sygnał alarmowy do mechanoidów w pobliżu. Przygotój się na więcej krwiożerczych maszyn...</WTH_Letter_CausedMechanoidRaid_Description>
+
+<WTH_Letter_ShotRandomDirection_Label>Hakowanie nieudane - ups</WTH_Letter_ShotRandomDirection_Label>
+
+<WTH_Letter_ShotRandomDirection_Description> Hakujący kolonista przez przypadek aktywował główną broń mechanoida.Ups.</WTH_Letter_ShotRandomDirection_Description>
+
+<WTH_Letter_HealedToStanding_Label>Hakowanie nieudane - mechanoid powstał </WTH_Letter_HealedToStanding_Label>
+
+<WTH_Letter_HealedToStanding_Description> Mechanoid tak naprawde nie był nieprzytomny, podczas hakowania, postanowił, że wstanie. Mechanoid znów jest zagrożeniem dla kolonii.</WTH_Letter_HealedToStanding_Description>
+
+<WTH_Letter_Mech_Reverted_Label>Zhakowany mechanoid zbuntował się</WTH_Letter_Mech_Reverted_Label>
+
+<WTH_Letter_Mech_Reverted_Description>Źle utrzymywany mechanoid powrócił do swojego pierwotnego, zabójczego zachowania.</WTH_Letter_Mech_Reverted_Description>
+
+<WTH_Letter_HackedPoorlyEvent_Label>Coś pękło w mechanoidzie</WTH_Letter_HackedPoorlyEvent_Label>
+
+<WTH_Letter_HackedPoorlyEvent_Description>Coś pękło w głowie źle zhakowanego mechanoida. Wymagana natychmiastowa naprawa.</WTH_Letter_HackedPoorlyEvent_Description>
+
+<WTH_FailureChance_Nothing_Title>Szansa, że w skutek nieudanego hakowania: Nic się nie wydarzy.</WTH_FailureChance_Nothing_Title>
+
+<WTH_FailureChance_Nothing_Description> Szansa, że po nieudanym hakowaniu nic się nie wydarzy.</WTH_FailureChance_Nothing_Description>
+
+<WTH_FailureChance_CauseRaid_Title>Szansa, że w skutek nieudanego hakowania: Spowoduje atak</WTH_FailureChance_CauseRaid_Title>
+
+<WTH_FailureChance_CauseRaid_Description>Szansa, że po nieudanym hakowaniu zostaniesz zaatakowany.</WTH_FailureChance_CauseRaid_Description>
+
+<WTH_FailureChance_ShootRandomDirection_Title>Szansa, że w skutek nieudanego hakowania: Broń główna wystrzeli</WTH_FailureChance_ShootRandomDirection_Title>
+
+<WTH_FailureChance_ShootRandomDirection_Description>Szansa, że po nieudanym hakowaniu  broń główna mechanoida wystrzeli w losowym kierunku.</WTH_FailureChance_ShootRandomDirection_Description>
+
+<WTH_FailureChance_HealToStanding_Title>Szansa, że w skutek nieudanego hakowania: Powstanie</WTH_FailureChance_HealToStanding_Title>
+
+<WTH_FailureChance_HealToStanding_Description>Szansa, że po nieudanym hakowaniu mechanoid uleczy się, dopóki nie wstanie.</WTH_FailureChance_HealToStanding_Description>
+
+<WTH_FailureChance_HackPoorly_Title>Szansa, że w skutek nieudanego hakowania: hakowanie będzie połowicznie udane</WTH_FailureChance_HackPoorly_Title>
+
+<WTH_FailureChance_HackPoorly_Description>Szansa, że po nieudanym hakowaniu mechanoid będzie mógł się później zbuntować. </WTH_FailureChance_HackPoorly_Description>
+
+<WTH_MaintenanceDedayEnabled_Title>Mechanoidy się psują</WTH_MaintenanceDedayEnabled_Title>
+
+<WTH_MaintenanceDedayEnabled_Description>Odznacz to, jeśli nie chcesz regularnie naprawiać swoich mechanoidów. Gdy będzie to odznaczone, pasek stanu mechanoida będzie nadal widoczny, ale nie będzie z czasem maleć. Nadal będą wydarzenia, które mogą go zmniejszać.</WTH_MaintenanceDedayEnabled_Description>
+
+<WTH_HackedMechChance_Title>Szanse, że przeciwnicy będą używali zhakowanych mechanoidów (%)</WTH_HackedMechChance_Title>
+
+<WTH_HackedMechChance_Description>Szansa, że frakcje dozwolone w ustawieniach, będą używały zhakowanych mechanoidów podczas ataków.</WTH_HackedMechChance_Description>
+
+<WTH_MaxHackedMechPoints_Title>Maksymalne dodatkowe punkty za zhakowane mechanoidy (%)</WTH_MaxHackedMechPoints_Title>
+
+<WTH_MaxHackedMechPoints_Description>Określa to budżet punktowy dla zhakowanych mechanoidów wroga. Jeżeli w ataku będą brały udział zhakowane mechanoidy, losowa liczba pomiędzy minimalnym i maksymalnym ustawieniem punktów zostanie dodana do puli.  Przykład: Jeśli atak ma budżet punktowy równy 1000, maksimum dodatkowych punktów jest ustawione na 50%, a minimalne ustawione na 20%, 200 do 500 punktów za zhakowane mechanoidy pojawi się dodatkowo do pierwotnej puli. </WTH_MaxHackedMechPoints_Description>
+
+<WTH_MinHackedMechPoints_Title>Minimalne dodatkowe punkty za zhakowane mechanoidy (%)</WTH_MinHackedMechPoints_Title>
+
+<WTH_MinHackedMechPoints_Description>Określa to budżet punktowy dla zhakowanych mechanoidów wroga. Jeżeli w ataku będą brały udział zhakowane mechanoidy, losowa liczba pomiędzy minimalnym i maksymalnym ustawieniem punktów zostanie dodana do puli.  Przykład: Jeśli atak ma budżet punktowy równy 1000, maksimum dodatkowych punktów jest ustawione na 50%, a minimalne ustawione na 20%, 200 do 500 punktów za zhakowane mechanoidy pojawi się dodatkowo do pierwotnej puli. </WTH_MinHackedMechPoints_Description>
+
+<WTH_Menu_ClearTable>Zdejmij mechanoida ze stołu hakerskiego</WTH_Menu_ClearTable>
+
+<WTH_Reason_NotOnTable>Stół hakerski pusty</WTH_Reason_NotOnTable>
+
+<WTH_Reason_MechanoidDowned>Nie można włączyć nieprzytomnego mechanoida</WTH_Reason_MechanoidDowned>
+
+<WTH_Reason_PowerLow>Nie można włączyć mechanoida, za mało energii</WTH_Reason_PowerLow>
+
+<WTH_Reason_PawnCannotBeDrafted>Nie można operować pasa kontroli mechanoida podczas służby.</WTH_Reason_PawnCannotBeDrafted>
+
+<WTH_Reason_NotEnoughParts>Regenerowanie części ciałą kosztują {0} części mechanoidów na 1 część ciała, brak wystarczająco dużej ilości części załadowanych na platformę, żeby dokonać regeneracji.</WTH_Reason_NotEnoughParts>
+
+<WTH_Gizmo_SearchAndDestroy_Label>Aktywuj tryb bojowy</WTH_Gizmo_SearchAndDestroy_Label>
+
+<WTH_Gizmo_SearchAndDestroy_Description>Aktywuj tryb bojowy mechanoida. Będzie automatycznie atakować wszystkich wrogów zbliżających się do kolonii. Kiedy tryb bojowy jest wyłączony, mechanoid powróci do platformy mechanoidów.</WTH_Gizmo_SearchAndDestroy_Description>
+
+<WTH_Gizmo_AutoRecharge_Label>Automatyczne ładowanie</WTH_Gizmo_AutoRecharge_Label>
+
+<WTH_Gizmo_AutoRecharge_Description>Jeśli opcja jest zaznaczona, mechanoid o niskim poziomie energii automatycznie będzie wracał do platformy mechanoidów.</WTH_Gizmo_AutoRecharge_Description>
+
+<WTH_Gizmo_RemoteControlActivate_Label>Aktywuj kontrolę mechanoida</WTH_Gizmo_RemoteControlActivate_Label>
+
+<WTH_Gizmo_RemoteControlActivate_Description>Użyj pasa kontroli mechanoida, żeby uzyskać kontrole nad mechanoidem.</WTH_Gizmo_RemoteControlActivate_Description>
+
+<WTH_Gizmo_RemoteControlDeactivate_Label>Dezaktywuj kontrolę mechanoida</WTH_Gizmo_RemoteControlDeactivate_Label>
+
+<WTH_Gizmo_RemoteControlDeactivate_Description>Deaktywuje pas kontroli mechanoida, dając mu kontrolę</WTH_Gizmo_RemoteControlDeactivate_Description>
+
+<WTH_Gizmo_Regenerate_Label>Regeneruj części ciała</WTH_Gizmo_Regenerate_Label>
+
+<WTH_Gizmo_Regenerate_Description>Kiedy aktywna, platforma regeneruje brakujące części ciała mechanoida. Regenerowanie części ciała kosztuje{0} części mechanoidów na 1 część ciała.  Części będą regenerowane tylko, jeśli mechanoid nie będzie miał innych uszkodzeń.</WTH_Gizmo_Regenerate_Description>
+
+<WTH_Gizmo_Repair_Label>Napraw Mechanoida</WTH_Gizmo_Repair_Label>
+
+<WTH_Gizmo_Repair_Description> Kiedy aktywna, platforma naprawia mechanoida, który jest na platformie, poprzez aktywowanie jego wewnętrznych mechanitów, zapewniając im wystarczającą ilość prądu, oraz materiałów do pracy. Mechanity zużywają części mechanoidów z platformy.</WTH_Gizmo_Repair_Description>
+
+<WTH_Gizmo_SelfDestruct_Label>Samodestrukcja</WTH_Gizmo_SelfDestruct_Label>
+
+<WTH_Gizmo_SelfDestruct_Description>Pozwól mechanoidowi wybuchnąć!.</WTH_Gizmo_SelfDestruct_Description>
+
+<WTH_Gizmo_Mech_Repair_Label>Napraw</WTH_Gizmo_Mech_Repair_Label>
+
+<WTH_Gizmo_Mech_Repair_Description> Nakazuje mechanoidowi, żeby uzył swojego ramenia naprawczego, żeby przekazał gotowe do pracy mechanity innym mechanoidom, lecząc ich.</WTH_Gizmo_Mech_Repair_Description>
+
+<WTH_Gizmo_SelfRepair_Label>Samonaprawa</WTH_Gizmo_SelfRepair_Label>
+
+<WTH_Gizmo_SelfRepair_Description>Nakazuje mechanoidowi, żeby użył swojego modułu naprawczego, co powoduje duże uwolnienie energii, aktywując mechanity. Po tym mechanity zaczynają leczyć mechanoida używając do tego części mechanoidów zawartych w module.</WTH_Gizmo_SelfRepair_Description>
+
+<WTH_Gizmo_Mech_EquipBelt_Label>Załóż pas</WTH_Gizmo_Mech_EquipBelt_Label>
+
+<WTH_Gizmo_Mech_EquipBelt_Description>Nakazuje mechanoidowi, żeby użył swojego modułu pasa, żeby założyć jakikolwiek pas używany przez ludzi.</WTH_Gizmo_Mech_EquipBelt_Description>
+
+<WTH_Reason_AlreadyRepairing>Ten mechanoid już posiada wstrzyknięte działające mechanity naprawcze.</WTH_Reason_AlreadyRepairing>
+
+<WTH_Reason_NeedsMorePower>Przynajmniej {0} energii potrzebnej, żeby to aktywować.</WTH_Reason_NeedsMorePower>
+
+<WTH_Reason_NeedsMoreFuel>Przynajmniej {0} paliwa potrzebnego, żeby to aktywować.</WTH_Reason_NeedsMoreFuel>
+
+<WTH_Reason_NotActivated>Nie można tego użyć na zdezaktywowanym mechanoidzie.</WTH_Reason_NotActivated>
+
+<WTH_Reason_NoDamage>Brak obrażeń zdolnych do naprawienia.</WTH_Reason_NoDamage>
+
+<WTH_Alert_NotEnoughPlatforms_Label>Brak wystarczającej ilości platform mechanoidów.</WTH_Alert_NotEnoughPlatforms_Label>
+
+<WTH_Alert_NotEnoughPlatforms_Description> Zhakowałeś więcej mechanoidów, niż masz platform. Pamiętaj, żeby zrobić więcej platform!</WTH_Alert_NotEnoughPlatforms_Description>
+
+<WTH_Alert_Power_Low_Label>Mechanoidowi kończy się energia</WTH_Alert_Power_Low_Label>
+
+<WTH_Alert_Power_Low_Description>Tym mechanoidom kończy się energia:{0} Zdeaktywuj pas kontroli mechanoida, żeby mechanoid mógł powrócić na platformę!</WTH_Alert_Power_Low_Description>
+
+<WTH_Alert_Maintenance_Low_Label>Mechanoidy w złym stanie!</WTH_Alert_Maintenance_Low_Label>
+
+<WTH_Alert_Maintenance_Low_Description> Oprogramowanie zhakowanego androida jest  w złym stanie:{0} Upewnij się, że twoi hakerzy się tym zajmą.</WTH_Alert_Maintenance_Low_Description>
+
+<WTH_Alert_Maintenance_VeryLow_Label>Mechanoidy w bardzo złym stanie!</WTH_Alert_Maintenance_VeryLow_Label>
+
+<WTH_Alert_Maintenance_VeryLow_Description>Oprogramowanie zhakowanego androida jest w bardzo złym stanie, są zagrożeniem dla twojej kolonii:{0} Mechanoid może zbuntować sie w każdej chwili, więc albo go szybko napraw, albo wyłącz.</WTH_Alert_Maintenance_VeryLow_Description>
+
+<WTH_FactionRestrictions_OK>Zezwalaj</WTH_FactionRestrictions_OK>
+
+<WTH_FactionRestrictions_NOK>Nie zezwalaj</WTH_FactionRestrictions_NOK>
+
+<WTH_FactionRestrictions_Label>Konfiguruj, jakie mechanoidy dana frakcja może zhakować.</WTH_FactionRestrictions_Label>
+
+<WTH_FactionRestrictions_Description>To ustawienie pozoli Ci skonfigurować, jakich mechanoidów dana frakcja może używać.</WTH_FactionRestrictions_Description>
+
+<WTH_MechanoidsSection>Mechanoidy</WTH_MechanoidsSection>
+
+<WTH_Explanation_BonusCapacity>Dodatkowa ilość przedmiotów możliwych do przeniesienia, przez tego mechanoida</WTH_Explanation_BonusCapacity>
+
+<WTH_Explanation_NumMechs>Liczba mechanoidów</WTH_Explanation_NumMechs>
+
+<WTH_Explanation_NumPlatforms>Ilość przenośnych platform</WTH_Explanation_NumPlatforms>
+
+<WTH_Explanation_FuelConsumption>Zużycie paliwa platformy</WTH_Explanation_FuelConsumption>
+
+<WTH_Explanation_TotalFuel>Całkowite paliwo</WTH_Explanation_TotalFuel>
+
+<WTH_Explanation_DaysOfFuel>Dni z wystarczającą ilością paliwa</WTH_Explanation_DaysOfFuel>
+
+<WTH_Explanation_NotEnoughPlatforms>Nie posiadasz wystarczającej liczby platform ładujących, żeby naładować wszystkie mechanoidy.Powinieneś wziąć jedną dla każdego mechanoida.</WTH_Explanation_NotEnoughPlatforms>
+
+<WTH_ExtraInfoKey_DaysOfFuel>Dni z wystarczającą ilością paliwa (mechanoidy)</WTH_ExtraInfoKey_DaysOfFuel>
+
+<WTH_Warning_NotEnoughPlatforms>Twoja karawana nie posiada wystarczającej liczby platform ładujących, żeby naładować wszystkie mechanoidy.Powinieneś wziąć jedną dla każdego mechanoida, w przeciwnym razie niektórym skończy się energia.</WTH_Warning_NotEnoughPlatforms>
+
+<WTH_Warning_DaysOfFuel>Twojej karawanie zostały {0} dni z wystarczającą ilością paliwa zasilającego twoje mechanoidy. Twoim mechanoidom może szybko skończyć się energia.</WTH_Warning_DaysOfFuel>
+
+<WTH_Message_CaravanOutOfFuel>{0} zabrakło paliwa.</WTH_Message_CaravanOutOfFuel>
+
+<WTH_Message_CannotDrop>Ten przedmiot jest dołączony do mechanoida, przez co nie możesz go wyrzucić</WTH_Message_CannotDrop>
+
+<WTH_Mount>Ujeżdżaj {0}</WTH_Mount>
+
+<WTH_Mount_Jobstring>Ujeżdża {0}</WTH_Mount_Jobstring>
+
+<WTH_TextMote_MaintenanceFailed>Naprawa nieudana (Szansa na sukces: {0})</WTH_TextMote_MaintenanceFailed>
+
+</LanguageData>

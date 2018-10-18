@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_MechanoidParts.label>Części mechanoidów</WTH_MechanoidParts.label>
+  <WTH_MechanoidParts.description>Części zbierane ze zniszczonych mechanoidów. Potrzebne do naprawy i hakowania mechanoidów.</WTH_MechanoidParts.description>
+
+  <WTH_MechanoidChip.label>Zaawansowany chip</WTH_MechanoidChip.label>
+  <WTH_MechanoidChip.description>Zaawansowane układy scalone oczyszczone z powalonych lub zniszczonych mechanoidów. Potrzebny do bardziej skomplikowanych operacji hakerskich.</WTH_MechanoidChip.description>
+
+  <WTH_TurretModule.label>Moduł wieżyczek obronnych</WTH_TurretModule.label>
+  <WTH_TurretModule.description>Może być zainstalowany na mechanoidzie i umożliwia zamontowanie na nim wieżyczek i moździerzy.</WTH_TurretModule.description>
+
+  <WTH_SelfDestructModule.label>Moduł samodestrukcji</WTH_SelfDestructModule.label>
+  <WTH_SelfDestructModule.description>Może być zainstalowany w mechanoidach, aby zapewnić im śmiertelną opcję samodestrukcji.</WTH_SelfDestructModule.description>
+
+  <WTH_BatteryExpansionModule.label>Moduł powiększenia pojemności akumulatora</WTH_BatteryExpansionModule.label>
+  <WTH_BatteryExpansionModule.description>Może być zainstalowany w mechanoidach, aby zapewnić im dodatkową pojemność akumulatora, kosztem lekko obniżonej prędkości poruszania się.</WTH_BatteryExpansionModule.description>
+
+  <WTH_VanometricModule.label>Moduł vanometryczny</WTH_VanometricModule.label>
+  <WTH_VanometricModule.description>Może być zainstalowany w mechanoidach, aby zapewnić im nieskończony zapas energii, kosztem lekko obniżonej prędkości poruszania się.</WTH_VanometricModule.description>
+
+  <WTH_RepairModule.label>Moduł naprawczy</WTH_RepairModule.label>
+  <WTH_RepairModule.description>Może być zainstalowany w mechanoidach, aby umożliwić im naprawę podczas walki.</WTH_RepairModule.description>
+
+  <WTH_RepairArm.label>Moduł ramienia naprawczego</WTH_RepairArm.label>
+  <WTH_RepairArm.description>Może być zainstalowany w mechanoidzie z modułem naprawczym, aby umożliwić mu naprawę dowolnego innego mechanoida podczas walki.</WTH_RepairArm.description>
+
+  <WTH_BeltModule.label>Moduł pasa użytkowego</WTH_BeltModule.label>
+  <WTH_BeltModule.description>Może być zainstalowany w mechanoidach, dzięki czemu bedą mogły korzystać z pasów, tj.np. Pas energetyczny, oraz Pas dymny.</WTH_BeltModule.description>
+
+
+</LanguageData>

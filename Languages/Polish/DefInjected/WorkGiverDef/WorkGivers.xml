@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_DoBillsMechanoidWorkshop.label>Rób przedmioty w warsztacie mechanoidów</WTH_DoBillsMechanoidWorkshop.label>
+  <WTH_DoBillsMechanoidWorkshop.verb>pracuje</WTH_DoBillsMechanoidWorkshop.verb>
+  <WTH_DoBillsMechanoidWorkshop.gerund>pracuje w</WTH_DoBillsMechanoidWorkshop.gerund>
+
+  <WTH_DoBillsMedicalMechanoidOperation.label>Operuj mechanoida</WTH_DoBillsMedicalMechanoidOperation.label>
+  <WTH_DoBillsMedicalMechanoidOperation.verb>modyfikuje</WTH_DoBillsMedicalMechanoidOperation.verb>
+  <WTH_DoBillsMedicalMechanoidOperation.gerund>modyfikuje</WTH_DoBillsMedicalMechanoidOperation.gerund>
+
+  <WTH_HaulMechanoid.label>Nieś mechanoida</WTH_HaulMechanoid.label>
+  <WTH_HaulMechanoid.verb>niesie</WTH_HaulMechanoid.verb>
+  <WTH_HaulMechanoid.gerund>niesie</WTH_HaulMechanoid.gerund>
+
+  <WTH_MaintainMechanoid.label>Zajmuj się mechanoidami</WTH_MaintainMechanoid.label>
+  <WTH_MaintainMechanoid.verb>Naprawia</WTH_MaintainMechanoid.verb>
+  <WTH_MaintainMechanoid.gerund>Naprawia</WTH_MaintainMechanoid.gerund>
+
+  <WTH_MaintainMechanoid_Urgent.label>Pilnie napraw mechanoida</WTH_MaintainMechanoid_Urgent.label>
+  <WTH_MaintainMechanoid_Urgent.verb>Naprawia</WTH_MaintainMechanoid_Urgent.verb>
+  <WTH_MaintainMechanoid_Urgent.gerund>Naprawia</WTH_MaintainMechanoid_Urgent.gerund>
+
+
+</LanguageData>

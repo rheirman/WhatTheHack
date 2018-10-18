@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_HackingTable.label>Stół hakerski</WTH_HackingTable.label>
+  <WTH_HackingTable.description>Stół, na którym możesz naprawiać i hakować mechanoidy.</WTH_HackingTable.description>
+  <Blueprint_WTH_HackingTable.label>Stół hakerski(Plan)</Blueprint_WTH_HackingTable.label>
+  <Frame_WTH_HackingTable.label>Stół hakerski</Frame_WTH_HackingTable.label>
+  <Frame_WTH_HackingTable.description>Stół, na którym możesz naprawiać i hakować mechanoidy.</Frame_WTH_HackingTable.description>
+
+  <WTH_TableMechanoidWorkshop.label>Warsztat mechanoidów</WTH_TableMechanoidWorkshop.label>
+  <WTH_TableMechanoidWorkshop.description>Warsztaty do wytwarzania wszelkiego rodzaju urządzeń i modyfikacji mechanoidów oraz do rozbierania zaawansowanych układów mechanicznych na części.</WTH_TableMechanoidWorkshop.description>
+  <Blueprint_WTH_TableMechanoidWorkshop.label>Warsztat mechanoidów(Plan)</Blueprint_WTH_TableMechanoidWorkshop.label>
+  <Blueprint_Install_WTH_TableMechanoidWorkshop.label>Warsztat mechanoidów(Plan)</Blueprint_Install_WTH_TableMechanoidWorkshop.label>
+  <Frame_WTH_TableMechanoidWorkshop.label>Warsztat mechanoidów(buduje)</Frame_WTH_TableMechanoidWorkshop.label>
+  <Frame_WTH_TableMechanoidWorkshop.description>Warsztaty do wytwarzania wszelkiego rodzaju urządzeń i modyfikacji mechanoidów oraz do rozbierania zaawansowanych układów mechanicznych na części.</Frame_WTH_TableMechanoidWorkshop.description>
+
+  <WTH_MechanoidPlatform.label>Platforma mechanoidów</WTH_MechanoidPlatform.label>
+  <WTH_MechanoidPlatform.description>Platforma służąca do naprawiania, oraz ładowania mechanoidów.</WTH_MechanoidPlatform.description>
+  <Blueprint_WTH_MechanoidPlatform.label>Platforam mechanoidów(Plan)</Blueprint_WTH_MechanoidPlatform.label>
+  <Frame_WTH_MechanoidPlatform.label>Platforma mechanoidów(buduje)</Frame_WTH_MechanoidPlatform.label>
+  <Frame_WTH_MechanoidPlatform.description>Platforma służąca do naprawiania, oraz ładowania mechanoidów.</Frame_WTH_MechanoidPlatform.description>
+  <WTH_MechanoidPlatform.comps.CompRefuelable.fuelGizmoLabel>Załadowane części mechanoidów</WTH_MechanoidPlatform.comps.CompRefuelable.fuelGizmoLabel>
+  <WTH_MechanoidPlatform.comps.CompRefuelable.fuelLabel>Załadowane części mechanoidów</WTH_MechanoidPlatform.comps.CompRefuelable.fuelLabel>
+
+  <WTH_PortableChargingPlatform.label>Przenośna platforma mechanoidów</WTH_PortableChargingPlatform.label>
+  <WTH_PortableChargingPlatform.description>Przenośna platforma służąca do ładowania mechanoidów. Do celów podróżniczych</WTH_PortableChargingPlatform.description>
+  <Blueprint_WTH_PortableChargingPlatform.label>Przenośna platforma mechanoidów(Plan)</Blueprint_WTH_PortableChargingPlatform.label>
+  <Blueprint_Install_WTH_PortableChargingPlatform.label>Przenośna platforma mechanoidów(Plan)</Blueprint_Install_WTH_PortableChargingPlatform.label>
+  <Frame_WTH_PortableChargingPlatform.label>Przenośna platforma mechanoidów(buduje)</Frame_WTH_PortableChargingPlatform.label>
+  <Frame_WTH_PortableChargingPlatform.description>Platforma służąca do naprawiania, oraz ładowania mechanoidów.</Frame_WTH_PortableChargingPlatform.description>
+
+
+</LanguageData>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Scrap_AdvancedMechanoidChip.label>Rozbierz na części zaawansowany chip.</WTH_Scrap_AdvancedMechanoidChip.label>
+  <WTH_Scrap_AdvancedMechanoidChip.description>Rozbiera zaawansowany chip na części.</WTH_Scrap_AdvancedMechanoidChip.description>
+  <WTH_Scrap_AdvancedMechanoidChip.jobString>Rozbiera na części</WTH_Scrap_AdvancedMechanoidChip.jobString>
+
+  <WTH_Craft_AdditionalBatteryModule.label>Stwórz moduł powiększający akumulator.</WTH_Craft_AdditionalBatteryModule.label>
+  <WTH_Craft_AdditionalBatteryModule.description>Wytwarza moduł, który powiększa akumulator mechanoida.</WTH_Craft_AdditionalBatteryModule.description>
+  <WTH_Craft_AdditionalBatteryModule.jobString>Tworzy moduł</WTH_Craft_AdditionalBatteryModule.jobString>
+
+  <WTH_Craft_VanometricModule.label>Stwórz moduł vanometryczny</WTH_Craft_VanometricModule.label>
+  <WTH_Craft_VanometricModule.description>Wytwarza moduł, który </WTH_Craft_VanometricModule.description>
+  <WTH_Craft_VanometricModule.jobString>Tworzy moduł</WTH_Craft_VanometricModule.jobString>
+
+  <WTH_Craft_SelfDestructModule.label>Stwórz moduł samodestrukcji</WTH_Craft_SelfDestructModule.label>
+  <WTH_Craft_SelfDestructModule.description>Wytwarza moduł,który umożliwia mechanoidowi samodestrukcję.</WTH_Craft_SelfDestructModule.description>
+  <WTH_Craft_SelfDestructModule.jobString>Tworzy moduł</WTH_Craft_SelfDestructModule.jobString>
+
+  <WTH_Craft_TurretModule.label>Stwórz moduł wieżyczek obronnych</WTH_Craft_TurretModule.label>
+  <WTH_Craft_TurretModule.description>Stwórz moduł, który umożliwia nałożenie wieżyczki obronnej na mechanoida. </WTH_Craft_TurretModule.description>
+  <WTH_Craft_TurretModule.jobString>Tworzy moduł</WTH_Craft_TurretModule.jobString>
+
+  <WTH_Craft_RepairModule.label>Stwórz moduł naprawczy</WTH_Craft_RepairModule.label>
+  <WTH_Craft_RepairModule.description>Stwórz moduł, który umożliwia samonaprawę mechanoida.</WTH_Craft_RepairModule.description>
+  <WTH_Craft_RepairModule.jobString>Tworzy moduł</WTH_Craft_RepairModule.jobString>
+
+  <WTH_Craft_RepairArm.label>Stwórz moduł ramienia naprawczego</WTH_Craft_RepairArm.label>
+  <WTH_Craft_RepairArm.description>Stwórz moduł, który</WTH_Craft_RepairArm.description>
+  <WTH_Craft_RepairArm.jobString>Tworzy moduł</WTH_Craft_RepairArm.jobString>
+
+  <WTH_Craft_BeltModule.label>Stwórz moduł pasa użytkowego</WTH_Craft_BeltModule.label>
+  <WTH_Craft_BeltModule.description>Stwórz moduł, który umożliwia szersze wykorzystanie mechanoida</WTH_Craft_BeltModule.description>
+  <WTH_Craft_BeltModule.jobString>Tworzy moduł</WTH_Craft_BeltModule.jobString>
+
+  <WTH_HackMechanoid.label>Zhakuj mechanoida</WTH_HackMechanoid.label>
+  <WTH_HackMechanoid.description>Hakuje mechanoida, dzięki czemu będzie on przyjazny.</WTH_HackMechanoid.description>
+  <WTH_HackMechanoid.jobString>Hakuje</WTH_HackMechanoid.jobString>
+
+  <WTH_ImplantAI.label>Implant SI</WTH_ImplantAI.label>
+  <WTH_ImplantAI.description>Wszczepia mechanoidowi Rdzeń SI, co umożliwia większą kontrolę nad nim w walce. </WTH_ImplantAI.description>
+  <WTH_ImplantAI.jobString>Hakuje</WTH_ImplantAI.jobString>
+
+  <!-- <WTH_HackLocomotion.label>hack mechanoid locomotion system</WTH_HackLocomotion.label> -->
+  <!-- <WTH_HackLocomotion.description>Hacks the locomotion system of the mechanoid and adds a receiver to the mechanoid to allow the it to be operated by a colonist using a remote control device</WTH_HackLocomotion.description> -->
+  <!-- <WTH_HackLocomotion.jobString>Hakuje</WTH_HackLocomotion.jobString> -->
+
+  <WTH_InstallRepairArm.label>Zainstaluj ramię naprawcze</WTH_InstallRepairArm.label>
+  <WTH_InstallRepairArm.description>Instaluje moduł ramienia naprawczego</WTH_InstallRepairArm.description>
+  <WTH_InstallRepairArm.jobString>Instaluje</WTH_InstallRepairArm.jobString>
+
+  <WTH_InstallTurretModule.label>Zainstaluj moduł wieżyczek obronnych</WTH_InstallTurretModule.label>
+  <WTH_InstallTurretModule.description>Moduł zapewniający zarówno wsparcie strukturalne, jak i interfejs dla wieżyczek i moździerzy. Każda wieżyczka może być odinstalowana, może być połączona z tym modułem. Mimo tego,że jest to potężne ulepszenie, wieżyczki czerpią dodatkową energię, niestety mają tendencję do wybuchania po zniszczeniu. Może być zainstalowany tylko na dużych mechanoidach.</WTH_InstallTurretModule.description>
+  <WTH_InstallTurretModule.jobString>Instaluje</WTH_InstallTurretModule.jobString>
+
+  <WTH_InstallRepairModule.label>Zainstaluj moduł naprawczy</WTH_InstallRepairModule.label>
+  <WTH_InstallRepairModule.description>Moduł, który może być załadowany częściami mechanoidów jest zdolny do przekierowania zasilania z mechanoida do jego wewnętrznych mechanitów. To aktywuje mechanity, które będą naprawiać mechanoida za pomocą części, ale niestety mechanoid nie może robi niczego innego podczas procesu.</WTH_InstallRepairModule.description>
+  <WTH_InstallRepairModule.jobString>Instaluje</WTH_InstallRepairModule.jobString>
+
+  <WTH_InstallSelfDestruct.label>Zainstaluj moduł samodestrukcji</WTH_InstallSelfDestruct.label>
+  <WTH_InstallSelfDestruct.description>Dodaje zdolność do samozniszczenia mechanoida przez zwarcie zainstalowanych głowic o zawartości materiałów wybuchowych. Osłona z plastali zapobiega przypadkowemu wybuchu.</WTH_InstallSelfDestruct.description>
+  <WTH_InstallSelfDestruct.jobString>Instaluje</WTH_InstallSelfDestruct.jobString>
+
+  <WTH_InstallBeltModule.label>Zainstaluj moduł pasa użytkowego</WTH_InstallBeltModule.label>
+  <WTH_InstallBeltModule.description>Zainstaluj moduł, który pozwala mechanoidom zakładać pasy obronne, tj. np. pas dymny i pas energetyczny</WTH_InstallBeltModule.description>
+  <WTH_InstallBeltModule.jobString>Instaluje</WTH_InstallBeltModule.jobString>
+
+  <WTH_InstallBatteryExpansionModule.label>Zainstaluj moduł powiększający akumulator</WTH_InstallBatteryExpansionModule.label>
+  <WTH_InstallBatteryExpansionModule.description>Instaluje mechanoidowi moduł powiększający pojemność akumulatora, kosztem lekko zmniejszonej prędkości poruszania się.</WTH_InstallBatteryExpansionModule.description>
+  <WTH_InstallBatteryExpansionModule.jobString>Instaluje</WTH_InstallBatteryExpansionModule.jobString>
+
+  <WTH_InstallVanometricModule.label>Zainstaluj moduł vanometryczny </WTH_InstallVanometricModule.label>
+  <TH_InstallVanometricModule.description>Umożliwia mechanoidowi posiadanie nieskończonego zapasu energii, kosztem lekko zmniejszonej prędkości poruszania się.</WTH_InstallVanometricModule.description>
+  <WTH_InstallVanometricModule.jobString>Instaluje</WTH_InstallVanometricModule.jobString>
+
+  <WTH_ShutDownMechanoid.label>Wyłącz</WTH_ShutDownMechanoid.label>
+  <WTH_ShutDownMechanoid.description>Wyłącza mechanoida</WTH_ShutDownMechanoid.description>
+  <WTH_ShutDownMechanoid.jobString>Wyłącza mechanoida</WTH_ShutDownMechanoid.jobString>
+
+
+</LanguageData>
