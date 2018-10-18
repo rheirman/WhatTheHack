@@ -8,19 +8,29 @@ using Verse;
 
 namespace WhatTheHack.Harmony
 {
+    /*
     [HarmonyPatch(typeof(IncidentWorker_RaidEnemy), "TryResolveRaidFaction")]
     class IncidentWorker_RaidEnemy_TryResolveRaidFaction
     {
         static bool Prefix(ref IncidentParms parms, ref bool __result)
         {
-            if(parms.target != null && parms.target.IncidentTargetTags().Contains(IncidentTargetTagDefOf.Map_RaidBeacon))
+            Map map = (Map)parms.target;
+
+            if (parms.target != null && parms.target.IncidentTargetTags().Contains(IncidentTargetTagDefOf.Map_RaidBeacon))
             {
-                Log.Message("TryResolveRaidFaction patch called");
-                __result = true;
-                parms.faction = Faction.OfMechanoids;
-                return false;
+                foreach (ThingWithComps current in map.listerThings.ThingsOfDef(WTH_DefOf.WTH_MechanoidBeacon).OfType<ThingWithComps>())
+                {
+                    CompHibernatable compHibernatable = current.TryGetComp<CompHibernatable>();
+                    if (compHibernatable != null && compHibernatable.State == HibernatableStateDefOf.Starting)
+                    {
+                        __result = true;
+                        parms.faction = Faction.OfMechanoids;
+                        return false;
+                    }
+                }
             }
             return true;
         }
     }
+    */
 }

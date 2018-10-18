@@ -8,6 +8,7 @@ using Verse;
 
 namespace WhatTheHack.Buildings
 {
+    
     class Building_MechanoidBeacon : Building
     {
         public override IEnumerable<Gizmo> GetGizmos()
@@ -23,21 +24,40 @@ namespace WhatTheHack.Buildings
         }
         public IEnumerable<Gizmo> StartupGizmos()
         {
-            yield return new Command_Action
+            bool isDisabled = false;
+            string disabledReason = "";
+            foreach (ThingWithComps current in this.Map.listerThings.AllThings.OfType<ThingWithComps>())
             {
-                action = delegate
+                if(current.TryGetComp<CompHibernatable>() is CompHibernatable comp && comp.State == HibernatableStateDefOf.Starting)
                 {
-                    string text = "HibernateWarning";
-                    /*
-                    if (building.Map.info.parent.GetComponent<EscapeShipComp>() == null)
+                    if(current.def == ThingDefOf.Ship_Reactor)
                     {
-                        text += "Standalone";
+                        isDisabled = true;
+                        disabledReason = "WTH_Reason_ReactorWarmingUp";
+                    }
+                    /*
+                    if(current.def == WTH_DefOf.WTH_MechanoidBeacon)
+                    {
+                        isDisabled = true;
+                        disabledReason = "WTH_Reason_BeaconActive";
                     }
                     */
+                }
+            }
+
+            yield return new Command_Action
+            {
+
+
+                action = delegate
+                {
+                    string text = "WTH_BeaconWarmupWarning";
+                    /*
                     if (!Find.Storyteller.difficulty.allowBigThreats)
                     {
                         text += "Pacifist";
                     }
+                    */
                     DiaNode diaNode = new DiaNode(text.Translate());
                     DiaOption diaOption = new DiaOption("Confirm".Translate());
                     diaOption.action = delegate
@@ -51,6 +71,8 @@ namespace WhatTheHack.Buildings
                     diaNode.options.Add(diaOption2);
                     Find.WindowStack.Add(new Dialog_NodeTree(diaNode, true, false, null));
                 },
+                disabled = isDisabled,
+                disabledReason = disabledReason,
                 defaultLabel = "CommandShipStartup".Translate(),
                 defaultDesc = "CommandShipStartupDesc".Translate(),
                 hotKey = KeyBindingDefOf.Misc1,

@@ -348,7 +348,7 @@
     <pathCost>15</pathCost>
   </ThingDef>
   
-	
+<!--
   <ThingDef ParentName="BuildingBase">
     <defName>WTH_MechanoidBeacon</defName>
     <label>Mechanoid beacon</label>
@@ -400,8 +400,8 @@
 	<designationCategory>Misc</designationCategory>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
-	<!--<researchPrerequisites><li>WTH_MechanoidBeacon</li></researchPrerequisites>-->
   </ThingDef>
+  -->
   
 
 </Defs>
