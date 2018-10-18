@@ -20,32 +20,54 @@ namespace WhatTheHack.Harmony
             for (var i = 0; i < instructionsList.Count; i++)
             {
                 CodeInstruction instruction = instructionsList[i];
-                yield return instruction;
 
-                if (instructionsList[i].operand == AccessTools.Method(typeof(IncidentWorker_Raid), "GetLetterLabel")) //Identifier for which IL line to inject to
+                if (instruction.operand == AccessTools.Method(typeof(PawnsArrivalModeWorker), "Arrive"))
+                {
+                    yield return new CodeInstruction(OpCodes.Call, typeof(IncidentWorker_Raid_TryExecuteWorker).GetMethod("DoNothing"));//don't execute this, execute it in MountAnimals
+                    continue;
+                }
+                if (instruction.operand == AccessTools.Method(typeof(PawnGroupMakerUtility), "GeneratePawns")) //Identifier for which IL line to inject to
                 {
                     //Start of injection
-                    yield return new CodeInstruction(OpCodes.Ldloca_S, 3);//load generated pawns as parameter
                     yield return new CodeInstruction(OpCodes.Ldarg_1);//load incidentparms as parameter
-                    yield return new CodeInstruction(OpCodes.Call, typeof(IncidentWorker_Raid_TryExecuteWorker).GetMethod("SpawnHackedMechanoids"));//Injected code
-                    //yield return new CodeInstruction(OpCodes.Stloc_2);
+                    yield return new CodeInstruction(OpCodes.Call, typeof(IncidentWorker_Raid_TryExecuteWorker).GetMethod("SpawnHackedMechanoids"));//replace GeneratePawns by custom code
+                }
+                /*
+                else if (instructionsList[i].operand == AccessTools.Method(typeof(RaidStrategyWorker), "MakeLords")) //Identifier for which IL line to inject to
+                {
+                    yield return new CodeInstruction(OpCodes.Call, typeof(IncidentWorker_Raid_TryExecuteWorker).GetMethod("RemoveAnimals"));//Injected code
+                } 
+                */
+                else
+                {
+                    yield return instruction;
                 }
             }
         }
-        public static void SpawnHackedMechanoids(ref List<Pawn> list, IncidentParms parms)
+        public static void DoNothing(List<Pawn> pawns, IncidentParms parms)
         {
+            //do nothing
+        }
+        public static IEnumerable<Pawn> SpawnHackedMechanoids(PawnGroupMakerParms groupParms, bool warnOnZeroResults, IncidentParms parms)
+        {
+            List<Pawn> list = PawnGroupMakerUtility.GeneratePawns(groupParms, true).ToList();
+            if (list.Count == 0)
+            {
+                return list;
+            }
+            parms.raidArrivalMode.Worker.Arrive(list, parms);
             if (list.Count == 0 || !(parms.raidArrivalMode == PawnsArrivalModeDefOf.EdgeWalkIn))
             {
-                return;
+                return list;
             }
             if(parms.faction == Faction.OfMechanoids)
             {
-                return;
+                return list;
             }
             Random rand = new Random(DateTime.Now.Millisecond);
             if(rand.Next(0, 100) > Base.hackedMechChance)
             {
-                return;
+                return list;
             }
 
             int minHackedMechPoints = Math.Min(Base.minHackedMechPoints, Base.maxHackedMechPoints);
@@ -88,6 +110,7 @@ namespace WhatTheHack.Harmony
                     pawn.equipment = new Pawn_EquipmentTracker(pawn);
                 }
             }
+            return list;
         }
     }
 }
