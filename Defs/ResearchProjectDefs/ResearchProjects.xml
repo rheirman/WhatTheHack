@@ -34,7 +34,7 @@
 		<label>Portable disassembling bench</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<baseCost>1200</baseCost>
+		<baseCost>800</baseCost>
 		<description>A sturdy and portable bench used for disassembling mechanoids during trips. Its tools don't depend on power, which is convenient for trips, but also makes it slightly less efficient.</description>
 		<prerequisites>
 		  <li>WTH_HackingBasics</li>
