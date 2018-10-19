@@ -140,7 +140,7 @@
   </ThingDef>
   
   
-  <ThingDef ParentName="BenchBase">
+  <ThingDef ParentName="BuildingBase">
     <defName>WTH_MechanoidPlatform</defName>
     <label>mechanoid platform</label>
     <description>Platform used for charging and repairing mechanoids.</description>
@@ -150,7 +150,6 @@
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2,4)</drawSize>
     </graphicData>
-	<minifiedDef>MinifiedThing</minifiedDef>
     <castEdgeShadows>false</castEdgeShadows>
     <costList>
       <Steel>125</Steel>

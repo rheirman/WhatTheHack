@@ -21,57 +21,42 @@ namespace WhatTheHack.Harmony
             {
                 CodeInstruction instruction = instructionsList[i];
 
+                //Replace Arrive method by SpawnHackedMechanoids (which also calls Arrive). This avoids the need of ldgarg calls, which seem to change after literally every update of Rimworld.
                 if (instruction.operand == AccessTools.Method(typeof(PawnsArrivalModeWorker), "Arrive"))
                 {
-                    yield return new CodeInstruction(OpCodes.Call, typeof(IncidentWorker_Raid_TryExecuteWorker).GetMethod("DoNothing"));//don't execute this, execute it in MountAnimals
+                    yield return new CodeInstruction(OpCodes.Call, typeof(IncidentWorker_Raid_TryExecuteWorker).GetMethod("SpawnHackedMechanoids"));//don't execute this, execute it in MountAnimals
                     continue;
                 }
-                if (instruction.operand == AccessTools.Method(typeof(PawnGroupMakerUtility), "GeneratePawns")) //Identifier for which IL line to inject to
-                {
-                    //Start of injection
-                    yield return new CodeInstruction(OpCodes.Ldarg_1);//load incidentparms as parameter
-                    yield return new CodeInstruction(OpCodes.Call, typeof(IncidentWorker_Raid_TryExecuteWorker).GetMethod("SpawnHackedMechanoids"));//replace GeneratePawns by custom code
-                }
-                /*
-                else if (instructionsList[i].operand == AccessTools.Method(typeof(RaidStrategyWorker), "MakeLords")) //Identifier for which IL line to inject to
-                {
-                    yield return new CodeInstruction(OpCodes.Call, typeof(IncidentWorker_Raid_TryExecuteWorker).GetMethod("RemoveAnimals"));//Injected code
-                } 
-                */
                 else
                 {
                     yield return instruction;
                 }
             }
         }
-        public static void DoNothing(List<Pawn> pawns, IncidentParms parms)
+        //returns pawns for compatibility reasons. 
+        public static List<Pawn> SpawnHackedMechanoids(List<Pawn> pawns, IncidentParms parms)
         {
-            //do nothing
-        }
-        public static IEnumerable<Pawn> SpawnHackedMechanoids(PawnGroupMakerParms groupParms, bool warnOnZeroResults, IncidentParms parms)
-        {
-            List<Pawn> list = PawnGroupMakerUtility.GeneratePawns(groupParms, true).ToList();
-            if (list.Count == 0)
+            //only call Arrive method when sure it's not already called. (can happen due to other mods)
+            if(pawns.Count > 0 && !pawns[0].Spawned)
             {
-                return list;
+                parms.raidArrivalMode.Worker.Arrive(pawns, parms);
             }
-            parms.raidArrivalMode.Worker.Arrive(list, parms);
-            if (list.Count == 0 || !(parms.raidArrivalMode == PawnsArrivalModeDefOf.EdgeWalkIn))
+            if (pawns.Count == 0 || !(parms.raidArrivalMode == PawnsArrivalModeDefOf.EdgeWalkIn))
             {
-                return list;
+                return pawns;
             }
-            if(parms.faction == Faction.OfMechanoids)
+            if (parms.faction == Faction.OfMechanoids)
             {
-                return list;
+                return pawns;
             }
             Random rand = new Random(DateTime.Now.Millisecond);
-            if(rand.Next(0, 100) > Base.hackedMechChance)
+            if (rand.Next(0, 100) > Base.hackedMechChance)
             {
-                return list;
+                return pawns;
             }
 
             int minHackedMechPoints = Math.Min(Base.minHackedMechPoints, Base.maxHackedMechPoints);
-            float maxMechPoints = parms.points * ((float)rand.Next(minHackedMechPoints, Base.maxHackedMechPoints))/100; //TODO: no magic numbers
+            float maxMechPoints = parms.points * ((float)rand.Next(minHackedMechPoints, Base.maxHackedMechPoints)) / 100; //TODO: no magic numbers
             float cumulativePoints = 0;
             Map map = parms.target as Map;
 
@@ -80,8 +65,8 @@ namespace WhatTheHack.Harmony
                 PawnKindDef pawnKindDef = null;
                 (from a in DefDatabase<PawnKindDef>.AllDefs
                  where a.RaceProps.IsMechanoid &&
-                 cumulativePoints + a.combatPower < maxMechPoints && 
-                 Utilities.IsAllowedInModOptions(a.race.defName, parms.faction)                
+                 cumulativePoints + a.combatPower < maxMechPoints &&
+                 Utilities.IsAllowedInModOptions(a.race.defName, parms.faction)
                  //&& IsMountableUtility.isAllowedInModOptions(a.defName)
                  select a).TryRandomElement(out pawnKindDef);
 
@@ -92,9 +77,9 @@ namespace WhatTheHack.Harmony
                     GenSpawn.Spawn(mechanoid, loc, map, parms.spawnRotation);
                     mechanoid.health.AddHediff(WTH_DefOf.WTH_TargetingHacked);
                     mechanoid.health.AddHediff(WTH_DefOf.WTH_BackupBattery);
-                    Need_Power powerNeed = (Need_Power) mechanoid.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power);
+                    Need_Power powerNeed = (Need_Power)mechanoid.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power);
                     powerNeed.CurLevel = powerNeed.MaxLevel;
-                    list.Add(mechanoid);
+                    pawns.Add(mechanoid);
                     cumulativePoints += pawnKindDef.combatPower;
                 }
                 else
@@ -103,14 +88,15 @@ namespace WhatTheHack.Harmony
                 }
             }
 
-            foreach (Pawn pawn in list)
+            foreach (Pawn pawn in pawns)
             {
                 if (pawn.equipment == null)
                 {
                     pawn.equipment = new Pawn_EquipmentTracker(pawn);
                 }
             }
-            return list;
+            return pawns;
         }
+        //do nothing
     }
 }

@@ -110,8 +110,7 @@ namespace WhatTheHack.Harmony
             {
                 return;
             }
-
-            if(targetPawn.jobs.curJob.def == WTH_DefOf.WTH_Mechanoid_Rest)
+            if(targetPawn.jobs != null && targetPawn.jobs.curJob != null && targetPawn.jobs.curJob.def == WTH_DefOf.WTH_Mechanoid_Rest)
             {
                 targetPawn.jobs.EndCurrentJob(JobCondition.InterruptForced, false);
                 ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(targetPawn);
