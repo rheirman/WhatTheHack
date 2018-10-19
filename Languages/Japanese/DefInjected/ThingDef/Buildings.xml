@@ -10,7 +10,7 @@
   <WTH_TableMechanoidWorkshop.label>メカノイド工作台</WTH_TableMechanoidWorkshop.label>
   <WTH_TableMechanoidWorkshop.description>すべての種類のメカノイド関係のアップグレード部品とモジュールを加工したり、先進メカノイドチップを解体してメカノイドパーツを回収するための作業台です。</WTH_TableMechanoidWorkshop.description>
   <Blueprint_WTH_TableMechanoidWorkshop.label>メカノイド工作台(設計)</Blueprint_WTH_TableMechanoidWorkshop.label>
-  <Blueprint_Install_WTH_TableMechanoidWorkshop.label>メカノイド工作台(設計)</Blueprint_Install_WTH_TableMechanoidWorkshop.label>
+  <Blueprint_Install_WTH_TableMechanoidWorkshop.label>メカノイド工作台(移動先)</Blueprint_Install_WTH_TableMechanoidWorkshop.label>
   <Frame_WTH_TableMechanoidWorkshop.label>メカノイド工作台(施工)</Frame_WTH_TableMechanoidWorkshop.label>
   <Frame_WTH_TableMechanoidWorkshop.description>すべての種類のメカノイド関係のアップグレード部品とモジュールを加工したり、先進メカノイドチップを解体してメカノイドパーツを回収するための作業台です。</Frame_WTH_TableMechanoidWorkshop.description>
 
@@ -25,9 +25,18 @@
   <WTH_PortableChargingPlatform.label>メカノイド携帯ベッド</WTH_PortableChargingPlatform.label>
   <WTH_PortableChargingPlatform.description>ワールドマップを移動する旅で、メカノイドを充電するための携帯プラットフォームベッドです。</WTH_PortableChargingPlatform.description>
   <Blueprint_WTH_PortableChargingPlatform.label>メカノイド携帯ベッド(設計)</Blueprint_WTH_PortableChargingPlatform.label>
-  <Blueprint_Install_WTH_PortableChargingPlatform.label>メカノイド携帯ベッド(設計)</Blueprint_Install_WTH_PortableChargingPlatform.label>
+  <Blueprint_Install_WTH_PortableChargingPlatform.label>メカノイド携帯ベッド(移動先)</Blueprint_Install_WTH_PortableChargingPlatform.label>
   <Frame_WTH_PortableChargingPlatform.label>メカノイド携帯ベッド(施工)</Frame_WTH_PortableChargingPlatform.label>
   <Frame_WTH_PortableChargingPlatform.description>ワールドマップを移動する旅で、メカノイドを充電するための携帯プラットフォームベッドです。</Frame_WTH_PortableChargingPlatform.description>
+
+  <WTH_PortableDisassemblingBench.label>携帯用分解台</WTH_PortableDisassemblingBench.label>
+  <WTH_PortableDisassemblingBench.description>入植者を受け入れなかったメカノイドを分解するために必要なものがすべて揃っている、丈夫で持ち運びやすい作業台です。その道具は電力に依存しないので、キャラバン隊の移動に便利ですが、やや効率が低下します。</WTH_PortableDisassemblingBench.description>
+  <Blueprint_WTH_PortableDisassemblingBench.label>携帯用分解台(設計)</Blueprint_WTH_PortableDisassemblingBench.label>
+  <Blueprint_Install_WTH_PortableDisassemblingBench.label>携帯用分解台(移動先)</Blueprint_Install_WTH_PortableDisassemblingBench.label>
+  <Frame_WTH_PortableDisassemblingBench.label>携帯用分解台(施工)</Frame_WTH_PortableDisassemblingBench.label>
+  <Frame_WTH_PortableDisassemblingBench.description>入植者を受け入れなかったメカノイドを分解するために必要なものがすべて揃っている、丈夫で持ち運びやすい作業台です。その道具は電力に依存しないので、キャラバン隊の移動に便利ですが、やや効率が低下します。</Frame_WTH_PortableDisassemblingBench.description>
+
+  <WTH_DisassemblingBenchMinified.label>携帯用分解台 (梱包)</WTH_DisassemblingBenchMinified.label>
 
 
 </LanguageData>
