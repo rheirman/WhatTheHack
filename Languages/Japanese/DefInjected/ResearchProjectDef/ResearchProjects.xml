@@ -7,6 +7,9 @@
   <WTH_PortableChemfuelPlatform.label>メカノイド携帯ベッド</WTH_PortableChemfuelPlatform.label>
   <WTH_PortableChemfuelPlatform.description>ワールドマップ上を旅する間、メカノイドに電力を供給するためにバイオ化学燃料を燃料に自家発電する携帯型のメカノイドベッドが建設可能になります。あなたのメカノイド用として一時的なメカノイドベッドとして展示(再展示)したり撤去することもできます。</WTH_PortableChemfuelPlatform.description>
 
+  <WTH_PortableDisassemblingBench.label>携帯用分解台</WTH_PortableDisassemblingBench.label>
+  <WTH_PortableDisassemblingBench.description>キャラバン隊で移動中にメカノイドを分解するのに使用される丈夫で持ち運びやすい作業台です。その機能は、旅行中に電力を必要としませんが、やや効率が低下します。</WTH_PortableDisassemblingBench.description>
+
   <WTH_MechanoidWorkshop.label>メカノイド工作台</WTH_MechanoidWorkshop.label>
   <WTH_MechanoidWorkshop.description>全種類のメカノイドに関連する作業と改良に使う部品やモジュールを製造したり、高度なメカノイド部品を回収するために使用されるメカノイド工作台を建設できるようになります。</WTH_MechanoidWorkshop.description>
 
