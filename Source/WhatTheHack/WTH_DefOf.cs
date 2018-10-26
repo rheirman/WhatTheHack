@@ -52,7 +52,7 @@ namespace WhatTheHack
 
         public static ThingDef WTH_TableMechanoidWorkshop;
         public static ThingDef WTH_HackingTable;
-        //public static ThingDef WTH_MechanoidBeacon;
+        public static ThingDef WTH_MechanoidBeacon;
         public static ThingDef WTH_MechanoidPlatform;
         public static ThingDef WTH_PortableChargingPlatform;
         public static ThingDef WTH_MechanoidParts;

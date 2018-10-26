@@ -35,13 +35,13 @@ namespace WhatTheHack.Buildings
                         isDisabled = true;
                         disabledReason = "WTH_Reason_ReactorWarmingUp";
                     }
-                    /*
+                    
                     if(current.def == WTH_DefOf.WTH_MechanoidBeacon)
                     {
                         isDisabled = true;
                         disabledReason = "WTH_Reason_BeaconActive";
                     }
-                    */
+                   
                 }
             }
 

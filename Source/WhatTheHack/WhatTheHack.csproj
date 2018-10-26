@@ -86,6 +86,7 @@
     <Compile Include="Harmony\ITab_Pawn_Gear.cs" />
     <Compile Include="Harmony\LordToil_Siege.cs" />
     <Compile Include="Harmony\LovePartnerRelationUtility.cs" />
+    <Compile Include="Harmony\MapParent.cs" />
     <Compile Include="Harmony\MassUtility.cs" />
     <Compile Include="Harmony\MinifyUtility.cs" />
     <Compile Include="Harmony\PawnCapacitiesHandler.cs" />
