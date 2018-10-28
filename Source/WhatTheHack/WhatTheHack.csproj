@@ -150,6 +150,9 @@
     <Compile Include="Jobs\JobDriver_CarryToHackingTable.cs" />
     <Compile Include="Recipes\RecipeUtility.cs" />
     <Compile Include="Recipes\Recipe_HackMechanoid.cs" />
+    <Compile Include="WorldIncidents\GenStep_RoamingMechanoids.cs" />
+    <Compile Include="WorldIncidents\IncidentWorker_RoamingMechanoids.cs" />
+    <Compile Include="WorldIncidents\SitePartWorker_RoamingMechanoids.cs" />
     <Compile Include="WTH_DefOf.cs" />
     <Compile Include="Storage\ExtendedDataStorage.cs" />
     <Compile Include="Storage\ExtendedPawnData.cs" />

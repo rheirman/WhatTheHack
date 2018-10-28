@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<SitePartDef>
+		<defName>WTH_RoamingMechanoidsPart</defName>
+		<label>Roaming mechanoids</label>
+		<description>Mechanoids roam around this area</description>
+		<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+		<expandingIconTexture>World/WorldObjects/Expanding/Sites/Nothing</expandingIconTexture>
+		<descriptionDialogue>Locals have spotted several mechanoids roaming around this area. Beware.</descriptionDialogue>
+		<workerClass>WhatTheHack.WorldIncidents.SitePartWorker_RoamingMechanoids</workerClass>
+		<requiresFaction>true</requiresFaction>
+		<showFactionInInspectString>true</showFactionInInspectString>
+		<approachOrderString>Visit {0}</approachOrderString>
+		<approachingReportString>Visiting {0}</approachingReportString>
+		<arrivedLetter>Your caravan has arrived. Mechanoid shrieks are heard from a distance. Prepare for battle.</arrivedLetter>
+		<arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+	</SitePartDef>
+
+	<GenStepDef>
+		<defName>WTH_RoamingMechanoidsPart</defName>
+		<linkWithSite>WTH_RoamingMechanoidsPart</linkWithSite>
+		<order>450</order>
+		<genStep Class="WhatTheHack.WorldIncidents.GenStep_RoamingMechanoids" />
+	</GenStepDef>
+</Defs>

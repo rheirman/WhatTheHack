@@ -78,6 +78,9 @@ namespace WhatTheHack
         public static ConceptDef WTH_Power;
         public static ConceptDef WTH_Concept_MechanoidParts;
 
+        public static SiteCoreDef WTH_RoamingMechanoidsCore;
+        public static SitePartDef WTH_RoamingMechanoidsPart;
+
         //vanilla
         public static BodyPartDef Reactor;
         public static BodyPartGroupDef Waist;

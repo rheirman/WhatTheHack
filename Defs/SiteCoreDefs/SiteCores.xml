@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <SiteCoreDef>
+    <defName>WTH_RoamingMechanoidsCore</defName>
+    <label>Roaming mechanoids</label>
+	<description>Mechanoids seem to be roaming around this area.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Nothing</expandingIconTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <forceExitAndRemoveMapCountdownDurationDays>10</forceExitAndRemoveMapCountdownDurationDays>
+  </SiteCoreDef>
+</Defs>
