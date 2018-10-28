@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+  <WTH_DoBillsPortableDisassemblingBench.label>メカノイドを分解する</WTH_DoBillsPortableDisassemblingBench.label>
+  <WTH_DoBillsPortableDisassemblingBench.verb>で分解する</WTH_DoBillsPortableDisassemblingBench.verb>
+  <WTH_DoBillsPortableDisassemblingBench.gerund>で分解する</WTH_DoBillsPortableDisassemblingBench.gerund>
+
   <WTH_DoBillsMechanoidWorkshop.label>メカノイド工作台で作業する</WTH_DoBillsMechanoidWorkshop.label>
   <WTH_DoBillsMechanoidWorkshop.verb>で作業する</WTH_DoBillsMechanoidWorkshop.verb>
   <WTH_DoBillsMechanoidWorkshop.gerund>で作業する</WTH_DoBillsMechanoidWorkshop.gerund>
