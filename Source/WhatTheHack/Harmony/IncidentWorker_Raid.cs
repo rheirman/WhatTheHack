@@ -63,13 +63,17 @@ namespace WhatTheHack.Harmony
             while (cumulativePoints < maxMechPoints)
             {
                 PawnKindDef pawnKindDef = null;
-                (from a in DefDatabase<PawnKindDef>.AllDefs
-                 where a.RaceProps.IsMechanoid &&
-                 cumulativePoints + a.combatPower < maxMechPoints &&
-                 Utilities.IsAllowedInModOptions(a.race.defName, parms.faction)
-                 //&& IsMountableUtility.isAllowedInModOptions(a.defName)
-                 select a).TryRandomElement(out pawnKindDef);
+                IEnumerable<PawnKindDef> selectedPawns = (from a in DefDatabase<PawnKindDef>.AllDefs
+                                                  where a.RaceProps.IsMechanoid &&
+                                                  cumulativePoints + a.combatPower < maxMechPoints &&
+                                                  Utilities.IsAllowedInModOptions(a.race.defName, parms.faction)
+                                                  //&& IsMountableUtility.isAllowedInModOptions(a.defName)
+                                                  select a);
 
+                if (selectedPawns != null)
+                {
+                    selectedPawns.TryRandomElement(out pawnKindDef);
+                }
                 if (pawnKindDef != null)
                 {
                     Pawn mechanoid = PawnGenerator.GeneratePawn(pawnKindDef, parms.faction);

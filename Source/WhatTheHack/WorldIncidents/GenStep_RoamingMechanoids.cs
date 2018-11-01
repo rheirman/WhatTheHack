@@ -28,7 +28,6 @@ namespace WhatTheHack.WorldIncidents
             IntVec3 near;
             if (!SiteGenStepUtility.TryFindRootToSpawnAroundRectOfInterest(out around, out near, map))
             {
-                Log.Message("could not  TryFindRootToSpawnAroundRectOfInterest");
                 return;
             }
             List<Pawn> list = new List<Pawn>();
@@ -61,7 +60,8 @@ namespace WhatTheHack.WorldIncidents
             pawnGroupMakerParms.groupKind = PawnGroupKindDefOf.Combat;
             pawnGroupMakerParms.tile = map.Tile;
             pawnGroupMakerParms.faction = Faction.OfMechanoids;
-            pawnGroupMakerParms.points = 500;
+            pawnGroupMakerParms.points = points;
+            
             if (parms.siteCoreOrPart != null)
             {
                 pawnGroupMakerParms.seed = new int?(SleepingMechanoidsSitePartUtility.GetPawnGroupMakerSeed(parms.siteCoreOrPart.parms));

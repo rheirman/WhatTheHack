@@ -14,6 +14,7 @@
 		<approachingReportString>Visiting {0}</approachingReportString>
 		<arrivedLetter>Your caravan has arrived. Mechanoid shrieks are heard from a distance. Prepare for battle.</arrivedLetter>
 		<arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+		<wantsThreatPoints>True</wantsThreatPoints>
 	</SitePartDef>
 
 	<GenStepDef>
