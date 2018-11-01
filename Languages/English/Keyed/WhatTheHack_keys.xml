@@ -59,6 +59,11 @@
 	<WTH_PowerChargeModifier_Description>Modify how quickly mechanoids charge their batteries. Example: setting this to 2.0 would result in the power charging twice as fast.</WTH_PowerChargeModifier_Description>
 	<!--END: added in v0.19.6 -->
 	
+	<!--BEGIN: added in v1.0.2 -->
+	<WTH_MechanoidParts_LabelShort>Mech parts</WTH_MechanoidParts_LabelShort>
+	<!--END: added in v1.0.2 -->
+
+
 	
 	
 	<WTH_HackedMechChance_Title>Chance enemies use hacked mechs (%)</WTH_HackedMechChance_Title>

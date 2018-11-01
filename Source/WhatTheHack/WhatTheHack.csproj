@@ -74,6 +74,7 @@
     <Compile Include="Harmony\CaravanUIUtility.cs" />
     <Compile Include="Harmony\CharacterCardUtility.cs" />
     <Compile Include="Harmony\CollectionsMassCalculator.cs" />
+    <Compile Include="Harmony\CompLongRangeMineralScanner.cs" />
     <Compile Include="Harmony\DaysWorthOfFoodCalculator.cs" />
     <Compile Include="Harmony\Dialog_FormCaravan.cs" />
     <Compile Include="Harmony\Dialog_LoadTransporters.cs" />
@@ -150,9 +151,12 @@
     <Compile Include="Jobs\JobDriver_CarryToHackingTable.cs" />
     <Compile Include="Recipes\RecipeUtility.cs" />
     <Compile Include="Recipes\Recipe_HackMechanoid.cs" />
+    <Compile Include="WorldIncidents\GenStep_HiveTemple.cs" />
     <Compile Include="WorldIncidents\GenStep_RoamingMechanoids.cs" />
     <Compile Include="WorldIncidents\IncidentWorker_RoamingMechanoids.cs" />
     <Compile Include="WorldIncidents\SitePartWorker_RoamingMechanoids.cs" />
+    <Compile Include="WorldIncidents\SymbolResolver_Interior_MechanoidTemple.cs" />
+    <Compile Include="WorldIncidents\SymbolResolver_MechanoidTemple.cs" />
     <Compile Include="WTH_DefOf.cs" />
     <Compile Include="Storage\ExtendedDataStorage.cs" />
     <Compile Include="Storage\ExtendedPawnData.cs" />

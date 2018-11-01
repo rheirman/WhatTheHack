@@ -22,6 +22,17 @@
     <thingCategories>
       <li>Manufactured</li>
     </thingCategories>
+	<!-- this is added so it can be used for mineral scanner -->
+	<building>
+      <isResourceRock>false</isResourceRock>
+      <mineableThing>WTH_MechanoidParts</mineableThing>
+      <mineableYield>40</mineableYield>
+      <mineableScatterCommonality>0.07</mineableScatterCommonality>
+      <mineableScatterLumpSizeRange>
+        <min>2</min>
+        <max>8</max>
+      </mineableScatterLumpSizeRange>
+    </building>
   </ThingDef>
 
   <ThingDef ParentName="ResourceBase">
@@ -48,6 +59,32 @@
       <li>Manufactured</li>
     </thingCategories>
   </ThingDef>
+  
+  <ThingDef ParentName="ResourceBase">
+    <defName>WTH_MechanoidData</defName>
+    <label>mechanoid data</label>
+    <description>Data records about the mechanoid hive, retrieved from ancient mechanoid hive structures.</description>
+    <graphicData>
+      <texPath>Things/MechanoidData</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>75</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>70</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.5</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
   
    <ThingDef ParentName="BodyPartBase">
     <defName>WTH_TurretModule</defName>

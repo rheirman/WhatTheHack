@@ -60,7 +60,8 @@ namespace WhatTheHack
         public static ThingDef WTH_Mote_Charging;
         public static ThingDef WTH_Mote_HealingCrossGreen;
         public static ThingDef WTH_Apparel_MechControllerBelt;
-
+        public static ThingDef WTH_MechanoidData;
+        
         public static StatDef WTH_HackingSuccessChance;
         public static StatDef WTH_HackingMaintenanceSpeed;
         public static StatDef WTH_ControllerBeltRadius;
@@ -79,7 +80,11 @@ namespace WhatTheHack
         public static ConceptDef WTH_Concept_MechanoidParts;
 
         public static SiteCoreDef WTH_RoamingMechanoidsCore;
+        public static SiteCoreDef WTH_MechanoidTempleCore;
+
         public static SitePartDef WTH_RoamingMechanoidsPart;
+        public static SitePartDef WTH_MechanoidTemplePart;
+        public static ThingSetMakerDef WTH_MapGen_MechanoidTempleContents;
 
         //vanilla
         public static BodyPartDef Reactor;

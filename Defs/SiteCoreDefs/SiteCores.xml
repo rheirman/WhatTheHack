@@ -9,4 +9,14 @@
     <showFactionInInspectString>true</showFactionInInspectString>
     <forceExitAndRemoveMapCountdownDurationDays>10</forceExitAndRemoveMapCountdownDurationDays>
   </SiteCoreDef>
+  
+  <SiteCoreDef>
+    <defName>WTH_MechanoidTempleCore</defName>
+    <label>Mechanoid temple</label>
+	<description>TODO</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Nothing</expandingIconTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <forceExitAndRemoveMapCountdownDurationDays>10</forceExitAndRemoveMapCountdownDurationDays>
+  </SiteCoreDef>
 </Defs>

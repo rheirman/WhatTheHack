@@ -23,4 +23,28 @@
 		<order>450</order>
 		<genStep Class="WhatTheHack.WorldIncidents.GenStep_RoamingMechanoids" />
 	</GenStepDef>
+	
+	<SitePartDef>
+		<defName>WTH_MechanoidTemplePart</defName>
+		<label>Mechanoid temple</label>
+		<description>TODO</description>
+		<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+		<expandingIconTexture>World/WorldObjects/Expanding/Sites/Nothing</expandingIconTexture>
+		<descriptionDialogue>TODO</descriptionDialogue>
+		<workerClass>WhatTheHack.WorldIncidents.SitePartWorker_RoamingMechanoids</workerClass>
+		<requiresFaction>true</requiresFaction>
+		<showFactionInInspectString>true</showFactionInInspectString>
+		<approachOrderString>Visit {0}</approachOrderString>
+		<approachingReportString>Visiting {0}</approachingReportString>
+		<arrivedLetter>TODO</arrivedLetter>
+		<arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+		<wantsThreatPoints>True</wantsThreatPoints>
+	</SitePartDef>
+	
+	<GenStepDef>
+		<defName>WTH_MechanoidTemplePart</defName>
+		<linkWithSite>WTH_MechanoidTemplePart</linkWithSite>
+		<order>450</order>
+		<genStep Class="WhatTheHack.WorldIncidents.GenStep_HiveTemple"/>
+	</GenStepDef>
 </Defs>
