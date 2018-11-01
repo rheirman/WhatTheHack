@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
@@ -40,6 +41,7 @@ namespace WhatTheHack.WorldIncidents
             //maxFoodAndStuffForHuntersLodge.filter.SetAllow(ThingCategoryDefOf.PlantFoodRaw, true);
 
             resolveParams.thingSetMakerParams = thingMakerParams;
+            resolveParams.mechanoidsCount =  Math.Max(1, Mathf.RoundToInt(genStepParams.siteCoreOrPart.parms.threatPoints / 200f));
 
             BaseGen.globalSettings.map = map;
             BaseGen.globalSettings.minBuildings = 1;

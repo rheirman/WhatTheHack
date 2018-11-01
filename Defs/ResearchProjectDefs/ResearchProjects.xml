@@ -227,6 +227,59 @@
 		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 	
+	<ResearchProjectDef>
+		<defName>WTH_LRMSTuning</defName>
+		<label>Long range mineral scanner tuning</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Allows the long range mineral scanner to scan for locations on the world with a high concentration of mechanoid parts. Of course the parts won't be just lying around. More likely they are attached to mechanoids. Live mechanoids..</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+		  <li>WTH_HackingBasics</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
 
+	<ResearchProjectDef>
+		<defName>WTH_RogueAI</defName>
+		<label>Rogue AI</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>A potentially very powerful AI, based on mechanoid technology. By default, it only provides a boost to the hacking success chance of surrounding hacking facilities. However, once it's provided access to the knowledge found in mechanoid hive ships, it becomes a powerful cyberweapon, with a unquenchable thirst for more data.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+		  <li>WTH_HackingBasics</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
 	
+	<ResearchProjectDef>
+		<defName>WTH_HiveshipHackingFacility</defName>
+		<label>Hiveship hacking facility</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>This high-tech facility allows the rogue AI to transmit its malicious code all the way to mechanoid hive ships orbiting the planet, in an attempt to gain access to the advanced knowledge present in those ships.</description>
+		<baseCost>1500</baseCost>
+		<prerequisites>
+		  <li>WTH_HackingBasics</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+		
+	<ResearchProjectDef>
+		<defName>WTH_LRMSTuning</defName>
+		<label></label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Allows the long range mineral scanner to scan for locations on the world with a high concentration of mechanoid parts. Of course the parts won't be just lying around. More likely they are attached to mechanoids. Live mechanoids..</description>
+		<baseCost>1500</baseCost>
+		<prerequisites>
+		  <li>WTH_HackingBasics</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
 </Defs>

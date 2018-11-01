@@ -63,7 +63,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>WTH_MechanoidData</defName>
     <label>mechanoid data</label>
-    <description>Data records about the mechanoid hive, retrieved from ancient mechanoid hive structures.</description>
+    <description>Data records originating from the mechanoid hive. Humans are incapable of comprehending such quantities of data, but might be able to use some of it to construct an AI core that can further explore it.</description>
     <graphicData>
       <texPath>Things/MechanoidData</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>

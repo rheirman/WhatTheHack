@@ -12,6 +12,7 @@ using Verse;
 
 namespace WhatTheHack.Harmony
 {
+    //Make sure mechanoid temple quest is started when minerals are found when the scanner is tuned to mech parts.  
     [HarmonyPatch(typeof(CompLongRangeMineralScanner), "FoundMinerals")]
     public static class CompLongRangeMineralScanner_Foundminerals
     {
@@ -58,7 +59,8 @@ namespace WhatTheHack.Harmony
    [HarmonyPatch]
    public static class CompLongRangeMineralScanner_CompGetGizmosExtra
    {
-       static MethodBase TargetMethod()
+        //Code is inside m__0 method inside iterator so TargetMethod is used to access it. 
+        static MethodBase TargetMethod()
        {
            var predicateClass = typeof(CompLongRangeMineralScanner).GetNestedTypes(AccessTools.all)
                .FirstOrDefault(t => t.FullName.Contains("c__Iterator0"));
@@ -73,8 +75,8 @@ namespace WhatTheHack.Harmony
 
                if (instructionsList[i].operand == typeof(WindowStack).GetMethod("Add"))
                {
-                   //yield return new CodeInstruction(OpCodes.Call, typeof(Pawn).GetMethod("CanTakeOrder"));//Injected code     
-                   yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(CompLongRangeMineralScanner_CompGetGizmosExtra), "AddMechPartsOption"));//Injected code     
+                    //replace call to WindowStack.Add to method that performs WindowStack.Add but also adds a mechanoid part option     
+                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(CompLongRangeMineralScanner_CompGetGizmosExtra), "AddMechPartsOption"));//Injected code     
 
                }
                else
@@ -87,26 +89,29 @@ namespace WhatTheHack.Harmony
         {
             List<FloatMenuOption> options = Traverse.Create(menu).Field("options").GetValue<List<FloatMenuOption>>();
             //options.Add(new FloatMenuOption());
-
+            bool researchComplete = DefDatabase<ResearchProjectDef>.AllDefs.FirstOrDefault((ResearchProjectDef rp) => rp == WTH_DefOf.WTH_LRMSTuning && rp.IsFinished) != null;
             ThingDef mechanoidParts = WTH_DefOf.WTH_MechanoidParts;
 
-            FloatMenuOption item = new FloatMenuOption("WTH_MechanoidParts_LabelShort".Translate(), delegate
+            if (researchComplete)
             {
-                foreach (object current2 in Find.Selector.SelectedObjects)
+                FloatMenuOption item = new FloatMenuOption("WTH_MechanoidParts_LabelShort".Translate(), delegate
                 {
-                    Thing thing = current2 as Thing;
-                    if (thing != null)
+                    foreach (object selectedObject in Find.Selector.SelectedObjects)
                     {
-                        CompLongRangeMineralScanner compLongRangeMineralScanner = thing.TryGetComp<CompLongRangeMineralScanner>();
-                        if (compLongRangeMineralScanner != null)
+                        Thing selection = selectedObject as Thing;
+                        if (selection != null)
                         {
-                            Traverse.Create(compLongRangeMineralScanner).Field("targetMineable").SetValue(mechanoidParts);
-                            Log.Message("clicked mech parts minable");
+                            CompLongRangeMineralScanner compLongRangeMineralScanner = selection.TryGetComp<CompLongRangeMineralScanner>();
+                            if (compLongRangeMineralScanner != null)
+                            {
+                                Traverse.Create(compLongRangeMineralScanner).Field("targetMineable").SetValue(mechanoidParts);
+                            }
                         }
                     }
-                }
-            }, MenuOptionPriority.Default, null, null, 29f, (Rect rect) => Widgets.InfoCardButton(rect.x + 5f, rect.y + (rect.height - 24f)/2, mechanoidParts.GetConcreteExample()), null);
-            options.Add(item);
+                }, MenuOptionPriority.Default, null, null, 29f, (Rect rect) => Widgets.InfoCardButton(rect.x + 5f, rect.y + (rect.height - 24f) / 2, mechanoidParts.GetConcreteExample()), null);
+                options.Add(item);
+            }
+
             Traverse.Create(menu).Field("options").SetValue(options);
             instance.Add(menu);
         }

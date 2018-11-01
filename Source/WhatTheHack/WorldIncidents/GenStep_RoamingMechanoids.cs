@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
@@ -60,7 +61,7 @@ namespace WhatTheHack.WorldIncidents
             pawnGroupMakerParms.groupKind = PawnGroupKindDefOf.Combat;
             pawnGroupMakerParms.tile = map.Tile;
             pawnGroupMakerParms.faction = Faction.OfMechanoids;
-            pawnGroupMakerParms.points = points;
+            pawnGroupMakerParms.points = Mathf.Max(points, 200f);
             
             if (parms.siteCoreOrPart != null)
             {
