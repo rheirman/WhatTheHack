@@ -41,10 +41,9 @@ namespace WhatTheHack.WorldIncidents
             site.GetComponent<TimeoutComp>().StartTimeout(ticks: randomInRange * GenDate.TicksPerDay);
             site.SetFaction(Faction.OfMechanoids);
 
-            site.customLabel = "TODO";
             Find.WorldObjects.Add(o: site);
 
-            Find.LetterStack.ReceiveLetter(label: this.def.letterLabel, text: "TODO", textLetterDef: this.def.letterDef, lookTargets: site);
+            Find.LetterStack.ReceiveLetter(this.def.letterLabel, this.def.letterText, this.def.letterDef, site);
             return true;
         }
 

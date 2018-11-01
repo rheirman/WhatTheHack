@@ -26,17 +26,17 @@
 	
 	<SitePartDef>
 		<defName>WTH_MechanoidTemplePart</defName>
-		<label>Mechanoid temple</label>
-		<description>TODO</description>
+		<label>Mechanoid location</label>
+		<description>Given that the long range mineral scanner detected the presence of mechanoid parts from a relatively large distance in this location, there should be quite a few of them there, likely attached to mechanoids.</description>
 		<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
 		<expandingIconTexture>World/WorldObjects/Expanding/Sites/Nothing</expandingIconTexture>
-		<descriptionDialogue>TODO</descriptionDialogue>
+		<descriptionDialogue>Your colonists arrive at a large sinister building. It must have been there for ages, though there are no signs of any human activity around it. Most people avoid structures like this one, and they have good reasons to.</descriptionDialogue>
 		<workerClass>WhatTheHack.WorldIncidents.SitePartWorker_RoamingMechanoids</workerClass>
 		<requiresFaction>true</requiresFaction>
 		<showFactionInInspectString>true</showFactionInInspectString>
 		<approachOrderString>Visit {0}</approachOrderString>
 		<approachingReportString>Visiting {0}</approachingReportString>
-		<arrivedLetter>TODO</arrivedLetter>
+		<arrivedLetter>Your caravan has arrived at a location where mechanoids reside.</arrivedLetter>
 		<arrivedLetterDef>NeutralEvent</arrivedLetterDef>
 		<wantsThreatPoints>True</wantsThreatPoints>
 	</SitePartDef>

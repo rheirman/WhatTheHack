@@ -9,7 +9,6 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 
-//TODO: finish this
 namespace WhatTheHack.WorldIncidents
 {
     class GenStep_RoamingMechanoids : GenStep

@@ -10,7 +10,6 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 
-//TODO: finish this
 namespace WhatTheHack.WorldIncidents
 {
     public class GenStep_HiveTemple : GenStep

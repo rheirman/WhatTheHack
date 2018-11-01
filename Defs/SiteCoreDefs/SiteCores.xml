@@ -12,7 +12,7 @@
   
   <SiteCoreDef>
     <defName>WTH_MechanoidTempleCore</defName>
-    <label>Mechanoid temple</label>
+    <label>Mechanoid location</label>
 	<description>TODO</description>
     <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
     <expandingIconTexture>World/WorldObjects/Expanding/Sites/Nothing</expandingIconTexture>
