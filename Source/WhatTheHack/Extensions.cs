@@ -50,19 +50,17 @@ namespace WhatTheHack
                 return false;
             }
         }
-        /*
-        public static bool HasHackedLocomotion(this Pawn pawn)
+
+        public static Building_RogueAI ControllingAI(this Pawn pawn)
         {
-            if (pawn.health != null && (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_LocomotionHacked)))
+            ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
+            if (store != null)
             {
-                return true;
+                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+                return pawnData.controllingAI;
             }
-            else
-            {
-                return false;
-            }
+            return null;
         }
-        */
 
         public static Pawn RemoteControlLink(this Pawn pawn)
         {

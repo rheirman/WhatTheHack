@@ -90,6 +90,7 @@
       <MaxHitPoints>180</MaxHitPoints>
       <Flammability>1.0</Flammability>
       <Cleanliness>-2</Cleanliness>
+	  <WTH_HackingSuccessFactor>1.0</WTH_HackingSuccessFactor>
     </statBases>
     <size>(5,2)</size>
     <designationCategory>Production</designationCategory>
@@ -401,6 +402,64 @@
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
   </ThingDef>
   
-  
+<ThingDef ParentName="BuildingBase">
+    <defName>WTH_RogueAI</defName>
+    <label>rogue AI</label>
+	<thingClass>WhatTheHack.Buildings.Building_RogueAI</thingClass>
+    <description>Powerful AI that after bing exposed to hiveship data, is capable of remotely controlling mechanoids and turrets, hacking enemy mechanoids remotely, and more. Without hiveship data, it is only capable of providing a boost to the hacking success chance of nearby hacking facilities.</description>
+    <graphicData>
+      <texPath>Things/RogueAI</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>3</drawSize>
+    </graphicData>
+    <uiIconScale>0.85</uiIconScale>
+    <researchPrerequisites><li>WTH_RogueAI</li></researchPrerequisites>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <designationHotKey>Misc4</designationHotKey>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>10000</WorkToBuild>
+      <Mass>100</Mass>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <costList>
+      <Steel>40</Steel>
+      <Plasteel>50</Plasteel>
+      <Gold>30</Gold>
+	  <Uranium>40</Uranium>
+	  <WTH_MechanoidData>50</WTH_MechanoidData>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <basePowerConsumption>300</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+			<WTH_HackingSuccessFactor>0.1</WTH_HackingSuccessFactor>
+        </statOffsets>
+        <maxSimultaneous>4</maxSimultaneous>
+      </li>
+    </comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
 
 </Defs>

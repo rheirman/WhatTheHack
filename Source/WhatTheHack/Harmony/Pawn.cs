@@ -105,6 +105,10 @@ namespace WhatTheHack.Harmony
                 float radius = Utilities.GetRemoteControlRadius(pawn.RemoteControlLink());
                 return pawn.Position.DistanceToSquared(pawn.RemoteControlLink().Position) <= radius * radius;
             }
+            if(pawn.ControllingAI() != null)
+            {
+                return true;
+            }
             return false;
         }
     }

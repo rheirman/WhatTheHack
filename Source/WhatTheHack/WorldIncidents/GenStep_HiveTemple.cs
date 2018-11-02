@@ -37,7 +37,6 @@ namespace WhatTheHack.WorldIncidents
             thingMakerParams.filter = new ThingFilter();
             thingMakerParams.filter.SetDisallowAll();
             thingMakerParams.filter.SetAllow(WTH_DefOf.WTH_MechanoidData, true);
-            //maxFoodAndStuffForHuntersLodge.filter.SetAllow(ThingCategoryDefOf.PlantFoodRaw, true);
 
             resolveParams.thingSetMakerParams = thingMakerParams;
             resolveParams.mechanoidsCount =  Math.Max(1, Mathf.RoundToInt(genStepParams.siteCoreOrPart.parms.threatPoints / 200f));

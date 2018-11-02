@@ -1,4 +1,20 @@
 <Defs> 
+	<StatDef>
+		<defName>WTH_HackingSuccessFactor</defName>
+		<label>Hacking success chance factor</label>
+		<description>The chance of successful hacking attempts is multiplied by this value</description>
+		<category>Building</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<minValue>0.25</minValue>
+		<toStringStyle>PercentZero</toStringStyle>
+		<showIfUndefined>false</showIfUndefined>
+		<parts>
+		  <li Class="StatPart_Outdoors">
+			<factorIndoors>1.00</factorIndoors>
+			<factorOutdoors>0.75</factorOutdoors>
+		  </li>
+		</parts>
+	</StatDef>
 
 	<StatDef>
 		<defName>WTH_ControllerBeltRadius</defName>

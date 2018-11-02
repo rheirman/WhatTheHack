@@ -24,9 +24,6 @@ namespace WhatTheHack.WorldIncidents
         {
             IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(incCat: IncidentCategoryDefOf.Misc, target: map);
             incidentParms.forced = true;
-            //this part is forced to bypass CanFireNowSub, to solve issue with scenario-added incident.
-            //QueuedIncident queuedIncident = new QueuedIncident(firingInc: new FiringIncident(def: DefDatabase<IncidentDef>.GetNamed(defName: "MFI_HerdMigration_Ambush"), source: null, parms: incidentParms), fireTick: Find.TickManager.TicksGame + Rand.RangeInclusive(min: GenDate.TicksPerDay / 2, max: GenDate.TicksPerDay));
-            //Find.Storyteller.incidentQueue.Add(qi: queuedIncident);
         }
 
         public override string GetPostProcessedDescriptionDialogue(Site site, SiteCoreOrPartBase siteCoreOrPart)

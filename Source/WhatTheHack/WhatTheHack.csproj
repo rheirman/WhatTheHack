@@ -63,6 +63,7 @@
     <Compile Include="Buildings\Building_BaseMechanoidPlatform.cs" />
     <Compile Include="Buildings\Building_MechanoidBeacon.cs" />
     <Compile Include="Buildings\Building_PortableChargingPlatform.cs" />
+    <Compile Include="Buildings\Building_RogueAI.cs" />
     <Compile Include="Buildings\MinifiedThing_Custom.cs" />
     <Compile Include="Comps\CompMountable.cs" />
     <Compile Include="Comps\CompProperties_Mountable.cs" />
@@ -73,7 +74,6 @@
     <Compile Include="Harmony\CaravanFormingUtility.cs" />
     <Compile Include="Harmony\CaravanUIUtility.cs" />
     <Compile Include="Harmony\CharacterCardUtility.cs" />
-    <Compile Include="Harmony\CollectionsMassCalculator.cs" />
     <Compile Include="Harmony\CompLongRangeMineralScanner.cs" />
     <Compile Include="Harmony\DaysWorthOfFoodCalculator.cs" />
     <Compile Include="Harmony\Dialog_FormCaravan.cs" />
