@@ -20,7 +20,8 @@ namespace WhatTheHack
         public static Base Instance { get; private set; }
         ExtendedDataStorage _extendedDataStorage;
 
-
+        //dictionary of the frontal texture of all mechanoids with cross overlay on it to indicate the cancellation of an action. 
+        internal Dictionary<string, Texture2D> cancelControlTextures = new Dictionary<string, Texture2D>();
         //settings
         internal static SettingHandle<bool> settingsGroup_Factions;
         internal static SettingHandle<String> tabsHandler;
@@ -48,8 +49,6 @@ namespace WhatTheHack
         internal static SettingHandle<float> powerFallModifier;
         internal static SettingHandle<float> powerChargeModifier;
         
-
-
         internal static List<ThingDef> allMechs;
         internal static List<String> allFactionNames;
 
@@ -67,6 +66,7 @@ namespace WhatTheHack
         {
             Instance = this;
         }
+
         public override void DefsLoaded()
         {
             base.DefsLoaded();
@@ -153,6 +153,27 @@ namespace WhatTheHack
             GenerateImpliedRecipeDefs();
             DefDatabase<ThingDef>.ResolveAllReferences(true);
             SetMechMarketValue();
+        }
+
+        public override void MapLoaded(Map map)
+        {
+            Log.Message("maploaded called");
+            base.MapLoaded(map);
+            if (cancelControlTextures.Count > 0)
+            {
+                return;
+            }
+            Texture2D cancelTex = ContentFinder<Texture2D>.Get(("UI/Cancel")).GetReadableTexture();       
+            List<ThingDef> allMechs = (from td in DefDatabase<ThingDef>.AllDefs where td.race != null && td.race.IsMechanoid select td).ToList();
+            foreach (ThingDef mechDef in allMechs)
+            {
+                if (mechDef.GetConcreteExample() is Pawn mech)
+                {
+                    PawnKindLifeStage curKindLifeStage = mech.ageTracker.CurKindLifeStage;
+                    Texture2D mechTex = curKindLifeStage.bodyGraphicData.Graphic.MatEast.mainTexture as Texture2D;
+                    cancelControlTextures.Add(mech.def.defName, mechTex.GetReadableTexture().AddWatermark(cancelTex));
+                }
+            }
         }
 
         private static void GenerateImpliedRecipeDefs()
@@ -275,18 +296,7 @@ namespace WhatTheHack
         {
             _extendedDataStorage = UtilityWorldObjectManager.GetUtilityWorldObject<ExtendedDataStorage>();
             base.WorldLoaded();
-            /*
-            foreach (Map map in Find.Maps)
-            {
-                foreach (Pawn pawn in map.mapPawns.AllPawnsSpawned.Where((Pawn p) => p.health != null && p.RaceProps.IsMechanoid && p.def.comps.Any<CompProperties>()))
-                {
-                    ThingWithComps twc = (ThingWithComps)pawn;
-                    RemoveComps(ref twc);
-                }
-            }
-            */
-
-        }        
+        }
         //Removes comps if necessary
         //Explanation: Vanilla doesn't support conditional comps. Example: For the repair module, we only want mechs to have comp_refuelable when the mech has one installed. 
         //So to support conditional comps like this, we first allow all comps to be loaded. Then we remove the comps for which the condition doesn't hold. In this case, the refuelable comp for the repair module is

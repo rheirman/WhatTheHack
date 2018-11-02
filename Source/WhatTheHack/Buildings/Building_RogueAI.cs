@@ -17,7 +17,7 @@ namespace WhatTheHack.Buildings
         private float mood = 0.5f;
         private bool activated = false;
         List<Pawn> controlledMechs = new List<Pawn>();
-
+        Texture2D currentIcon;
 
         public override void ExposeData()
         {
@@ -57,8 +57,11 @@ namespace WhatTheHack.Buildings
             Command_Action command_Target = new Command_Action();
             command_Target.defaultLabel = mech.Name.ToStringShort;//TODO
             command_Target.defaultDesc = "WTH_Gizmo_RemoteControlActivate_Description".Translate();//TODO
-            PawnKindLifeStage curKindLifeStage = mech.ageTracker.CurKindLifeStage;
-            command_Target.icon = curKindLifeStage.bodyGraphicData.Graphic.MatEast.mainTexture as Texture2D;
+            bool iconFound = Base.Instance.cancelControlTextures.TryGetValue(mech.def.defName, out Texture2D icon);
+            if (iconFound)
+            {
+                command_Target.icon = icon;
+            }
             command_Target.action = delegate
             {
                 ExtendedPawnData mechData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(mech);
