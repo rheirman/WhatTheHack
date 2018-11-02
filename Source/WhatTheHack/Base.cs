@@ -157,7 +157,6 @@ namespace WhatTheHack
 
         public override void MapLoaded(Map map)
         {
-            Log.Message("maploaded called");
             base.MapLoaded(map);
             if (cancelControlTextures.Count > 0)
             {
@@ -170,7 +169,7 @@ namespace WhatTheHack
                 if (mechDef.GetConcreteExample() is Pawn mech)
                 {
                     PawnKindLifeStage curKindLifeStage = mech.ageTracker.CurKindLifeStage;
-                    Texture2D mechTex = curKindLifeStage.bodyGraphicData.Graphic.MatEast.mainTexture as Texture2D;
+                    Texture2D mechTex = curKindLifeStage.bodyGraphicData.Graphic.MatSouth.mainTexture as Texture2D;
                     cancelControlTextures.Add(mech.def.defName, mechTex.GetReadableTexture().AddWatermark(cancelTex));
                 }
             }

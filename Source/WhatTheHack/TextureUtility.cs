@@ -40,7 +40,7 @@ namespace WhatTheHack
         public static Texture2D AddWatermark(this Texture2D background, Texture2D watermark)
         {
 
-            int startX = 0;
+            int startX = background.width - watermark.width;
             int startY = background.height - watermark.height;
 
             for (int x = startX; x < background.width; x++)

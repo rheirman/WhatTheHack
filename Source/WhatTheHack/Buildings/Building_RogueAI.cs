@@ -17,16 +17,8 @@ namespace WhatTheHack.Buildings
         private float mood = 0.5f;
         private bool activated = false;
         List<Pawn> controlledMechs = new List<Pawn>();
-        Texture2D currentIcon;
+        private const int MAXCONTROLLABLE = 6;
 
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            Scribe_Values.Look(ref mood, "mood");
-            Scribe_Values.Look(ref activated, "activated");
-            Scribe_Collections.Look(ref controlledMechs, "controlledMechs");
-
-        }
         //Increase mood when data is provided. 
         public void GiveData()
         {
@@ -43,6 +35,7 @@ namespace WhatTheHack.Buildings
         {
             foreach(Gizmo gizmo in base.GetGizmos())
             {
+                
                 yield return gizmo;
             }
             yield return GetRemoteControlActivateGizmo();
@@ -91,8 +84,6 @@ namespace WhatTheHack.Buildings
                     controlledMechs.Add(mech);
                     mechData.isActive = true;
                     mech.drafter.Drafted = true;
-                    //Find.Selector.ClearSelection();
-                    //Find.Selector.Select(mech);
                 }
             };
             return command_Target;
@@ -114,6 +105,14 @@ namespace WhatTheHack.Buildings
                     return pawn != null && !pawn.Downed && pawn.IsHacked();
                 }
             };
+        }
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref mood, "mood");
+            Scribe_Values.Look(ref activated, "activated");
+            Scribe_Collections.Look(ref controlledMechs, "controlledMechs", LookMode.Reference);
+
         }
     }
 }

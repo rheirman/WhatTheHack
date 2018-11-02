@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using Verse;
+using WhatTheHack.Buildings;
 using WhatTheHack.Comps;
 
 namespace WhatTheHack.Harmony
@@ -61,6 +62,10 @@ namespace WhatTheHack.Harmony
                         GenDraw.DrawRadiusRing(pawn.Position, Utilities.GetRemoteControlRadius(pawn));
                     }
                     GenDraw.DrawLineBetween(pawn.Position.ToVector3Shifted(), pawn.RemoteControlLink().Position.ToVector3Shifted());
+                }
+                if(pawn.ControllingAI() is Building_RogueAI controller)
+                {
+                    GenDraw.DrawLineBetween(pawn.Position.ToVector3Shifted(), pawn.ControllingAI().Position.ToVector3Shifted(), SimpleColor.Blue);
                 }
             }
         }
