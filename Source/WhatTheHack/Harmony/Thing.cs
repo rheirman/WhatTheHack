@@ -68,6 +68,13 @@ namespace WhatTheHack.Harmony
                     GenDraw.DrawLineBetween(pawn.Position.ToVector3Shifted(), pawn.ControllingAI().Position.ToVector3Shifted(), SimpleColor.Blue);
                 }
             }
+            if (__instance is Building_RogueAI rogueAI)
+            {
+                foreach (Pawn pawn in rogueAI.controlledMechs)
+                {
+                    GenDraw.DrawLineBetween(rogueAI.Position.ToVector3Shifted(), pawn.Position.ToVector3Shifted(), SimpleColor.Blue);
+                }
+            }
         }
     }
     [HarmonyPatch(typeof(Thing), "ButcherProducts")]
