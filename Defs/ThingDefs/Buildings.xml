@@ -455,10 +455,25 @@
         </statOffsets>
         <maxSimultaneous>4</maxSimultaneous>
       </li>
+	  <li Class="CompProperties_Refuelable">
+		<fuelLabel>Mood</fuelLabel>
+		<fuelGizmoLabel>Mood</fuelGizmoLabel>
+        <fuelConsumptionRate>40.0</fuelConsumptionRate>
+        <fuelCapacity>10.0</fuelCapacity>
+		<initialConfigurableTargetFuelLevel>10.0</initialConfigurableTargetFuelLevel>
+		<initialFuelPercent>0.5</initialFuelPercent>
+        <fuelFilter>
+          <thingDefs>
+            <li>WTH_MechanoidData</li>
+          </thingDefs>
+        </fuelFilter>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+		<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+      </li>
     </comps>
-		<placeWorkers>
-			<li>PlaceWorker_ShowFacilitiesConnections</li>
-		</placeWorkers>
+	<placeWorkers>
+		<li>PlaceWorker_ShowFacilitiesConnections</li>
+	</placeWorkers>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
   </ThingDef>
 

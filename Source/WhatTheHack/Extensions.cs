@@ -30,7 +30,10 @@ namespace WhatTheHack
             {
                 return true;
             }
-            else
+            else if (pawn.health != null && pawn.ControllingAI() != null)
+            {
+                return true;
+            }
             {
                 return false;
             }

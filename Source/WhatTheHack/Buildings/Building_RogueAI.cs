@@ -17,7 +17,11 @@ namespace WhatTheHack.Buildings
         private float mood = 0.5f;
         private bool activated = false;
         public List<Pawn> controlledMechs = new List<Pawn>();
+        public List<Pawn> hackedMechs = new List<Pawn>();
+
         private const int MAXCONTROLLABLE = 6;
+        private const int MAXHACKABLE = 2;
+
 
         //Increase mood when data is provided. 
         public void GiveData()
@@ -39,6 +43,8 @@ namespace WhatTheHack.Buildings
                 yield return gizmo;
             }
             yield return GetRemoteControlActivateGizmo();
+            yield return GetHackingAvtivateGizmo();
+
             foreach (Pawn mech in controlledMechs)
             {
                 yield return GetRemoteControlCancelGizmo(mech);
@@ -68,6 +74,7 @@ namespace WhatTheHack.Buildings
             command.defaultDesc = "WTH_Gizmo_RemoteControlActivate_Description".Translate();//TODO
             command.parent = this;
             command.pawn = mech;
+            
             bool iconFound = Base.Instance.cancelControlTextures.TryGetValue(mech.def.defName, out Texture2D icon);
             if (iconFound)
             {
@@ -87,13 +94,15 @@ namespace WhatTheHack.Buildings
 
         private Gizmo GetRemoteControlActivateGizmo()
         {
-            Command_Target command_Target = new Command_Target();
-            command_Target.defaultLabel = "WTH_Gizmo_RemoteControlActivate_Label".Translate();//TODO
-            command_Target.defaultDesc = "WTH_Gizmo_RemoteControlActivate_Description".Translate();//TODO
-            command_Target.targetingParams = GetTargetingParametersForHacking();
-            command_Target.hotKey = KeyBindingDefOf.Misc5;
-            command_Target.icon = ContentFinder<Texture2D>.Get(("Things/MechControllerBelt"));//TODO
-            command_Target.action = delegate (Thing target)
+            Command_Target command = new Command_Target();
+            command.defaultLabel = "TODO".Translate();//TODO
+            command.defaultDesc = "TODO".Translate();//TODO
+            command.targetingParams = GetTargetingParametersForControlling();
+            command.hotKey = KeyBindingDefOf.Misc5;
+            command.icon = ContentFinder<Texture2D>.Get(("UI/RogueAI_Control"));//TODO
+            command.disabled = controlledMechs.Count >= MAXCONTROLLABLE;
+            command.disabledReason = "TODO";
+            command.action = delegate (Thing target)
             {
                 if (target is Pawn mech)
                 {
@@ -104,9 +113,9 @@ namespace WhatTheHack.Buildings
                     mech.drafter.Drafted = true;
                 }
             };
-            return command_Target;
+            return command;
         }
-        private static TargetingParameters GetTargetingParametersForHacking()
+        private static TargetingParameters GetTargetingParametersForControlling()
         {
             return new TargetingParameters
             {
@@ -124,6 +133,52 @@ namespace WhatTheHack.Buildings
                 }
             };
         }
+
+        private Gizmo GetHackingAvtivateGizmo()
+        {
+            Command_Target command = new Command_Target();
+            command.defaultLabel = "TODO".Translate();//TODO
+            command.defaultDesc = "TODO".Translate();//TODO
+            command.targetingParams = GetTargetingParametersForHacking();
+            command.hotKey = KeyBindingDefOf.Misc5;
+            command.icon = ContentFinder<Texture2D>.Get(("UI/RogueAI_Hack"));//TODO
+            command.disabled = hackedMechs.Count >= MAXHACKABLE;
+            command.disabledReason = "TODO";
+            command.action = delegate (Thing target)
+            {
+                if (target is Pawn mech)
+                {
+                    ExtendedPawnData mechData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(mech);
+                    mechData.controllingAI = this;
+                    hackedMechs.Add(mech);
+                    mech.SetFaction(Faction.OfPlayer);
+                    mech.story = new Pawn_StoryTracker(mech);
+                    mech.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                    mech.drafter = new Pawn_DraftController(mech);
+                    mech.drafter.Drafted = true;
+                }
+            };
+            return command;
+        }
+        private static TargetingParameters GetTargetingParametersForHacking()
+        {
+            return new TargetingParameters
+            {
+                canTargetPawns = true,
+                canTargetBuildings = false,
+                mapObjectTargetsMustBeAutoAttackable = false,
+                validator = delegate (TargetInfo targ)
+                {
+                    if (!targ.HasThing)
+                    {
+                        return false;
+                    }
+                    Pawn pawn = targ.Thing as Pawn;
+                    return pawn != null && !pawn.Downed && pawn.RaceProps.IsMechanoid && pawn.Faction != Faction.OfPlayer;
+                }
+            };
+        }
+
         public override void ExposeData()
         {
             base.ExposeData();
