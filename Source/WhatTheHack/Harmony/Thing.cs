@@ -65,7 +65,14 @@ namespace WhatTheHack.Harmony
                 }
                 if(pawn.ControllingAI() is Building_RogueAI controller)
                 {
-                    GenDraw.DrawLineBetween(pawn.Position.ToVector3Shifted(), pawn.ControllingAI().Position.ToVector3Shifted(), SimpleColor.Blue);
+                    if (controller.controlledMechs.Contains(pawn))
+                    {
+                        GenDraw.DrawLineBetween(pawn.Position.ToVector3Shifted(), pawn.ControllingAI().Position.ToVector3Shifted(), SimpleColor.Blue);
+                    }
+                    else
+                    {
+                        GenDraw.DrawLineBetween(pawn.Position.ToVector3Shifted(), pawn.ControllingAI().Position.ToVector3Shifted(), SimpleColor.Red);
+                    }
                 }
             }
             if (__instance is Building_RogueAI rogueAI)
@@ -73,6 +80,10 @@ namespace WhatTheHack.Harmony
                 foreach (Pawn pawn in rogueAI.controlledMechs)
                 {
                     GenDraw.DrawLineBetween(rogueAI.Position.ToVector3Shifted(), pawn.Position.ToVector3Shifted(), SimpleColor.Blue);
+                }
+                foreach (Pawn pawn in rogueAI.hackedMechs)
+                {
+                    GenDraw.DrawLineBetween(rogueAI.Position.ToVector3Shifted(), pawn.Position.ToVector3Shifted(), SimpleColor.Red);
                 }
             }
         }

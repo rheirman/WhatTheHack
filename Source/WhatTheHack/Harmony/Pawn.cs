@@ -32,7 +32,7 @@ namespace WhatTheHack.Harmony
                 {
                     __instance.relations = new Pawn_RelationsTracker(__instance);
                 }
-                __instance.RemoveRemoteControlLink();
+                __instance.RemoveAllLinks();
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace WhatTheHack.Storage
 
         public Pawn remoteControlLink = null;
         public Building_RogueAI controllingAI = null;
+        public Faction originalFaction = null;
 
         public Building_PortableChargingPlatform caravanPlatform = null;
 
@@ -34,6 +36,7 @@ namespace WhatTheHack.Storage
             Scribe_References.Look(ref remoteControlLink, "remoteControlLink");
             Scribe_References.Look(ref controllingAI, "controllingAI");
             Scribe_References.Look(ref caravanPlatform, "caravanPlatform");
+            Scribe_References.Look(ref originalFaction, "originalFaction");
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
+using Verse.AI.Group;
 using WhatTheHack.Buildings;
 using WhatTheHack.Storage;
 
@@ -36,6 +37,15 @@ namespace WhatTheHack
             }
             {
                 return false;
+            }
+        }
+        public static void RevertToFaction(this Pawn pawn, Faction faction)
+        {
+            pawn.SetFaction(faction);
+            pawn.story = null;
+            if (pawn.GetLord() == null || pawn.GetLord().LordJob == null)
+            {
+                LordMaker.MakeNewLord(Faction.OfMechanoids, new LordJob_AssaultColony(Faction.OfMechanoids, true, true, false, false, true), pawn.Map, new List<Pawn> { pawn });
             }
         }
         public static bool UnableToControl(this Pawn pawn)
@@ -84,6 +94,27 @@ namespace WhatTheHack
                 result = pawn.health.hediffSet.GetNotMissingParts().FirstOrDefault((BodyPartRecord bpr) => bpr.def.defName == "Reactor");
             }
             return result;
+        }
+
+        public static void RemoveAllLinks(this Pawn pawn)
+        {
+            ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
+            if (store == null)
+            {
+                return;
+            }
+            ExtendedPawnData pawnData = store.GetExtendedDataFor(pawn);
+            pawnData.isActive = false;
+            pawn.RemoveRemoteControlLink();
+            if (pawn.ControllingAI() != null)
+            {
+                pawn.ControllingAI().controlledMechs.Remove(pawn);
+                pawn.ControllingAI().hackedMechs.Remove(pawn);
+                if (pawnData.originalFaction != null)
+                {
+                    pawn.RevertToFaction(pawnData.originalFaction);
+                }
+            }
         }
         /*
         public static Building_HackingTable HackingTable(this Pawn pawn)

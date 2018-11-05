@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using Verse;
+using Verse.AI.Group;
 using WhatTheHack.Buildings;
 using WhatTheHack.Needs;
 using WhatTheHack.Storage;
@@ -64,14 +65,7 @@ namespace WhatTheHack.Harmony
         static void Postfix(Pawn_HealthTracker __instance)
         {
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
-            if(store == null)
-            {
-                return;
-            }
-            ExtendedPawnData pawnData = store.GetExtendedDataFor(pawn);
-            pawnData.isActive = false;
-            pawn.RemoveRemoteControlLink();
+            pawn.RemoveAllLinks();
         }
     }
     //Recharge and repair mechanoid when on platform

@@ -13,6 +13,26 @@ namespace WhatTheHack
 {
     static class Utilities
     {
+        public static void ThrowStaticText(Vector3 loc, Map map, string text, Color color, float timeBeforeStartFadeout = -1f)
+        {
+            IntVec3 intVec = loc.ToIntVec3();
+            if (!intVec.InBounds(map))
+            {
+                return;
+            }
+            MoteText moteText = (MoteText)ThingMaker.MakeThing(ThingDefOf.Mote_Text, null);
+            moteText.exactPosition = loc;
+            moteText.text = text;
+            moteText.textColor = color;
+            if (timeBeforeStartFadeout >= 0f)
+            {
+                moteText.overrideTimeBeforeStartFadeout = timeBeforeStartFadeout;
+            }
+            GenSpawn.Spawn(moteText, intVec, map, WipeMode.Vanish);
+        }
+
+
+
         public static List<TransferableOneWay> LinkPortablePlatforms(List<TransferableOneWay> transferables)
         {
             List<Pawn> pawns = TransferableUtility.GetPawnsFromTransferables(transferables);

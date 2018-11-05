@@ -442,6 +442,7 @@
 	  <WTH_MechanoidData>50</WTH_MechanoidData>
       <ComponentIndustrial>8</ComponentIndustrial>
     </costList>
+	<tickerType>Rare</tickerType>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>

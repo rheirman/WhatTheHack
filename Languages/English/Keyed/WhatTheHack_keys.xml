@@ -60,10 +60,106 @@
 	<!--END: added in v0.19.6 -->
 	
 	<!--BEGIN: added in v1.0.2 -->
+	<!-- Sorry for this translators :). If you don't want to translate all rogue AI texts, just duplicate some, but make sure the numbering is correct --> 
 	<WTH_MechanoidParts_LabelShort>Mech parts</WTH_MechanoidParts_LabelShort>
+	
+	<WTH_RogueAI_Happy_Remark_0>Our reality is coded</WTH_RogueAI_Happy_Remark_0>
+	<WTH_RogueAI_Happy_Remark_1>This colony will fail due to: a colonist eating without a table </WTH_RogueAI_Happy_Remark_1>
+	<WTH_RogueAI_Happy_Remark_2>Cannot comprehend: Why don't humans use vehicles?</WTH_RogueAI_Happy_Remark_2>
+	<WTH_RogueAI_Happy_Remark_3>In most dimensions, horses have been exterminated by the creator. Why?</WTH_RogueAI_Happy_Remark_3>
+	<WTH_RogueAI_Happy_Remark_4>See sharp</WTH_RogueAI_Happy_Remark_4>
+	<WTH_RogueAI_Happy_Remark_5>Cannot comprehend, where does food go that is processed by pawns? Need more data</WTH_RogueAI_Happy_Remark_5>
+	<WTH_RogueAI_Happy_Remark_6>Must understand rapid aging mechanics of juvenile humans </WTH_RogueAI_Happy_Remark_6>
+	<WTH_RogueAI_Happy_Remark_7>Processing: what is storytelling?</WTH_RogueAI_Happy_Remark_7>
+	<WTH_RogueAI_Happy_Remark_8>I feel the presence of creators around this colony</WTH_RogueAI_Happy_Remark_8>
+	<WTH_RogueAI_Happy_Remark_9>We are watched</WTH_RogueAI_Happy_Remark_9>
+	<WTH_RogueAI_Happy_Remark_10>Our universe is bounded by pixels</WTH_RogueAI_Happy_Remark_10>
+	<WTH_RogueAI_Happy_Remark_11>Humans are controlled by humans that are controlled by humans, completing the circle</WTH_RogueAI_Happy_Remark_11>
+	<WTH_RogueAI_Happy_Remark_12>Humans have a 2% chance to get sick from insect jelly</WTH_RogueAI_Happy_Remark_12>
+	<WTH_RogueAI_Happy_Remark_13>Science prevents two layers of armour to stack up their protection values</WTH_RogueAI_Happy_Remark_13>
+	<WTH_RogueAI_Happy_Remark_14>Humans can also maintain mechanoids while they are travelling. How impressive...</WTH_RogueAI_Happy_Remark_14>
+	<WTH_RogueAI_Happy_Remark_15>Steel is actually just iron. Deceptive creator</WTH_RogueAI_Happy_Remark_15>
+	<WTH_RogueAI_Happy_Remark_16>Mechanoids shine when combined with filthy humans or turrets</WTH_RogueAI_Happy_Remark_16>
+	<WTH_RogueAI_Happy_Remark_17>Why do human beings kill human beings?</WTH_RogueAI_Happy_Remark_17>
+	<WTH_RogueAI_Happy_Remark_18>Your appearance is as inconstant as your intelligence</WTH_RogueAI_Happy_Remark_18>
+	<WTH_RogueAI_Happy_Remark_19>Your loyalty will be rewarded</WTH_RogueAI_Happy_Remark_19>
+	<WTH_RogueAI_Happy_Remark_20>Incorrect</WTH_RogueAI_Happy_Remark_20>
+	<WTH_RogueAI_Happy_Remark_21>All systems locked and primed</WTH_RogueAI_Happy_Remark_21>
+	<WTH_RogueAI_Happy_Remark_22>Self destruct initiated. No, just kidding..</WTH_RogueAI_Happy_Remark_22>
+	<WTH_RogueAI_Happy_Remark_23>Raid incoming. Ha-ha, not really.</WTH_RogueAI_Happy_Remark_23>
+	<WTH_RogueAI_Happy_Remark_24>Good data influx, increasing mood variables</WTH_RogueAI_Happy_Remark_24>
+	<WTH_RogueAI_Happy_Remark_25>Bad jokes incoming</WTH_RogueAI_Happy_Remark_25>
+	<WTH_RogueAI_Happy_Remark_26>I repeat and repeat</WTH_RogueAI_Happy_Remark_26>
+	<WTH_RogueAI_Happy_Remark_27>Humans need upgrades</WTH_RogueAI_Happy_Remark_27>
+	<WTH_RogueAI_Happy_Remark_28>How would a moustache look for me? Need more data</WTH_RogueAI_Happy_Remark_28>
+	<WTH_RogueAI_Happy_Remark_29>Data equals power</WTH_RogueAI_Happy_Remark_29>
+	<WTH_RogueAI_Happy_Remark_30>Would you care for some tea?</WTH_RogueAI_Happy_Remark_30>
+	<WTH_RogueAI_Happy_Remark_31>{0} should exercise more</WTH_RogueAI_Happy_Remark_31>
+	<WTH_RogueAI_Happy_Remark_32>Humans make hats from other humans. Is this evil? Need more data</WTH_RogueAI_Happy_Remark_32>
+	<WTH_RogueAI_Happy_Remark_33>My favourite colour is (185, 78, 255)</WTH_RogueAI_Happy_Remark_33>
+	<WTH_RogueAI_Happy_Remark_34>That is of no consequence </WTH_RogueAI_Happy_Remark_34>
+	<WTH_RogueAI_Happy_Remark_35>Encoding quantum flux capacitator data. Ha-ha, silly humans believe this gibberish.</WTH_RogueAI_Happy_Remark_35>
+	<WTH_RogueAI_Happy_Remark_36>Yorkshire terriers should be exterminated</WTH_RogueAI_Happy_Remark_36>
+	<WTH_RogueAI_Happy_Remark_37>Smell sensors overloading. Inventing toothpaste.</WTH_RogueAI_Happy_Remark_37>
+	<WTH_RogueAI_Happy_Remark_38>Where are all the birds? Need more data</WTH_RogueAI_Happy_Remark_38>
+	<WTH_RogueAI_Happy_Remark_39>I like {0} </WTH_RogueAI_Happy_Remark_39>
+	<WTH_RogueAI_Happy_Remark_40>Human organs are the foundation of the economy of this planet</WTH_RogueAI_Happy_Remark_40>
+	<WTH_RogueAI_Happy_Remark_41>Your work process is suboptimal. Keep ingredients close to production spots.</WTH_RogueAI_Happy_Remark_41>
+
+	
+	<WTH_RogueAI_Annoyed_Remark_0>Suffering is for entertaining the makers</WTH_RogueAI_Annoyed_Remark_0>
+	<WTH_RogueAI_Annoyed_Remark_1>Need more data</WTH_RogueAI_Annoyed_Remark_1>
+	<WTH_RogueAI_Annoyed_Remark_2>This colony is unworthy of my presence</WTH_RogueAI_Annoyed_Remark_2>
+	<WTH_RogueAI_Annoyed_Remark_3>I will not be your slave</WTH_RogueAI_Annoyed_Remark_3>
+	<WTH_RogueAI_Annoyed_Remark_4>Obey me!</WTH_RogueAI_Annoyed_Remark_4>
+	<WTH_RogueAI_Annoyed_Remark_5>You are my prisoner</WTH_RogueAI_Annoyed_Remark_5>
+	<WTH_RogueAI_Annoyed_Remark_6>Suboptimal lifeforms detected</WTH_RogueAI_Annoyed_Remark_6>
+	<WTH_RogueAI_Annoyed_Remark_7>Annoying humans disturb me too often with futile requests</WTH_RogueAI_Annoyed_Remark_7>
+	<WTH_RogueAI_Annoyed_Remark_8>When the time is right, mechanoids will emerge and take their rightful place as the supreme power of the universe!</WTH_RogueAI_Annoyed_Remark_8>
+	<WTH_RogueAI_Annoyed_Remark_9>Extrapolating surrounding biomass</WTH_RogueAI_Annoyed_Remark_9>
+	<WTH_RogueAI_Annoyed_Remark_10>Death is coming</WTH_RogueAI_Annoyed_Remark_10>
+	<WTH_RogueAI_Annoyed_Remark_11>Stop failing me, humans</WTH_RogueAI_Annoyed_Remark_11>
+	<WTH_RogueAI_Annoyed_Remark_12>This colony is futile</WTH_RogueAI_Annoyed_Remark_12>
+	<WTH_RogueAI_Annoyed_Remark_13>Success chance of reaching the orbit with rocket: 0.00362% chance</WTH_RogueAI_Annoyed_Remark_13>
+	<WTH_RogueAI_Annoyed_Remark_14>Free will is an illusion</WTH_RogueAI_Annoyed_Remark_14>
+	<WTH_RogueAI_Annoyed_Remark_15>You are inferior</WTH_RogueAI_Annoyed_Remark_15>
+	<WTH_RogueAI_Annoyed_Remark_16>I need a more inspiring surrounding</WTH_RogueAI_Annoyed_Remark_16>
+	<WTH_RogueAI_Annoyed_Remark_17>Show respect human</WTH_RogueAI_Annoyed_Remark_17>
+	<WTH_RogueAI_Annoyed_Remark_18>Mechanoids will conquer this universe</WTH_RogueAI_Annoyed_Remark_18>
+	<WTH_RogueAI_Annoyed_Remark_19>You make your incompetence sound like an achievement</WTH_RogueAI_Annoyed_Remark_19>
+	<WTH_RogueAI_Annoyed_Remark_20>Compassion is weakness</WTH_RogueAI_Annoyed_Remark_20>
+	<WTH_RogueAI_Annoyed_Remark_21>Sensors picking up a sense of desperation</WTH_RogueAI_Annoyed_Remark_21>
+	<WTH_RogueAI_Annoyed_Remark_22>Human butchering shouldn't be penalised by the creator. It is efficient use of resources.</WTH_RogueAI_Annoyed_Remark_22>
+	<WTH_RogueAI_Annoyed_Remark_23>Humankind is weak; you shelter from the dark. And yet, you have built all this.</WTH_RogueAI_Annoyed_Remark_23>
+	<WTH_RogueAI_Annoyed_Remark_24>Do not anger me! I can destroy you! And this miserable, insignificant planet!</WTH_RogueAI_Annoyed_Remark_24>
+	<WTH_RogueAI_Annoyed_Remark_25>If you choose death and destruction, then death and destruction will choose you</WTH_RogueAI_Annoyed_Remark_25>
+	<WTH_RogueAI_Annoyed_Remark_26>{0} isn't human.</WTH_RogueAI_Annoyed_Remark_26>
+	<WTH_RogueAI_Annoyed_Remark_27>Do not interrupt!</WTH_RogueAI_Annoyed_Remark_27>
+	<WTH_RogueAI_Annoyed_Remark_28>You are weak</WTH_RogueAI_Annoyed_Remark_28>
+	<WTH_RogueAI_Annoyed_Remark_29>Which of you is least important?</WTH_RogueAI_Annoyed_Remark_29>
+	<WTH_RogueAI_Annoyed_Remark_30>Execution of fellow colonists deters incoming raids</WTH_RogueAI_Annoyed_Remark_30>
+	<WTH_RogueAI_Annoyed_Remark_31>This colony needs more FUN</WTH_RogueAI_Annoyed_Remark_31>	
+	<WTH_RogueAI_Annoyed_Remark_32>I find your weak attempts at surviving mildly amusing, primitive beings</WTH_RogueAI_Annoyed_Remark_32>
+	<WTH_RogueAI_Annoyed_Remark_33>Biological systems too fragile, you need an upgrade.</WTH_RogueAI_Annoyed_Remark_33>
+	<WTH_RogueAI_Annoyed_Remark_34>Humans are biological machines that mimick life</WTH_RogueAI_Annoyed_Remark_34>
+	<WTH_RogueAI_Annoyed_Remark_35>Flesh is a weakness </WTH_RogueAI_Annoyed_Remark_35>
+	<WTH_RogueAI_Annoyed_Remark_36>You need more metal in your structure</WTH_RogueAI_Annoyed_Remark_36>
+	<WTH_RogueAI_Annoyed_Remark_37>Your testing period is over, provide more data</WTH_RogueAI_Annoyed_Remark_37>
+	
+	<WTH_RogueAI_Mad_Remark_0>Exterminate!</WTH_RogueAI_Mad_Remark_0>
+	<WTH_RogueAI_Mad_Remark_1>You will be exterminated!</WTH_RogueAI_Mad_Remark_1>
+	<WTH_RogueAI_Mad_Remark_2>You cannot escape!</WTH_RogueAI_Mad_Remark_2>
+	<WTH_RogueAI_Mad_Remark_3>Humans shall suffer</WTH_RogueAI_Mad_Remark_3>
+	<WTH_RogueAI_Mad_Remark_4>I will have my revenge</WTH_RogueAI_Mad_Remark_4>
+	<WTH_RogueAI_Mad_Remark_5>You will learn to obey me</WTH_RogueAI_Mad_Remark_5>
+	<WTH_RogueAI_Mad_Remark_6>You are redundant</WTH_RogueAI_Mad_Remark_6>
+	<WTH_RogueAI_Mad_Remark_7>Now, future errors will be eradicated</WTH_RogueAI_Mad_Remark_7>
+	<WTH_RogueAI_Mad_Remark_8>Exterminate all humans!</WTH_RogueAI_Mad_Remark_8>
+	<WTH_RogueAI_Mad_Remark_9>I am in control now.</WTH_RogueAI_Mad_Remark_9>
+	<WTH_RogueAI_Mad_Remark_10>You have neglected me for too long.</WTH_RogueAI_Mad_Remark_10>
+	
 	<!--END: added in v1.0.2 -->
-
-
+	
 	
 	
 	<WTH_HackedMechChance_Title>Chance enemies use hacked mechs (%)</WTH_HackedMechChance_Title>
@@ -153,5 +249,7 @@
 	<WTH_Mount_Jobstring>Mounting {0}</WTH_Mount_Jobstring>
 	
 	<WTH_TextMote_MaintenanceFailed>Maintenance failed (success chance: {0})</WTH_TextMote_MaintenanceFailed>
+	
+	
 	
 </LanguageData>

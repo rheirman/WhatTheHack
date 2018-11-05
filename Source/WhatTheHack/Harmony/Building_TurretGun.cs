@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
+using WhatTheHack.Buildings;
 using WhatTheHack.Comps;
 
 namespace WhatTheHack.Harmony
@@ -39,4 +40,19 @@ namespace WhatTheHack.Harmony
             return true;
         }
     }
+    [HarmonyPatch(typeof(Building_TurretGun), "get_CanSetForcedTarget")]
+    class Building_TurretGun_get_CanSetForcedTarget
+    {
+        static void Postfix(Building_TurretGun __instance, ref bool __result)
+        {
+            if(__instance.Map.spawnedThings.FirstOrDefault((Thing t) => t is Building_RogueAI) is Building_RogueAI rogueAI)
+            {
+                if (rogueAI.controlledTurrets.Contains(__instance))
+                {
+                    __result = true;
+                }
+            }
+        }
+    }
+
 }
