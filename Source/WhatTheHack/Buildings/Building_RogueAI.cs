@@ -16,6 +16,8 @@ namespace WhatTheHack.Buildings
     {
         private float mood = 0.5f;
         private bool activated = false;
+        public bool managingPowerNetwork = false;
+
         public List<Pawn> controlledMechs = new List<Pawn>();
         public List<Pawn> hackedMechs = new List<Pawn>();
         public List<Building_TurretGun> controlledTurrets = new List<Building_TurretGun>();
@@ -24,9 +26,9 @@ namespace WhatTheHack.Buildings
         private const int MAXCONTROLLABLEMECHS = 6;
         private const int MAXCONTROLLABLETURRETS = 4;
         private const int MAXHACKABLE = 2;
-        private const int NUMTEXTSHAPPY = 41;
-        private const int NUMTEXTSANNOYED = 38;
-        private const int NUMTEXTSMAX = 11;
+        private const int NUMTEXTSHAPPY = 50;
+        private const int NUMTEXTSANNOYED = 50;
+        private const int NUMTEXTSMAD = 11;
         private int textTimeout = 0;
         //Increase mood when data is provided. 
         public void GiveData()
@@ -58,24 +60,27 @@ namespace WhatTheHack.Buildings
 
                 yield return gizmo;
             }
+            yield return GetManagePowerNetworkGizmo();
             yield return GetControlMechanoidActivateGizmo();
-            yield return GetHackingAvtivateGizmo();
             yield return GetControlTurretAvtivateGizmo();
+            yield return GetHackingAvtivateGizmo();
 
             foreach (Pawn mech in controlledMechs)
             {
                 yield return GetControlMechanoidCancelGizmo(mech);
             }
             int index = 1;
-            foreach (Pawn mech in hackedMechs)
-            {
-                yield return GetHackingCancelGizmo(mech, index);
-                index ++;
-            }
-            index = 1;
+
             foreach (Building_TurretGun turret in controlledTurrets)
             {
                 yield return GetControlTurretCancelGizmo(turret, index);
+                index++;
+            }
+            index = 1;
+
+            foreach (Pawn mech in hackedMechs)
+            {
+                yield return GetHackingCancelGizmo(mech, index);
                 index++;
             }
         }
@@ -90,10 +95,26 @@ namespace WhatTheHack.Buildings
             }
             public override void GizmoUpdateOnMouseover()
             {
-                Log.Message("GizmoUpdateOnMouseover");
                 base.GizmoUpdateOnMouseover();
                 GenDraw.DrawLineBetween(parent.Position.ToVector3Shifted(), thing.Position.ToVector3Shifted(), SimpleColor.White);
             }
+        }
+
+        private Gizmo GetManagePowerNetworkGizmo()
+        {
+            Command_Toggle command = new Command_Toggle();
+            command.defaultLabel = "TODO";//TODO
+            command.defaultDesc = "TODO";//TODO
+            command.icon = ContentFinder<Texture2D>.Get("UI/RogueAI_Manage_Network", true);
+            command.isActive = delegate
+            {
+                return managingPowerNetwork;
+            };
+            command.toggleAction = delegate
+            {
+                managingPowerNetwork = !managingPowerNetwork;
+            };
+            return command;
         }
 
         private Gizmo GetControlMechanoidCancelGizmo(Pawn mech)
@@ -114,7 +135,6 @@ namespace WhatTheHack.Buildings
                 ExtendedPawnData mechData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(mech);
                 mechData.controllingAI = null;
                 controlledMechs.Remove(mech);
-                mechData.isActive = false;
                 mech.drafter.Drafted = false;
             };
             return command;
@@ -294,9 +314,11 @@ namespace WhatTheHack.Buildings
             base.ExposeData();
             Scribe_Values.Look(ref mood, "mood");
             Scribe_Values.Look(ref activated, "activated");
+            Scribe_Values.Look(ref managingPowerNetwork, "managingPowerNetwork");
             Scribe_Collections.Look(ref controlledMechs, "controlledMechs", LookMode.Reference);
             Scribe_Collections.Look(ref hackedMechs, "hackedMechs", LookMode.Reference);
             Scribe_Collections.Look(ref controlledTurrets, "controlledTurrets", LookMode.Reference);
+
 
         }
     }

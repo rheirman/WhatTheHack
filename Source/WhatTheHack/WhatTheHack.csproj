@@ -84,6 +84,7 @@
     <Compile Include="Harmony\GenSpawn.cs" />
     <Compile Include="Harmony\Gizmo_CaravanInfo.cs" />
     <Compile Include="Harmony\IncidentWorker_RaidEnemy.cs" />
+    <Compile Include="Harmony\IncidentWorker_ShortCircuit.cs" />
     <Compile Include="Harmony\ITab_Pawn_Gear.cs" />
     <Compile Include="Harmony\LordToil_Siege.cs" />
     <Compile Include="Harmony\LovePartnerRelationUtility.cs" />

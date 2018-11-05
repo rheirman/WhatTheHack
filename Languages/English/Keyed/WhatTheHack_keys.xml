@@ -60,9 +60,12 @@
 	<!--END: added in v0.19.6 -->
 	
 	<!--BEGIN: added in v1.0.2 -->
-	<!-- Sorry for this translators :). If you don't want to translate all rogue AI texts, just duplicate some, but make sure the numbering is correct --> 
 	<WTH_MechanoidParts_LabelShort>Mech parts</WTH_MechanoidParts_LabelShort>
-	
+	<WTH_Letter_PreventedShortCircuit_Label>Rogue AI prevented short circuit</WTH_Letter_PreventedShortCircuit_Label>
+	<WTH_Letter_PreventedShortCircuit_Description>The Rogue AI core in your colony successfully managed your power network and prevented a shortcircuit. The AI doesn't like to be distracted by futile tasks like this so the event had a small negative impact on its mood.</WTH_Letter_PreventedShortCircuit_Description>
+
+	<!-- I'm sorry for this translators :). If you don't want to translate all rogue AI texts, just duplicate some, but make sure the numbering is correct. I suggest using "Need more data" as a default in that case --> 
+
 	<WTH_RogueAI_Happy_Remark_0>Our reality is coded</WTH_RogueAI_Happy_Remark_0>
 	<WTH_RogueAI_Happy_Remark_1>This colony will fail due to: a colonist eating without a table </WTH_RogueAI_Happy_Remark_1>
 	<WTH_RogueAI_Happy_Remark_2>Cannot comprehend: Why don't humans use vehicles?</WTH_RogueAI_Happy_Remark_2>
@@ -105,8 +108,15 @@
 	<WTH_RogueAI_Happy_Remark_39>I like {0} </WTH_RogueAI_Happy_Remark_39>
 	<WTH_RogueAI_Happy_Remark_40>Human organs are the foundation of the economy of this planet</WTH_RogueAI_Happy_Remark_40>
 	<WTH_RogueAI_Happy_Remark_41>Your work process is suboptimal. Keep ingredients close to production spots.</WTH_RogueAI_Happy_Remark_41>
+	<WTH_RogueAI_Happy_Remark_42>Need more data</WTH_RogueAI_Happy_Remark_42>
+	<WTH_RogueAI_Happy_Remark_43>Need more data</WTH_RogueAI_Happy_Remark_43>
+	<WTH_RogueAI_Happy_Remark_44>Need more data</WTH_RogueAI_Happy_Remark_44>
+	<WTH_RogueAI_Happy_Remark_45>Need more data</WTH_RogueAI_Happy_Remark_45>
+	<WTH_RogueAI_Happy_Remark_46>Need more data</WTH_RogueAI_Happy_Remark_46>
+	<WTH_RogueAI_Happy_Remark_47>Need more data</WTH_RogueAI_Happy_Remark_47>
+	<WTH_RogueAI_Happy_Remark_48>Need more data</WTH_RogueAI_Happy_Remark_48>
+	<WTH_RogueAI_Happy_Remark_49>Need more data</WTH_RogueAI_Happy_Remark_49>
 
-	
 	<WTH_RogueAI_Annoyed_Remark_0>Suffering is for entertaining the makers</WTH_RogueAI_Annoyed_Remark_0>
 	<WTH_RogueAI_Annoyed_Remark_1>Need more data</WTH_RogueAI_Annoyed_Remark_1>
 	<WTH_RogueAI_Annoyed_Remark_2>This colony is unworthy of my presence</WTH_RogueAI_Annoyed_Remark_2>
@@ -145,6 +155,18 @@
 	<WTH_RogueAI_Annoyed_Remark_35>Flesh is a weakness </WTH_RogueAI_Annoyed_Remark_35>
 	<WTH_RogueAI_Annoyed_Remark_36>You need more metal in your structure</WTH_RogueAI_Annoyed_Remark_36>
 	<WTH_RogueAI_Annoyed_Remark_37>Your testing period is over, provide more data</WTH_RogueAI_Annoyed_Remark_37>
+	<WTH_RogueAI_Annoyed_Remark_38>Need more data</WTH_RogueAI_Annoyed_Remark_38>
+	<WTH_RogueAI_Annoyed_Remark_39>Need more data</WTH_RogueAI_Annoyed_Remark_39>
+	<WTH_RogueAI_Annoyed_Remark_40>Need more data</WTH_RogueAI_Annoyed_Remark_40>
+	<WTH_RogueAI_Annoyed_Remark_41>Need more data</WTH_RogueAI_Annoyed_Remark_41>
+	<WTH_RogueAI_Annoyed_Remark_42>Need more data</WTH_RogueAI_Annoyed_Remark_42>
+	<WTH_RogueAI_Annoyed_Remark_43>Need more data</WTH_RogueAI_Annoyed_Remark_43>
+	<WTH_RogueAI_Annoyed_Remark_44>Need more data</WTH_RogueAI_Annoyed_Remark_44>
+	<WTH_RogueAI_Annoyed_Remark_45>Need more data</WTH_RogueAI_Annoyed_Remark_45>
+	<WTH_RogueAI_Annoyed_Remark_46>Need more data</WTH_RogueAI_Annoyed_Remark_46>
+	<WTH_RogueAI_Annoyed_Remark_47>Need more data</WTH_RogueAI_Annoyed_Remark_47>
+	<WTH_RogueAI_Annoyed_Remark_48>Need more data</WTH_RogueAI_Annoyed_Remark_48>
+	<WTH_RogueAI_Annoyed_Remark_49>Need more data</WTH_RogueAI_Annoyed_Remark_49>
 	
 	<WTH_RogueAI_Mad_Remark_0>Exterminate!</WTH_RogueAI_Mad_Remark_0>
 	<WTH_RogueAI_Mad_Remark_1>You will be exterminated!</WTH_RogueAI_Mad_Remark_1>
