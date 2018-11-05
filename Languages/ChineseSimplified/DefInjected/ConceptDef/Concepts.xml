@@ -20,4 +20,10 @@
   <WTH_Power.helpText>不像"野生"的机器人那样，被骇入的机器人不能使用它们内部的反应堆，因为这样会被机械族巢穴检测到，因此他们依靠内部电源工作，它们可以在机械平台上补充电力，最后，它们可以通过改装来提高电池容量。</WTH_Power.helpText>
 
 
+  <!-- Added in v0.19.6 -->
+
+  <WTH_Concept_MechanoidParts.label>获取机械组件</WTH_Concept_MechanoidParts.label>
+  <WTH_Concept_MechanoidParts.helpText>总是准备一些机械零件来修理机械是非常重要的,拆解机械是活的零件的主要方式,你也可以从其他的基地或贸易商那里购买,当然,你也可以"尝试触发引诱装置"来吸引更多的机械族</WTH_Concept_MechanoidParts.helpText>
+
+
 </LanguageData>
