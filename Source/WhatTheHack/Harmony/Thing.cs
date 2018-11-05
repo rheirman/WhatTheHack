@@ -75,6 +75,16 @@ namespace WhatTheHack.Harmony
                     }
                 }
             }
+            if(__instance is Building_TurretGun turret)
+            {
+                if (__instance.Map.spawnedThings.FirstOrDefault((Thing t) => t is Building_RogueAI) is Building_RogueAI controller)
+                {
+                    if (controller.controlledTurrets.Contains(turret))
+                    {
+                        GenDraw.DrawLineBetween(turret.Position.ToVector3Shifted(), controller.Position.ToVector3Shifted(), SimpleColor.Green);
+                    }
+                }
+            }
             if (__instance is Building_RogueAI rogueAI)
             {
                 foreach (Pawn pawn in rogueAI.controlledMechs)
@@ -85,7 +95,13 @@ namespace WhatTheHack.Harmony
                 {
                     GenDraw.DrawLineBetween(rogueAI.Position.ToVector3Shifted(), pawn.Position.ToVector3Shifted(), SimpleColor.Red);
                 }
+                foreach (Building_TurretGun t in rogueAI.controlledTurrets)
+                {
+                    GenDraw.DrawLineBetween(rogueAI.Position.ToVector3Shifted(), t.Position.ToVector3Shifted(), SimpleColor.Green);
+                }
             }
+
+
         }
     }
     [HarmonyPatch(typeof(Thing), "ButcherProducts")]

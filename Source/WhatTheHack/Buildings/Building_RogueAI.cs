@@ -72,12 +72,18 @@ namespace WhatTheHack.Buildings
                 yield return GetHackingCancelGizmo(mech, index);
                 index ++;
             }
+            index = 1;
+            foreach (Building_TurretGun turret in controlledTurrets)
+            {
+                yield return GetControlTurretCancelGizmo(turret, index);
+                index++;
+            }
         }
 
         private class Command_Action_Highlight : Command_Action
         {
             public Building_RogueAI parent;
-            public Pawn pawn;
+            public Thing thing;
             public override void ProcessInput(Event ev)
             {
                 base.ProcessInput(ev);
@@ -86,7 +92,7 @@ namespace WhatTheHack.Buildings
             {
                 Log.Message("GizmoUpdateOnMouseover");
                 base.GizmoUpdateOnMouseover();
-                GenDraw.DrawLineBetween(parent.Position.ToVector3Shifted(), pawn.Position.ToVector3Shifted(), SimpleColor.White);
+                GenDraw.DrawLineBetween(parent.Position.ToVector3Shifted(), thing.Position.ToVector3Shifted(), SimpleColor.White);
             }
         }
 
@@ -96,9 +102,9 @@ namespace WhatTheHack.Buildings
             command.defaultLabel = mech.Name.ToStringShort;//TODO
             command.defaultDesc = "WTH_Gizmo_RemoteControlActivate_Description".Translate();//TODO
             command.parent = this;
-            command.pawn = mech;
+            command.thing = mech;
             
-            bool iconFound = Base.Instance.cancelControlTextures.TryGetValue(mech.def.defName, out Texture2D icon);
+            bool iconFound = Base.Instance.cancelControlMechTextures.TryGetValue(mech.def.defName, out Texture2D icon);
             if (iconFound)
             {
                 command.icon = icon;
@@ -163,9 +169,9 @@ namespace WhatTheHack.Buildings
             command.defaultLabel = "TODO " + index;//TODO
             command.defaultDesc = "WTH_Gizmo_RemoteControlActivate_Description".Translate();//TODO
             command.parent = this;
-            command.pawn = mech;
+            command.thing = mech;
 
-            bool iconFound = Base.Instance.cancelControlTextures.TryGetValue(mech.def.defName, out Texture2D icon);
+            bool iconFound = Base.Instance.cancelControlMechTextures.TryGetValue(mech.def.defName, out Texture2D icon);
             if (iconFound)
             {
                 command.icon = icon;
@@ -226,14 +232,34 @@ namespace WhatTheHack.Buildings
                 }
             };
         }
+
+        private Gizmo GetControlTurretCancelGizmo(Building_TurretGun turret, int index)
+        {
+            Command_Action_Highlight command = new Command_Action_Highlight();
+            command.defaultLabel = "TODO" + index;//TODO
+            command.defaultDesc = "WTH_Gizmo_RemoteControlActivate_Description".Translate();//TODO
+            command.parent = this;
+            command.thing = turret;
+
+            bool iconFound = Base.Instance.cancelControlTurretTextures.TryGetValue(turret.def.defName, out Texture2D icon);
+            if (iconFound)
+            {
+                command.icon = icon;
+            }
+            command.action = delegate
+            {
+                controlledTurrets.Remove(turret);
+            };
+            return command;
+        }
         private Gizmo GetControlTurretAvtivateGizmo()
         {
             Command_Target command = new Command_Target();
             command.defaultLabel = "TODO".Translate();//TODO
             command.defaultDesc = "TODO".Translate();//TODO
             command.targetingParams = GetTargetingParametersForControlTurret();
-            command.icon = ContentFinder<Texture2D>.Get(("UI/RogueAI_Hack"));//TODO
-            command.disabled = hackedMechs.Count >= MAXHACKABLE;
+            command.icon = ContentFinder<Texture2D>.Get(("UI/RogueAI_Control_Turret"));//TODO
+            command.disabled = hackedMechs.Count >= MAXCONTROLLABLETURRETS;
             command.disabledReason = "TODO";
             command.action = delegate (Thing target)
             {
@@ -269,6 +295,8 @@ namespace WhatTheHack.Buildings
             Scribe_Values.Look(ref mood, "mood");
             Scribe_Values.Look(ref activated, "activated");
             Scribe_Collections.Look(ref controlledMechs, "controlledMechs", LookMode.Reference);
+            Scribe_Collections.Look(ref hackedMechs, "hackedMechs", LookMode.Reference);
+            Scribe_Collections.Look(ref controlledTurrets, "controlledTurrets", LookMode.Reference);
 
         }
     }

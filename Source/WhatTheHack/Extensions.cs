@@ -70,7 +70,10 @@ namespace WhatTheHack
             if (store != null)
             {
                 ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
-                return pawnData.controllingAI;
+                if (pawnData.controllingAI.Spawned)
+                {
+                    return pawnData.controllingAI;
+                }
             }
             return null;
         }

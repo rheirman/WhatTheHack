@@ -21,7 +21,9 @@ namespace WhatTheHack
         ExtendedDataStorage _extendedDataStorage;
 
         //dictionary of the frontal texture of all mechanoids with cross overlay on it to indicate the cancellation of an action. 
-        internal Dictionary<string, Texture2D> cancelControlTextures = new Dictionary<string, Texture2D>();
+        internal Dictionary<string, Texture2D> cancelControlMechTextures = new Dictionary<string, Texture2D>();
+        internal Dictionary<string, Texture2D> cancelControlTurretTextures = new Dictionary<string, Texture2D>();
+
         //settings
         internal static SettingHandle<bool> settingsGroup_Factions;
         internal static SettingHandle<String> tabsHandler;
@@ -158,21 +160,30 @@ namespace WhatTheHack
         public override void MapLoaded(Map map)
         {
             base.MapLoaded(map);
-            if (cancelControlTextures.Count > 0)
+            if (cancelControlMechTextures.Count == 0)
             {
-                return;
-            }
-            Texture2D cancelTex = ContentFinder<Texture2D>.Get(("UI/Cancel")).GetReadableTexture();       
-            List<ThingDef> allMechs = (from td in DefDatabase<ThingDef>.AllDefs where td.race != null && td.race.IsMechanoid select td).ToList();
-            foreach (ThingDef mechDef in allMechs)
-            {
-                if (mechDef.GetConcreteExample() is Pawn mech)
+                Texture2D cancelTex = ContentFinder<Texture2D>.Get(("UI/Cancel")).GetReadableTexture();       
+                List<ThingDef> allMechs = (from td in DefDatabase<ThingDef>.AllDefs where td.race != null && td.race.IsMechanoid select td).ToList();
+                foreach (ThingDef mechDef in allMechs)
                 {
-                    PawnKindLifeStage curKindLifeStage = mech.ageTracker.CurKindLifeStage;
-                    Texture2D mechTex = curKindLifeStage.bodyGraphicData.Graphic.MatSouth.mainTexture as Texture2D;
-                    cancelControlTextures.Add(mech.def.defName, mechTex.GetReadableTexture().AddWatermark(cancelTex));
+                    if (mechDef.GetConcreteExample() is Pawn mech)
+                    {
+                        PawnKindLifeStage curKindLifeStage = mech.ageTracker.CurKindLifeStage;
+                        Texture2D mechTex = curKindLifeStage.bodyGraphicData.Graphic.MatSouth.mainTexture as Texture2D;
+                        cancelControlMechTextures.Add(mech.def.defName, mechTex.GetReadableTexture().AddWatermark(cancelTex));
+                    }
                 }
             }
+            if(cancelControlTurretTextures.Count == 0)
+            {
+                Texture2D cancelTex = ContentFinder<Texture2D>.Get(("UI/Cancel")).GetReadableTexture();
+                List<ThingDef> allTurrets = (from td in DefDatabase<ThingDef>.AllDefs where td.thingClass == typeof(Building_TurretGun) select td).ToList();
+                foreach (ThingDef turretDef in allTurrets)
+                {
+                    cancelControlTurretTextures.Add(turretDef.defName, turretDef.uiIcon.GetReadableTexture().AddWatermark(cancelTex));
+                }
+            }
+
         }
 
         private static void GenerateImpliedRecipeDefs()
