@@ -63,7 +63,19 @@
 	<WTH_MechanoidParts_LabelShort>Mech parts</WTH_MechanoidParts_LabelShort>
 	<WTH_Letter_PreventedShortCircuit_Label>Rogue AI prevented short circuit</WTH_Letter_PreventedShortCircuit_Label>
 	<WTH_Letter_PreventedShortCircuit_Description>The Rogue AI core in your colony successfully managed your power network and prevented a shortcircuit. The AI doesn't like to be distracted by futile tasks like this so the event had a small negative impact on its mood.</WTH_Letter_PreventedShortCircuit_Description>
-
+	<WTH_Gizmo_ManagePowerNetwork_Label>No zzztt</WTH_Gizmo_ManagePowerNetwork_Label>
+	<WTH_Gizmo_ManagePowerNetwork_Description>Let the rogue AI manage your power network, preventing short circuits.</WTH_Gizmo_ManagePowerNetwork_Description>
+	<WTH_Gizmo_ControlMechanoidCancel_Description>Cancel controlling this mechanoid</WTH_Gizmo_ControlMechanoidCancel_Description>
+	<WTH_Gizmo_ControlMechanoidActivate_Label>Control mech</WTH_Gizmo_ControlMechanoidActivate_Label>
+	<WTH_Gizmo_ControlMechanoidActivate_Description>Let the rogue AI control up to {0} of your mechanoids directly, which allows the mechanoid to be drafted.</WTH_Gizmo_ControlMechanoidActivate_Description>
+	<WTH_Gizmo_HackingCancel_Label>Hacked mech</WTH_Gizmo_HackingCancel_Label>
+	<WTH_Gizmo_HackingCancel_Description>Cancel hacking this mechanoid</WTH_Gizmo_HackingCancel_Description>
+	<WTH_Gizmo_HackingAvtivate_Label>Hack mech</WTH_Gizmo_HackingAvtivate_Label>
+	<WTH_Gizmo_HackingAvtivate_Description>Let the rogue AI temporarily hack up to {0} enemy mechanoids.</WTH_Gizmo_HackingAvtivate_Description>
+	<WTH_Gizmo_ControlTurretCancel_Label>Turret</WTH_Gizmo_ControlTurretCancel_Label>
+	<WTH_Gizmo_ControlTurretCancel_Description>Cancel controlling this turret</WTH_Gizmo_ControlTurretCancel_Description>
+	<WTH_Gizmo_ControlTurretActivate_Label>Control turret</WTH_Gizmo_ControlTurretActivate_Label>
+	<WTH_Gizmo_ControlTurretActivate_Description>Let the rogue AI control up to {0} turrets, allowing it to determine at which targets the turrets should aim.</WTH_Gizmo_ControlTurretActivate_Description>
 	<!-- I'm sorry for this translators :). If you don't want to translate all rogue AI texts, just duplicate some, but make sure the numbering is correct. I suggest using "Need more data" as a default in that case --> 
 
 	<WTH_RogueAI_Happy_Remark_0>Our reality is coded</WTH_RogueAI_Happy_Remark_0>

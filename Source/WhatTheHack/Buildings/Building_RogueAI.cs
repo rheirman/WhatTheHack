@@ -17,10 +17,14 @@ namespace WhatTheHack.Buildings
         private float mood = 0.5f;
         private bool activated = false;
         public bool managingPowerNetwork = false;
+        public bool goingRogue = false;
 
         public List<Pawn> controlledMechs = new List<Pawn>();
         public List<Pawn> hackedMechs = new List<Pawn>();
+        public List<Pawn> rogueMechs = new List<Pawn>();
+
         public List<Building_TurretGun> controlledTurrets = new List<Building_TurretGun>();
+        public List<Building_TurretGun> rogueTurrets = new List<Building_TurretGun>();
 
 
         private const int MAXCONTROLLABLEMECHS = 6;
@@ -103,8 +107,8 @@ namespace WhatTheHack.Buildings
         private Gizmo GetManagePowerNetworkGizmo()
         {
             Command_Toggle command = new Command_Toggle();
-            command.defaultLabel = "TODO";//TODO
-            command.defaultDesc = "TODO";//TODO
+            command.defaultLabel = "WTH_Gizmo_ManagePowerNetwork_Label".Translate();//TODO
+            command.defaultDesc = "WTH_Gizmo_ManagePowerNetwork_Description".Translate();//TODO
             command.icon = ContentFinder<Texture2D>.Get("UI/RogueAI_Manage_Network", true);
             command.isActive = delegate
             {
@@ -113,6 +117,7 @@ namespace WhatTheHack.Buildings
             command.toggleAction = delegate
             {
                 managingPowerNetwork = !managingPowerNetwork;
+                GoRogue();
             };
             return command;
         }
@@ -121,7 +126,7 @@ namespace WhatTheHack.Buildings
         {
             Command_Action_Highlight command = new Command_Action_Highlight();
             command.defaultLabel = mech.Name.ToStringShort;//TODO
-            command.defaultDesc = "WTH_Gizmo_RemoteControlActivate_Description".Translate();//TODO
+            command.defaultDesc = "WTH_Gizmo_ControlMechanoidCancel_Description".Translate();//TODO
             command.parent = this;
             command.thing = mech;
             
@@ -132,20 +137,24 @@ namespace WhatTheHack.Buildings
             }
             command.action = delegate
             {
-                ExtendedPawnData mechData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(mech);
-                mechData.controllingAI = null;
-                controlledMechs.Remove(mech);
-                mech.drafter.Drafted = false;
+                CancelControlMechanoid(mech);
             };
             return command;
         }
 
+        private void CancelControlMechanoid(Pawn mech)
+        {
+            ExtendedPawnData mechData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(mech);
+            mechData.controllingAI = null;
+            controlledMechs.Remove(mech);
+            mech.drafter.Drafted = false;
+        }
 
         private Gizmo GetControlMechanoidActivateGizmo()
         {
             Command_Target command = new Command_Target();
-            command.defaultLabel = "TODO".Translate();//TODO
-            command.defaultDesc = "TODO".Translate();//TODO
+            command.defaultLabel = "WTH_Gizmo_ControlMechanoidActivate_Label".Translate();//TODO
+            command.defaultDesc = "WTH_Gizmo_ControlMechanoidActivate_Description".Translate(new object[] { MAXCONTROLLABLEMECHS });//TODO
             command.targetingParams = GetTargetingParametersForControlling();
             command.hotKey = KeyBindingDefOf.Misc5;
             command.icon = ContentFinder<Texture2D>.Get(("UI/RogueAI_Control"));//TODO
@@ -186,8 +195,8 @@ namespace WhatTheHack.Buildings
         private Gizmo GetHackingCancelGizmo(Pawn mech, int index)
         {
             Command_Action_Highlight command = new Command_Action_Highlight();
-            command.defaultLabel = "TODO " + index;//TODO
-            command.defaultDesc = "WTH_Gizmo_RemoteControlActivate_Description".Translate();//TODO
+            command.defaultLabel = "WTH_Gizmo_HackingCancel_Label".Translate() + " " + index;//TODO
+            command.defaultDesc = "WTH_Gizmo_HackingCancel_Description".Translate();//TODO
             command.parent = this;
             command.thing = mech;
 
@@ -198,20 +207,25 @@ namespace WhatTheHack.Buildings
             }
             command.action = delegate
             {
-                ExtendedPawnData mechData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(mech);
-                mechData.controllingAI = null;
-                mech.RevertToFaction(mechData.originalFaction);
-                mech.drafter.Drafted = false;
-                hackedMechs.Remove(mech);
+                CancelHacking(mech);
             };
             return command;
+        }
+
+        private void CancelHacking(Pawn mech)
+        {
+            ExtendedPawnData mechData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(mech);
+            mechData.controllingAI = null;
+            mech.RevertToFaction(mechData.originalFaction);
+            mech.drafter.Drafted = false;
+            hackedMechs.Remove(mech);
         }
 
         private Gizmo GetHackingAvtivateGizmo()
         {
             Command_Target command = new Command_Target();
-            command.defaultLabel = "TODO".Translate();//TODO
-            command.defaultDesc = "TODO".Translate();//TODO
+            command.defaultLabel = "WTH_Gizmo_HackingAvtivate_Label".Translate();//TODO
+            command.defaultDesc = "WTH_Gizmo_HackingAvtivate_Description".Translate(new object[] { MAXHACKABLE });//TODO
             command.targetingParams = GetTargetingParametersForHacking();
             command.hotKey = KeyBindingDefOf.Misc5;
             command.icon = ContentFinder<Texture2D>.Get(("UI/RogueAI_Hack"));//TODO
@@ -256,8 +270,8 @@ namespace WhatTheHack.Buildings
         private Gizmo GetControlTurretCancelGizmo(Building_TurretGun turret, int index)
         {
             Command_Action_Highlight command = new Command_Action_Highlight();
-            command.defaultLabel = "TODO" + index;//TODO
-            command.defaultDesc = "WTH_Gizmo_RemoteControlActivate_Description".Translate();//TODO
+            command.defaultLabel = "WTH_Gizmo_ControlTurretCancel_Label".Translate() + index;//TODO
+            command.defaultDesc = "WTH_Gizmo_ControlTurretCancel_Description".Translate();//TODO
             command.parent = this;
             command.thing = turret;
 
@@ -268,15 +282,21 @@ namespace WhatTheHack.Buildings
             }
             command.action = delegate
             {
-                controlledTurrets.Remove(turret);
+                CancelControlTurret(turret);
             };
             return command;
         }
+
+        private void CancelControlTurret(Building_TurretGun turret)
+        {
+            controlledTurrets.Remove(turret);
+        }
+
         private Gizmo GetControlTurretAvtivateGizmo()
         {
             Command_Target command = new Command_Target();
-            command.defaultLabel = "TODO".Translate();//TODO
-            command.defaultDesc = "TODO".Translate();//TODO
+            command.defaultLabel = "WTH_Gizmo_ControlTurretActivate_Label".Translate();//TODO
+            command.defaultDesc = "WTH_Gizmo_ControlTurretActivate_Description".Translate(new object[] { MAXCONTROLLABLETURRETS });//TODO
             command.targetingParams = GetTargetingParametersForControlTurret();
             command.icon = ContentFinder<Texture2D>.Get(("UI/RogueAI_Control_Turret"));//TODO
             command.disabled = hackedMechs.Count >= MAXCONTROLLABLETURRETS;
@@ -309,17 +329,70 @@ namespace WhatTheHack.Buildings
             };
         }
 
+        private void GoRogue()
+        {
+            goingRogue = true;
+            foreach(Pawn mech in controlledMechs)
+            {
+                CancelControlMechanoid(mech);
+            }
+            foreach(Building_TurretGun turret in controlledTurrets)
+            {
+                CancelControlTurret(turret);
+            }
+            foreach(Pawn mech in hackedMechs)
+            {
+                CancelHacking(mech);
+            }
+           
+            List<Pawn> shouldHack = this.Map.mapPawns.SpawnedPawnsInFaction(Faction.OfPlayer).Where((Pawn p) => p.IsHacked() && !p.Downed).ToList();
+            GoRogue_HackMechs(shouldHack);
+            List<Building_TurretGun> shouldHackTurrets = this.Map.spawnedThings.Where((Thing t) => t is Building_TurretGun && t.Faction == Faction.OfPlayer).Cast<Building_TurretGun>().ToList();
+            GoRogue_HackTurrets(shouldHackTurrets);
+        }
+        private void GoRogue_HackMechs(List<Pawn> shouldHack)
+        {
+            int nShouldHack = Rand.Range(1, 4);
+            while(nShouldHack > 0 && shouldHack.Count > 0)
+            {
+                Pawn mech = shouldHack.RandomElement();
+                if (mech.GetLord() == null || mech.GetLord().LordJob == null)
+                {
+                    LordMaker.MakeNewLord(Faction.OfMechanoids, new LordJob_AssaultColony(Faction.OfMechanoids, true, true, false, false, true), mech.Map, new List<Pawn> { mech });
+                }
+                mech.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                mech.RevertToFaction(Faction.OfMechanoids);
+                nShouldHack--;
+                shouldHack.Remove(mech);
+                rogueMechs.Add(mech);
+            }
+         
+        }
+        private void GoRogue_HackTurrets(List<Building_TurretGun> turrets)
+        {
+            int nShouldHack = Rand.Range(1, 3);
+            while (nShouldHack > 0 && turrets.Count > 0)
+            {
+                Building_TurretGun turret = turrets.RandomElement();
+                turret.SetFaction(Faction.OfMechanoids);
+                nShouldHack--;
+                turrets.Remove(turret);
+                rogueTurrets.Add(turret);
+            }
+        }
+
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref mood, "mood");
             Scribe_Values.Look(ref activated, "activated");
+            Scribe_Values.Look(ref goingRogue, "goingRogue");
             Scribe_Values.Look(ref managingPowerNetwork, "managingPowerNetwork");
             Scribe_Collections.Look(ref controlledMechs, "controlledMechs", LookMode.Reference);
             Scribe_Collections.Look(ref hackedMechs, "hackedMechs", LookMode.Reference);
             Scribe_Collections.Look(ref controlledTurrets, "controlledTurrets", LookMode.Reference);
-
-
+            Scribe_Collections.Look(ref rogueMechs, "rogueMechs", LookMode.Reference);
+            Scribe_Collections.Look(ref rogueTurrets, "rogueTurrets", LookMode.Reference);
         }
     }
 }
