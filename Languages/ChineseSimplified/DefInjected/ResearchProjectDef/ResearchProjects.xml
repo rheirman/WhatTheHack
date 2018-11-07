@@ -7,6 +7,9 @@
   <WTH_PortableChemfuelPlatform.label>便携式燃料充电平台</WTH_PortableChemfuelPlatform.label>
   <WTH_PortableChemfuelPlatform.description>让你可以建造使用使用化合燃料的便携式机械平台，使你可以不需要电力设备就能为机械充电。</WTH_PortableChemfuelPlatform.description>
 
+  <WTH_PortableDisassemblingBench.label>便携式拆解工作台</WTH_PortableDisassemblingBench.label>
+  <WTH_PortableDisassemblingBench.description>轻便而又坚固的旅行用机械拆解工作台,其机械不依靠电力,这对旅行很方便,但效率会比较低.</WTH_PortableDisassemblingBench.description>
+
   <WTH_MechanoidWorkshop.label>机械工坊</WTH_MechanoidWorkshop.label>
   <WTH_MechanoidWorkshop.description>让你可以建造一台机械工坊，机械工坊可以用于制作各种机械零件，分解先进机械芯片或回收机械零件。</WTH_MechanoidWorkshop.description>
 
@@ -42,6 +45,9 @@
 
   <WTH_HackingAdvanced.label>AI移植</WTH_HackingAdvanced.label>
   <WTH_HackingAdvanced.description>研究更好的AI核心，使得机械的战斗行为可以完全被控制。</WTH_HackingAdvanced.description>
+
+  <WTH_InduceEmergencySignal.label>引诱机械</WTH_InduceEmergencySignal.label>
+  <WTH_InduceEmergencySignal.description>让你的殖民者在倒下而未关机的机械装置中故意触发自卫装置,使其发射一个信号到最近的机械族巢穴吸引他们,这是一个可靠而又危险的获取机械的方式</WTH_InduceEmergencySignal.description>
 
 
 </LanguageData>

@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+  <WTH_DoBillsPortableDisassemblingBench.label>拆卸机械</WTH_DoBillsPortableDisassemblingBench.label>
+  <WTH_DoBillsPortableDisassemblingBench.verb>工作</WTH_DoBillsPortableDisassemblingBench.verb>
+  <WTH_DoBillsPortableDisassemblingBench.gerund>工作于</WTH_DoBillsPortableDisassemblingBench.gerund>
+
   <WTH_DoBillsMechanoidWorkshop.label>在机械工坊制作</WTH_DoBillsMechanoidWorkshop.label>
   <WTH_DoBillsMechanoidWorkshop.verb>制作</WTH_DoBillsMechanoidWorkshop.verb>
   <WTH_DoBillsMechanoidWorkshop.gerund>制作于</WTH_DoBillsMechanoidWorkshop.gerund>
