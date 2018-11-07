@@ -412,6 +412,9 @@
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>3</drawSize>
     </graphicData>
+	<building>
+		<claimable>false</claimable>
+    </building>
     <uiIconScale>0.85</uiIconScale>
     <researchPrerequisites><li>WTH_RogueAI</li></researchPrerequisites>
     <size>(3,3)</size>
@@ -429,7 +432,7 @@
       <li>BuildingsMisc</li>
     </thingCategories>
     <statBases>
-      <MaxHitPoints>200</MaxHitPoints>
+      <MaxHitPoints>800</MaxHitPoints>
       <WorkToBuild>10000</WorkToBuild>
       <Mass>100</Mass>
       <Flammability>1.0</Flammability>
@@ -442,10 +445,14 @@
 	  <WTH_MechanoidData>50</WTH_MechanoidData>
       <ComponentIndustrial>8</ComponentIndustrial>
     </costList>
-	<tickerType>Rare</tickerType>
+	<tickerType>Normal</tickerType>
     <comps>
+	  <li Class="CompProperties_Glower">
+        <glowRadius>10</glowRadius>
+        <glowColor>(0,0,0,255)</glowColor>
+      </li>
       <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
+        <compClass>WhatTheHack.Comps.CompPowerPlant_RogueAI</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
         <basePowerConsumption>300</basePowerConsumption>
       </li>

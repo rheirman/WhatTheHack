@@ -7,6 +7,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
+using WhatTheHack.Comps;
 using WhatTheHack.Duties;
 using WhatTheHack.Storage;
 
@@ -25,7 +26,7 @@ namespace WhatTheHack.Buildings
 
         public List<Building_TurretGun> controlledTurrets = new List<Building_TurretGun>();
         public List<Building_TurretGun> rogueTurrets = new List<Building_TurretGun>();
-
+        private List<ActionItem> queuedActions = new List<ActionItem>();
 
         private const int MAXCONTROLLABLEMECHS = 6;
         private const int MAXCONTROLLABLETURRETS = 4;
@@ -35,15 +36,64 @@ namespace WhatTheHack.Buildings
         private const int NUMTEXTSMAD = 11;
         private int textTimeout = 0;
         //Increase mood when data is provided. 
+        public enum Mood : byte
+        {
+            Happy = 0,
+            Annoyed = 1,
+            Mad = 2
+        }
+        private class Command_Action_Highlight : Command_Action
+        {
+            public Building_RogueAI parent;
+            public Thing thing;
+            public override void ProcessInput(Event ev)
+            {
+                base.ProcessInput(ev);
+            }
+            public override void GizmoUpdateOnMouseover()
+            {
+                base.GizmoUpdateOnMouseover();
+                GenDraw.DrawLineBetween(parent.Position.ToVector3Shifted(), thing.Position.ToVector3Shifted(), SimpleColor.White);
+            }
+        }
+
+        private class ActionItem {
+            public Action action;
+            public int rareTicksUntilAction = 0;
+            public bool shouldClean = false;
+
+            public ActionItem(Action action, int rareTicksUntilAction)
+            {
+                this.action = action;
+                this.rareTicksUntilAction = rareTicksUntilAction;
+            }
+            public void Tick()
+            {
+                if(rareTicksUntilAction == 0)
+                {
+                    action.Invoke();
+                    shouldClean = true;
+                }
+                rareTicksUntilAction--;
+            }
+
+        }
+
+
         public void GiveData()
         {
 
         }
-
-        public override void TickRare()
+        public override void Tick()
         {
-            base.TickRare();
-            
+            base.Tick();
+            if (this.IsHashIntervalTick(250))
+            {
+                TickRare();
+            }
+        }
+        public override void TickRare()
+        {            
             if (Rand.Chance(0.02f) && textTimeout <= 0)
             {
                 string randomColonistName = this.Map.mapPawns.FreeColonists.RandomElement().Name.ToString();
@@ -55,6 +105,7 @@ namespace WhatTheHack.Buildings
             {
                 textTimeout--;
             }
+            TickActionQueue();
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
@@ -89,20 +140,15 @@ namespace WhatTheHack.Buildings
             }
         }
 
-        private class Command_Action_Highlight : Command_Action
+        private void TickActionQueue()
         {
-            public Building_RogueAI parent;
-            public Thing thing;
-            public override void ProcessInput(Event ev)
+            foreach(ActionItem actionItem in queuedActions)
             {
-                base.ProcessInput(ev);
+                actionItem.Tick();
             }
-            public override void GizmoUpdateOnMouseover()
-            {
-                base.GizmoUpdateOnMouseover();
-                GenDraw.DrawLineBetween(parent.Position.ToVector3Shifted(), thing.Position.ToVector3Shifted(), SimpleColor.White);
-            }
+            queuedActions.RemoveAll((ActionItem i) => i.shouldClean);
         }
+
 
         private Gizmo GetManagePowerNetworkGizmo()
         {
@@ -331,24 +377,74 @@ namespace WhatTheHack.Buildings
 
         private void GoRogue()
         {
+            Log.Message("GoRogue called");
+            ChangeGlower(Mood.Mad);
             goingRogue = true;
-            foreach(Pawn mech in controlledMechs)
+            this.SetFaction(Faction.OfMechanoids);
+            while(controlledMechs.Count > 0)
             {
-                CancelControlMechanoid(mech);
+                CancelControlMechanoid(controlledMechs.Last());
             }
-            foreach(Building_TurretGun turret in controlledTurrets)
+            while(controlledTurrets.Count > 0)
             {
-                CancelControlTurret(turret);
+                CancelControlTurret(controlledTurrets.Last());
             }
-            foreach(Pawn mech in hackedMechs)
+            while(hackedMechs.Count > 0)
             {
-                CancelHacking(mech);
+                CancelHacking(hackedMechs.Last());
             }
            
             List<Pawn> shouldHack = this.Map.mapPawns.SpawnedPawnsInFaction(Faction.OfPlayer).Where((Pawn p) => p.IsHacked() && !p.Downed).ToList();
             GoRogue_HackMechs(shouldHack);
             List<Building_TurretGun> shouldHackTurrets = this.Map.spawnedThings.Where((Thing t) => t is Building_TurretGun && t.Faction == Faction.OfPlayer).Cast<Building_TurretGun>().ToList();
             GoRogue_HackTurrets(shouldHackTurrets);
+            GoRogue_CauseZzztts();
+            queuedActions.Add(new ActionItem(
+                action: delegate {
+                    StopGoingRogue();
+                    Log.Message("stop going rogue called");
+                },
+                rareTicksUntilAction: Rand.Range(30,40)
+                ));
+        }
+
+        private void StopGoingRogue()
+        {
+            goingRogue = false;
+            ChangeGlower(Mood.Annoyed);
+            this.SetFaction(Faction.OfPlayer);
+            while(rogueMechs.Count > 0)
+            {
+                Pawn rogueMech = rogueMechs.Last();
+                rogueMech.SetFaction(Faction.OfPlayer);
+                rogueMechs.Remove(rogueMech);
+            }
+            while(rogueTurrets.Count > 0)
+            {
+                Building_TurretGun turret = rogueTurrets.Last();
+                turret.SetFaction(Faction.OfPlayer);
+                rogueTurrets.Remove(turret);
+            }
+        }
+
+        private void ChangeGlower(Mood mood)
+        {
+            CompGlower glowerComp = GetComp<CompGlower>();
+            if (mood == Mood.Happy)
+            {
+                glowerComp.Props.glowColor = new ColorInt(35, 152, 255, 0);
+            }
+            if (mood == Mood.Annoyed)
+            {
+                glowerComp.Props.glowColor = new ColorInt(255, 119, 35, 0);
+            }
+            if (mood == Mood.Mad)
+            {
+                glowerComp.Props.glowColor = new ColorInt(255, 0, 0, 0);
+            }
+            glowerComp.UpdateLit(this.Map);
+            Map.glowGrid.MarkGlowGridDirty(this.Position);
+
         }
         private void GoRogue_HackMechs(List<Pawn> shouldHack)
         {
@@ -356,12 +452,12 @@ namespace WhatTheHack.Buildings
             while(nShouldHack > 0 && shouldHack.Count > 0)
             {
                 Pawn mech = shouldHack.RandomElement();
+                mech.RevertToFaction(Faction.OfMechanoids);
+                mech.jobs.EndCurrentJob(JobCondition.InterruptForced);
                 if (mech.GetLord() == null || mech.GetLord().LordJob == null)
                 {
                     LordMaker.MakeNewLord(Faction.OfMechanoids, new LordJob_AssaultColony(Faction.OfMechanoids, true, true, false, false, true), mech.Map, new List<Pawn> { mech });
                 }
-                mech.jobs.EndCurrentJob(JobCondition.InterruptForced);
-                mech.RevertToFaction(Faction.OfMechanoids);
                 nShouldHack--;
                 shouldHack.Remove(mech);
                 rogueMechs.Add(mech);
@@ -379,6 +475,35 @@ namespace WhatTheHack.Buildings
                 turrets.Remove(turret);
                 rogueTurrets.Add(turret);
             }
+        }
+
+        private void GoRogue_CauseZzztts()
+        {
+            CompPowerPlant_RogueAI powerComp = PowerComp as CompPowerPlant_RogueAI;
+            powerComp.overcharging = true;
+            IEnumerable<Building> potentialTargets = ShortCircuitUtility.GetShortCircuitablePowerConduits(this.Map);
+            int numZzztts = Rand.Range(3, 5);
+            int rareTicksUntilAction = 0;
+            for (int i = 0; i < numZzztts; i++)
+            {
+                if (potentialTargets.TryRandomElement(out Building potentialTarget))
+                {
+                    queuedActions.Add(new ActionItem(
+                        action: delegate {
+                            ShortCircuitUtility.DoShortCircuit(potentialTarget);
+                            
+                        },
+                        rareTicksUntilAction: rareTicksUntilAction)
+                        );
+                    rareTicksUntilAction += Rand.Range(2, 4);
+                }
+            }
+            queuedActions.Add(new ActionItem(
+                action: delegate {
+                    powerComp.overcharging = false;
+                },
+                rareTicksUntilAction: rareTicksUntilAction)
+                );
         }
 
         public override void ExposeData()

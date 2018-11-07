@@ -88,6 +88,7 @@ namespace WhatTheHack
         public static ThingSetMakerDef WTH_MapGen_MechanoidTempleContents;
 
         //vanilla
+        public static IncidentDef ShortCircuit;
         public static BodyPartDef Reactor;
         public static BodyPartGroupDef Waist;
 
