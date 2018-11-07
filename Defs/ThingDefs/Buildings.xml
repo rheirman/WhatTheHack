@@ -456,7 +456,6 @@
         <shortCircuitInRain>false</shortCircuitInRain>
         <basePowerConsumption>300</basePowerConsumption>
       </li>
-      <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Facility">
         <statOffsets>
 			<WTH_HackingSuccessFactor>0.1</WTH_HackingSuccessFactor>
@@ -467,14 +466,15 @@
 		<fuelLabel>Mood</fuelLabel>
 		<fuelGizmoLabel>Mood</fuelGizmoLabel>
         <fuelConsumptionRate>40.0</fuelConsumptionRate>
-        <fuelCapacity>10.0</fuelCapacity>
-		<initialConfigurableTargetFuelLevel>10.0</initialConfigurableTargetFuelLevel>
-		<initialFuelPercent>0.5</initialFuelPercent>
+        <fuelCapacity>100.0</fuelCapacity>
+		<initialConfigurableTargetFuelLevel>100.0</initialConfigurableTargetFuelLevel>
+		<initialFuelPercent>1.0</initialFuelPercent>
         <fuelFilter>
           <thingDefs>
             <li>WTH_MechanoidData</li>
           </thingDefs>
         </fuelFilter>
+		<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
         <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 		<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
       </li>

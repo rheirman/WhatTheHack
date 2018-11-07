@@ -6,7 +6,7 @@ using System.Text;
 
 namespace WhatTheHack.Comps
 {
-    class CompPowerPlant_RogueAI : CompPowerPlant
+    public class CompPowerPlant_RogueAI : CompPowerPlant
     {
         public bool overcharging = false;
         protected override float DesiredPowerOutput
