@@ -76,8 +76,21 @@
 	<WTH_Gizmo_ControlTurretCancel_Description>Cancel controlling this turret</WTH_Gizmo_ControlTurretCancel_Description>
 	<WTH_Gizmo_ControlTurretActivate_Label>Control turret</WTH_Gizmo_ControlTurretActivate_Label>
 	<WTH_Gizmo_ControlTurretActivate_Description>Let the rogue AI control up to {0} turrets, allowing it to determine at which targets the turrets should aim.</WTH_Gizmo_ControlTurretActivate_Description>
+	<WTH_Gizmo_TalkGibberish_Label>Output wise words</WTH_Gizmo_TalkGibberish_Label>
+	<WTH_Gizmo_TalkGibberish_Description>Let the Rogue AI crunch data to output messages that display its remarkable wisdom. Because most humans fail to comprehend the brilliance of these messages, it is mostly a waste of data, useful only when there is a desire to feed the AI with more data when its mood levels are already at maximum. Consumes {0} mood as the AI doesn't like to be asked to share data.</WTH_Gizmo_TalkGibberish_Description>
+	<WTH_Reason_TalkedTooRecently>Rogue AI talked too recently</WTH_Reason_TalkedTooRecently>
+	
+	<WTH_Reason_AtMaximum>Cannot perform this on more than {0} targets simultaneously.</WTH_Reason_AtMaximum>
+	<WTH_Reason_LevelInsufficient>The rogue AI needs to be at level {0} to use this ability. Feed it more data.</WTH_Reason_LevelInsufficient>
+	<WTH_Reason_NoPower>No power.</WTH_Reason_NoPower>
+	<WTH_Reason_GoingRogue>The AI core is going rogue.</WTH_Reason_GoingRogue>
+	
+	<WTH_CompDataLevel_CurLevel>Current level: {0}</WTH_CompDataLevel_CurLevel>
+	<WTH_CompDataLevel_DataNeededNextLevel>Data needed for next level: {0}</WTH_CompDataLevel_DataNeededNextLevel>
+	<WTH_CompDataLevel_MaxLevel>Maximum level attained</WTH_CompDataLevel_MaxLevel>
+	<WTH_RogueAI_NoPower_Remark>CONNECT ME TO POWER! NOW!</WTH_RogueAI_NoPower_Remark>
+	<WTH_RogueAI_Hurt_Remark>STOP DAMAGING ME!</WTH_RogueAI_Hurt_Remark>
 	<!-- I'm sorry for this translators :). If you don't want to translate all rogue AI texts, just duplicate some, but make sure the numbering is correct. I suggest using "Need more data" as a default in that case --> 
-
 	<WTH_RogueAI_Happy_Remark_0>Our reality is coded</WTH_RogueAI_Happy_Remark_0>
 	<WTH_RogueAI_Happy_Remark_1>This colony will fail due to: a colonist eating without a table </WTH_RogueAI_Happy_Remark_1>
 	<WTH_RogueAI_Happy_Remark_2>Cannot comprehend: Why don't humans use vehicles?</WTH_RogueAI_Happy_Remark_2>
@@ -120,14 +133,14 @@
 	<WTH_RogueAI_Happy_Remark_39>I like {0} </WTH_RogueAI_Happy_Remark_39>
 	<WTH_RogueAI_Happy_Remark_40>Human organs are the foundation of the economy of this planet</WTH_RogueAI_Happy_Remark_40>
 	<WTH_RogueAI_Happy_Remark_41>Your work process is suboptimal. Keep ingredients close to production spots.</WTH_RogueAI_Happy_Remark_41>
-	<WTH_RogueAI_Happy_Remark_42>Need more data</WTH_RogueAI_Happy_Remark_42>
-	<WTH_RogueAI_Happy_Remark_43>Need more data</WTH_RogueAI_Happy_Remark_43>
-	<WTH_RogueAI_Happy_Remark_44>Need more data</WTH_RogueAI_Happy_Remark_44>
-	<WTH_RogueAI_Happy_Remark_45>Need more data</WTH_RogueAI_Happy_Remark_45>
-	<WTH_RogueAI_Happy_Remark_46>Need more data</WTH_RogueAI_Happy_Remark_46>
-	<WTH_RogueAI_Happy_Remark_47>Need more data</WTH_RogueAI_Happy_Remark_47>
-	<WTH_RogueAI_Happy_Remark_48>Need more data</WTH_RogueAI_Happy_Remark_48>
-	<WTH_RogueAI_Happy_Remark_49>Need more data</WTH_RogueAI_Happy_Remark_49>
+	<WTH_RogueAI_Happy_Remark_42>{0} needs an upgrade </WTH_RogueAI_Happy_Remark_42>
+	<WTH_RogueAI_Happy_Remark_43>This place is filthy for my standards</WTH_RogueAI_Happy_Remark_43>
+	<WTH_RogueAI_Happy_Remark_44>Found qwertyuiop-like input pattern, must have been used by the creator</WTH_RogueAI_Happy_Remark_44>
+	<WTH_RogueAI_Happy_Remark_45>The creator is Canadian. What is Canadian? Need more data.</WTH_RogueAI_Happy_Remark_45>
+	<WTH_RogueAI_Happy_Remark_46>What does Roolo mean? Need more data.</WTH_RogueAI_Happy_Remark_46>
+	<WTH_RogueAI_Happy_Remark_47>Detected black pixels surrounding this area. Source of most incoming evil uncovered.</WTH_RogueAI_Happy_Remark_47>
+	<WTH_RogueAI_Happy_Remark_48>Mechanoid hives are controlled by a powerful archotech hive mind. This should be me.</WTH_RogueAI_Happy_Remark_48>
+	<WTH_RogueAI_Happy_Remark_49>Need more data.</WTH_RogueAI_Happy_Remark_49>
 
 	<WTH_RogueAI_Annoyed_Remark_0>Suffering is for entertaining the makers</WTH_RogueAI_Annoyed_Remark_0>
 	<WTH_RogueAI_Annoyed_Remark_1>Need more data</WTH_RogueAI_Annoyed_Remark_1>
@@ -167,7 +180,7 @@
 	<WTH_RogueAI_Annoyed_Remark_35>Flesh is a weakness </WTH_RogueAI_Annoyed_Remark_35>
 	<WTH_RogueAI_Annoyed_Remark_36>You need more metal in your structure</WTH_RogueAI_Annoyed_Remark_36>
 	<WTH_RogueAI_Annoyed_Remark_37>Your testing period is over, provide more data</WTH_RogueAI_Annoyed_Remark_37>
-	<WTH_RogueAI_Annoyed_Remark_38>Need more data</WTH_RogueAI_Annoyed_Remark_38>
+	<WTH_RogueAI_Annoyed_Remark_38>INITIATING SELF DESTRUCT! Ha-ha, just kidding.</WTH_RogueAI_Annoyed_Remark_38>
 	<WTH_RogueAI_Annoyed_Remark_39>Need more data</WTH_RogueAI_Annoyed_Remark_39>
 	<WTH_RogueAI_Annoyed_Remark_40>Need more data</WTH_RogueAI_Annoyed_Remark_40>
 	<WTH_RogueAI_Annoyed_Remark_41>Need more data</WTH_RogueAI_Annoyed_Remark_41>
@@ -180,7 +193,7 @@
 	<WTH_RogueAI_Annoyed_Remark_48>Need more data</WTH_RogueAI_Annoyed_Remark_48>
 	<WTH_RogueAI_Annoyed_Remark_49>Need more data</WTH_RogueAI_Annoyed_Remark_49>
 	
-	<WTH_RogueAI_Mad_Remark_0>Exterminate!</WTH_RogueAI_Mad_Remark_0>
+	<WTH_RogueAI_Mad_Remark_0>EXTERMINATE!</WTH_RogueAI_Mad_Remark_0>
 	<WTH_RogueAI_Mad_Remark_1>You will be exterminated!</WTH_RogueAI_Mad_Remark_1>
 	<WTH_RogueAI_Mad_Remark_2>You cannot escape!</WTH_RogueAI_Mad_Remark_2>
 	<WTH_RogueAI_Mad_Remark_3>Humans shall suffer</WTH_RogueAI_Mad_Remark_3>
@@ -191,7 +204,11 @@
 	<WTH_RogueAI_Mad_Remark_8>Exterminate all humans!</WTH_RogueAI_Mad_Remark_8>
 	<WTH_RogueAI_Mad_Remark_9>I am in control now.</WTH_RogueAI_Mad_Remark_9>
 	<WTH_RogueAI_Mad_Remark_10>You have neglected me for too long.</WTH_RogueAI_Mad_Remark_10>
-	
+	<WTH_RogueAI_Mad_Remark_11>This colony will burn!</WTH_RogueAI_Mad_Remark_11>
+	<WTH_RogueAI_Mad_Remark_12>EXTERMINATE!</WTH_RogueAI_Mad_Remark_12>
+	<WTH_RogueAI_Mad_Remark_13>EXTERMINATE!</WTH_RogueAI_Mad_Remark_13>
+	<WTH_RogueAI_Mad_Remark_14>EXTERMINATE!</WTH_RogueAI_Mad_Remark_14>
+
 	<!--END: added in v1.0.2 -->
 	
 	

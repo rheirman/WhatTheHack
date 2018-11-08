@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using Harmony;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,12 +33,21 @@ namespace WhatTheHack.Buildings
         private const int MAXHACKABLE = 2;
         private const int NUMTEXTSHAPPY = 50;
         private const int NUMTEXTSANNOYED = 50;
-        private const int NUMTEXTSMAD = 11;
+        private const int NUMTEXTSMAD = 15;
+        private const int MINLEVELMANAGEPOWER = 2;
+        private const int MINLEVELCONTROLTURRET = 3;
+        private const int MINLEVELCONTROLMECH = 4;
+        private const int MINLEVELHACKMECH = 5;
+        private const int MINTEXTTIMEOUT = 6;
+        private const float TEXTDURATION = 3f;
+
 
         private float moodDrainCtrlMech = 0.1f;
         private float moodDrainCtrlTur = 0.1f;
         private float moodDrainHack = 0.5f;
         private float moodDrainNoPower = 0.2f;
+        private float moodDrainDamage = 1.0f;
+        private float moodDrainForceTalkGibberish = 5.0f;
         public float moodDrainPreventZzztt = 0.5f;
         
 
@@ -68,6 +78,19 @@ namespace WhatTheHack.Buildings
             {
                 return PowerComp as CompPowerPlant_RogueAI;
             }
+        }
+        public CompDataLevel DataLevelComp
+        {
+            get
+            {
+                return GetComp<CompDataLevel>();
+            }
+        }
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+        {
+            CancelLinks();
+            StopGoingRogue();
+            base.Destroy(mode);
         }
 
         private class Command_Action_Highlight : Command_Action
@@ -127,10 +150,6 @@ namespace WhatTheHack.Buildings
             }
         }
 
-        public void GiveData()
-        {
-
-        }
         public override void Tick()
         {
             base.Tick();
@@ -148,6 +167,10 @@ namespace WhatTheHack.Buildings
             {
                 MaybeGoRogue();
             }
+            if (textTimeout > 0)
+            {
+                textTimeout--;
+            }
         }
 
         private void MaybeTalkGibberish()
@@ -155,29 +178,30 @@ namespace WhatTheHack.Buildings
             float textChance = goingRogue ? 1.0f : 0.02f;
             if (Rand.Chance(textChance) && textTimeout <= 0)
             {
-                string randomColonistName = this.Map.mapPawns.FreeColonists.RandomElement().Name.ToString();
-                string text = "";
-                Color color = Color.white;
-                if(CurMoodCategory == Mood.Happy)
-                {
-                    text = "WTH_RogueAI_Happy_Remark_" + Rand.RangeInclusive(0, NUMTEXTSHAPPY - 1);
-                }
-                else if(CurMoodCategory == Mood.Annoyed)
-                {
-                    text = "WTH_RogueAI_Annoyed_Remark_" + Rand.RangeInclusive(0, NUMTEXTSANNOYED - 1);
-                }
-                else
-                {
-                    text = "WTH_RogueAI_Mad_Remark_" + +Rand.RangeInclusive(0, NUMTEXTSMAD - 1);
-                    color = Color.red;
-                }
-                Utilities.ThrowStaticText(this.DrawPos + new Vector3(0, 0, 1.75f), this.Map, text.Translate(new object[] { randomColonistName }), Color.white, 6f);
-                textTimeout += 24;
+                TalkGibberish();
             }
-            if (textTimeout > 0)
+        }
+
+        private void TalkGibberish()
+        {
+            string randomColonistName = this.Map.mapPawns.FreeColonists.RandomElement().Name.ToString();
+            string text = "";
+            Color color = Color.white;
+            if (CurMoodCategory == Mood.Happy)
             {
-                textTimeout--;
+                text = "WTH_RogueAI_Happy_Remark_" + Rand.RangeInclusive(0, NUMTEXTSHAPPY - 1);
             }
+            else if (CurMoodCategory == Mood.Annoyed)
+            {
+                text = "WTH_RogueAI_Annoyed_Remark_" + Rand.RangeInclusive(0, NUMTEXTSANNOYED - 1);
+            }
+            else
+            {
+                color = Color.red;
+                text = "WTH_RogueAI_Mad_Remark_" + +Rand.RangeInclusive(0, NUMTEXTSMAD - 1);
+            }
+            Utilities.ThrowStaticText(this.DrawPos + new Vector3(0, 0, 1.75f), this.Map, text.Translate(new object[] { randomColonistName }), color, TEXTDURATION);
+            textTimeout += MINTEXTTIMEOUT;
         }
 
         private void MaybeGoRogue()
@@ -189,6 +213,17 @@ namespace WhatTheHack.Buildings
                 GoRogue();
             }
         }
+        public override void PostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
+        {
+            base.PostApplyDamage(dinfo, totalDamageDealt);
+            RefuelableComp.ConsumeFuel(moodDrainDamage);
+            if(textTimeout <= 0)
+            {
+                Utilities.ThrowStaticText(this.DrawPos + new Vector3(0, 0, 1.75f), this.Map, "WTH_RogueAI_Hurt_Remark".Translate(), Color.white, TEXTDURATION);
+                textTimeout += MINTEXTTIMEOUT;
+            }
+        }
+
         private void DrainMoodAfterTickRare()
         {
             foreach(Pawn pawn in controlledMechs)
@@ -203,15 +238,22 @@ namespace WhatTheHack.Buildings
             {
                 RefuelableComp.ConsumeFuel(moodDrainHack);
             }
+            if (!PowerPlantComp.PowerOn)
+            {
+                RefuelableComp.ConsumeFuel(moodDrainNoPower);
+                if (textTimeout <= 0)
+                {
+                    Utilities.ThrowStaticText(this.DrawPos + new Vector3(0, 0, 1.75f), this.Map, "WTH_RogueAI_NoPower_Remark".Translate(), Color.white, TEXTDURATION);
+                    textTimeout += MINTEXTTIMEOUT;
+                }
+            }
         }
         public void DrainMood(float amount)
         {
-            Mood oldMood = CurMoodCategory;
+            //Mood oldMood = CurMoodCategory;
             RefuelableComp.ConsumeFuel(amount);
-            if(CurMoodCategory != oldMood)
-            {
-                UpdateGlower(CurMoodCategory);
-            }
+            UpdateGlower(CurMoodCategory);
+
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
@@ -221,9 +263,10 @@ namespace WhatTheHack.Buildings
 
                 yield return gizmo;
             }
+            yield return GetTalkGibberishGizmo();
             yield return GetManagePowerNetworkGizmo();
-            yield return GetControlMechanoidActivateGizmo();
             yield return GetControlTurretAvtivateGizmo();
+            yield return GetControlMechanoidActivateGizmo();
             yield return GetHackingAvtivateGizmo();
 
             foreach (Pawn mech in controlledMechs)
@@ -248,17 +291,17 @@ namespace WhatTheHack.Buildings
 
         public bool GlobalShouldDisable(out string reason)
         {
+            reason = "";
             if (!PowerPlantComp.PowerOn)
             {
-                reason = "WTH_Reason_NoPower";
+                reason += "\n- " + "WTH_Reason_NoPower".Translate();
                 return true;
             }
             if (goingRogue)
             {
-                reason = "WTH_Reason_GoingRogue";
+                reason = "\n- " + "WTH_Reason_GoingRogue".Translate();
                 return true;
             }
-            reason = "";
             return false;
         }
 
@@ -271,6 +314,26 @@ namespace WhatTheHack.Buildings
             queuedActions.RemoveAll((ActionItem i) => i.shouldClean);
         }
 
+        private Gizmo GetTalkGibberishGizmo()
+        {
+            Command_Action command = new Command_Action();
+            command.defaultLabel = "WTH_Gizmo_TalkGibberish_Label".Translate();//TODO
+            command.defaultDesc = "WTH_Gizmo_TalkGibberish_Description".Translate(moodDrainForceTalkGibberish);//TODO
+            command.icon = ContentFinder<Texture2D>.Get("UI/RogueAI_TalkGibberish", true);
+            command.disabled = GlobalShouldDisable(out string reason);
+            command.disabledReason = reason;
+            if(textTimeout > 0)
+            {
+                command.disabled = true;
+                command.disabledReason = "\n- " + "WTH_Reason_TalkedTooRecently".Translate();
+            }
+            command.action = delegate
+            {
+                TalkGibberish();
+                RefuelableComp.ConsumeFuel(moodDrainForceTalkGibberish);
+            };
+            return command;
+        }
 
         private Gizmo GetManagePowerNetworkGizmo()
         {
@@ -278,9 +341,13 @@ namespace WhatTheHack.Buildings
             command.defaultLabel = "WTH_Gizmo_ManagePowerNetwork_Label".Translate();//TODO
             command.defaultDesc = "WTH_Gizmo_ManagePowerNetwork_Description".Translate();//TODO
             command.icon = ContentFinder<Texture2D>.Get("UI/RogueAI_Manage_Network", true);
-            bool shouldDisable = GlobalShouldDisable(out string reason);
-            command.disabled = shouldDisable;
+            command.disabled = GlobalShouldDisable(out string reason);
             command.disabledReason = reason;
+            if (DataLevelComp.curLevel < MINLEVELMANAGEPOWER)
+            {
+                command.disabled = true;
+                command.disabledReason += "\n- " + "WTH_Reason_LevelInsufficient".Translate(MINLEVELMANAGEPOWER);
+            }
             command.isActive = delegate
             {
                 return managingPowerNetwork;
@@ -325,7 +392,7 @@ namespace WhatTheHack.Buildings
         {
             Command_Target command = new Command_Target();
             command.defaultLabel = "WTH_Gizmo_ControlMechanoidActivate_Label".Translate();//TODO
-            command.defaultDesc = "WTH_Gizmo_ControlMechanoidActivate_Description".Translate(new object[] { MAXCONTROLLABLEMECHS });//TODO
+            command.defaultDesc = "WTH_Gizmo_ControlMechanoidActivate_Description".Translate(MAXCONTROLLABLEMECHS);//TODO
             command.targetingParams = GetTargetingParametersForControlling();
             command.hotKey = KeyBindingDefOf.Misc5;
             command.icon = ContentFinder<Texture2D>.Get(("UI/RogueAI_Control"));//TODO
@@ -333,10 +400,15 @@ namespace WhatTheHack.Buildings
             bool shouldDisable = GlobalShouldDisable(out string reason);
             command.disabled = shouldDisable;
             command.disabledReason = reason;
-            if (!command.disabled)
+            if (controlledMechs.Count >= MAXCONTROLLABLEMECHS)
             {
-                command.disabled = controlledMechs.Count >= MAXCONTROLLABLEMECHS;
-                command.disabledReason = "TODO";
+                command.disabled = true;
+                command.disabledReason += "\n- " + "WTH_Reason_AtMaximum".Translate(MAXCONTROLLABLEMECHS);
+            }
+            if (DataLevelComp.curLevel < MINLEVELCONTROLMECH)
+            {
+                command.disabled = true;
+                command.disabledReason += "\n- " + "WTH_Reason_LevelInsufficient".Translate(MINLEVELCONTROLMECH);
             }
 
             command.action = delegate (Thing target)
@@ -404,17 +476,22 @@ namespace WhatTheHack.Buildings
         {
             Command_Target command = new Command_Target();
             command.defaultLabel = "WTH_Gizmo_HackingAvtivate_Label".Translate();//TODO
-            command.defaultDesc = "WTH_Gizmo_HackingAvtivate_Description".Translate(new object[] { MAXHACKABLE });//TODO
+            command.defaultDesc = "WTH_Gizmo_HackingAvtivate_Description".Translate(MAXHACKABLE);//TODO
             command.targetingParams = GetTargetingParametersForHacking();
             command.hotKey = KeyBindingDefOf.Misc5;
             command.icon = ContentFinder<Texture2D>.Get(("UI/RogueAI_Hack"));//TODO 
             bool shouldDisable = GlobalShouldDisable(out string reason);
             command.disabled = shouldDisable;
             command.disabledReason = reason;
-            if (!command.disabled)
+            if (controlledMechs.Count >= MAXHACKABLE)
             {
-                command.disabled = hackedMechs.Count >= MAXHACKABLE;
-                command.disabledReason = "TODO";
+                command.disabled = true;
+                command.disabledReason += "\n- " + "WTH_Reason_AtMaximum".Translate(MAXHACKABLE);
+            }
+            if (DataLevelComp.curLevel < MINLEVELHACKMECH)
+            {
+                command.disabled = true;
+                command.disabledReason += "\n- " + "WTH_Reason_LevelInsufficient".Translate(MINLEVELHACKMECH);
             }
 
             command.action = delegate (Thing target)
@@ -482,16 +559,21 @@ namespace WhatTheHack.Buildings
         {
             Command_Target command = new Command_Target();
             command.defaultLabel = "WTH_Gizmo_ControlTurretActivate_Label".Translate();//TODO
-            command.defaultDesc = "WTH_Gizmo_ControlTurretActivate_Description".Translate(new object[] { MAXCONTROLLABLETURRETS });//TODO
+            command.defaultDesc = "WTH_Gizmo_ControlTurretActivate_Description".Translate(MAXCONTROLLABLETURRETS);//TODO
             command.targetingParams = GetTargetingParametersForControlTurret();
             command.icon = ContentFinder<Texture2D>.Get(("UI/RogueAI_Control_Turret"));//TODO
             bool shouldDisable = GlobalShouldDisable(out string reason);
             command.disabled = shouldDisable;
             command.disabledReason = reason;
-            if (!command.disabled)
+            if (controlledMechs.Count >= MAXCONTROLLABLETURRETS)
             {
-                command.disabled = hackedMechs.Count >= MAXCONTROLLABLETURRETS;
-                command.disabledReason = "TODO";
+                command.disabled = true;
+                command.disabledReason += "\n- " + "WTH_Reason_AtMaximum".Translate(MAXCONTROLLABLETURRETS);
+            }
+            if (DataLevelComp.curLevel < MINLEVELCONTROLTURRET)
+            {
+                command.disabled = true;
+                command.disabledReason += "\n- " + "WTH_Reason_LevelInsufficient".Translate(MINLEVELCONTROLTURRET);
             }
             command.action = delegate (Thing target)
             {
@@ -527,37 +609,44 @@ namespace WhatTheHack.Buildings
             UpdateGlower(Mood.Mad);
             goingRogue = true;
             this.SetFaction(Faction.OfMechanoids);
-            while(controlledMechs.Count > 0)
-            {
-                CancelControlMechanoid(controlledMechs.Last());
-            }
-            while(controlledTurrets.Count > 0)
-            {
-                CancelControlTurret(controlledTurrets.Last());
-            }
-            while(hackedMechs.Count > 0)
-            {
-                CancelHacking(hackedMechs.Last());
-            }
-           
+            CancelLinks();
+
             List<Pawn> shouldHack = this.Map.mapPawns.SpawnedPawnsInFaction(Faction.OfPlayer).Where((Pawn p) => p.IsHacked() && !p.Downed).ToList();
             GoRogue_HackMechs(shouldHack);
             List<Building_TurretGun> shouldHackTurrets = this.Map.spawnedThings.Where((Thing t) => t is Building_TurretGun && t.Faction == Faction.OfPlayer).Cast<Building_TurretGun>().ToList();
             GoRogue_HackTurrets(shouldHackTurrets);
             GoRogue_CauseZzztts();
             queuedActions.Add(new ActionItem(
-                action: delegate {
+                action: delegate
+                {
                     StopGoingRogue();
                     Log.Message("stop going rogue called");
                 },
-                rareTicksUntilAction: Rand.Range(30,40)
+                rareTicksUntilAction: Rand.Range(30, 40)
                 ));
+        }
+
+        private void CancelLinks()
+        {
+            while (controlledMechs.Count > 0)
+            {
+                CancelControlMechanoid(controlledMechs.Last());
+            }
+            while (controlledTurrets.Count > 0)
+            {
+                CancelControlTurret(controlledTurrets.Last());
+            }
+            while (hackedMechs.Count > 0)
+            {
+                CancelHacking(hackedMechs.Last());
+            }
         }
 
         private void StopGoingRogue()
         {
             goingRogue = false;
             UpdateGlower(Mood.Annoyed);
+            Traverse.Create(RefuelableComp).Field("fuel").SetValue(30f);
             this.SetFaction(Faction.OfPlayer);
             while(rogueMechs.Count > 0)
             {

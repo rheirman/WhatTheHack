@@ -406,7 +406,7 @@
     <defName>WTH_RogueAI</defName>
     <label>rogue AI</label>
 	<thingClass>WhatTheHack.Buildings.Building_RogueAI</thingClass>
-    <description>Powerful AI that after bing exposed to hiveship data, is capable of remotely controlling mechanoids and turrets, hacking enemy mechanoids remotely, and more. Without hiveship data, it is only capable of providing a boost to the hacking success chance of nearby hacking facilities.</description>
+    <description>Powerful AI that after being exposed to hiveship data, is capable of remotely controlling mechanoids and turrets, hacking enemy mechanoids remotely, and more. Without hiveship data, it is only capable of providing a boost to the hacking success chance of nearby hacking facilities.</description>
     <graphicData>
       <texPath>Things/RogueAI</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -455,6 +455,7 @@
         <compClass>WhatTheHack.Comps.CompPowerPlant_RogueAI</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
         <basePowerConsumption>300</basePowerConsumption>
+		<transmitsPower>true</transmitsPower>
       </li>
       <li Class="CompProperties_Facility">
         <statOffsets>
@@ -478,6 +479,7 @@
         <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 		<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
       </li>
+	  <li Class="WhatTheHack.Comps.CompProperties_DataLevel"></li>
     </comps>
 	<placeWorkers>
 		<li>PlaceWorker_ShowFacilitiesConnections</li>
