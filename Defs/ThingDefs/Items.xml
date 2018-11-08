@@ -261,4 +261,13 @@
     </thingCategories>
   </ThingDef>
   
+  <ThingDef ParentName="BodyPartNaturalBase">
+    <defName>WTH_Brain</defName>
+    <label>brain matter (WTH)</label>
+    <description>Brain matter from a human brain. Can be fed to a Rogue AI to provide it with the data stored in it by the ones with evil intent.</description>
+    <statBases>
+      <MarketValue>500</MarketValue>
+      <Mass>1</Mass>
+    </statBases>
+  </ThingDef>
 </Defs>

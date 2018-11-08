@@ -473,6 +473,7 @@
         <fuelFilter>
           <thingDefs>
             <li>WTH_MechanoidData</li>
+			<li>WTH_Brain</li>
           </thingDefs>
         </fuelFilter>
 		<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>

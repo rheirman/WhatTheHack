@@ -46,14 +46,14 @@ namespace WhatTheHack.Comps
 
         public override string CompInspectStringExtra()
         {
-            string text = "WTH_AccumulatedData_CurLevel".Translate(curLevel);
+            string text = "WTH_CompDataLevel_CurLevel".Translate(curLevel);
             if(curLevel != MAXLEVEL)
             {
-                text += "\n" + "WTH_AccumulatedData_DataNeededNextLevel".Translate(DataNeededNextLevel.ToStringDecimalIfSmall());
+                text += "\n" + "WTH_CompDataLevel_DataNeededNextLevel".Translate(DataNeededNextLevel.ToStringDecimalIfSmall());
             }
             else
             {
-                text += "\n" + "WTH_AccumulatedData_MaxLevel".Translate();
+                text += "\n" + "WTH_CompDataLevel_MaxLevel".Translate();
             }
             return text;
 
