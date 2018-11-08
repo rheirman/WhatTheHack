@@ -27,5 +27,14 @@
   <WTH_PortableChargingPlatform_Frame.label>便携机械平台(建造中)</WTH_PortableChargingPlatform_Frame.label>
   <WTH_PortableChargingPlatform_Frame.description>一个便携式的机械用于充电和维修的平台，通常时出行时携带的。</WTH_PortableChargingPlatform_Frame.description>
 
+  <WTH_PortableDisassemblingBench.label>便携式拆解工作台</WTH_PortableDisassemblingBench.label>
+  <WTH_PortableDisassemblingBench.description>一个坚固且轻盈的工作台,装有拆解机械装置所需的所有东西,这些机械装置对于旅行中的殖民者来说并不受受到热烈欢迎,这个工作台并不依赖电力,这对旅行很方便,不过这导致了这个工作台的效率降低.</WTH_PortableDisassemblingBench.description>
+  <WTH_PortableDisassemblingBench_Blueprint.label>便携式拆解工作台(蓝图)</WTH_PortableDisassemblingBench_Blueprint.label>
+  <WTH_PortableDisassemblingBench_Blueprint_Install.label>便携式拆解工作台(蓝图)</WTH_PortableDisassemblingBench_Blueprint_Install.label>
+  <WTH_PortableDisassemblingBench_Frame.label>便携式拆解工作台(建造中)</WTH_PortableDisassemblingBench_Frame.label>
+  <WTH_PortableDisassemblingBench_Frame.description>一个坚固且轻盈的工作台,装有拆解机械装置所需的所有东西,这些机械装置对于旅行中的殖民者来说并不受受到热烈欢迎,这个工作台并不依赖电力,这对旅行很方便,不过这导致了这个工作台的效率降低.</WTH_PortableDisassemblingBench_Frame.description>
+
+  <WTH_DisassemblingBenchMinified.label>便携式拆解工作台</WTH_DisassemblingBenchMinified.label>
+
 
 </LanguageData>

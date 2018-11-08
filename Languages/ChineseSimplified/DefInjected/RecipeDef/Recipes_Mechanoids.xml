@@ -37,6 +37,10 @@
   <WTH_HackMechanoid.description>将机械的目标设置为敌人而不是你的士兵。</WTH_HackMechanoid.description>
   <WTH_HackMechanoid.jobString>骇入机械中。</WTH_HackMechanoid.jobString>
 
+  <WTH_InduceEmergencySignal.label>尝试触发引诱装置</WTH_InduceEmergencySignal.label>
+  <WTH_InduceEmergencySignal.description>故意触发机械装置中的触发机制,这可以吸引机械族巢穴的敌人前来进攻,这是一个获取机械零件的好方法.手术非常困难,而且即使手术成功,这台机械也会彻底损坏</WTH_InduceEmergencySignal.description>
+  <WTH_InduceEmergencySignal.jobString>Hacking mechanoid</WTH_InduceEmergencySignal.jobString>
+
   <WTH_ImplantAI.label>植入AI</WTH_ImplantAI.label>
   <WTH_ImplantAI.description>在机械中植入AI，使得在战斗中可以完全控制机械。</WTH_ImplantAI.description>
   <WTH_ImplantAI.jobString>骇入机械中。</WTH_ImplantAI.jobString>
