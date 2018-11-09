@@ -61,6 +61,7 @@ namespace WhatTheHack
         public static ThingDef WTH_Mote_HealingCrossGreen;
         public static ThingDef WTH_Apparel_MechControllerBelt;
         public static ThingDef WTH_MechanoidData;
+        public static ThingDef WTH_RogueAI;
         
         public static StatDef WTH_HackingSuccessChance;
         public static StatDef WTH_HackingMaintenanceSpeed;

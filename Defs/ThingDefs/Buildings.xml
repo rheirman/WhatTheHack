@@ -198,6 +198,11 @@
         <initialConfigurableTargetFuelLevel>10.0</initialConfigurableTargetFuelLevel>
       </li>
 	  <li Class="CompProperties_Forbiddable" />
+	  <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>WTH_RogueAI</li>
+        </linkableFacilities>
+      </li>
     </comps>
 	<building>
 		<bed_humanlike>false</bed_humanlike>
@@ -351,7 +356,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>WTH_MechanoidBeacon</defName>
-    <label>Mechanoid beacon</label>
+    <label>Hiveship hacking facility</label>
 	<thingClass>WhatTheHack.Buildings.Building_MechanoidBeacon</thingClass>
     <description>TODO</description>
     <graphicData>
@@ -400,6 +405,7 @@
 	<designationCategory>Misc</designationCategory>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+	<researchPrerequisites><li>WTH_HiveshipHackingFacility</li></researchPrerequisites>
   </ThingDef>
   
 <ThingDef ParentName="BuildingBase">
@@ -447,41 +453,76 @@
     </costList>
 	<tickerType>Normal</tickerType>
     <comps>
-	  <li Class="CompProperties_Glower">
-        <glowRadius>10</glowRadius>
-        <glowColor>(0,0,0,255)</glowColor>
-      </li>
-      <li Class="CompProperties_Power">
-        <compClass>WhatTheHack.Comps.CompPowerPlant_RogueAI</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>300</basePowerConsumption>
-		<transmitsPower>true</transmitsPower>
-      </li>
-      <li Class="CompProperties_Facility">
-        <statOffsets>
-			<WTH_HackingSuccessFactor>0.1</WTH_HackingSuccessFactor>
-        </statOffsets>
-        <maxSimultaneous>4</maxSimultaneous>
-      </li>
-	  <li Class="CompProperties_Refuelable">
-		<fuelLabel>Mood</fuelLabel>
-		<fuelGizmoLabel>Mood</fuelGizmoLabel>
-        <fuelConsumptionRate>40.0</fuelConsumptionRate>
-        <fuelCapacity>100.0</fuelCapacity>
-		<initialConfigurableTargetFuelLevel>100.0</initialConfigurableTargetFuelLevel>
-		<initialFuelPercent>1.0</initialFuelPercent>
-        <fuelFilter>
-          <thingDefs>
-            <li>WTH_MechanoidData</li>
-			<li>WTH_Brain</li>
-          </thingDefs>
-        </fuelFilter>
-		<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
-        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-		<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
-      </li>
-	  <li Class="WhatTheHack.Comps.CompProperties_DataLevel"></li>
-    </comps>
+		<li Class="CompProperties_Glower">
+			<glowRadius>10</glowRadius>
+			<glowColor>(0,0,0,255)</glowColor>
+		</li>
+		<li Class="CompProperties_Power">
+			<compClass>WhatTheHack.Comps.CompPowerPlant_RogueAI</compClass>
+			<shortCircuitInRain>false</shortCircuitInRain>
+			<basePowerConsumption>300</basePowerConsumption>
+			<transmitsPower>true</transmitsPower>
+		</li>
+		<li Class="CompProperties_Facility">
+			<statOffsets>
+				<WTH_HackingSuccessFactor>0.1</WTH_HackingSuccessFactor>
+			</statOffsets>
+			<maxSimultaneous>9</maxSimultaneous>
+		</li>
+		<li Class="CompProperties_Refuelable">
+			<fuelLabel>Mood</fuelLabel>
+			<fuelGizmoLabel>Mood</fuelGizmoLabel>
+			<fuelConsumptionRate>40.0</fuelConsumptionRate>
+			<fuelCapacity>100.0</fuelCapacity>
+			<initialConfigurableTargetFuelLevel>100.0</initialConfigurableTargetFuelLevel>
+			<initialFuelPercent>1.0</initialFuelPercent>
+			<fuelFilter>
+			  <thingDefs>
+				<li>WTH_MechanoidData</li>
+				<li>WTH_Brain</li>
+			  </thingDefs>
+			</fuelFilter>
+			<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+			<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+		</li>
+		<li Class="WhatTheHack.Comps.CompProperties_DataLevel"></li>
+		<li Class="WhatTheHack.Comps.CompProperties_Overlays">
+			<overlayFront> <!--Different overlays can be provided for different viewpoints, possibilities are: overlayFront, overlaySide, and overlayBack -->
+				<li>
+					<graphicDataDefault><!-- Different graphics data can be provided for different genders, possibilities are: graphicDataDefault(for all genders), graphicsDataMale and graphicsDataFemale -->
+					  <texPath>Things/RogueAINoScreen</texPath>
+					  <graphicClass>Graphic_Single</graphicClass>
+					  <drawSize>3.1</drawSize>
+					  <drawRotated>false</drawRotated>
+					  <shaderType>MetaOverlay</shaderType>
+					</graphicDataDefault>					
+					<offsetDefault>(0,0,0,0)</offsetDefault> <!--  Different offsets can be provided for different genders. Possibilities are: offsetDefault(for all genders), offsetFemale and offsetMale --> 
+				</li>
+				<li>
+					<graphicDataDefault><!-- Different graphics data can be provided for different genders, possibilities are: graphicDataDefault(for all genders), graphicsDataMale and graphicsDataFemale -->
+					  <texPath>Things/RogueAIEye</texPath>
+					  <graphicClass>Graphic_Single</graphicClass>
+					  <drawSize>0.5</drawSize>
+					  <drawRotated>false</drawRotated>
+					  <shaderType>MetaOverlay</shaderType>
+					</graphicDataDefault>					
+					<offsetDefault>(0,0,0.11,0)</offsetDefault> <!--  Different offsets can be provided for different genders. Possibilities are: offsetDefault(for all genders), offsetFemale and offsetMale --> 
+				</li>
+				<li>
+					<graphicDataDefault><!-- Different graphics data can be provided for different genders, possibilities are: graphicDataDefault(for all genders), graphicsDataMale and graphicsDataFemale -->
+					  <texPath>Things/BlackSquare</texPath>
+					  <graphicClass>Graphic_Single</graphicClass>
+					  <drawSize>2.0</drawSize>
+					  <drawRotated>false</drawRotated>
+					  <shaderType>MetaOverlay</shaderType>
+					</graphicDataDefault>					
+					<offsetDefault>(0,0,0,0)</offsetDefault> <!--  Different offsets can be provided for different genders. Possibilities are: offsetDefault(for all genders), offsetFemale and offsetMale --> 
+				</li>
+
+			</overlayFront>
+		</li>
+	</comps>
 	<placeWorkers>
 		<li>PlaceWorker_ShowFacilitiesConnections</li>
 	</placeWorkers>

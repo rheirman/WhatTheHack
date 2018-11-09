@@ -79,6 +79,12 @@
 	<WTH_Gizmo_TalkGibberish_Label>Output wise words</WTH_Gizmo_TalkGibberish_Label>
 	<WTH_Gizmo_TalkGibberish_Description>Let the Rogue AI crunch data to output messages that display its remarkable wisdom. Because most humans fail to comprehend the brilliance of these messages, it is mostly a waste of data, useful only when there is a desire to feed the AI with more data when its mood levels are already at maximum. Consumes {0} mood as the AI doesn't like to be asked to share data.</WTH_Gizmo_TalkGibberish_Description>
 	<WTH_Reason_TalkedTooRecently>Rogue AI talked too recently</WTH_Reason_TalkedTooRecently>
+	<WTH_Reason_ReactorWarmingUp>Cannot activate while a ship reactor is warming up.</WTH_Reason_ReactorWarmingUp>
+	<WTH_Reason_BeaconActive>Cannot activate while a hacking signal is already being transmitted.</WTH_Reason_BeaconActive>
+	<WTH_Reason_NoRogueAI>No Rogue AI on the same map that can control the facility. Build one in the same power net.</WTH_Reason_NoRogueAI>
+	<WTH_BeaconWarmupWarning>When activating this, the Rogue AI present in you base will start hacking an hiveship that is in orbit. While the Rogue AI will take precautions to perform this operation as invisible as possible, this will undoubtedly draw attention of mechanoids. Expect your base to be heavily attacked during the hacking process. The procudure requires roughly {0} days to complete, and the only way to cancel it is to destroy the beacon. If you manage to survive, the rogue AI will become an powerful but potentially dangerous ally.</WTH_BeaconWarmupWarning>
+	<WTH_MechanoidBeaconStartup_Label>Start hacking</WTH_MechanoidBeaconStartup_Label>
+	<WTH_MechanoidBeaconStartup_Description>The rogue AI will start hacking a hiveship in order to get to the data stored in it. Mechanoids won't respond kindly during the procedure.</WTH_MechanoidBeaconStartup_Description>
 	
 	<WTH_Reason_AtMaximum>Cannot perform this on more than {0} targets simultaneously.</WTH_Reason_AtMaximum>
 	<WTH_Reason_LevelInsufficient>The rogue AI needs to be at level {0} to use this ability. Feed it more data.</WTH_Reason_LevelInsufficient>

@@ -26,32 +26,41 @@ namespace WhatTheHack.Buildings
         {
             bool isDisabled = false;
             string disabledReason = "";
-            foreach (ThingWithComps current in this.Map.listerThings.AllThings.OfType<ThingWithComps>())
+            bool rogueAIAvailable = false;
+            foreach (ThingWithComps thing in this.Map.listerThings.AllThings.OfType<ThingWithComps>())
             {
-                if(current.TryGetComp<CompHibernatable>() is CompHibernatable comp && comp.State == HibernatableStateDefOf.Starting)
+                if (thing.def == WTH_DefOf.WTH_RogueAI)
                 {
-                    if(current.def == ThingDefOf.Ship_Reactor)
+                    rogueAIAvailable = true;
+                }
+                if(thing.TryGetComp<CompHibernatable>() is CompHibernatable comp && comp.State == HibernatableStateDefOf.Starting)
+                {
+                    if(thing.def == ThingDefOf.Ship_Reactor)
                     {
                         isDisabled = true;
-                        disabledReason = "WTH_Reason_ReactorWarmingUp";
+                        disabledReason = "WTH_Reason_ReactorWarmingUp".Translate();
                     }
                     
-                    if(current.def == WTH_DefOf.WTH_MechanoidBeacon)
+                    if(thing.def == WTH_DefOf.WTH_MechanoidBeacon)
                     {
                         isDisabled = true;
-                        disabledReason = "WTH_Reason_BeaconActive";
+                        disabledReason = "WTH_Reason_BeaconActive".Translate();
                     }
                    
                 }
             }
+            if (!rogueAIAvailable)
+            {
+                isDisabled = true;
+                disabledReason = "WTH_Reason_NoRogueAI".Translate();
+            }
 
             yield return new Command_Action
             {
-
-
                 action = delegate
                 {
-                    string text = "WTH_BeaconWarmupWarning";
+                    float numDays = GetComp<CompHibernatable>().Props.startupDays;
+                    string text = "WTH_BeaconWarmupWarning".Translate(numDays.ToStringDecimalIfSmall());
                     /*
                     if (!Find.Storyteller.difficulty.allowBigThreats)
                     {
@@ -73,8 +82,8 @@ namespace WhatTheHack.Buildings
                 },
                 disabled = isDisabled,
                 disabledReason = disabledReason,
-                defaultLabel = "CommandShipStartup".Translate(),
-                defaultDesc = "CommandShipStartupDesc".Translate(),
+                defaultLabel = "WTH_MechanoidBeaconStartup_Label".Translate(),
+                defaultDesc = "WTH_MechanoidBeaconStartup_Description".Translate(),
                 hotKey = KeyBindingDefOf.Misc1,
                 icon = ContentFinder<Texture2D>.Get("UI/Commands/DesirePower", true)
             };

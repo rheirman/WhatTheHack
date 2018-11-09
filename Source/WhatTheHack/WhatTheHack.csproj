@@ -66,10 +66,12 @@
     <Compile Include="Buildings\Building_RogueAI.cs" />
     <Compile Include="Buildings\MinifiedThing_Custom.cs" />
     <Compile Include="Comps\CompMountable.cs" />
+    <Compile Include="Comps\CompOverlay.cs" />
     <Compile Include="Comps\CompPowerPlant_RogueAI.cs" />
     <Compile Include="Comps\CompProperties_Mountable.cs" />
     <Compile Include="Comps\CompProperties_DataLevel.cs" />
     <Compile Include="Comps\CompDataLevel.cs" />
+    <Compile Include="Comps\CompProperties_Overlays.cs" />
     <Compile Include="Harmony\ApparelUtility.cs" />
     <Compile Include="Harmony\Bill.cs" />
     <Compile Include="Harmony\Building_TurretGun.cs" />

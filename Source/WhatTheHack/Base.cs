@@ -50,7 +50,10 @@ namespace WhatTheHack
         internal static SettingHandle<float> chipDropRateModifier;
         internal static SettingHandle<float> powerFallModifier;
         internal static SettingHandle<float> powerChargeModifier;
-        
+
+        internal static SettingHandle<float> tempOffsetX;
+        internal static SettingHandle<float> tempOffsetY;
+
         internal static List<ThingDef> allMechs;
         internal static List<String> allFactionNames;
 
@@ -78,6 +81,10 @@ namespace WhatTheHack
             allFactionNames = (from td  in DefDatabase<FactionDef>.AllDefs
                                             where isHackingFaction(td)
                                             select td.defName).ToList();
+
+            tempOffsetX = Settings.GetHandle<float>("tempOffsetX", "temp x", "temp x", 0.0f);
+            tempOffsetY = Settings.GetHandle<float>("tempOffsetY", "temp y", "temp y", 0.0f);
+
 
             //Factions
             tabsHandler = Settings.GetHandle<String>("tabs", "WTH_FactionRestrictions_Label".Translate(), "WTH_FactionRestrictions_Description".Translate(), allFactionNames.First());
