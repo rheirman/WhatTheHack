@@ -16,7 +16,7 @@
   <WTH_MountedTurret.label>タレット搭載済</WTH_MountedTurret.label>
 
   <WTH_RepairArm.label>修理アーム</WTH_RepairArm.label>
-  <WTH_RepairArm.comps.0.tools.0.label>こぶし(修理アーム)</WTH_RepairArm.comps.0.tools.0.label>
+  <WTH_RepairArm.comps.HediffComp_VerbGiver.tools.fist.label>こぶし(修理アーム)</WTH_RepairArm.comps.HediffComp_VerbGiver.tools.fist.label>
   <WTH_RepairArm.labelNoun>修理アーム</WTH_RepairArm.labelNoun>
 
   <WTH_Repairing.label>重要部に電力を供給</WTH_Repairing.label>
