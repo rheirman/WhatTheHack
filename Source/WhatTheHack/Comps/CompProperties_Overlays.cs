@@ -4,33 +4,37 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using Verse;
+using WhatTheHack.Buildings;
 
 namespace WhatTheHack.Comps
 {
     public class CompProperties_Overlays : CompProperties
     {
-        public List<GraphicOverlay> overlayFront;
-        public GraphicOverlay overlaySide;
-        public GraphicOverlay overlayBack;
+        public GraphicOverlay overlayFront;
+        public GraphicOverlay overlayEyeHappy;
+        public GraphicOverlay overlayEyeAnnoyed;
+        public GraphicOverlay overlayEyeMad;
 
 
         public class GraphicOverlay
         {
             public GraphicData graphicDataDefault;
-            public GraphicData graphicDataFemale;
-            public GraphicData graphicDataMale;
-
             public Vector3 offsetDefault = Vector3.zero;
-            public Vector3 offsetFemale = Vector3.zero;
-            public Vector3 offsetMale = Vector3.zero;
-
-
         }
-        public List<GraphicOverlay> GetOverlay(Rot4 dir)
+        public GraphicOverlay GetEyeOverlay(Building_RogueAI.Mood mood)
         {
-            return overlayFront;
+            if(mood == Building_RogueAI.Mood.Happy)
+            {
+                return overlayEyeHappy;
+            }
+            else if (mood == Building_RogueAI.Mood.Annoyed)
+            {
+                return overlayEyeAnnoyed;
+            }
+            else {
+                return overlayEyeMad;
+            }
         }
-
         public CompProperties_Overlays()
         {
             compClass = typeof(CompOverlay);

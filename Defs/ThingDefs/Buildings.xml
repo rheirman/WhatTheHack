@@ -488,38 +488,45 @@
 		</li>
 		<li Class="WhatTheHack.Comps.CompProperties_DataLevel"></li>
 		<li Class="WhatTheHack.Comps.CompProperties_Overlays">
-			<overlayFront> <!--Different overlays can be provided for different viewpoints, possibilities are: overlayFront, overlaySide, and overlayBack -->
-				<li>
+			<overlayEyeHappy>
 					<graphicDataDefault><!-- Different graphics data can be provided for different genders, possibilities are: graphicDataDefault(for all genders), graphicsDataMale and graphicsDataFemale -->
-					  <texPath>Things/RogueAINoScreen</texPath>
-					  <graphicClass>Graphic_Single</graphicClass>
-					  <drawSize>3.1</drawSize>
-					  <drawRotated>false</drawRotated>
-					  <shaderType>MetaOverlay</shaderType>
-					</graphicDataDefault>					
-					<offsetDefault>(0,0,0,0)</offsetDefault> <!--  Different offsets can be provided for different genders. Possibilities are: offsetDefault(for all genders), offsetFemale and offsetMale --> 
-				</li>
-				<li>
-					<graphicDataDefault><!-- Different graphics data can be provided for different genders, possibilities are: graphicDataDefault(for all genders), graphicsDataMale and graphicsDataFemale -->
-					  <texPath>Things/RogueAIEye</texPath>
+					  <texPath>Things/RogueAIEye_Happy</texPath>
 					  <graphicClass>Graphic_Single</graphicClass>
 					  <drawSize>0.5</drawSize>
 					  <drawRotated>false</drawRotated>
-					  <shaderType>MetaOverlay</shaderType>
+					  <shaderType>Transparent</shaderType>
 					</graphicDataDefault>					
-					<offsetDefault>(0,0,0.11,0)</offsetDefault> <!--  Different offsets can be provided for different genders. Possibilities are: offsetDefault(for all genders), offsetFemale and offsetMale --> 
-				</li>
-				<li>
+					<offsetDefault>(0,-1,0.11,0)</offsetDefault> <!--  Different offsets can be provided for different genders. Possibilities are: offsetDefault(for all genders), offsetFemale and offsetMale -->
+			</overlayEyeHappy>
+			<overlayEyeAnnoyed>
+					<graphicDataDefault><!-- Different graphics data can be provided for different genders, possibilities are: graphicDataDefault(for all genders), graphicsDataMale and graphicsDataFemale -->
+					  <texPath>Things/RogueAIEye_Annoyed</texPath>
+					  <graphicClass>Graphic_Single</graphicClass>
+					  <drawSize>0.5</drawSize>
+					  <drawRotated>false</drawRotated>
+					  <shaderType>Transparent</shaderType>
+					</graphicDataDefault>					
+					<offsetDefault>(0,-1,0.11,0)</offsetDefault> <!--  Different offsets can be provided for different genders. Possibilities are: offsetDefault(for all genders), offsetFemale and offsetMale -->
+			</overlayEyeAnnoyed>
+			<overlayEyeMad>
+					<graphicDataDefault><!-- Different graphics data can be provided for different genders, possibilities are: graphicDataDefault(for all genders), graphicsDataMale and graphicsDataFemale -->
+					  <texPath>Things/RogueAIEye_Mad</texPath>
+					  <graphicClass>Graphic_Single</graphicClass>
+					  <drawSize>0.5</drawSize>
+					  <drawRotated>false</drawRotated>
+					  <shaderType>Transparent</shaderType>
+					</graphicDataDefault>					
+					<offsetDefault>(0,-1,0.11,0)</offsetDefault> <!--  Different offsets can be provided for different genders. Possibilities are: offsetDefault(for all genders), offsetFemale and offsetMale -->
+			</overlayEyeMad>
+			<overlayFront> <!--Different overlays can be provided for different viewpoints, possibilities are: overlayFront, overlaySide, and overlayBack -->
 					<graphicDataDefault><!-- Different graphics data can be provided for different genders, possibilities are: graphicDataDefault(for all genders), graphicsDataMale and graphicsDataFemale -->
 					  <texPath>Things/BlackSquare</texPath>
 					  <graphicClass>Graphic_Single</graphicClass>
-					  <drawSize>2.0</drawSize>
+					  <drawSize>3.0</drawSize>
 					  <drawRotated>false</drawRotated>
-					  <shaderType>MetaOverlay</shaderType>
+					  <shaderType>Transparent</shaderType>
 					</graphicDataDefault>					
-					<offsetDefault>(0,0,0,0)</offsetDefault> <!--  Different offsets can be provided for different genders. Possibilities are: offsetDefault(for all genders), offsetFemale and offsetMale --> 
-				</li>
-
+					<offsetDefault>(0,-1,0,0)</offsetDefault> <!--  Different offsets can be provided for different genders. Possibilities are: offsetDefault(for all genders), offsetFemale and offsetMale --> 
 			</overlayFront>
 		</li>
 	</comps>

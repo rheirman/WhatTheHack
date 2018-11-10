@@ -53,6 +53,7 @@ namespace WhatTheHack
 
         internal static SettingHandle<float> tempOffsetX;
         internal static SettingHandle<float> tempOffsetY;
+        internal static SettingHandle<float> tempOffsetZ;
 
         internal static List<ThingDef> allMechs;
         internal static List<String> allFactionNames;
@@ -84,6 +85,7 @@ namespace WhatTheHack
 
             tempOffsetX = Settings.GetHandle<float>("tempOffsetX", "temp x", "temp x", 0.0f);
             tempOffsetY = Settings.GetHandle<float>("tempOffsetY", "temp y", "temp y", 0.0f);
+            tempOffsetZ = Settings.GetHandle<float>("tempOffsetZ", "temp z", "temp z", 0.0f);
 
 
             //Factions
