@@ -18,7 +18,7 @@ namespace WhatTheHack.Harmony
             Map map = (Map) parms.target;
             if (map.spawnedThings.FirstOrDefault((Thing t) => t is Building_RogueAI) is Building_RogueAI controller && controller.managingPowerNetwork)
             {
-                controller.RefuelableComp.ConsumeFuel(controller.moodDrainPreventZzztt);
+                controller.DrainMood(controller.moodDrainPreventZzztt);
                 Find.LetterStack.ReceiveLetter(label: "WTH_Letter_PreventedShortCircuit_Label".Translate(), text: "WTH_Letter_PreventedShortCircuit_Description".Translate(), textLetterDef: LetterDefOf.NeutralEvent);
                 return false;
             }

@@ -122,7 +122,7 @@ namespace WhatTheHack.Harmony
             {
                 if (pawn.IsHashIntervalTick(10) && platform.CanHealNow())
                 {
-                    TryHealRandomInjury(__instance, pawn, WTH_DefOf.WTH_MechanoidPlatform.building.bed_healPerDay * 10 / RimWorld.GenDate.TicksPerDay , platform);
+                    TryHealRandomInjury(__instance, pawn, platform.GetStatValue(WTH_DefOf.WTH_MechanitesEffictiveness) * WTH_DefOf.WTH_MechanoidPlatform.building.bed_healPerDay * 10 / RimWorld.GenDate.TicksPerDay , platform);
                 }
             }
             if (!__instance.hediffSet.HasNaturallyHealingInjury() && platform.RegenerateActive && pawn.IsHashIntervalTick(100) && platform.refuelableComp.Fuel > 4f) //TODO: no magic number

@@ -290,8 +290,14 @@ namespace WhatTheHack.Buildings
         public void DrainMood(float amount)
         {
             //Mood oldMood = CurMoodCategory;
-            if (isConscious)
+            if (isConscious && !goingRogue)
             {
+                float minFuel = 1f; 
+                if(RefuelableComp.Fuel - amount < minFuel)
+                {
+                    amount = RefuelableComp.Fuel - minFuel;
+                }
+                
                 RefuelableComp.ConsumeFuel(amount);
                 UpdateGlower(CurMoodCategory);
             }
@@ -400,7 +406,7 @@ namespace WhatTheHack.Buildings
             command.action = delegate
             {
                 DoAbility(delegate { TalkGibberish(); }, 250);
-                RefuelableComp.ConsumeFuel(moodDrainForceTalkGibberish);
+                DrainMood(moodDrainForceTalkGibberish);
             };
             return command;
         }
@@ -688,9 +694,9 @@ namespace WhatTheHack.Buildings
         private void GoRogue()
         {
             OverlayComp.UnsetLookAround();
-            UpdateGlower(Mood.Mad);
             goingRogue = true;
             this.SetFaction(Faction.OfMechanoids);
+            UpdateGlower(Mood.Mad);
             CancelLinks();
 
             List<Pawn> shouldHack = this.Map.mapPawns.SpawnedPawnsInFaction(Faction.OfPlayer).Where((Pawn p) => p.IsHacked() && !p.Downed).ToList();
@@ -762,19 +768,22 @@ namespace WhatTheHack.Buildings
             CompGlower glowerComp = GetComp<CompGlower>();
             if (mood == Mood.Happy)
             {
+                glowerComp.Props.glowRadius = 4f;
                 glowerComp.Props.glowColor = new ColorInt(35, 152, 255, 0);
             }
-            if (mood == Mood.Annoyed)
+            else if (mood == Mood.Annoyed)
             {
+                glowerComp.Props.glowRadius = 4f;
                 glowerComp.Props.glowColor = new ColorInt(255, 119, 35, 0);
             }
-            if (mood == Mood.Mad)
+            else
             {
+                glowerComp.Props.glowRadius = 4f;
                 glowerComp.Props.glowColor = new ColorInt(255, 0, 0, 0);
             }
             if (goingRogue)
             {
-                glowerComp.Props.glowRadius = 8f;
+                glowerComp.Props.glowRadius = 12f;
             }
             else
             {

@@ -1,8 +1,8 @@
 <Defs> 
 	<StatDef>
-		<defName>WTH_HackingSuccessFactor</defName>
-		<label>Hacking success chance factor</label>
-		<description>The chance of successful hacking attempts is multiplied by this value</description>
+		<defName>WTH_MechanitesEffictiveness</defName>
+		<label>Mechanites effectiveness factor</label>
+		<description>The repair speed, as well as the resource efficiency of mechanites activated by mechanoid platforms is affected by this factor.</description>
 		<category>Building</category>
 		<defaultBaseValue>1</defaultBaseValue>
 		<minValue>0.25</minValue>
