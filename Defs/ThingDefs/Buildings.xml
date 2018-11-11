@@ -390,7 +390,7 @@
       <ComponentIndustrial>10</ComponentIndustrial>
     </costList>
     <comps>
-      <li Class="CompProperties_Hibernatable">
+      <li Class="WhatTheHack.Comps.CompProperties_Hibernatable_MechanoidBeacon">
         <incidentTargetWhileStarting>Map_RaidBeacon</incidentTargetWhileStarting>
 		<startupDays>8</startupDays>
       </li>

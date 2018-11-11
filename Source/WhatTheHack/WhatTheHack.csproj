@@ -65,9 +65,11 @@
     <Compile Include="Buildings\Building_PortableChargingPlatform.cs" />
     <Compile Include="Buildings\Building_RogueAI.cs" />
     <Compile Include="Buildings\MinifiedThing_Custom.cs" />
+    <Compile Include="Comps\CompHibernatable_MechanoidBeacon.cs" />
     <Compile Include="Comps\CompMountable.cs" />
     <Compile Include="Comps\CompOverlay.cs" />
     <Compile Include="Comps\CompPowerPlant_RogueAI.cs" />
+    <Compile Include="Comps\CompProperties_Hibernatable_MechanoidBeacon.cs" />
     <Compile Include="Comps\CompProperties_Mountable.cs" />
     <Compile Include="Comps\CompProperties_DataLevel.cs" />
     <Compile Include="Comps\CompDataLevel.cs" />

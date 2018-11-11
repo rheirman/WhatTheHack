@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using Verse;
+using WhatTheHack.Comps;
 
 namespace WhatTheHack.Buildings
 {
@@ -33,7 +34,7 @@ namespace WhatTheHack.Buildings
                 {
                     rogueAIAvailable = true;
                 }
-                if(thing.TryGetComp<CompHibernatable>() is CompHibernatable comp && comp.State == HibernatableStateDefOf.Starting)
+                if(thing.TryGetComp<CompHibernatable_MechanoidBeacon>() is CompHibernatable_MechanoidBeacon comp && comp.State == HibernatableStateDefOf.Starting)
                 {
                     if(thing.def == ThingDefOf.Ship_Reactor)
                     {
@@ -59,7 +60,7 @@ namespace WhatTheHack.Buildings
             {
                 action = delegate
                 {
-                    float numDays = GetComp<CompHibernatable>().Props.startupDays;
+                    float numDays = GetComp<CompHibernatable_MechanoidBeacon>().Props.startupDays;
                     string text = "WTH_BeaconWarmupWarning".Translate(numDays.ToStringDecimalIfSmall());
                     /*
                     if (!Find.Storyteller.difficulty.allowBigThreats)
@@ -90,7 +91,7 @@ namespace WhatTheHack.Buildings
         }
         public void StartupHibernatingParts()
         {
-            CompHibernatable compHibernatable = this.TryGetComp<CompHibernatable>();
+            CompHibernatable_MechanoidBeacon compHibernatable = this.TryGetComp<CompHibernatable_MechanoidBeacon>();
             if (compHibernatable != null && compHibernatable.State == HibernatableStateDefOf.Hibernating)
             {
                 compHibernatable.Startup();

@@ -112,6 +112,10 @@ namespace WhatTheHack.Comps
             {
                 parent.Position = mountedTo.Position;
             }
+            if(parent.Faction != mountedTo.Faction)
+            {
+                parent.SetFaction(mountedTo.Faction);
+            }
         }
 
         private bool OutOfBounds(Pawn mountedTo, Thing parent)

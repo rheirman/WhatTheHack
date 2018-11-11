@@ -39,7 +39,7 @@ namespace WhatTheHack.Buildings
         private const int MINLEVELCONTROLMECH = 4;
         private const int MINLEVELHACKMECH = 5;
         private const int MINTEXTTIMEOUT = 6;
-        private const float TEXTDURATION = 3f;
+        private const float TEXTDURATION = 4f;
 
 
         private float moodDrainCtrlMech = 0.1f;
@@ -149,7 +149,10 @@ namespace WhatTheHack.Buildings
                 }
             }
         }
-
+        public void SetActivated()
+        {
+            activated = true;
+        }
         public override void Tick()
         {
             base.Tick();
