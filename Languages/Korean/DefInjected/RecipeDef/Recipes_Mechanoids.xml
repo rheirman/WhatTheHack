@@ -45,59 +45,6 @@
   <WTH_ImplantAI.description> 인공자아핵을 조정한 장치를 메카노이드에 삽입합니다.\n 이로써 해당 메카노이드를 모든 전투 상황에 맞게 완벽히 제어할 수 있습니다.</WTH_ImplantAI.description>
   <WTH_ImplantAI.jobString>메카노이드 해킹</WTH_ImplantAI.jobString>
 
-
-  <!-- <RecipeDef>
-		<defName>WTH_HackLocomotion</defName>
-		<label>hack mechanoid locomotion system</label>
-		<description>Hacks the locomotion system of the mechanoid and adds a receiver to the mechanoid to allow the it to be operated by a colonist using a remote control device</description>
-		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
-		<jobString>Hacking mechanoid</jobString>
-		<workAmount>4000</workAmount>				
-		<surgerySuccessChanceFactor>1.5</surgerySuccessChanceFactor>
-		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
-		<skillRequirements>
-			<Crafting>5</Crafting>
-			<Intellectual>5</Intellectual>
-		</skillRequirements>
-		<workSkill>Intellectual</workSkill>
-		<effectWorking>Repair</effectWorking>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>WTH_MechanoidParts</li>
-					</thingDefs>
-				</filter>
-				<count>20</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>WTH_MechanoidChip</li>
-					</thingDefs>
-				</filter>
-				<count>10</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<categories>
-				<li>Medicine</li>
-			</categories>
-		</fixedIngredientFilter>
-		<appliedOnFixedBodyParts>
-			<li>ArtificialBrain</li>
-			<li>Brain</li>
-			<li>MechanicalHead</li>
-		</appliedOnFixedBodyParts>
-		<addsHediff>WTH_LocomotionHacked</addsHediff>
-		<researchPrerequisite>WTH_HackingRemoteControl</researchPrerequisite>
-		<modExtensions>
-			<li Class="WhatTheHack.DefModExtension_Recipe">
-				<requireBed>true</requireBed>
-			</li>
-		</modExtensions>
-	</RecipeDef> -->
-
   <WTH_InstallRepairArm.label>정비용 팔 설치</WTH_InstallRepairArm.label>
   <WTH_InstallRepairArm.description>정비용 팔을 설치합니다..</WTH_InstallRepairArm.description>
   <WTH_InstallRepairArm.jobString>정비용 팔 설치.</WTH_InstallRepairArm.jobString>

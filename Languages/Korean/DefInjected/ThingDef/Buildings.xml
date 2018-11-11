@@ -28,4 +28,7 @@
   <WTH_PortableChargingPlatform_Frame.description>세계를 탐험하는 동안 메카노이드에 전력을 공급할 수 있는 휴대용 화학 연료 충전소입니다.\n 또한, 메카노이드 장치를 위한 임시 전원 해결책을 설치/제거할 수도 있습니다.</WTH_PortableChargingPlatform_Frame.description>
 
 
+  <WTH_PortableDisassemblingBench.label>메카노이드 휴대용 분해 작업대</WTH_PortableDisassemblingBench.label>
+  <WTH_PortableDisassemblingBench.description>세계를 탐험하는 동안 정착민으로부터 환영받지 못한 메카노이드를 분해할 수 있도록 모든 도구를 담은 휴대용 작업대입니다. 이 도구는 약간 낮은 효율을 보이지만 전력을 필요로 하지 않아 여행시 유용합니다.</WTH_PortableDisassemblingBench.description>
+
 </LanguageData>
