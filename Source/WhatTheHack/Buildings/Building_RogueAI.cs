@@ -16,7 +16,7 @@ namespace WhatTheHack.Buildings
 {
     public class Building_RogueAI : Building
     {
-        private bool activated = false;
+        private bool isConscious = false;
         public bool managingPowerNetwork = false;
         public bool goingRogue = false;
 
@@ -65,6 +65,18 @@ namespace WhatTheHack.Buildings
             Annoyed = 1,
             Mad = 2
         }
+        public bool IsConscious
+        {
+            get {
+                return isConscious;
+            }
+            set
+            {
+                isConscious = value;
+                OverlayComp.StartEye();
+            }
+        }
+
         public CompRefuelable RefuelableComp
         {
             get
@@ -72,18 +84,25 @@ namespace WhatTheHack.Buildings
                 return GetComp<CompRefuelable>();
             }
         }
-        public CompPowerPlant_RogueAI PowerPlantComp
+        private CompDataLevel DataLevelComp
+        {
+            get
+            {
+                return GetComp<CompDataLevel>();
+            }
+        }
+        private CompPowerPlant_RogueAI PowerPlantComp
         {
             get
             {
                 return PowerComp as CompPowerPlant_RogueAI;
             }
         }
-        public CompDataLevel DataLevelComp
+        private CompOverlay OverlayComp
         {
             get
             {
-                return GetComp<CompDataLevel>();
+                return GetComp<CompOverlay>();
             }
         }
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
@@ -149,10 +168,7 @@ namespace WhatTheHack.Buildings
                 }
             }
         }
-        public void SetActivated()
-        {
-            activated = true;
-        }
+
         public override void Tick()
         {
             base.Tick();
@@ -187,24 +203,27 @@ namespace WhatTheHack.Buildings
 
         private void TalkGibberish()
         {
-            string randomColonistName = this.Map.mapPawns.FreeColonists.RandomElement().Name.ToString();
-            string text = "";
-            Color color = Color.white;
-            if (CurMoodCategory == Mood.Happy)
+            if (IsConscious)
             {
-                text = "WTH_RogueAI_Happy_Remark_" + Rand.RangeInclusive(0, NUMTEXTSHAPPY - 1);
+                string randomColonistName = this.Map.mapPawns.FreeColonists.RandomElement().Name.ToStringShort;
+                string text = "";
+                Color color = Color.white;
+                if (CurMoodCategory == Mood.Happy)
+                {
+                    text = "WTH_RogueAI_Happy_Remark_" + Rand.RangeInclusive(0, NUMTEXTSHAPPY - 1);
+                }
+                else if (CurMoodCategory == Mood.Annoyed)
+                {
+                    text = "WTH_RogueAI_Annoyed_Remark_" + Rand.RangeInclusive(0, NUMTEXTSANNOYED - 1);
+                }
+                else
+                {
+                    color = Color.red;
+                    text = "WTH_RogueAI_Mad_Remark_" + +Rand.RangeInclusive(0, NUMTEXTSMAD - 1);
+                }
+                Utilities.ThrowStaticText(this.DrawPos + new Vector3(0, 0, 1.75f), this.Map, text.Translate(new object[] { randomColonistName }), color, TEXTDURATION);
+                textTimeout += MINTEXTTIMEOUT;
             }
-            else if (CurMoodCategory == Mood.Annoyed)
-            {
-                text = "WTH_RogueAI_Annoyed_Remark_" + Rand.RangeInclusive(0, NUMTEXTSANNOYED - 1);
-            }
-            else
-            {
-                color = Color.red;
-                text = "WTH_RogueAI_Mad_Remark_" + +Rand.RangeInclusive(0, NUMTEXTSMAD - 1);
-            }
-            Utilities.ThrowStaticText(this.DrawPos + new Vector3(0, 0, 1.75f), this.Map, text.Translate(new object[] { randomColonistName }), color, TEXTDURATION);
-            textTimeout += MINTEXTTIMEOUT;
         }
 
         private void MaybeGoRogue()
@@ -254,9 +273,11 @@ namespace WhatTheHack.Buildings
         public void DrainMood(float amount)
         {
             //Mood oldMood = CurMoodCategory;
-            RefuelableComp.ConsumeFuel(amount);
-            UpdateGlower(CurMoodCategory);
-
+            if (isConscious)
+            {
+                RefuelableComp.ConsumeFuel(amount);
+                UpdateGlower(CurMoodCategory);
+            }
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
@@ -295,17 +316,23 @@ namespace WhatTheHack.Buildings
         public bool GlobalShouldDisable(out string reason)
         {
             reason = "";
+            bool result = false;
+            if (!isConscious)
+            {
+                reason += "\n- " + "WTH_Reason_NotConscious".Translate();
+                result = true;
+            }
             if (!PowerPlantComp.PowerOn)
             {
                 reason += "\n- " + "WTH_Reason_NoPower".Translate();
-                return true;
+                result = true;
             }
             if (goingRogue)
             {
                 reason = "\n- " + "WTH_Reason_GoingRogue".Translate();
-                return true;
+                result = true;
             }
-            return false;
+            return result;
         }
 
         private void TickActionQueue()
@@ -608,7 +635,7 @@ namespace WhatTheHack.Buildings
 
         private void GoRogue()
         {
-            Log.Message("GoRogue called");
+            OverlayComp.UnsetLookAround();
             UpdateGlower(Mood.Mad);
             goingRogue = true;
             this.SetFaction(Faction.OfMechanoids);
@@ -649,6 +676,7 @@ namespace WhatTheHack.Buildings
         {
             goingRogue = false;
             UpdateGlower(Mood.Annoyed);
+            OverlayComp.SetLookAround();
             Traverse.Create(RefuelableComp).Field("fuel").SetValue(30f);
             this.SetFaction(Faction.OfPlayer);
             while(rogueMechs.Count > 0)
@@ -656,6 +684,14 @@ namespace WhatTheHack.Buildings
                 Pawn rogueMech = rogueMechs.Last();
                 rogueMech.SetFaction(Faction.OfPlayer);
                 rogueMechs.Remove(rogueMech);
+                if (rogueMech.relations == null)
+                {
+                    rogueMech.relations = new Pawn_RelationsTracker(rogueMech);
+                }
+                if (rogueMech.story == null)
+                {
+                    rogueMech.story = new Pawn_StoryTracker(rogueMech);
+                }
             }
             while(rogueTurrets.Count > 0)
             {
@@ -682,7 +718,6 @@ namespace WhatTheHack.Buildings
             }
             glowerComp.UpdateLit(this.Map);
             Map.glowGrid.MarkGlowGridDirty(this.Position);
-
         }
         private void GoRogue_HackMechs(List<Pawn> shouldHack)
         {
@@ -746,7 +781,7 @@ namespace WhatTheHack.Buildings
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref activated, "activated");
+            Scribe_Values.Look(ref isConscious, "isConscious");
             Scribe_Values.Look(ref goingRogue, "goingRogue");
             Scribe_Values.Look(ref managingPowerNetwork, "managingPowerNetwork");
             Scribe_Collections.Look(ref controlledMechs, "controlledMechs", LookMode.Reference);

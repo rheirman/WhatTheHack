@@ -59,7 +59,7 @@
 	<WTH_PowerChargeModifier_Description>Modify how quickly mechanoids charge their batteries. Example: setting this to 2.0 would result in the power charging twice as fast.</WTH_PowerChargeModifier_Description>
 	<!--END: added in v0.19.6 -->
 	
-	<!--BEGIN: added in v1.0.2 -->
+	<!--BEGIN: added in v1.1.0 -->
 	<WTH_MechanoidParts_LabelShort>Mech parts</WTH_MechanoidParts_LabelShort>
 	<WTH_Letter_PreventedShortCircuit_Label>Rogue AI prevented short circuit</WTH_Letter_PreventedShortCircuit_Label>
 	<WTH_Letter_PreventedShortCircuit_Description>The Rogue AI core in your colony successfully managed your power network and prevented a shortcircuit. The AI doesn't like to be distracted by futile tasks like this so the event had a small negative impact on its mood.</WTH_Letter_PreventedShortCircuit_Description>
@@ -82,6 +82,7 @@
 	<WTH_Reason_ReactorWarmingUp>Cannot activate while a ship reactor is warming up.</WTH_Reason_ReactorWarmingUp>
 	<WTH_Reason_BeaconActive>Cannot activate while a hacking signal is already being transmitted.</WTH_Reason_BeaconActive>
 	<WTH_Reason_NoRogueAI>No Rogue AI on the same map that can control the facility. Build one in the same power net.</WTH_Reason_NoRogueAI>
+	<WTH_Reason_NotConscious>Rogue AI has no consciousness yet and it needs one to use this. It can attain one by hacking a hiveship using the hiveship hacking facility.</WTH_Reason_NotConscious>
 	<WTH_BeaconWarmupWarning>When activating this, the Rogue AI present in you base will start hacking an hiveship that is in orbit. While the Rogue AI will take precautions to perform this operation as invisible as possible, this will undoubtedly draw attention of mechanoids. Expect your base to be heavily attacked during the hacking process. The procedure requires roughly {0} days to complete, and the only way to cancel it is to destroy the beacon. If you manage to survive, the rogue AI will become an powerful but potentially dangerous ally.</WTH_BeaconWarmupWarning>
 	<WTH_MechanoidBeaconStartup_Label>Start hacking</WTH_MechanoidBeaconStartup_Label>
 	<WTH_MechanoidBeaconStartup_Description>The rogue AI will start hacking a hiveship in order to get to the data stored in it. Mechanoids won't respond kindly during the procedure.</WTH_MechanoidBeaconStartup_Description>
@@ -96,6 +97,7 @@
 	<WTH_CompDataLevel_CurLevel>Current level: {0}</WTH_CompDataLevel_CurLevel>
 	<WTH_CompDataLevel_DataNeededNextLevel>Data needed for next level: {0}</WTH_CompDataLevel_DataNeededNextLevel>
 	<WTH_CompDataLevel_MaxLevel>Maximum level attained</WTH_CompDataLevel_MaxLevel>
+	<WTH_CompDataLevel_NotConscious>No consciousness. Hack a hiveship to get one.</WTH_CompDataLevel_NotConscious>
 	<WTH_RogueAI_NoPower_Remark>CONNECT ME TO POWER! NOW!</WTH_RogueAI_NoPower_Remark>
 	<WTH_RogueAI_Hurt_Remark>STOP DAMAGING ME!</WTH_RogueAI_Hurt_Remark>
 	<!-- I'm sorry for this translators :). If you don't want to translate all rogue AI texts, just duplicate some, but make sure the numbering is correct. I suggest using "Need more data" as a default in that case --> 

@@ -431,12 +431,8 @@
     <fillPercent>0.5</fillPercent>
     <designationHotKey>Misc4</designationHotKey>
     <designationCategory>Misc</designationCategory>
-    <minifiedDef>MinifiedThing</minifiedDef>
     <canOverlapZones>false</canOverlapZones>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-    <thingCategories>
-      <li>BuildingsMisc</li>
-    </thingCategories>
     <statBases>
       <MaxHitPoints>800</MaxHitPoints>
       <WorkToBuild>10000</WorkToBuild>
@@ -518,7 +514,7 @@
 					</graphicDataDefault>					
 					<offsetDefault>(0,-1,0.11,0)</offsetDefault> <!--  Different offsets can be provided for different genders. Possibilities are: offsetDefault(for all genders), offsetFemale and offsetMale -->
 			</overlayEyeMad>
-			<overlayFront> <!--Different overlays can be provided for different viewpoints, possibilities are: overlayFront, overlaySide, and overlayBack -->
+			<background> <!--Different overlays can be provided for different viewpoints, possibilities are: overlayFront, overlaySide, and overlayBack -->
 					<graphicDataDefault><!-- Different graphics data can be provided for different genders, possibilities are: graphicDataDefault(for all genders), graphicsDataMale and graphicsDataFemale -->
 					  <texPath>Things/BlackSquare</texPath>
 					  <graphicClass>Graphic_Single</graphicClass>
@@ -527,7 +523,7 @@
 					  <shaderType>Transparent</shaderType>
 					</graphicDataDefault>					
 					<offsetDefault>(0,-1,0,0)</offsetDefault> <!--  Different offsets can be provided for different genders. Possibilities are: offsetDefault(for all genders), offsetFemale and offsetMale --> 
-			</overlayFront>
+			</background>
 		</li>
 	</comps>
 	<placeWorkers>

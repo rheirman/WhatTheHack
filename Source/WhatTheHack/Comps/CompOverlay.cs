@@ -11,31 +11,56 @@ namespace WhatTheHack.Comps
     class CompOverlay : ThingComp
     {
         public CompProperties_Overlays Props => props as CompProperties_Overlays;
-        private float maxX = 0.5f;
-        private float minX = -0.5f;
+        private float maxX = 0.25f;
+        private float minX = -0.25f;
         private float xOffset = 0.0f;
-        private bool xUp = true;
-        private bool eyeMoving = true;
-        private bool lookAround = true;
+        private bool xUp = false;
+        private bool eyeMoving = false;
+        private bool lookAround = false;
+        private bool showEye = false;
         private int timer = 0;
 
         public override void Initialize(CompProperties props)
         {
             base.Initialize(props);
-            SetLookAround();
+            //SetLookAround();
+        }
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Values.Look(ref maxX, "maxX");
+            Scribe_Values.Look(ref minX, "minX");
+            Scribe_Values.Look(ref xOffset, "xOffset");
+            Scribe_Values.Look(ref xUp, "xUp");
+            Scribe_Values.Look(ref eyeMoving, "eyeMoving");
+            Scribe_Values.Look(ref lookAround, "lookAround");
+            Scribe_Values.Look(ref showEye, "showEye");
+            Scribe_Values.Look(ref timer, "timer");
         }
 
         public override void PostDraw()
         {
             base.PostDraw();
             Building_RogueAI parent = this.parent as Building_RogueAI;
-            CompProperties_Overlays.GraphicOverlay overlayRogueAI = Props.overlayFront;
+            DrawBackground(parent);
+            if (showEye)
+            {
+                DrawEye(parent);
+            }
+            
+        }
+
+        private void DrawBackground(Building_RogueAI parent)
+        {
+            CompProperties_Overlays.GraphicOverlay background = Props.background;
+            GraphicData gdRogueAI = background.graphicDataDefault;
+            gdRogueAI.Graphic.Draw(parent.DrawPos + new Vector3(0, -1, 0), parent.Rotation, parent, 0f);
+        }
+
+        private void DrawEye(Building_RogueAI parent)
+        {
             CompProperties_Overlays.GraphicOverlay overlay = Props.GetEyeOverlay(parent.CurMoodCategory);
-
-            GraphicData gdRogueAI = overlayRogueAI.graphicDataDefault;
             GraphicData gdEye = overlay.graphicDataDefault;
-            //g.data.
-
             Vector3 drawPosEye = parent.DrawPos;
             drawPosEye.y += 0.046875f;
             drawPosEye += overlay.offsetDefault;
@@ -43,11 +68,9 @@ namespace WhatTheHack.Comps
             drawPosEye.y += Base.tempOffsetY;
             drawPosEye.z += Base.tempOffsetZ;
             SetAnimationOffset(ref drawPosEye);
-
-            gdRogueAI.Graphic.Draw(parent.DrawPos + new Vector3(0, -1, 0), parent.Rotation, parent, 0f);
             gdEye.Graphic.Draw(drawPosEye, parent.Rotation, parent, 0f);
-
         }
+
         public override void CompTick()
         {
             base.CompTick();
@@ -67,17 +90,22 @@ namespace WhatTheHack.Comps
             drawPos.z += 0.5f * xOffset * xOffset;
 
         }
+        public void StartEye()
+        {
+            showEye = true;
+            lookAround = true;
+        }
         
-        private void SetLookAround()
+        public void SetLookAround()
         {
             lookAround = true;
             maxX = 0.25f;
             minX = -0.25f;
         }
-        private void UnsetLookAround()
+        public void UnsetLookAround()
         {
             eyeMoving = true;
-            lookAround = true;
+            lookAround = false;
             maxX = 0.5f;
             minX = -0.5f;
         }

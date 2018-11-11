@@ -15,9 +15,9 @@ namespace WhatTheHack.Comps
         {
             get
             {
-                if (!overcharging)
+                if (overcharging)
                 {
-                    return -base.Props.basePowerConsumption;
+                    return 100000;
                 }
                 else if (parent is Building_RogueAI rogueAI && rogueAI.goingRogue)
                 {
@@ -25,7 +25,7 @@ namespace WhatTheHack.Comps
                 }
                 else
                 {
-                    return 100000;
+                    return -base.Props.basePowerConsumption;
                 }
             }
         }

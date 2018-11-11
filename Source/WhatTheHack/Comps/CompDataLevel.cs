@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
+using WhatTheHack.Buildings;
 
 namespace WhatTheHack.Comps
 {
@@ -46,7 +47,13 @@ namespace WhatTheHack.Comps
 
         public override string CompInspectStringExtra()
         {
-            string text = "WTH_CompDataLevel_CurLevel".Translate(curLevel);
+            string text = "";
+            if(parent is Building_RogueAI rogueAI && !rogueAI.IsConscious)
+            {
+                text += "WTH_CompDataLevel_NotConscious".Translate();
+                return text;
+            }
+            text += "WTH_CompDataLevel_CurLevel".Translate(curLevel);
             if(curLevel != MAXLEVEL)
             {
                 text += "\n" + "WTH_CompDataLevel_DataNeededNextLevel".Translate(DataNeededNextLevel.ToStringDecimalIfSmall());

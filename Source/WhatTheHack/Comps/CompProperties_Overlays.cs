@@ -10,7 +10,7 @@ namespace WhatTheHack.Comps
 {
     public class CompProperties_Overlays : CompProperties
     {
-        public GraphicOverlay overlayFront;
+        public GraphicOverlay background;
         public GraphicOverlay overlayEyeHappy;
         public GraphicOverlay overlayEyeAnnoyed;
         public GraphicOverlay overlayEyeMad;
