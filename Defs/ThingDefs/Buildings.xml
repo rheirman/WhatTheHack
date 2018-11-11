@@ -393,6 +393,7 @@
       <li Class="WhatTheHack.Comps.CompProperties_Hibernatable_MechanoidBeacon">
         <incidentTargetWhileStarting>Map_RaidBeacon</incidentTargetWhileStarting>
 		<startupDays>8</startupDays>
+		<coolDownDaysAfterSuccess>15</coolDownDaysAfterSuccess>
       </li>
 	  <li Class="CompProperties_Glower">
 		<glowRadius>5</glowRadius>

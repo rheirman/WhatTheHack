@@ -12,6 +12,7 @@ namespace WhatTheHack.Buildings
     
     class Building_MechanoidBeacon : Building
     {
+
         public override IEnumerable<Gizmo> GetGizmos()
         {
             foreach (Gizmo c in base.GetGizmos())
@@ -50,17 +51,25 @@ namespace WhatTheHack.Buildings
                    
                 }
             }
+            if (GetComp<CompHibernatable_MechanoidBeacon>().coolDownTicks > 0)
+            {
+                isDisabled = true;
+                disabledReason = "WTH_CompHibernatable_MechanoidBeacon_Cooldown".Translate(((GetComp<CompHibernatable_MechanoidBeacon>().coolDownTicks / (float)GenDate.TicksPerDay)).ToStringDecimalIfSmall());
+
+            }
             if (!rogueAIAvailable)
             {
                 isDisabled = true;
                 disabledReason = "WTH_Reason_NoRogueAI".Translate();
             }
 
+
             yield return new Command_Action
             {
                 action = delegate
                 {
-                    float numDays = GetComp<CompHibernatable_MechanoidBeacon>().Props.startupDays;
+                    CompHibernatable_MechanoidBeacon comp = GetComp<CompHibernatable_MechanoidBeacon>();
+                    float numDays = comp.Props.startupDays + comp.extraStartUpDays;
                     DiaNode diaNode = new DiaNode("WTH_BeaconWarmupWarning".Translate(numDays.ToStringDecimalIfSmall()));
                     DiaOption diaOption = new DiaOption("Confirm".Translate());
                     diaOption.action = delegate

@@ -83,7 +83,11 @@
 	<WTH_Reason_BeaconActive>Cannot activate while a hacking signal is already being transmitted.</WTH_Reason_BeaconActive>
 	<WTH_Reason_NoRogueAI>No Rogue AI on the same map that can control the facility. Build one in the same power net.</WTH_Reason_NoRogueAI>
 	<WTH_Reason_NotConscious>Rogue AI has no consciousness yet and it needs one to use this. It can attain one by hacking a hiveship using the hiveship hacking facility.</WTH_Reason_NotConscious>
-	<WTH_BeaconWarmupWarning>When activating this, the Rogue AI present in you base will start hacking an hiveship that is in orbit. While the Rogue AI will take precautions to perform this operation as invisible as possible, this will undoubtedly draw attention of mechanoids. Expect your base to be heavily attacked during the hacking process. The procedure requires roughly {0} days to complete, and the only way to cancel it is to destroy the beacon. If you manage to survive, the rogue AI will become an powerful but potentially dangerous ally.</WTH_BeaconWarmupWarning>
+	<WTH_BeaconWarmupWarning>When activating this, the Rogue AI present in you base will start hacking an hiveship that is in orbit. While the Rogue AI will take precautions to perform this operation as invisible as possible, this will undoubtedly draw attention of mechanoids. Expect your base to be heavily attacked during the hacking process. The procedure requires roughly {0} days to complete, and the only way to cancel it is to destroy the beacon. If you manage to survive, the rogue AI will become an powerful but potentially dangerous ally.
+	
+	You can repeat this operation as many times as needed as a means to get more mechanoid data. However, each time you succeed, hiveships will improve their security, and as a consequence each subsequent attempt will take more time to complete.</WTH_BeaconWarmupWarning>
+	<WTH_CompHibernatable_MechanoidBeacon_StartUpDays>Days needed to hack a ship: {0}</WTH_CompHibernatable_MechanoidBeacon_StartUpDays>
+	<WTH_CompHibernatable_MechanoidBeacon_Cooldown>Days until another ship can be hacked: {0}</WTH_CompHibernatable_MechanoidBeacon_Cooldown>
 	<WTH_MechanoidBeaconStartup_Label>Start hacking</WTH_MechanoidBeaconStartup_Label>
 	<WTH_MechanoidBeaconStartup_Description>The rogue AI will start hacking a hiveship in order to get to the data stored in it. Mechanoids will not respond kindly during the procedure.</WTH_MechanoidBeaconStartup_Description>
 	<WTH_MechanoidBeaconComplete_Label>Hive ship hacked</WTH_MechanoidBeaconComplete_Label>

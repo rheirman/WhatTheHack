@@ -81,6 +81,7 @@
     <Compile Include="Harmony\CaravanFormingUtility.cs" />
     <Compile Include="Harmony\CaravanUIUtility.cs" />
     <Compile Include="Harmony\CharacterCardUtility.cs" />
+    <Compile Include="Harmony\CompHibernatable.cs" />
     <Compile Include="Harmony\CompLongRangeMineralScanner.cs" />
     <Compile Include="Harmony\DaysWorthOfFoodCalculator.cs" />
     <Compile Include="Harmony\Dialog_FormCaravan.cs" />
