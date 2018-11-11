@@ -44,12 +44,13 @@ namespace WhatTheHack.Buildings
 
         private float moodDrainCtrlMech = 0.1f;
         private float moodDrainCtrlTur = 0.1f;
-        private float moodDrainHack = 0.5f;
+        private float moodDrainHack = 0.4f;
         private float moodDrainNoPower = 0.2f;
-        private float moodDrainDamage = 1.0f;
+        private float moodDrainDamage = 2.0f;
         private float moodDrainForceTalkGibberish = 5.0f;
         public float moodDrainPreventZzztt = 0.5f;
-        
+        private int abilityWarmUpTicks = 0;
+        private int currentAbilityTicksTotal = 0;
 
         private int textTimeout = 0;
 
@@ -73,9 +74,20 @@ namespace WhatTheHack.Buildings
             set
             {
                 isConscious = value;
-                OverlayComp.StartEye();
+                if (isConscious)
+                {
+                    OverlayComp.SetLookAround();
+                }
             }
         }
+        public bool WarmingUpAbility
+        {
+            get
+            {
+                return abilityWarmUpTicks > 0;
+            }
+        }
+
 
         public CompRefuelable RefuelableComp
         {
@@ -129,22 +141,22 @@ namespace WhatTheHack.Buildings
 
         private class ActionItem {
             public Action action;
-            public int rareTicksUntilAction = 0;
+            public int ticksUntilAction = 0;
             public bool shouldClean = false;
 
-            public ActionItem(Action action, int rareTicksUntilAction)
+            public ActionItem(Action action, int tickUntilAction)
             {
                 this.action = action;
-                this.rareTicksUntilAction = rareTicksUntilAction;
+                this.ticksUntilAction = tickUntilAction;
             }
             public void Tick()
             {
-                if(rareTicksUntilAction == 0)
+                ticksUntilAction--;
+                if (ticksUntilAction == 0)
                 {
                     action.Invoke();
                     shouldClean = true;
                 }
-                rareTicksUntilAction--;
             }
 
         }
@@ -172,15 +184,20 @@ namespace WhatTheHack.Buildings
         public override void Tick()
         {
             base.Tick();
+            TickActionQueue();
             if (this.IsHashIntervalTick(250))
             {
                 TickRare();
+            }
+            if (abilityWarmUpTicks > 0)
+            {
+                DrawWarmup();
+                abilityWarmUpTicks--;
             }
         }
         public override void TickRare()
         {
             MaybeTalkGibberish();
-            TickActionQueue();
             DrainMoodAfterTickRare();
             if (CurMoodCategory == Mood.Mad && !goingRogue)
             {
@@ -238,7 +255,7 @@ namespace WhatTheHack.Buildings
         public override void PostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
         {
             base.PostApplyDamage(dinfo, totalDamageDealt);
-            RefuelableComp.ConsumeFuel(moodDrainDamage);
+            DrainMood(moodDrainDamage);
             if(textTimeout <= 0)
             {
                 Utilities.ThrowStaticText(this.DrawPos + new Vector3(0, 0, 1.75f), this.Map, "WTH_RogueAI_Hurt_Remark".Translate(), Color.white, TEXTDURATION);
@@ -250,19 +267,19 @@ namespace WhatTheHack.Buildings
         {
             foreach(Pawn pawn in controlledMechs)
             {
-                RefuelableComp.ConsumeFuel(moodDrainCtrlMech);
+                DrainMood(moodDrainCtrlMech);
             }
             foreach(Building_TurretGun turret in controlledTurrets)
             {
-                RefuelableComp.ConsumeFuel(moodDrainCtrlTur);
+                DrainMood(moodDrainCtrlTur);
             }
             foreach(Pawn pawn in hackedMechs)
             {
-                RefuelableComp.ConsumeFuel(moodDrainHack);
+                DrainMood(moodDrainHack);
             }
             if (!PowerPlantComp.PowerOn)
             {
-                RefuelableComp.ConsumeFuel(moodDrainNoPower);
+                DrainMood(moodDrainNoPower);
                 if (textTimeout <= 0)
                 {
                     Utilities.ThrowStaticText(this.DrawPos + new Vector3(0, 0, 1.75f), this.Map, "WTH_RogueAI_NoPower_Remark".Translate(), Color.white, TEXTDURATION);
@@ -322,6 +339,11 @@ namespace WhatTheHack.Buildings
                 reason += "\n- " + "WTH_Reason_NotConscious".Translate();
                 result = true;
             }
+            if (abilityWarmUpTicks > 0)
+            {
+                reason += "\n- " + "WTH_Reason_WarmingUp".Translate();
+                result = true;
+            }
             if (!PowerPlantComp.PowerOn)
             {
                 reason += "\n- " + "WTH_Reason_NoPower".Translate();
@@ -343,6 +365,24 @@ namespace WhatTheHack.Buildings
             }
             queuedActions.RemoveAll((ActionItem i) => i.shouldClean);
         }
+        private void DrawWarmup()
+        {
+            float height = 0.5f;
+            float width = 0.25f * (1 - abilityWarmUpTicks/(float)currentAbilityTicksTotal);
+            //GenDraw.DrawCooldownCircle(this.Position.ToVector3Shifted() + new Vector3(0, 3f, 0), width);
+            
+            Vector3 s = new Vector3(width, 10f, height);
+            Matrix4x4 matrix = default(Matrix4x4);
+            matrix.SetTRS(Position.ToVector3Shifted() + new Vector3(0, 3f, 0), Quaternion.identity, s);
+            Graphics.DrawMesh(MeshPool.plane20, matrix, SolidColorMaterials.SimpleSolidColorMaterial(new Color(1f, 1f, 1f, 0.5f), false), 0);
+            
+        }
+        private void DoAbility(Action action, int warmupTime)
+        {
+            abilityWarmUpTicks = warmupTime;
+            currentAbilityTicksTotal = warmupTime;
+            queuedActions.Add(new ActionItem(action, warmupTime));
+        }
 
         private Gizmo GetTalkGibberishGizmo()
         {
@@ -359,7 +399,7 @@ namespace WhatTheHack.Buildings
             }
             command.action = delegate
             {
-                TalkGibberish();
+                DoAbility(delegate { TalkGibberish(); }, 250);
                 RefuelableComp.ConsumeFuel(moodDrainForceTalkGibberish);
             };
             return command;
@@ -445,15 +485,21 @@ namespace WhatTheHack.Buildings
             {
                 if (target is Pawn mech)
                 {
-                    ExtendedPawnData mechData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(mech);
-                    mechData.controllingAI = this;
-                    controlledMechs.Add(mech);
-                    mechData.isActive = true;
-                    mech.drafter.Drafted = true;
+                    DoAbility(delegate { ControlMechanoid(mech); }, 500);        
                 }
             };
             return command;
         }
+
+        private void ControlMechanoid(Pawn mech)
+        {
+            ExtendedPawnData mechData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(mech);
+            mechData.controllingAI = this;
+            controlledMechs.Add(mech);
+            mechData.isActive = true;
+            mech.drafter.Drafted = true;
+        }
+
         private static TargetingParameters GetTargetingParametersForControlling()
         {
             return new TargetingParameters
@@ -513,7 +559,7 @@ namespace WhatTheHack.Buildings
             bool shouldDisable = GlobalShouldDisable(out string reason);
             command.disabled = shouldDisable;
             command.disabledReason = reason;
-            if (controlledMechs.Count >= MAXHACKABLE)
+            if (hackedMechs.Count >= MAXHACKABLE)
             {
                 command.disabled = true;
                 command.disabledReason += "\n- " + "WTH_Reason_AtMaximum".Translate(MAXHACKABLE);
@@ -528,19 +574,25 @@ namespace WhatTheHack.Buildings
             {
                 if (target is Pawn mech)
                 {
-                    ExtendedPawnData mechData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(mech);
-                    mechData.originalFaction = mech.Faction;
-                    mechData.controllingAI = this;
-                    hackedMechs.Add(mech);
-                    mech.SetFaction(Faction.OfPlayer);
-                    mech.story = new Pawn_StoryTracker(mech);
-                    mech.jobs.EndCurrentJob(JobCondition.InterruptForced);
-                    mech.drafter = new Pawn_DraftController(mech);
-                    mech.drafter.Drafted = true;
+                    DoAbility(delegate { HackMech(mech); }, 1000);
                 }
             };
             return command;
         }
+
+        private void HackMech(Pawn mech)
+        {
+            ExtendedPawnData mechData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(mech);
+            mechData.originalFaction = mech.Faction;
+            mechData.controllingAI = this;
+            hackedMechs.Add(mech);
+            mech.SetFaction(Faction.OfPlayer);
+            mech.story = new Pawn_StoryTracker(mech);
+            mech.jobs.EndCurrentJob(JobCondition.InterruptForced);
+            mech.drafter = new Pawn_DraftController(mech);
+            mech.drafter.Drafted = true;
+        }
+
         private static TargetingParameters GetTargetingParametersForHacking()
         {
             return new TargetingParameters
@@ -595,7 +647,7 @@ namespace WhatTheHack.Buildings
             bool shouldDisable = GlobalShouldDisable(out string reason);
             command.disabled = shouldDisable;
             command.disabledReason = reason;
-            if (controlledMechs.Count >= MAXCONTROLLABLETURRETS)
+            if (controlledTurrets.Count >= MAXCONTROLLABLETURRETS)
             {
                 command.disabled = true;
                 command.disabledReason += "\n- " + "WTH_Reason_AtMaximum".Translate(MAXCONTROLLABLETURRETS);
@@ -608,8 +660,8 @@ namespace WhatTheHack.Buildings
             command.action = delegate (Thing target)
             {
                 if (target is Building_TurretGun turret)
-                {
-                    controlledTurrets.Add(turret);
+                {            
+                    DoAbility(delegate { controlledTurrets.Add(turret); }, 500);
                 }
             };
             return command;
@@ -652,7 +704,7 @@ namespace WhatTheHack.Buildings
                     StopGoingRogue();
                     Log.Message("stop going rogue called");
                 },
-                rareTicksUntilAction: Rand.Range(30, 40)
+                tickUntilAction: Rand.Range(7500, 10000)
                 ));
         }
 
@@ -672,8 +724,12 @@ namespace WhatTheHack.Buildings
             }
         }
 
-        private void StopGoingRogue()
+        public void StopGoingRogue()
         {
+            if (!goingRogue)
+            {
+                return;
+            }
             goingRogue = false;
             UpdateGlower(Mood.Annoyed);
             OverlayComp.SetLookAround();
@@ -715,6 +771,14 @@ namespace WhatTheHack.Buildings
             if (mood == Mood.Mad)
             {
                 glowerComp.Props.glowColor = new ColorInt(255, 0, 0, 0);
+            }
+            if (goingRogue)
+            {
+                glowerComp.Props.glowRadius = 8f;
+            }
+            else
+            {
+                glowerComp.Props.glowRadius = 4f;
             }
             glowerComp.UpdateLit(this.Map);
             Map.glowGrid.MarkGlowGridDirty(this.Position);
@@ -765,16 +829,16 @@ namespace WhatTheHack.Buildings
                             ShortCircuitUtility.DoShortCircuit(potentialTarget);
                             
                         },
-                        rareTicksUntilAction: rareTicksUntilAction)
+                        tickUntilAction: rareTicksUntilAction)
                         );
-                    rareTicksUntilAction += Rand.Range(2, 4);
+                    rareTicksUntilAction += Rand.Range(500, 1000);
                 }
             }
             queuedActions.Add(new ActionItem(
                 action: delegate {
                     PowerPlantComp.overcharging = false;
                 },
-                rareTicksUntilAction: rareTicksUntilAction)
+                tickUntilAction: rareTicksUntilAction)
                 );
         }
 
@@ -784,6 +848,8 @@ namespace WhatTheHack.Buildings
             Scribe_Values.Look(ref isConscious, "isConscious");
             Scribe_Values.Look(ref goingRogue, "goingRogue");
             Scribe_Values.Look(ref managingPowerNetwork, "managingPowerNetwork");
+            Scribe_Values.Look(ref abilityWarmUpTicks, "abilityCooldownTicks");
+            Scribe_Values.Look(ref currentAbilityTicksTotal, "currentAbilityTicksTotal");
             Scribe_Collections.Look(ref controlledMechs, "controlledMechs", LookMode.Reference);
             Scribe_Collections.Look(ref hackedMechs, "hackedMechs", LookMode.Reference);
             Scribe_Collections.Look(ref controlledTurrets, "controlledTurrets", LookMode.Reference);

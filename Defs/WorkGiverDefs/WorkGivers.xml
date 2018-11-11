@@ -69,7 +69,7 @@
     <label>maintenance on mechanoids</label>
     <giverClass>WhatTheHack.Jobs.WorkGiver_PerformMaintenance</giverClass>
     <workType>WTH_Hack</workType>
-    <priorityInType>100</priorityInType>
+    <priorityInType>115</priorityInType>
     <verb>perform maintenance</verb>
     <gerund>performing maintenance</gerund>
     <requiredCapacities>
@@ -86,6 +86,20 @@
     <priorityInType>120</priorityInType>
     <verb>perform maintenance</verb>
     <gerund>performing maintenance on</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+  
+  <WorkGiverDef>
+    <defName>WTH_HackRogueAI</defName>
+    <label>hack Rogue AI</label>
+    <giverClass>WhatTheHack.Jobs.WorkGiver_HackRogueAI</giverClass>
+    <workType>WTH_Hack</workType>
+    <priorityInType>150</priorityInType>
+    <verb>hack Rogue AI</verb>
+    <gerund>hacking Rogue AI</gerund>
     <requiredCapacities>
       <li>Manipulation</li>
     </requiredCapacities>

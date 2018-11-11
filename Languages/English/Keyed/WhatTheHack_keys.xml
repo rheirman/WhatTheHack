@@ -85,14 +85,16 @@
 	<WTH_Reason_NotConscious>Rogue AI has no consciousness yet and it needs one to use this. It can attain one by hacking a hiveship using the hiveship hacking facility.</WTH_Reason_NotConscious>
 	<WTH_BeaconWarmupWarning>When activating this, the Rogue AI present in you base will start hacking an hiveship that is in orbit. While the Rogue AI will take precautions to perform this operation as invisible as possible, this will undoubtedly draw attention of mechanoids. Expect your base to be heavily attacked during the hacking process. The procedure requires roughly {0} days to complete, and the only way to cancel it is to destroy the beacon. If you manage to survive, the rogue AI will become an powerful but potentially dangerous ally.</WTH_BeaconWarmupWarning>
 	<WTH_MechanoidBeaconStartup_Label>Start hacking</WTH_MechanoidBeaconStartup_Label>
-	<WTH_MechanoidBeaconStartup_Description>The rogue AI will start hacking a hiveship in order to get to the data stored in it. Mechanoids won't respond kindly during the procedure.</WTH_MechanoidBeaconStartup_Description>
+	<WTH_MechanoidBeaconStartup_Description>The rogue AI will start hacking a hiveship in order to get to the data stored in it. Mechanoids will not respond kindly during the procedure.</WTH_MechanoidBeaconStartup_Description>
 	<WTH_MechanoidBeaconComplete_Label>Hive ship hacked</WTH_MechanoidBeaconComplete_Label>
-	<WTH_MechanoidBeaconComplete_Description>Your rogue AI successfully hacked a hiveship using the hiveship hacking facility. It's true potential will now be unveiled. In it's current state it's still a shadow of what if could be. Try levelling it up by providing it with the data it yearns to. Also, keep it satisfied, or else you might regret the decision of aligning with such a powerful AI.</WTH_MechanoidBeaconComplete_Description>
+	<WTH_MechanoidBeaconComplete_Description>Your rogue AI successfully hacked a hiveship using the hiveship hacking facility. Its true potential will now be unveiled. In its current state it is still a shadow of what if could be. Try levelling it up by providing it with the data it yearns to. Also, keep it satisfied, or else you might regret the decision of aligning with such a powerful AI.</WTH_MechanoidBeaconComplete_Description>
 	
 	<WTH_Reason_AtMaximum>Cannot perform this on more than {0} targets simultaneously.</WTH_Reason_AtMaximum>
-	<WTH_Reason_LevelInsufficient>The rogue AI needs to be at level {0} to use this ability. Feed it more data.</WTH_Reason_LevelInsufficient>
+	<WTH_Reason_LevelInsufficient>The Rogue AI needs to be at level {0} to use this ability. Feed it more data.</WTH_Reason_LevelInsufficient>
 	<WTH_Reason_NoPower>No power.</WTH_Reason_NoPower>
-	<WTH_Reason_GoingRogue>The AI core is going rogue.</WTH_Reason_GoingRogue>
+	<WTH_Reason_GoingRogue>The AI is going rogue.</WTH_Reason_GoingRogue>
+	<WTH_Reason_WarmingUp>The Rogue AI is busy using an ability.</WTH_Reason_WarmingUp>
+	<WTH_Reason_RogueAIExists>Only one Rogue AI can be built on a given map. The existing Rogue AI wouldn't tolerate another superior being in its vicinity.</WTH_Reason_RogueAIExists>
 	
 	<WTH_CompDataLevel_CurLevel>Current level: {0}</WTH_CompDataLevel_CurLevel>
 	<WTH_CompDataLevel_DataNeededNextLevel>Data needed for next level: {0}</WTH_CompDataLevel_DataNeededNextLevel>

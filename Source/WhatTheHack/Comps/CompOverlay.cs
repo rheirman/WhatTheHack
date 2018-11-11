@@ -17,7 +17,6 @@ namespace WhatTheHack.Comps
         private bool xUp = false;
         private bool eyeMoving = false;
         private bool lookAround = false;
-        private bool showEye = false;
         private int timer = 0;
 
         public override void Initialize(CompProperties props)
@@ -25,6 +24,15 @@ namespace WhatTheHack.Comps
             base.Initialize(props);
             //SetLookAround();
         }
+        public bool ShowEye
+        {
+            get
+            {
+                Building_RogueAI rogueAI = (Building_RogueAI)parent;
+                return rogueAI.IsConscious && !rogueAI.WarmingUpAbility;
+            }
+        }
+
         public override void PostExposeData()
         {
             base.PostExposeData();
@@ -34,7 +42,6 @@ namespace WhatTheHack.Comps
             Scribe_Values.Look(ref xUp, "xUp");
             Scribe_Values.Look(ref eyeMoving, "eyeMoving");
             Scribe_Values.Look(ref lookAround, "lookAround");
-            Scribe_Values.Look(ref showEye, "showEye");
             Scribe_Values.Look(ref timer, "timer");
         }
 
@@ -43,7 +50,7 @@ namespace WhatTheHack.Comps
             base.PostDraw();
             Building_RogueAI parent = this.parent as Building_RogueAI;
             DrawBackground(parent);
-            if (showEye)
+            if (ShowEye)
             {
                 DrawEye(parent);
             }
@@ -88,12 +95,6 @@ namespace WhatTheHack.Comps
 
             drawPos.x += xOffset;
             drawPos.z += 0.5f * xOffset * xOffset;
-
-        }
-        public void StartEye()
-        {
-            showEye = true;
-            lookAround = true;
         }
         
         public void SetLookAround()

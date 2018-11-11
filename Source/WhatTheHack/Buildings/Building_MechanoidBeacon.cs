@@ -61,14 +61,7 @@ namespace WhatTheHack.Buildings
                 action = delegate
                 {
                     float numDays = GetComp<CompHibernatable_MechanoidBeacon>().Props.startupDays;
-                    string text = "WTH_BeaconWarmupWarning".Translate(numDays.ToStringDecimalIfSmall());
-                    /*
-                    if (!Find.Storyteller.difficulty.allowBigThreats)
-                    {
-                        text += "Pacifist";
-                    }
-                    */
-                    DiaNode diaNode = new DiaNode(text.Translate());
+                    DiaNode diaNode = new DiaNode("WTH_BeaconWarmupWarning".Translate(numDays.ToStringDecimalIfSmall()));
                     DiaOption diaOption = new DiaOption("Confirm".Translate());
                     diaOption.action = delegate
                     {

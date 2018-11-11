@@ -41,4 +41,10 @@
     <reportString>Performing maintenance</reportString>
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
+  <JobDef>
+    <defName>WTH_HackRogueAI</defName>
+    <driverClass>WhatTheHack.Jobs.JobDriver_HackRogueAI</driverClass>
+    <reportString>Hacking Rogue AI</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
  </Defs>
