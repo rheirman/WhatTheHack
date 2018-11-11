@@ -1,5 +1,6 @@
 ﻿using Harmony;
 using RimWorld;
+using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,9 @@ namespace WhatTheHack.Buildings
         public List<Building_TurretGun> controlledTurrets = new List<Building_TurretGun>();
         public List<Building_TurretGun> rogueTurrets = new List<Building_TurretGun>();
         private List<ActionItem> queuedActions = new List<ActionItem>();
+        private int abilityWarmUpTicks = 0;
+        private int currentAbilityTicksTotal = 0;
+        private int textTimeout = 0;
 
         private const int MAXCONTROLLABLEMECHS = 6;
         private const int MAXCONTROLLABLETURRETS = 4;
@@ -34,13 +38,14 @@ namespace WhatTheHack.Buildings
         private const int NUMTEXTSHAPPY = 50;
         private const int NUMTEXTSANNOYED = 50;
         private const int NUMTEXTSMAD = 15;
+        private const int NUMTEXTSGOROGUE = 15;
+
         private const int MINLEVELMANAGEPOWER = 2;
         private const int MINLEVELCONTROLTURRET = 3;
         private const int MINLEVELCONTROLMECH = 4;
         private const int MINLEVELHACKMECH = 5;
         private const int MINTEXTTIMEOUT = 6;
         private const float TEXTDURATION = 4f;
-
 
         private float moodDrainCtrlMech = 0.1f;
         private float moodDrainCtrlTur = 0.1f;
@@ -49,15 +54,12 @@ namespace WhatTheHack.Buildings
         private float moodDrainDamage = 2.0f;
         private float moodDrainForceTalkGibberish = 5.0f;
         public float moodDrainPreventZzztt = 0.5f;
-        private int abilityWarmUpTicks = 0;
-        private int currentAbilityTicksTotal = 0;
 
-        private int textTimeout = 0;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            UpdateGlower(CurMoodCategory);
+            UpdateGlower();
         }
 
         public enum Mood : byte
@@ -225,7 +227,13 @@ namespace WhatTheHack.Buildings
                 string randomColonistName = this.Map.mapPawns.FreeColonists.RandomElement().Name.ToStringShort;
                 string text = "";
                 Color color = Color.white;
-                if (CurMoodCategory == Mood.Happy)
+
+                if(goingRogue)
+                {
+                    color = Color.red;
+                    text = "WTH_RogueAI_GoRogue_Remark_" + Rand.RangeInclusive(0, NUMTEXTSGOROGUE - 1);
+                }
+                else if (CurMoodCategory == Mood.Happy)
                 {
                     text = "WTH_RogueAI_Happy_Remark_" + Rand.RangeInclusive(0, NUMTEXTSHAPPY - 1);
                 }
@@ -235,8 +243,7 @@ namespace WhatTheHack.Buildings
                 }
                 else
                 {
-                    color = Color.red;
-                    text = "WTH_RogueAI_Mad_Remark_" + +Rand.RangeInclusive(0, NUMTEXTSMAD - 1);
+                    text = "WTH_RogueAI_Mad_Remark_" + Rand.RangeInclusive(0, NUMTEXTSMAD - 1);
                 }
                 Utilities.ThrowStaticText(this.DrawPos + new Vector3(0, 0, 1.75f), this.Map, text.Translate(new object[] { randomColonistName }), color, TEXTDURATION);
                 textTimeout += MINTEXTTIMEOUT;
@@ -249,6 +256,7 @@ namespace WhatTheHack.Buildings
             float goRogueChance = 1 / (RefuelableComp.Fuel * 2.5f);
             if (Rand.Chance(goRogueChance))
             {
+                Find.LetterStack.ReceiveLetter("WTH_Message_GoRogue_Label".Translate(), "WTH_Message_GoRogue_Description".Translate(), LetterDefOf.ThreatBig, new GlobalTargetInfo(this), null, null);
                 GoRogue();
             }
         }
@@ -299,7 +307,7 @@ namespace WhatTheHack.Buildings
                 }
                 
                 RefuelableComp.ConsumeFuel(amount);
-                UpdateGlower(CurMoodCategory);
+                UpdateGlower();
             }
         }
 
@@ -365,9 +373,9 @@ namespace WhatTheHack.Buildings
 
         private void TickActionQueue()
         {
-            foreach(ActionItem actionItem in queuedActions)
+            for(int i = 0; i < queuedActions.Count; i++)
             {
-                actionItem.Tick();
+                queuedActions[i].Tick();
             }
             queuedActions.RemoveAll((ActionItem i) => i.shouldClean);
         }
@@ -691,27 +699,73 @@ namespace WhatTheHack.Buildings
             };
         }
 
-        private void GoRogue()
+        public void GoRogue()
         {
             OverlayComp.UnsetLookAround();
             goingRogue = true;
             this.SetFaction(Faction.OfMechanoids);
-            UpdateGlower(Mood.Mad);
+            UpdateGlower();
             CancelLinks();
+            QueueGoRogueActions();
+        }
 
-            List<Pawn> shouldHack = this.Map.mapPawns.SpawnedPawnsInFaction(Faction.OfPlayer).Where((Pawn p) => p.IsHacked() && !p.Downed).ToList();
-            GoRogue_HackMechs(shouldHack);
-            List<Building_TurretGun> shouldHackTurrets = this.Map.spawnedThings.Where((Thing t) => t is Building_TurretGun && t.Faction == Faction.OfPlayer).Cast<Building_TurretGun>().ToList();
-            GoRogue_HackTurrets(shouldHackTurrets);
-            GoRogue_CauseZzztts();
+        private void QueueGoRogueActions()
+        {
+            List<Action> possibleActions = new List<Action>();
+            Action causeZzzttAction = delegate
+            {
+                Log.Message("causeZzzttAction called");
+                GoRogue_CauseZzztts();
+            };
+            Action hackTurretsAction = delegate
+            {
+                Log.Message("hackTurretsAction called");
+                GoRogue_HackTurrets();
+            };
+            Action hackMechsAction = delegate
+            {
+                Log.Message("hackMechsAction called");
+                GoRogue_HackMechs();
+            };
+
+            if (DataLevelComp.curLevel >= MINLEVELMANAGEPOWER)
+            {
+                possibleActions.Add(causeZzzttAction);
+                possibleActions.Add(causeZzzttAction);
+                possibleActions.Add(causeZzzttAction);
+
+            }
+            if (DataLevelComp.curLevel >= MINLEVELCONTROLTURRET)
+            {
+                possibleActions.Add(hackTurretsAction);
+                possibleActions.Add(hackTurretsAction);
+            }
+            if (DataLevelComp.curLevel >= MINLEVELHACKMECH)
+            {
+                possibleActions.Add(hackMechsAction);
+                possibleActions.Add(hackMechsAction);
+            }
+            int duration = Rand.Range(10000, 15000);
+            int actionInterval = (duration + 4000) / (possibleActions.Count + 1); //add 4000 to duration so not every action can happen during the duration. 
+            int actionDelay = 10;
+            Log.Message("starting " + possibleActions.Count + " actions");
+            while (!possibleActions.NullOrEmpty())
+            {
+                Action action = possibleActions.RandomElement();
+                queuedActions.Add(new ActionItem(action, actionDelay));
+                possibleActions.Remove(action);
+                actionDelay += actionInterval;
+            }
+
             queuedActions.Add(new ActionItem(
                 action: delegate
                 {
                     StopGoingRogue();
                     Log.Message("stop going rogue called");
                 },
-                tickUntilAction: Rand.Range(7500, 10000)
+                tickUntilAction: duration
                 ));
+
         }
 
         private void CancelLinks()
@@ -737,7 +791,7 @@ namespace WhatTheHack.Buildings
                 return;
             }
             goingRogue = false;
-            UpdateGlower(Mood.Annoyed);
+            UpdateGlower();
             OverlayComp.SetLookAround();
             Traverse.Create(RefuelableComp).Field("fuel").SetValue(30f);
             this.SetFaction(Faction.OfPlayer);
@@ -761,40 +815,39 @@ namespace WhatTheHack.Buildings
                 turret.SetFaction(Faction.OfPlayer);
                 rogueTurrets.Remove(turret);
             }
+            queuedActions.Clear();
         }
 
-        private void UpdateGlower(Mood mood)
+        public void UpdateGlower()
         {
             CompGlower glowerComp = GetComp<CompGlower>();
-            if (mood == Mood.Happy)
+            Mood mood = CurMoodCategory;
+            glowerComp.Props.glowRadius = 4f;
+            if (goingRogue)
             {
-                glowerComp.Props.glowRadius = 4f;
+                glowerComp.Props.glowColor = new ColorInt(255, 0, 0, 0);
+                glowerComp.Props.glowRadius = 12f;
+            }
+            else if (mood == Mood.Happy)
+            {
                 glowerComp.Props.glowColor = new ColorInt(35, 152, 255, 0);
             }
             else if (mood == Mood.Annoyed)
             {
-                glowerComp.Props.glowRadius = 4f;
                 glowerComp.Props.glowColor = new ColorInt(255, 119, 35, 0);
             }
             else
             {
-                glowerComp.Props.glowRadius = 4f;
                 glowerComp.Props.glowColor = new ColorInt(255, 0, 0, 0);
-            }
-            if (goingRogue)
-            {
-                glowerComp.Props.glowRadius = 12f;
-            }
-            else
-            {
-                glowerComp.Props.glowRadius = 4f;
             }
             glowerComp.UpdateLit(this.Map);
             Map.glowGrid.MarkGlowGridDirty(this.Position);
         }
-        private void GoRogue_HackMechs(List<Pawn> shouldHack)
+        private void GoRogue_HackMechs()
         {
+            List<Pawn> shouldHack = this.Map.mapPawns.SpawnedPawnsInFaction(Faction.OfPlayer).Where((Pawn p) => p.IsHacked() && !p.Downed).ToList();
             int nShouldHack = Rand.Range(1, 4);
+            int nHacked = 0;
             while(nShouldHack > 0 && shouldHack.Count > 0)
             {
                 Pawn mech = shouldHack.RandomElement();
@@ -807,12 +860,16 @@ namespace WhatTheHack.Buildings
                 nShouldHack--;
                 shouldHack.Remove(mech);
                 rogueMechs.Add(mech);
+                nHacked++;
             }
-         
+            if(nHacked > 0)              
+                Find.LetterStack.ReceiveLetter("WTH_Message_GoRogue_HackMechs_Label".Translate(), "WTH_Message_GoRogue_HackMechs_Description".Translate(), LetterDefOf.ThreatBig, new LookTargets(rogueMechs), null, null);
         }
-        private void GoRogue_HackTurrets(List<Building_TurretGun> turrets)
+        private void GoRogue_HackTurrets()
         {
+            List<Building_TurretGun> turrets = this.Map.spawnedThings.Where((Thing t) => t is Building_TurretGun && t.Faction == Faction.OfPlayer).Cast<Building_TurretGun>().ToList();
             int nShouldHack = Rand.Range(1, 3);
+            int nHacked = 0;
             while (nShouldHack > 0 && turrets.Count > 0)
             {
                 Building_TurretGun turret = turrets.RandomElement();
@@ -820,7 +877,11 @@ namespace WhatTheHack.Buildings
                 nShouldHack--;
                 turrets.Remove(turret);
                 rogueTurrets.Add(turret);
+                nHacked++;
             }
+            if(nHacked > 0)
+                Find.LetterStack.ReceiveLetter("WTH_Message_GoRogue_HackTurrets_Label".Translate(), "WTH_Message_GoRogue_HackTurrets_Description".Translate(), LetterDefOf.ThreatBig, new LookTargets(rogueTurrets.Cast<Thing>()), null, null);
+
         }
 
         private void GoRogue_CauseZzztts()
@@ -849,11 +910,14 @@ namespace WhatTheHack.Buildings
                 },
                 tickUntilAction: rareTicksUntilAction)
                 );
+
+            Find.LetterStack.ReceiveLetter("WTH_Message_GoRogue_CauseZzztts_Label".Translate(), "WTH_Message_GoRogue_CauseZzztts_Description".Translate(), LetterDefOf.ThreatBig, new GlobalTargetInfo(this), null, null);
         }
 
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_Values.Look(ref textTimeout, "textTimeout");
             Scribe_Values.Look(ref isConscious, "isConscious");
             Scribe_Values.Look(ref goingRogue, "goingRogue");
             Scribe_Values.Look(ref managingPowerNetwork, "managingPowerNetwork");

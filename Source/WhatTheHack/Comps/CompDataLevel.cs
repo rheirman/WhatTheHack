@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,7 +70,7 @@ namespace WhatTheHack.Comps
         {
             if (curLevel < MAXLEVEL)
             {
-                while (accumulatedData > DataNextLevel)
+                while (accumulatedData >= DataNextLevel)
                 {
                     Levelup();
                 }
@@ -81,6 +82,15 @@ namespace WhatTheHack.Comps
             levelledData += extraDataNextLevel;
             curLevel += 1;
             extraDataNextLevel *= 1.5f;
+            if(curLevel < MAXLEVEL)
+            {
+                Find.LetterStack.ReceiveLetter("WTH_Message_LevelUp_Label".Translate(curLevel), "WTH_Message_LevelUp_Description".Translate(curLevel), LetterDefOf.PositiveEvent, new GlobalTargetInfo(this.parent), null, null);
+            }
+            else
+            {
+                Find.LetterStack.ReceiveLetter("WTH_Message_LevelUpMax_Label".Translate(), "WTH_Message_LevelUpMax_Description".Translate(), LetterDefOf.ThreatBig, new GlobalTargetInfo(this.parent), null, null);
+                ((Building_RogueAI)parent).GoRogue();
+            }
         }
 
     }

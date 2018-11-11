@@ -66,7 +66,7 @@ namespace WhatTheHack.Comps
 
         private void DrawEye(Building_RogueAI parent)
         {
-            CompProperties_Overlays.GraphicOverlay overlay = Props.GetEyeOverlay(parent.CurMoodCategory);
+            CompProperties_Overlays.GraphicOverlay overlay = Props.GetEyeOverlay(parent.goingRogue ? Building_RogueAI.Mood.Mad : parent.CurMoodCategory);
             GraphicData gdEye = overlay.graphicDataDefault;
             Vector3 drawPosEye = parent.DrawPos;
             drawPosEye.y += 0.046875f;
