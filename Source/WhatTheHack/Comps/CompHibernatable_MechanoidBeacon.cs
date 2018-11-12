@@ -49,7 +49,10 @@ namespace WhatTheHack.Comps
             if (this.parent.Map.listerBuildings.allBuildingsColonist.FirstOrDefault((Building b) => b is Building_RogueAI) is Building_RogueAI rogueAI)
             {
                 Find.LetterStack.ReceiveLetter("WTH_MechanoidBeaconComplete_Label".Translate(), "WTH_MechanoidBeaconComplete_Description".Translate(), LetterDefOf.PositiveEvent, new GlobalTargetInfo(this.parent), null, null);
-                rogueAI.IsConscious = true;
+                if (!rogueAI.IsConscious)
+                {
+                    rogueAI.IsConscious = true;
+                }
                 extraStartUpDays += 2;
                 coolDownTicks += Props.coolDownDaysAfterSuccess * GenDate.TicksPerDay;
                 Thing md = ThingMaker.MakeThing(WTH_DefOf.WTH_MechanoidData);

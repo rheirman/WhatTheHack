@@ -99,5 +99,17 @@ namespace WhatTheHack.Buildings
                 compHibernatable.Startup();
             }
         }
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+        {
+            CancelStartup();
+            base.Destroy(mode);
+            
+        }
+        public void CancelStartup()
+        {
+            Messages.Message("WTH_Message_MechanoidBeacon_Cancelled".Translate(), new RimWorld.Planet.GlobalTargetInfo(this.Position, this.Map), MessageTypeDefOf.NegativeEvent);
+            CompHibernatable_MechanoidBeacon compHibernatable = this.TryGetComp<CompHibernatable_MechanoidBeacon>();
+            compHibernatable.State = HibernatableStateDefOf.Hibernating;
+        }
     }
 }

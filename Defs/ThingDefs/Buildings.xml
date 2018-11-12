@@ -439,7 +439,7 @@
       <MaxHitPoints>800</MaxHitPoints>
       <WorkToBuild>10000</WorkToBuild>
       <Mass>100</Mass>
-      <Flammability>1.0</Flammability>
+      <Flammability>0.5</Flammability>
     </statBases>
     <costList>
       <Steel>40</Steel>

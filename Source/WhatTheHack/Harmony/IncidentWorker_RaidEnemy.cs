@@ -18,14 +18,13 @@ namespace WhatTheHack.Harmony
             
             if (parms.target != null && parms.target.IncidentTargetTags().Contains(IncidentTargetTagDefOf.Map_RaidBeacon))
             {
-                foreach (ThingWithComps current in map.listerThings.ThingsOfDef(WTH_DefOf.WTH_MechanoidBeacon).OfType<ThingWithComps>())
+                foreach (ThingWithComps current in map.listerThings.ThingsOfDef(WTH_DefOf.WTH_MechanoidBeacon))
                 {
                     CompHibernatable compHibernatable = current.TryGetComp<CompHibernatable>();
-                    if (compHibernatable != null && compHibernatable.State == HibernatableStateDefOf.Starting)
+                    if (compHibernatable != null && compHibernatable.State == HibernatableStateDefOf.Starting && Rand.Chance(0.85f))
                     {
                         __result = true;
-                        parms.faction = Faction.OfMechanoids;
-                        Log.Message("changed incident so mechs spawn!");
+                        parms.faction = Faction.OfMechanoids;                      
                         return false;
                     }
                 }

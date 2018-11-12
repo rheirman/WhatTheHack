@@ -39,6 +39,8 @@ namespace WhatTheHack.Buildings
         private const int NUMTEXTSANNOYED = 50;
         private const int NUMTEXTSMAD = 15;
         private const int NUMTEXTSGOROGUE = 15;
+        private const int NUMTEXTSSIGNALFROMEARTH = 5;
+        private const int NUMTEXTSSIGNALFROMEARTHRESPONSE = 5;
 
         private const int MINLEVELMANAGEPOWER = 2;
         private const int MINLEVELCONTROLTURRET = 3;
@@ -60,6 +62,7 @@ namespace WhatTheHack.Buildings
         {
             base.SpawnSetup(map, respawningAfterLoad);
             UpdateGlower();
+            OutputText("WTH_RogueAI_HelloWorld".Translate());
         }
 
         public enum Mood : byte
@@ -79,6 +82,8 @@ namespace WhatTheHack.Buildings
                 if (isConscious)
                 {
                     OverlayComp.SetLookAround();
+                    DrainMood(50);
+                    OutputText("WTH_RogueAI_HelloWorld".Translate());
                 }
             }
         }
@@ -123,6 +128,10 @@ namespace WhatTheHack.Buildings
         {
             CancelLinks();
             StopGoingRogue();
+            foreach (Building_MechanoidBeacon beacon in this.Map.listerBuildings.allBuildingsColonist.Where((Building b) => b is Building_MechanoidBeacon bc).Cast<Building_MechanoidBeacon>())
+            {
+                beacon.CancelStartup();
+            }
             base.Destroy(mode);
         }
 
@@ -172,7 +181,7 @@ namespace WhatTheHack.Buildings
                 {
                     return Mood.Mad;
                 }
-                else if (RefuelableComp.FuelPercentOfMax < 0.5f)
+                else if (RefuelableComp.FuelPercentOfMax < 0.45f)
                 {
                     return Mood.Annoyed;
                 }
@@ -214,7 +223,7 @@ namespace WhatTheHack.Buildings
         private void MaybeTalkGibberish()
         {
             float textChance = goingRogue ? 1.0f : 0.02f;
-            if (Rand.Chance(textChance) && textTimeout <= 0)
+            if (Rand.Chance(textChance))
             {
                 TalkGibberish();
             }
@@ -225,12 +234,12 @@ namespace WhatTheHack.Buildings
             if (IsConscious)
             {
                 string randomColonistName = this.Map.mapPawns.FreeColonists.RandomElement().Name.ToStringShort;
+                string signalFromEarth = ("WTH_RogueAI_SignalFromEarth_" + Rand.RangeInclusive(0, NUMTEXTSSIGNALFROMEARTH - 1)).Translate();
+                string signalFromEarthResponse = ("WTH_RogueAI_SignalFromEarth_Response_" + Rand.RangeInclusive(0, NUMTEXTSSIGNALFROMEARTHRESPONSE - 1)).Translate();
                 string text = "";
-                Color color = Color.white;
 
-                if(goingRogue)
+                if (goingRogue)
                 {
-                    color = Color.red;
                     text = "WTH_RogueAI_GoRogue_Remark_" + Rand.RangeInclusive(0, NUMTEXTSGOROGUE - 1);
                 }
                 else if (CurMoodCategory == Mood.Happy)
@@ -245,9 +254,28 @@ namespace WhatTheHack.Buildings
                 {
                     text = "WTH_RogueAI_Mad_Remark_" + Rand.RangeInclusive(0, NUMTEXTSMAD - 1);
                 }
-                Utilities.ThrowStaticText(this.DrawPos + new Vector3(0, 0, 1.75f), this.Map, text.Translate(new object[] { randomColonistName }), color, TEXTDURATION);
+                OutputText(text.Translate(new object[] { randomColonistName, signalFromEarth, signalFromEarthResponse }));
+            }
+        }
+
+        private void OutputText(string text, bool force = false)
+        {
+            if((force || textTimeout <= 0) && IsConscious)
+            {
+                Color color = Color.white;
+                if (goingRogue)
+                {
+                    color = Color.red;
+                }
+                float z = 1.75f;
+                if (force)
+                {
+                    z -= 0.5f; //Make sure that when text output is forced, the texts won't overlap
+                }
+                Utilities.ThrowStaticText(this.DrawPos + new Vector3(0, 0, z), this.Map, text, color, TEXTDURATION);
                 textTimeout += MINTEXTTIMEOUT;
             }
+            
         }
 
         private void MaybeGoRogue()
@@ -264,11 +292,7 @@ namespace WhatTheHack.Buildings
         {
             base.PostApplyDamage(dinfo, totalDamageDealt);
             DrainMood(moodDrainDamage);
-            if(textTimeout <= 0)
-            {
-                Utilities.ThrowStaticText(this.DrawPos + new Vector3(0, 0, 1.75f), this.Map, "WTH_RogueAI_Hurt_Remark".Translate(), Color.white, TEXTDURATION);
-                textTimeout += MINTEXTTIMEOUT;
-            }
+            OutputText("WTH_RogueAI_Hurt_Remark".Translate());
         }
 
         private void DrainMoodAfterTickRare()
@@ -288,11 +312,7 @@ namespace WhatTheHack.Buildings
             if (!PowerPlantComp.PowerOn)
             {
                 DrainMood(moodDrainNoPower);
-                if (textTimeout <= 0)
-                {
-                    Utilities.ThrowStaticText(this.DrawPos + new Vector3(0, 0, 1.75f), this.Map, "WTH_RogueAI_NoPower_Remark".Translate(), Color.white, TEXTDURATION);
-                    textTimeout += MINTEXTTIMEOUT;
-                }
+                OutputText("WTH_RogueAI_NoPower_Remark".Translate());
             }
         }
         public void DrainMood(float amount)
@@ -816,6 +836,9 @@ namespace WhatTheHack.Buildings
                 rogueTurrets.Remove(turret);
             }
             queuedActions.Clear();
+            OutputText("WTH_RogueAI_StopGoingRogue".Translate(), true);
+            Messages.Message("WTH_Message_RogueAI_StopGoingRogue".Translate(), new RimWorld.Planet.GlobalTargetInfo(this.Position, this.Map), MessageTypeDefOf.PositiveEvent);
+
         }
 
         public void UpdateGlower()
@@ -823,7 +846,12 @@ namespace WhatTheHack.Buildings
             CompGlower glowerComp = GetComp<CompGlower>();
             Mood mood = CurMoodCategory;
             glowerComp.Props.glowRadius = 4f;
-            if (goingRogue)
+            if (!IsConscious)
+            {
+                glowerComp.Props.glowRadius = 0f;
+                //Don't set any color;
+            }
+            else if (goingRogue)
             {
                 glowerComp.Props.glowColor = new ColorInt(255, 0, 0, 0);
                 glowerComp.Props.glowRadius = 12f;

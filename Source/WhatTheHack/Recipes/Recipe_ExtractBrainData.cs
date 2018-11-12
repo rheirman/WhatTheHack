@@ -40,8 +40,6 @@ namespace WhatTheHack.Recipes
                 Thing md = ThingMaker.MakeThing(WTH_DefOf.WTH_MechanoidData);
                 md.stackCount = 3 + pawn.skills.GetSkill(SkillDefOf.Intellectual).Level;
                 GenPlace.TryPlaceThing(md, pawn.Position, pawn.Map, ThingPlaceMode.Near);
-                //MedicalRecipesUtility.SpawnNaturalPartIfClean(pawn, part, billDoer.Position, billDoer.Map);
-                //MedicalRecipesUtility.SpawnThingsFromHediffs(pawn, part, billDoer.Position, billDoer.Map);
             }
             DamageDef surgicalCut = DamageDefOf.SurgicalCut;
             float amount = 99999f;

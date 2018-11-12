@@ -38,6 +38,7 @@ namespace WhatTheHack.Jobs
             Toil finalizeHacking = new Toil() {
                 defaultCompleteMode = ToilCompleteMode.Instant,
                 initAction = new Action(delegate {
+                    Messages.Message("WTH_Message_HackedRogueAI".Translate(this.pawn.Name.ToStringShort), new RimWorld.Planet.GlobalTargetInfo(this.pawn.Position, this.Map), MessageTypeDefOf.PositiveEvent);
                     RogueAI.StopGoingRogue();
                 })
             };

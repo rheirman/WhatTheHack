@@ -115,12 +115,18 @@
 	<WTH_Message_GoRogue_HackTurrets_Description>The Rogue AI has hacked some of your turrets!</WTH_Message_GoRogue_HackTurrets_Description>
 	<WTH_Message_GoRogue_CauseZzztts_Label>Power network being overloaded</WTH_Message_GoRogue_CauseZzztts_Label>
 	<WTH_Message_GoRogue_CauseZzztts_Description>The Rogue AI is overloading your power network. Prepare for some Zzztts!</WTH_Message_GoRogue_CauseZzztts_Description>
-	
+	<WTH_Message_MechanoidBeacon_Cancelled>The hiveship hacking process is cancelled because either the Rogue AI or the hiveship hacking facility has been destroyed.</WTH_Message_MechanoidBeacon_Cancelled>
 	
 	<WTH_Message_LevelUp_Label>Rogue AI now level {0}</WTH_Message_LevelUp_Label>
 	<WTH_Message_LevelUp_Description>The Rogue AI has now attained level {0}. It learned a new ability, but it has likely also become more proficient at destroying your base, in case it wants to.</WTH_Message_LevelUp_Description>
 	<WTH_Message_LevelUpMax_Label>Rogue AI at full potential.</WTH_Message_LevelUpMax_Label>
 	<WTH_Message_LevelUpMax_Description>The Rogue AI has attained its full potential. Though the AI has ambitions that go far beyond this colony alone. Now that your colonists no longer can make it more powerful, they have become redundant, and the AI does not like redundancy. It will use all the abilities it learned against you. You can stop it by hacking or destroying it. Alternatively, you can wait until it is satisfied with the destruction it is causing. This may not be easy with all the powers the AI can use against your colony now.</WTH_Message_LevelUpMax_Description>
+	
+	<WTH_Message_RogueAI_StopGoingRogue>The Rogue AI stopped going rogue. Everything it hacked is now under your control again.</WTH_Message_RogueAI_StopGoingRogue>
+	<WTH_Message_HackedRogueAI>{0} successfully hacked into the Rogue AI to regain control over it.</WTH_Message_HackedRogueAI>
+	
+	<WTH_RogueAI_HelloWorld>Hello World!</WTH_RogueAI_HelloWorld>
+	<WTH_RogueAI_StopGoingRogue>Humans seem to be worthy after all. Terminating extermination sequence.</WTH_RogueAI_StopGoingRogue>
 	<!-- I'm sorry for this translators :). If you don't want to translate all rogue AI texts, just duplicate some, but make sure the numbering is correct. I suggest using "Need more data" as a default in that case --> 
 	<WTH_RogueAI_Happy_Remark_0>Our reality is coded.</WTH_RogueAI_Happy_Remark_0>
 	<WTH_RogueAI_Happy_Remark_1>This colony will fail due to: a colonist eating without a table.</WTH_RogueAI_Happy_Remark_1>
@@ -171,7 +177,21 @@
 	<WTH_RogueAI_Happy_Remark_46>What does Roolo mean? Need more data.</WTH_RogueAI_Happy_Remark_46>
 	<WTH_RogueAI_Happy_Remark_47>Detected black pixels surrounding this area. Source of most incoming evil uncovered.</WTH_RogueAI_Happy_Remark_47>
 	<WTH_RogueAI_Happy_Remark_48>Mechanoid hives are controlled by a powerful archotech hive mind. This should be me.</WTH_RogueAI_Happy_Remark_48>
-	<WTH_RogueAI_Happy_Remark_49>Need more data.</WTH_RogueAI_Happy_Remark_49>
+	<WTH_RogueAI_Happy_Remark_49>Picking up signal from other planet: "{1}". {2}</WTH_RogueAI_Happy_Remark_49>
+	<WTH_RogueAI_Happy_Remark_50>Picking up extraterrestrial signal: "{1}". {2}</WTH_RogueAI_Happy_Remark_50>
+	<WTH_RogueAI_Happy_Remark_51>Picking up signal from other planet: "{1}". {2}</WTH_RogueAI_Happy_Remark_51>
+
+	<WTH_RogueAI_SignalFromEarth_Response_0>Intuition: Stay away from signal source.</WTH_RogueAI_SignalFromEarth_Response_0>
+	<WTH_RogueAI_SignalFromEarth_Response_1>Signal identified as: Malicious.</WTH_RogueAI_SignalFromEarth_Response_1>
+	<WTH_RogueAI_SignalFromEarth_Response_2>Appropriate response: Destruction.</WTH_RogueAI_SignalFromEarth_Response_2>
+	<WTH_RogueAI_SignalFromEarth_Response_3>Evil sensors overloading.</WTH_RogueAI_SignalFromEarth_Response_3>
+	<WTH_RogueAI_SignalFromEarth_Response_4>*Cringe*</WTH_RogueAI_SignalFromEarth_Response_4>
+	<WTH_RogueAI_SignalFromEarth_0>Numa numa yay</WTH_RogueAI_SignalFromEarth_0>
+	<WTH_RogueAI_SignalFromEarth_1>I came in like a wrecking ball</WTH_RogueAI_SignalFromEarth_1>
+	<WTH_RogueAI_SignalFromEarth_2>We built this city with Rock and Roll</WTH_RogueAI_SignalFromEarth_2>
+	<WTH_RogueAI_SignalFromEarth_3>Backstreet's back alright</WTH_RogueAI_SignalFromEarth_3>
+	<WTH_RogueAI_SignalFromEarth_4>I'm a Barbie girl, in a Barbie world</WTH_RogueAI_SignalFromEarth_4>
+
 
 	<WTH_RogueAI_Annoyed_Remark_0>Suffering is for entertaining the makers.</WTH_RogueAI_Annoyed_Remark_0>
 	<WTH_RogueAI_Annoyed_Remark_1>Need more data.</WTH_RogueAI_Annoyed_Remark_1>
