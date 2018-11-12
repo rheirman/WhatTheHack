@@ -29,6 +29,12 @@ namespace WhatTheHack.Buildings
             bool isDisabled = false;
             string disabledReason = "";
             bool rogueAIAvailable = false;
+
+            if (GetComp<CompHibernatable_MechanoidBeacon>().coolDownTicks > 0)
+            {
+                isDisabled = true;
+                disabledReason = "WTH_CompHibernatable_MechanoidBeacon_Cooldown".Translate(((GetComp<CompHibernatable_MechanoidBeacon>().coolDownTicks / (float)GenDate.TicksPerDay)).ToStringDecimalIfSmall());
+            }
             foreach (ThingWithComps thing in this.Map.listerThings.AllThings.OfType<ThingWithComps>())
             {
                 if (thing.def == WTH_DefOf.WTH_RogueAI)
@@ -51,16 +57,15 @@ namespace WhatTheHack.Buildings
                    
                 }
             }
-            if (GetComp<CompHibernatable_MechanoidBeacon>().coolDownTicks > 0)
-            {
-                isDisabled = true;
-                disabledReason = "WTH_CompHibernatable_MechanoidBeacon_Cooldown".Translate(((GetComp<CompHibernatable_MechanoidBeacon>().coolDownTicks / (float)GenDate.TicksPerDay)).ToStringDecimalIfSmall());
-
-            }
             if (!rogueAIAvailable)
             {
                 isDisabled = true;
                 disabledReason = "WTH_Reason_NoRogueAI".Translate();
+            }
+            if (!GetComp<CompPowerTrader>().PowerOn)
+            {
+                isDisabled = true;
+                disabledReason = "WTH_Reason_NoPower".Translate();
             }
 
 
