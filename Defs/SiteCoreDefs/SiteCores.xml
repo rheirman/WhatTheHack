@@ -4,8 +4,8 @@
     <defName>WTH_RoamingMechanoidsCore</defName>
     <label>Roaming mechanoids</label>
 	<description>Mechanoids seem to be roaming around this area.</description>
-    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
-    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Nothing</expandingIconTexture>
+    <siteTexture>UI/Scyther_side</siteTexture>
+    <expandingIconTexture>UI/Scyther_side</expandingIconTexture>
     <showFactionInInspectString>true</showFactionInInspectString>
     <forceExitAndRemoveMapCountdownDurationDays>10</forceExitAndRemoveMapCountdownDurationDays>
   </SiteCoreDef>
@@ -13,9 +13,9 @@
   <SiteCoreDef>
     <defName>WTH_MechanoidTempleCore</defName>
     <label>Mechanoid location</label>
-	<description>TODO</description>
-    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
-    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Nothing</expandingIconTexture>
+	<description>A large mechanoid structure detected by your long range mineral scanner.</description>
+    <siteTexture>Things/MechanoidParts</siteTexture>
+    <expandingIconTexture>Things/MechanoidParts</expandingIconTexture>
     <showFactionInInspectString>true</showFactionInInspectString>
     <forceExitAndRemoveMapCountdownDurationDays>10</forceExitAndRemoveMapCountdownDurationDays>
   </SiteCoreDef>

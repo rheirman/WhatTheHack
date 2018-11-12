@@ -54,6 +54,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alerts\Alert_RogueAI_MoodVeryLow.cs" />
+    <Compile Include="Alerts\Alert_RogueAI_MoodLow.cs" />
+    <Compile Include="Alerts\Alert_RogueAI_NoPower.cs" />
+    <Compile Include="Alerts\Alert_RogueAI_DrainingMood.cs" />
     <Compile Include="Alerts\Alert_EmergencySignalCooldown.cs" />
     <Compile Include="Alerts\Alert_EmergencySignalTransmitted.cs" />
     <Compile Include="Alerts\Alert_MaintenanceLow.cs" />
@@ -76,6 +80,7 @@
     <Compile Include="Comps\CompProperties_Overlays.cs" />
     <Compile Include="Harmony\ApparelUtility.cs" />
     <Compile Include="Harmony\Bill.cs" />
+    <Compile Include="Harmony\ShipUtility.cs" />
     <Compile Include="Harmony\Building_TurretGun.cs" />
     <Compile Include="Harmony\Caravan.cs" />
     <Compile Include="Harmony\CaravanFormingUtility.cs" />

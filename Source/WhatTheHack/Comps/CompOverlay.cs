@@ -71,9 +71,6 @@ namespace WhatTheHack.Comps
             Vector3 drawPosEye = parent.DrawPos;
             drawPosEye.y += 0.046875f;
             drawPosEye += overlay.offsetDefault;
-            drawPosEye.x += Base.tempOffsetX;
-            drawPosEye.y += Base.tempOffsetY;
-            drawPosEye.z += Base.tempOffsetZ;
             SetAnimationOffset(ref drawPosEye);
             gdEye.Graphic.Draw(drawPosEye, parent.Rotation, parent, 0f);
         }

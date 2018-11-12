@@ -25,7 +25,6 @@ namespace WhatTheHack
         internal Dictionary<string, Texture2D> cancelControlTurretTextures = new Dictionary<string, Texture2D>();
 
         //settings
-        internal static SettingHandle<bool> settingsGroup_Factions;
         internal static SettingHandle<String> tabsHandler;
         internal static SettingHandle<Dict2DRecordHandler> factionRestrictions;
 
@@ -42,6 +41,8 @@ namespace WhatTheHack
         internal static SettingHandle<int> failureChanceHackPoorly;
         internal static SettingHandle<int> failureChanceIntRaidTooLarge;
 
+        //internal static SettingHandle<int> moodAutoDeactivate;
+
         internal static SettingHandle<bool> settingsGroup_Balance;
         internal static SettingHandle<bool> maintenanceDecayEnabled;
         internal static SettingHandle<float> maintenanceDecayModifier;
@@ -50,10 +51,6 @@ namespace WhatTheHack
         internal static SettingHandle<float> chipDropRateModifier;
         internal static SettingHandle<float> powerFallModifier;
         internal static SettingHandle<float> powerChargeModifier;
-
-        internal static SettingHandle<float> tempOffsetX;
-        internal static SettingHandle<float> tempOffsetY;
-        internal static SettingHandle<float> tempOffsetZ;
 
         internal static List<ThingDef> allMechs;
         internal static List<String> allFactionNames;
@@ -83,11 +80,8 @@ namespace WhatTheHack
                                             where isHackingFaction(td)
                                             select td.defName).ToList();
 
-            tempOffsetX = Settings.GetHandle<float>("tempOffsetX", "temp x", "temp x", 0.0f);
-            tempOffsetY = Settings.GetHandle<float>("tempOffsetY", "temp y", "temp y", 0.0f);
-            tempOffsetZ = Settings.GetHandle<float>("tempOffsetZ", "temp z", "temp z", 0.0f);
 
-
+            //moodAutoDeactivate = Settings.GetHandle<int>("hackedMechChance", "WTH_MoodAutoDeactivate_Title".Translate(), "WTH_MoodAutoDeactivate_Description".Translate(), 30, Validators.IntRangeValidator(0, 100));
             //Factions
             tabsHandler = Settings.GetHandle<String>("tabs", "WTH_FactionRestrictions_Label".Translate(), "WTH_FactionRestrictions_Description".Translate(), allFactionNames.First());
             tabsHandler.CustomDrawer = rect => { return false; };

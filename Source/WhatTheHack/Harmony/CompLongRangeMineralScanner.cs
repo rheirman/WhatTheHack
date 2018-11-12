@@ -40,9 +40,9 @@ namespace WhatTheHack.Harmony
                 site.GetComponent<TimeoutComp>().StartTimeout(ticks: randomInRange * GenDate.TicksPerDay);
                 site.SetFaction(Faction.OfMechanoids);
 
-                site.customLabel = "TODO";
+                //site.customLabel = "TODO";
                 Find.WorldObjects.Add(o: site);
-                Find.LetterStack.ReceiveLetter(label: "TODO", text: "TODO", textLetterDef: LetterDefOf.PositiveEvent, lookTargets: site);
+                Find.LetterStack.ReceiveLetter(label: "WTH_Letter_LRMS_Label".Translate(), text: "WTH_Letter_LRMS_Description".Translate(), textLetterDef: LetterDefOf.PositiveEvent, lookTargets: site);
 
                 return false;
             }

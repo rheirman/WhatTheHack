@@ -57,6 +57,8 @@ namespace WhatTheHack.Buildings
         private float moodDrainForceTalkGibberish = 5.0f;
         public float moodDrainPreventZzztt = 0.5f;
 
+        private bool warnedPlayerAboutMood = false;
+
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
@@ -110,7 +112,7 @@ namespace WhatTheHack.Buildings
                 return GetComp<CompDataLevel>();
             }
         }
-        private CompPowerPlant_RogueAI PowerPlantComp
+        public CompPowerPlant_RogueAI PowerPlantComp
         {
             get
             {
@@ -205,6 +207,14 @@ namespace WhatTheHack.Buildings
                 DrawWarmup();
                 abilityWarmUpTicks--;
             }
+            /*
+            if (this.RefuelableComp.Fuel < Base.moodAutoDeactivate)
+            {
+                CancelLinks();
+                Messages.Message("WTH_Message_MoodAutoDeactivate".Translate(), new RimWorld.Planet.GlobalTargetInfo(this.Position, this.Map), MessageTypeDefOf.PositiveEvent);
+            }
+            */
+
         }
         public override void TickRare()
         {
@@ -217,6 +227,13 @@ namespace WhatTheHack.Buildings
             if (textTimeout > 0)
             {
                 textTimeout--;
+            }
+            foreach(Building_TurretGun turret in controlledTurrets)
+            {
+                if (turret.DestroyedOrNull())
+                {
+                    CancelControlTurret(turret);
+                }
             }
         }
 
@@ -363,7 +380,13 @@ namespace WhatTheHack.Buildings
                 index++;
             }
         }
-
+        public bool CurrentlyDrainingMood
+        {
+            get
+            {
+                return hackedMechs.Count > 0 || controlledMechs.Count > 0 || controlledTurrets.Count > 0;
+            }
+        }
         public bool GlobalShouldDisable(out string reason)
         {
             reason = "";
@@ -421,8 +444,8 @@ namespace WhatTheHack.Buildings
         private Gizmo GetTalkGibberishGizmo()
         {
             Command_Action command = new Command_Action();
-            command.defaultLabel = "WTH_Gizmo_TalkGibberish_Label".Translate();//TODO
-            command.defaultDesc = "WTH_Gizmo_TalkGibberish_Description".Translate(moodDrainForceTalkGibberish);//TODO
+            command.defaultLabel = "WTH_Gizmo_TalkGibberish_Label".Translate();
+            command.defaultDesc = "WTH_Gizmo_TalkGibberish_Description".Translate(moodDrainForceTalkGibberish);
             command.icon = ContentFinder<Texture2D>.Get("UI/RogueAI_TalkGibberish", true);
             command.disabled = GlobalShouldDisable(out string reason);
             command.disabledReason = reason;
@@ -442,8 +465,8 @@ namespace WhatTheHack.Buildings
         private Gizmo GetManagePowerNetworkGizmo()
         {
             Command_Toggle command = new Command_Toggle();
-            command.defaultLabel = "WTH_Gizmo_ManagePowerNetwork_Label".Translate();//TODO
-            command.defaultDesc = "WTH_Gizmo_ManagePowerNetwork_Description".Translate();//TODO
+            command.defaultLabel = "WTH_Gizmo_ManagePowerNetwork_Label".Translate();
+            command.defaultDesc = "WTH_Gizmo_ManagePowerNetwork_Description".Translate();
             command.icon = ContentFinder<Texture2D>.Get("UI/RogueAI_Manage_Network", true);
             command.disabled = GlobalShouldDisable(out string reason);
             command.disabledReason = reason;
@@ -467,8 +490,8 @@ namespace WhatTheHack.Buildings
         private Gizmo GetControlMechanoidCancelGizmo(Pawn mech)
         {
             Command_Action_Highlight command = new Command_Action_Highlight();
-            command.defaultLabel = mech.Name.ToStringShort;//TODO
-            command.defaultDesc = "WTH_Gizmo_ControlMechanoidCancel_Description".Translate();//TODO
+            command.defaultLabel = mech.Name.ToStringShort;
+            command.defaultDesc = "WTH_Gizmo_ControlMechanoidCancel_Description".Translate();
             command.parent = this;
             command.thing = mech;
             
@@ -495,11 +518,11 @@ namespace WhatTheHack.Buildings
         private Gizmo GetControlMechanoidActivateGizmo()
         {
             Command_Target command = new Command_Target();
-            command.defaultLabel = "WTH_Gizmo_ControlMechanoidActivate_Label".Translate();//TODO
-            command.defaultDesc = "WTH_Gizmo_ControlMechanoidActivate_Description".Translate(MAXCONTROLLABLEMECHS);//TODO
+            command.defaultLabel = "WTH_Gizmo_ControlMechanoidActivate_Label".Translate();
+            command.defaultDesc = "WTH_Gizmo_ControlMechanoidActivate_Description".Translate(MAXCONTROLLABLEMECHS);
             command.targetingParams = GetTargetingParametersForControlling();
             command.hotKey = KeyBindingDefOf.Misc5;
-            command.icon = ContentFinder<Texture2D>.Get(("UI/RogueAI_Control"));//TODO
+            command.icon = ContentFinder<Texture2D>.Get(("UI/RogueAI_Control"));
 
             bool shouldDisable = GlobalShouldDisable(out string reason);
             command.disabled = shouldDisable;
@@ -556,8 +579,8 @@ namespace WhatTheHack.Buildings
         private Gizmo GetHackingCancelGizmo(Pawn mech, int index)
         {
             Command_Action_Highlight command = new Command_Action_Highlight();
-            command.defaultLabel = "WTH_Gizmo_HackingCancel_Label".Translate() + " " + index;//TODO
-            command.defaultDesc = "WTH_Gizmo_HackingCancel_Description".Translate();//TODO
+            command.defaultLabel = "WTH_Gizmo_HackingCancel_Label".Translate() + " " + index;
+            command.defaultDesc = "WTH_Gizmo_HackingCancel_Description".Translate();
             command.parent = this;
             command.thing = mech;
 
@@ -585,11 +608,11 @@ namespace WhatTheHack.Buildings
         private Gizmo GetHackingAvtivateGizmo()
         {
             Command_Target command = new Command_Target();
-            command.defaultLabel = "WTH_Gizmo_HackingAvtivate_Label".Translate();//TODO
-            command.defaultDesc = "WTH_Gizmo_HackingAvtivate_Description".Translate(MAXHACKABLE);//TODO
+            command.defaultLabel = "WTH_Gizmo_HackingAvtivate_Label".Translate();
+            command.defaultDesc = "WTH_Gizmo_HackingAvtivate_Description".Translate(MAXHACKABLE);
             command.targetingParams = GetTargetingParametersForHacking();
             command.hotKey = KeyBindingDefOf.Misc5;
-            command.icon = ContentFinder<Texture2D>.Get(("UI/RogueAI_Hack"));//TODO 
+            command.icon = ContentFinder<Texture2D>.Get(("UI/RogueAI_Hack"));
             bool shouldDisable = GlobalShouldDisable(out string reason);
             command.disabled = shouldDisable;
             command.disabledReason = reason;
@@ -649,8 +672,8 @@ namespace WhatTheHack.Buildings
         private Gizmo GetControlTurretCancelGizmo(Building_TurretGun turret, int index)
         {
             Command_Action_Highlight command = new Command_Action_Highlight();
-            command.defaultLabel = "WTH_Gizmo_ControlTurretCancel_Label".Translate() + index;//TODO
-            command.defaultDesc = "WTH_Gizmo_ControlTurretCancel_Description".Translate();//TODO
+            command.defaultLabel = "WTH_Gizmo_ControlTurretCancel_Label".Translate() + index;
+            command.defaultDesc = "WTH_Gizmo_ControlTurretCancel_Description".Translate();
             command.parent = this;
             command.thing = turret;
 
@@ -674,10 +697,10 @@ namespace WhatTheHack.Buildings
         private Gizmo GetControlTurretAvtivateGizmo()
         {
             Command_Target command = new Command_Target();
-            command.defaultLabel = "WTH_Gizmo_ControlTurretActivate_Label".Translate();//TODO
-            command.defaultDesc = "WTH_Gizmo_ControlTurretActivate_Description".Translate(MAXCONTROLLABLETURRETS);//TODO
+            command.defaultLabel = "WTH_Gizmo_ControlTurretActivate_Label".Translate();
+            command.defaultDesc = "WTH_Gizmo_ControlTurretActivate_Description".Translate(MAXCONTROLLABLETURRETS);
             command.targetingParams = GetTargetingParametersForControlTurret();
-            command.icon = ContentFinder<Texture2D>.Get(("UI/RogueAI_Control_Turret"));//TODO
+            command.icon = ContentFinder<Texture2D>.Get(("UI/RogueAI_Control_Turret"));
             bool shouldDisable = GlobalShouldDisable(out string reason);
             command.disabled = shouldDisable;
             command.disabledReason = reason;
