@@ -63,7 +63,9 @@ namespace WhatTheHack
         public static ThingDef WTH_Apparel_MechControllerBelt;
         public static ThingDef WTH_MechanoidData;
         public static ThingDef WTH_RogueAI;
-        
+        public static ThingDef WTH_ExtractedBrainData;
+
+
         public static StatDef WTH_HackingSuccessChance;
         public static StatDef WTH_HackingMaintenanceSpeed;
         public static StatDef WTH_ControllerBeltRadius;
@@ -83,7 +85,9 @@ namespace WhatTheHack
         public static ConceptDef WTH_Maintenance;
         public static ConceptDef WTH_Power;
         public static ConceptDef WTH_Concept_MechanoidParts;
-
+        public static ConceptDef WTH_Concept_RogueAI;
+        public static ConceptDef WTH_Concept_RogueAI_LevelUp;
+        public static ConceptDef WTH_Concept_RogueAI_Mood;
         public static SiteCoreDef WTH_RoamingMechanoidsCore;
         public static SiteCoreDef WTH_MechanoidTempleCore;
 

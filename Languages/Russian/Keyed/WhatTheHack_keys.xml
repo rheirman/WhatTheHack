@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<WTH_Letter_Success_Label>Успешный взлом</WTH_Letter_Success_Label>
+	<WTH_Letter_Success_Label_Description>{0} взломал механоида и присвоил ему имя {1}. Система опознавания "свой-чужой" {1} была перенастроена и не будет считать ваших поселенцов врагами. Однако, это потребовало отключения от систем, контролируемых Материнским кораблем Механоидов, {1} теперь работает только от встроенного источника энергии, требующего регулярной подзарядки.</WTH_Letter_Success_Label_Description>
+	<WTH_Letter_Nothing_Label>Неудачный взлом</WTH_Letter_Nothing_Label>
+	<WTH_Letter_Nothing_Description>Взлом не удался. В процессе взлома возникли трудности, механоиду были нанесены дополнительные повреждения.</WTH_Letter_Nothing_Description>
+	<WTH_Letter_HackedPoorly_Label>Частичный взлом</WTH_Letter_HackedPoorly_Label>
+	<WTH_Letter_HackedPoorly_Description>Взлом был проведен некачественно. Вы можете использовать механоида на свой страх и риск, либо разобрать его на части.</WTH_Letter_HackedPoorly_Description>
+	<WTH_Letter_CausedMechanoidRaid_Label>Неудачный взлом</WTH_Letter_CausedMechanoidRaid_Label>
+	<WTH_Letter_CausedMechanoidRaid_Description>Один из Ваших колонистов случайно активировал систему бедствия механоида. Вероятно, скоро прибудет команда спасения...</WTH_Letter_CausedMechanoidRaid_Description>
+	<WTH_Letter_ShotRandomDirection_Label>Неудачный взлом</WTH_Letter_ShotRandomDirection_Label>
+	<WTH_Letter_ShotRandomDirection_Description>У-у-упс. Один из Ваших колонистов случайно активировал оружие механоида.</WTH_Letter_ShotRandomDirection_Description>
+	<WTH_Letter_HealedToStanding_Label>Неудачный взлом</WTH_Letter_HealedToStanding_Label>
+	<WTH_Letter_HealedToStanding_Description>Механоид был взломан некачественно и смог запустить аварийный режим работы. Теперь он представляет угрозу для Вашей колонии.</WTH_Letter_HealedToStanding_Description>
+	<WTH_Letter_Mech_Reverted_Label>Бэкдор был удален</WTH_Letter_Mech_Reverted_Label>
+	<WTH_Letter_Mech_Reverted_Description>Механоид, который не был соответствующим образом обслужен, активировал аварийный режим и удалил бэкдор из системы. Он полностью восстановил фунциональность и представляет угрозу для колонии.</WTH_Letter_Mech_Reverted_Description>
+	<WTH_Letter_HackedPoorlyEvent_Label>Что-то сломалось</WTH_Letter_HackedPoorlyEvent_Label>
+	<WTH_Letter_HackedPoorlyEvent_Description>Что-то сломалось в голове механоида, вероятно, из-за некачественного взлома. Необходимо внеплановое техническое обслуживание!</WTH_Letter_HackedPoorlyEvent_Description>
+	<WTH_FailureChance_Nothing_Title>Вероятность ошибки: без последствий</WTH_FailureChance_Nothing_Title>
+	<WTH_FailureChance_Nothing_Description>Вероятность того, что ошибка при взломе не приведет к каким-то последствиям</WTH_FailureChance_Nothing_Description>
+	<WTH_FailureChance_CauseRaid_Title>Вероятность ошибки: налет</WTH_FailureChance_CauseRaid_Title>
+	<WTH_FailureChance_CauseRaid_Description>Веростность того, что ошибка при взломе вызовет налет</WTH_FailureChance_CauseRaid_Description>
+	<WTH_FailureChance_ShootRandomDirection_Title>Вероятность ошибки: оружие</WTH_FailureChance_ShootRandomDirection_Title>	
+	<WTH_FailureChance_ShootRandomDirection_Description>Веростность того, что ошибка при взломе вызовет активацию оружию (стрельба в случайном направлении)</WTH_FailureChance_ShootRandomDirection_Description>
+	<WTH_FailureChance_HealToStanding_Title>Вероятность ошибки: откат взлома</WTH_FailureChance_HealToStanding_Title>
+	<WTH_FailureChance_HealToStanding_Description>Веростность того, что ошибка при взломе приведет к удалению бэкдора и восстановлению функционирования механоида</WTH_FailureChance_HealToStanding_Description>
+	<WTH_FailureChance_HackPoorly_Title>Вероятность ошибки: плохой взлом</WTH_FailureChance_HackPoorly_Title>
+	<WTH_FailureChance_HackPoorly_Description>Веростность того, что ошибка при взломе приведет к некачественному взлому</WTH_FailureChance_HackPoorly_Description>
+	<WTH_MaintenanceDedayEnabled_Title>Техобслуживание</WTH_MaintenanceDedayEnabled_Title>
+	<WTH_MaintenanceDedayEnabled_Description>Деактивируйте, если не хотите проводить техобслуживание механоидов. При этом шкала техобслуживания все равно будет отображаться, но не будет уменьшаться. Однако, ряд событий все равно может привести к ее уменьшению.</WTH_MaintenanceDedayEnabled_Description>
+	
+	<!--BEGIN: added in v0.19.6 -->
+	<WTH_TextMote_OperationFailed>Операция не удалась (вероятность успеха: {0})</WTH_TextMote_OperationFailed>
+	<WTH_Letter_CausedIntendedMechanoidRaid_Label>Сигнал бедствия: отправлен!</WTH_Letter_CausedIntendedMechanoidRaid_Label>
+	<WTH_Letter_CausedIntendedMechanoidRaid_Description>Вашему влозмщику удалось целенаправленно активировать систему бедствия механоида и отправить сообщение, но в процессе он повредил механоида. Скоро Вы узнаете насколько хороша была эта идея.</WTH_Letter_CausedIntendedMechanoidRaid_Description>
+	<WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label>Сигнал бедствия: перегрузка</WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label>
+	<WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description>В процессе работы с механоидом раздался громкий щелчок. Сигнал бедствия был многократно усилен. Приготовьтесь к худшему. Это произошло в связи с низкой квалификацией взломщика.</WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description>
+	<WTH_Expand>Развернуть</WTH_Expand>
+	<WTH_Collapse>Свернуть</WTH_Collapse>
+	<WTH_SettingsGroup_Raids_Title>Настройки налета</WTH_SettingsGroup_Raids_Title>
+	<WTH_SettingsGroup_Raids_Description>Настройка вероятности налета при взломе</WTH_SettingsGroup_Raids_Description>
+	<WTH_SettingsGroup_HackFailure_Title>Настройка вероянтностней(СПОЙЛЕРЫ!)</WTH_SettingsGroup_HackFailure_Title>
+	<WTH_SettingsGroup_HackFailure_Description>Настройка вероятностей различных событий в случае неудачного взлома. Шансы нормализуются, в случае если их сумма не равна 100.</WTH_SettingsGroup_HackFailure_Description>
+	<WTH_FailureChance_IntRaidTooLarge_Title>Ошибка: вызов большого подкрепления</WTH_FailureChance_IntRaidTooLarge_Title>
+	<WTH_FailureChance_IntRaidTooLarge_Description>Вероятность прихода усиленного налета. Пояснение: это событие не будет возникать при регулярном техническом обслуживании механоида.</WTH_FailureChance_IntRaidTooLarge_Description>
+	<WTH_SettingsGroup_Balance_Title>Настройка баланса мода</WTH_SettingsGroup_Balance_Title>
+	<WTH_SettingsGroup_Balance_Description>Данные настройки оказывают большое влияние на баланс мода. Вы можете настроить их по своему усмотрению, но рекомендую сыграть хотя бы одну игру с настройками по-умолчанию. Если у Вас имеются предложения по балансу, свяжитесь со мной через Steam или форум игры.</WTH_SettingsGroup_Balance_Description>	
+	<WTH_MaintenanceDedayModifier_Title>Падение (шкала техобслуживания)</WTH_MaintenanceDedayModifier_Title>
+	<WTH_MaintenanceDedayModifier_Description>Изменение значения приведет к изменению скорости уменьшения шкалы технического обслуживания. Например, значение 0.5 уменьшит скорость падения в 2 раза.</WTH_MaintenanceDedayModifier_Description>
+	<WTH_RepairConsumptionModifier_Title>Количество запчастей для ремонта</WTH_RepairConsumptionModifier_Title>
+	<WTH_RepairConsumptionModifier_Description>Изменяет потребность в количестве запчастей, необходимых для ремонта (на платформах или с модулями улучшения). Например: значение 0.5 уменьшит потребность в 2 раза.</WTH_RepairConsumptionModifier_Description>
+	<WTH_PartDropRateModifier_Title>Количество запчастей</WTH_PartDropRateModifier_Title>
+	<WTH_PartDropRateModifier_Description>Изменяет количество запчастей, получаемых в процессе разборки механоида. Например, значение 2.0 увеличит количество получаемых запчастей в 2 раза.</WTH_PartDropRateModifier_Description>
+	<WTH_ChipDropRateModifier_Title>Количество электроники</WTH_ChipDropRateModifier_Title>
+	<WTH_ChipDropRateModifier_Description>Изменяет количество продвинутой электроники, получаемой в процессе разборки механоида. Например, значение 2.0 увеличит количество получаемых частей в 2 раза.</WTH_ChipDropRateModifier_Description>
+	<WTH_PowerFallModifier_Title>Энергосбережение (разряд)</WTH_PowerFallModifier_Title>
+	<WTH_PowerFallModifier_Description>Насколько быстро механоиды расходуют запас батареи. Например, значение 0.5 уменьшит скорость падения в 2 раза.</WTH_PowerFallModifier_Description>
+	<WTH_PowerChargeModifier_Title>Энергосбережение (заряд)</WTH_PowerChargeModifier_Title>
+	<WTH_PowerChargeModifier_Description>Насколько быстро механоиды заряжают батареи. Например, значение 2.0 увеличивает скорость зарядки в 2 раза.</WTH_PowerChargeModifier_Description>
+	<!--END: added in v0.19.6 -->
+	
+	
+	
+	<WTH_HackedMechChance_Title>Вероятность использования мехов врагами (%)</WTH_HackedMechChance_Title>
+	<WTH_HackedMechChance_Description>Вероятность прихода рейда со взломанными механоидами</WTH_HackedMechChance_Description>
+	<WTH_MaxHackedMechPoints_Title>Максимальное количество очков (%)</WTH_MaxHackedMechPoints_Title>
+	<WTH_MaxHackedMechPoints_Description>Определяет количество очков для закупки мехов при генерации налета. Если налет будет с мехами, случайное число между минимальным и макимсальным числом очков закупки будет использовано для закупки. Например: на вас нападает рейд ценой в 1000 очков, при это максимальное количество очков закупки механоидов установелнов - 50%, а минимальное - 20%, то сила рейда составит 1000 очков и дополнительные 200-500 очков будут потрачены на закупку взломанных механоидов.</WTH_MaxHackedMechPoints_Description>
+	<WTH_MinHackedMechPoints_Title>Минимальное количество очков (%)</WTH_MinHackedMechPoints_Title>
+	<WTH_MinHackedMechPoints_Description>Определяет количество очков для закупки мехов при генерации налета. Если налет будет с мехами, случайное число между минимальным и макимсальным числом очков закупки будет использовано для закупки. Например: на вас нападает рейд ценой в 1000 очков, при это максимальное количество очков закупки механоидов установелнов - 50%, а минимальное - 20%, то сила рейда составит 1000 очков и дополнительные 200-500 очков будут потрачены на закупку взломанных механоидов.</WTH_MinHackedMechPoints_Description>
+	
+	<WTH_Menu_ClearTable>Убрать предметы со стола</WTH_Menu_ClearTable>
+	
+	<WTH_Reason_NotOnTable>Расположен не на столе взломщика</WTH_Reason_NotOnTable>	
+	<WTH_Reason_MechanoidDowned>Невозможно активировать сраженного механоида</WTH_Reason_MechanoidDowned>
+	<WTH_Reason_PowerLow>Невозможно активировать механоида, низкий заряд батареи (отключите авто-заряд для снятия данного ограничения)</WTH_Reason_PowerLow>
+	<WTH_Reason_PawnCannotBeDrafted>Невозможно использовать пояс-контроллер в режиме призыва</WTH_Reason_PawnCannotBeDrafted>
+	
+	<WTH_Gizmo_SearchAndDestroy_Label>Активировать</WTH_Gizmo_SearchAndDestroy_Label>
+	<WTH_Gizmo_SearchAndDestroy_Description>Активировать механоида. Механоид будет атаковать любого врага возле Вашей колонии. Если отключить, механоид вернется на станцию (при возможности).</WTH_Gizmo_SearchAndDestroy_Description>
+	<WTH_Gizmo_AutoRecharge_Label>Контроль заряда</WTH_Gizmo_AutoRecharge_Label>
+	<WTH_Gizmo_AutoRecharge_Description>Если активно, механоид автоматически будет при необходимости возвращаться на станцию для подзарядки.</WTH_Gizmo_AutoRecharge_Description>
+	
+	<WTH_Gizmo_RemoteControlActivate_Label>Активировать</WTH_Gizmo_RemoteControlActivate_Label>
+	<WTH_Gizmo_RemoteControlActivate_Description>Используйте пояс-контроллер для прямого управления механоидом</WTH_Gizmo_RemoteControlActivate_Description>
+	<WTH_Gizmo_RemoteControlDeactivate_Label>Деактивировать</WTH_Gizmo_RemoteControlDeactivate_Label>
+	<WTH_Gizmo_RemoteControlDeactivate_Description>Деактивация пояс-контроллера, механоид переходит в автоматический режим работы</WTH_Gizmo_RemoteControlDeactivate_Description>
+	
+	<WTH_Gizmo_Regenerate_Label>Восстановление частей</WTH_Gizmo_Regenerate_Label>
+	<WTH_Gizmo_Regenerate_Description>Когда активно, платформа будет восстанавливать отсутствующие части тела механоида. Максимальное количество запчастей для одной части тела - {0} (небольшие части тела требуют меньше запчастей). Части восстанавливаются только в случае отсутствия другого урона.</WTH_Gizmo_Regenerate_Description>
+	<WTH_Gizmo_Repair_Label>Ремонт механоида</WTH_Gizmo_Repair_Label>
+	<WTH_Gizmo_Repair_Description>Когда активно, платформа подает питание на встроенный в механоида блок механитов и дает материал для их работы. Механиты забирают запчасти, расположенные на платформе, и используют их для ремонта.</WTH_Gizmo_Repair_Description>
+
+	<WTH_Gizmo_SelfDestruct_Label>Самоуничтожение</WTH_Gizmo_SelfDestruct_Label>
+	<WTH_Gizmo_SelfDestruct_Description>Механоид самоуничтожается, сопровождается взрывом.</WTH_Gizmo_SelfDestruct_Description>
+	
+	<WTH_Gizmo_Mech_Repair_Label>Ремонт</WTH_Gizmo_Mech_Repair_Label>
+	<WTH_Gizmo_Mech_Repair_Description>Дает приказ механоиду активировать программу ремонта - передачу заряженных механитов другим механоидам для их ремонта.</WTH_Gizmo_Mech_Repair_Description>
+	<WTH_Gizmo_SelfRepair_Label>Самовосстановление</WTH_Gizmo_SelfRepair_Label>
+	<WTH_Gizmo_SelfRepair_Description>Дает приказ механоиду активировать программу ремонта, что вызовет короткое замыкание и быструю зарядку механитов, которые начнут ремонт механоида.</WTH_Gizmo_SelfRepair_Description>
+	
+	<WTH_Gizmo_Mech_EquipBelt_Label>Надеть пояс</WTH_Gizmo_Mech_EquipBelt_Label>
+	<WTH_Gizmo_Mech_EquipBelt_Description>Приказывает механоиду надеть любой пояс, доступный для использования колонистам-людям.</WTH_Gizmo_Mech_EquipBelt_Description>
+	
+	<WTH_Reason_AlreadyRepairing>Данный механоид уже получил необходиоме количество заряженных механитов для ремонта.</WTH_Reason_AlreadyRepairing>
+	<WTH_Reason_NeedsMorePower>Необходимо {0} энергии для активации.</WTH_Reason_NeedsMorePower>
+	<WTH_Reason_NeedsMoreFuel>Необходимо {0} топлива для активации.</WTH_Reason_NeedsMoreFuel>
+	<WTH_Reason_NotActivated>Функция недоступна для использования деактивированным механоидом.</WTH_Reason_NotActivated>
+	<WTH_Reason_NoDamage>Повреждения отсутствуют.</WTH_Reason_NoDamage>
+	
+	<WTH_Alert_EmergencySignalTransmitted_Label>Приближается рой механоидов</WTH_Alert_EmergencySignalTransmitted_Label>
+	<WTH_Alert_EmergencySignalTransmitted_Description>Механоиды, находящиеся рядом с Вашей колонией, подтвердили получение сигнала бедствия и скоро прибудут. </WTH_Alert_EmergencySignalTransmitted_Description>
+	<WTH_Alert_EmergencySignalCooldown_Label>Механоиды проверяют сигнал</WTH_Alert_EmergencySignalCooldown_Label>
+	<WTH_Alert_EmergencySignalCooldown_Description>В связи с успешным использованием сигнала бедствия ранее, поблизости их осталось мало и они не изменят позиции. Вам придется подождать как минимум квартал, пока они не восстановят численность в регионе.</WTH_Alert_EmergencySignalCooldown_Description>
+	
+	
+	<WTH_Alert_NotEnoughPlatforms_Label>Недостаточно платформ</WTH_Alert_NotEnoughPlatforms_Label>
+	<WTH_Alert_NotEnoughPlatforms_Description>Количество механоидо превышает количество платформ. Постройте больше платформ.</WTH_Alert_NotEnoughPlatforms_Description>
+	<WTH_Alert_Power_Low_Label>Требуется подзарядка</WTH_Alert_Power_Low_Label>
+	<WTH_Alert_Power_Low_Description>Следующие механоиды имеют низкий заряд батареи:{0}Деактивируйте их, что даст им возможность вернуться на платформу для подзарядки.</WTH_Alert_Power_Low_Description>
+	<WTH_Alert_Maintenance_Low_Label>Требуется техобслуживание</WTH_Alert_Maintenance_Low_Label>
+	<WTH_Alert_Maintenance_Low_Description>Программное обеспечение следующих механоидов требует технического обслуживания:{0}Убедитесь, что Ваши вломщики этим займутся.</WTH_Alert_Maintenance_Low_Description>
+	<WTH_Alert_Maintenance_VeryLow_Label>Требуется немедленное техобслуживание</WTH_Alert_Maintenance_VeryLow_Label>
+	<WTH_Alert_Maintenance_VeryLow_Description>Программное обеспечение следующих механоидов требует немедленного технического обслуживания :{0}Бэкдор может быть обнаружен системами дигностики механоида в любой момент. Либо отключите механоидов, либо дайте приказ взломщикам их обслужить.</WTH_Alert_Maintenance_VeryLow_Description>
+	<WTH_FactionRestrictions_OK>Разрешить</WTH_FactionRestrictions_OK>
+	<WTH_FactionRestrictions_NOK>Запретить</WTH_FactionRestrictions_NOK>
+	<WTH_FactionRestrictions_Label>Настройте доступность механоидов фракциям</WTH_FactionRestrictions_Label>
+	<WTH_FactionRestrictions_Description>Какие типы механоидов могут быть использованы фракциями при нападении.</WTH_FactionRestrictions_Description>
+	
+	<WTH_MechanoidsSection>Механоиды</WTH_MechanoidsSection>
+	
+	<WTH_Explanation_BonusCapacity>Дополнительная грузоподъемность данного типа колониста</WTH_Explanation_BonusCapacity>	
+	<WTH_Explanation_NumMechs>Количество механоидов</WTH_Explanation_NumMechs>
+	<WTH_Explanation_NumPlatforms>Количество портативных платформ</WTH_Explanation_NumPlatforms>
+	<WTH_Explanation_FuelConsumption>Потребление топлива каждой платформы</WTH_Explanation_FuelConsumption>
+	<WTH_Explanation_TotalFuel>Всего топлива</WTH_Explanation_TotalFuel>
+	<WTH_Explanation_DaysOfFuel>Топливо-дней</WTH_Explanation_DaysOfFuel>
+	<WTH_Explanation_NotEnoughPlatforms>У Вас недостаточно портативных платформ. Для каждого механоида должна быть своя платформа.</WTH_Explanation_NotEnoughPlatforms>
+	<WTH_ExtraInfoKey_DaysOfFuel>Топливо-дней (механоиды)</WTH_ExtraInfoKey_DaysOfFuel>
+	
+	<WTH_Warning_NotEnoughPlatforms>У Вашего каравана недостаточно портативных платформ. Для каждого механоида должна быть своя платформа, иначе запас энергии быстро закончится.</WTH_Warning_NotEnoughPlatforms>
+	<WTH_Warning_DaysOfFuel>Запаса топлива хватит на {0} дней работы механоидов, после чего механоиды прекратят функционировать.</WTH_Warning_DaysOfFuel>
+	<WTH_Message_CaravanOutOfFuel>У {0} закончилось топливо.</WTH_Message_CaravanOutOfFuel>
+	<WTH_Message_CannotDrop>Это оборудование закреплено за колонистом, Вы не можете его выбросить.</WTH_Message_CannotDrop>
+	<WTH_Message_EmergencySignalRaidInbound>Механоиды, дислоцированные неподалеку, уже получили сигнал бедствия. Данная операция не имеет смысла и была отменена.</WTH_Message_EmergencySignalRaidInbound>
+	<WTH_Message_EmgergencySignalRaidCoolingDown>Поблизости осталось мало механоидов и они не покинут своих позиций. Данная операция не имеет смысла и была отменена.</WTH_Message_EmgergencySignalRaidCoolingDown>
+	
+	<WTH_Mount>Установить {0}</WTH_Mount>
+	<WTH_Mount_Jobstring>Установка {0}</WTH_Mount_Jobstring>
+	
+	<WTH_TextMote_MaintenanceFailed>Не удалось выполнить техническое обслуживание (вероятность успеха: {0})</WTH_TextMote_MaintenanceFailed>
+	
+</LanguageData>

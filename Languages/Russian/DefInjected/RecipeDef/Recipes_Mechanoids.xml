@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Scrap_AdvancedMechanoidChip.label>извлечь запчасти механоидов</WTH_Scrap_AdvancedMechanoidChip.label>
+  <WTH_Scrap_AdvancedMechanoidChip.description>Извлечь запчасти механоидов из продвинутой электроники</WTH_Scrap_AdvancedMechanoidChip.description>
+  <WTH_Scrap_AdvancedMechanoidChip.jobString>демонтаж запчастей</WTH_Scrap_AdvancedMechanoidChip.jobString>
+
+  <WTH_Craft_AdditionalBatteryModule.label>изготовить расширенную батарею</WTH_Craft_AdditionalBatteryModule.label>
+  <WTH_Craft_AdditionalBatteryModule.description>Изготовить расширенную батарею</WTH_Craft_AdditionalBatteryModule.description>
+  <WTH_Craft_AdditionalBatteryModule.jobString>изготавливает модуль механоида</WTH_Craft_AdditionalBatteryModule.jobString>
+
+  <WTH_Craft_VanometricModule.label>изготовить ванометрический модуль</WTH_Craft_VanometricModule.label>
+  <WTH_Craft_VanometricModule.description>Изготовить ванометрический модуль</WTH_Craft_VanometricModule.description>
+  <WTH_Craft_VanometricModule.jobString>изготавливает модуль механоида</WTH_Craft_VanometricModule.jobString>
+
+  <WTH_Craft_SelfDestructModule.label>изготовить модуль самоуничтожения</WTH_Craft_SelfDestructModule.label>
+  <WTH_Craft_SelfDestructModule.description>Изготовить модуль самоуничтожения</WTH_Craft_SelfDestructModule.description>
+  <WTH_Craft_SelfDestructModule.jobString>изготавливает модуль механоида</WTH_Craft_SelfDestructModule.jobString>
+
+  <WTH_Craft_TurretModule.label>изготовить платформу для оружия</WTH_Craft_TurretModule.label>
+  <WTH_Craft_TurretModule.description>Изготовить платформу для оружия</WTH_Craft_TurretModule.description>
+  <WTH_Craft_TurretModule.jobString>изготавливает модуль механоида</WTH_Craft_TurretModule.jobString>
+
+  <WTH_Craft_RepairModule.label>изготовить ремонтный модуль</WTH_Craft_RepairModule.label>
+  <WTH_Craft_RepairModule.description>Изготовить ремонтный модуль</WTH_Craft_RepairModule.description>
+  <WTH_Craft_RepairModule.jobString>изготавливает модуль механоида</WTH_Craft_RepairModule.jobString>
+
+  <WTH_Craft_RepairArm.label>изготовить ремонтный манипулятор</WTH_Craft_RepairArm.label>
+  <WTH_Craft_RepairArm.description>Изготовить ремонтный манипулятор</WTH_Craft_RepairArm.description>
+  <WTH_Craft_RepairArm.jobString>изготавливает модуль механоида</WTH_Craft_RepairArm.jobString>
+
+  <WTH_Craft_BeltModule.label>изготовить платформу для пояса</WTH_Craft_BeltModule.label>
+  <WTH_Craft_BeltModule.description>Изготовить платформу для пояса</WTH_Craft_BeltModule.description>
+  <WTH_Craft_BeltModule.jobString>изготавливает модуль механоида</WTH_Craft_BeltModule.jobString>
+
+  <WTH_HackMechanoid.label>взлом системы опознавания</WTH_HackMechanoid.label>
+  <WTH_HackMechanoid.description>Взлом системы опознавания "свой-чужой".</WTH_HackMechanoid.description>
+  <WTH_HackMechanoid.jobString>взлом механоида</WTH_HackMechanoid.jobString>
+
+  <WTH_InduceEmergencySignal.label>активировать сигнал бедствия</WTH_InduceEmergencySignal.label>
+  <WTH_InduceEmergencySignal.description>Активирует сигнал бедствия механоида. Механоиды расположенные поблизости поймают сигнал и отправятся на помощь. Это быстрый, но опасный способ получения запчастей. Механоид не будет подлежать восстановлению после данной операции.</WTH_InduceEmergencySignal.description>
+  <WTH_InduceEmergencySignal.jobString>активация сигнала бедствия</WTH_InduceEmergencySignal.jobString>
+
+  <WTH_ImplantAI.label>замена ИИ</WTH_ImplantAI.label>
+  <WTH_ImplantAI.description>Замена ядра ИИ механоида. Дает возможность полного котроля над боевыми системами механоида.</WTH_ImplantAI.description>
+  <WTH_ImplantAI.jobString>замена ИИ механоида</WTH_ImplantAI.jobString>
+
+
+  <!-- <RecipeDef>
+		<defName>WTH_HackLocomotion</defName>
+		<label>hack mechanoid locomotion system</label>
+		<description>Hacks the locomotion system of the mechanoid and adds a receiver to the mechanoid to allow the it to be operated by a colonist using a remote control device</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Hacking mechanoid</jobString>
+		<workAmount>4000</workAmount>				
+		<surgerySuccessChanceFactor>1.5</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<effectWorking>Repair</effectWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_MechanoidParts</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_MechanoidChip</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+			<li>Brain</li>
+			<li>MechanicalHead</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_LocomotionHacked</addsHediff>
+		<researchPrerequisite>WTH_HackingRemoteControl</researchPrerequisite>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef> -->
+
+  <WTH_InstallRepairArm.label>установить ремонтный манипулятор</WTH_InstallRepairArm.label>
+  <WTH_InstallRepairArm.description>Установить ремонтный манипулятор.</WTH_InstallRepairArm.description>
+  <WTH_InstallRepairArm.jobString>модификация механоида</WTH_InstallRepairArm.jobString>
+
+  <WTH_InstallTurretModule.label>установить платформу для оружия</WTH_InstallTurretModule.label>
+  <WTH_InstallTurretModule.description>Дает возможность установить любую (которая может быть демонтирована) турель на механоида. Может быть установлена только на крупных механоидов. Турель увеличивает потребление энергии, а также может быть взорвана при повреждении.</WTH_InstallTurretModule.description>
+  <WTH_InstallTurretModule.jobString>модификация механоида</WTH_InstallTurretModule.jobString>
+
+  <WTH_InstallRepairModule.label>установить ремонтный модуль</WTH_InstallRepairModule.label>
+  <WTH_InstallRepairModule.description>Устанавливает блок механитов на механоида. Блок должен быть загружен запчастями. Механиты могут быть активированы, используя энергию и запчасти осуществляют ремонт. Вызывает перегрузку, во время ремонта механоид не функционирует.</WTH_InstallRepairModule.description>
+  <WTH_InstallRepairModule.jobString>модификация механоида</WTH_InstallRepairModule.jobString>
+
+  <WTH_InstallSelfDestruct.label>установить модуль самоуничтожения</WTH_InstallSelfDestruct.label>
+  <WTH_InstallSelfDestruct.description>Модуль содержит взрывчатку и позволяет активировать самоуничтожение. Оболочка из пластали не позволяет произойти взрыву самопроизвольно.</WTH_InstallSelfDestruct.description>
+  <WTH_InstallSelfDestruct.jobString>модификация механоида</WTH_InstallSelfDestruct.jobString>
+
+  <WTH_InstallBeltModule.label>установить платформу для пояса</WTH_InstallBeltModule.label>
+  <WTH_InstallBeltModule.description>Модуль позволяет устанавливать на механоида любой пояс, например, пояс-щит или пояс-дымзавесу.</WTH_InstallBeltModule.description>
+  <WTH_InstallBeltModule.jobString>модификация механоида</WTH_InstallBeltModule.jobString>
+
+  <WTH_InstallBatteryExpansionModule.label>установить увеличенную батарею</WTH_InstallBatteryExpansionModule.label>
+  <WTH_InstallBatteryExpansionModule.description>Увеличенная батарея позволяет хранить больший запас энергии, но из-за своей массы и размеров замедляет передвижение.</WTH_InstallBatteryExpansionModule.description>
+  <WTH_InstallBatteryExpansionModule.jobString>модификация механоида</WTH_InstallBatteryExpansionModule.jobString>
+
+  <WTH_InstallVanometricModule.label>установить ванометрический модуль</WTH_InstallVanometricModule.label>
+  <WTH_InstallVanometricModule.description>Неисчерпаемый источник энергии для механоида. Из-за своей массы и размеров замедляет передвижение.</WTH_InstallVanometricModule.description>
+  <WTH_InstallVanometricModule.jobString>модификация механоида</WTH_InstallVanometricModule.jobString>
+
+  <WTH_ShutDownMechanoid.label>Системное отключение</WTH_ShutDownMechanoid.label>
+  <WTH_ShutDownMechanoid.description>Отключает питание от всех систем механоида. Механоид навсегда прекращает функционировать и не подлежит восстановлению.</WTH_ShutDownMechanoid.description>
+  <WTH_ShutDownMechanoid.jobString>отключение механоида</WTH_ShutDownMechanoid.jobString>
+
+
+</LanguageData>

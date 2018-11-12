@@ -65,6 +65,8 @@ namespace WhatTheHack.Buildings
             base.SpawnSetup(map, respawningAfterLoad);
             UpdateGlower();
             OutputText("WTH_RogueAI_HelloWorld".Translate());
+            LessonAutoActivator.TeachOpportunity(WTH_DefOf.WTH_Concept_RogueAI, OpportunityType.Important);
+
         }
 
         public enum Mood : byte
@@ -86,6 +88,7 @@ namespace WhatTheHack.Buildings
                     OverlayComp.SetLookAround();
                     DrainMood(50);
                     OutputText("WTH_RogueAI_HelloWorld".Translate());
+                    LessonAutoActivator.TeachOpportunity(WTH_DefOf.WTH_Concept_RogueAI_LevelUp, OpportunityType.Important);
                 }
             }
         }
@@ -179,12 +182,13 @@ namespace WhatTheHack.Buildings
             get
             {
                 //CompRefuelable compRefuelable = GetComp<CompRefuelable>();
-                if (RefuelableComp.FuelPercentOfMax < 0.2f)
+                if (RefuelableComp.FuelPercentOfMax < 0.25f)
                 {
                     return Mood.Mad;
                 }
                 else if (RefuelableComp.FuelPercentOfMax < 0.45f)
                 {
+                    LessonAutoActivator.TeachOpportunity(WTH_DefOf.WTH_Concept_RogueAI_Mood, OpportunityType.Important);
                     return Mood.Annoyed;
                 }
                 else

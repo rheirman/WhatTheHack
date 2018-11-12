@@ -162,7 +162,7 @@
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>A module that increases the total power a mechanoid can store, at the cost of a small movement penalty.</description>
-		<baseCost>1600</baseCost>
+		<baseCost>1200</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
@@ -176,7 +176,7 @@
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>A module that contains a vanometric power cell to provide a mechanoid with an infinite power supply, at the cost of a small movement penalty.</description>
-		<baseCost>3000</baseCost>
+		<baseCost>2200</baseCost>
 		<prerequisites>
 		  <li>WTH_BatteryExpansionModule</li>
 		</prerequisites>
@@ -191,7 +191,7 @@
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>A module installable on any hacked mechanoid, which acts as an interface to technically advanced belts like shield belts and smokepop belts normally worn by humanoids.</description>
-		<baseCost>2800</baseCost>
+		<baseCost>1800</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
@@ -205,7 +205,7 @@
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>Research the possibility to implant AI Persona Cores in hacked mechanoids, giving full control over them for combat purposes.</description>
-		<baseCost>2400</baseCost>
+		<baseCost>2000</baseCost>
 		<prerequisites>
 		  <li>WTH_HackingRemoteControl</li>
 		</prerequisites>
@@ -233,7 +233,7 @@
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>Allows the long range mineral scanner to scan for locations on the world with a high concentration of mechanoid parts. Of course the parts won't be just lying around. More likely they are attached to mechanoids. Live mechanoids.. 
-If you're looking for malicious data, these sites with a lot of mechanoids are a good place to search.</description>
+If you're looking for hive data, these sites with a lot of mechanoids are a good place to search.</description>
 		<baseCost>1200</baseCost>
 		<prerequisites>
 		  <li>WTH_HackingBasics</li>
@@ -276,7 +276,7 @@ Without a consciousness, it still provides a small boost to the resource efficie
 		<label>Human brain data extraction</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>Learn how to perform a gruesome surgery that is used to extracts all the data from a live human brain, and stores it using mechanoid technology. The more intelligent the owner of the brain, the more data can be extracted. This is a quick way to get malicious data needed for the Rogue AI, but the more morally aware colonists certainly wouldn't like using it. 
+		<description>Learn how to perform a gruesome surgery that is used to extracts all the data from a live human brain, and stores it using mechanoid technology. The more intelligent the owner of the brain, the more data can be extracted. This is a quick way to get data needed for the Rogue AI, but the more morally aware colonists certainly wouldn't like using it. 
 A more human-friendly alternative is to look for mechanoid infested sites on the world map using long range mineral scanner tuning.</description>
 		<baseCost>1000</baseCost>
 		<prerequisites>

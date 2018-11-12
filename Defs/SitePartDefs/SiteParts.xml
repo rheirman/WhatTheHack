@@ -30,13 +30,13 @@
 		<description>Given that the long range mineral scanner detected the presence of mechanoid parts from a relatively large distance in this location, there should be quite a few of them there, likely attached to mechanoids.</description>
 		<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
 		<expandingIconTexture>World/WorldObjects/Expanding/Sites/Nothing</expandingIconTexture>
-		<descriptionDialogue>Your colonists arrive at a large sinister building. It must have been there for ages, though there are no signs of any human activity around it. Most people avoid structures like this one, and they have good reasons to.</descriptionDialogue>
+		<descriptionDialogue>An area where a large concentration of mechanoid parts is detected by your long range mineral scanner</descriptionDialogue>
 		<workerClass>WhatTheHack.WorldIncidents.SitePartWorker_RoamingMechanoids</workerClass>
 		<requiresFaction>true</requiresFaction>
 		<showFactionInInspectString>true</showFactionInInspectString>
 		<approachOrderString>Visit {0}</approachOrderString>
 		<approachingReportString>Visiting {0}</approachingReportString>
-		<arrivedLetter>Your caravan has arrived at a location where mechanoids reside.</arrivedLetter>
+		<arrivedLetter>Your colonists arrive at a large sinister building. It must have been there for ages, though there are no signs of any human activity around it. Most people avoid structures like this one, and they have good reasons to.</arrivedLetter>
 		<arrivedLetterDef>NeutralEvent</arrivedLetterDef>
 		<wantsThreatPoints>True</wantsThreatPoints>
 	</SitePartDef>

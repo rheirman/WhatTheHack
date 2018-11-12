@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_HackingBasics.label>Основы взлома</WTH_HackingBasics.label>
+  <WTH_HackingBasics.description>Открывает доступ к столу взломщика и платформе техобслуживания.</WTH_HackingBasics.description>
+
+  <WTH_PortableChemfuelPlatform.label>Портативные платформы техобслуживания</WTH_PortableChemfuelPlatform.label>
+  <WTH_PortableChemfuelPlatform.description>Портативные платформы техобслуживания могут быть использован в походе для зарядки и обслуживания механоидов. Расходуют топливо.</WTH_PortableChemfuelPlatform.description>
+
+  <WTH_PortableDisassemblingBench.label>Переносной демонтажный стол</WTH_PortableDisassemblingBench.label>
+  <WTH_PortableDisassemblingBench.description>Переносной стол с набором инструментов, используется в походах для разбора механоидов на части. Дает меньше частей, чем стационарный.</WTH_PortableDisassemblingBench.description>
+  
+  <WTH_MechanoidWorkshop.label>Верстак модификаций механоидов</WTH_MechanoidWorkshop.label>
+  <WTH_MechanoidWorkshop.description>Верстак для создания улучшений и модулей механоидов, а также для извлечения запчастей механоидов из продвинутых электронных элементов.</WTH_MechanoidWorkshop.description>
+
+  <WTH_HackingRemoteControl.label>Пояс-контроллер</WTH_HackingRemoteControl.label>
+  <WTH_HackingRemoteControl.description>Пояс-контроллер - это переносной пульт управления, носимый на поясе. Дает полный контроль над механоидом. Наконец-то Ваши миролюбивые колонисты смогут принимать участие в бою. В конце концов - это механоиды убивают людей, а не они, верно?</WTH_HackingRemoteControl.description>
+
+  <WTH_RepairModule.label>Ремонтный модуль</WTH_RepairModule.label>
+  <WTH_RepairModule.description>Устанавливаемый модуль, содержащий механитов. Механиты, используя энергию и запчасти осуществляют ремонт механоида.</WTH_RepairModule.description>
+
+  <WTH_RepairArm.label>Ремонтный манипулятор</WTH_RepairArm.label>
+  <WTH_RepairArm.description>Устанавливаемый модуль, позволяющий ремонтировать других механоидов.</WTH_RepairArm.description>
+
+  <WTH_SelfDestruct.label>Модуль самоуничтожения</WTH_SelfDestruct.label>
+  <WTH_SelfDestruct.description>Модуль содержит взрывчатку и позволяет активировать режим самоуничтожения. Оболочка из пластали не позволяет произойти взрыву самопроизвольно.</WTH_SelfDestruct.description>
+
+  <WTH_TurretModule.label>Платформа для оружия</WTH_TurretModule.label>
+  <WTH_TurretModule.description>Дает возможность установить любую (которая может быть демонтирована) турель на механоида. Может быть установлена только на крупных механоидов. Турель увеличивает потребление энергии, а также может быть взорвана при повреждении.</WTH_TurretModule.description>
+
+  <WTH_TurretModule_GunTurrets.label>Установка турелей</WTH_TurretModule_GunTurrets.label>
+  <WTH_TurretModule_GunTurrets.description>Технология развертывания турелей на платформах, установленных на механоидах.</WTH_TurretModule_GunTurrets.description>
+
+  <WTH_TurretModule_Mortars.label>Установка минометов</WTH_TurretModule_Mortars.label>
+  <WTH_TurretModule_Mortars.description>Технология развертывания минометов на платформах, установленных на механоидах. Для работы миномета все равно необходим колонист-оператор, осуществляющий его перезарядку и наведение. Миномет не потребляет энергию.</WTH_TurretModule_Mortars.description>
+
+  <WTH_BatteryExpansionModule.label>Увеличенная батарея</WTH_BatteryExpansionModule.label>
+  <WTH_BatteryExpansionModule.description>Увеличенная батарея позволяет хранить больший запас энергии, но из-за своей массы и размеров замедляет передвижение.</WTH_BatteryExpansionModule.description>
+
+  <WTH_VanometricModule.label>Ванометрический модуль</WTH_VanometricModule.label>
+  <WTH_VanometricModule.description>Неисчерпаемый источник энергии для механоида. Из-за своей массы и размеров замедляет передвижение.</WTH_VanometricModule.description>
+
+  <WTH_BeltModule.label>Платформа для пояса</WTH_BeltModule.label>
+  <WTH_BeltModule.description>Модуль позволяет устанавливать на механоида любой пояс, например, пояс-щит или пояс-дымзавесу.</WTH_BeltModule.description>
+
+  <WTH_HackingAdvanced.label>Замена ИИ</WTH_HackingAdvanced.label>
+  <WTH_HackingAdvanced.description>Замена ядра ИИ механоида. Дает возможность полного котроля над боевыми системами механоида.</WTH_HackingAdvanced.description>
+
+  <WTH_InduceEmergencySignal.label>Сигнал бедствия</WTH_InduceEmergencySignal.label>
+  <WTH_InduceEmergencySignal.description>Узнайте, как отправить сигнал бедствия механоидов. Механоиды расположенные поблизости поймают сигнал и отправятся на помощь. Это быстрый, но опасный способ получения запчастей.</WTH_InduceEmergencySignal.description>
+
+
+</LanguageData>

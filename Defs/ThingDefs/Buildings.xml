@@ -477,6 +477,7 @@
 			<fuelFilter>
 			  <thingDefs>
 				<li>WTH_MechanoidData</li>
+				<li>WTH_ExtractedBrainData</li>
 			  </thingDefs>
 			</fuelFilter>
 			<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>

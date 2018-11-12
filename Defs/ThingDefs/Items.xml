@@ -62,8 +62,8 @@
   
   <ThingDef ParentName="ResourceBase">
     <defName>WTH_MechanoidData</defName>
-    <label>malicious data</label>
-    <description>Data records originating from a malicious origin. Humans are incapable of comprehending such quantities of data, but might be able to use some of it to construct and feed an AI core using mechanoid technology that can further explore it.</description>
+    <label>hive data</label>
+    <description>Data records from the mechanoid hive. Humans are incapable of comprehending such quantities of data, but might be able to use some of it to construct and feed an AI core using mechanoid technology that can further explore it.</description>
     <graphicData>
       <texPath>Things/MechanoidData</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -84,7 +84,30 @@
       <li>Manufactured</li>
     </thingCategories>
   </ThingDef>
-  
+  <ThingDef ParentName="ResourceBase">
+    <defName>WTH_ExtractedBrainData</defName>
+    <label>extracted brain data</label>
+    <description>Data records extracted from a human brain. Can be used to feed a Rogue AI.</description>
+    <graphicData>
+      <texPath>Things/ExtractedBrainData</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>75</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>35</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.7</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
   
    <ThingDef ParentName="BodyPartBase">
     <defName>WTH_TurretModule</defName>

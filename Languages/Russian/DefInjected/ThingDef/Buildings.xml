@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_HackingTable.label>стол взломщика</WTH_HackingTable.label>
+  <WTH_HackingTable.description>Стол, оборудованный всем необходимым для взлома механоидов.</WTH_HackingTable.description>
+  <Blueprint_WTH_HackingTable.label>Стол взломщика (проект)</Blueprint_WTH_HackingTable.label>
+  <Frame_WTH_HackingTable.label>Стол взломщика (строится)</Frame_WTH_HackingTable.label>
+  <Frame_WTH_HackingTable.description>Стол, оборудованный всем необходимым для взлома механоидов.</Frame_WTH_HackingTable.description>
+
+  <WTH_TableMechanoidWorkshop.label>верстак модификаций механоидов</WTH_TableMechanoidWorkshop.label>
+  <WTH_TableMechanoidWorkshop.description>Верстак для создания улучшений и модулей механоидов, а также для извлечения запчастей механоидов из продвинутых электронных элементов.</WTH_TableMechanoidWorkshop.description>
+  <Blueprint_WTH_TableMechanoidWorkshop.label>Верстак модификаций механоидов (проект)</Blueprint_WTH_TableMechanoidWorkshop.label>
+  <Blueprint_Install_WTH_TableMechanoidWorkshop.label>Верстак модификаций механоидов (проект)</Blueprint_Install_WTH_TableMechanoidWorkshop.label>
+  <Frame_WTH_TableMechanoidWorkshop.label>Верстак модификаций механоидов (строится)</Frame_WTH_TableMechanoidWorkshop.label>
+  <Frame_WTH_TableMechanoidWorkshop.description>Верстак для создания улучшений и модулей механоидов, а также для извлечения из них продвинутых электронных элементов.</Frame_WTH_TableMechanoidWorkshop.description>
+
+  <WTH_MechanoidPlatform.label>платформа техобслуживания</WTH_MechanoidPlatform.label>
+  <WTH_MechanoidPlatform.description>Платформа, используемая для ремонта и технического обслуживания механоидов.</WTH_MechanoidPlatform.description>
+  <Blueprint_WTH_MechanoidPlatform.label>Платформа техобслуживания (проект)</Blueprint_WTH_MechanoidPlatform.label>
+  <Frame_WTH_MechanoidPlatform.label>Платформа техобслуживания (строится)</Frame_WTH_MechanoidPlatform.label>
+  <Frame_WTH_MechanoidPlatform.description>Платформа, используемая для ремонта и технического обслуживания механоидов</Frame_WTH_MechanoidPlatform.description>
+
+  <WTH_PortableChargingPlatform.label>портативная платформа техобслуживания</WTH_PortableChargingPlatform.label>
+  <WTH_PortableChargingPlatform.description>Платформа, используемая для технического обслуживания механоидов в походе.</WTH_PortableChargingPlatform.description>
+  <Blueprint_WTH_PortableChargingPlatform.label>Портативная платформа техобслуживания (проект)</Blueprint_WTH_PortableChargingPlatform.label>
+  <Blueprint_Install_WTH_PortableChargingPlatform.label>Портативная платформа техобслуживания (проект)</Blueprint_Install_WTH_PortableChargingPlatform.label>
+  <Frame_WTH_PortableChargingPlatform.label>Портативная платформа техобслуживания (строится)</Frame_WTH_PortableChargingPlatform.label>
+  <Frame_WTH_PortableChargingPlatform.description>Платформа, используемая для технического обслуживания механоидов в походе.</Frame_WTH_PortableChargingPlatform.description>
+
+  <WTH_PortableDisassemblingBench.label>переносной демонтажный стол</WTH_PortableDisassemblingBench.label>
+  <WTH_PortableDisassemblingBench.description>Переносной демонтажный стол используется в походах для разбора механоидов на части. Дает меньше частей, чем стационарный.</WTH_PortableDisassemblingBench.description>
+  <Blueprint_WTH_PortableDisassemblingBench.label>Переносной демонтажный стол (проект)</Blueprint_WTH_PortableDisassemblingBench.label>
+  <Blueprint_Install_WTH_PortableDisassemblingBench.label>Переносной демонтажный стол (проект)</Blueprint_Install_WTH_PortableDisassemblingBench.label>
+  <Frame_WTH_PortableDisassemblingBench.label>Переносной демонтажный стол (строится)</Frame_WTH_PortableDisassemblingBench.label>
+  <Frame_WTH_PortableDisassemblingBench.description>Переносной демонтажный стол используется в походах для разбора механоидов на части. Дает меньше частей, чем стационарный.</Frame_WTH_PortableDisassemblingBench.description>
+
+  <WTH_DisassemblingBenchMinified.label>переносной демонтажный стол (сложенный)</WTH_DisassemblingBenchMinified.label>
+  <WTH_DisassemblingBenchMinified.description>Переносной демонтажный стол используется в походах для разбора механоидов на части. Дает меньше частей, чем стационарный.</WTH_DisassemblingBenchMinified.description>
+  
+  <WTH_MechanoidPlatform.comps.CompRefuelable.fuelGizmoLabel>Загружено запчастей механоидов</WTH_MechanoidPlatform.comps.CompRefuelable.fuelGizmoLabel>
+  <WTH_MechanoidPlatform.comps.CompRefuelable.fuelLabel>Загружено запчастей механоидов</WTH_MechanoidPlatform.comps.CompRefuelable.fuelLabel>
+  
+  </LanguageData>

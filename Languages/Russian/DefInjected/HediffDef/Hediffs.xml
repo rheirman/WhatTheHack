@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_ShutDown.label>отключение</WTH_ShutDown.label>
+  <WTH_ShutDown.labelNoun>команда на отключение</WTH_ShutDown.labelNoun>
+
+  <WTH_RegeneratedPart.label>восстановление части тела</WTH_RegeneratedPart.label>
+  <WTH_RegeneratedPart.labelNoun>свежеустановленная часть тела восстанавливается</WTH_RegeneratedPart.labelNoun>
+
+  <WTH_BatteryExpansionModule.label>установлена увеличенная батарея</WTH_BatteryExpansionModule.label>
+  <WTH_VanometricModule.label>установлен ванометрический модуль</WTH_VanometricModule.label>
+  <WTH_SelfDestruct.label>установлен модуль самоуничтожения</WTH_SelfDestruct.label>
+  <WTH_RepairModule.label>установлен ремонтный модуль</WTH_RepairModule.label>
+  <WTH_BeltModule.label>установлена платформа для пояса</WTH_BeltModule.label>
+  <WTH_TurretModule.label>установлена платформа для оружия</WTH_TurretModule.label>
+  <WTH_MountedTurret.label>установлено оружие</WTH_MountedTurret.label>
+
+  <WTH_RepairArm.label>ремонтный манипулятор</WTH_RepairArm.label>
+  <WTH_RepairArm.comps.HediffComp_VerbGiver.tools.fist.label>кулак</WTH_RepairArm.comps.HediffComp_VerbGiver.tools.fist.label>
+  <WTH_RepairArm.labelNoun>ремонтный манипулятор</WTH_RepairArm.labelNoun>
+
+  <WTH_Repairing.label>заряженные ремонтные механиты</WTH_Repairing.label>
+
+  <!-- <WTH_Overcharged.label>überladen</WTH_Overcharged.label> -->
+
+  <WTH_ReplacedAI.label>ИИ заменен</WTH_ReplacedAI.label>
+  <WTH_TargetingHacked.label>система опознавания взломана</WTH_TargetingHacked.label>
+  <WTH_BackupBattery.label>работа на запасной батарее</WTH_BackupBattery.label>
+  <WTH_LocomotionHacked.label>система передвижения взломана</WTH_LocomotionHacked.label>
+  <WTH_TargetingHackedPoorly.label>система опознавания взломана (некач.)</WTH_TargetingHackedPoorly.label>
+  <WTH_TargetingDestroyed.label>система опознавания уничтожена</WTH_TargetingDestroyed.label>
+  <WTH_LowMaintenance.label>плохо обслужен</WTH_LowMaintenance.label>
+  <WTH_VeryLowMaintenance.label>очень плохо обслужен</WTH_VeryLowMaintenance.label>
+  <WTH_VeryLowPower.label>низкий заряд</WTH_VeryLowPower.label>
+  <WTH_NoPower.label>нет энергии</WTH_NoPower.label>
+
+
+</LanguageData>

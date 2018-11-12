@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_MechanoidParts.label>запчасти механоидов</WTH_MechanoidParts.label>
+  <WTH_MechanoidParts.description>Запчасти, демонтированные с механоидов. Используются для взлома и обслуживания механоидов.</WTH_MechanoidParts.description>
+
+  <WTH_MechanoidChip.label>продвинутая электроника</WTH_MechanoidChip.label>
+  <WTH_MechanoidChip.description>Продвинутая электроника - высокотехнологичные части механоидов. Используются для создания модификаций механоидов.</WTH_MechanoidChip.description>
+
+  <WTH_TurretModule.label>платформа для оружия</WTH_TurretModule.label>
+  <WTH_TurretModule.description>Может быть установлен на механоида. Дает возможност установки турелей.</WTH_TurretModule.description>
+
+  <WTH_SelfDestructModule.label>модуль самоуничтожения</WTH_SelfDestructModule.label>
+  <WTH_SelfDestructModule.description>Модуль содержит взрывчатку и позволяет активировать режим самоуничтожения. Оболочка из пластали не позволяет произойти взрыву самопроизвольно.</WTH_SelfDestructModule.description>
+
+  <WTH_BatteryExpansionModule.label>увеличенная батарея</WTH_BatteryExpansionModule.label>
+  <WTH_BatteryExpansionModule.description>Увеличенная батарея позволяет хранить больший запас энергии, но из-за своей массы и размеров замедляет передвижение.</WTH_BatteryExpansionModule.description>
+
+  <WTH_VanometricModule.label>ванометрический модуль</WTH_VanometricModule.label>
+  <WTH_VanometricModule.description>Неисчерпаемый источник энергии для механоида. Из-за своей массы и размеров замедляет передвижение.</WTH_VanometricModule.description>
+
+  <WTH_RepairModule.label>ремонтный модуль</WTH_RepairModule.label>
+  <WTH_RepairModule.description>Устанавливаемый модуль, содержит механитов. Механиты, используя энергию и запчасти осуществляют ремонт механоида.</WTH_RepairModule.description>
+
+  <WTH_RepairArm.label>ремонтный манипулятор</WTH_RepairArm.label>
+  <WTH_RepairArm.description>Устанавливаемый модуль, позволяющий ремонтировать других механоидов.</WTH_RepairArm.description>
+
+  <WTH_BeltModule.label>платформа для пояса</WTH_BeltModule.label>
+  <WTH_BeltModule.description>Модуль позволяет устанавливать на механоида любой пояс, например, пояс-щит или пояс-дымзавесу.</WTH_BeltModule.description>
+
+
+</LanguageData>

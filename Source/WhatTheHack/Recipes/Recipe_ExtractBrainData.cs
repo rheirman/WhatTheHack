@@ -37,7 +37,7 @@ namespace WhatTheHack.Recipes
                     billDoer,
                     pawn
                 });
-                Thing md = ThingMaker.MakeThing(WTH_DefOf.WTH_MechanoidData);
+                Thing md = ThingMaker.MakeThing(WTH_DefOf.WTH_ExtractedBrainData);
                 md.stackCount = 3 + pawn.skills.GetSkill(SkillDefOf.Intellectual).Level;
                 GenPlace.TryPlaceThing(md, pawn.Position, pawn.Map, ThingPlaceMode.Near);
             }

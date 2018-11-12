@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_CarryToHackingTable.reportString>переноска механоида для взлома</WTH_CarryToHackingTable.reportString>
+  <WTH_ClearHackingTable.reportString>переноска механоида со стола</WTH_ClearHackingTable.reportString>
+  <WTH_Mechanoid_Rest.reportString>подключен к платформе</WTH_Mechanoid_Rest.reportString>
+  <WTH_ControlMechanoid.reportString>управление механоидом</WTH_ControlMechanoid.reportString>
+  <WTH_ControlMechanoid_Goto.reportString>управление механоидом (движется)</WTH_ControlMechanoid_Goto.reportString>
+  <WTH_Ability.reportString>использование способности</WTH_Ability.reportString>
+  <WTH_PerformMaintenance.reportString>обслуживание</WTH_PerformMaintenance.reportString>
+
+
+</LanguageData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_ControllerBeltRadius.label>Радиус покрытия</WTH_ControllerBeltRadius.label>
+  <WTH_ControllerBeltRadius.description>Максимальный радиус работы пояса-контроллера, позволяющий управлять механоидом.</WTH_ControllerBeltRadius.description>
+
+  <WTH_HackingMaintenanceSpeed.label>Скорость техобслуживания</WTH_HackingMaintenanceSpeed.label>
+  <WTH_HackingMaintenanceSpeed.description>Скорость, с которой колонист осуществляет техническое обслуживание механоидов.</WTH_HackingMaintenanceSpeed.description>
+
+  <WTH_HackingSuccessChance.label>Вероятность взлома</WTH_HackingSuccessChance.label>
+  <WTH_HackingSuccessChance.description>Вероятность успешного взлома. Помимо этого вероятность зависит от сложности взлома и силы механоида.</WTH_HackingSuccessChance.description>
+
+
+</LanguageData>

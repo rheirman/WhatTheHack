@@ -39,7 +39,7 @@ namespace WhatTheHack.WorldIncidents
             thingMakerParams.filter.SetAllow(WTH_DefOf.WTH_MechanoidData, true);
 
             resolveParams.thingSetMakerParams = thingMakerParams;
-            resolveParams.mechanoidsCount =  Math.Max(1, Mathf.RoundToInt(genStepParams.siteCoreOrPart.parms.threatPoints / 200f));
+            resolveParams.mechanoidsCount =  Math.Max(1, Mathf.RoundToInt((genStepParams.siteCoreOrPart.parms.threatPoints * 1.3f) / 200f));
 
             BaseGen.globalSettings.map = map;
             BaseGen.globalSettings.minBuildings = 1;

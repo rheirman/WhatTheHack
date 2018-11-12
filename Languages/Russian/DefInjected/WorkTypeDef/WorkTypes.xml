@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Hack.label>Взлом</WTH_Hack.label>
+  <WTH_Hack.description>Взлом и улучшение механоидов</WTH_Hack.description>
+  <WTH_Hack.labelShort>Взлом</WTH_Hack.labelShort>
+  <WTH_Hack.pawnLabel>Взлом</WTH_Hack.pawnLabel>
+  <WTH_Hack.gerundLabel>Взламывание</WTH_Hack.gerundLabel>
+  <WTH_Hack.verb>Взламывает</WTH_Hack.verb>
+
+
+</LanguageData>

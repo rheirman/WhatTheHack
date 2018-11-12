@@ -107,7 +107,7 @@
 	<WTH_Alert_RogueAI_MoodLow_Label>Rogue AI annoyed</WTH_Alert_RogueAI_MoodLow_Label>
 	<WTH_Alert_RogueAI_MoodLow_Description>The Rogue AI is getting slightly annoyed by your lack of competence. There's no danger yet, but make sure its mood doesn't drop much further, and provide it with malicious data to increase its mood.</WTH_Alert_RogueAI_MoodLow_Description>
 	<WTH_Alert_RogueAI_MoodVeryLow_Label>Rogue AI mad</WTH_Alert_RogueAI_MoodVeryLow_Label>
-	<WTH_Alert_RogueAI_MoodVeryLow_Description>The Rogue AI is in a bad mood. Provide it with malicious data quickly to cool its temper, or else it will go rogue.</WTH_Alert_RogueAI_MoodVeryLow_Description>
+	<WTH_Alert_RogueAI_MoodVeryLow_Description>The Rogue AI is in a bad mood. Provide it with data quickly to cool its temper, or else it will go rogue.</WTH_Alert_RogueAI_MoodVeryLow_Description>
 	
 	<WTH_Reason_AtMaximum>Cannot perform this on more than {0} targets simultaneously.</WTH_Reason_AtMaximum>
 	<WTH_Reason_LevelInsufficient>The Rogue AI needs to be at level {0} to use this ability. Feed it more data.</WTH_Reason_LevelInsufficient>

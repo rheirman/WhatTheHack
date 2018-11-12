@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_DoBillsPortableDisassemblingBench.label>разборка механоидов</WTH_DoBillsPortableDisassemblingBench.label>
+  <WTH_DoBillsPortableDisassemblingBench.verb>работать, используя</WTH_DoBillsPortableDisassemblingBench.verb>
+  <WTH_DoBillsPortableDisassemblingBench.gerund>работать, используя</WTH_DoBillsPortableDisassemblingBench.gerund>
+
+  <WTH_DoBillsMechanoidWorkshop.label>изготовление предметов на верстаке модификаций механоидов</WTH_DoBillsMechanoidWorkshop.label>
+  <WTH_DoBillsMechanoidWorkshop.verb>работать, используя</WTH_DoBillsMechanoidWorkshop.verb>
+  <WTH_DoBillsMechanoidWorkshop.gerund>работать, используя</WTH_DoBillsMechanoidWorkshop.gerund>
+
+  <WTH_DoBillsMedicalMechanoidOperation.label>модификация механоидов</WTH_DoBillsMedicalMechanoidOperation.label>
+  <WTH_DoBillsMedicalMechanoidOperation.verb>работать над</WTH_DoBillsMedicalMechanoidOperation.verb>
+  <WTH_DoBillsMedicalMechanoidOperation.gerund>работать над</WTH_DoBillsMedicalMechanoidOperation.gerund>
+
+  <WTH_HaulMechanoid.label>переноска механоидов</WTH_HaulMechanoid.label>
+  <WTH_HaulMechanoid.verb>перенести</WTH_HaulMechanoid.verb>
+  <WTH_HaulMechanoid.gerund>переносить</WTH_HaulMechanoid.gerund>
+
+  <WTH_MaintainMechanoid.label>техобслуживание механоидов</WTH_MaintainMechanoid.label>
+  <WTH_MaintainMechanoid.verb>обслужить</WTH_MaintainMechanoid.verb>
+  <WTH_MaintainMechanoid.gerund>обслуживать</WTH_MaintainMechanoid.gerund>
+
+  <WTH_MaintainMechanoid_Urgent.label>экстренное обслуживание механоидов</WTH_MaintainMechanoid_Urgent.label>
+  <WTH_MaintainMechanoid_Urgent.verb>обслужить</WTH_MaintainMechanoid_Urgent.verb>
+  <WTH_MaintainMechanoid_Urgent.gerund>обслуживать</WTH_MaintainMechanoid_Urgent.gerund>
+
+
+</LanguageData>
