@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
+
+<Operation Class ="PatchOperationAdd">
+	<xpath>*/ThingDef[defName = "Human"]/recipes</xpath>
+	<value>
+		<li>WTH_ExtractBrainData</li> 
+	</value>
+</Operation>
 <!--Add mechanoid specific operations-->
 <Operation Class="PatchOperationSequence">
 	<success>Always</success>
@@ -150,6 +157,13 @@
 					<countRange>
 						<min>0</min>
 						<max>70</max>
+					</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+					<thingDef>WTH_MechanoidData</thingDef>
+					<countRange>
+						<min>0</min>
+						<max>20</max>
 					</countRange>
 			</li>
 			<li Class="StockGenerator_SingleDef">

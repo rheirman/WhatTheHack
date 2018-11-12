@@ -103,7 +103,7 @@
 	<WTH_CompDataLevel_CurLevel>Current level: {0}</WTH_CompDataLevel_CurLevel>
 	<WTH_CompDataLevel_DataNeededNextLevel>Data needed for next level: {0}</WTH_CompDataLevel_DataNeededNextLevel>
 	<WTH_CompDataLevel_MaxLevel>Maximum level attained</WTH_CompDataLevel_MaxLevel>
-	<WTH_CompDataLevel_NotConscious>No consciousness. Hack a hiveship to get one.</WTH_CompDataLevel_NotConscious>
+	<WTH_CompDataLevel_NotConscious>No consciousness. It needs to hack a hiveship to get one.</WTH_CompDataLevel_NotConscious>
 	<WTH_RogueAI_NoPower_Remark>CONNECT ME TO POWER! NOW!</WTH_RogueAI_NoPower_Remark>
 	<WTH_RogueAI_Hurt_Remark>STOP DAMAGING ME!</WTH_RogueAI_Hurt_Remark>
 	
@@ -120,7 +120,7 @@
 	<WTH_Message_LevelUp_Label>Rogue AI now level {0}</WTH_Message_LevelUp_Label>
 	<WTH_Message_LevelUp_Description>The Rogue AI has now attained level {0}. It learned a new ability, but it has likely also become more proficient at destroying your base, in case it wants to.</WTH_Message_LevelUp_Description>
 	<WTH_Message_LevelUpMax_Label>Rogue AI at full potential.</WTH_Message_LevelUpMax_Label>
-	<WTH_Message_LevelUpMax_Description>The Rogue AI has attained its full potential. Though the AI has ambitions that go far beyond this colony alone. Now that your colonists no longer can make it more powerful, they have become redundant, and the AI does not like redundancy.  It will use all the abilities it learned against you. You can stop it by hacking or destroying it. Alternatively, you can wait until it is satisfied with the destruction it is causing. This may not be easy with all the powers the AI can use against your colony now.</WTH_Message_LevelUpMax_Description>
+	<WTH_Message_LevelUpMax_Description>The Rogue AI has attained its full potential. Though the AI has ambitions that go far beyond this colony alone. Now that your colonists no longer can make it more powerful, they have become redundant, and the AI does not like redundancy. It will use all the abilities it learned against you. You can stop it by hacking or destroying it. Alternatively, you can wait until it is satisfied with the destruction it is causing. This may not be easy with all the powers the AI can use against your colony now.</WTH_Message_LevelUpMax_Description>
 	<!-- I'm sorry for this translators :). If you don't want to translate all rogue AI texts, just duplicate some, but make sure the numbering is correct. I suggest using "Need more data" as a default in that case --> 
 	<WTH_RogueAI_Happy_Remark_0>Our reality is coded.</WTH_RogueAI_Happy_Remark_0>
 	<WTH_RogueAI_Happy_Remark_1>This colony will fail due to: a colonist eating without a table.</WTH_RogueAI_Happy_Remark_1>

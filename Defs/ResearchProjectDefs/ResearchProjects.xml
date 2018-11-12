@@ -224,7 +224,7 @@
 		  <li>WTH_HackingBasics</li>
 		</prerequisites>
 		<researchViewX>1</researchViewX>
-		<researchViewY>0</researchViewY>
+		<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -232,7 +232,8 @@
 		<label>Long range mineral scanner tuning</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>Allows the long range mineral scanner to scan for locations on the world with a high concentration of mechanoid parts. Of course the parts won't be just lying around. More likely they are attached to mechanoids. Live mechanoids..</description>
+		<description>Allows the long range mineral scanner to scan for locations on the world with a high concentration of mechanoid parts. Of course the parts won't be just lying around. More likely they are attached to mechanoids. Live mechanoids.. 
+If you're looking for malicious data, these sites with a lot of mechanoids are a good place to search.</description>
 		<baseCost>1200</baseCost>
 		<prerequisites>
 		  <li>WTH_HackingBasics</li>
@@ -246,7 +247,8 @@
 		<label>Rogue AI</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>A potentially very powerful AI, based on mechanoid technology. By default, it only provides a boost to the efficiency of surrounding mechanoid platforms. However, once it's provided access to the knowledge found in mechanoid hive ships, it becomes a powerful cyberweapon, with a unquenchable thirst for more data.</description>
+		<description>A potentially very powerful AI, based on mechanoid technology. By default, it has not developed a consciousness yet. To get a consciousness, it requires access to the knowledge found in mechanoid hive ships. With a consciousness it can become a powerful, but dangerous cyberweapon, with a unquenchable thirst for more data. 
+Without a consciousness, it still provides a small boost to the resource efficiency and repair speed of surrounding mechanoid platforms, as it is able to manage mechanites to cooperate in a more organised manner.</description>
 		<baseCost>2000</baseCost>
 		<prerequisites>
 		  <li>WTH_LRMSTuning</li>
@@ -260,7 +262,7 @@
 		<label>Hiveship hacking facility</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>This high-tech facility allows the rogue AI to transmit its malicious code all the way to mechanoid hive ships orbiting the planet, in an attempt to gain access to the advanced knowledge present in those ships. Can only be built after a Rogue AI has been built.</description>
+		<description>This high-tech facility allows the rogue AI to transmit its malicious code all the way to mechanoid hive ships orbiting the planet, in an attempt to gain access to the advanced knowledge present in those ships. The Rogue AI needs this knowledge to form a consciousness. Can only be activated after a Rogue AI has been built on the same map.</description>
 		<baseCost>1500</baseCost>
 		<prerequisites>
 		  <li>WTH_RogueAI</li>
@@ -268,4 +270,20 @@
 		<researchViewX>4</researchViewX>
 		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_ExtractBrainData</defName>
+		<label>Human brain data extraction</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Learn how to perform a gruesome surgery that is used to extracts all the data from a live human brain, and stores it using mechanoid technology. The more intelligent the owner of the brain, the more data can be extracted. This is a quick way to get malicious data needed for the Rogue AI, but the more morally aware colonists certainly wouldn't like using it. 
+A more human-friendly alternative is to look for mechanoid infested sites on the world map using long range mineral scanner tuning.</description>
+		<baseCost>1000</baseCost>
+		<prerequisites>
+		  <li>WTH_RogueAI</li>
+		</prerequisites>
+		<researchViewX>4</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+	
 </Defs>

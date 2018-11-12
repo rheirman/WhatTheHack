@@ -1,4 +1,45 @@
 <Defs>
+	<RecipeDef ParentName="SurgeryFlesh">
+		<defName>WTH_ExtractBrainData</defName>
+		<label>extract brain data</label>
+		<description>Extract all the data from a human brain using mechanoid technology. With current technologies, this cannot be done without destroying the brain. More intelligent pawns will yield more data.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ExtractBrainData</workerClass>
+		<jobString>Extract brain data.</jobString>
+		<workAmount>3000</workAmount>
+		<surgerySuccessChanceFactor>1.0</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.5</deathOnFailedSurgeryChance>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<ingredients>
+		  <li>
+			<filter>
+			  <categories>
+				<li>Medicine</li>
+			  </categories>
+			</filter>
+			<count>1</count>
+		  </li>
+		  <li>
+		  	<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <categories>
+			<li>Medicine</li>
+		  </categories>
+		  <thingDefs>
+			<li>WTH_MechanoidChip</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<researchPrerequisite>WTH_ExtractBrainData</researchPrerequisite>
+	</RecipeDef>
+	  
 	<RecipeDef>
 		<defName>WTH_Scrap_AdvancedMechanoidChip</defName>
 		<label>scrap advanced mechanoid chip</label>

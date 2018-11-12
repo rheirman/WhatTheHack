@@ -50,9 +50,13 @@ namespace WhatTheHack.Comps
             {
                 Find.LetterStack.ReceiveLetter("WTH_MechanoidBeaconComplete_Label".Translate(), "WTH_MechanoidBeaconComplete_Description".Translate(), LetterDefOf.PositiveEvent, new GlobalTargetInfo(this.parent), null, null);
                 rogueAI.IsConscious = true;
+                extraStartUpDays += 2;
+                coolDownTicks += Props.coolDownDaysAfterSuccess * GenDate.TicksPerDay;
+                Thing md = ThingMaker.MakeThing(WTH_DefOf.WTH_MechanoidData);
+                md.stackCount = Rand.Range(25, 40);
+                GenPlace.TryPlaceThing(md, parent.Position, parent.Map, ThingPlaceMode.Near);
             }
-            extraStartUpDays += 2;
-            coolDownTicks += Props.coolDownDaysAfterSuccess * GenDate.TicksPerDay;
+
         }
 
         public override string CompInspectStringExtra()

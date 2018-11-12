@@ -62,8 +62,8 @@
   
   <ThingDef ParentName="ResourceBase">
     <defName>WTH_MechanoidData</defName>
-    <label>mechanoid data</label>
-    <description>Data records originating from the mechanoid hive. Humans are incapable of comprehending such quantities of data, but might be able to use some of it to construct an AI core that can further explore it.</description>
+    <label>malicious data</label>
+    <description>Data records originating from a malicious origin. Humans are incapable of comprehending such quantities of data, but might be able to use some of it to construct and feed an AI core using mechanoid technology that can further explore it.</description>
     <graphicData>
       <texPath>Things/MechanoidData</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -73,11 +73,11 @@
     <stackLimit>75</stackLimit>
     <statBases>
       <MaxHitPoints>70</MaxHitPoints>
-      <MarketValue>70</MarketValue>
+      <MarketValue>35</MarketValue>
       <Mass>0.6</Mass>
       <Flammability>1.0</Flammability>
 	  <DeteriorationRate>2.0</DeteriorationRate>
-	  <SellPriceFactor>0.5</SellPriceFactor>
+	  <SellPriceFactor>0.7</SellPriceFactor>
 	</statBases>
     <intricate>true</intricate>
     <thingCategories>
@@ -260,14 +260,5 @@
       <li>Manufactured</li>
     </thingCategories>
   </ThingDef>
-  
-  <ThingDef ParentName="BodyPartNaturalBase">
-    <defName>WTH_Brain</defName>
-    <label>brain matter (WTH)</label>
-    <description>Brain matter from a human brain. Can be fed to a Rogue AI to provide it with the data stored in it by the ones with evil intent.</description>
-    <statBases>
-      <MarketValue>500</MarketValue>
-      <Mass>1</Mass>
-    </statBases>
-  </ThingDef>
+ 
 </Defs>

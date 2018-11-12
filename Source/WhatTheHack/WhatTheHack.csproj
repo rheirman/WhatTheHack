@@ -121,6 +121,7 @@
     <Compile Include="Needs\MaintenanceCategory.cs" />
     <Compile Include="Needs\Need_Maintenance.cs" />
     <Compile Include="Recipes\Recipe_BeltModule.cs" />
+    <Compile Include="Recipes\Recipe_ExtractBrainData.cs" />
     <Compile Include="Recipes\Recipe_Hacking.cs" />
     <Compile Include="Recipes\Recipe_InduceEmergencySignal.cs" />
     <Compile Include="Recipes\Recipe_MountTurret.cs" />

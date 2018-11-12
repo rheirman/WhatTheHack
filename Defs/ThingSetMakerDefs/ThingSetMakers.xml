@@ -14,8 +14,8 @@
                 </thingDefs>
               </filter>
               <countRange>
-                <min>5</min>
-                <max>12</max>
+                <min>12</min>
+                <max>18</max>
               </countRange>
             </fixedParams>
           </thingSetMaker>
