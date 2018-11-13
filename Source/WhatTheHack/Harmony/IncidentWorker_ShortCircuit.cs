@@ -14,7 +14,6 @@ namespace WhatTheHack.Harmony
     {
         static bool Prefix(IncidentWorker_ShortCircuit __instance, IncidentParms parms)
         {
-            Log.Message("calling IncidentWorker_ShortCircuit TryExecuteWorker");
             Map map = (Map) parms.target;
             if (map.spawnedThings.FirstOrDefault((Thing t) => t is Building_RogueAI) is Building_RogueAI controller && controller.managingPowerNetwork)
             {

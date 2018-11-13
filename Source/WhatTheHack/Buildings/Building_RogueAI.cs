@@ -761,17 +761,14 @@ namespace WhatTheHack.Buildings
             List<Action> possibleActions = new List<Action>();
             Action causeZzzttAction = delegate
             {
-                Log.Message("causeZzzttAction called");
                 GoRogue_CauseZzztts();
             };
             Action hackTurretsAction = delegate
             {
-                Log.Message("hackTurretsAction called");
                 GoRogue_HackTurrets();
             };
             Action hackMechsAction = delegate
             {
-                Log.Message("hackMechsAction called");
                 GoRogue_HackMechs();
             };
 
@@ -795,7 +792,6 @@ namespace WhatTheHack.Buildings
             int duration = Rand.Range(10000, 15000);
             int actionInterval = (duration + 4000) / (possibleActions.Count + 1); //add 4000 to duration so not every action can happen during the duration. 
             int actionDelay = 10;
-            Log.Message("starting " + possibleActions.Count + " actions");
             while (!possibleActions.NullOrEmpty())
             {
                 Action action = possibleActions.RandomElement();
@@ -808,7 +804,6 @@ namespace WhatTheHack.Buildings
                 action: delegate
                 {
                     StopGoingRogue();
-                    Log.Message("stop going rogue called");
                 },
                 tickUntilAction: duration
                 ));

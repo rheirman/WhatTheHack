@@ -116,7 +116,6 @@ namespace WhatTheHack.Recipes
                     successChance = 1.0f; 
                 }
                 successChance *= ext.surgerySuccessCap;
-                Log.Message("succesChance was: " + successChance);
             }
             if (!Rand.Chance(successChance))
             {

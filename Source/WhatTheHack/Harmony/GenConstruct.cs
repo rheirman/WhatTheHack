@@ -14,12 +14,10 @@ namespace WhatTheHack.Harmony
     {
         static void Postfix(ref AcceptanceReport __result, BuildableDef entDef, Map map)
         {
-            Log.Message("calling CanPlaceBlueprintAt Postfix");
             if (entDef == WTH_DefOf.WTH_RogueAI)
             {
                 if(map.listerBuildings.allBuildingsColonist.FirstOrDefault((Building b) => b is Building_RogueAI) is Building_RogueAI rogueAI)
                 {
-                    Log.Message("CanPlaceBlueprintAt not allowed");
                     __result = new AcceptanceReport("WTH_Reason_RogueAIExists".Translate());
                 }
             }

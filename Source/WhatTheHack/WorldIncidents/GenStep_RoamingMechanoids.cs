@@ -66,7 +66,6 @@ namespace WhatTheHack.WorldIncidents
             {
                 pawnGroupMakerParms.seed = new int?(SleepingMechanoidsSitePartUtility.GetPawnGroupMakerSeed(parms.siteCoreOrPart.parms));
             }
-            Log.Message("pawnGroupMakerParms.seed: " + pawnGroupMakerParms.seed);
             return PawnGroupMakerUtility.GeneratePawns(pawnGroupMakerParms, true);
         }
     }
