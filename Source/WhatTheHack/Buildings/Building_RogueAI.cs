@@ -741,7 +741,10 @@ namespace WhatTheHack.Buildings
                         return false;
                     }
                     Building building = targ.Thing as Building;
-                    return building != null && building is Building_TurretGun && building.Faction == Faction.OfPlayer;
+                    return building != null 
+                    && building is Building_TurretGun turret 
+                    && turret.Faction == Faction.OfPlayer 
+                    && Traverse.Create(turret).Field("mannableComp").GetValue<CompMannable>() == null;
                 }
             };
         }
@@ -917,7 +920,8 @@ namespace WhatTheHack.Buildings
         }
         private void GoRogue_HackTurrets()
         {
-            List<Building_TurretGun> turrets = this.Map.spawnedThings.Where((Thing t) => t is Building_TurretGun && t.Faction == Faction.OfPlayer).Cast<Building_TurretGun>().ToList();
+            Predicate<Thing> isSuitableTurret = (Thing t) => t is Building_TurretGun turret && turret.Faction == Faction.OfPlayer && Traverse.Create(turret).Field("mannableComp").GetValue<CompMannable>() == null;
+            List<Building_TurretGun> turrets = this.Map.spawnedThings.Where((Thing thing) => isSuitableTurret(thing)).Cast<Building_TurretGun>().ToList();
             int nShouldHack = Rand.Range(1, 3);
             int nHacked = 0;
             while (nShouldHack > 0 && turrets.Count > 0)

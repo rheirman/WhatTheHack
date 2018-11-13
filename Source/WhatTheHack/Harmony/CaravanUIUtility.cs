@@ -18,7 +18,8 @@ namespace WhatTheHack.Harmony
                                                      where x.ThingDef.category == ThingCategory.Pawn
                                                      && ((Pawn)x.AnyThing).RaceProps.IsMechanoid
                                                      && ((Pawn)x.AnyThing).IsHacked()
-                                                     select x;
+                                                     && (((Pawn)x.AnyThing).ControllingAI() == null || !(((Pawn)x.AnyThing).ControllingAI().hackedMechs.Contains((Pawn)x.AnyThing)))
+                                                    select x;
 
             widget.AddSection("WTH_MechanoidsSection".Translate(), mechs);
             if(mechs != null && mechs.Count() > 0)
