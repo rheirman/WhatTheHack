@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
   <WTH_MechanoidParts.label>メカノイドパーツ</WTH_MechanoidParts.label>
@@ -6,6 +6,12 @@
 
   <WTH_MechanoidChip.label>先進メカノイドチップ</WTH_MechanoidChip.label>
   <WTH_MechanoidChip.description>先進的なチップは、機能が停止したか破壊されたメカノイドから回収されます。より複雑なハッキング操作に必要です。</WTH_MechanoidChip.description>
+
+  <WTH_MechanoidData.label>ハイブデータ</WTH_MechanoidData.label>
+  <WTH_MechanoidData.description>メカノイドハイブからのデータ情報です。人間はそのような膨大な量のデータを把握することはできませんが、それをさらに探求できるメカノイドテクノロジーを使ってAIコアを建設すれば、データを与えるためにその一部を使用できるかもしれません。</WTH_MechanoidData.description>
+
+  <WTH_ExtractedBrainData.label>脳抽出データ</WTH_ExtractedBrainData.label>
+  <WTH_ExtractedBrainData.description>生きていた人間の脳から抽出されたデータ情報です。ローグ AIに与えるために使用できます。</WTH_ExtractedBrainData.description>
 
   <WTH_TurretModule.label>タレットモジュール</WTH_TurretModule.label>
   <WTH_TurretModule.description>メカノイドに取り付けることができ、タレットや迫撃砲を搭載することができます。</WTH_TurretModule.description>
