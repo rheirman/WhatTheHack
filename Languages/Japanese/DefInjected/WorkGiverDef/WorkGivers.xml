@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
   <WTH_DoBillsPortableDisassemblingBench.label>メカノイドを分解する</WTH_DoBillsPortableDisassemblingBench.label>
@@ -24,6 +24,10 @@
   <WTH_MaintainMechanoid_Urgent.label>メカノイドを緊急点検する</WTH_MaintainMechanoid_Urgent.label>
   <WTH_MaintainMechanoid_Urgent.verb>で整備を行う</WTH_MaintainMechanoid_Urgent.verb>
   <WTH_MaintainMechanoid_Urgent.gerund>で整備を行う</WTH_MaintainMechanoid_Urgent.gerund>
+
+  <WTH_HackRogueAI.label>ローグAIをハックする</WTH_HackRogueAI.label>
+  <WTH_HackRogueAI.verb>でローグAIをハックする</WTH_HackRogueAI.verb>
+  <WTH_HackRogueAI.gerund>でローグAIをハックする</WTH_HackRogueAI.gerund>
 
 
 </LanguageData>
