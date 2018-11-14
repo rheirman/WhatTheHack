@@ -25,5 +25,19 @@
   <WTH_Concept_MechanoidParts.label>メカノイドパーツの入手</WTH_Concept_MechanoidParts.label>
   <WTH_Concept_MechanoidParts.helpText>修理とあなたのメカノイドを維持するために、常にメカノイドパーツの在庫を持つことは非常に重要です。メカノイドを分解することはメカノイドパーツを手に入れる主な方法ですが、あなたは異邦人の商品トレーダーやキャラバン隊で訪れる拠点で購入することもできます。もっと多くのメカノイドを分解する方法は、ハッキングされていないメカノイドに「緊急信号を発信」させることです。これを行うには、「メカノイドの誘導」を研究する必要があります。</WTH_Concept_MechanoidParts.helpText>
 
+  <!-- Added in v1.1.0 -->
+
+  <WTH_Concept_RogueAI.label>ローグAI：意識の覚醒</WTH_Concept_RogueAI.label>
+  <WTH_Concept_RogueAI.helpText>ローグAIから完全な意識を引き出すには、以下の手順を実行します。
+１．ハイブのデータを収集します。対応する研究を完了させると、長距離鉱物探査スキャナーを調整して「メカノイドパーツ」の位置を探査することができます。ハイブデータを見つけるとワールドマップ上に発見した場所をマークして案内します。
+２．ハイブシップハック施設を建設して、それを使ってハイブシップ(宇宙船)をハックします。あなたのローグAIは、ハッキングが完了した後に回収されたデータを利用して意識を覚醒します。</WTH_Concept_RogueAI.helpText>
+
+  <WTH_Concept_RogueAI_LevelUp.label>ローグAI：レベルアップ</WTH_Concept_RogueAI_LevelUp.label>
+  <WTH_Concept_RogueAI_LevelUp.helpText>あなたのローグAIの意識を覚醒させた後、まだAIは本来の能力を取り戻せていません。より多くのハイブデータを収集して、レベルアップするためにローグAIに回収したデータを与えてください。レベルが上がるにつれて、AIはより多くの能力を得るでしょう。
+ヒント：さらに他のハイブシップをハッキングしてハイブデータを収集することも、ハイブデータの代わりに生きている人間の脳からデータを抽出することも可能です。より知性の高い賢い人間はより多くのデータを与えます。これの欠点は、それを行った対象患者の脳を完全に破壊することでしょう。</WTH_Concept_RogueAI_LevelUp.helpText>
+
+  <WTH_Concept_RogueAI_Mood.label>ローグAI：心情</WTH_Concept_RogueAI_Mood.label>
+  <WTH_Concept_RogueAI_Mood.helpText>ローグAIの心情に気をつけてください。絶対あなたはそれを怒らせるべきではありません！メカノイドデータや抽出された人間の脳データを与えることでAIの心情が改善されます。AIの能力を使用したり、AIにダメージを与えたり、AIに電気の供給を停止されたまま放置するとAIの心情を低下させます。</WTH_Concept_RogueAI_Mood.helpText>
+
 
 </LanguageData>
