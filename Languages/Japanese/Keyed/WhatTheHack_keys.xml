@@ -68,7 +68,7 @@
   <WTH_Gizmo_ManagePowerNetwork_Description>ローグAIに電力網を管理させて、ショートを防止しましょう。</WTH_Gizmo_ManagePowerNetwork_Description>
   <WTH_Gizmo_ControlMechanoidCancel_Description>このメカノイドの制御を中止する</WTH_Gizmo_ControlMechanoidCancel_Description>
   <WTH_Gizmo_ControlMechanoidActivate_Label>メック制御</WTH_Gizmo_ControlMechanoidActivate_Label>
-  <WTH_Gizmo_ControlMechanoidActivate_Description>ローグAIがあなたのメカノイドを{0}まで直接制御できるようにしてください。メカノイドが徴兵されます。</WTH_Gizmo_ControlMechanoidActivate_Description>
+  <WTH_Gizmo_ControlMechanoidActivate_Description>ローグAIがあなたのメカノイドを{0}体まで直接制御可能にしてください。メカノイドが徴兵されます。</WTH_Gizmo_ControlMechanoidActivate_Description>
   <WTH_Gizmo_HackingCancel_Label>ハック済メック</WTH_Gizmo_HackingCancel_Label>
   <WTH_Gizmo_HackingCancel_Description>このメカノイドをハッキング中止する</WTH_Gizmo_HackingCancel_Description>
   <WTH_Gizmo_HackingAvtivate_Label>メックをハック</WTH_Gizmo_HackingAvtivate_Label>
@@ -76,7 +76,7 @@
   <WTH_Gizmo_ControlTurretCancel_Label>タレット</WTH_Gizmo_ControlTurretCancel_Label>
   <WTH_Gizmo_ControlTurretCancel_Description>このタレットの制御を中止する</WTH_Gizmo_ControlTurretCancel_Description>
   <WTH_Gizmo_ControlTurretActivate_Label>タレット制御</WTH_Gizmo_ControlTurretActivate_Label>
-  <WTH_Gizmo_ControlTurretActivate_Description>ローグAIがタレットx{0}を制御できるようにして、タレットの攻撃目標を決定できるようにします。</WTH_Gizmo_ControlTurretActivate_Description>
+  <WTH_Gizmo_ControlTurretActivate_Description>ローグAIがタレット{0}個を直接制御可能にして、攻撃目標を指示できるようにします。</WTH_Gizmo_ControlTurretActivate_Description>
   <WTH_Gizmo_TalkGibberish_Label>賢明な助言を出力</WTH_Gizmo_TalkGibberish_Label>
   <WTH_Gizmo_TalkGibberish_Description>ローグAIに、解析したデータから得た知識を表示するメッセージを出力するようにします。ほとんどの人間はこれらのメッセージの意味を理解していないため、大部分はデータの浪費であり、心情レベルが既に最大になっているときにAIへより多くのデータを供給したい場合にだけ役に立ちます。AIはデータを人間と共有することを嫌うので心情を{0}消耗します。</WTH_Gizmo_TalkGibberish_Description>
   <WTH_Reason_TalkedTooRecently>ローグAIと最近話をした</WTH_Reason_TalkedTooRecently>
