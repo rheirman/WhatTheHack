@@ -20,7 +20,7 @@ namespace WhatTheHack.Harmony
                 __result = 0f;
                 if (explanation != null)
                 {
-                    explanation.AppendLine();
+                    explanation.AppendLine();       
                     explanation.Append("  - " + p.LabelShortCap + ": " + __result.ToStringMassOffset());
                 }
                 return false;

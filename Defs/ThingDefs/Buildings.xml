@@ -370,7 +370,7 @@
         <cornerBR>Damage/Corner</cornerBR>
       </damageData>
     </graphicData>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>Item</altitudeLayer>
     <passability>Impassable</passability>
     <blockWind>true</blockWind>
     <fillPercent>1</fillPercent>

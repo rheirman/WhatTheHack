@@ -15,7 +15,7 @@ namespace WhatTheHack.Harmony
     {
         static void Postfix(ref IEnumerable<Gizmo> __result)
         {
-
+            
             List<Gizmo> modifiedGizmos = new List<Gizmo>();
             bool shouldDisable = false;
             foreach (Map map in Find.Maps)
@@ -32,8 +32,10 @@ namespace WhatTheHack.Harmony
             {
                 gizmo.disabled = shouldDisable;
                 gizmo.disabledReason = "WTH_Reason_BeaconActive".Translate();
+                modifiedGizmos.Add(gizmo);
             }
             __result = modifiedGizmos;
+            
         }
     }
 }

@@ -32,7 +32,7 @@ namespace WhatTheHack.Jobs
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             this.FailOn(() => RogueAI.goingRogue == false);
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch);
-            int duration = (int)(2000 + (1f / this.pawn.GetStatValue(WTH_DefOf.WTH_HackingMaintenanceSpeed, true)) * 600f);
+            int duration = (int)(3000 + (1f / this.pawn.GetStatValue(WTH_DefOf.WTH_HackingMaintenanceSpeed, true)) * 500f);
             EffecterDef effect = DefDatabase<EffecterDef>.AllDefs.FirstOrDefault((EffecterDef ed) => ed.defName == "Repair");
             yield return Toils_General.Wait(duration, TargetIndex.None).FailOnCannotTouch(TargetIndex.A, PathEndMode.ClosestTouch).WithProgressBarToilDelay(TargetIndex.A, false, -0.5f).WithEffect(effect, TargetIndex.A);
             Toil finalizeHacking = new Toil() {
