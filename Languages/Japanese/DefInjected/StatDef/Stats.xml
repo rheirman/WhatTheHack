@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+  <WTH_MechanitesEffictiveness.label>メカノイド有効係数</WTH_MechanitesEffictiveness.label>
+  <WTH_MechanitesEffictiveness.description>メカノイドベッドによって活性化されるメカノイドの修復速度およびパーツ消費効率は、この係数の影響を受けます。</WTH_MechanitesEffictiveness.description>
+
   <WTH_ControllerBeltRadius.label>制御半径</WTH_ControllerBeltRadius.label>
   <WTH_ControllerBeltRadius.description>このベルトを使用してメカノイドを制御できる最大範囲(半径)です。</WTH_ControllerBeltRadius.description>
 

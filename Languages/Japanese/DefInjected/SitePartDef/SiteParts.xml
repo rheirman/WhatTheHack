@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_RoamingMechanoidsPart.label>放浪メカノイド</WTH_RoamingMechanoidsPart.label>
+  <WTH_RoamingMechanoidsPart.description>メカノイドはこのエリアを巡回しているようです。</WTH_RoamingMechanoidsPart.description>
+  <WTH_RoamingMechanoidsPart.descriptionDialogue>近隣の人々は、このエリアを巡回する何体かのメカノイドを発見しました。注意してください。</WTH_RoamingMechanoidsPart.descriptionDialogue>
+
+  <WTH_MechanoidTemplePart.label>メカノイド反応地点</WTH_MechanoidTemplePart.label>
+  <WTH_MechanoidTemplePart.description>長距離鉱物探査スキャナーが、比較的遠距離からこの場所にメカノイドパーツの存在を検出したことを考えると、そこにかなりの数のメカノイドが存在しているはずです。</WTH_MechanoidTemplePart.description>
+  <WTH_MechanoidTemplePart.descriptionDialogue>あなたの長距離鉱物探査スキャナーによってメカノイドパーツの濃度が高い場所が検出されました</WTH_MechanoidTemplePart.descriptionDialogue>
+
+
+</LanguageData>

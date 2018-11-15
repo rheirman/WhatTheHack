@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+  <WTH_ExtractBrainData.label>脳からデータを抽出する</WTH_ExtractBrainData.label>
+  <WTH_ExtractBrainData.description>メカノイドテクノロジーを使用して人間の脳からすべてのデータを抽出します。現在の技術では、この行為の結果として脳を破壊せずに実行できません。より知力スキルの高いポーンは、より多くのデータをもたらすでしょう。</WTH_ExtractBrainData.description>
+  <WTH_ExtractBrainData.jobString>脳からデータを抽出中</WTH_ExtractBrainData.jobString>
+
   <WTH_Scrap_AdvancedMechanoidChip.label>先進メカノイドチップを解体</WTH_Scrap_AdvancedMechanoidChip.label>
   <WTH_Scrap_AdvancedMechanoidChip.description>先進メカノイドチップを解体する。</WTH_Scrap_AdvancedMechanoidChip.description>
   <WTH_Scrap_AdvancedMechanoidChip.jobString>チップを解体中</WTH_Scrap_AdvancedMechanoidChip.jobString>
@@ -45,8 +49,8 @@
   <WTH_ImplantAI.description>AI人格コアを、ハックしたメカノイドに埋め込み、戦闘用の完全な制御を可能にします。</WTH_ImplantAI.description>
   <WTH_ImplantAI.jobString>メカノイドをハック中</WTH_ImplantAI.jobString>
 
-  <!-- <WTH_HackLocomotion.label>hack mechanoid locomotion system</WTH_HackLocomotion.label> -->
-  <!-- <WTH_HackLocomotion.description>Hacks the locomotion system of the mechanoid and adds a receiver to the mechanoid to allow the it to be operated by a colonist using a remote control device</WTH_HackLocomotion.description> -->
+  <!-- <WTH_HackLocomotion.label>メカノイド移動システムをハックする</WTH_HackLocomotion.label> -->
+  <!-- <WTH_HackLocomotion.description>メカノイドの運動システムをハックして、受信機をメカノイドに追加して、遠隔制御装置を使用して入植民が操作できるようにします。</WTH_HackLocomotion.description> -->
   <!-- <WTH_HackLocomotion.jobString>メカノイドをハック中</WTH_HackLocomotion.jobString> -->
 
   <WTH_InstallRepairArm.label>修理アームを装着</WTH_InstallRepairArm.label>

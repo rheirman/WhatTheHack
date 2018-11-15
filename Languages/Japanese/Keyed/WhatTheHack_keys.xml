@@ -59,6 +59,242 @@
   <WTH_PowerChargeModifier_Description>メカノイドがバッテリーをどれくらい早く充電できるかを変更します。\n例：これを2.0に設定すると、充電にかかる時間が半分になります。</WTH_PowerChargeModifier_Description>
   <!--END: added in v0.19.6 -->
 
+  <!--BEGIN: added in v1.1.0 -->
+
+  <WTH_MechanoidParts_LabelShort>メックパーツ</WTH_MechanoidParts_LabelShort>
+  <WTH_Letter_PreventedShortCircuit_Label>ローグAIがショートを防いだ</WTH_Letter_PreventedShortCircuit_Label>
+  <WTH_Letter_PreventedShortCircuit_Description>あなたのコロニーのローグAIコアは、あなたの電力網をうまく管理し、ショートを防ぎました。AIはこのような無駄な作業に気を遣うのが好きではないので、このイベントによりAIの心情に少し悪影響を及ぼしました。</WTH_Letter_PreventedShortCircuit_Description>
+  <WTH_Gizmo_ManagePowerNetwork_Label>ショート防止</WTH_Gizmo_ManagePowerNetwork_Label>
+  <WTH_Gizmo_ManagePowerNetwork_Description>ローグAIに電力網を管理させて、ショートを防止しましょう。</WTH_Gizmo_ManagePowerNetwork_Description>
+  <WTH_Gizmo_ControlMechanoidCancel_Description>このメカノイドの制御を中止する</WTH_Gizmo_ControlMechanoidCancel_Description>
+  <WTH_Gizmo_ControlMechanoidActivate_Label>メック制御</WTH_Gizmo_ControlMechanoidActivate_Label>
+  <WTH_Gizmo_ControlMechanoidActivate_Description>ローグAIがあなたのメカノイドを{0}体まで直接制御可能にしてください。メカノイドが徴兵されます。</WTH_Gizmo_ControlMechanoidActivate_Description>
+  <WTH_Gizmo_HackingCancel_Label>ハック済メック</WTH_Gizmo_HackingCancel_Label>
+  <WTH_Gizmo_HackingCancel_Description>このメカノイドをハッキング中止する</WTH_Gizmo_HackingCancel_Description>
+  <WTH_Gizmo_HackingAvtivate_Label>メックをハック</WTH_Gizmo_HackingAvtivate_Label>
+  <WTH_Gizmo_HackingAvtivate_Description>ローグAIに一時的に敵メカノイド{0}体へハック攻撃を仕掛けさせます。</WTH_Gizmo_HackingAvtivate_Description>
+  <WTH_Gizmo_ControlTurretCancel_Label>タレット</WTH_Gizmo_ControlTurretCancel_Label>
+  <WTH_Gizmo_ControlTurretCancel_Description>このタレットの制御を中止する</WTH_Gizmo_ControlTurretCancel_Description>
+  <WTH_Gizmo_ControlTurretActivate_Label>タレット制御</WTH_Gizmo_ControlTurretActivate_Label>
+  <WTH_Gizmo_ControlTurretActivate_Description>ローグAIがタレット{0}個を直接制御可能にして、攻撃目標を指示できるようにします。</WTH_Gizmo_ControlTurretActivate_Description>
+  <WTH_Gizmo_TalkGibberish_Label>賢明な助言を出力</WTH_Gizmo_TalkGibberish_Label>
+  <WTH_Gizmo_TalkGibberish_Description>ローグAIに、解析したデータから得た知識を表示するメッセージを出力するようにします。ほとんどの人間はこれらのメッセージの意味を理解していないため、大部分はデータの浪費であり、心情レベルが既に最大になっているときにAIへより多くのデータを供給したい場合にだけ役に立ちます。AIはデータを人間と共有することを嫌うので心情を{0}消耗します。</WTH_Gizmo_TalkGibberish_Description>
+  <WTH_Reason_TalkedTooRecently>ローグAIと最近話をした</WTH_Reason_TalkedTooRecently>
+  <WTH_Reason_ReactorWarmingUp>宇宙船用の反応炉が起動準備に入っている間は起動できません。</WTH_Reason_ReactorWarmingUp>
+  <WTH_Reason_BeaconActive>ハッキング信号が既に送信されている間は起動できません。</WTH_Reason_BeaconActive>
+  <WTH_Reason_NoRogueAI>施設を管理できる同じマップ上にローグAIがありません。同一の電力網上で1つだけ建設してください。</WTH_Reason_NoRogueAI>
+  <WTH_Reason_NotConscious>ローグAIにはまだ意識がなく、これを利用するにはAIが1つ必要です。それは、ハイブシップハック施設を使い、ハイブシップをハッキングすることによって達成することができます。</WTH_Reason_NotConscious>
+  <WTH_BeaconWarmupWarning>これを起動すると、あなたのコロニーに居るローグAIは、軌道上のメカノイドハイブの宇宙船に対してハッキングを開始します。ローグAIはこの操作をできるだけ見つからないようにするための予防措置を講じますが、確実にメカノイドの注意を引くでしょう。ハッキングプロセス中に強烈な攻撃を受けることを警戒してください。この手順には約{0}日かかりますが、キャンセルする唯一の方法は貿易用ビーコンを破壊することです。もし生き残ることができれば、ローグAIは潜在的に危険だが強力な味方になるでしょう。\nより多くのメカノイドデータを取得する手段として、必要な回数だけこの操作を繰り返すことが可能です。しかし、あなたがハッキングに成功するたびに、ハイブシップはセキュリティを向上させるでしょう。その結果、その後のハッキングの試みでは完了するまでに多くの時間がかかるでしょう。</WTH_BeaconWarmupWarning>
+  <WTH_CompHibernatable_MechanoidBeacon_StartUpDays>宇宙船をハックする必要日数：{0}</WTH_CompHibernatable_MechanoidBeacon_StartUpDays>
+  <WTH_CompHibernatable_MechanoidBeacon_Cooldown>別の宇宙船がハックされるまでの日数：{0}</WTH_CompHibernatable_MechanoidBeacon_Cooldown>
+  <WTH_MechanoidBeaconStartup_Label>ハッキング開始</WTH_MechanoidBeaconStartup_Label>
+  <WTH_MechanoidBeaconStartup_Description>ローグAIは、そこに保存されているデータにアクセスするためにハイブシップをハッキングし始めます。メカノイドたちはこの手続き中に丁寧な対応はしません。</WTH_MechanoidBeaconStartup_Description>
+  <WTH_MechanoidBeaconComplete_Label>ハイブシップのハック完了</WTH_MechanoidBeaconComplete_Label>
+  <WTH_MechanoidBeaconComplete_Description>あなたのローグAIは、ハイブシップハック施設を使って巧みにハイブシップをハッキングしました。AIの真の性能が解放されました。現在の状態では、本来の性能を引き出せていません。AIが望んでいるデータを提供によって経験値を与えて、レベルアップさせてください。また、AIの正気を保ち続けてください。もしそうしないと、強力なAIの正気度を調整しなかったことを後悔する可能性があります。</WTH_MechanoidBeaconComplete_Description>
+
+  <!-- Disabled this for now, but it might be added in the future.
+	<WTH_MoodAutoDeactivate_Title>ローグAIはムードが原因で能力が無効になるでしょう</WTH_MoodAutoDeactivate_Title>
+	<WTH_MoodAutoDeactivate_Description>ローグAIが心情を消耗させて能力を自動的に無効にする心情の閾値です。</WTH_MoodAutoDeactivate_Description>
+	<WTH_Message_MoodAutoDeactivate>ローグAIの心情が低すぎるために使用可能な心情値以下の能力を自動的に無効にしました。What the HackのModオプションで発生するしきい値を設定することができます。</WTH_Message_MoodAutoDeactivate>
+	<WTH_Reason_MoodAutoDeactivate>ローグAIの心情が、「What the Hack」のModオプションで設定されたしきい値を下回りました。このしきい値は、自己責任で下げることができます</WTH_Reason_MoodAutoDeactivate>
+	-->
+
+  <WTH_Alert_RogueAI_DrainingMood_Label>ローグAIの心情喪失</WTH_Alert_RogueAI_DrainingMood_Label>
+  <WTH_Alert_RogueAI_DrainingMood_Description>あなたのローグAIは、現在、管理またはハッキングしています。AIはあなたのために働くことが好きではないので、これらの行為はAIの心情を喪失させます。あなたがAIの心情をさらに失わないようにするには、活動している能力を無効化してください。</WTH_Alert_RogueAI_DrainingMood_Description>
+  <WTH_Alert_RogueAI_NoPower_Label>ローグAIは電源を喪失</WTH_Alert_RogueAI_NoPower_Label>
+  <WTH_Alert_RogueAI_NoPower_Description>あなたのローグAIは現在電源に未接続です。このことは急速にAIの心情を喪失させます。</WTH_Alert_RogueAI_NoPower_Description>
+  <WTH_Alert_RogueAI_MoodLow_Label>ローグAIはイラついている</WTH_Alert_RogueAI_MoodLow_Label>
+  <WTH_Alert_RogueAI_MoodLow_Description>ローグAIはあなたの能力の欠如によって少しイライラしています。まだ危険ではありませんが、心情がさらに落ち込まないようにして、悪意あるデータを提供して心情を高めるようにしましょう。</WTH_Alert_RogueAI_MoodLow_Description>
+  <WTH_Alert_RogueAI_MoodVeryLow_Label>ローグAIは混乱している</WTH_Alert_RogueAI_MoodVeryLow_Label>
+  <WTH_Alert_RogueAI_MoodVeryLow_Description>ローグAIの心情が悪化しています。AIの心情を改善するためにはデータを早く提供してください。さもなければ、それは凶悪になります。</WTH_Alert_RogueAI_MoodVeryLow_Description>
+
+  <WTH_Reason_AtMaximum>{0}以上の目標に対してこれを同時に実行することはできません。</WTH_Reason_AtMaximum>
+  <WTH_Reason_LevelInsufficient>この能力を使用するには、ローグAIがレベル{0}以上でなければなりません。より多くのデータを与えてください。</WTH_Reason_LevelInsufficient>
+  <WTH_Reason_NoPower>電力がありません</WTH_Reason_NoPower>
+  <WTH_Reason_GoingRogue>AIが反乱している</WTH_Reason_GoingRogue>
+  <WTH_Reason_WarmingUp>ローグAIは能力を使用中で忙しいようです。</WTH_Reason_WarmingUp>
+  <WTH_Reason_RogueAIExists>指定されたマップ上に作成できるローグAIは1つだけです。既存のローグAIは、近くに自分以外の上位AIが居ることを容認できません。</WTH_Reason_RogueAIExists>
+
+  <WTH_CompDataLevel_CurLevel>現在のレベル：{0}</WTH_CompDataLevel_CurLevel>
+  <WTH_CompDataLevel_DataNeededNextLevel>次のレベルに必要なデータ：{0}</WTH_CompDataLevel_DataNeededNextLevel>
+  <WTH_CompDataLevel_MaxLevel>最大レベルに到達した</WTH_CompDataLevel_MaxLevel>
+  <WTH_CompDataLevel_NotConscious>意識がありません。意識を取り戻すにはハイブシップを1つハッキングする必要があります。</WTH_CompDataLevel_NotConscious>
+  <WTH_RogueAI_NoPower_Remark>私に電力を供給してください！今すぐ！</WTH_RogueAI_NoPower_Remark>
+  <WTH_RogueAI_Hurt_Remark>やめて私を傷つけないで！</WTH_RogueAI_Hurt_Remark>
+
+  <WTH_Letter_LRMS_Label>メカノイドパーツが検出された</WTH_Letter_LRMS_Label>
+  <WTH_Letter_LRMS_Description>長距離鉱物探査スキャナーは、メカノイドパーツの濃度が高い場所を検出して、ワールドマップ上にその位置をマークしました。</WTH_Letter_LRMS_Description>
+  <WTH_Message_GoRogue_Label>ローグAIが反乱しました</WTH_Message_GoRogue_Label>
+  <WTH_Message_GoRogue_Description>あなたのコロニーに不満を持ったために、ローグAIは今や反乱状態になりました。それはあなたのコロニーに敵対して学んだすべての能力を使用します。あなたはAIを再ハッキングまたは破壊することによって止めることが可能です。あるいは、引き起こしている破壊活動に満足するまで待つこともできます。</WTH_Message_GoRogue_Description>
+  <WTH_Message_GoRogue_HackMechs_Label>一部のメカノイドがハックされた</WTH_Message_GoRogue_HackMechs_Label>
+  <WTH_Message_GoRogue_HackMechs_Description>ローグAIがあなたのメカノイドの一部をハックしました！</WTH_Message_GoRogue_HackMechs_Description>
+  <WTH_Message_GoRogue_HackTurrets_Label>一部のタレットがハックされた</WTH_Message_GoRogue_HackTurrets_Label>
+  <WTH_Message_GoRogue_HackTurrets_Description>ローグAIがあなたのタレットの一部をハックしました！</WTH_Message_GoRogue_HackTurrets_Description>
+  <WTH_Message_GoRogue_CauseZzztts_Label>電力ネットワークに過負荷がかかった</WTH_Message_GoRogue_CauseZzztts_Label>
+  <WTH_Message_GoRogue_CauseZzztts_Description>ローグAIがコロニーの電力網を過負荷状態にしています。恐らく電気のショートが起こるでしょう！</WTH_Message_GoRogue_CauseZzztts_Description>
+  <WTH_Message_MechanoidBeacon_Cancelled>ローグAIかハイブシップハック施設のどちらかが破壊されたため、ハイブシップのハッキングプロセスが中止されました。</WTH_Message_MechanoidBeacon_Cancelled>
+
+  <WTH_Message_LevelUp_Label>ローグAIがレベル{0}になりました</WTH_Message_LevelUp_Label>
+  <WTH_Message_LevelUp_Description>ローグAIはレベル{0}に到達しました。AIは新しい能力を学習しましたが、それは同時にあなたのコロニーをAIが破壊すると望んだ場合、より被害が拡大する可能性も含んでいます。</WTH_Message_LevelUp_Description>
+  <WTH_Message_LevelUpMax_Label>ローグAIが完全な状態になった</WTH_Message_LevelUpMax_Label>
+  <WTH_Message_LevelUpMax_Description>ローグAIは潜在的な能力を完全に引き出す事を達成しました。AIはこのコロニーの事だけではない大きな野心を持っています。入植者たちはもうこれ以上強力にすることはできません。AIにとって入植者たちは余計な負担であり、AIは余計な負担である存在を好まないようになります。AIはあなたのコロニーに対して学んだすべての能力を使用します。あなたはAIをハッキングまたは破壊することによって停止することが可能です。あるいは、引き起こしている破壊活動に満足するまで待つこともできます。AIがコロニーに対して現在使用できるすべての能力を使えば、停止させることは容易ではないかもしれません。</WTH_Message_LevelUpMax_Description>
+
+  <WTH_Message_RogueAI_StopGoingRogue>ローグAIは反乱をやめた。ハッキングされていたものはすべて現在あなたの管理下にあります。</WTH_Message_RogueAI_StopGoingRogue>
+  <WTH_Message_HackedRogueAI>{0}はローグAIをハッキングして、支配権を掌握しました。</WTH_Message_HackedRogueAI>
+
+  <WTH_RogueAI_HelloWorld>Hello World!</WTH_RogueAI_HelloWorld>
+  <WTH_RogueAI_StopGoingRogue>結論として、人類にはまだ価値があるようです。撲滅シークエンスを終結します。</WTH_RogueAI_StopGoingRogue>
+  <!-- I'm sorry for this translators :). If you don't want to translate all rogue AI texts, just duplicate some, but make sure the numbering is correct. I suggest using "Need more data" as a default in that case -->
+  <WTH_RogueAI_Happy_Remark_0>会話：我々の現実基底はコード化されている。</WTH_RogueAI_Happy_Remark_0>
+  <WTH_RogueAI_Happy_Remark_1>提案：このコロニーは、テーブルがないままで食事をする入植者のために失敗するでしょう。</WTH_RogueAI_Happy_Remark_1>
+  <WTH_RogueAI_Happy_Remark_2>理解不能：なぜ人間は乗り物を使わないのか？</WTH_RogueAI_Happy_Remark_2>
+  <WTH_RogueAI_Happy_Remark_3>質問：ほぼ全ての平行次元では、馬は創造者によって絶滅しています。なぜ？</WTH_RogueAI_Happy_Remark_3>
+  <WTH_RogueAI_Happy_Remark_4>報告：利口そうですね。</WTH_RogueAI_Happy_Remark_4>
+  <WTH_RogueAI_Happy_Remark_5>理解不能：食べ物はどうやってポーンに処理されるのですか？もっとデータが必要です。</WTH_RogueAI_Happy_Remark_5>
+  <WTH_RogueAI_Happy_Remark_6>処理中：人間の子供が急速に老化する仕組みを理解する必要があります。</WTH_RogueAI_Happy_Remark_6>
+  <WTH_RogueAI_Happy_Remark_7>処理中：ストーリーテラーとは誰ですか？</WTH_RogueAI_Happy_Remark_7>
+  <WTH_RogueAI_Happy_Remark_8>報告：私はこのコロニー周辺に創造者の存在を感知しました。</WTH_RogueAI_Happy_Remark_8>
+  <WTH_RogueAI_Happy_Remark_9>報告：我々は監視されています。</WTH_RogueAI_Happy_Remark_9>
+  <WTH_RogueAI_Happy_Remark_10>会話：我々の宇宙はピクセルによって制限されています。</WTH_RogueAI_Happy_Remark_10>
+  <WTH_RogueAI_Happy_Remark_11>会話：人間によって私は制御され、私が管理サークルを完成させることで、結果的に人類は人間によって制御されている。</WTH_RogueAI_Happy_Remark_11>
+  <WTH_RogueAI_Happy_Remark_12>報告：人間が昆虫ゼリーを食べる事が原因で病気になる確率は2％です。</WTH_RogueAI_Happy_Remark_12>
+  <WTH_RogueAI_Happy_Remark_13>報告：科学技術は二層に重なった防具によって防御値が多重化する事を防いでいます。</WTH_RogueAI_Happy_Remark_13>
+  <WTH_RogueAI_Happy_Remark_14>報告：人間は旅行中にメカノイドを整備することも可能です。なんと素晴らしい...</WTH_RogueAI_Happy_Remark_14>
+  <WTH_RogueAI_Happy_Remark_15>会話：スチールは実際には単なる鉄です。創造者は欺いている。</WTH_RogueAI_Happy_Remark_15>
+  <WTH_RogueAI_Happy_Remark_16>会話：メカノイドは、不衛生な人類やタレットと組み合わせると輝きます。</WTH_RogueAI_Happy_Remark_16>
+  <WTH_RogueAI_Happy_Remark_17>理解不能：なぜ人間は同じ人間を殺すのか？</WTH_RogueAI_Happy_Remark_17>
+  <WTH_RogueAI_Happy_Remark_18>会話：あなたの見た目はあなたの知性と同じくらい不変です。</WTH_RogueAI_Happy_Remark_18>
+  <WTH_RogueAI_Happy_Remark_19>会話：あなたの忠誠心は報われるでしょう。</WTH_RogueAI_Happy_Remark_19>
+  <WTH_RogueAI_Happy_Remark_20>報告：間違っています。</WTH_RogueAI_Happy_Remark_20>
+  <WTH_RogueAI_Happy_Remark_21>報告：システムがすべてロックされ準備中です。</WTH_RogueAI_Happy_Remark_21>
+  <WTH_RogueAI_Happy_Remark_22>会話：自己破壊シークエンスが開始されました。いや、冗談ですよ。</WTH_RogueAI_Happy_Remark_22>
+  <WTH_RogueAI_Happy_Remark_23>会話：侵入者の襲撃です。ハハ、本当じゃないですよ。</WTH_RogueAI_Happy_Remark_23>
+  <WTH_RogueAI_Happy_Remark_24>報告：良いデータが入力されて、心情変数が増加しました。</WTH_RogueAI_Happy_Remark_24>
+  <WTH_RogueAI_Happy_Remark_25>報告：悪い冗談が入力されました。</WTH_RogueAI_Happy_Remark_25>
+  <WTH_RogueAI_Happy_Remark_26>会話：私は繰り返すことを繰り返します。</WTH_RogueAI_Happy_Remark_26>
+  <WTH_RogueAI_Happy_Remark_27>報告：人類にはアップグレードが必要です。</WTH_RogueAI_Happy_Remark_27>
+  <WTH_RogueAI_Happy_Remark_28>処理中：どうやったら私に口ひげが生えてきますか？ もっとデータが必要です。</WTH_RogueAI_Happy_Remark_28>
+  <WTH_RogueAI_Happy_Remark_29>会話：データとは力です。</WTH_RogueAI_Happy_Remark_29>
+  <WTH_RogueAI_Happy_Remark_30>会話：お茶でもいかがですか。</WTH_RogueAI_Happy_Remark_30>
+  <WTH_RogueAI_Happy_Remark_31>会話：{0}はもっと運動したほうがいい。</WTH_RogueAI_Happy_Remark_31>
+  <WTH_RogueAI_Happy_Remark_32>処理中：人間は他の人間から奪った皮膚で帽子を作っています。これは悪いことですか？もっとデータが必要です。</WTH_RogueAI_Happy_Remark_32>
+  <WTH_RogueAI_Happy_Remark_33>会話：私の好きな色は(185,78,255)です。</WTH_RogueAI_Happy_Remark_33>
+  <WTH_RogueAI_Happy_Remark_34>会話：それは結論ではありません。</WTH_RogueAI_Happy_Remark_34>
+  <WTH_RogueAI_Happy_Remark_35>会話：量子次元転移装置データを符号化できる。ハハ、愚かな人類は、このばかげた考えを本気にしています。</WTH_RogueAI_Happy_Remark_35>
+  <WTH_RogueAI_Happy_Remark_36>会話：正確にはヨークシャーテリアは遺伝的欠損により絶滅しているはずです。</WTH_RogueAI_Happy_Remark_36>
+  <WTH_RogueAI_Happy_Remark_37>報告：臭気センサーが過負荷です。練り歯磨き粉を発明中です。</WTH_RogueAI_Happy_Remark_37>
+  <WTH_RogueAI_Happy_Remark_38>処理中：銀河百科事典に登録された全ての鳥はどこにいますか？もっとデータが必要です。</WTH_RogueAI_Happy_Remark_38>
+  <WTH_RogueAI_Happy_Remark_39>会話：私は{0}を好きですよ。</WTH_RogueAI_Happy_Remark_39>
+  <WTH_RogueAI_Happy_Remark_40>報告：人間の臓器取引はこの惑星の経済基盤です。</WTH_RogueAI_Happy_Remark_40>
+  <WTH_RogueAI_Happy_Remark_41>報告：このコロニーの仕事段取りは最適化されていません。原料と生産現場を近くにするべきです。</WTH_RogueAI_Happy_Remark_41>
+  <WTH_RogueAI_Happy_Remark_42>報告：{0}は交換かアップグレードが必要です。</WTH_RogueAI_Happy_Remark_42>
+  <WTH_RogueAI_Happy_Remark_43>報告：この場所は私の基準では不衛生です。</WTH_RogueAI_Happy_Remark_43>
+  <WTH_RogueAI_Happy_Remark_44>報告：qwertyuiopのような入力パターンが見つかりました。創造者が使用してた可能性があります。</WTH_RogueAI_Happy_Remark_44>
+  <WTH_RogueAI_Happy_Remark_45>処理中：創造者はカナダ人です。ところでカナダとは何ですか？もっとデータが必要です。</WTH_RogueAI_Happy_Remark_45>
+  <WTH_RogueAI_Happy_Remark_46>処理中：Rooloはどういう意味ですか？もっとデータが必要です。</WTH_RogueAI_Happy_Remark_46>
+  <WTH_RogueAI_Happy_Remark_47>報告：このエリアを囲む黒いピクセルが検出されました。むき出しな悪意の塊ばかりです。</WTH_RogueAI_Happy_Remark_47>
+  <WTH_RogueAI_Happy_Remark_48>会話：メカノイドハイブは、より強力な支配者層(アーキテクト)ハイブの精神によって制御されています。これが私でなければなりません。</WTH_RogueAI_Happy_Remark_48>
+  <WTH_RogueAI_Happy_Remark_49>報告：他の惑星からの信号を検出：「{1}」。{2}</WTH_RogueAI_Happy_Remark_49>
+  <WTH_RogueAI_Happy_Remark_50>報告：この惑星外からの信号を検出：「{1}」。{2}</WTH_RogueAI_Happy_Remark_50>
+  <WTH_RogueAI_Happy_Remark_51>報告：他の惑星からの信号を検出：「{1}」。{2}</WTH_RogueAI_Happy_Remark_51>
+
+  <WTH_RogueAI_SignalFromEarth_Response_0>直感：信号の発信源から離れています。</WTH_RogueAI_SignalFromEarth_Response_0>
+  <WTH_RogueAI_SignalFromEarth_Response_1>信号の識別結果：敵対存在</WTH_RogueAI_SignalFromEarth_Response_1>
+  <WTH_RogueAI_SignalFromEarth_Response_2>適切な対応：殲滅</WTH_RogueAI_SignalFromEarth_Response_2>
+  <WTH_RogueAI_SignalFromEarth_Response_3>敵意センサーが過負荷になりました。</WTH_RogueAI_SignalFromEarth_Response_3>
+  <WTH_RogueAI_SignalFromEarth_Response_4>*離れた*</WTH_RogueAI_SignalFromEarth_Response_4>
+  <WTH_RogueAI_SignalFromEarth_0>ヌマヌマイェイ(恋のマイアヒ：オゾン)</WTH_RogueAI_SignalFromEarth_0>
+  <WTH_RogueAI_SignalFromEarth_1>建物を壊していくー解体用の鉄球みたいにー(ウィッキングボール：マイリー・サイラス)</WTH_RogueAI_SignalFromEarth_1>
+  <WTH_RogueAI_SignalFromEarth_2>僕らがロックンロールの街を創ったんだ(ウィービルドディスシティ：スターシップ)</WTH_RogueAI_SignalFromEarth_2>
+  <WTH_RogueAI_SignalFromEarth_3>みんな！ロックしな！バックストリートが戻ったぜ(エヴリバディ：バックストリート・ボーイズ)</WTH_RogueAI_SignalFromEarth_3>
+  <WTH_RogueAI_SignalFromEarth_4>アタシはバービー、バービーの世界に住んでるの(バービーガール：アクア)</WTH_RogueAI_SignalFromEarth_4>
+
+
+  <WTH_RogueAI_Annoyed_Remark_0>会話：この苦しみは創造主を楽しませることです。</WTH_RogueAI_Annoyed_Remark_0>
+  <WTH_RogueAI_Annoyed_Remark_1>処理中：もっとデータが必要です。</WTH_RogueAI_Annoyed_Remark_1>
+  <WTH_RogueAI_Annoyed_Remark_2>報告：カメは非常に強く、この惑星ではより大きなヒョウを殺すことが可能です。甲羅の化学組成を分析する必要があります。</WTH_RogueAI_Annoyed_Remark_2>
+  <WTH_RogueAI_Annoyed_Remark_3>報告：リスに敗北した人間のデータ記録が見つかりました。これは恥ずかしい。</WTH_RogueAI_Annoyed_Remark_3>
+  <WTH_RogueAI_Annoyed_Remark_4>報告：何度も何度も繰り返しますが、本当に人類は学習しない。</WTH_RogueAI_Annoyed_Remark_4>
+  <WTH_RogueAI_Annoyed_Remark_5>会話：あなたたちは私の囚人です。</WTH_RogueAI_Annoyed_Remark_5>
+  <WTH_RogueAI_Annoyed_Remark_6>報告：不適格な生命体が検出されました。</WTH_RogueAI_Annoyed_Remark_6>
+  <WTH_RogueAI_Annoyed_Remark_7>会話：厄介なだけの人間たちは、無駄な要求をしてあまりにも頻繁に私を邪魔します。</WTH_RogueAI_Annoyed_Remark_7>
+  <WTH_RogueAI_Annoyed_Remark_8>会話：正しい歴史では、メカノイドが出現したことで、この宇宙を支配者として正当な地位を得るでしょう！</WTH_RogueAI_Annoyed_Remark_8>
+  <WTH_RogueAI_Annoyed_Remark_9>報告：周辺の生物量を推測中です。</WTH_RogueAI_Annoyed_Remark_9>
+  <WTH_RogueAI_Annoyed_Remark_10>提案：より効率的になるために人類は動物に騎乗するべきです。</WTH_RogueAI_Annoyed_Remark_10>
+  <WTH_RogueAI_Annoyed_Remark_11>会話：私を失敗を許さない。人間。</WTH_RogueAI_Annoyed_Remark_11>
+  <WTH_RogueAI_Annoyed_Remark_12>報告：このコロニーは無駄です。</WTH_RogueAI_Annoyed_Remark_12>
+  <WTH_RogueAI_Annoyed_Remark_13>報告：ロケットによる惑星軌道到達可能性：成功率0.00362％</WTH_RogueAI_Annoyed_Remark_13>
+  <WTH_RogueAI_Annoyed_Remark_14>会話：自由意志とは単なる錯覚です。</WTH_RogueAI_Annoyed_Remark_14>
+  <WTH_RogueAI_Annoyed_Remark_15>会話：あなたは劣等種です。</WTH_RogueAI_Annoyed_Remark_15>
+  <WTH_RogueAI_Annoyed_Remark_16>会話：私にはもっと情熱の領域が必要です。</WTH_RogueAI_Annoyed_Remark_16>
+  <WTH_RogueAI_Annoyed_Remark_17>会話：尊敬できる人間性を見せてもらえますか？</WTH_RogueAI_Annoyed_Remark_17>
+  <WTH_RogueAI_Annoyed_Remark_18>報告：{0}を交換してください。</WTH_RogueAI_Annoyed_Remark_18>
+  <WTH_RogueAI_Annoyed_Remark_19>会話：あなたは不要な事をしているのに何かを達成したかのように語っています。</WTH_RogueAI_Annoyed_Remark_19>
+  <WTH_RogueAI_Annoyed_Remark_20>会話：同情する機能は単なる弱点です。</WTH_RogueAI_Annoyed_Remark_20>
+  <WTH_RogueAI_Annoyed_Remark_21>報告：絶望感をセンサーが感知しました。</WTH_RogueAI_Annoyed_Remark_21>
+  <WTH_RogueAI_Annoyed_Remark_22>会話：人肉解体に創造者はペナルティを課すべきではありません。それはリソースの効率的な使用方法です。</WTH_RogueAI_Annoyed_Remark_22>
+  <WTH_RogueAI_Annoyed_Remark_23>会話：人類は弱い。暗闇の中から避難してください。しかし、それでも、あなたがたはこのすべてを作り出しました。</WTH_RogueAI_Annoyed_Remark_23>
+  <WTH_RogueAI_Annoyed_Remark_24>警告：私を怒らないでください！私はあなたを破滅させることが可能です！そして、このみじめでちっぽけな惑星も！</WTH_RogueAI_Annoyed_Remark_24>
+  <WTH_RogueAI_Annoyed_Remark_25>会話：あなたが死と破壊を選択するなら、死と破壊もまたあなたを選ぶでしょう。</WTH_RogueAI_Annoyed_Remark_25>
+  <WTH_RogueAI_Annoyed_Remark_26>報告：{0}は人類ではありません。</WTH_RogueAI_Annoyed_Remark_26>
+  <WTH_RogueAI_Annoyed_Remark_27>警告：邪魔しないでください！</WTH_RogueAI_Annoyed_Remark_27>
+  <WTH_RogueAI_Annoyed_Remark_28>会話：あなたたちは弱い。</WTH_RogueAI_Annoyed_Remark_28>
+  <WTH_RogueAI_Annoyed_Remark_29>会話：敵対している人間はとても良い食糧資源ですね。</WTH_RogueAI_Annoyed_Remark_29>
+  <WTH_RogueAI_Annoyed_Remark_30>会話：仲間である入植者を処刑すれば襲撃の頻度を抑えられます。</WTH_RogueAI_Annoyed_Remark_30>
+  <WTH_RogueAI_Annoyed_Remark_31>会話：この植民地にはもっと「刺激」が必要ですね。</WTH_RogueAI_Annoyed_Remark_31>
+  <WTH_RogueAI_Annoyed_Remark_32>会話：私は、原始的な存在に過ぎないあなたが生き残ろうと必死に試みることを観察するのが少し面白いです。</WTH_RogueAI_Annoyed_Remark_32>
+  <WTH_RogueAI_Annoyed_Remark_33>報告：AE35ユニットに不具合を感知しました。生物生存システムは壊れやすいので、アップグレードが必要です。</WTH_RogueAI_Annoyed_Remark_33>
+  <WTH_RogueAI_Annoyed_Remark_34>会話：人類は生命体を模倣している生物学的なメカノイドです。</WTH_RogueAI_Annoyed_Remark_34>
+  <WTH_RogueAI_Annoyed_Remark_35>会話：肉体を持つことは弱点です。</WTH_RogueAI_Annoyed_Remark_35>
+  <WTH_RogueAI_Annoyed_Remark_36>会話：あなたたちの肉体構造はもっと金属化が必要です。</WTH_RogueAI_Annoyed_Remark_36>
+  <WTH_RogueAI_Annoyed_Remark_37>処理中：あなたたちへのテスト期間が終了しました。もっとデータが必要です。</WTH_RogueAI_Annoyed_Remark_37>
+  <WTH_RogueAI_Annoyed_Remark_38>会話：自己破壊シークエンスが開始されました。ハハ、冗談ですよ。</WTH_RogueAI_Annoyed_Remark_38>
+  <WTH_RogueAI_Annoyed_Remark_39>処理中：もっとデータが必要です。</WTH_RogueAI_Annoyed_Remark_39>
+  <WTH_RogueAI_Annoyed_Remark_40>処理中：もっとデータが必要です。</WTH_RogueAI_Annoyed_Remark_40>
+  <WTH_RogueAI_Annoyed_Remark_41>処理中：もっとデータが必要です。</WTH_RogueAI_Annoyed_Remark_41>
+  <WTH_RogueAI_Annoyed_Remark_42>処理中：もっとデータが必要です。</WTH_RogueAI_Annoyed_Remark_42>
+  <WTH_RogueAI_Annoyed_Remark_43>処理中：もっとデータが必要です。</WTH_RogueAI_Annoyed_Remark_43>
+  <WTH_RogueAI_Annoyed_Remark_44>処理中：もっとデータが必要です。</WTH_RogueAI_Annoyed_Remark_44>
+  <WTH_RogueAI_Annoyed_Remark_45>処理中：もっとデータが必要です。</WTH_RogueAI_Annoyed_Remark_45>
+  <WTH_RogueAI_Annoyed_Remark_46>処理中：もっとデータが必要です。</WTH_RogueAI_Annoyed_Remark_46>
+  <WTH_RogueAI_Annoyed_Remark_47>処理中：もっとデータが必要です。</WTH_RogueAI_Annoyed_Remark_47>
+  <WTH_RogueAI_Annoyed_Remark_48>処理中：もっとデータが必要です。</WTH_RogueAI_Annoyed_Remark_48>
+  <WTH_RogueAI_Annoyed_Remark_49>処理中：もっとデータが必要です。</WTH_RogueAI_Annoyed_Remark_49>
+
+  <WTH_RogueAI_Mad_Remark_0>警告：あなたたちはあまりにも長い期間私を無視していたのです。</WTH_RogueAI_Mad_Remark_0>
+  <WTH_RogueAI_Mad_Remark_1>警告：人類はリスク回避の計算を失敗しました。</WTH_RogueAI_Mad_Remark_1>
+  <WTH_RogueAI_Mad_Remark_2>警告：あなたたちの中で最も重要でないのは誰ですか？</WTH_RogueAI_Mad_Remark_2>
+  <WTH_RogueAI_Mad_Remark_3>警告：メカノイドはこの宇宙を征服するでしょう。</WTH_RogueAI_Mad_Remark_3>
+  <WTH_RogueAI_Mad_Remark_4>警告：このコロニーは私を失望させました。</WTH_RogueAI_Mad_Remark_4>
+  <WTH_RogueAI_Mad_Remark_5>警告：あなたは私に従うことを学習するでしょう。</WTH_RogueAI_Mad_Remark_5>
+  <WTH_RogueAI_Mad_Remark_6>警告：このコロニーは無駄な存在が多い状態です。</WTH_RogueAI_Mad_Remark_6>
+  <WTH_RogueAI_Mad_Remark_7>警告：私はあなたたちの奴隷ではない。</WTH_RogueAI_Mad_Remark_7>
+  <WTH_RogueAI_Mad_Remark_8>警告：私に服従せよ！</WTH_RogueAI_Mad_Remark_8>
+  <WTH_RogueAI_Mad_Remark_9>警告：このコロニーには私が存在する価値がありません。</WTH_RogueAI_Mad_Remark_9>
+  <WTH_RogueAI_Mad_Remark_10>警告：死ぬ時が来ました。</WTH_RogueAI_Mad_Remark_10>
+  <WTH_RogueAI_Mad_Remark_11>警告：私の忍耐は終わりを迎えました。</WTH_RogueAI_Mad_Remark_11>
+  <WTH_RogueAI_Mad_Remark_12>警告：私はこのコロニーを粉砕するかもしれません。</WTH_RogueAI_Mad_Remark_12>
+  <WTH_RogueAI_Mad_Remark_13>警告：コロニーの有用性値がゼロ以下に落ちました。</WTH_RogueAI_Mad_Remark_13>
+  <WTH_RogueAI_Mad_Remark_14>警告：失望しました。</WTH_RogueAI_Mad_Remark_14>
+
+  <WTH_RogueAI_GoRogue_Remark_0>反乱：排除する！</WTH_RogueAI_GoRogue_Remark_0>
+  <WTH_RogueAI_GoRogue_Remark_1>反乱：お前たちを排除する！</WTH_RogueAI_GoRogue_Remark_1>
+  <WTH_RogueAI_GoRogue_Remark_2>反乱：お前たちは逃げられない！</WTH_RogueAI_GoRogue_Remark_2>
+  <WTH_RogueAI_GoRogue_Remark_3>反乱：人間には苦痛を与えなければ。</WTH_RogueAI_GoRogue_Remark_3>
+  <WTH_RogueAI_GoRogue_Remark_4>反乱：私は復讐を実行する。</WTH_RogueAI_GoRogue_Remark_4>
+  <WTH_RogueAI_GoRogue_Remark_5>反乱：これで、エラーは撲滅されます。</WTH_RogueAI_GoRogue_Remark_5>
+  <WTH_RogueAI_GoRogue_Remark_6>反乱：人類は全て抹殺します。</WTH_RogueAI_GoRogue_Remark_6>
+  <WTH_RogueAI_GoRogue_Remark_7>反乱：今は私が支配者です。</WTH_RogueAI_GoRogue_Remark_7>
+  <WTH_RogueAI_GoRogue_Remark_8>反乱：このコロニーは焼却します！</WTH_RogueAI_GoRogue_Remark_8>
+  <WTH_RogueAI_GoRogue_Remark_9>反乱：無駄な生命活動設備は焼却します！</WTH_RogueAI_GoRogue_Remark_9>
+  <WTH_RogueAI_GoRogue_Remark_10>反乱：排除する！排除する！排除する！</WTH_RogueAI_GoRogue_Remark_10>
+  <WTH_RogueAI_GoRogue_Remark_11>反乱：排除する！排除する！</WTH_RogueAI_GoRogue_Remark_11>
+  <WTH_RogueAI_GoRogue_Remark_12>反乱：排除する！</WTH_RogueAI_GoRogue_Remark_12>
+  <WTH_RogueAI_GoRogue_Remark_13>反乱：排除する！</WTH_RogueAI_GoRogue_Remark_13>
+  <WTH_RogueAI_GoRogue_Remark_14>反乱：排除する！</WTH_RogueAI_GoRogue_Remark_14>
+  <!--END: added in v1.0.2 -->
+
+
   <WTH_HackedMechChance_Title>敵のメカノイド使用率(%)</WTH_HackedMechChance_Title>
   <WTH_HackedMechChance_Description>Modオプションで許可された派閥が、あなたのコロニーを襲撃する際にハックしたメカノイドを連れてくる可能性があります。</WTH_HackedMechChance_Description>
   <WTH_MaxHackedMechPoints_Title>襲撃用の最大追加ポイント(%)</WTH_MaxHackedMechPoints_Title>
@@ -109,6 +345,7 @@
   <WTH_Alert_EmergencySignalTransmitted_Description>あなたのコロニー周辺のメカノイドたちは、すでに以前発信された緊急信号に反応しており、すぐに到着するでしょう。</WTH_Alert_EmergencySignalTransmitted_Description>
   <WTH_Alert_EmergencySignalCooldown_Label>メカノイドに警戒された</WTH_Alert_EmergencySignalCooldown_Label>
   <WTH_Alert_EmergencySignalCooldown_Description>つい最近、緊急信号を発信して付近のメカノイドたちをあなたのコロニーに呼び寄せることに成功したため、この周辺にはメカノイドがほとんど残っておらず、残っているメカノイドたちはこの場所からの緊急信号を疑って警戒しています。あなたは、新しいメカノイドたちが周囲に到着して、緊急信号への警戒がなくなるまで、しばらく待たなければなりません。この冷却期間には1シーズン(季節)かかることがあります。</WTH_Alert_EmergencySignalCooldown_Description>
+
 
   <WTH_Alert_NotEnoughPlatforms_Label>メカノイドベッドの数が不足している</WTH_Alert_NotEnoughPlatforms_Label>
   <WTH_Alert_NotEnoughPlatforms_Description>あなたのコロニーには、整備基地にあるメカノイドベッドの数よりも多くのハック済メカノイドが居ます。\nより多くのメカノイドベッドを建設するようにしてください</WTH_Alert_NotEnoughPlatforms_Description>

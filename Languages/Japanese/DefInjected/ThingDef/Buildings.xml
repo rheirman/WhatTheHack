@@ -38,5 +38,17 @@
 
   <WTH_DisassemblingBenchMinified.label>携帯用分解台 (梱包)</WTH_DisassemblingBenchMinified.label>
 
+  <WTH_MechanoidBeacon.label>ハイブシップハック施設</WTH_MechanoidBeacon.label>
+  <WTH_MechanoidBeacon.description>このハイテク施設は、惑星軌道を周回するメカノイドのハイブシップに対して、その宇宙船に存在する高度なデータにアクセスしようとするたびにローグAIが悪意のあるコードを送信することを可能にします。ローグAIは意識を覚醒するために、このデータを必要とします。ローグAIが同じマップ内に建設されると起動することが可能です。</WTH_MechanoidBeacon.description>
+  <Blueprint_WTH_MechanoidBeacon.label>ハイブシップハック施設(設計)</Blueprint_WTH_MechanoidBeacon.label>
+  <Frame_WTH_MechanoidBeacon.label>ハイブシップハック施設(施工)</Frame_WTH_MechanoidBeacon.label>
+  <Frame_WTH_MechanoidBeacon.description>このハイテク施設は、惑星軌道を周回するメカノイドのハイブシップに対して、その宇宙船に存在する高度なデータにアクセスしようとするたびにローグAIが悪意のあるコードを送信することを可能にします。ローグAIは意識を覚醒するために、このデータを必要とします。ローグAIが同じマップ内に建設されると起動することが可能です。</Frame_WTH_MechanoidBeacon.description>
+
+  <WTH_RogueAI.label>ローグAI</WTH_RogueAI.label>
+  <WTH_RogueAI.description>メカノイドテクノロジーに基づいた強力な潜在能力を秘めたAIです。初期段階では、AIの意識はまだ覚醒しておらず、近くにあるメカノイドベッドに対して小さな材料効率と修復速度ボーナスしか提供できません。またメカノイドを管理することが可能なので、より組織的な方法で連携させることができます。\nAIは、ハイブシップハック施設を使用して、ハイブシップをハックしてデータを得ることができれば、意識を覚醒することができます。十分なデータを与えられて覚醒したAIは、さまざまな能力を学習することができます。よく訓練されたAIは強力なサイバー兵器ですが、同時に大きな危険も伴います。</WTH_RogueAI.description>
+  <Blueprint_WTH_RogueAI.label>ローグAI(設計)</Blueprint_WTH_RogueAI.label>
+  <Frame_WTH_RogueAI.label>ローグAI(施工)</Frame_WTH_RogueAI.label>
+  <Frame_WTH_RogueAI.description>メカノイドテクノロジーに基づいた強力な潜在能力を秘めたAIです。初期段階では、AIの意識はまだ覚醒しておらず、近くにあるメカノイドベッドに対して小さな材料効率と修復速度ボーナスしか提供できません。またメカノイドを管理することが可能なので、より組織的な方法で連携させることができます。\nAIは、ハイブシップハック施設を使用して、ハイブシップをハックしてデータを得ることができれば、意識を覚醒することができます。十分なデータを与えられて覚醒したAIは、さまざまな能力を学習することができます。よく訓練されたAIは強力なサイバー兵器ですが、同時に大きな危険も伴います。</Frame_WTH_RogueAI.description>
+
 
 </LanguageData>
