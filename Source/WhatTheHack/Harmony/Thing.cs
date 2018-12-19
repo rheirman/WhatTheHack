@@ -76,18 +76,6 @@ namespace WhatTheHack.Harmony
                 }
             }
             
-            if(__instance is Building_TurretGun turret)
-            {
-                //Log.Message
-                if (Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(turret.Map).rogueAI is Building_RogueAI controller)
-                {
-                    if (controller.controlledTurrets.Contains(turret))
-                    {
-                        GenDraw.DrawLineBetween(turret.Position.ToVector3Shifted(), controller.Position.ToVector3Shifted(), SimpleColor.Green);
-                    }
-                }
-            }
-            
             if (__instance is Building_RogueAI rogueAI)
             {
                 foreach (Pawn pawn in rogueAI.controlledMechs)

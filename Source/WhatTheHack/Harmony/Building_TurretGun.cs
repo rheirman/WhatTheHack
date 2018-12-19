@@ -11,7 +11,7 @@ using WhatTheHack.Comps;
 namespace WhatTheHack.Harmony
 {
     [HarmonyPatch(typeof(Building_TurretGun), "Tick")]
-    class Building_TurretGun_Tick 
+    class Building_TurretGun_Tick
     {
         static void Postfix(Building_TurretGun __instance)
         {
@@ -19,7 +19,7 @@ namespace WhatTheHack.Harmony
             {
                 TurretTop top = Traverse.Create(__instance).Field("top").GetValue<TurretTop>();
                 float curRotation = Traverse.Create(top).Property("CurRotation").GetValue<float>();
-                if(__instance.Rotation != comp.mountedTo.Rotation)
+                if (__instance.Rotation != comp.mountedTo.Rotation)
                 {
                     Traverse.Create(top).Property("CurRotation").SetValue(comp.mountedTo.Rotation.AsAngle);
                     __instance.Rotation = comp.mountedTo.Rotation;
@@ -46,7 +46,7 @@ namespace WhatTheHack.Harmony
         static void Postfix(Building_TurretGun __instance, ref bool __result)
         {
 
-            if(Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(__instance.Map).rogueAI is Building_RogueAI rogueAI)
+            if (Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(__instance.Map).rogueAI is Building_RogueAI rogueAI)
             {
                 if (rogueAI.controlledTurrets.Contains(__instance))
                 {
@@ -55,5 +55,18 @@ namespace WhatTheHack.Harmony
             }
         }
     }
-
+    [HarmonyPatch(typeof(Building_TurretGun), "DrawExtraSelectionOverlays")]
+    class Building_TurretGun_DrawExtraSelectionOverlays
+    {            
+        static void Postfix(Building_TurretGun __instance)
+        {
+            if (Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(__instance.Map).rogueAI is Building_RogueAI controller)
+            {
+                if (controller.controlledTurrets.Contains(__instance))
+                {
+                    GenDraw.DrawLineBetween(__instance.Position.ToVector3Shifted(), controller.Position.ToVector3Shifted(), SimpleColor.Green);
+                }
+            }
+        }
+    }
 }
