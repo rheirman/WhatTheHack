@@ -24,6 +24,7 @@ namespace WhatTheHack.Harmony
         {
             if(Traverse.Create(__instance).Field("targetMineable").GetValue<ThingDef>() == WTH_DefOf.WTH_MechanoidParts)
             {
+                Traverse.Create(__instance).Field("daysWorkingSinceLastMinerals").SetValue(0f);
                 if (!TileFinder.TryFindNewSiteTile(out int tile, MinDistance, MaxDistance, true, false))
                     return false;
 
