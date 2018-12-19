@@ -45,7 +45,8 @@ namespace WhatTheHack.Harmony
     {
         static void Postfix(Building_TurretGun __instance, ref bool __result)
         {
-            if(__instance.Map.spawnedThings.FirstOrDefault((Thing t) => t is Building_RogueAI) is Building_RogueAI rogueAI)
+
+            if(Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(__instance.Map).rogueAI is Building_RogueAI rogueAI)
             {
                 if (rogueAI.controlledTurrets.Contains(__instance))
                 {

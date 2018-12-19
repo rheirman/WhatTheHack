@@ -12,7 +12,7 @@ using WhatTheHack.Comps;
 namespace WhatTheHack.Harmony
 {
     [HarmonyPatch(typeof(Thing), "Print")]
-    static class Building_DrawAt
+    static class Thing_Print
     {
         static bool Prefix(Thing __instance)
         {
@@ -75,9 +75,11 @@ namespace WhatTheHack.Harmony
                     }
                 }
             }
+            
             if(__instance is Building_TurretGun turret)
             {
-                if (__instance.Map.spawnedThings.FirstOrDefault((Thing t) => t is Building_RogueAI) is Building_RogueAI controller)
+                //Log.Message
+                if (Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(turret.Map).rogueAI is Building_RogueAI controller)
                 {
                     if (controller.controlledTurrets.Contains(turret))
                     {
@@ -85,6 +87,7 @@ namespace WhatTheHack.Harmony
                     }
                 }
             }
+            
             if (__instance is Building_RogueAI rogueAI)
             {
                 foreach (Pawn pawn in rogueAI.controlledMechs)

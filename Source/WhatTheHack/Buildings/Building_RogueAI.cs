@@ -66,7 +66,6 @@ namespace WhatTheHack.Buildings
             UpdateGlower();
             OutputText("WTH_RogueAI_HelloWorld".Translate());
             LessonAutoActivator.TeachOpportunity(WTH_DefOf.WTH_Concept_RogueAI, OpportunityType.Important);
-
         }
 
         public enum Mood : byte
@@ -238,6 +237,12 @@ namespace WhatTheHack.Buildings
                 {
                     CancelControlTurret(turret);
                 }
+            }
+            ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
+            if (store != null)
+            {
+                ExtendedMapData mapData = store.GetExtendedDataFor(this.Map);
+                mapData.rogueAI = this;
             }
         }
 
