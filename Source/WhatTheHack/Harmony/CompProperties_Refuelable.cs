@@ -12,12 +12,15 @@ namespace WhatTheHack.Harmony
     [HarmonyPatch(typeof(CompProperties_Refuelable), "SpecialDisplayStats")]
     class CompProperties_Refuelable_SpecialDisplayStats
     {
-        static bool Prefix(StatRequest req)
+        static bool Prefix(StatRequest req, ref IEnumerable<StatDrawEntry> __result)
         {
             if(((ThingDef)req.Def).building == null)
             {
+                Log.Message("(ThingDef)req.Def).building = null");
+                __result = new List<StatDrawEntry>();
                 return false;
             }
+            Log.Message("allowing method to be called");
             return true;
         }
     }
