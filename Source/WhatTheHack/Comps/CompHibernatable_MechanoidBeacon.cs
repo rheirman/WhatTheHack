@@ -40,6 +40,10 @@ namespace WhatTheHack.Comps
             {
                 coolDownTicks--;
             }
+            if(this.State == HibernatableStateDefOf.Running && coolDownTicks == 0)
+            {
+                this.State = HibernatableStateDefOf.Hibernating;
+            }
         }
 
         private void FinishWarmup()
