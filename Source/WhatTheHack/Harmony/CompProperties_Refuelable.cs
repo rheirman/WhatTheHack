@@ -16,11 +16,9 @@ namespace WhatTheHack.Harmony
         {
             if(((ThingDef)req.Def).building == null)
             {
-                Log.Message("(ThingDef)req.Def).building = null");
                 __result = new List<StatDrawEntry>();
                 return false;
             }
-            Log.Message("allowing method to be called");
             return true;
         }
     }

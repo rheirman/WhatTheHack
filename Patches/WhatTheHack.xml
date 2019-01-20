@@ -72,7 +72,7 @@
 </Operation>
 
 <Operation Class="PatchOperationAdd">
-	<xpath>*/ThingDef[thingClass = "Building_TurretGun" and minifiedDef]/comps</xpath>
+	<xpath>*/ThingDef[(thingClass = "Building_TurretGun" or thingClass = "CombatExtended.Building_TurretGunCE") and minifiedDef]/comps</xpath>
 	<value>
 		<li Class="WhatTheHack.Comps.CompProperties_Mountable"></li>
 	</value>
