@@ -51,43 +51,15 @@
 	  </HediffDef> -->
 
   <WTH_ReplacedAI.label>AI移植</WTH_ReplacedAI.label>
-  <WTH_TargetingHacked.label>目标选择逻辑骇入</WTH_TargetingHacked.label>
-  <WTH_BackupBattery.label>备用电池运行</WTH_BackupBattery.label>
-  <WTH_LocomotionHacked.label>运转装置骇入</WTH_LocomotionHacked.label>
-  <WTH_TargetingHackedPoorly.label>目标选择逻辑骇入(不完美的)</WTH_TargetingHackedPoorly.label>
-  <WTH_TargetingDestroyed.label>目标选择逻辑被摧毁</WTH_TargetingDestroyed.label>
+  <WTH_TargetingHacked.label>目标装置已破解</WTH_TargetingHacked.label>
+  <WTH_BackupBattery.label>备用电池正在运行</WTH_BackupBattery.label>
+  <WTH_LocomotionHacked.label>运转装置已破解</WTH_LocomotionHacked.label>
+  <WTH_TargetingHackedPoorly.label>目标装置破解不良</WTH_TargetingHackedPoorly.label>
+  <WTH_TargetingDestroyed.label>目标装置被毁</WTH_TargetingDestroyed.label>
   <WTH_LowMaintenance.label>维护不善</WTH_LowMaintenance.label>
   <WTH_VeryLowMaintenance.label>维护极差</WTH_VeryLowMaintenance.label>
   <WTH_VeryLowPower.label>电力不足</WTH_VeryLowPower.label>
   <WTH_NoPower.label>无电力</WTH_NoPower.label>
 
-
-  <!-- <HediffDef>
-		<defName>WTH_Overcharged</defName>
-		<hediffClass>HediffWithComps</hediffClass>
-		<label>overcharged</label>
-		<defaultLabelColor>(0.5， 0.5， 0.9)</defaultLabelColor>
-		<isBad>false</isBad>
-		<maxSeverity>1.0</maxSeverity>
-		<comps>
-			<li Class="HediffCompProperties_SeverityPerDay">
-				<severityPerDay>-5</severityPerDay>
-			</li>
-		</comps>
-		<stages>
-        <li>
-			<capMods>
-				<li>
-				  <capacity>Moving</capacity>
-				  <offset>0.30</offset>
-				  <capacity>Consciousness</capacity>
-				  <offset>0.10</offset>
-				  <capacity>Manipulation</capacity>
-				  <offset>0.20</offset>
-				</li>
-			</capMods>  
-		</li>
-      </stages>
-	  </HediffDef> -->
 
 </LanguageData>

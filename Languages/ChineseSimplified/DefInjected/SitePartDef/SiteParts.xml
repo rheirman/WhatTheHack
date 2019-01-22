@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_RoamingMechanoidsPart.label>漫游的机械族</WTH_RoamingMechanoidsPart.label>
+  <WTH_RoamingMechanoidsPart.description>机械族漫游到此区域</WTH_RoamingMechanoidsPart.description>
+  <WTH_RoamingMechanoidsPart.descriptionDialogue>居民们注意到一些机械族漫游到本区域。请小心！</WTH_RoamingMechanoidsPart.descriptionDialogue>
+	<WTH_RoamingMechanoidsPart.approachOrderString>逗留于{0}</WTH_RoamingMechanoidsPart.approachOrderString>
+	<WTH_RoamingMechanoidsPart.approachingReportString>正逗留于{0}</WTH_RoamingMechanoidsPart.approachingReportString>
+	<WTH_RoamingMechanoidsPart.arrivedLetter>你的远征队已到达目的地。机械族尖叫声从远处传来。准备战斗。</WTH_RoamingMechanoidsPart.arrivedLetter>  
+
+  <WTH_MechanoidTemplePart.label>机械族地点</WTH_MechanoidTemplePart.label>
+  <WTH_MechanoidTemplePart.description>鉴于远程矿物扫描仪在本区域较远处检测到机械族部件的存在，那里应该存在相当多的机械体零件，可能已装备于机械族身上。</WTH_MechanoidTemplePart.description>
+  <WTH_MechanoidTemplePart.descriptionDialogue>远程矿物扫描仪检测到大量机械族零件所在区域</WTH_MechanoidTemplePart.descriptionDialogue>
+	<WTH_MechanoidTemplePart.approachOrderString>逗留于{0}</WTH_MechanoidTemplePart.approachOrderString>
+	<WTH_MechanoidTemplePart.approachingReportString>正逗留于{0}</WTH_MechanoidTemplePart.approachingReportString>
+	<WTH_MechanoidTemplePart.arrivedLetter>你的殖民者已到达一处阴险的大型建筑所在地点。它一定存在了很长时间，然而周围没有人类活动的迹象。大多数人都避开像这样的建筑物，并且他们有充分的理由。</WTH_MechanoidTemplePart.arrivedLetter>
+
+
+</LanguageData>

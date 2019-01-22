@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <WTH_HackingBasics.label>基础机械骇入</WTH_HackingBasics.label>
-  <WTH_HackingBasics.description>让你可以制作机械骇入设备和机械平台，骇入设备可以是你骇入机械族让他们帮你对敌，而机械平台可以用于给机械充电。</WTH_HackingBasics.description>
+  <WTH_HackingBasics.label>基础机械体骇入</WTH_HackingBasics.label>
+  <WTH_HackingBasics.description>让你可以制作机械体骇入设备和机械平台，骇入设备可以使你骇入机械族让他们帮你对敌，而机械体平台可以用于给机械体充电。</WTH_HackingBasics.description>
 
   <WTH_PortableChemfuelPlatform.label>便携式燃料充电平台</WTH_PortableChemfuelPlatform.label>
-  <WTH_PortableChemfuelPlatform.description>让你可以建造使用使用化合燃料的便携式机械平台，使你可以不需要电力设备就能为机械充电。</WTH_PortableChemfuelPlatform.description>
+  <WTH_PortableChemfuelPlatform.description>让你可以建造使用使用化合燃料的便携式机械体平台，使你可以不需要电力设备就能为机械体充电。</WTH_PortableChemfuelPlatform.description>
 
   <WTH_PortableDisassemblingBench.label>便携式拆解工作台</WTH_PortableDisassemblingBench.label>
-  <WTH_PortableDisassemblingBench.description>轻便而又坚固的旅行用机械拆解工作台,其机械不依靠电力,这对旅行很方便,但效率会比较低.</WTH_PortableDisassemblingBench.description>
+  <WTH_PortableDisassemblingBench.description>轻便而又坚固的旅行用机械族拆解工作台,该机械不依靠电力,这对旅行很方便,但效率会比较低.</WTH_PortableDisassemblingBench.description>
 
-  <WTH_MechanoidWorkshop.label>机械工坊</WTH_MechanoidWorkshop.label>
-  <WTH_MechanoidWorkshop.description>让你可以建造一台机械工坊，机械工坊可以用于制作各种机械零件，分解先进机械芯片或回收机械零件。</WTH_MechanoidWorkshop.description>
+  <WTH_MechanoidWorkshop.label>机械体工坊</WTH_MechanoidWorkshop.label>
+  <WTH_MechanoidWorkshop.description>让你可以建造一台机械体工坊，机械体工坊可以用于制作各种机械体零件，分解先进机械体芯片或回收机械体零件。</WTH_MechanoidWorkshop.description>
 
-  <WTH_HackingRemoteControl.label>机械控制腰带</WTH_HackingRemoteControl.label>
-  <WTH_HackingRemoteControl.description>学习如何在机械工坊制作机械控制腰带。这将使你不愿意战斗的小人参与战斗而不感到内疚，毕竟，是机械在杀人，而不是他们，对吧(译者注：非我也，兵也)</WTH_HackingRemoteControl.description>
+  <WTH_HackingRemoteControl.label>机械体控制腰带</WTH_HackingRemoteControl.label>
+  <WTH_HackingRemoteControl.description>学习如何在机械体工坊制作机械体控制腰带。这将使你不愿意战斗的小人参与战斗而不感到内疚，毕竟，是机械体在杀人，而不是他们，对吧(译者注：非我也，兵也)</WTH_HackingRemoteControl.description>
 
   <WTH_RepairModule.label>维护模组</WTH_RepairModule.label>
   <WTH_RepairModule.description>修复模块可以安装在机械的反应器中，它能够非常快的将能量分配至需要的组件，使反应堆可以自我维护，同时将减慢机体恶化速度。</WTH_RepairModule.description>
@@ -23,7 +23,7 @@
   <WTH_RepairArm.description>可用于替换机械臂的工作类机械臂，这种机械臂能够将修护模块转移至需要的地方使得机械可以自我维护.然而，这条手臂并不那么适合战斗。</WTH_RepairArm.description>
 
   <WTH_SelfDestruct.label>自毁模组</WTH_SelfDestruct.label>
-  <WTH_SelfDestruct.description>一个简单的改装，由两个迫击炮弹何一根电线组成，玻璃钢的外壳可以有效的防止误触，这个升级会使你的机械在需要的时候爆炸。</WTH_SelfDestruct.description>
+  <WTH_SelfDestruct.description>一个简单的改装，由两个迫击炮弹和一根电线组成，玻璃钢的外壳可以有效的防止误触，这个升级会使你的机械族在需要的时候爆炸。</WTH_SelfDestruct.description>
 
   <WTH_TurretModule.label>炮塔模组</WTH_TurretModule.label>
   <WTH_TurretModule.description>为炮塔和迫击炮提供结构支撑和接口，每一种炮塔都需要额外研究</WTH_TurretModule.description>
@@ -35,19 +35,34 @@
   <WTH_TurretModule_Mortars.description>了解如何在炮塔模组上安装迫击炮，不过迫击炮仍然需要殖民者手动操作，不能从机械体那里获得帮助，这个升级只有很小的好处，不够仍然可以给敌人留下深刻的印象。</WTH_TurretModule_Mortars.description>
 
   <WTH_BatteryExpansionModule.label>扩容电池模组</WTH_BatteryExpansionModule.label>
-  <WTH_BatteryExpansionModule.description>一个增大机械电量的模组，代价是减少少量的移动能力。</WTH_BatteryExpansionModule.description>
+  <WTH_BatteryExpansionModule.description>一个增大机械体电量的模组，代价是减少少量的移动能力。</WTH_BatteryExpansionModule.description>
 
   <WTH_VanometricModule.label>脉境电池模组</WTH_VanometricModule.label>
-  <WTH_VanometricModule.description>一个使机械不需要再充电的模组，代价是减少少量的移动能力。</WTH_VanometricModule.description>
+  <WTH_VanometricModule.description>一个使机械体不需要再充电的模组，代价是减少少量的移动能力。</WTH_VanometricModule.description>
 
   <WTH_BeltModule.label>腰带接口</WTH_BeltModule.label>
-  <WTH_BeltModule.description>一个腰带接口，使得机械可以安装护盾腰带或烟罐腰带</WTH_BeltModule.description>
+  <WTH_BeltModule.description>一个腰带接口，使得机械体可以安装护盾腰带或烟罐腰带</WTH_BeltModule.description>
 
   <WTH_HackingAdvanced.label>AI移植</WTH_HackingAdvanced.label>
-  <WTH_HackingAdvanced.description>研究更好的AI核心，使得机械的战斗行为可以完全被控制。</WTH_HackingAdvanced.description>
+  <WTH_HackingAdvanced.description>研究更好的AI核心，使得机械体的战斗行为可以完全被控制。</WTH_HackingAdvanced.description>
 
-  <WTH_InduceEmergencySignal.label>引诱机械</WTH_InduceEmergencySignal.label>
+  <WTH_InduceEmergencySignal.label>引诱机械族</WTH_InduceEmergencySignal.label>
   <WTH_InduceEmergencySignal.description>让你的殖民者在倒下而未关机的机械装置中故意触发自卫装置,使其发射一个信号到最近的机械族巢穴吸引他们,这是一个可靠而又危险的获取机械的方式</WTH_InduceEmergencySignal.description>
+
+  <WTH_LRMSTuning.label>远距离矿物扫描仪</WTH_LRMSTuning.label>
+  <WTH_LRMSTuning.description>允许远程矿物扫描仪扫描地图上高密度机械体部件区域。当然，这些部件不会只是躺在地上。他们更可能与机械族有关。生龙活虎的机械族……
+如果您正在寻找机械族巢数据，这些具有大量机械族的地点是个搜索的好地方。</WTH_LRMSTuning.description>
+
+  <WTH_RogueAI.label>去劣AI</WTH_RogueAI.label>
+  <WTH_RogueAI.description>潜力非常巨大的AI，基于机械族科技。默认情况下，它尚未形成意识。为了获得意识，它需要获得在机械族飞船中发现的知识。凭借意识，它可以成为一种强大但危险的网络武器，对数据有着无法抑制的渴望。
+没有意识的情况下，它仍然可以提高周围机械族平台的资源使用效率和修复速度，因为它能够组织化管理机械族使其更合作。</WTH_RogueAI.description>
+
+  <WTH_HiveshipHackingFacility.label>机械族飞船骇入设施</WTH_HiveshipHackingFacility.label>
+  <WTH_HiveshipHackingFacility.description>这种高科技设施允许去劣AI将其恶意代码传输到绕行星运行的机械族飞船，以试图获得这些船上的先进知识。去劣AI需要这些知识来形成意识。在同一基地内建造去劣AI后才能激活。</WTH_HiveshipHackingFacility.description>
+
+  <WTH_ExtractBrainData.label>人脑数据提取</WTH_ExtractBrainData.label>
+  <WTH_ExtractBrainData.description>学习如何进行一种令人毛骨悚然的手术，用于从人类大脑中提取所有数据，并使用机械族技术进行存储。大脑所有者越聪明，就可以提取越多的数据。这是获得去劣AI所需数据的捷径，但道德意识更强的殖民者肯定不喜欢使用它。
+更人性化的替代方案是使用远程矿物扫描仪在世界地图上寻找机械族出没的地点。</WTH_ExtractBrainData.description>
 
 
 </LanguageData>
