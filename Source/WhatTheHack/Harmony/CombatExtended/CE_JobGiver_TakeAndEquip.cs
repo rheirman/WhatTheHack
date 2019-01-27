@@ -61,11 +61,8 @@ namespace WhatTheHack.Harmony
         public static bool ShouldReload(Pawn p)
         {
             //For mechanoids replace the check of is p.RaceProps.HumanLike by custom logic
-            Log.Message("calling ShouldReload for pawn: " + p.Name);
             if (p.RaceProps.IsMechanoid && p.IsHacked())
             {
-                Log.Message("calling ShouldReload for hacked mechanoid: " + p.Name);
-
                 //return true when a mechanoid is hacked and does not have much ammo. 
                 ThingComp inventory = TryGetCompByTypeName(p, "CompInventory", "CombatExtended");
                 ThingWithComps eq = p.equipment.Primary;
@@ -75,22 +72,10 @@ namespace WhatTheHack.Harmony
                     eq = p.inventory.GetDirectlyHeldThings().FirstOrDefault() as ThingWithComps;
                     shouldTransfer = eq == null ? false : true;
                 }
-                if(eq == null)
-                {
-                    Log.Message("eq is null");
-                }
-                if(inventory == null)
-                {
-                    Log.Message("inventory comp is null");
-                }
                 if (inventory != null && eq != null)
                 {
                     //Everything is done using reflection, so we don't need to include a dependency
                     ThingComp ammoUser = TryGetCompByTypeName(eq, "CompAmmoUser", "CombatExtended");
-                    if(ammoUser == null)
-                    {
-                        Log.Message("ammoUser is null");
-                    }
                     if (ammoUser != null)
                     {
                         var currentAmmo = Traverse.Create(ammoUser).Property("CurrentAmmo").GetValue();
@@ -100,10 +85,8 @@ namespace WhatTheHack.Harmony
                         int minAmmo = magazineSize == 0 ? 10 : magazineSize; //No magic numbers?
                         if (ammoCount < minAmmo)
                         {
-                            Log.Message("reload needed, returning true");
                             if (shouldTransfer)
                             {
-                                Log.Message("transferring eq from inventory");
                                 p.equipment.AddEquipment(eq.SplitOff(1) as ThingWithComps);
                             }
                             return true;
