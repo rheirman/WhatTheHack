@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using Verse;
+using Verse.AI;
 using Verse.AI.Group;
 using WhatTheHack.Buildings;
 using WhatTheHack.Needs;
@@ -48,7 +49,7 @@ namespace WhatTheHack.Harmony
                 if(flag && instruction.opcode == OpCodes.Ldc_R4)
                 {
                     //yield return new CodeInstruction(OpCodes.Call, typeof(Pawn_HealthTracker_CheckForStateChange).GetMethod(""))
-                    yield return new CodeInstruction(OpCodes.Ldc_R4,0.4f);//TODO: no magic number? 
+                    yield return new CodeInstruction(OpCodes.Ldc_R4,Base.deathOnDownedChance);//TODO: no magic number? 
                     flag = false;
                 }
                 else
@@ -58,6 +59,44 @@ namespace WhatTheHack.Harmony
             }
         }
     }
+    [HarmonyPatch(typeof(Pawn_HealthTracker), "ShouldBeDeadFromLethalDamageThreshold")]
+    static class Pawn_HealthTracker_ShouldBeDeadFromLethalDamageThreshold
+    {
+        static void Postfix(Pawn_HealthTracker __instance, ref bool __result)
+        {
+            Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
+            if (!pawn.RaceProps.IsMechanoid)
+            {
+                return;
+            }
+
+            if(__result == true)
+            {
+                if (__instance.hediffSet.HasHediff(WTH_DefOf.WTH_HeavilyDamaged))
+                {
+                    __result = false;
+                    return;
+                }
+                if (Rand.Chance(Base.downedOnDeathThresholdChance))//Chance mech goes down instead of dying when lethal threshold is achieved. 
+                {
+                    __instance.AddHediff(WTH_DefOf.WTH_HeavilyDamaged);
+                    if (pawn.mindState == null)
+                    {
+                        pawn.mindState = new Pawn_MindState(pawn);
+                    }
+                    __result = false;
+                }
+            }
+            else
+            {
+                if (__instance.hediffSet.HasHediff(WTH_DefOf.WTH_HeavilyDamaged))
+                {
+                    __instance.RemoveHediff(__instance.hediffSet.GetFirstHediffOfDef(WTH_DefOf.WTH_HeavilyDamaged));
+                }
+            }
+        }
+    }
+
     //Deactivates mechanoid when downed
     [HarmonyPatch(typeof(Pawn_HealthTracker), "MakeDowned")]
     static class Pawn_HealthTracker_MakeDowned

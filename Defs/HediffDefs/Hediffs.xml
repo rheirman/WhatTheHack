@@ -10,6 +10,23 @@
 		<labelNoun>a shutdown command</labelNoun>
 	</HediffDef>
 	
+	<HediffDef>
+		<defName>WTH_HeavilyDamaged</defName>
+		<isBad>true</isBad>
+		<label>heavily damaged</label>
+		<labelNoun>The sheer amount of damage to the mechanoid incapacitates it</labelNoun>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Moving</capacity>
+					  <offset>-1</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>
+	</HediffDef>
+	
   	<HediffDef>
 		<defName>WTH_RegeneratedPart</defName>
 		<hediffClass>Hediff_Injury</hediffClass>

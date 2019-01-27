@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Combat Extended</li>
+	</mods>
+	<match Class ="PatchOperationAdd">
+		<xpath>*/DutyDef[defName="WTH_SearchAndDestroy"]/thinkNode[@Class="ThinkNode_Priority"]/subNodes</xpath>
+		<value>
+			<li Class="CombatExtended.JobGiver_TakeAndEquip"/>
+		</value>
+	</match>
+</Operation>
+
 <Operation Class ="PatchOperationAdd">
 	<xpath>*/ThingDef[@Name = "ShipPartBase"]/killedLeavings</xpath>
 	<value>

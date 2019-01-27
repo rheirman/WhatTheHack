@@ -58,6 +58,12 @@
 	<WTH_PowerChargeModifier_Title>Power charge modifier </WTH_PowerChargeModifier_Title>
 	<WTH_PowerChargeModifier_Description>Modify how quickly mechanoids charge their batteries. Example: setting this to 2.0 would result in the power charging twice as fast.</WTH_PowerChargeModifier_Description>
 	<!--END: added in v0.19.6 -->
+	<!--BEGIN: added in v1.1.1 -->
+	<WTH_DeathOnDownedChance_Title>Death on downed chance (%)</WTH_DeathOnDownedChance_Title>
+	<WTH_DeathOnDownedChance_Description>Chance mechanoids die when they're being incapacitated due to damage to certain body parts (like for instance legs).</WTH_DeathOnDownedChance_Description>
+	<WTH_DownedOnDeathThresholdChance_Title>Downing chance at death threshold (%)</WTH_DownedOnDeathThresholdChance_Title>
+	<WTH_DownedOnDeathThresholdChance_Description>When mechanoids are damaged beyond a certain health threshold, they'd die in vanilla Rimworld. With this setting you can configure the chance they are downed instead of dying when the threshold is achieved.</WTH_DownedOnDeathThresholdChance_Description>
+	<!--END: added in v1.1.1 -->
 	
 	<!--BEGIN: added in v1.1.0 -->
 	
@@ -293,7 +299,7 @@ You can repeat this operation as many times as needed as a means to get more mec
 	<WTH_RogueAI_GoRogue_Remark_12>EXTERMINATE!</WTH_RogueAI_GoRogue_Remark_12>
 	<WTH_RogueAI_GoRogue_Remark_13>EXTERMINATE!</WTH_RogueAI_GoRogue_Remark_13>
 	<WTH_RogueAI_GoRogue_Remark_14>EXTERMINATE!</WTH_RogueAI_GoRogue_Remark_14>
-	<!--END: added in v1.0.2 -->
+	<!--END: added in v1.1.0 -->
 	
 	
 	

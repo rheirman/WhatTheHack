@@ -51,6 +51,8 @@ namespace WhatTheHack
         internal static SettingHandle<float> chipDropRateModifier;
         internal static SettingHandle<float> powerFallModifier;
         internal static SettingHandle<float> powerChargeModifier;
+        internal static SettingHandle<float> deathOnDownedChance;
+        internal static SettingHandle<float> downedOnDeathThresholdChance;
 
         internal static List<ThingDef> allMechs;
         internal static List<String> allFactionNames;
@@ -153,6 +155,15 @@ namespace WhatTheHack
             powerChargeModifier = Settings.GetHandle<float>("powerChargeModifier", "WTH_PowerChargeModifier_Title".Translate(), "WTH_PowerChargeModifier_Description".Translate(), 1.0f, Validators.FloatRangeValidator(0.05f, 5f));
             powerChargeModifier.CustomDrawer = rect => GUIDrawUtility.CustomDrawer_Filter(rect, powerChargeModifier, false, 0.05f, 5f, highlight1);
             powerChargeModifier.VisibilityPredicate = delegate { return settingsGroup_Balance; };
+
+            deathOnDownedChance = Settings.GetHandle<float>("deathOnDownedChance", "WTH_DeathOnDownedChance_Title".Translate(), "WTH_DeathOnDownedChance_Description".Translate(), 50f, Validators.FloatRangeValidator(0f, 100f));
+            deathOnDownedChance.CustomDrawer = rect => GUIDrawUtility.CustomDrawer_Filter(rect, deathOnDownedChance, false, 0f, 100f, highlight1);
+            deathOnDownedChance.VisibilityPredicate = delegate { return settingsGroup_Balance; };
+
+            downedOnDeathThresholdChance = Settings.GetHandle<float>("downedOnDeathThresholdChance", "WTH_DownedOnDeathThresholdChance_Title".Translate(), "WTH_DownedOnDeathThresholdChance_Description".Translate(), 25f, Validators.FloatRangeValidator(0f, 100f));
+            downedOnDeathThresholdChance.CustomDrawer = rect => GUIDrawUtility.CustomDrawer_Filter(rect, downedOnDeathThresholdChance, false, 0f, 100f, highlight1);
+            downedOnDeathThresholdChance.VisibilityPredicate = delegate { return settingsGroup_Balance; };
+
 
             factionRestrictions = GetDefaultForFactionRestrictions(factionRestrictions, allMechs, allFactionNames);
             GenerateImpliedRecipeDefs();

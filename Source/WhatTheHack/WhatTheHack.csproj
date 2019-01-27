@@ -80,6 +80,7 @@
     <Compile Include="Comps\CompProperties_Overlays.cs" />
     <Compile Include="Harmony\ApparelUtility.cs" />
     <Compile Include="Harmony\Bill.cs" />
+    <Compile Include="Harmony\CombatExtended\CE_JobGiver_TakeAndEquip.cs" />
     <Compile Include="Harmony\CompProperties_Refuelable.cs" />
     <Compile Include="Harmony\ShipUtility.cs" />
     <Compile Include="Harmony\Building_TurretGun.cs" />
