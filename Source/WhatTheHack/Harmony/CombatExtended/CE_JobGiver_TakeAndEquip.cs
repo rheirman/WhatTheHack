@@ -10,9 +10,9 @@ using Verse;
 namespace WhatTheHack.Harmony
 {
     [HarmonyPatch]
-    class CE_JobGiver_TakeAndEquip_TryGiveJob
+    public class CE_JobGiver_TakeAndEquip_TryGiveJob
     {
-        static MethodBase TargetMethod()
+        public static MethodBase TargetMethod()
         {
             Assembly assemblyCE = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault((Assembly assembly) => assembly.FullName.StartsWith("CombatExtended"));
             MethodInfo stub = typeof(CE_JobGiver_TakeAndEquip_TryGiveJob).GetMethod("Stub");

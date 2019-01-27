@@ -49,7 +49,7 @@ namespace WhatTheHack.Harmony
                 if(flag && instruction.opcode == OpCodes.Ldc_R4)
                 {
                     //yield return new CodeInstruction(OpCodes.Call, typeof(Pawn_HealthTracker_CheckForStateChange).GetMethod(""))
-                    yield return new CodeInstruction(OpCodes.Ldc_R4,Base.deathOnDownedChance);//TODO: no magic number? 
+                    yield return new CodeInstruction(OpCodes.Ldc_R4, 0.5f);//TODO: no magic number? 
                     flag = false;
                 }
                 else
@@ -77,7 +77,7 @@ namespace WhatTheHack.Harmony
                     __result = false;
                     return;
                 }
-                if (Rand.Chance(Base.downedOnDeathThresholdChance))//Chance mech goes down instead of dying when lethal threshold is achieved. 
+                if (Rand.Chance(Base.downedOnDeathThresholdChance.Value/100f))//Chance mech goes down instead of dying when lethal threshold is achieved. 
                 {
                     __instance.AddHediff(WTH_DefOf.WTH_HeavilyDamaged);
                     if (pawn.mindState == null)

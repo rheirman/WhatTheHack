@@ -156,9 +156,9 @@ namespace WhatTheHack
             powerChargeModifier.CustomDrawer = rect => GUIDrawUtility.CustomDrawer_Filter(rect, powerChargeModifier, false, 0.05f, 5f, highlight1);
             powerChargeModifier.VisibilityPredicate = delegate { return settingsGroup_Balance; };
 
-            deathOnDownedChance = Settings.GetHandle<float>("deathOnDownedChance", "WTH_DeathOnDownedChance_Title".Translate(), "WTH_DeathOnDownedChance_Description".Translate(), 50f, Validators.FloatRangeValidator(0f, 100f));
-            deathOnDownedChance.CustomDrawer = rect => GUIDrawUtility.CustomDrawer_Filter(rect, deathOnDownedChance, false, 0f, 100f, highlight1);
-            deathOnDownedChance.VisibilityPredicate = delegate { return settingsGroup_Balance; };
+            //deathOnDownedChance = Settings.GetHandle<float>("deathOnDownedChance", "WTH_DeathOnDownedChance_Title".Translate(), "WTH_DeathOnDownedChance_Description".Translate(), 50f, Validators.FloatRangeValidator(0f, 100f));
+            //deathOnDownedChance.CustomDrawer = rect => GUIDrawUtility.CustomDrawer_Filter(rect, deathOnDownedChance, false, 0f, 100f, highlight1);
+            //deathOnDownedChance.VisibilityPredicate = delegate { return settingsGroup_Balance; };
 
             downedOnDeathThresholdChance = Settings.GetHandle<float>("downedOnDeathThresholdChance", "WTH_DownedOnDeathThresholdChance_Title".Translate(), "WTH_DownedOnDeathThresholdChance_Description".Translate(), 25f, Validators.FloatRangeValidator(0f, 100f));
             downedOnDeathThresholdChance.CustomDrawer = rect => GUIDrawUtility.CustomDrawer_Filter(rect, downedOnDeathThresholdChance, false, 0f, 100f, highlight1);
