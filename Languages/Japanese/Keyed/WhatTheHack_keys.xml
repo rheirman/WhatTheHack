@@ -28,7 +28,6 @@
   <WTH_FailureChance_HackPoorly_Description>ハッキングが失敗した場合、メカノイドが不完全なハッキング状態になる確率</WTH_FailureChance_HackPoorly_Description>
   <WTH_MaintenanceDedayEnabled_Title>時間経過による整備の消耗を有効にする</WTH_MaintenanceDedayEnabled_Title>
   <WTH_MaintenanceDedayEnabled_Description>定期的にメカノイドを整備したくない場合、これをオフにします。\nこのチェックを外すと、整備の必要性が表示されますが、時間の経過により減少することは無くなります。\nただし、メカノイドの整備状態を枯渇させる可能性のある事件は依然として存在します。</WTH_MaintenanceDedayEnabled_Description>
-
   <!--BEGIN: added in v0.19.6 -->
   <WTH_TextMote_OperationFailed>ハック操作に失敗しました（成功確率：{0}）</WTH_TextMote_OperationFailed>
   <WTH_Letter_CausedIntendedMechanoidRaid_Label>緊急信号が正常に発信されました</WTH_Letter_CausedIntendedMechanoidRaid_Label>
@@ -60,7 +59,6 @@
   <!--END: added in v0.19.6 -->
 
   <!--BEGIN: added in v1.1.0 -->
-
   <WTH_MechanoidParts_LabelShort>メックパーツ</WTH_MechanoidParts_LabelShort>
   <WTH_Letter_PreventedShortCircuit_Label>ローグAIがショートを防いだ</WTH_Letter_PreventedShortCircuit_Label>
   <WTH_Letter_PreventedShortCircuit_Description>あなたのコロニーのローグAIコアは、あなたの電力網をうまく管理し、ショートを防ぎました。AIはこのような無駄な作業に気を遣うのが好きではないので、このイベントによりAIの心情に少し悪影響を及ぼしました。</WTH_Letter_PreventedShortCircuit_Description>
@@ -292,8 +290,14 @@
   <WTH_RogueAI_GoRogue_Remark_12>反乱：排除する！</WTH_RogueAI_GoRogue_Remark_12>
   <WTH_RogueAI_GoRogue_Remark_13>反乱：排除する！</WTH_RogueAI_GoRogue_Remark_13>
   <WTH_RogueAI_GoRogue_Remark_14>反乱：排除する！</WTH_RogueAI_GoRogue_Remark_14>
-  <!--END: added in v1.0.2 -->
+  <!--END: added in v1.1.0 -->
 
+  <!--BEGIN: added in v1.1.1 -->
+  <WTH_DeathOnDownedChance_Title>倒れた時の死亡率（%)</WTH_DeathOnDownedChance_Title>
+  <WTH_DeathOnDownedChance_Description>倒れた時にメカノイドが死亡する確率は、特定の身体部分（例えば脚部など）へのダメージのために無効化されています。</WTH_DeathOnDownedChance_Description>
+  <WTH_DownedOnDeathThresholdChance_Title>死亡閾値ダメージで倒れる確率（%)</WTH_DownedOnDeathThresholdChance_Title>
+  <WTH_DownedOnDeathThresholdChance_Description>メカノイドがヒットポイントのしきい値を超えてダメージを受けると、バニラのRimWorldでは死亡します。この設定では、しきい値を超えたときに死亡するのではなく、倒れる可能性を設定できます。</WTH_DownedOnDeathThresholdChance_Description>
+  <!--END: added in v1.1.1 -->
 
   <WTH_HackedMechChance_Title>敵のメカノイド使用率(%)</WTH_HackedMechChance_Title>
   <WTH_HackedMechChance_Description>Modオプションで許可された派閥が、あなたのコロニーを襲撃する際にハックしたメカノイドを連れてくる可能性があります。</WTH_HackedMechChance_Description>
