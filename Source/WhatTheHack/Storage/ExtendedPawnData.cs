@@ -18,6 +18,7 @@ namespace WhatTheHack.Storage
 
         public bool isHacked = false;
         public bool isActive = false;
+        public bool isPeaceful = false;
         public bool shouldAutoRecharge = true;
         public bool shouldExplodeNow = false;
 
@@ -30,6 +31,7 @@ namespace WhatTheHack.Storage
         public void ExposeData()
         {
             Scribe_Values.Look(ref isHacked, "isHacked", false);
+            Scribe_Values.Look(ref isHacked, "isPeaceful", false);
             Scribe_Values.Look(ref shouldExplodeNow, "shouldExplodeNow", false);
             Scribe_Values.Look(ref isActive, "isActive", false);
             Scribe_Values.Look(ref shouldAutoRecharge, "shouldAutoRecharge", true);

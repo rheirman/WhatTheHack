@@ -18,8 +18,12 @@ namespace WhatTheHack.Duties
             graph.AddToil(endToil);
             Transition endTransition = new Transition(sdToil, endToil);
             endTransition.AddTrigger(new Trigger_Custom(delegate {
-                return !this.lord.ownedPawns[0].IsActivated();
+                Pawn pawn = this.lord.ownedPawns[0]; 
+                bool result = !pawn.IsActivated() || pawn.IsPeaceful();
+                Log.Message("result: " + result);
+                return result;
             }));
+            graph.AddTransition(endTransition);
             return graph;
         }
     }

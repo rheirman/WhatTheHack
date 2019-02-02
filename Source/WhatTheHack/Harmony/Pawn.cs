@@ -199,6 +199,7 @@ namespace WhatTheHack.Harmony
             {
                 gizmoList.Add(CreateGizmo_EquipBelt(__instance, pawnData));
             }
+            gizmoList.Add(CreateGizmo_IsPeaceful(__instance, pawnData));
 
         }
         private static TargetingParameters GetTargetingParametersForTurret()
@@ -287,6 +288,29 @@ namespace WhatTheHack.Harmony
                 toggleAction = () =>
                 {
                     pawnData.shouldAutoRecharge = !pawnData.shouldAutoRecharge;
+                }
+            };
+            return gizmo;
+        }
+
+        private static Gizmo CreateGizmo_IsPeaceful(Pawn __instance, ExtendedPawnData pawnData)
+        {
+            Gizmo gizmo = new Command_Toggle
+            {
+                defaultLabel = "WTH_Gizmo_AutoRecharge_Label".Translate(),
+                defaultDesc = "WTH_Gizmo_AutoRecharge_Description".Translate(),
+                icon = ContentFinder<Texture2D>.Get(("UI/" + "Peace"), true),
+                isActive = () => pawnData.isPeaceful,
+                toggleAction = () =>
+                {
+                    pawnData.isPeaceful= !pawnData.isPeaceful;
+                    if (pawnData.isActive)
+                    {
+                        if (__instance.GetLord() == null || __instance.GetLord().LordJob == null)
+                        {
+                            LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_SearchAndDestroy(), __instance.Map, new List<Pawn> { __instance });
+                        }
+                    }
                 }
             };
             return gizmo;

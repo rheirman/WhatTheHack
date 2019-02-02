@@ -88,6 +88,16 @@ namespace WhatTheHack
             }
             return null;
         }
+        public static bool IsPeaceful(this Pawn pawn)
+        {
+            ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
+            if (store != null)
+            {
+                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+                return pawnData.isPeaceful;
+            }
+            return false;
+        }
 
         public static BodyPartRecord TryGetReactor(this Pawn pawn)
         {
