@@ -28,15 +28,11 @@ namespace WhatTheHack.Buildings
         {
             Bill_Medical bill = new Bill_Medical(recipeDef);
             IEnumerable<BodyPartRecord> bodyparts = RecipeUtility.GetPartsToApplyOn(pawn, bill.recipe);
-            if(bodyparts.Count() == 0)
-            {
-                return false;
-            }
 
             if (pawn.health.surgeryBills.FirstShouldDoNow == null || pawn.health.surgeryBills.FirstShouldDoNow.recipe != WTH_DefOf.WTH_HackMechanoid && pawn.health.surgeryBills.FirstShouldDoNow.recipe != WTH_DefOf.WTH_InduceEmergencySignal)
             {
                 pawn.health.surgeryBills.AddBill(bill);
-                bill.Part = bodyparts.First();
+                bill.Part = bodyparts.FirstOrDefault();
             }
             /*
             Need_Power powerNeed = pawn.needs.TryGetNeed<Need_Power>();

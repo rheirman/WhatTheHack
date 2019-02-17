@@ -321,6 +321,9 @@ You can repeat this operation as many times as needed as a means to get more mec
 	<WTH_Gizmo_SearchAndDestroy_Description>Activate the mechanoid. It will automatically attack any enemies near your colony. When disabled, the mechanoid will return to a mechanoid platform when possible.</WTH_Gizmo_SearchAndDestroy_Description>
 	<WTH_Gizmo_AutoRecharge_Label>Auto recharge</WTH_Gizmo_AutoRecharge_Label>
 	<WTH_Gizmo_AutoRecharge_Description>With this mode enabled, mechanoids automatically go back to a mechanoid platform when they are running low on power.</WTH_Gizmo_AutoRecharge_Description>
+	<WTH_Gizmo_IsPeaceful_Label>Peaceful mode</WTH_Gizmo_IsPeaceful_Label>
+	<WTH_Gizmo_IsPeaceful_Description>With this mode enabled, your mechanoids won't target and attack enemies.</WTH_Gizmo_IsPeaceful_Description>
+	
 	
 	<WTH_Gizmo_RemoteControlActivate_Label>Activate</WTH_Gizmo_RemoteControlActivate_Label>
 	<WTH_Gizmo_RemoteControlActivate_Description>Use the mechanoid controller belt to control a mechanoid directly</WTH_Gizmo_RemoteControlActivate_Description>
