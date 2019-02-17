@@ -65,6 +65,10 @@ namespace WhatTheHack.Buildings
             base.SpawnSetup(map, respawningAfterLoad);
             UpdateGlower();
             OutputText("WTH_RogueAI_HelloWorld".Translate());
+            if (!goingRogue)
+            {
+                PowerPlantComp.overcharging = false; //Fix for saves affected by previous issue
+            }
             LessonAutoActivator.TeachOpportunity(WTH_DefOf.WTH_Concept_RogueAI, OpportunityType.Important);
         }
 
@@ -866,6 +870,7 @@ namespace WhatTheHack.Buildings
                 rogueTurrets.Remove(turret);
             }
             queuedActions.Clear();
+            PowerPlantComp.overcharging = false;
             OutputText("WTH_RogueAI_StopGoingRogue".Translate(), true);
             Messages.Message("WTH_Message_RogueAI_StopGoingRogue".Translate(), new RimWorld.Planet.GlobalTargetInfo(this.Position, this.Map), MessageTypeDefOf.PositiveEvent);
 

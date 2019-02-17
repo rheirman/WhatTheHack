@@ -20,7 +20,6 @@ namespace WhatTheHack.Duties
             endTransition.AddTrigger(new Trigger_Custom(delegate {
                 Pawn pawn = this.lord.ownedPawns[0]; 
                 bool result = !pawn.IsActivated() || pawn.IsPeaceful();
-                Log.Message("result: " + result);
                 return result;
             }));
             graph.AddTransition(endTransition);
