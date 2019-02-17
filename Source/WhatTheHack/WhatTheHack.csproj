@@ -169,8 +169,6 @@
     <Compile Include="Needs\PowerCategory.cs" />
     <Compile Include="Recipes\Recipe_ModifyMechanoid.cs" />
     <Compile Include="Storage\ExtendedMapData.cs" />
-    <Compile Include="TabWindow\MainTabWindow_Work_Mechanoids.cs" />
-    <Compile Include="TabWindow\PawnTable_PlayerMechanoids.cs" />
     <Compile Include="TextureUtility.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="Jobs\JobDriver_CarryToHackingTable.cs" />
