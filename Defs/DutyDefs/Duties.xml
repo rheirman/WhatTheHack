@@ -9,7 +9,6 @@
 			  <targetKeepRadius>72</targetKeepRadius>
 			</li>
 		  	<li Class="JobGiver_AIGotoNearestHostile" />
-			<li Class="JobGiver_Work"/>
 		  </subNodes>
 		</thinkNode>
 	  </DutyDef>
