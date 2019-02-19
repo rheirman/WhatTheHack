@@ -1,11 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
   <WTH_ShutDown.label>シャットダウン</WTH_ShutDown.label>
   <WTH_ShutDown.labelNoun>シャットダウン命令</WTH_ShutDown.labelNoun>
-
-  <WTH_HeavilyDamaged.label>甚大な損傷</WTH_HeavilyDamaged.label>
-  <WTH_HeavilyDamaged.labelNoun>メカノイドに対するダメージが大きすぎると、無力化されます。</WTH_HeavilyDamaged.labelNoun>
 
   <WTH_RegeneratedPart.label>身体パーツ再生</WTH_RegeneratedPart.label>
   <WTH_RegeneratedPart.labelNoun>新規再生部品</WTH_RegeneratedPart.labelNoun>
