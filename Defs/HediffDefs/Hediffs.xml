@@ -41,6 +41,50 @@
 	</HediffDef>
 	
 	<HediffDef>
+		<defName>WTH_CleaningModule</defName>
+		<label>cleaning module installed</label>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>	
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Manipulation</capacity>
+					  <offset>-0.1</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>		
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_CleaningModule</extraButcherProduct>
+			</li>
+		</modExtensions>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>WTH_HaulingModule</defName>
+		<label>hauling module installed</label>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>	
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Manipulation</capacity>
+					  <offset>-0.1</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>		
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_HaulingModule</extraButcherProduct>
+			</li>
+		</modExtensions>
+	  </HediffDef>
+	
+	<HediffDef>
 		<defName>WTH_BatteryExpansionModule</defName>
 		<label>Battery expanded</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
@@ -86,6 +130,7 @@
 		<isBad>false</isBad>
 	  </HediffDef>
 	  
+	  
   	  <HediffDef>
 		<defName>WTH_RepairModule</defName>
 		<label>repair module installed</label>
@@ -97,7 +142,7 @@
 			</li>
 		</modExtensions>
 	  </HediffDef>
-	  
+	  	    
 	   <HediffDef>
 		<defName>WTH_BeltModule</defName>
 		<label>belt module installed</label>

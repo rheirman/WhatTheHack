@@ -58,6 +58,20 @@
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
+		<defName>WTH_WorkModules</defName>
+		<label>work modules</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Several upgrade modules that make mechanoids capable of performing several simple tasks like hauling, cleaning, firefighting and growing.</description>
+		<baseCost>3000</baseCost>
+		<prerequisites>
+		  <li>WTH_MechanoidWorkshop</li>
+		</prerequisites>
+		<researchViewX>1</researchViewX>
+		<researchViewY>4</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
 		<defName>WTH_HackingRemoteControl</defName>
 		<label>mechanoid controller belt</label>
 		<tab>WTH_ResearchTab</tab>

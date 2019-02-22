@@ -1,4 +1,6 @@
 <Defs>
+
+	  
 	<RecipeDef ParentName="SurgeryFlesh">
 		<defName>WTH_ExtractBrainData</defName>
 		<label>extract brain data</label>
@@ -75,15 +77,121 @@
 		<researchPrerequisite>WTH_MechanoidWorkshop</researchPrerequisite>
   </RecipeDef>
   
-  <RecipeDef>
-	<defName>WTH_Craft_AdditionalBatteryModule</defName>
-	<label>craft battery expansion module</label>
-	<description>Craft a battery expansion module</description>
+  <RecipeDef Name="WTH_Craft_Module_Base" Abstract="True">
 	<jobString>Crafting</jobString>
 	<workSpeedStat>WTH_HackingMaintenanceSpeed</workSpeedStat>
 	<effectWorking>Repair</effectWorking>
 	<soundWorking>Recipe_Machining</soundWorking>
 	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_CleaningModule</defName>
+	<label>craft cleaning module</label>
+	<description>Craft a cleaning module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>DevilstrandCloth</li>
+				</thingDefs>
+			</filter>
+			<count>10</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>15</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>3</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>DevilstrandCloth</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_CleaningModule>1</WTH_CleaningModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_WorkModules</researchPrerequisite>
+  </RecipeDef>  
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_HaulingModule</defName>
+	<label>craft hauling module</label>
+	<description>Craft a hauling module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Steel</li>
+				</thingDefs>
+			</filter>
+			<count>50</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>25</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>10</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>2</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>Steel</li>
+			<li>Plasteel</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_HaulingModule>1</WTH_HaulingModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_WorkModules</researchPrerequisite>
+  </RecipeDef>  
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_AdditionalBatteryModule</defName>
+	<label>craft battery expansion module</label>
+	<description>Craft a battery expansion module</description>
 	<ingredients>
 		<li>
 			<filter>
@@ -136,15 +244,10 @@
 	<researchPrerequisite>WTH_BatteryExpansionModule</researchPrerequisite>
   </RecipeDef>
 
-  <RecipeDef>
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
 	<defName>WTH_Craft_VanometricModule</defName>
 	<label>craft vanometric module</label>
 	<description>Craft a vanometric power cell module</description>
-	<jobString>Crafting</jobString>
-	<workSpeedStat>WTH_HackingMaintenanceSpeed</workSpeedStat>
-	<effectWorking>Repair</effectWorking>
-	<soundWorking>Recipe_Machining</soundWorking>
-	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 	<ingredients>
 		<li>
 			<filter>
@@ -184,7 +287,6 @@
 			<li>VanometricPowerCell</li>
 			<li>ComponentSpacer</li>
 			<li>WTH_MechanoidParts</li>
-			<li>VanometricPowerCell</li>
 		</thingDefs>
 	</fixedIngredientFilter>
 	<products>
@@ -197,15 +299,10 @@
 	<researchPrerequisite>WTH_VanometricModule</researchPrerequisite>
   </RecipeDef>
   
-  <RecipeDef>
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
 	<defName>WTH_Craft_SelfDestructModule</defName>
 	<label>craft selft-destruct module</label>
 	<description>Craft a selft-destruct module</description>
-	<jobString>Crafting</jobString>
-	<workSpeedStat>WTH_HackingMaintenanceSpeed</workSpeedStat>
-	<effectWorking>Repair</effectWorking>
-	<soundWorking>Recipe_Machining</soundWorking>
-	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 	<ingredients>
 		<li>
 			<filter>
@@ -249,15 +346,10 @@
 	<researchPrerequisite>WTH_SelfDestruct</researchPrerequisite>
   </RecipeDef>
   
-  <RecipeDef>
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
 	<defName>WTH_Craft_TurretModule</defName>
 	<label>craft turret module</label>
 	<description>Craft a turret module</description>
-	<jobString>Crafting</jobString>
-	<workSpeedStat>WTH_HackingMaintenanceSpeed</workSpeedStat>
-	<effectWorking>Repair</effectWorking>
-	<soundWorking>Recipe_Machining</soundWorking>
-	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 	<ingredients>
 		<li>
 			<filter>
@@ -310,15 +402,10 @@
 	<researchPrerequisite>WTH_TurretModule</researchPrerequisite>
   </RecipeDef>
   
-  <RecipeDef>
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
 	<defName>WTH_Craft_RepairModule</defName>
 	<label>craft repair module</label>
 	<description>Craft a repair module</description>
-	<jobString>Crafting</jobString>
-	<workSpeedStat>WTH_HackingMaintenanceSpeed</workSpeedStat>
-	<effectWorking>Repair</effectWorking>
-	<soundWorking>Recipe_Machining</soundWorking>
-	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 	<ingredients>
 		<li>
 			<filter>
@@ -362,15 +449,10 @@
 	<researchPrerequisite>WTH_RepairModule</researchPrerequisite>
   </RecipeDef>
   
-  <RecipeDef>
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
 	<defName>WTH_Craft_RepairArm</defName>
 	<label>craft repair arm</label>
 	<description>Craft a repair arm</description>
-	<jobString>Crafting</jobString>
-	<workSpeedStat>WTH_HackingMaintenanceSpeed</workSpeedStat>
-	<effectWorking>Repair</effectWorking>
-	<soundWorking>Recipe_Machining</soundWorking>
-	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 	<ingredients>
 		<li>
 			<filter>
@@ -414,15 +496,10 @@
 	<researchPrerequisite>WTH_RepairArm</researchPrerequisite>
   </RecipeDef>  
   
-  <RecipeDef>
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
 	<defName>WTH_Craft_BeltModule</defName>
 	<label>craft belt module</label>
 	<description>Craft a belt module</description>
-	<jobString>Crafting</jobString>
-	<workSpeedStat>WTH_HackingMaintenanceSpeed</workSpeedStat>
-	<effectWorking>Repair</effectWorking>
-	<soundWorking>Recipe_Machining</soundWorking>
-	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
 	<ingredients>
 		<li>
 			<filter>
@@ -515,6 +592,7 @@
 			</li>
 		</modExtensions>
 	</RecipeDef>
+	
 	<RecipeDef>
 		<defName>WTH_InduceEmergencySignal</defName>
 		<label>try inducing an emergency signal</label>
@@ -649,6 +727,82 @@
 		</modExtensions>
 	</RecipeDef>
 	-->
+	
+	<RecipeDef>
+		<defName>WTH_InstallCleaningModule</defName>
+		<label>install cleaning module</label>
+		<description>Install a cleaning module.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid_WorkModule</workerClass>
+		<jobString>Installing cleaning module.</jobString>
+		<workAmount>5000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_CleaningModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>		
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_CleaningModule</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+			<li Class="WhatTheHack.DefModExtension_Recipe_WorkModule">
+				<workType>Cleaning</workType>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>WTH_InstallHaulingModule</defName>
+		<label>install hauling module</label>
+		<description>Install a hauling module.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid_WorkModule</workerClass>
+		<jobString>Installing hauling module.</jobString>
+		<workAmount>5000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_HaulingModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>		
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_HaulingModule</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+			<li Class="WhatTheHack.DefModExtension_Recipe_WorkModule">
+				<workType>Hauling</workType>
+			</li>
+		</modExtensions>
+	</RecipeDef>
 	
 	<RecipeDef>
 		<defName>WTH_InstallRepairArm</defName>

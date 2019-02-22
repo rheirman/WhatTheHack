@@ -109,10 +109,61 @@
     </thingCategories>
   </ThingDef>
   
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_CleaningModule</defName>
+    <label>cleaning module</label>
+    <description>Can be installed in mechanoids to make it capable of automatically performing cleaning jobs</description>
+    <graphicData>
+      <texPath>Things/CleaningModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>6000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+    
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_HaulingModule</defName>
+    <label>hauling module</label>
+    <description>Can be installed in mechanoids to make it capable of automatically performing hauling jobs</description>
+    <graphicData>
+      <texPath>Things/HaulingModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>6000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
    <ThingDef ParentName="BodyPartBase">
     <defName>WTH_TurretModule</defName>
     <label>turret module</label>
-    <description>Can be installed in mechanoids and allows turrets and mortars to be installed on it.</description>
+    <description>Can be installed in mechanoids with at least a body size of 2 and allows turrets and mortars to be installed on it.</description>
     <graphicData>
       <texPath>Things/TurretModule</texPath>
       <graphicClass>Graphic_Single</graphicClass>

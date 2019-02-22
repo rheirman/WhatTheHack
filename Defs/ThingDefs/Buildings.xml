@@ -112,6 +112,8 @@
 	  <li>WTH_Craft_AdditionalBatteryModule</li>
 	  <li>WTH_Craft_VanometricModule</li>
 	  <li>WTH_Craft_BeltModule</li>
+	  <li>WTH_Craft_HaulingModule</li>
+	  <li>WTH_Craft_CleaningModule</li>
     </recipes>
     <comps>
       <li Class="CompProperties_Power">

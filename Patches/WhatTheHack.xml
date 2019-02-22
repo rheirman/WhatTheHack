@@ -44,6 +44,8 @@
 				<li>WTH_InstallBatteryExpansionModule</li>
 				<li>WTH_InstallVanometricModule</li>
 				<li>WTH_InstallBeltModule</li>	
+				<li>WTH_InstallCleaningModule</li>
+				<li>WTH_InstallHaulingModule</li>
 			</value>
 		</li> 
 	</operations>
@@ -66,6 +68,8 @@
 					<li>WTH_InstallBatteryExpansionModule</li>
 					<li>WTH_InstallVanometricModule</li>
 					<li>WTH_InstallBeltModule</li>
+					<li>WTH_InstallCleaningModule</li>
+					<li>WTH_InstallHaulingModule</li>
 				</recipes>		
 			</value>
 		</li> 

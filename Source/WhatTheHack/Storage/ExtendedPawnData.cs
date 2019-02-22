@@ -25,6 +25,7 @@ namespace WhatTheHack.Storage
         public Pawn remoteControlLink = null;
         public Building_RogueAI controllingAI = null;
         public Faction originalFaction = null;
+        public List<WorkTypeDef> workTypes = null;
 
         public Building_PortableChargingPlatform caravanPlatform = null;
 
@@ -39,6 +40,7 @@ namespace WhatTheHack.Storage
             Scribe_References.Look(ref controllingAI, "controllingAI");
             Scribe_References.Look(ref caravanPlatform, "caravanPlatform");
             Scribe_References.Look(ref originalFaction, "originalFaction");
+            Scribe_Collections.Look(ref workTypes, "workTypes");
         }
     }
 }

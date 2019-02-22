@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
+using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
 {
@@ -17,16 +18,20 @@ namespace WhatTheHack.Harmony
             if(pawn.RaceProps.IsMechanoid && pawn.IsHacked())
             {
                 List<WorkTypeDef> shouldForbid = new List<WorkTypeDef>();
-
-                foreach (WorkTypeDef def in DefDatabase<WorkTypeDef>.AllDefs)
+                ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
+                if(store != null)
                 {
-                    if (!Base.allowedMechWork.Contains(def))
+                    ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+                    foreach (WorkTypeDef def in DefDatabase<WorkTypeDef>.AllDefs)
                     {
-                        shouldForbid.Add(def);
+                        if (pawnData.workTypes == null || !pawnData.workTypes.Contains(def))
+                        {
+                            shouldForbid.Add(def);
+                        }
                     }
-                }
-                __result = shouldForbid;
-                return false;
+                    __result = shouldForbid;
+                    return false;
+                }    
             }
             return true;
         }
