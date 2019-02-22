@@ -56,6 +56,7 @@ namespace WhatTheHack
 
         internal static List<ThingDef> allMechs;
         internal static List<String> allFactionNames;
+        internal static List<WorkTypeDef> allowedMechWork = new List<WorkTypeDef>();
 
         //temp accessible storage
         internal float daysOfFuel = 0;
@@ -75,6 +76,14 @@ namespace WhatTheHack
         public override void DefsLoaded()
         {
             base.DefsLoaded();
+
+            //TODO: Store this somewhere global.
+            allowedMechWork.Add(WorkTypeDefOf.Hauling);
+            allowedMechWork.Add(WorkTypeDefOf.Growing);
+            allowedMechWork.Add(WorkTypeDefOf.Firefighter);
+            allowedMechWork.Add(WTH_DefOf.Cleaning);
+            allowedMechWork.Add(WTH_DefOf.PlantCutting);
+
             Predicate<ThingDef> isMech = (ThingDef d) => d.race != null && d.race.IsMechanoid;
             Predicate<FactionDef> isHackingFaction = (FactionDef d) => !d.isPlayer && d != FactionDefOf.Mechanoid && d != FactionDefOf.Insect;
             allMechs = (from td in DefDatabase<ThingDef>.AllDefs where isMech(td) select td).ToList();
@@ -169,6 +178,29 @@ namespace WhatTheHack
             GenerateImpliedRecipeDefs();
             DefDatabase<ThingDef>.ResolveAllReferences(true);
             SetMechMarketValue();
+            ImpliedPawnColumnDefsForMechs();
+        }
+        static void ImpliedPawnColumnDefsForMechs()
+        {
+            PawnTableDef workTable = WTH_DefOf.WTH_Work_Mechanoids;
+            bool moveWorkTypeLabelDown = false;
+
+
+            foreach (WorkTypeDef def in (from d in WorkTypeDefsUtility.WorkTypeDefsInPriorityOrder
+                                         where d.visible && allowedMechWork.Contains(d)
+                                         select d).Reverse<WorkTypeDef>())
+            {
+                moveWorkTypeLabelDown = !moveWorkTypeLabelDown;
+                PawnColumnDef d2 = new PawnColumnDef();
+                d2.defName = "WorkPriority_" + def.defName;
+                d2.workType = def;
+                d2.moveWorkTypeLabelDown = moveWorkTypeLabelDown;
+                d2.workerClass = typeof(PawnColumnWorker_WorkPriority);
+                d2.sortable = true;
+                d2.modContentPack = def.modContentPack;
+                workTable.columns.Insert(workTable.columns.FindIndex((PawnColumnDef x) => x.Worker is PawnColumnWorker_CopyPasteWorkPriorities) + 1, d2);
+                Log.Message("adding wokType: " + def.defName);
+            }
         }
 
         public override void MapLoaded(Map map)

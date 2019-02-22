@@ -18,14 +18,13 @@ namespace WhatTheHack.TabWindow
                        select p;
             }
         }
-        /*
+        
         protected override PawnTableDef PawnTableDef
         {
             get
             {
-                return WTH_DefOf.WTH_PawnTableDef_Mechanoids;
+                return WTH_DefOf.WTH_Work_Mechanoids;
             }
         }
-        */
     }
 }

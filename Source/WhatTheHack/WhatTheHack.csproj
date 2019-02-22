@@ -78,10 +78,13 @@
     <Compile Include="Comps\CompProperties_DataLevel.cs" />
     <Compile Include="Comps\CompDataLevel.cs" />
     <Compile Include="Comps\CompProperties_Overlays.cs" />
+    <Compile Include="Duties\ThinkNode_ConditionalWorker.cs" />
     <Compile Include="Harmony\ApparelUtility.cs" />
     <Compile Include="Harmony\Bill.cs" />
     <Compile Include="Harmony\CombatExtended\CE_JobGiver_TakeAndEquip.cs" />
     <Compile Include="Harmony\CompProperties_Refuelable.cs" />
+    <Compile Include="Harmony\PawnColumnDefGenerator.cs" />
+    <Compile Include="Harmony\Pawn_StoryTracker.cs" />
     <Compile Include="Harmony\ShipUtility.cs" />
     <Compile Include="Harmony\Building_TurretGun.cs" />
     <Compile Include="Harmony\Caravan.cs" />
@@ -110,6 +113,7 @@
     <Compile Include="Harmony\PawnCapacitiesHandler.cs" />
     <Compile Include="Harmony\PowerConnectionMaker.cs" />
     <Compile Include="Harmony\ShieldBelt.cs" />
+    <Compile Include="Harmony\JobGiver_Work.cs" />
     <Compile Include="Harmony\TransferableOneWayWidget.cs" />
     <Compile Include="Harmony\TransferableUIUtility.cs" />
     <Compile Include="Harmony\TransferableUtility.cs" />
@@ -170,7 +174,6 @@
     <Compile Include="Recipes\Recipe_ModifyMechanoid.cs" />
     <Compile Include="Storage\ExtendedMapData.cs" />
     <Compile Include="TabWindow\MainTabWindow_Work_Mechanoids.cs" />
-    <Compile Include="TabWindow\PawnTable_PlayerMechanoids.cs" />
     <Compile Include="TextureUtility.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="Jobs\JobDriver_CarryToHackingTable.cs" />

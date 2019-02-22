@@ -4,12 +4,17 @@
 		<alwaysShowWeapon>true</alwaysShowWeapon>
 		<thinkNode Class="ThinkNode_Priority">
 		  <subNodes>
+		  	<li Class="WhatTheHack.Duties.ThinkNode_ConditionalWorker">
+				<subNodes>
+					<li Class="JobGiver_Work"/>
+				</subNodes>
+			</li>
 		  	<li Class="JobGiver_AIFightEnemies">
-			  <targetAcquireRadius>200</targetAcquireRadius>
-			  <targetKeepRadius>72</targetKeepRadius>
+			  <targetAcquireRadius>30</targetAcquireRadius>
+			  <targetKeepRadius>20</targetKeepRadius>
 			</li>
 		  	<li Class="JobGiver_AIGotoNearestHostile" />
-			<li Class="JobGiver_Work"/>
+
 		  </subNodes>
 		</thinkNode>
 	  </DutyDef>

@@ -96,6 +96,8 @@ namespace WhatTheHack
         public static SitePartDef WTH_MechanoidTemplePart;
         public static ThingSetMakerDef WTH_MapGen_MechanoidTempleContents;
 
+        public static PawnTableDef WTH_Work_Mechanoids;
+
         //vanilla
         public static IncidentDef ShortCircuit;
         public static BodyPartDef Reactor;
@@ -107,6 +109,9 @@ namespace WhatTheHack
         public static DifficultyDef Rough;
         public static DifficultyDef Hard;
         public static DifficultyDef Extreme;
+
+        public static WorkTypeDef PlantCutting;
+        public static WorkTypeDef Cleaning;
 
     }
 }

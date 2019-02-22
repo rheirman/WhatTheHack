@@ -30,19 +30,14 @@ namespace WhatTheHack.Recipes
                 pawn.relations = new Pawn_RelationsTracker(pawn);
             }
 
+            
             /*
             pawn.story = new Pawn_StoryTracker(pawn);
             pawn.workSettings = new Pawn_WorkSettings(pawn);
             pawn.skills = new Pawn_SkillTracker(pawn);
             pawn.workSettings.EnableAndInitialize();
             */
-
-            /*
-            if (pawn.jobs.curDriver != null)
-            {
-                pawn.jobs.posture = PawnPosture.LayingOnGroundNormal;
-            }
-            */
+            
             if (pawn.story == null)
             {
                 pawn.story = new Pawn_StoryTracker(pawn);
