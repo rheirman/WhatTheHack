@@ -46,6 +46,7 @@
 				<li>WTH_InstallBeltModule</li>	
 				<li>WTH_InstallCleaningModule</li>
 				<li>WTH_InstallHaulingModule</li>
+				<li>WTH_InstallSpeedModule</li>
 			</value>
 		</li> 
 	</operations>
@@ -70,6 +71,7 @@
 					<li>WTH_InstallBeltModule</li>
 					<li>WTH_InstallCleaningModule</li>
 					<li>WTH_InstallHaulingModule</li>
+					<li>WTH_InstallSpeedModule</li>
 				</recipes>		
 			</value>
 		</li> 

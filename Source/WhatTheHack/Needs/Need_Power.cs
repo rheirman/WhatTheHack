@@ -161,7 +161,12 @@ namespace WhatTheHack.Needs
         {
             get
             {
-                return 150 + pawn.BodySize * 150 * Base.powerFallModifier;//TODO - no magic number
+                float result = 150 + pawn.BodySize * 150 * Base.powerFallModifier;//TODO - no magic number
+                if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_SpeedModule))
+                {
+                    result *= 1.1f;
+                }
+                return result;
             }
         }
 

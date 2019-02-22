@@ -30,6 +30,8 @@ namespace WhatTheHack
         public static HediffDef WTH_VanometricModule;
         public static HediffDef WTH_BeltModule;
         public static HediffDef WTH_HeavilyDamaged;
+        public static HediffDef WTH_SpeedModule;
+
 
         public static DamageDef WTH_RegeneratedPartDamage;
 

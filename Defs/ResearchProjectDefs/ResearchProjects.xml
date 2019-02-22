@@ -72,6 +72,21 @@
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
+		<defName>WTH_SpeedModule</defName>
+		<label>speed module</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Upgrade module that aims to increase the speed of mechanoids by diverting extra power to the locomotion system of the mechanoid.</description>
+		<baseCost>1600</baseCost>
+		<prerequisites>
+		  <li>WTH_MechanoidWorkshop</li>
+		</prerequisites>
+		<researchViewX>0</researchViewX>
+		<researchViewY>3</researchViewY>
+	</ResearchProjectDef>
+	
+	
+	<ResearchProjectDef>
 		<defName>WTH_HackingRemoteControl</defName>
 		<label>mechanoid controller belt</label>
 		<tab>WTH_ResearchTab</tab>

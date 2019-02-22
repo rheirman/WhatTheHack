@@ -86,6 +86,53 @@
   </RecipeDef>
   
   <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_SpeedModule</defName>
+	<label>craft speed module</label>
+	<description>Craft a speed module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>20</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>15</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>4</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>Plasteel</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_SpeedModule>1</WTH_SpeedModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_SpeedModule</researchPrerequisite>
+  </RecipeDef>  
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
 	<defName>WTH_Craft_CleaningModule</defName>
 	<label>craft cleaning module</label>
 	<description>Craft a cleaning module</description>
@@ -674,59 +721,41 @@
 			</li>
 		</modExtensions>
 	</RecipeDef>
-	<!--
+	
 	<RecipeDef>
-		<defName>WTH_HackLocomotion</defName>
-		<label>hack mechanoid locomotion system</label>
-		<description>Hacks the locomotion system of the mechanoid and adds a receiver to the mechanoid to allow the it to be operated by a colonist using a remote control device</description>
-		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
-		<jobString>Hacking mechanoid</jobString>
-		<workAmount>4000</workAmount>				
-		<surgerySuccessChanceFactor>1.5</surgerySuccessChanceFactor>
-		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
+		<defName>WTH_InstallSpeedModule</defName>
+		<label>install speed module</label>
+		<description>Install a speed module.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid_WorkModule</workerClass>
+		<jobString>Installing speed module.</jobString>
+		<workAmount>5000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
 		<skillRequirements>
 			<Crafting>5</Crafting>
 			<Intellectual>5</Intellectual>
 		</skillRequirements>
 		<workSkill>Intellectual</workSkill>
-		<effectWorking>Repair</effectWorking>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>WTH_MechanoidParts</li>
+						<li>WTH_SpeedModule</li>
 					</thingDefs>
 				</filter>
-				<count>20</count>
+				<count>1</count>
 			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>WTH_MechanoidChip</li>
-					</thingDefs>
-				</filter>
-				<count>10</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<categories>
-				<li>Medicine</li>
-			</categories>
-		</fixedIngredientFilter>
+		</ingredients>		
 		<appliedOnFixedBodyParts>
-			<li>ArtificialBrain</li>
-			<li>Brain</li>
-			<li>MechanicalHead</li>
+			<li>Reactor</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>WTH_LocomotionHacked</addsHediff>
-		<researchPrerequisite>WTH_HackingRemoteControl</researchPrerequisite>
+		<addsHediff>WTH_SpeedModule</addsHediff>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
 			</li>
 		</modExtensions>
 	</RecipeDef>
-	-->
 	
 	<RecipeDef>
 		<defName>WTH_InstallCleaningModule</defName>
