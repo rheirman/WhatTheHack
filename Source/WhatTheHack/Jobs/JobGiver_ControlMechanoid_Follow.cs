@@ -34,7 +34,7 @@ namespace WhatTheHack.Jobs
             //    return null;
           //  }
             float radius = Utilities.GetRemoteControlRadius(pawn) - 5f;//TODO: no magic number
-            if ((!followee.pather.Moving || (float)followee.pather.Destination.Cell.DistanceToSquared(pawn.Position) <= radius * radius) && (float)followee.Position.DistanceToSquared(pawn.Position) <= radius * radius)
+            if ((float)followee.Position.DistanceToSquared(pawn.Position) <= radius * radius)
             {
                 return null;
             }
