@@ -6,7 +6,7 @@ using System.Text;
 using Verse.AI;
 using Verse.AI.Group;
 
-namespace WhatTheHack.Duties
+namespace WhatTheHack.ThinkTree
 {
     class LordToil_ControlMechanoid : LordToil
     {

@@ -12,7 +12,7 @@ using Verse.AI;
 using Verse.AI.Group;
 using WhatTheHack.Buildings;
 using WhatTheHack.Comps;
-using WhatTheHack.Duties;
+using WhatTheHack.ThinkTree;
 using WhatTheHack.Jobs;
 using WhatTheHack.Needs;
 using WhatTheHack.Storage;
@@ -113,38 +113,6 @@ namespace WhatTheHack.Harmony
         }
     }
 
-    /*
-    [HarmonyPatch]
-    public static class Pawn_GetGizmos_Transpiler {
-        static MethodBase TargetMethod()
-        {
-            var predicateClass = typeof(Pawn).GetNestedTypes(AccessTools.all)
-                .FirstOrDefault(t => t.FullName.Contains("c__Iterator2"));
-            return predicateClass.GetMethods(AccessTools.all).FirstOrDefault(m => m.Name.Contains("MoveNext"));
-        }
-        static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var instructionsList = new List<CodeInstruction>(instructions);
-            for (var i = 0; i < instructionsList.Count - 1; i++)
-            {
-                CodeInstruction instruction = instructionsList[i];
-
-                if (instructionsList[i].operand == typeof(Pawn).GetMethod("get_IsColonistPlayerControlled"))
-                {
-                    //yield return new CodeInstruction(OpCodes.Call, typeof(Pawn).GetMethod("CanTakeOrder"));//Injected code     
-                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Extensions), "CanTakeOrder"));//Injected code     
-
-                }
-                else
-                {
-                    yield return instruction;
-                }
-            }
-        }
-    }
-    */
-
-
     [HarmonyPatch(typeof(Pawn), "GetGizmos")]
     public class Pawn_GetGizmos
     {
@@ -182,6 +150,10 @@ namespace WhatTheHack.Harmony
                         gizmoList.Add(apparelGizmo);
                     }
                 }
+            }
+            if(__instance.workSettings != null)
+            {
+                gizmoList.Add(CreateGizmo_Work(__instance, pawnData));
             }
             if (hediffSet.HasHediff(WTH_DefOf.WTH_SelfDestruct))
             {
@@ -221,6 +193,39 @@ namespace WhatTheHack.Harmony
             };
         }
 
+        private static Gizmo CreateGizmo_Work(Pawn __instance, ExtendedPawnData pawnData)
+        {
+            string disabledReason = "";
+            bool disabled = false;
+            if (__instance.Downed)
+            {
+                disabled = true;
+                disabledReason = "WTH_Reason_MechanoidDowned".Translate();
+            }
+            else if (pawnData.shouldAutoRecharge)
+            {
+                Need_Power powerNeed = __instance.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) as Need_Power;
+                if (powerNeed != null && powerNeed.CurCategory >= PowerCategory.LowPower)
+                {
+                    disabled = true;
+                    disabledReason = "WTH_Reason_PowerLow".Translate();
+                }
+            }
+            Gizmo gizmo = new Command_Toggle
+            {
+                defaultLabel = "WTH_Gizmo_Work_Label".Translate(),
+                defaultDesc = "WTH_Gizmo_Work_Description".Translate(),
+                disabled = disabled,
+                disabledReason = disabledReason,
+                icon = ContentFinder<Texture2D>.Get(("UI/" + "MechanoidWork"), true),
+                isActive = () => pawnData.canWorkNow,
+                toggleAction = () =>
+                {
+                    pawnData.canWorkNow = !pawnData.canWorkNow;
+                }
+            };
+            return gizmo;
+        }
 
         private static Gizmo CreateGizmo_SearchAndDestroy(Pawn __instance, ExtendedPawnData pawnData)
         {

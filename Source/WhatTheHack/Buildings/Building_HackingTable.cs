@@ -42,12 +42,12 @@ namespace WhatTheHack.Buildings
                 powerNeed.CurLevel = 0;
             }
             */
-
-            pawn.jobs.TryTakeOrderedJob(new Job(WTH_DefOf.WTH_Mechanoid_Rest, this));
+            pawn.jobs.StartJob(new Job(WTH_DefOf.WTH_Mechanoid_Rest, this), JobCondition.InterruptForced);
             if (pawn.jobs.curDriver != null)
             {
                 pawn.jobs.posture = PawnPosture.LayingInBed;
             }
+
             return true;
         }
         public bool HasPowerNow()

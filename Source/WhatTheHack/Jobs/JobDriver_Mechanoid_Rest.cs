@@ -28,31 +28,32 @@ namespace WhatTheHack.Jobs
             this.FailOnDespawnedOrNull(TargetIndex.A);
             Toil goToPlatform = Toils_Bed.GotoBed(TargetIndex.A);
             yield return goToPlatform;
-
-            Toil layDownToil = Toils_LayDown.LayDown(TargetIndex.A, true, false, false, false);
-            layDownToil.defaultCompleteMode = ToilCompleteMode.Never;
-            layDownToil.initAction = new Action(delegate {
-                pawn.ClearAllReservations();
-            });
-            layDownToil.AddPreTickAction(delegate
-            {
-                if (!(pawn.health.hediffSet.HasNaturallyHealingInjury() || (pawn.OnHackingTable() && HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn))))
-                {
-                    ReadyForNextToil();
-                }
-                if(pawn.jobs.posture == PawnPosture.Standing)
-                {
-                    RotateToSouth();
-                }
-            });
-            yield return layDownToil;
+            
             Toil toil = new Toil();
             toil.defaultCompleteMode = ToilCompleteMode.Never;
             toil.initAction = delegate
             {
-                pawn.jobs.posture = PawnPosture.Standing;
+                if ((pawn.health.hediffSet.HasNaturallyHealingInjury() || pawn.OnHackingTable()))
+                {
+                    pawn.jobs.posture = PawnPosture.LayingInBed;
+                }
+
+                this.job.expiryInterval = 50;
+                this.job.checkOverrideOnExpire = true;
+                pawn.ClearAllReservations();
                 pawn.Position = RestingPlace.GetSleepingSlotPos(RestingPlace is Building_HackingTable ? Building_HackingTable.SLOTINDEX : Building_BaseMechanoidPlatform.SLOTINDEX);
-                RotateToSouth();
+            };
+            toil.tickAction = delegate
+            {
+                if ((pawn.health.hediffSet.HasNaturallyHealingInjury() || (pawn.OnHackingTable() && HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn))))
+                {
+                    pawn.jobs.posture = PawnPosture.LayingInBed;
+                }
+                else
+                {
+                    pawn.jobs.posture = PawnPosture.Standing;
+                    RotateToSouth();
+                }
             };
             yield return toil;
 

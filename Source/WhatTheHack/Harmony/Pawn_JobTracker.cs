@@ -9,7 +9,7 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 using WhatTheHack.Buildings;
-using WhatTheHack.Duties;
+using WhatTheHack.ThinkTree;
 using WhatTheHack.Needs;
 using WhatTheHack.Storage;
 
@@ -44,34 +44,14 @@ namespace WhatTheHack.Harmony
                     pawnData.isActive = false;
                 }
             }
-
-            if ( pawn.Faction == Faction.OfPlayer && pawn.IsHacked() && !pawn.IsActivated() && pawn.OnBaseMechanoidPlatform() && pawn.CanReserve(pawn.CurrentBed()))
-            {
-                Job job = new Job(WTH_DefOf.WTH_Mechanoid_Rest, pawn.CurrentBed());
-                job.count = 1;
-                __result = new ThinkResult(job, __result.SourceNode, __result.Tag, false);
-            }
-
             if (pawn.Downed)
             {
                 return;
             }
-
-
             if(pawn.IsHacked() && pawn.IsActivated() && pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_TargetingHackedPoorly))
             {
                 HackedPoorlyEvent(pawn);
             }
-            if (pawn.Faction == Faction.OfPlayer && pawn.IsHacked() && pawn.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) != null && !pawn.IsActivated() && !pawn.OnBaseMechanoidPlatform() && __result.Job.def != WTH_DefOf.WTH_Mechanoid_Rest)
-            {
-                Building_BaseMechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(pawn, pawn);
-                if(closestAvailablePlatform != null && pawn.CanReserve(closestAvailablePlatform))
-                {
-                    Job job = new Job(WTH_DefOf.WTH_Mechanoid_Rest, closestAvailablePlatform);
-                    __result = new ThinkResult(job, __result.SourceNode, __result.Tag, false);
-                }                
-            }
-
         }
 
         private static void HackedPoorlyEvent(Pawn pawn)

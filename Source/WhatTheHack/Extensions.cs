@@ -164,8 +164,8 @@ namespace WhatTheHack
         }
         */
         public static bool OnHackingTable(this Pawn pawn)
-        {
-            if (pawn.CurrentBed() != null && pawn.CurrentBed() is Building_HackingTable && pawn.jobs.posture == PawnPosture.LayingInBed)
+        { 
+            if (pawn.CurrentBed() != null && pawn.CurrentBed() is Building_HackingTable && HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn))
             {
                 return true;
             }
@@ -202,6 +202,17 @@ namespace WhatTheHack
             }
             return false;
         }
+        public static bool CanWorkNow(this Pawn pawn)
+        {
+            ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
+            if (store != null)
+            {
+                ExtendedPawnData pawnData = store.GetExtendedDataFor(pawn);
+                return pawnData.canWorkNow;
+            }
+            return false;
+        }
+
 
         public static bool HasFuel(this Caravan caravan)
         {

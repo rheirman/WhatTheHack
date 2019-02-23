@@ -78,7 +78,9 @@
     <Compile Include="Comps\CompProperties_DataLevel.cs" />
     <Compile Include="Comps\CompDataLevel.cs" />
     <Compile Include="Comps\CompProperties_Overlays.cs" />
-    <Compile Include="Duties\ThinkNode_ConditionalWorker.cs" />
+    <Compile Include="Jobs\JobGiver_Mechanoid_Rest.cs" />
+    <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidRest.cs" />
+    <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidWork.cs" />
     <Compile Include="Harmony\ApparelUtility.cs" />
     <Compile Include="Harmony\Bill.cs" />
     <Compile Include="Harmony\CombatExtended\CE_JobGiver_TakeAndEquip.cs" />
@@ -146,10 +148,10 @@
     <Compile Include="Buildings\Building_MechanoidPlatform.cs" />
     <Compile Include="Dict2DRecordHandler.cs" />
     <Compile Include="GUIDrawUtility.cs" />
-    <Compile Include="Duties\LordJob_ControlMechanoid.cs" />
-    <Compile Include="Duties\LordJob_SearchAndDestroy.cs" />
-    <Compile Include="Duties\LordToil_ControlMechanoid.cs" />
-    <Compile Include="Duties\LordToil_SearchAndDestroy.cs" />
+    <Compile Include="ThinkTree\LordJob_ControlMechanoid.cs" />
+    <Compile Include="ThinkTree\LordJob_SearchAndDestroy.cs" />
+    <Compile Include="ThinkTree\LordToil_ControlMechanoid.cs" />
+    <Compile Include="ThinkTree\LordToil_SearchAndDestroy.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Harmony\Bill_Medical.cs" />
     <Compile Include="Harmony\Building_Bed.cs" />

@@ -9,7 +9,7 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 using WhatTheHack.Buildings;
-using WhatTheHack.Duties;
+using WhatTheHack.ThinkTree;
 using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony

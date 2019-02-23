@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
+<Operation Class ="PatchOperationInsert">
+	<xpath>(*/ThinkTreeDef[defName = "Mechanoid"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_Subtree"])[1]</xpath>
+	<value>
+		<li Class="WhatTheHack.ThinkTree.ThinkNode_ConditionalMechanoidRest">
+			<subNodes>
+				<li Class="WhatTheHack.Jobs.JobGiver_Mechanoid_Rest"/>
+			</subNodes>
+		</li>
+		<li Class="WhatTheHack.ThinkTree.ThinkNode_ConditionalMechanoidWork">
+			<subNodes>
+				<li Class="JobGiver_Work"/>
+			</subNodes>
+		</li>
+	</value>
+</Operation>
+
 <Operation Class="PatchOperationFindMod">
 	<mods>
 		<li>Combat Extended</li>

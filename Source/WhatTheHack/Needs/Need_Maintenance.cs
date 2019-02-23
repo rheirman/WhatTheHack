@@ -6,7 +6,7 @@ using System.Text;
 using UnityEngine;
 using Verse;
 using Verse.AI.Group;
-using WhatTheHack.Duties;
+using WhatTheHack.ThinkTree;
 
 namespace WhatTheHack.Needs
 {

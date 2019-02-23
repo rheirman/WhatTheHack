@@ -6,13 +6,13 @@ using Verse;
 using Verse.AI;
 using WhatTheHack.Storage;
 
-namespace WhatTheHack.Duties
+namespace WhatTheHack.ThinkTree
 {
-    class ThinkNode_ConditionalWorker : ThinkNode_Conditional
+    class ThinkNode_ConditionalMechanoidWork : ThinkNode_Conditional
     {
         protected override bool Satisfied(Pawn pawn)
         {
-            return pawn.workSettings != null;
+            return pawn.workSettings != null && pawn.CanWorkNow();
         }
     }
 }

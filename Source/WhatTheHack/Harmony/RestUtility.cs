@@ -127,59 +127,19 @@ namespace WhatTheHack.Harmony
             {
                 return true;
             }
-            if (p.jobs.curDriver == null || ((p.CurJob.def != WTH_DefOf.WTH_Mechanoid_Rest) && p.jobs.posture != PawnPosture.LayingInBed))
-            {
+            if (p.jobs.curDriver != null && (p.CurJob.def != WTH_DefOf.WTH_Mechanoid_Rest))
+            { 
                 return true;              
             }
             List<Thing> thingList = p.Position.GetThingList(p.Map);
-
-
-
-            if (!p.IsHacked())
+            foreach (Thing thing in thingList)
             {
-                Building_HackingTable hackingTable = null;
-                for (int i = 0; i < thingList.Count; i++)
+                if(thing is Building_HackingTable || thing is Building_BaseMechanoidPlatform)
                 {
-                    hackingTable = (thingList[i] as Building_HackingTable);
-                    if (hackingTable != null)
-                    {
-                        break;
-                    }
-                }
-                if (hackingTable == null)
-                {
-                    return true;
-                }
-
-                if (hackingTable.GetCurOccupant(Building_HackingTable.SLOTINDEX) == p)
-                {
-                    __result = hackingTable;
+                    __result = (Building_Bed) thing;
                     return false;
                 }
             }
-            else
-            {
-                Building_BaseMechanoidPlatform mechanoidPlatform = null;
-                for (int i = 0; i < thingList.Count; i++)
-                {
-                    mechanoidPlatform = (thingList[i] as Building_BaseMechanoidPlatform);
-                    if (mechanoidPlatform != null)
-                    {
-                        break;
-                    }
-                }
-                if (mechanoidPlatform == null)
-                {
-                    return true;
-                }
-
-                if (mechanoidPlatform.GetCurOccupant(Building_BaseMechanoidPlatform.SLOTINDEX) == p)
-                {
-                    __result = mechanoidPlatform;
-                    return false;
-                }
-            }
-
             return true;
         }
     }

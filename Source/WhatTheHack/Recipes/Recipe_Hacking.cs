@@ -9,7 +9,7 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 using WhatTheHack.Buildings;
-using WhatTheHack.Duties;
+using WhatTheHack.ThinkTree;
 
 namespace WhatTheHack.Recipes
 {
@@ -96,7 +96,6 @@ namespace WhatTheHack.Recipes
             }
             billDoer.skills.Learn(SkillDefOf.Crafting, combatPowerCapped * learnfactor, false);
             billDoer.skills.Learn(SkillDefOf.Intellectual, combatPowerCapped * learnfactor, false);
-           
             PostSuccessfulApply(pawn, part, billDoer, ingredients, bill);
         }
         protected abstract void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill);

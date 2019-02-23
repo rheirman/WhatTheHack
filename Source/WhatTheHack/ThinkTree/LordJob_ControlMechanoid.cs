@@ -6,7 +6,7 @@ using Verse;
 using Verse.AI.Group;
 using WhatTheHack.Storage;
 
-namespace WhatTheHack.Duties
+namespace WhatTheHack.ThinkTree
 {
     public class LordJob_ControlMechanoid : LordJob
     {

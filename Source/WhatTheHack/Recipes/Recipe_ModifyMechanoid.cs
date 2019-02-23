@@ -8,7 +8,7 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 using WhatTheHack.Buildings;
-using WhatTheHack.Duties;
+using WhatTheHack.ThinkTree;
 
 namespace WhatTheHack.Recipes
 {
@@ -38,6 +38,7 @@ namespace WhatTheHack.Recipes
         {
             if(pawn.BillStack.Bills.Count <= 1)
             {
+                Log.Message("interrupting job for mech!");
                 pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
             }
         }

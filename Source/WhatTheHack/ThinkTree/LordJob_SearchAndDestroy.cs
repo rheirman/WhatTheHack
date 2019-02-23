@@ -5,7 +5,7 @@ using System.Text;
 using Verse;
 using Verse.AI.Group;
 
-namespace WhatTheHack.Duties
+namespace WhatTheHack.ThinkTree
 {
     public class LordJob_SearchAndDestroy : LordJob
     {
