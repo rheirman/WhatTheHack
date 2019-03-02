@@ -11,7 +11,7 @@
 		</li>
 		<li Class="WhatTheHack.ThinkTree.ThinkNode_ConditionalMechanoidWork">
 			<subNodes>
-				<li Class="JobGiver_Work"/>
+				<li Class="WhatTheHack.Jobs.JobGiver_Work_Mechanoid"/>
 			</subNodes>
 		</li>
 	</value>

@@ -20,25 +20,16 @@ namespace WhatTheHack.Jobs
                 !pawn.CanWorkNow()
                 )
             {
-                Log.Message("JobGiver_Mechanoid_Rest tryGiveJob");
                 if (pawn.OnBaseMechanoidPlatform() || pawn.OnHackingTable())
                 {
-                    if (pawn.OnHackingTable())
-                    {
-                        Log.Message("pawn.OnHackingTable()");
-                    }
-                    Log.Message("new Job(WTH_DefOf.WTH_Mechanoid_Rest, pawn.CurrentBed())");
                     job = new Job(WTH_DefOf.WTH_Mechanoid_Rest, pawn.CurrentBed());
                 }
                 else{
-                    Log.Message("else: ");
                     Building_BaseMechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(pawn, pawn);
                     if (closestAvailablePlatform != null && pawn.CanReserve(closestAvailablePlatform))
                     {
-                        Log.Message("new Job(WTH_DefOf.WTH_Mechanoid_Rest, closestAvailablePlatform)");
                         if (pawn.CurJob != null)
                         {
-                            Log.Message("interrupting job: " + pawn.CurJobDef.defName);
                             pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
                         }
                         job = new Job(WTH_DefOf.WTH_Mechanoid_Rest, closestAvailablePlatform);

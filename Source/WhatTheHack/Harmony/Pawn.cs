@@ -222,6 +222,10 @@ namespace WhatTheHack.Harmony
                 toggleAction = () =>
                 {
                     pawnData.canWorkNow = !pawnData.canWorkNow;
+                    if(__instance.CurJob.def != WTH_DefOf.WTH_Mechanoid_Rest)
+                    {
+                        __instance.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                    }
                 }
             };
             return gizmo;

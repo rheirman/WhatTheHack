@@ -20,6 +20,17 @@ namespace WhatTheHack.Jobs
         }
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
+            if (pawn.HasReserved(this.RestingPlace))
+            {
+                Log.Message("pawn had already reserved bed");
+                return true;
+            }
+
+            if (!pawn.CanReserve(RestingPlace))
+            {
+                Log.Message("pawn can't reserve resting place");
+            }
+            //pawn.reserve
             return this.pawn.Reserve(this.RestingPlace, this.job, 1, -1, null);
         }
 

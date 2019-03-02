@@ -68,7 +68,7 @@
     <graphicData>
       <texPath>Things/MechanoidWorkshop</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(6,4)</drawSize>
+      <drawSize>(7,4)</drawSize>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>
         <cornerTR>Damage/Corner</cornerTR>

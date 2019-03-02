@@ -79,6 +79,7 @@
     <Compile Include="Comps\CompDataLevel.cs" />
     <Compile Include="Comps\CompProperties_Overlays.cs" />
     <Compile Include="Jobs\JobGiver_Mechanoid_Rest.cs" />
+    <Compile Include="Jobs\JobGiver_Work_Mechanoid.cs" />
     <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidRest.cs" />
     <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidWork.cs" />
     <Compile Include="Harmony\ApparelUtility.cs" />
