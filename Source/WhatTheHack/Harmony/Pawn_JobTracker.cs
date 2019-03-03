@@ -33,10 +33,7 @@ namespace WhatTheHack.Harmony
             {
                 //de-activate if should auto recharge and power is very low. 
                 ExtendedPawnData pawnData = store.GetExtendedDataFor(pawn);
-                Need_Power powerNeed = pawn.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) as Need_Power;
-                if (powerNeed != null &&
-                    powerNeed.CurCategory >= PowerCategory.LowPower &&
-                    pawnData.shouldAutoRecharge && 
+                if (pawn.ShouldRecharge() &&
                     pawn.IsActivated()
                     )
                 {

@@ -17,7 +17,7 @@ namespace WhatTheHack.Jobs
             if (pawn.Faction == Faction.OfPlayer &&
                 pawn.IsHacked() &&
                 !pawn.IsActivated() &&
-                !pawn.CanWorkNow()
+                !pawn.CanStartWorkNow()
                 )
             {
                 if (pawn.OnBaseMechanoidPlatform() || pawn.OnHackingTable())

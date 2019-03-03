@@ -13,8 +13,9 @@ namespace WhatTheHack.Needs
 {
     public class Need_Power : Need
     {
-        private const float BasePowerFallPerTick = 2.66666666E-05f;
         private float lastLevel = 0;
+        public bool shouldAutoRecharge = true;
+        public float canStartWorkThreshold = 0;
 
         //private const float BaseMalnutritionSeverityPerDay = 0.17f;
 
@@ -170,12 +171,6 @@ namespace WhatTheHack.Needs
             }
         }
 
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            Scribe_Values.Look<float>(ref lastLevel, "lastLevel");
-        }
-
         private float PowerFallPerTickAssumingCategory(PowerCategory cat)
         {
             if(cat == PowerCategory.NoPower)
@@ -190,7 +185,7 @@ namespace WhatTheHack.Needs
             {
                 return 0;
             }
-            return 2.66666666E-05f * this.PowerRate;
+            return 2E-05f * this.PowerRate; //TODO no magic number;
         }
         public bool DirectlyPowered(Pawn pawn)
         {
@@ -230,5 +225,14 @@ namespace WhatTheHack.Needs
             this.threshPercents.Add(this.PercentageThreshVeryLowPower);
             base.DrawOnGUI(rect, maxThresholdMarkers, customMargin, drawArrows, doTooltip);
         }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look<float>(ref lastLevel, "lastLevel");
+            Scribe_Values.Look<bool>(ref shouldAutoRecharge, "shoulAutoRecharge", true);
+            Scribe_Values.Look<float>(ref canStartWorkThreshold, "canStartWorkThreshold", 0.4f);
+        }
+
     }
 }

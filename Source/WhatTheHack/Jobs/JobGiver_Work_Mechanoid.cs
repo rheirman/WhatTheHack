@@ -6,6 +6,7 @@ using System.Text;
 using Verse;
 using Verse.AI;
 using WhatTheHack.Buildings;
+using WhatTheHack.Needs;
 
 namespace WhatTheHack.Jobs
 {
@@ -23,12 +24,12 @@ namespace WhatTheHack.Jobs
                 Job job = null;
                 if (pawn.OnBaseMechanoidPlatform())//If the mech is already on a platform, let it stay on it. 
                 {
-                    Log.Message("WTH_Mechanoid_Rest 1");
+                    //Log.Message("WTH_Mechanoid_Rest 1");
                     job = new Job(WTH_DefOf.WTH_Mechanoid_Rest, pawn.CurrentBed());
                 }
                 else//Else, let if find another platform. If it can't find one, let it continue work or idling. 
                 {
-                    Log.Message("WTH_Mechanoid_Rest 2");
+                    //Log.Message("WTH_Mechanoid_Rest 2");
                     Building_BaseMechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(pawn, pawn);
                     if (closestAvailablePlatform != null && pawn.CanReserve(closestAvailablePlatform))
                     {

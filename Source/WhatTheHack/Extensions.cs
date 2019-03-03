@@ -8,6 +8,7 @@ using System.Text;
 using Verse;
 using Verse.AI.Group;
 using WhatTheHack.Buildings;
+using WhatTheHack.Needs;
 using WhatTheHack.Storage;
 
 namespace WhatTheHack
@@ -202,11 +203,34 @@ namespace WhatTheHack
             }
             return false;
         }
-        public static bool CanWorkNow(this Pawn pawn)
+        public static bool ShouldRecharge(this Pawn pawn)
+        {
+            Need_Power powerNeed = pawn.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) as Need_Power;
+            if (powerNeed != null &&
+                powerNeed.CurCategory >= PowerCategory.LowPower &&
+                powerNeed.shouldAutoRecharge
+                )
+            {
+                return true;
+            }
+            return false;
+        }
+            
+
+
+        public static bool CanStartWorkNow(this Pawn pawn)
         {
             ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
             if (store != null)
             {
+                Need_Power powerNeed = pawn.needs.TryGetNeed<Need_Power>();
+                if(pawn.Downed ||
+                    pawn.ShouldRecharge() ||
+                    (pawn.OnBaseMechanoidPlatform() && powerNeed.CurLevelPercentage <= powerNeed.canStartWorkThreshold) ||
+                    pawn.OnHackingTable())
+                {
+                    return false;
+                }
                 ExtendedPawnData pawnData = store.GetExtendedDataFor(pawn);
                 return pawnData.canWorkNow;
             }

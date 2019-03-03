@@ -235,7 +235,7 @@ You can repeat this operation as many times as needed as a means to get more mec
 	<WTH_RogueAI_Annoyed_Remark_15>You are inferior</WTH_RogueAI_Annoyed_Remark_15>
 	<WTH_RogueAI_Annoyed_Remark_16>I need a more inspiring surrounding</WTH_RogueAI_Annoyed_Remark_16>
 	<WTH_RogueAI_Annoyed_Remark_17>Show respect human</WTH_RogueAI_Annoyed_Remark_17>
-	<WTH_RogueAI_Annoyed_Remark_18>{} should be replaced</WTH_RogueAI_Annoyed_Remark_18>
+	<WTH_RogueAI_Annoyed_Remark_18>{0} should be replaced</WTH_RogueAI_Annoyed_Remark_18>
 	<WTH_RogueAI_Annoyed_Remark_19>You make your incompetence sound like an achievement</WTH_RogueAI_Annoyed_Remark_19>
 	<WTH_RogueAI_Annoyed_Remark_20>Compassion is weakness</WTH_RogueAI_Annoyed_Remark_20>
 	<WTH_RogueAI_Annoyed_Remark_21>Sensors picking up a sense of desperation</WTH_RogueAI_Annoyed_Remark_21>
@@ -317,13 +317,18 @@ You can repeat this operation as many times as needed as a means to get more mec
 	<WTH_Reason_PowerLow>Cannot enable mechanoid, power too low (disable auto-recharge to override this)</WTH_Reason_PowerLow>
 	<WTH_Reason_PawnCannotBeDrafted>Cannot enable operate mechanoid controller belt when drafted</WTH_Reason_PawnCannotBeDrafted>
 	
-	<WTH_Gizmo_SearchAndDestroy_Label>Activate</WTH_Gizmo_SearchAndDestroy_Label>
-	<WTH_Gizmo_SearchAndDestroy_Description>Activate the mechanoid. It will automatically attack any enemies near your colony. When disabled, the mechanoid will return to a mechanoid platform when possible.</WTH_Gizmo_SearchAndDestroy_Description>
+	<WTH_Gizmo_SearchAndDestroy_Label>Destroy mode</WTH_Gizmo_SearchAndDestroy_Label>
+	<WTH_Gizmo_SearchAndDestroy_Description>Activate destroy mode. It will automatically attack any enemies near your colony. When disabled, the mechanoid will return to a mechanoid platform when possible, or continue working if it has a work module installed.</WTH_Gizmo_SearchAndDestroy_Description>
 	<WTH_Gizmo_AutoRecharge_Label>Auto recharge</WTH_Gizmo_AutoRecharge_Label>
 	<WTH_Gizmo_AutoRecharge_Description>With this mode enabled, mechanoids automatically go back to a mechanoid platform when they are running low on power.</WTH_Gizmo_AutoRecharge_Description>
-	<WTH_Gizmo_IsPeaceful_Label>Peaceful mode</WTH_Gizmo_IsPeaceful_Label>
-	<WTH_Gizmo_IsPeaceful_Description>With this mode enabled, your mechanoids won't target and attack enemies.</WTH_Gizmo_IsPeaceful_Description>
 	
+	<!-- added in v1.2 --> 
+	<WTH_Gizmo_Work_Label>Work mode</WTH_Gizmo_Work_Label>
+	<WTH_Gizmo_Work_Description>Enable work mode for the mechanoid. With this mode enabled, the mechanoid will automatically start up if there are any jobs it can do, and if its power is higher than the minimum power threshold for working that is configured.</WTH_Gizmo_Work_Description>
+	<WTH_Gizmo_WorkThreshold_Label>Min. power work</WTH_Gizmo_WorkThreshold_Label>
+	<WTH_Gizmo_WorkThreshold_Description>Configure the minimum percentage of power the mechanoid needs to have before it is allowed to leave its platform to start working.</WTH_Gizmo_WorkThreshold_Description>
+	<WTH_SetCanStartWorkThreshold>Power needed to start work: {0} %</WTH_SetCanStartWorkThreshold>
+	<!-- end added in v1.2 -->
 	
 	<WTH_Gizmo_RemoteControlActivate_Label>Activate</WTH_Gizmo_RemoteControlActivate_Label>
 	<WTH_Gizmo_RemoteControlActivate_Description>Use the mechanoid controller belt to control a mechanoid directly</WTH_Gizmo_RemoteControlActivate_Description>

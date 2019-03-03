@@ -19,7 +19,6 @@ namespace WhatTheHack.Storage
         public bool canWorkNow = false;
         public bool isActive = false;
         public bool isPeaceful = false;
-        public bool shouldAutoRecharge = true;
         public bool shouldExplodeNow = false;
 
         public Pawn remoteControlLink = null;
@@ -36,7 +35,6 @@ namespace WhatTheHack.Storage
             Scribe_Values.Look(ref isPeaceful, "isPeaceful", false);
             Scribe_Values.Look(ref shouldExplodeNow, "shouldExplodeNow", false);
             Scribe_Values.Look(ref isActive, "isActive", false);
-            Scribe_Values.Look(ref shouldAutoRecharge, "shouldAutoRecharge", true);
             Scribe_References.Look(ref remoteControlLink, "remoteControlLink");
             Scribe_References.Look(ref controllingAI, "controllingAI");
             Scribe_References.Look(ref caravanPlatform, "caravanPlatform");

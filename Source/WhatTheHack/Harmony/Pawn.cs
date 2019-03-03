@@ -91,6 +91,7 @@ namespace WhatTheHack.Harmony
                     return false;
                 }
             }
+            int test = Find.TickManager.TicksGame;
             return true;
         }
 
@@ -138,7 +139,11 @@ namespace WhatTheHack.Harmony
         {
             ExtendedPawnData pawnData = store.GetExtendedDataFor(__instance);
             gizmoList.Add(CreateGizmo_SearchAndDestroy(__instance, pawnData));
-            gizmoList.Add(CreateGizmo_AutoRecharge(__instance, pawnData));
+            Need_Power powerNeed = __instance.needs.TryGetNeed<Need_Power>();
+            if (powerNeed != null)
+            {
+                gizmoList.Add(CreateGizmo_AutoRecharge(__instance, powerNeed));
+            }
             HediffSet hediffSet = __instance.health.hediffSet;
 
             if (!__instance.IsColonistPlayerControlled)
@@ -154,6 +159,10 @@ namespace WhatTheHack.Harmony
             if(__instance.workSettings != null)
             {
                 gizmoList.Add(CreateGizmo_Work(__instance, pawnData));
+                if(powerNeed != null)
+                {
+                    gizmoList.Add(CreateGizmo_WorkThreshold(__instance, powerNeed));
+                }
             }
             if (hediffSet.HasHediff(WTH_DefOf.WTH_SelfDestruct))
             {
@@ -171,8 +180,6 @@ namespace WhatTheHack.Harmony
             {
                 gizmoList.Add(CreateGizmo_EquipBelt(__instance, pawnData));
             }
-            gizmoList.Add(CreateGizmo_IsPeaceful(__instance, pawnData));
-
         }
         private static TargetingParameters GetTargetingParametersForTurret()
         {
@@ -197,20 +204,6 @@ namespace WhatTheHack.Harmony
         {
             string disabledReason = "";
             bool disabled = false;
-            if (__instance.Downed)
-            {
-                disabled = true;
-                disabledReason = "WTH_Reason_MechanoidDowned".Translate();
-            }
-            else if (pawnData.shouldAutoRecharge)
-            {
-                Need_Power powerNeed = __instance.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) as Need_Power;
-                if (powerNeed != null && powerNeed.CurCategory >= PowerCategory.LowPower)
-                {
-                    disabled = true;
-                    disabledReason = "WTH_Reason_PowerLow".Translate();
-                }
-            }
             Gizmo gizmo = new Command_Toggle
             {
                 defaultLabel = "WTH_Gizmo_Work_Label".Translate(),
@@ -228,6 +221,22 @@ namespace WhatTheHack.Harmony
                     }
                 }
             };
+            return gizmo;        
+        }
+        private static Gizmo CreateGizmo_WorkThreshold(Pawn __instance, Need_Power powerNeed)
+        {
+            string disabledReason = "";
+            bool disabled = false;
+            Gizmo gizmo = new Command_SetWorkThreshold
+            {
+                powerNeed = powerNeed,
+                defaultLabel = "WTH_Gizmo_WorkThreshold_Label".Translate(),
+                defaultDesc = "WTH_Gizmo_WorkThreshold_Description".Translate(),
+                disabled = disabled,
+                disabledReason = disabledReason,
+                icon = ContentFinder<Texture2D>.Get(("UI/" + "MechanoidWorkThreshold"), true),
+                
+            };
             return gizmo;
         }
 
@@ -240,14 +249,10 @@ namespace WhatTheHack.Harmony
                 disabled = true;
                 disabledReason = "WTH_Reason_MechanoidDowned".Translate();
             }
-            else if (pawnData.shouldAutoRecharge)
+            else if (__instance.ShouldRecharge())
             {
-                Need_Power powerNeed = __instance.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) as Need_Power;
-                if (powerNeed != null && powerNeed.CurCategory >= PowerCategory.LowPower)
-                {
-                    disabled = true;
-                    disabledReason = "WTH_Reason_PowerLow".Translate();
-                }
+                disabled = true;
+                disabledReason = "WTH_Reason_PowerLow".Translate();
             }
             Gizmo gizmo = new Command_Toggle
             {
@@ -286,40 +291,18 @@ namespace WhatTheHack.Harmony
             };
             return gizmo;
         }
-        private static Gizmo CreateGizmo_AutoRecharge(Pawn __instance, ExtendedPawnData pawnData)
+        private static Gizmo CreateGizmo_AutoRecharge(Pawn __instance, Need_Power powerNeed)
         {
+
             Gizmo gizmo = new Command_Toggle
             {
                 defaultLabel = "WTH_Gizmo_AutoRecharge_Label".Translate(),
                 defaultDesc = "WTH_Gizmo_AutoRecharge_Description".Translate(),
                 icon = ContentFinder<Texture2D>.Get(("UI/" + "AutoRecharge"), true),
-                isActive = () => pawnData.shouldAutoRecharge,
+                isActive = () => powerNeed.shouldAutoRecharge,
                 toggleAction = () =>
                 {
-                    pawnData.shouldAutoRecharge = !pawnData.shouldAutoRecharge;
-                }
-            };
-            return gizmo;
-        }
-
-        private static Gizmo CreateGizmo_IsPeaceful(Pawn __instance, ExtendedPawnData pawnData)
-        {
-            Gizmo gizmo = new Command_Toggle
-            {
-                defaultLabel = "WTH_Gizmo_AutoRecharge_Label".Translate(),
-                defaultDesc = "WTH_Gizmo_AutoRecharge_Description".Translate(),
-                icon = ContentFinder<Texture2D>.Get(("UI/" + "Peace"), true),
-                isActive = () => pawnData.isPeaceful,
-                toggleAction = () =>
-                {
-                    pawnData.isPeaceful= !pawnData.isPeaceful;
-                    if (pawnData.isActive)
-                    {
-                        if (__instance.GetLord() == null || __instance.GetLord().LordJob == null)
-                        {
-                            LordMaker.MakeNewLord(Faction.OfPlayer, new LordJob_SearchAndDestroy(), __instance.Map, new List<Pawn> { __instance });
-                        }
-                    }
+                    powerNeed.shouldAutoRecharge = !powerNeed.shouldAutoRecharge;
                 }
             };
             return gizmo;
