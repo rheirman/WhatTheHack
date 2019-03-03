@@ -142,12 +142,9 @@ namespace WhatTheHack.Harmony
                 RechargeMechanoid(pawn, pawn.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power), 0.0085f);//TODO: no magic number
             }
 
-            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing))
+            if (pawn.IsHashIntervalTick(10) && pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing))
             {
-                if (pawn.IsHashIntervalTick(10))
-                {
                     TryHealRandomInjury(__instance, pawn, 4000f / RimWorld.GenDate.TicksPerDay);
-                }
             }
 
             if (!(pawn.CurrentBed() is Building_BaseMechanoidPlatform))
@@ -177,12 +174,12 @@ namespace WhatTheHack.Harmony
                 float powerPerTick = 0;
                 if (platform.PowerComp != null)
                 {
-                    powerPerTick = 0.75f * platform.PowerComp.Props.basePowerConsumption / GenDate.TicksPerDay; //TODO: no magic number
+                    powerPerTick = platform.PowerComp.Props.basePowerConsumption / GenDate.TicksPerDay; 
                 }
                 else
                 {
                     platform.refuelableComp.ConsumeFuel(platform.refuelableComp.Props.fuelConsumptionRate / GenDate.TicksPerDay);
-                    powerPerTick = 0.75f * platform.refuelableComp.Props.fuelConsumptionRate * 15 / GenDate.TicksPerDay; //TODO: no magic number
+                    powerPerTick = platform.refuelableComp.Props.fuelConsumptionRate * 15 / GenDate.TicksPerDay; //TODO: no magic number
                 }
 
                 RechargeMechanoid(pawn, powerNeed, powerPerTick);

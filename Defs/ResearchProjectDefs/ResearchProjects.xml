@@ -63,7 +63,7 @@
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>Several upgrade modules that make mechanoids capable of performing several simple tasks like hauling, cleaning, firefighting and growing.</description>
-		<baseCost>3000</baseCost>
+		<baseCost>3500</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>

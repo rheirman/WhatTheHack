@@ -110,9 +110,60 @@
   </ThingDef>
   
   <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_GrowingModule</defName>
+    <label>growing module</label>
+    <description>Can be installed in a mechanoid to make it capable of plant cutting and growing.</description>
+    <graphicData>
+      <texPath>Things/GrowingModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>7000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+    
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_FirefightingModule</defName>
+    <label>Firefighting module</label>
+    <description>Can be installed in a mechanoid to make it capable of fighting fires.</description>
+    <graphicData>
+      <texPath>Things/FirefightingModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>5000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartBase">
     <defName>WTH_CleaningModule</defName>
     <label>cleaning module</label>
-    <description>Can be installed in mechanoids to make it capable of automatically performing cleaning jobs</description>
+    <description>Can be installed in a mechanoid to make it capable of automatically performing cleaning jobs</description>
     <graphicData>
       <texPath>Things/CleaningModule</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -121,7 +172,7 @@
     <soundDrop>Standard_Drop</soundDrop>
     <stackLimit>1</stackLimit>
     <statBases>
-	  <WorkToMake>6000</WorkToMake>
+	  <WorkToMake>7000</WorkToMake>
       <MaxHitPoints>70</MaxHitPoints>
       <Mass>0.6</Mass>
       <Flammability>1.0</Flammability>
@@ -137,7 +188,7 @@
   <ThingDef ParentName="BodyPartBase">
     <defName>WTH_SpeedModule</defName>
     <label>speed module</label>
-    <description>Can be installed in mechanoids. Increases the movement speed of the mechanoid by 25% at the cost of 10% extra power consumption.</description>
+    <description>Can be installed in a mechanoid. Increases the movement speed of the mechanoid by 25% at the cost of 10% extra power consumption.</description>
     <graphicData>
       <texPath>Things/SpeedModule</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -146,7 +197,7 @@
     <soundDrop>Standard_Drop</soundDrop>
     <stackLimit>1</stackLimit>
     <statBases>
-	  <WorkToMake>6000</WorkToMake>
+	  <WorkToMake>7000</WorkToMake>
       <MaxHitPoints>70</MaxHitPoints>
       <Mass>0.6</Mass>
       <Flammability>1.0</Flammability>
@@ -172,7 +223,7 @@
     <soundDrop>Standard_Drop</soundDrop>
     <stackLimit>1</stackLimit>
     <statBases>
-	  <WorkToMake>6000</WorkToMake>
+	  <WorkToMake>7000</WorkToMake>
       <MaxHitPoints>70</MaxHitPoints>
       <Mass>0.6</Mass>
       <Flammability>1.0</Flammability>

@@ -63,6 +63,8 @@
 				<li>WTH_InstallCleaningModule</li>
 				<li>WTH_InstallHaulingModule</li>
 				<li>WTH_InstallSpeedModule</li>
+				<li>WTH_InstallGrowingModule</li>
+				<li>WTH_InstallFirefightingModule</li>
 			</value>
 		</li> 
 	</operations>
@@ -87,7 +89,9 @@
 					<li>WTH_InstallBeltModule</li>
 					<li>WTH_InstallCleaningModule</li>
 					<li>WTH_InstallHaulingModule</li>
-					<li>WTH_InstallSpeedModule</li>
+					<li>WTH_InstallSpeedModule</li>				
+					<li>WTH_InstallGrowingModule</li>
+					<li>WTH_InstallFirefightingModule</li>
 				</recipes>		
 			</value>
 		</li> 

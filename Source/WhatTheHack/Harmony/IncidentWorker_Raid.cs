@@ -113,6 +113,10 @@ namespace WhatTheHack.Harmony
             modules.Add(WTH_DefOf.WTH_SpeedModule);
             modules.Add(WTH_DefOf.WTH_TurretModule);
             modules.Add(WTH_DefOf.WTH_VanometricModule);
+            modules.Add(WTH_DefOf.WTH_BatteryExpansionModule);
+            //modules.Add(WTH_DefOf.WTH_RepairModule);
+            modules.Add(WTH_DefOf.WTH_SelfDestruct);
+
 
             int i = 0;
             int count = modules.Count;

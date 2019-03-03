@@ -29,8 +29,19 @@ namespace WhatTheHack.Recipes
                 {
                     pawnData.workTypes = new List<WorkTypeDef>();
                 }
-                pawnData.workTypes.Add(modExt.workType);
-                pawn.workSettings.SetPriority(modExt.workType, 3);
+                foreach(WorkTypeDef workType in modExt.workTypes)
+                {
+                    pawnData.workTypes.Add(workType);
+                    pawn.workSettings.SetPriority(workType, 3);
+                    if (modExt.skillLevel > 0)
+                    {
+                        foreach(SkillDef skillDef in workType.relevantSkills)
+                        {
+                            pawn.skills.GetSkill(skillDef).Level = modExt.skillLevel;
+                        }
+                    }
+                }
+
             }
 
 

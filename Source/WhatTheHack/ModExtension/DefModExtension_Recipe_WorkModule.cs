@@ -8,6 +8,7 @@ namespace WhatTheHack
 {
     public class DefModExtension_Recipe_WorkModule : DefModExtension
     {
-        public WorkTypeDef workType;
+        public List<WorkTypeDef> workTypes;
+        public int skillLevel = -1;
     }
 }
