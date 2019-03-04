@@ -24,7 +24,25 @@ namespace WhatTheHack.Harmony
     }
     
     
-    
+    [HarmonyPatch(typeof(Building_Bed), "get_AssigningCandidates")]
+    static class Building_Bed_AssigningCandidates
+    {
+        static bool Prefix(Building_Bed __instance, ref IEnumerable<Pawn> __result)
+        {
+            if(__instance is Building_BaseMechanoidPlatform)
+            {
+                Log.Message("calling AssigningCandidates for Building_BaseMechanoidPlatform");
+                if (!__instance.Spawned)
+                {
+                    __result = Enumerable.Empty<Pawn>();
+                }
+                Log.Message("called AssigningCandidates");
+                __result =  __instance.Map.mapPawns.AllPawns.Where((Pawn p) => p.IsHacked());
+                return false;
+            }
+            return true;
+        }
+    }
 
     //Patch is needed so mechanoids that are standing up can still have a "cur bed"
     [HarmonyPatch(typeof(Building_Bed), "GetCurOccupant")]

@@ -134,9 +134,14 @@ namespace WhatTheHack.Harmony
             List<Thing> thingList = p.Position.GetThingList(p.Map);
             foreach (Thing thing in thingList)
             {
-                if(thing is Building_HackingTable || thing is Building_BaseMechanoidPlatform)
+                if(thing is Building_HackingTable hackingTable && p.Position == hackingTable.GetSleepingSlotPos(Building_HackingTable.SLOTINDEX))
                 {
                     __result = (Building_Bed) thing;
+                    return false;
+                }
+                if(thing is Building_BaseMechanoidPlatform platform && p.Position == platform.GetSleepingSlotPos(Building_BaseMechanoidPlatform.SLOTINDEX))
+                {
+                    __result = (Building_Bed)thing;
                     return false;
                 }
             }

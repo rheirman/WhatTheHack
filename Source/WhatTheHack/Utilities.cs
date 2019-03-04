@@ -133,17 +133,15 @@ namespace WhatTheHack
                 if (b is Building_BaseMechanoidPlatform platform &&
                 !b.IsBurning() &&
                 !b.IsForbidden(pawn) &&
-                pawn.CanReserve(b))
+                pawn.CanReserve(b) &&
+                (pawn.ownership.OwnedBed == null && platform.owners.NullOrEmpty() || platform.owners.Contains(pawn)))
                 {
                     CompFlickable flickable = platform.TryGetComp<CompFlickable>();
                     if(flickable != null && !flickable.SwitchIsOn)
                     {
                         return false;
                     }
-                    if (platform.GetCurOccupant(Building_BaseMechanoidPlatform.SLOTINDEX) == null)
-                    {
-                        return true;
-                    }
+                    return true;
                 }
                 return false;
             });

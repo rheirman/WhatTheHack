@@ -20,35 +20,36 @@ namespace WhatTheHack.Jobs
         }
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
+            Log.Message("TryMakePreToilReservations called");
             if (pawn.HasReserved(this.RestingPlace))
             {
-                Log.Message("pawn had already reserved bed");
+                Log.Message("Had already reserved target");
                 return true;
             }
-
-            if (!pawn.CanReserve(RestingPlace))
-            {
-                Log.Message("pawn can't reserve resting place");
-            }
             //pawn.reserve
-            return this.pawn.Reserve(this.RestingPlace, this.job, 1, -1, null);
+            bool result = this.pawn.Reserve(this.RestingPlace, this.job, 1, -1, null);
+            Log.Message("TryMakePreToilReservations result: " + result);
+            return result;
         }
-
+        
         protected override IEnumerable<Toil> MakeNewToils()
         {
+            Log.Message("MakeNewToils called!");
+            //this.AddFinishAction(new Action(delegate { Log.Message("finish action called for job!");  }));
             this.FailOnDespawnedOrNull(TargetIndex.A);
-            Toil goToPlatform = Toils_Bed.GotoBed(TargetIndex.A);
-            yield return goToPlatform;
-            
+            yield return Toils_Bed.ClaimBedIfNonMedical(TargetIndex.A);
+            yield return Toils_Bed.GotoBed(TargetIndex.A);
+
+            //goToPlatform.AddPreInitAction(new Action(delegate { Log.Message("first toil pre-initaction"); }));
             Toil toil = new Toil();
             toil.defaultCompleteMode = ToilCompleteMode.Never;
             toil.initAction = delegate
             {
+                Log.Message("InitAction called for mech");
                 if ((pawn.health.hediffSet.HasNaturallyHealingInjury() || pawn.OnHackingTable()))
                 {
                     pawn.jobs.posture = PawnPosture.LayingInBed;
                 }
-
                 this.job.expiryInterval = 50;
                 this.job.checkOverrideOnExpire = true;
                 pawn.ClearAllReservations();
@@ -56,6 +57,14 @@ namespace WhatTheHack.Jobs
             };
             toil.tickAction = delegate
             {
+                
+                
+                if (pawn.ownership == null || pawn.ownership.OwnedBed != RestingPlace)
+                {
+                   ReadyForNextToil();
+                }
+                
+                
                 if ((pawn.health.hediffSet.HasNaturallyHealingInjury() || (pawn.OnHackingTable() && HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn))))
                 {
                     pawn.jobs.posture = PawnPosture.LayingInBed;
@@ -66,6 +75,7 @@ namespace WhatTheHack.Jobs
                     RotateToSouth();
                 }
             };
+            //toil.FailOn(() => pawn.ownership.OwnedBed != RestingPlace);
             yield return toil;
 
         }

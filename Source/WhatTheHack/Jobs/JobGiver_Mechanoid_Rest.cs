@@ -14,6 +14,7 @@ namespace WhatTheHack.Jobs
         protected override Job TryGiveJob(Pawn pawn)
         {
             Job job = null;
+            Log.Message("TryGiveJob called for: " + pawn.Name);
             if (pawn.Faction == Faction.OfPlayer &&
                 pawn.IsHacked() &&
                 !pawn.IsActivated() &&
@@ -28,17 +29,19 @@ namespace WhatTheHack.Jobs
                     Building_BaseMechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(pawn, pawn);
                     if (closestAvailablePlatform != null && pawn.CanReserve(closestAvailablePlatform))
                     {
-                        if (pawn.CurJob != null)
+                        if(pawn.CurJob != null)
                         {
                             pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
                         }
                         job = new Job(WTH_DefOf.WTH_Mechanoid_Rest, closestAvailablePlatform);
                     }
+
                 }
 
             }
             if(job != null)
             {
+                Log.Message("created new job!");
                 if(pawn.CurJob != null && pawn.CurJob.def != WTH_DefOf.WTH_Mechanoid_Rest)
                 {
                     pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);

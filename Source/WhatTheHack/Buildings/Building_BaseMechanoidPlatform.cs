@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 
@@ -33,6 +34,38 @@ namespace WhatTheHack.Buildings
                     curOccupant.jobs.StartJob(new Job(WTH_DefOf.WTH_Mechanoid_Rest, this) {count = 1}, JobCondition.InterruptForced);
                 }
             }
+        }
+        /*
+        public new IEnumerable<Pawn> AssigningCandidates
+        {
+            get
+            {
+                if (!base.Spawned)
+                {
+                    return Enumerable.Empty<Pawn>();
+                }
+                Log.Message("called AssigningCandidates");
+                return base.Map.mapPawns.AllPawns.Where((Pawn p) => p.IsHacked());
+            }
+        }
+        */
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            foreach(Gizmo gizmo in base.GetGizmos())
+            {
+                yield return gizmo;
+            }
+            yield return new Command_Action
+            {
+                defaultLabel = "CommandBedSetOwnerLabel".Translate(),
+                icon = ContentFinder<Texture2D>.Get("UI/Commands/AssignOwner", true),
+                defaultDesc = "WTH_Gizmo_SetMechanoidOwner_Description".Translate(),
+                action = delegate
+                {
+                    Find.WindowStack.Add(new Dialog_AssignBuildingOwner(this));
+                },
+                hotKey = KeyBindingDefOf.Misc3
+            };
         }
 
     }

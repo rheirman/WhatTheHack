@@ -31,7 +31,11 @@ namespace WhatTheHack.Harmony
         {
             AddBatteryHediffIfNeeded(newThing);
             RemoveConditionalComps(newThing);
-            NameUnnamedMechs(newThing);
+            if (respawningAfterLoad)
+            {
+                NameUnnamedMechs(newThing);
+                AddOwnershipIfNeeded(newThing);
+            }
             if(newThing.def == WTH_DefOf.WTH_TableMechanoidWorkshop)
             {
                 LessonAutoActivator.TeachOpportunity(WTH_DefOf.WTH_Modification, OpportunityType.Important);
@@ -58,7 +62,7 @@ namespace WhatTheHack.Harmony
             }
         }
 
-        //For backwards compatbility, add the battery hediff to hacked mechs without one on load. 
+        //For compatbility, add the battery hediff to hacked mechs without one on load. 
         private static void AddBatteryHediffIfNeeded(Thing newThing)
         {
             if (newThing is Pawn pawn && pawn.IsHacked())
@@ -69,6 +73,20 @@ namespace WhatTheHack.Harmony
                 }
             }
         }
+
+        //For compatbility, add the battery hediff to hacked mechs without one on load. 
+        private static void AddOwnershipIfNeeded(Thing newThing)
+        {
+            if (newThing is Pawn pawn && pawn.IsHacked())
+            {
+                if(pawn.ownership == null)
+                {
+                    Log.Message("added ownership for pawn: " + pawn.Name);
+                    pawn.ownership = new Pawn_Ownership(pawn);            
+                }
+            }
+        }
+
 
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {

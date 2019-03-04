@@ -174,7 +174,7 @@ namespace WhatTheHack
         }
         public static bool OnBaseMechanoidPlatform(this Pawn pawn)
         {
-            if (pawn.CurrentBed() != null && pawn.CurrentBed() is Building_BaseMechanoidPlatform)
+            if (pawn.CurrentBed() != null && pawn.CurrentBed() is Building_BaseMechanoidPlatform && pawn.CurrentBed() == pawn.ownership.OwnedBed)
             {
                 return true;
             }

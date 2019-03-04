@@ -328,6 +328,7 @@ You can repeat this operation as many times as needed as a means to get more mec
 	<WTH_Gizmo_WorkThreshold_Label>Min. power work</WTH_Gizmo_WorkThreshold_Label>
 	<WTH_Gizmo_WorkThreshold_Description>Configure the minimum percentage of power the mechanoid needs to have before it is allowed to leave its platform to start working.</WTH_Gizmo_WorkThreshold_Description>
 	<WTH_SetCanStartWorkThreshold>Power needed to start work: {0} %</WTH_SetCanStartWorkThreshold>
+	<WTH_Gizmo_SetMechanoidOwner_Description>Assign this platform to be owned by a specific mechanoid</WTH_Gizmo_SetMechanoidOwner_Description>
 	<!-- end added in v1.2 -->
 	
 	<WTH_Gizmo_RemoteControlActivate_Label>Activate</WTH_Gizmo_RemoteControlActivate_Label>
