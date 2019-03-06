@@ -9,5 +9,6 @@ namespace WhatTheHack
     public class DefModextension_Hediff : DefModExtension
     {
         public ThingDef extraButcherProduct = null;
+        public bool hasAbility = false;
     }
 }

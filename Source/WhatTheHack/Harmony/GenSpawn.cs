@@ -81,7 +81,6 @@ namespace WhatTheHack.Harmony
             {
                 if(pawn.ownership == null)
                 {
-                    Log.Message("added ownership for pawn: " + pawn.Name);
                     pawn.ownership = new Pawn_Ownership(pawn);            
                 }
             }

@@ -36,6 +36,12 @@
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
   <JobDef>
+    <defName>WTH_Ability_SelfDestruct</defName>
+    <driverClass>WhatTheHack.Jobs.JobDriver_Ability_SelfDestruct</driverClass>
+    <reportString>Using self-destruct ability</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  <JobDef>
     <defName>WTH_PerformMaintenance</defName>
     <driverClass>WhatTheHack.Jobs.JobDriver_PerformMaintenance</driverClass>
     <reportString>Performing maintenance</reportString>

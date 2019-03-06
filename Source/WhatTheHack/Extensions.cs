@@ -99,6 +99,11 @@ namespace WhatTheHack
             }
             return false;
         }
+        public static bool HasMechAbility(this Pawn pawn)
+        {
+            return pawn.health.hediffSet.hediffs.FirstOrDefault((Hediff h) => h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.hasAbility) != null;
+        }
+
 
         public static BodyPartRecord TryGetReactor(this Pawn pawn)
         {

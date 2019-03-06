@@ -31,12 +31,10 @@ namespace WhatTheHack.Harmony
         {
             if(__instance is Building_BaseMechanoidPlatform)
             {
-                Log.Message("calling AssigningCandidates for Building_BaseMechanoidPlatform");
                 if (!__instance.Spawned)
                 {
                     __result = Enumerable.Empty<Pawn>();
                 }
-                Log.Message("called AssigningCandidates");
                 __result =  __instance.Map.mapPawns.AllPawns.Where((Pawn p) => p.IsHacked());
                 return false;
             }

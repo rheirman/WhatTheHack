@@ -120,7 +120,6 @@ namespace WhatTheHack.Harmony
             {
                 return;
             }
-
             ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
             if (pawnData.shouldExplodeNow)
             {
@@ -129,6 +128,7 @@ namespace WhatTheHack.Harmony
                 BodyPartRecord reactorPart = pawn.health.hediffSet.GetNotMissingParts().FirstOrDefault((BodyPartRecord r) => r.def.defName == "Reactor");
                 pawn.TakeDamage(new DamageInfo(DamageDefOf.Bomb, reactorPart.def.GetMaxHealth(pawn), 9999, -1, null, reactorPart));
                 pawnData.shouldExplodeNow = false;
+                return;
             }
 
 
@@ -151,7 +151,6 @@ namespace WhatTheHack.Harmony
             {
                 return;
             }
-
             Building_BaseMechanoidPlatform platform = (Building_BaseMechanoidPlatform)pawn.CurrentBed();
 
             if (platform.RepairActive && __instance.hediffSet.HasNaturallyHealingInjury() && !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing))
@@ -184,6 +183,7 @@ namespace WhatTheHack.Harmony
 
                 RechargeMechanoid(pawn, powerNeed, powerPerTick);
             }
+
         }
 
         private static void RegainWeapon(Pawn pawn)

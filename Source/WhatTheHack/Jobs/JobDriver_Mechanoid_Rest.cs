@@ -20,21 +20,17 @@ namespace WhatTheHack.Jobs
         }
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            Log.Message("TryMakePreToilReservations called");
             if (pawn.HasReserved(this.RestingPlace))
             {
-                Log.Message("Had already reserved target");
                 return true;
             }
             //pawn.reserve
             bool result = this.pawn.Reserve(this.RestingPlace, this.job, 1, -1, null);
-            Log.Message("TryMakePreToilReservations result: " + result);
             return result;
         }
         
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            Log.Message("MakeNewToils called!");
             //this.AddFinishAction(new Action(delegate { Log.Message("finish action called for job!");  }));
             this.FailOnDespawnedOrNull(TargetIndex.A);
             yield return Toils_Bed.ClaimBedIfNonMedical(TargetIndex.A);
@@ -45,7 +41,6 @@ namespace WhatTheHack.Jobs
             toil.defaultCompleteMode = ToilCompleteMode.Never;
             toil.initAction = delegate
             {
-                Log.Message("InitAction called for mech");
                 if ((pawn.health.hediffSet.HasNaturallyHealingInjury() || pawn.OnHackingTable()))
                 {
                     pawn.jobs.posture = PawnPosture.LayingInBed;

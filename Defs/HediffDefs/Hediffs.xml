@@ -150,7 +150,6 @@
 				<capMods>
 					<li>
 					  <capacity>Moving</capacity>
-					  <offset>-0.1</offset>
 					</li>
 				</capMods>  
 			</li>
@@ -184,6 +183,11 @@
 		<label>self destruct module installed</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<hasAbility>true</hasAbility>
+			</li>
+		</modExtensions>
 	  </HediffDef>
 	  
 	  
@@ -195,6 +199,7 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_RepairModule</extraButcherProduct>
+				<hasAbility>true</hasAbility>
 			</li>
 		</modExtensions>
 	  </HediffDef>
@@ -255,6 +260,7 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_RepairArm</extraButcherProduct>
+				<hasAbility>true</hasAbility>
 			</li>
 		</modExtensions>
 	  </HediffDef>

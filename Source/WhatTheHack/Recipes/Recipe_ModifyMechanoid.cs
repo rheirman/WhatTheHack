@@ -38,7 +38,6 @@ namespace WhatTheHack.Recipes
         {
             if(pawn.BillStack.Bills.Count <= 1)
             {
-                Log.Message("interrupting job for mech!");
                 pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
             }
         }

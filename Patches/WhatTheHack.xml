@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
+<Operation Class = "PatchOperationInsert">
+	<xpath>*/DutyDef[defName="AssaultColony"]/thinkNode/subNodes/li[1]</xpath>
+	<value>
+		<li Class="WhatTheHack.ThinkTree.ThinkNode_ConditionalMechanoidAbility">
+			<subNodes>
+				<li Class="WhatTheHack.Jobs.JobGiver_Mechanoid_Ability"/>
+			</subNodes>
+		</li>
+	</value>
+</Operation>
+
 <Operation Class ="PatchOperationInsert">
 	<xpath>(*/ThinkTreeDef[defName = "Mechanoid"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_Subtree"])[1]</xpath>
 	<value>

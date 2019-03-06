@@ -39,7 +39,6 @@ namespace WhatTheHack.Harmony
                 d2.sortable = true;
                 d2.modContentPack = def.modContentPack;
                 workTable.columns.Insert(workTable.columns.FindIndex((PawnColumnDef x) => x.Worker is PawnColumnWorker_CopyPasteWorkPriorities) + 1, d2);
-                Log.Message("adding wokType: " + def.defName);
                 yield return d2;
             }
         }

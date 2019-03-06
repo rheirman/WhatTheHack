@@ -15,16 +15,24 @@ namespace WhatTheHack.Jobs
         {
             return true;
         }
+
+        private Pawn TargetPawn
+        {
+            get
+            {
+                return (Pawn)TargetA;
+            }
+        }
         
         protected override IEnumerable<Toil> MakeNewToils()
         {
             if(TargetA != null)
             {
-                this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
-                this.FailOnNotCasualInterruptible(TargetIndex.A);
-                this.FailOn(() => pawn.Dead);
+                //this.FailOnDespawnedOrNull(TargetIndex.A);
+                //this.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
+                //this.FailOn(() => pawn.Dead);
                 yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
-                if (TargetA != pawn)
+                if (TargetA != pawn && !TargetPawn.Faction.HostileTo(pawn.Faction))
                 {
                     yield return Toils_General.WaitWith(TargetIndex.A, job.count, true, true);
                 }
