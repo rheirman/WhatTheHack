@@ -114,7 +114,7 @@ namespace WhatTheHack.Harmony
             modules.Add(WTH_DefOf.WTH_TurretModule);
             modules.Add(WTH_DefOf.WTH_VanometricModule);
             modules.Add(WTH_DefOf.WTH_BatteryExpansionModule);
-            //modules.Add(WTH_DefOf.WTH_RepairModule);
+            modules.Add(WTH_DefOf.WTH_RepairModule);
             modules.Add(WTH_DefOf.WTH_SelfDestruct);
 
 
@@ -143,6 +143,14 @@ namespace WhatTheHack.Harmony
                     comp.MountToPawn(mechanoid);
                 }
                 mechanoid.health.AddHediff(hediff);
+                if (hediff == WTH_DefOf.WTH_RepairModule)
+                {
+                    mechanoid.InitializeComps();
+                    if(mechanoid.TryGetComp<CompRefuelable>() is CompRefuelable comp)
+                    {
+                        Traverse.Create(comp).Field("fuel").SetValue(comp.Props.fuelCapacity);
+                    }
+                }
             }
         }
         //do nothing

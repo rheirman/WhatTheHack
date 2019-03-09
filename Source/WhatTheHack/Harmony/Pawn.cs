@@ -312,8 +312,10 @@ namespace WhatTheHack.Harmony
         {
             Need_Power powerNeed = pawn.needs.TryGetNeed<Need_Power>();
 
-            float powerDrain = 10f;
-            bool needsMorePower = powerNeed.CurLevel < powerDrain;
+            JobDef jobDef = WTH_DefOf.WTH_Ability_SelfDestruct;
+            DefModExtension_Ability modExt = jobDef.GetModExtension<DefModExtension_Ability>();
+
+            bool needsMorePower = powerNeed.CurLevel < modExt.powerDrain;
             bool notActicated = !pawn.IsActivated();
             bool isDisabled = needsMorePower || notActicated;
             string disabledReason = "";
@@ -325,7 +327,7 @@ namespace WhatTheHack.Harmony
                 }
                 else if (needsMorePower)
                 {
-                    disabledReason = "WTH_Reason_NeedsMorePower".Translate(new object[] { powerDrain });
+                    disabledReason = "WTH_Reason_NeedsMorePower".Translate(new object[] { modExt.powerDrain });
                 }
             }
 
@@ -338,20 +340,8 @@ namespace WhatTheHack.Harmony
                 disabledReason = disabledReason,
                 action = delegate
                 {
-                    Job job = new Job(WTH_DefOf.WTH_Ability, pawn)
-                    {
-                        count = 150,
-                        playerForced = true                       
-                    };
+                    Job job = new Job(WTH_DefOf.WTH_Ability_SelfDestruct, pawn);
                     pawn.jobs.StartJob(job, JobCondition.InterruptForced);
-                    pawn.jobs.curDriver.AddFinishAction(delegate
-                    {
-                        if (pawn.jobs.curDriver is JobDriver_Ability jobDriver && !pawn.Dead && jobDriver.finished)
-                        {
-                            powerNeed.CurLevel -= powerDrain;
-                            pawnData.shouldExplodeNow = true;
-                        }
-                    });
                 }
             };
             return gizmo;
@@ -362,12 +352,12 @@ namespace WhatTheHack.Harmony
         {
             CompRefuelable compRefuelable = __instance.GetComp<CompRefuelable>();
             Need_Power powerNeed = __instance.needs.TryGetNeed<Need_Power>();
+            JobDef jobDef = WTH_DefOf.WTH_Ability_Repair;
+            DefModExtension_Ability modExt = jobDef.GetModExtension<DefModExtension_Ability>();
 
-            float powerDrain = 40f;
-            float fuelConsumption = 5f;
             bool alreadyRepairing = __instance.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing);
-            bool needsMorePower = powerNeed.CurLevel < powerDrain;
-            bool needsMoreFuel = compRefuelable.Fuel < fuelConsumption;
+            bool needsMorePower = powerNeed.CurLevel < modExt.powerDrain;
+            bool needsMoreFuel = compRefuelable.Fuel < modExt.fuelDrain;
             bool notActicated = !__instance.IsActivated();
             bool noDamage = !__instance.health.hediffSet.HasNaturallyHealingInjury();
             bool isDisabled = alreadyRepairing || needsMorePower || needsMoreFuel || notActicated || noDamage;
@@ -388,11 +378,11 @@ namespace WhatTheHack.Harmony
                 }
                 else if (needsMorePower)
                 {
-                    disabledReason = "WTH_Reason_NeedsMorePower".Translate(new object[] {powerDrain});
+                    disabledReason = "WTH_Reason_NeedsMorePower".Translate(new object[] { modExt.powerDrain });
                 }
                 else if (needsMoreFuel)
                 {
-                    disabledReason = "WTH_Reason_NeedsMoreFuel".Translate(new object[] { fuelConsumption });
+                    disabledReason = "WTH_Reason_NeedsMoreFuel".Translate(new object[] { modExt.fuelDrain });
                 }
 
             }
@@ -406,7 +396,8 @@ namespace WhatTheHack.Harmony
                 disabledReason = disabledReason,
                 action = delegate
                 {
-                    StartRepairJob(__instance, __instance, compRefuelable, powerNeed, powerDrain, fuelConsumption, 300);
+                    Job job = new Job(WTH_DefOf.WTH_Ability_Repair, __instance);
+                    __instance.jobs.StartJob(job, JobCondition.InterruptForced);
                 }
             };
             return gizmo;
@@ -416,11 +407,11 @@ namespace WhatTheHack.Harmony
             CompRefuelable compRefuelable = __instance.GetComp<CompRefuelable>();
             Need_Power powerNeed = __instance.needs.TryGetNeed<Need_Power>();
 
-            float powerDrain = 40f; //TODO store somewhere else
-            float fuelConsumption = 5f;//TODO store somewhere else
+            JobDef jobDef = WTH_DefOf.WTH_Ability_Repair;
+            DefModExtension_Ability modExt = jobDef.GetModExtension<DefModExtension_Ability>();
             bool alreadyRepairing = __instance.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing);
-            bool needsMorePower = powerNeed.CurLevel < powerDrain;
-            bool needsMoreFuel = compRefuelable.Fuel < fuelConsumption;
+            bool needsMorePower = powerNeed.CurLevel < modExt.powerDrain;
+            bool needsMoreFuel = compRefuelable.Fuel < modExt.fuelDrain;
             bool notActicated = !__instance.IsActivated();
 
             bool isDisabled = needsMorePower || needsMoreFuel || notActicated;
@@ -429,11 +420,11 @@ namespace WhatTheHack.Harmony
             {
                 if (needsMorePower)
                 {
-                    disabledReason = "WTH_Reason_NeedsMorePower".Translate(new object[] { powerDrain });
+                    disabledReason = "WTH_Reason_NeedsMorePower".Translate(new object[] { modExt.powerDrain });
                 }
                 else if (needsMoreFuel)
                 {
-                    disabledReason = "WTH_Reason_NeedsMoreFuel".Translate(new object[] { fuelConsumption });
+                    disabledReason = "WTH_Reason_NeedsMoreFuel".Translate(new object[] { modExt.fuelDrain });
                 }
                 else if (notActicated)
                 {
@@ -452,7 +443,8 @@ namespace WhatTheHack.Harmony
                 action = delegate(Thing target) {
                     if (target is Pawn mech)
                     {
-                        StartRepairJob(__instance, mech, compRefuelable, powerNeed, powerDrain, fuelConsumption, 400);
+                        Job job = new Job(WTH_DefOf.WTH_Ability_Repair, target);
+                        __instance.jobs.StartJob(job, JobCondition.InterruptForced);
                     }
 
                 }
@@ -495,23 +487,6 @@ namespace WhatTheHack.Harmony
         }
 
 
-        private static void StartRepairJob(Pawn pawn, Pawn target, CompRefuelable compRefuelable, Need_Power powerNeed, float powerDrain, float fuelConsumption, int duration)
-        {
-            Job job = new Job(WTH_DefOf.WTH_Ability, target)
-            {
-                count = duration,
-            };
-            pawn.jobs.StartJob(job, JobCondition.InterruptForced, null, true);
-            pawn.jobs.curDriver.AddFinishAction(delegate
-            {
-                if (pawn.jobs.curDriver is JobDriver_Ability jobDriver && !pawn.Dead && jobDriver.finished)
-                {
-                    compRefuelable.ConsumeFuel(fuelConsumption * Base.repairConsumptionModifier);
-                    powerNeed.CurLevel -= powerDrain;
-                    target.health.AddHediff(WTH_DefOf.WTH_Repairing);
-                }
-            });
-        }
 
         private static TargetingParameters GetTargetingParametersForRepairing()
         {

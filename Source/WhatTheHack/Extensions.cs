@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
+using Verse.AI;
 using Verse.AI.Group;
 using WhatTheHack.Buildings;
 using WhatTheHack.Needs;
@@ -89,16 +90,6 @@ namespace WhatTheHack
             }
             return null;
         }
-        public static bool IsPeaceful(this Pawn pawn)
-        {
-            ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
-            if (store != null)
-            {
-                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
-                return pawnData.isPeaceful;
-            }
-            return false;
-        }
         public static bool HasMechAbility(this Pawn pawn)
         {
             return pawn.health.hediffSet.hediffs.FirstOrDefault((Hediff h) => h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.hasAbility) != null;
@@ -169,6 +160,15 @@ namespace WhatTheHack
             return false;
         }
         */
+
+        public static void FailOnPlatformNoLongerUsable(this Toil toil, TargetIndex bedIndex)
+        {
+            toil.FailOnDespawnedOrNull(bedIndex);
+            toil.FailOn(() => ((Building_Bed)toil.actor.CurJob.GetTarget(bedIndex).Thing).IsBurning());
+            toil.FailOn(() => !HealthAIUtility.ShouldSeekMedicalRest(toil.actor) && !HealthAIUtility.ShouldSeekMedicalRestUrgent(toil.actor) && ((Building_Bed)toil.actor.CurJob.GetTarget(bedIndex).Thing).Medical);
+            toil.FailOn(() => toil.actor.IsColonist && !toil.actor.CurJob.ignoreForbidden && !toil.actor.Downed && toil.actor.CurJob.GetTarget(bedIndex).Thing.IsForbidden(toil.actor));
+        }
+
         public static bool OnHackingTable(this Pawn pawn)
         { 
             if (pawn.CurrentBed() != null && pawn.CurrentBed() is Building_HackingTable && HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn))

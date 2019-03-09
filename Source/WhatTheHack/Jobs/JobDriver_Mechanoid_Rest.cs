@@ -33,8 +33,14 @@ namespace WhatTheHack.Jobs
         {
             //this.AddFinishAction(new Action(delegate { Log.Message("finish action called for job!");  }));
             this.FailOnDespawnedOrNull(TargetIndex.A);
-            yield return Toils_Bed.ClaimBedIfNonMedical(TargetIndex.A);
-            yield return Toils_Bed.GotoBed(TargetIndex.A);
+            if(RestingPlace is Building_BaseMechanoidPlatform)
+            {
+                Log.Message("RestingPlace is Building_BaseMechanoidPlatform");
+                yield return Toils_Bed.ClaimBedIfNonMedical(TargetIndex.A);
+            }
+
+            yield return GoToPlatform(TargetIndex.A);
+            
 
             //goToPlatform.AddPreInitAction(new Action(delegate { Log.Message("first toil pre-initaction"); }));
             Toil toil = new Toil();
@@ -51,14 +57,11 @@ namespace WhatTheHack.Jobs
                 pawn.Position = RestingPlace.GetSleepingSlotPos(RestingPlace is Building_HackingTable ? Building_HackingTable.SLOTINDEX : Building_BaseMechanoidPlatform.SLOTINDEX);
             };
             toil.tickAction = delegate
-            {
-                
-                
-                if (pawn.ownership == null || pawn.ownership.OwnedBed != RestingPlace)
+            {             
+                if (RestingPlace is Building_BaseMechanoidPlatform && pawn.ownership.OwnedBed != RestingPlace)
                 {
                    ReadyForNextToil();
-                }
-                
+                }          
                 
                 if ((pawn.health.hediffSet.HasNaturallyHealingInjury() || (pawn.OnHackingTable() && HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn))))
                 {
@@ -70,10 +73,44 @@ namespace WhatTheHack.Jobs
                     RotateToSouth();
                 }
             };
-            //toil.FailOn(() => pawn.ownership.OwnedBed != RestingPlace);
             yield return toil;
 
         }
+
+
+        public static Toil GoToPlatform(TargetIndex bedIndex)
+        {
+            Toil gotoBed = new Toil();
+            gotoBed.initAction = delegate
+            {
+                Pawn actor = gotoBed.actor;
+                Building_Bed bed = (Building_Bed)actor.CurJob.GetTarget(bedIndex).Thing;
+                IntVec3 bedSleepingSlotPosFor = RestUtility.GetBedSleepingSlotPosFor(actor, bed);
+                if (actor.Position == bedSleepingSlotPosFor)
+                {
+                    actor.jobs.curDriver.ReadyForNextToil();
+                }
+                else
+                {
+                    actor.pather.StartPath(bedSleepingSlotPosFor, PathEndMode.OnCell);
+                }
+            };
+            gotoBed.tickAction = delegate
+            {
+                Pawn actor = gotoBed.actor;
+                Building_Bed building_Bed = (Building_Bed)actor.CurJob.GetTarget(bedIndex).Thing;
+                Pawn curOccupantAt = building_Bed.GetCurOccupantAt(actor.pather.Destination.Cell);
+                if (curOccupantAt != null && curOccupantAt != actor)
+                {
+                    actor.pather.StartPath(RestUtility.GetBedSleepingSlotPosFor(actor, building_Bed), PathEndMode.OnCell);
+                }
+            };
+            gotoBed.defaultCompleteMode = ToilCompleteMode.PatherArrival;
+            gotoBed.FailOnPlatformNoLongerUsable(bedIndex);
+            //gotoBed.FailOnBedNoLongerUsable(bedIndex);
+            return gotoBed;
+        }
+
 
         private void RotateToSouth()
         {

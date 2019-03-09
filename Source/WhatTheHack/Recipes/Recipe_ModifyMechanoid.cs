@@ -36,7 +36,20 @@ namespace WhatTheHack.Recipes
 
         protected override void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
-            if(pawn.BillStack.Bills.Count <= 1)
+            if (this.recipe.GetModExtension<DefModExtension_Recipe>() is DefModExtension_Recipe extension && extension.addsAdditionalHediff != null)
+            {
+                BodyPartRecord additionalHediffBodyPart = null;
+                if (extension.additionalHediffBodyPart != null)
+                {
+                    additionalHediffBodyPart = pawn.health.hediffSet.GetNotMissingParts().FirstOrDefault((BodyPartRecord bpr) => bpr.def == extension.additionalHediffBodyPart);
+                }
+                pawn.health.AddHediff(extension.addsAdditionalHediff, additionalHediffBodyPart);
+            }
+            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule) && pawn.GetComp<CompRefuelable>() == null)
+            {
+                pawn.InitializeComps();
+            }
+            if (pawn.BillStack.Bills.Count <= 1)
             {
                 pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
             }

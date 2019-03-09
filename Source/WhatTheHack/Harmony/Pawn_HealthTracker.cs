@@ -120,14 +120,9 @@ namespace WhatTheHack.Harmony
             {
                 return;
             }
-            ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
-            if (pawnData.shouldExplodeNow)
+            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_SelfDestructed))
             {
-                GenExplosion.DoExplosion(pawn.Position, pawn.Map, 4.5f, DamageDefOf.Bomb, pawn, DamageDefOf.Bomb.defaultDamage, DamageDefOf.Bomb.defaultArmorPenetration, DamageDefOf.Bomb.soundExplosion, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
-                pawn.jobs.startingNewJob = false;
-                BodyPartRecord reactorPart = pawn.health.hediffSet.GetNotMissingParts().FirstOrDefault((BodyPartRecord r) => r.def.defName == "Reactor");
-                pawn.TakeDamage(new DamageInfo(DamageDefOf.Bomb, reactorPart.def.GetMaxHealth(pawn), 9999, -1, null, reactorPart));
-                pawnData.shouldExplodeNow = false;
+                SelfDestruct(pawn);
                 return;
             }
 
@@ -184,6 +179,23 @@ namespace WhatTheHack.Harmony
                 RechargeMechanoid(pawn, powerNeed, powerPerTick);
             }
 
+        }
+
+        private static void SelfDestruct(Pawn pawn)
+        {
+            GenExplosion.DoExplosion(pawn.Position, pawn.Map, 4.5f, DamageDefOf.Bomb, pawn, DamageDefOf.Bomb.defaultDamage, DamageDefOf.Bomb.defaultArmorPenetration, DamageDefOf.Bomb.soundExplosion, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+            pawn.jobs.startingNewJob = false;
+            BodyPartRecord reactorPart = pawn.health.hediffSet.GetNotMissingParts().FirstOrDefault((BodyPartRecord r) => r.def.defName == "Reactor");
+            int guard = 0;
+            while (!pawn.Dead && guard < 10)
+            {
+                pawn.TakeDamage(new DamageInfo(DamageDefOf.Bomb, reactorPart.def.GetMaxHealth(pawn), 9999, -1, null, reactorPart));
+                guard++;
+            }
+            if (!pawn.Dead)
+            {
+                Log.Warning("Pawn " + pawn.Name + " should have died from self destruct but didn't. This should never happen, so please report this to the author of What the Hack!?");
+            }
         }
 
         private static void RegainWeapon(Pawn pawn)

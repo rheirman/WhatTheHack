@@ -8,6 +8,9 @@ using Verse.AI;
 
 namespace WhatTheHack.Jobs
 {
+    /**
+     * This class is deprecated but removing it would cause old saves to break.
+     **/
     class JobDriver_Ability : JobDriver
     {
         public bool finished = false;

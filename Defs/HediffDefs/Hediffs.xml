@@ -266,6 +266,12 @@
 	  </HediffDef>
 	  
 	  <HediffDef>
+		<defName>WTH_SelfDestructed</defName>
+		<label>exploded</label>
+		<isBad>true</isBad>
+	  </HediffDef>
+	  
+	  <HediffDef>
 		<defName>WTH_Repairing</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>charged repairing mechanites</label>
@@ -278,15 +284,15 @@
 			</li>
 		</comps>
 		<stages>
-        <li>
-			<capMods>
-				<li>
-				  <capacity>Moving</capacity>
-				  <offset>-0.30</offset>
-				</li>
-			</capMods>  
-		</li>
-      </stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Moving</capacity>
+					  <offset>-0.1</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>
 	  
 	  </HediffDef>
 	  <!--

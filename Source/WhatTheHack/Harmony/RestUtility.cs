@@ -127,10 +127,14 @@ namespace WhatTheHack.Harmony
             {
                 return true;
             }
+            
+            
             if (p.jobs.curDriver != null && (p.CurJob.def != WTH_DefOf.WTH_Mechanoid_Rest))
             { 
                 return true;              
             }
+            
+            
             List<Thing> thingList = p.Position.GetThingList(p.Map);
             foreach (Thing thing in thingList)
             {

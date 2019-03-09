@@ -26,7 +26,7 @@ namespace WhatTheHack.Jobs
                 }
                 else{
                     Building_BaseMechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(pawn, pawn);
-                    if (closestAvailablePlatform != null && pawn.CanReserve(closestAvailablePlatform))
+                    if (!pawn.Downed && closestAvailablePlatform != null && pawn.CanReserve(closestAvailablePlatform))
                     {
                         if(pawn.CurJob != null)
                         {

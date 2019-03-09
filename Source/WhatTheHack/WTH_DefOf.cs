@@ -24,6 +24,7 @@ namespace WhatTheHack
         public static HediffDef WTH_Repairing;
         public static HediffDef WTH_RepairArm;
         public static HediffDef WTH_SelfDestruct;
+        public static HediffDef WTH_SelfDestructed;
         public static HediffDef WTH_TurretModule;
         public static HediffDef WTH_MountedTurret;
         public static HediffDef WTH_BatteryExpansionModule;
@@ -47,7 +48,8 @@ namespace WhatTheHack
         public static JobDef WTH_Mechanoid_Rest;
         public static JobDef WTH_ControlMechanoid;
         public static JobDef WTH_ControlMechanoid_Goto;
-        public static JobDef WTH_Ability;
+        //public static JobDef WTH_Ability;
+        public static JobDef WTH_Ability_Repair;
         public static JobDef WTH_Ability_SelfDestruct;
         public static JobDef WTH_PerformMaintenance;
         public static JobDef WTH_HackRogueAI;

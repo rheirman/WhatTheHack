@@ -35,20 +35,6 @@ namespace WhatTheHack.Buildings
                 }
             }
         }
-        /*
-        public new IEnumerable<Pawn> AssigningCandidates
-        {
-            get
-            {
-                if (!base.Spawned)
-                {
-                    return Enumerable.Empty<Pawn>();
-                }
-                Log.Message("called AssigningCandidates");
-                return base.Map.mapPawns.AllPawns.Where((Pawn p) => p.IsHacked());
-            }
-        }
-        */
         public override IEnumerable<Gizmo> GetGizmos()
         {
             foreach(Gizmo gizmo in base.GetGizmos())

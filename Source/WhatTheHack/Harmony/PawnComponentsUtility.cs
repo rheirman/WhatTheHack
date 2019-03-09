@@ -22,7 +22,6 @@ namespace WhatTheHack.Harmony
 
             if (flagIsCreatureMine && flagIsCreatureDraftable)
             {
-                //Log.Message("Patching "+ pawn.kindDef.ToString() + " with a draft controller and equipment tracker");
                 //If everything goes well, add drafter to the pawn 
                 pawn.drafter = new Pawn_DraftController(pawn);
             }

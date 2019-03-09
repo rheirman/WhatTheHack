@@ -59,9 +59,11 @@ namespace WhatTheHack.Recipes
         public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
             float learnfactor = 1f / recipe.surgerySuccessChanceFactor;
-            //Let random bad events happen when hacking fails
+
+            //We cap the combat power since some mods use extremely high combat power to prevent mechs from being spawned in raids. 
             float combatPowerCapped = pawn.kindDef.combatPower <= 10000 ? pawn.kindDef.combatPower : 300;
 
+            //Let random bad events happen when hacking fails
             if (CheckHackingFail(pawn, billDoer, part))
             {
                 learnfactor *= 0.5f;
@@ -81,18 +83,6 @@ namespace WhatTheHack.Recipes
             if(this.recipe.addsHediff != null)
             {
                 pawn.health.AddHediff(this.recipe.addsHediff, part, null);
-            }
-            if(this.recipe.GetModExtension<DefModExtension_Recipe>() is DefModExtension_Recipe extension && extension.addsAdditionalHediff != null){
-                BodyPartRecord additionalHediffBodyPart = null;
-                if(extension.additionalHediffBodyPart != null)
-                {
-                    additionalHediffBodyPart = pawn.health.hediffSet.GetNotMissingParts().FirstOrDefault((BodyPartRecord bpr) => bpr.def == extension.additionalHediffBodyPart);
-                }
-                pawn.health.AddHediff(extension.addsAdditionalHediff, additionalHediffBodyPart);
-            }
-            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule) && pawn.GetComp<CompRefuelable>() == null)
-            {
-                pawn.InitializeComps();
             }
             billDoer.skills.Learn(SkillDefOf.Crafting, combatPowerCapped * learnfactor, false);
             billDoer.skills.Learn(SkillDefOf.Intellectual, combatPowerCapped * learnfactor, false);

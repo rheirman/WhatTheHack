@@ -18,8 +18,7 @@ namespace WhatTheHack.Storage
         public bool isHacked = false;
         public bool canWorkNow = false;
         public bool isActive = false;
-        public bool isPeaceful = false;
-        public bool shouldExplodeNow = false;
+        public bool shouldExplodeNow = false;//obsolete. Still here for compatibility with old saves.
 
         public Pawn remoteControlLink = null;
         public Building_RogueAI controllingAI = null;
@@ -32,7 +31,6 @@ namespace WhatTheHack.Storage
         {
             Scribe_Values.Look(ref isHacked, "isHacked", false);
             Scribe_Values.Look(ref canWorkNow, "canWorkNow", false);
-            Scribe_Values.Look(ref isPeaceful, "isPeaceful", false);
             Scribe_Values.Look(ref shouldExplodeNow, "shouldExplodeNow", false);
             Scribe_Values.Look(ref isActive, "isActive", false);
             Scribe_References.Look(ref remoteControlLink, "remoteControlLink");

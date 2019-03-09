@@ -1,19 +1,22 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
 using Verse.AI;
+using WhatTheHack.Needs;
 
 namespace WhatTheHack.Jobs
 {
     class JobGiver_Mechanoid_Ability : ThinkNode_JobGiver
     {
+        float powerDrain = 40f; //Should store this globally. 
+        float fuelConsumption = 5f; //Should store this globally. 
         protected override Job TryGiveJob(Pawn pawn)
         {
             if(pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_SelfDestruct) && pawn.health.summaryHealth.SummaryHealthPercent < 0.5f)
             {
-                Log.Message("try giving self destruct job for mech!");
                 List <IAttackTarget> potentialTargetsFor = pawn.Map.attackTargetsCache.GetPotentialTargetsFor(pawn);
                 int min = int.MaxValue;
                 Thing targetFound = null;
@@ -35,11 +38,23 @@ namespace WhatTheHack.Jobs
                 {
                     Job job = new Job(WTH_DefOf.WTH_Ability_SelfDestruct, targetFound)
                     {
-                        count = 150,
+                        count = 150, //should store this in xml. 
                         playerForced = true
                     };
                     return job;
                 }
+            }
+            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule) &&
+                pawn.health.summaryHealth.SummaryHealthPercent < 0.8f &&
+                !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing) &&
+                pawn.TryGetComp<CompRefuelable>() is CompRefuelable comp &&
+                pawn.needs.TryGetNeed<Need_Power>() is Need_Power powerNeed &&
+                comp.Fuel >= fuelConsumption &&
+                powerNeed.CurLevel >= powerDrain
+                )
+            {
+                Job job = new Job(WTH_DefOf.WTH_Ability_Repair, pawn);
+                return job;
             }
             return null;
         }
