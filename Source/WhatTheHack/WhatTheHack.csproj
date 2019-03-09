@@ -79,6 +79,7 @@
     <Compile Include="Comps\CompProperties_DataLevel.cs" />
     <Compile Include="Comps\CompDataLevel.cs" />
     <Compile Include="Comps\CompProperties_Overlays.cs" />
+    <Compile Include="Harmony\PawnUIOverlay.cs" />
     <Compile Include="Harmony\Pawn_SkillTracker.cs" />
     <Compile Include="Jobs\Depricated\JobDriver_Ability.cs" />
     <Compile Include="Jobs\JobGiver_Mechanoid_Rest.cs" />

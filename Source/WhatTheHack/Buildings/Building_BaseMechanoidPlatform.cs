@@ -53,6 +53,5 @@ namespace WhatTheHack.Buildings
                 hotKey = KeyBindingDefOf.Misc3
             };
         }
-
     }
 }

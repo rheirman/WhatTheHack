@@ -162,7 +162,7 @@
       <ComponentIndustrial>6</ComponentIndustrial>
     </costList>
 	<rotatable>false</rotatable>
-
+    <drawGUIOverlay>True</drawGUIOverlay>
     <altitudeLayer>Building</altitudeLayer>
     <fillPercent>0.5</fillPercent>
     <useHitPoints>True</useHitPoints>
@@ -235,6 +235,7 @@
 		</costList>
 		<rotatable>false</rotatable>
 		<altitudeLayer>Building</altitudeLayer>
+		<drawGUIOverlay>True</drawGUIOverlay>
 		<fillPercent>0.5</fillPercent>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
