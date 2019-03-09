@@ -6,6 +6,7 @@ using System.Text;
 using Verse;
 using Verse.AI;
 using WhatTheHack.Buildings;
+using WhatTheHack.Storage;
 
 namespace WhatTheHack.Jobs
 {
@@ -49,6 +50,9 @@ namespace WhatTheHack.Jobs
                     this.pawn.ClearAllReservations();
                     HackingTable.TryAddPawnForModification(Takee, WTH_DefOf.WTH_HackMechanoid);
                     Takee.Position = HackingTable.GetSleepingSlotPos(Building_HackingTable.SLOTINDEX);
+                    ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(Takee);
+                    pawnData.isActive = false;
+                    pawnData.canWorkNow = false;
                 },
                 defaultCompleteMode = ToilCompleteMode.Instant
             };
