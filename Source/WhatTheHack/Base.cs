@@ -278,6 +278,7 @@ namespace WhatTheHack
                 r.ResolveReferences();
                 yield return r;
             }
+
         }
         private static void SetMechMarketValue()
         {

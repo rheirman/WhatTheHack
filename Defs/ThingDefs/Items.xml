@@ -210,6 +210,30 @@
     </thingCategories>
   </ThingDef>
   
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_ArmorModule</defName>
+    <label>armor module</label>
+    <description>Can be installed in a mechanoid. Increases the armor(blunt and sharp) of the mechanoid by 40% at the cost of 20% movement speed.</description>
+    <graphicData>
+      <texPath>Things/ArmorModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>7000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>1.2</Mass>
+      <Flammability>0.5</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
     
   <ThingDef ParentName="BodyPartBase">
     <defName>WTH_HaulingModule</defName>

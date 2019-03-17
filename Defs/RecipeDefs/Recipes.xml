@@ -4,7 +4,7 @@
 	<RecipeDef ParentName="SurgeryFlesh">
 		<defName>WTH_ExtractBrainData</defName>
 		<label>extract brain data</label>
-		<description>Extract all the data from a human brain using mechanoid technology. With current technologies, this cannot be done without destroying the brain. More intelligent pawns will yield more data.</description>
+		<description>Extract all the data from a human brain using mechanoid technology. As you might expect from mechanoid technology, the operation doesn't really take into account the well-being of the patient. In other words, this technique cannot be applied without destroying the brain of the patient. More intelligent pawns will yield more data.</description>
 		<workerClass>WhatTheHack.Recipes.Recipe_ExtractBrainData</workerClass>
 		<jobString>Extract brain data.</jobString>
 		<workAmount>3000</workAmount>
@@ -93,10 +93,10 @@
 		<li>
 			<filter>
 				<thingDefs>
-					<li>Plasteel</li>
+					<li>ComponentSpacer</li>
 				</thingDefs>
 			</filter>
-			<count>20</count>
+			<count>1</count>
 		</li>
 		<li>
 			<filter>
@@ -117,7 +117,7 @@
 	</ingredients>
 	<fixedIngredientFilter>
 		<thingDefs>
-			<li>Plasteel</li>
+			<li>ComponentSpacer</li>
 			<li>WTH_MechanoidChip</li>
 			<li>WTH_MechanoidParts</li>
 		</thingDefs>
@@ -130,6 +130,53 @@
 		</skillRequirements>
 	<workSkill>Crafting</workSkill>
 	<researchPrerequisite>WTH_SpeedModule</researchPrerequisite>
+  </RecipeDef>  
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_ArmorModule</defName>
+	<label>craft armor module</label>
+	<description>Craft an armor module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>70</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>15</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>2</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>Plasteel</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_ArmorModule>1</WTH_ArmorModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_ArmorModule</researchPrerequisite>
   </RecipeDef>  
   
   <RecipeDef ParentName="WTH_Craft_Module_Base">
@@ -871,6 +918,38 @@
 			<li>Reactor</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>WTH_SpeedModule</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>WTH_InstallSArmorModule</defName>
+		<label>install armor module</label>
+		<description>Install an armor module.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Installing armor module.</jobString>
+		<workAmount>5000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_ArmorModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>		
+		<addsHediff>WTH_ArmorModule</addsHediff>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
