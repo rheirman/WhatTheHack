@@ -150,10 +150,19 @@ namespace WhatTheHack.Needs
             get
             {
                 float result = 100 + pawn.BodySize * 100;
-                if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_BatteryExpansionModule))
+                float factor = 1;
+
+                foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
                 {
-                    result *= 1.5f;
+                    if (hediff.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt)
+                    {
+                        if(modExt.batteryCapacityOffset > 0)
+                        {
+                            factor += modExt.batteryCapacityOffset;
+                        }
+                    }
                 }
+                result *= factor;
                 return result;//TODO
             }
         }
@@ -163,10 +172,20 @@ namespace WhatTheHack.Needs
             get
             {
                 float result = 150 + pawn.BodySize * 150 * Base.powerFallModifier;//TODO - no magic number
-                if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_SpeedModule))
+                float factor = 1;
+
+                foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
                 {
-                    result *= 1.1f;
+                    if (hediff.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt)
+                    {
+                        if (modExt.powerRateOffset > 0)
+                        {
+                            factor += modExt.powerRateOffset;
+                        }
+                    }
                 }
+                result *= factor;
+
                 return result;
             }
         }

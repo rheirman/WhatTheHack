@@ -80,6 +80,7 @@
     <Compile Include="Comps\CompDataLevel.cs" />
     <Compile Include="Comps\CompProperties_Overlays.cs" />
     <Compile Include="Harmony\ArmorUtility.cs" />
+    <Compile Include="Harmony\HediffStatsUtility.cs" />
     <Compile Include="Harmony\PawnUIOverlay.cs" />
     <Compile Include="Harmony\Pawn_SkillTracker.cs" />
     <Compile Include="Jobs\Depricated\JobDriver_Ability.cs" />
@@ -88,6 +89,8 @@
     <Compile Include="Jobs\JobGiver_Mechanoid_Ability.cs" />
     <Compile Include="ModExtension\DefModExtension_Ability.cs" />
     <Compile Include="Recipes\Recipe_ModifyMechanoid_UninstallModule.cs" />
+    <Compile Include="Stats\StatPart_BatteryCapacity.cs" />
+    <Compile Include="Stats\StatPart_PowerRate.cs" />
     <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidAbility.cs" />
     <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidRest.cs" />
     <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidWork.cs" />

@@ -59,6 +59,7 @@
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_SpeedModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
+				<powerRateOffset>0.1</powerRateOffset>
 			</li>
 		</modExtensions>
 	</HediffDef>
@@ -80,9 +81,9 @@
 		</stages>		
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Hediff">
-				<extraButcherProduct>WTH_SpeedModule</extraButcherProduct>
+				<extraButcherProduct>WTH_ArmorModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
-				<addsArmorFactor>1.4</addsArmorFactor>
+				<armorFactor>1.4</armorFactor>
 			</li>
 		</modExtensions>
 	</HediffDef>
@@ -210,6 +211,7 @@
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_BatteryExpansionModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
+				<batteryCapacityOffset>0.5</batteryCapacityOffset>
 			</li>
 		</modExtensions>
 	</HediffDef>
@@ -292,7 +294,7 @@
 		</modExtensions>
 	  </HediffDef>
 	  
-	  <HediffDef>
+	  <HediffDef >
 		<defName>WTH_MountedTurret</defName>
 		<label>turret mounted</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>

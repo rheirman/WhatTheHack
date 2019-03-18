@@ -98,10 +98,11 @@
 					<li>WTH_InstallTurretModule</li>
 					<li>WTH_InstallBatteryExpansionModule</li>
 					<li>WTH_InstallVanometricModule</li>
-					<li>WTH_InstallBeltModule</li>
+					<li>WTH_InstallBeltModule</li>	
 					<li>WTH_InstallCleaningModule</li>
 					<li>WTH_InstallHaulingModule</li>
-					<li>WTH_InstallSpeedModule</li>				
+					<li>WTH_InstallSpeedModule</li>
+					<li>WTH_InstallArmorModule</li>
 					<li>WTH_InstallGrowingModule</li>
 					<li>WTH_InstallFirefightingModule</li>
 				</recipes>		

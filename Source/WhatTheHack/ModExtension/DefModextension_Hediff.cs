@@ -10,7 +10,9 @@ namespace WhatTheHack
     {
         public ThingDef extraButcherProduct = null;
         public bool hasAbility = false;
-        public float addsArmorFactor = 0f;
+        public float armorFactor = 0f;
+        public float powerRateOffset = 0f;
+        public float batteryCapacityOffset = 0f;
         public bool canUninstall = false;
     }
 }

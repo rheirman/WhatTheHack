@@ -331,6 +331,9 @@ You can repeat this operation as many times as needed as a means to get more mec
 	<WTH_Gizmo_SetMechanoidOwner_Description>Assign this platform to be owned by a specific mechanoid</WTH_Gizmo_SetMechanoidOwner_Description>
 	<WTH_UninstallModule>uninstall {0}</WTH_UninstallModule>
 	<WTH_UninstallModule_Jobstring>uninstalling {0}</WTH_UninstallModule_Jobstring>
+	<WTH_StatDrawEntry_ArmorFactor>Armor</WTH_StatDrawEntry_ArmorFactor>
+	<WTH_StatDrawEntry_BatteryCapacityFactor>Battery capacity</WTH_StatDrawEntry_BatteryCapacityFactor>
+	<WTH_StatDrawEntry_PowerRateFactor>Power drain</WTH_StatDrawEntry_PowerRateFactor>
 	<!-- end added in v1.2 -->
 	
 	<WTH_Gizmo_RemoteControlActivate_Label>Activate</WTH_Gizmo_RemoteControlActivate_Label>

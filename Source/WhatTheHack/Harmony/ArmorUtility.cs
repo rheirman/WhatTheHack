@@ -16,8 +16,8 @@ namespace WhatTheHack.Harmony
             {
                 foreach(Hediff h in pawn.health.hediffSet.hediffs)
                 {
-                    if(h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.addsArmorFactor > 0f){
-                        armorRating *= h.def.GetModExtension<DefModextension_Hediff>().addsArmorFactor;
+                    if(h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.armorFactor > 0f){
+                        armorRating *= h.def.GetModExtension<DefModextension_Hediff>().armorFactor;
                     }
                 }           
             }
