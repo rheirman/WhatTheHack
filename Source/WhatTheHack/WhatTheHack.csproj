@@ -87,7 +87,7 @@
     <Compile Include="Jobs\JobGiver_Work_Mechanoid.cs" />
     <Compile Include="Jobs\JobGiver_Mechanoid_Ability.cs" />
     <Compile Include="ModExtension\DefModExtension_Ability.cs" />
-    <Compile Include="Recipes\Recipe_RemoveModule.cs" />
+    <Compile Include="Recipes\Recipe_UninstallModule.cs" />
     <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidAbility.cs" />
     <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidRest.cs" />
     <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidWork.cs" />

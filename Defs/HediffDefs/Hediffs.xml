@@ -42,7 +42,7 @@
 	
 	<HediffDef>
 		<defName>WTH_SpeedModule</defName>
-		<label>speed module installed</label>
+		<label>speed module</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>	
 		<stages>
@@ -58,14 +58,14 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_SpeedModule</extraButcherProduct>
-				<canBeRemoved>true</canBeRemoved>
+				<canUninstall>true</canUninstall>
 			</li>
 		</modExtensions>
 	</HediffDef>
 	
 	<HediffDef>
 		<defName>WTH_ArmorModule</defName>
-		<label>armor module installed</label>
+		<label>armor module</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>	
 		<stages>
@@ -81,7 +81,7 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_SpeedModule</extraButcherProduct>
-				<canBeRemoved>true</canBeRemoved>
+				<canUninstall>true</canUninstall>
 				<addsArmorFactor>1.4</addsArmorFactor>
 			</li>
 		</modExtensions>
@@ -89,7 +89,7 @@
 	
 	<HediffDef>
 		<defName>WTH_GrowingModule</defName>
-		<label>growing module installed</label>
+		<label>growing module</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>	
 		<stages>
@@ -105,27 +105,27 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_GrowingModule</extraButcherProduct>
-				<canBeRemoved>true</canBeRemoved>
+				<canUninstall>true</canUninstall>
 			</li>
 		</modExtensions>
 	</HediffDef>
 		
 	<HediffDef>
 		<defName>WTH_FirefightingModule</defName>
-		<label>firefighting module installed</label>
+		<label>firefighting module</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>	
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_FirefightingModule</extraButcherProduct>
-				<canBeRemoved>true</canBeRemoved>
+				<canUninstall>true</canUninstall>
 			</li>
 		</modExtensions>
 	</HediffDef>
 	
 	<HediffDef>
 		<defName>WTH_CleaningModule</defName>
-		<label>cleaning module installed</label>
+		<label>cleaning module</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>	
 		<stages>
@@ -141,14 +141,14 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_CleaningModule</extraButcherProduct>
-				<canBeRemoved>true</canBeRemoved>
+				<canUninstall>true</canUninstall>
 			</li>
 		</modExtensions>
 	  </HediffDef>
 	  
 	  <HediffDef>
 		<defName>WTH_HaulingModule</defName>
-		<label>hauling module installed</label>
+		<label>hauling module</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>	
 		<stages>
@@ -164,14 +164,14 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_HaulingModule</extraButcherProduct>
-				<canBeRemoved>true</canBeRemoved>
+				<canUninstall>true</canUninstall>
 			</li>
 		</modExtensions>
 	  </HediffDef>
 	
 	<HediffDef>
 		<defName>WTH_BatteryExpansionModule</defName>
-		<label>Battery expanded</label>
+		<label>Battery expansion</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>
 		<stages>
@@ -187,14 +187,14 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_BatteryExpansionModule</extraButcherProduct>
-				<canBeRemoved>true</canBeRemoved>
+				<canUninstall>true</canUninstall>
 			</li>
 		</modExtensions>
 	</HediffDef>
 	
   	<HediffDef>
 		<defName>WTH_VanometricModule</defName>
-		<label>Vanometric module installed</label>
+		<label>Vanometric module</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>
 		<stages>
@@ -210,20 +210,21 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_VanometricModule</extraButcherProduct>
-				<canBeRemoved>true</canBeRemoved>
+				<canUninstall>true</canUninstall>
 			</li>
 		</modExtensions>
 	</HediffDef>
 	
       <HediffDef>
 		<defName>WTH_SelfDestruct</defName>
-		<label>self destruct module installed</label>
+		<label>self destruct module</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_SelfDestructModule</extraButcherProduct>
 				<hasAbility>true</hasAbility>
-				<canBeRemoved>true</canBeRemoved>
+				<canUninstall>true</canUninstall>
 			</li>
 		</modExtensions>
 	  </HediffDef>
@@ -231,40 +232,40 @@
 	  
   	  <HediffDef>
 		<defName>WTH_RepairModule</defName>
-		<label>repair module installed</label>
+		<label>repair module</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_RepairModule</extraButcherProduct>
 				<hasAbility>true</hasAbility>
-				<canBeRemoved>true</canBeRemoved>
+				<canUninstall>true</canUninstall>
 			</li>
 		</modExtensions>
 	  </HediffDef>
 	  	    
 	   <HediffDef>
 		<defName>WTH_BeltModule</defName>
-		<label>belt module installed</label>
+		<label>belt module</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>		
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_BeltModule</extraButcherProduct>
-				<canBeRemoved>true</canBeRemoved>
+				<canUninstall>true</canUninstall>
 			</li>
 		</modExtensions>
 	  </HediffDef>
 	  
 	  <HediffDef>
 		<defName>WTH_TurretModule</defName>
-		<label>turret module installed</label>
+		<label>turret module</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
 		<isBad>false</isBad>		
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_TurretModule</extraButcherProduct>
-				<canBeRemoved>true</canBeRemoved>
+				<canUninstall>true</canUninstall>
 			</li>
 		</modExtensions>
 	  </HediffDef>
@@ -302,7 +303,7 @@
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_RepairArm</extraButcherProduct>
 				<hasAbility>true</hasAbility>
-				<canBeRemoved>false</canBeRemoved>
+				<canUninstall>false</canUninstall>
 			</li>
 		</modExtensions>
 	  </HediffDef>

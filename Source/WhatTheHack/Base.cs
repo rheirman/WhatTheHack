@@ -242,6 +242,7 @@ namespace WhatTheHack
 
         private static IEnumerable<RecipeDef> ImpliedRecipeDefs()
         {
+            //Add all mount turret recipes. 
             foreach (ThingDef def in from d in DefDatabase<ThingDef>.AllDefs
                                      where d.HasComp(typeof(CompMountable))
                                      select d)
@@ -269,6 +270,42 @@ namespace WhatTheHack
                     new DefModExtension_Recipe(){
                         requireBed = true,
                         requiredHediff = WTH_DefOf.WTH_TurretModule
+                    }
+                };
+                foreach (ThingDef current in DefDatabase<ThingDef>.AllDefs.Where((ThingDef d) => d.category == ThingCategory.Pawn && d.race.IsMechanoid))
+                {
+                    r.recipeUsers.Add(current);
+                }
+                r.ResolveReferences();
+                yield return r;
+            }
+
+            //Add all remove module hediffs
+            foreach (HediffDef def in from d in DefDatabase<HediffDef>.AllDefs
+                                     where d.HasModExtension<DefModextension_Hediff>()
+                                     select d)
+            {
+                DefModextension_Hediff modExt = def.GetModExtension<DefModextension_Hediff>();
+                if (!modExt.canUninstall)
+                {
+                    continue;
+                }
+                RecipeDef r = new RecipeDef();
+                r.defName = "WTH_UninstallModule_" + def.defName;
+                r.label = "WTH_UninstallModule".Translate(new object[] { def.label });
+                r.jobString = "WTH_UninstallModule_Jobstring".Translate(new object[] { def.label });
+                r.workerClass = typeof(Recipe_UninstallModule);
+                r.anesthetize = false;
+                r.effectWorking = DefDatabase<EffecterDef>.AllDefs.FirstOrDefault((EffecterDef ed) => ed.defName == "Repair");
+                r.surgerySuccessChanceFactor = 99999f;
+                r.modContentPack = def.modContentPack;
+                r.workAmount = 5000f;
+                r.recipeUsers = new List<ThingDef>();
+                r.modExtensions = new List<DefModExtension>()
+                {
+                    new DefModExtension_Recipe(){
+                        requireBed = true,
+                        requiredHediff = def
                     }
                 };
                 foreach (ThingDef current in DefDatabase<ThingDef>.AllDefs.Where((ThingDef d) => d.category == ThingCategory.Pawn && d.race.IsMechanoid))
