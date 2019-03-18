@@ -294,7 +294,7 @@ namespace WhatTheHack
                 r.defName = "WTH_UninstallModule_" + def.defName;
                 r.label = "WTH_UninstallModule".Translate(new object[] { def.label });
                 r.jobString = "WTH_UninstallModule_Jobstring".Translate(new object[] { def.label });
-                r.workerClass = typeof(Recipe_UninstallModule);
+                r.workerClass = typeof(Recipe_ModifyMechanoid_UninstallModule);
                 r.anesthetize = false;
                 r.effectWorking = DefDatabase<EffecterDef>.AllDefs.FirstOrDefault((EffecterDef ed) => ed.defName == "Repair");
                 r.surgerySuccessChanceFactor = 99999f;
@@ -394,7 +394,7 @@ namespace WhatTheHack
         //Explanation: Vanilla doesn't support conditional comps. Example: For the repair module, we only want mechs to have comp_refuelable when the mech has one installed. 
         //So to support conditional comps like this, we first allow all comps to be loaded. Then we remove the comps for which the condition doesn't hold. In this case, the refuelable comp for the repair module is
         //removed when a mechanoid doens't have one installed. 
-        public static void RemoveComps(ref ThingWithComps __instance)
+        public static void RemoveComps(ThingWithComps __instance)
         {
 
                 Pawn pawn = (Pawn)__instance;

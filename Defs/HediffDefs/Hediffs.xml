@@ -107,6 +107,13 @@
 				<extraButcherProduct>WTH_GrowingModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
 			</li>
+			<li Class="WhatTheHack.DefModExtension_Hediff_WorkModule">
+				<workTypes>
+					<li>Growing</li>
+					<li>PlantCutting</li>
+				</workTypes>
+				<skillLevel>4</skillLevel>
+			</li>
 		</modExtensions>
 	</HediffDef>
 		
@@ -119,6 +126,11 @@
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_FirefightingModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
+			</li>
+			<li Class="WhatTheHack.DefModExtension_Hediff_WorkModule">
+				<workTypes>
+					<li>Firefighter</li>
+				</workTypes>
 			</li>
 		</modExtensions>
 	</HediffDef>
@@ -143,6 +155,11 @@
 				<extraButcherProduct>WTH_CleaningModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
 			</li>
+			<li Class="WhatTheHack.DefModExtension_Hediff_WorkModule">
+				<workTypes>
+					<li>Cleaning</li>
+				</workTypes>
+			</li>
 		</modExtensions>
 	  </HediffDef>
 	  
@@ -165,6 +182,11 @@
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_HaulingModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
+			</li>
+			<li Class="WhatTheHack.DefModExtension_Hediff_WorkModule">
+				<workTypes>
+					<li>Hauling</li>
+				</workTypes>
 			</li>
 		</modExtensions>
 	  </HediffDef>

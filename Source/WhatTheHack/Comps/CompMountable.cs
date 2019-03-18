@@ -69,6 +69,10 @@ namespace WhatTheHack.Comps
             {
                 ConsumePowerIfNeeded();
             }
+            if(mountedTo.health != null && !mountedTo.health.hediffSet.HasHediff(WTH_DefOf.WTH_TurretModule))
+            {
+                Uninstall();
+            }
         }
 
         private void ConsumePowerIfNeeded()

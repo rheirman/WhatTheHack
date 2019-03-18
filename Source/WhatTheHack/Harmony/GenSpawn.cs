@@ -51,7 +51,7 @@ namespace WhatTheHack.Harmony
             }
             if (thingWithComps is Pawn && ((Pawn)thingWithComps).RaceProps.IsMechanoid && thingWithComps.def.comps.Any<CompProperties>())
             {
-                Base.RemoveComps(ref thingWithComps);
+                Base.RemoveComps(thingWithComps);
             }
         }
         private static void NameUnnamedMechs(Thing newThing)

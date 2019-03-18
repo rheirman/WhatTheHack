@@ -926,7 +926,7 @@
 	</RecipeDef>
 	
 	<RecipeDef>
-		<defName>WTH_InstallSArmorModule</defName>
+		<defName>WTH_InstallArmorModule</defName>
 		<label>install armor module</label>
 		<description>Install an armor module.</description>
 		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
@@ -989,13 +989,6 @@
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
 			</li>
-			<li Class="WhatTheHack.DefModExtension_Recipe_WorkModule">
-				<workTypes>
-					<li>Growing</li>
-					<li>PlantCutting</li>
-				</workTypes>
-				<skillLevel>4</skillLevel>
-			</li>
 		</modExtensions>
 	</RecipeDef>
 	
@@ -1030,11 +1023,6 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
-			</li>
-			<li Class="WhatTheHack.DefModExtension_Recipe_WorkModule">
-				<workTypes>
-					<li>Firefighter</li>
-				</workTypes>
 			</li>
 		</modExtensions>
 	</RecipeDef>
@@ -1071,11 +1059,6 @@
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
 			</li>
-			<li Class="WhatTheHack.DefModExtension_Recipe_WorkModule">
-				<workTypes>
-					<li>Cleaning</li>
-				</workTypes>
-			</li>
 		</modExtensions>
 	</RecipeDef>
 	
@@ -1110,11 +1093,6 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>
-			</li>
-			<li Class="WhatTheHack.DefModExtension_Recipe_WorkModule">
-				<workTypes>
-					<li>Hauling</li>
-				</workTypes>
 			</li>
 		</modExtensions>
 	</RecipeDef>

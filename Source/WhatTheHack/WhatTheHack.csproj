@@ -87,7 +87,7 @@
     <Compile Include="Jobs\JobGiver_Work_Mechanoid.cs" />
     <Compile Include="Jobs\JobGiver_Mechanoid_Ability.cs" />
     <Compile Include="ModExtension\DefModExtension_Ability.cs" />
-    <Compile Include="Recipes\Recipe_UninstallModule.cs" />
+    <Compile Include="Recipes\Recipe_ModifyMechanoid_UninstallModule.cs" />
     <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidAbility.cs" />
     <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidRest.cs" />
     <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidWork.cs" />
@@ -141,7 +141,7 @@
     <Compile Include="ModExtension\DefModExtension_PawnCapacity.cs" />
     <Compile Include="ModExtension\DefModExtension_PawnMassCapacity.cs" />
     <Compile Include="ModExtension\DefModExtension_Recipe.cs" />
-    <Compile Include="ModExtension\DefModExtension_Recipe_WorkModule.cs" />
+    <Compile Include="ModExtension\DefModExtension_Hediff_WorkModule.cs" />
     <Compile Include="Needs\MaintenanceCategory.cs" />
     <Compile Include="Needs\Need_Maintenance.cs" />
     <Compile Include="Recipes\Recipe_BeltModule.cs" />

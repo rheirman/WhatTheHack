@@ -22,7 +22,7 @@ namespace WhatTheHack.Recipes
                 pawn.workSettings = new Pawn_WorkSettings(pawn);
                 pawn.workSettings.EnableAndInitialize();
             }
-            if (bill.recipe.GetModExtension<DefModExtension_Recipe_WorkModule>() is DefModExtension_Recipe_WorkModule modExt)
+            if (bill.recipe.addsHediff.GetModExtension<DefModExtension_Hediff_WorkModule>() is DefModExtension_Hediff_WorkModule modExt)
             {
                 ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
                 if(pawnData.workTypes == null)

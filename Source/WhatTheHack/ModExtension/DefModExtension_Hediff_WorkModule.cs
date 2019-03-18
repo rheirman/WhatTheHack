@@ -6,7 +6,7 @@ using Verse;
 
 namespace WhatTheHack
 {
-    public class DefModExtension_Recipe_WorkModule : DefModExtension
+    public class DefModExtension_Hediff_WorkModule : DefModExtension
     {
         public List<WorkTypeDef> workTypes;
         public int skillLevel = -1;
