@@ -14,16 +14,14 @@ namespace WhatTheHack.Stats
             StringBuilder sb = new StringBuilder();
             if (req.Thing is Pawn pawn)
             {
-                if (pawn.health != null)
+                sb.AppendLine("Body size contribution: +" + pawn.BodySize * 100);
+                foreach (Hediff h in pawn.health.hediffSet.hediffs)
                 {
-                    foreach (Hediff h in pawn.health.hediffSet.hediffs)
+                    if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt)
                     {
-                        if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt)
-                        {
-                            sb.AppendLine(h.def.label + ": " + modExt.batteryCapacityOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset));
-                        }
+                        sb.AppendLine(h.def.label + ": " + modExt.batteryCapacityOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset));
                     }
-                }
+                }              
             }
             return sb.ToString();
         }
@@ -31,17 +29,16 @@ namespace WhatTheHack.Stats
         {
             if (req.Thing is Pawn pawn)
             {
-                if (pawn.health == null)
-                {
-                    return;
-                }
+                val += pawn.BodySize * 100;
+                float offset = 0;
                 foreach (Hediff h in pawn.health.hediffSet.hediffs)
                 {
                     if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt)
                     {
-                        val += modExt.batteryCapacityOffset;
+                        offset += val * modExt.batteryCapacityOffset;
                     }
                 }
+                val += offset;
             }
         }
     }

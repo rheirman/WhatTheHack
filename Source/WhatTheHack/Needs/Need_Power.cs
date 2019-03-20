@@ -17,10 +17,6 @@ namespace WhatTheHack.Needs
         public bool shouldAutoRecharge = true;
         public float canStartWorkThreshold = 0;
 
-        //private const float BaseMalnutritionSeverityPerDay = 0.17f;
-
-        //private const float BaseMalnutritionSeverityPerInterval = 0.00113333331f;
-
         public Need_Power(Pawn pawn) : base(pawn)
         {
         }
@@ -115,14 +111,19 @@ namespace WhatTheHack.Needs
             get
             {
 
-                if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_VanometricModule))
+                if (this.CurCategory == PowerCategory.NoPower)
                 {
-                    return 0f;
+                    return 0;
                 }
-                else
+                if (DirectlyPowered(pawn))
                 {
-                    return this.PowerFallPerTickAssumingCategory(this.CurCategory);
+                    return 0;
                 }
+                if (pawn.HasValidCaravanPlatform() && pawn.GetCaravan() != null && pawn.GetCaravan().HasFuel())
+                {
+                    return 0;
+                }
+                return this.PowerRate; //TODO no magic number;
             }
         }
 
@@ -149,21 +150,7 @@ namespace WhatTheHack.Needs
         {
             get
             {
-                float result = 100 + pawn.BodySize * 100;
-                float factor = 1;
-
-                foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
-                {
-                    if (hediff.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt)
-                    {
-                        if(modExt.batteryCapacityOffset > 0)
-                        {
-                            factor += modExt.batteryCapacityOffset;
-                        }
-                    }
-                }
-                result *= factor;
-                return result;//TODO
+                return pawn.GetStatValue(WTH_DefOf.WTH_BatteryCapacity);//TODO
             }
         }
 
@@ -171,44 +158,12 @@ namespace WhatTheHack.Needs
         {
             get
             {
-                float result = 150 + pawn.BodySize * 150 * Base.powerFallModifier;//TODO - no magic number
-                float factor = 1;
-
-                foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
-                {
-                    if (hediff.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt)
-                    {
-                        if (modExt.powerRateOffset > 0)
-                        {
-                            factor += modExt.powerRateOffset;
-                        }
-                    }
-                }
-                result *= factor;
-
-                return result;
+                return pawn.GetStatValue(WTH_DefOf.WTH_PowerRate)/GenDate.TicksPerDay;
             }
-        }
-
-        private float PowerFallPerTickAssumingCategory(PowerCategory cat)
-        {
-            if(cat == PowerCategory.NoPower)
-            {
-                return 0;
-            }
-            if(DirectlyPowered(pawn))
-            {
-                return 0;
-            }
-            if (pawn.HasValidCaravanPlatform() && pawn.GetCaravan() != null && pawn.GetCaravan().HasFuel())
-            {
-                return 0;
-            }
-            return 2E-05f * this.PowerRate; //TODO no magic number;
         }
         public bool DirectlyPowered(Pawn pawn)
         {
-            return !base.pawn.IsActivated() && base.pawn.OnBaseMechanoidPlatform() && ((Building_BaseMechanoidPlatform)base.pawn.CurrentBed()).HasPowerNow();
+            return (!base.pawn.IsActivated() && base.pawn.OnBaseMechanoidPlatform() && ((Building_BaseMechanoidPlatform)base.pawn.CurrentBed()).HasPowerNow()) || pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_VanometricModule);
         }
 
         public override void SetInitialLevel()
