@@ -13,6 +13,7 @@ namespace WhatTheHack
         public float armorOffset = 0f;
         public float powerRateOffset = 0f;
         public float batteryCapacityOffset = 0f;
+        public float firingRateOffset = 0f;
         public bool canUninstall = false;
     }
 }

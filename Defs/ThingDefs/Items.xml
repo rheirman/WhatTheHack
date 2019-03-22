@@ -186,6 +186,31 @@
   </ThingDef>
   
   <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_OverdriveModule</defName>
+    <label>overdrive module</label>
+    <description>Can be installed in a mechanoid. When this module is activated, it overclocks the mechanoid, overdriving its power network. This results in greatly boosting the speed, firing rate, and consciousness of the mechanoid for a short period of time. The procedure draws a lot of power and pushes beyond hardware safety limits, and can therefore have unforeseen consequences.</description>
+    <graphicData>
+      <texPath>Things/OverdriveModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>6000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartBase">
     <defName>WTH_SpeedModule</defName>
     <label>speed module</label>
     <description>Can be installed in a mechanoid. Increases the movement speed of the mechanoid by 25% at the cost of 10% extra power consumption.</description>

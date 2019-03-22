@@ -322,20 +322,6 @@ You can repeat this operation as many times as needed as a means to get more mec
 	<WTH_Gizmo_AutoRecharge_Label>Auto recharge</WTH_Gizmo_AutoRecharge_Label>
 	<WTH_Gizmo_AutoRecharge_Description>With this mode enabled, mechanoids automatically go back to a mechanoid platform when they are running low on power.</WTH_Gizmo_AutoRecharge_Description>
 	
-	<!-- added in v1.2 --> 
-	<WTH_Gizmo_Work_Label>Work mode</WTH_Gizmo_Work_Label>
-	<WTH_Gizmo_Work_Description>Enable work mode for the mechanoid. With this mode enabled, the mechanoid will automatically start up if there are any jobs it can do, and if its power is higher than the minimum power threshold for working that is configured.</WTH_Gizmo_Work_Description>
-	<WTH_Gizmo_WorkThreshold_Label>Min. power work</WTH_Gizmo_WorkThreshold_Label>
-	<WTH_Gizmo_WorkThreshold_Description>Configure the minimum percentage of power the mechanoid needs to have before it is allowed to leave its platform to start working.</WTH_Gizmo_WorkThreshold_Description>
-	<WTH_SetCanStartWorkThreshold>Power needed to start work: {0} %</WTH_SetCanStartWorkThreshold>
-	<WTH_Gizmo_SetMechanoidOwner_Description>Assign this platform to be owned by a specific mechanoid</WTH_Gizmo_SetMechanoidOwner_Description>
-	<WTH_UninstallModule>uninstall {0}</WTH_UninstallModule>
-	<WTH_UninstallModule_Jobstring>uninstalling {0}</WTH_UninstallModule_Jobstring>
-	<WTH_StatDrawEntry_ArmorFactor>Armor</WTH_StatDrawEntry_ArmorFactor>
-	<WTH_StatDrawEntry_BatteryCapacityFactor>Battery capacity</WTH_StatDrawEntry_BatteryCapacityFactor>
-	<WTH_StatDrawEntry_PowerRateFactor>Power drain</WTH_StatDrawEntry_PowerRateFactor>
-	<!-- end added in v1.2 -->
-	
 	<WTH_Gizmo_RemoteControlActivate_Label>Activate</WTH_Gizmo_RemoteControlActivate_Label>
 	<WTH_Gizmo_RemoteControlActivate_Description>Use the mechanoid controller belt to control a mechanoid directly</WTH_Gizmo_RemoteControlActivate_Description>
 	<WTH_Gizmo_RemoteControlDeactivate_Label>Deactivate</WTH_Gizmo_RemoteControlDeactivate_Label>
@@ -404,6 +390,23 @@ You can repeat this operation as many times as needed as a means to get more mec
 	<WTH_Mount_Jobstring>Mounting {0}</WTH_Mount_Jobstring>
 	
 	<WTH_TextMote_MaintenanceFailed>Maintenance failed (success chance: {0})</WTH_TextMote_MaintenanceFailed>
+	
+	<!-- added in v1.2 --> 
+	<WTH_Gizmo_Work_Label>Work mode</WTH_Gizmo_Work_Label>
+	<WTH_Gizmo_Work_Description>Enable work mode for the mechanoid. With this mode enabled, the mechanoid will automatically start up if there are any jobs it can do, and if its power is higher than the minimum power threshold for working that is configured.</WTH_Gizmo_Work_Description>
+	<WTH_Gizmo_WorkThreshold_Label>Min. power work</WTH_Gizmo_WorkThreshold_Label>
+	<WTH_Gizmo_WorkThreshold_Description>Configure the minimum percentage of power the mechanoid needs to have before it is allowed to leave its platform to start working.</WTH_Gizmo_WorkThreshold_Description>
+	<WTH_SetCanStartWorkThreshold>Power needed to start work: {0} %</WTH_SetCanStartWorkThreshold>
+	<WTH_Gizmo_SetMechanoidOwner_Description>Assign this platform to be owned by a specific mechanoid</WTH_Gizmo_SetMechanoidOwner_Description>
+	<WTH_UninstallModule>uninstall {0}</WTH_UninstallModule>
+	<WTH_UninstallModule_Jobstring>uninstalling {0}</WTH_UninstallModule_Jobstring>
+	<WTH_StatDrawEntry_ArmorFactor>Armor</WTH_StatDrawEntry_ArmorFactor>
+	<WTH_StatDrawEntry_BatteryCapacityFactor>Battery capacity</WTH_StatDrawEntry_BatteryCapacityFactor>
+	<WTH_StatDrawEntry_PowerRateFactor>Power drain</WTH_StatDrawEntry_PowerRateFactor>
+	<WTH_Reason_AlreadyOverdriving>Already in overdrive mode</WTH_Reason_AlreadyOverdriving>
+	<WTH_Gizmo_Overdrive_Label>Overdrive</WTH_Gizmo_Overdrive_Label>
+	<WTH_Gizmo_Overdrive_Description>Activate overdrive module. When this module is activated, it overclocks the mechanoid, overdriving its power network. This results in greatly boosting the speed, firing rate, and consciousness of the mechanoid for a short period of time. The procedure draws a lot of power and pushes beyond hardware safety limits, and can therefore have unforeseen consequences.</WTH_Gizmo_Overdrive_Description>
+	<!-- end added in v1.2 -->
 	
 	
 	

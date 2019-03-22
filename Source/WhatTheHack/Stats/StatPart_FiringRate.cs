@@ -7,7 +7,7 @@ using Verse;
 
 namespace WhatTheHack.Stats
 {
-    class StatPart_BatteryCapacity : StatPart
+    class StatPart_FiringRate :  StatPart
     {
         public override string ExplanationPart(StatRequest req)
         {
@@ -17,11 +17,11 @@ namespace WhatTheHack.Stats
                 sb.AppendLine("Body size contribution: +" + pawn.BodySize * 100);
                 foreach (Hediff h in pawn.health.hediffSet.hediffs)
                 {
-                    if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.batteryCapacityOffset != 0)
+                    if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.firingRateOffset != 0)
                     {
-                        sb.AppendLine(h.def.label + ": " + modExt.batteryCapacityOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset));
+                        sb.AppendLine(h.def.label + ": " + modExt.firingRateOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset));
                     }
-                }              
+                }
             }
             return sb.ToString();
         }
@@ -29,13 +29,12 @@ namespace WhatTheHack.Stats
         {
             if (req.Thing is Pawn pawn)
             {
-                val += pawn.BodySize * 100;
                 float offset = 0;
                 foreach (Hediff h in pawn.health.hediffSet.hediffs)
                 {
-                    if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.batteryCapacityOffset != 0)
+                    if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.firingRateOffset != 0)
                     {
-                        offset += val * modExt.batteryCapacityOffset;
+                        offset += val * modExt.firingRateOffset;
                     }
                 }
                 val += offset;

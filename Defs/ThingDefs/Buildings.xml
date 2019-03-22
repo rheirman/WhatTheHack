@@ -118,6 +118,7 @@
 	  <li>WTH_Craft_CleaningModule</li>
 	  <li>WTH_Craft_SpeedModule</li>
 	  <li>WTH_Craft_ArmorModule</li>
+	  <li>WTH_Craft_OverdriveModule</li>
     </recipes>
     <comps>
       <li Class="CompProperties_Power">

@@ -10,6 +10,35 @@
 	</value>
 </Operation>
 
+<Operation Class="PatchOperationSequence">
+	<success>Always</success>
+	<operations>
+		<li Class = "PatchOperationAdd">
+			<xpath>*/StatDef[defName="RangedWeapon_Cooldown" or defName="AimingDelayFactor" or defName="MeleeWeapon_CooldownMultiplier"]/parts</xpath>
+			<value>
+				<li Class="WhatTheHack.Stats.StatPart_FiringRate">
+					<priority>999</priority>
+				</li>
+			</value>
+		</li>
+	</operations>
+</Operation>
+<Operation Class="PatchOperationSequence">
+	<success>Always</success>
+	<operations>
+		<li Class = "PatchOperationAdd">
+			<xpath>*/StatDef[(defName="RangedWeapon_Cooldown" or defName="AimingDelayFactor" or defName="MeleeWeapon_CooldownMultiplier") and not (parts)]</xpath>
+			<value>
+				<parts>
+					<li Class="WhatTheHack.Stats.StatPart_FiringRate">
+						<priority>999</priority>
+					</li>
+				</parts>
+			</value>
+		</li>
+	</operations>
+</Operation>
+
 <Operation Class = "PatchOperationInsert">
 	<xpath>*/DutyDef[defName="AssaultColony"]/thinkNode/subNodes/li[1]</xpath>
 	<value>
@@ -86,6 +115,7 @@
 				<li>WTH_InstallArmorModule</li>
 				<li>WTH_InstallGrowingModule</li>
 				<li>WTH_InstallFirefightingModule</li>
+				<li>WTH_InstallOverdriveModule</li>
 			</value>
 		</li> 
 	</operations>
@@ -114,6 +144,7 @@
 					<li>WTH_InstallArmorModule</li>
 					<li>WTH_InstallGrowingModule</li>
 					<li>WTH_InstallFirefightingModule</li>
+					<li>WTH_InstallOverdriveModule</li>
 				</recipes>		
 			</value>
 		</li> 

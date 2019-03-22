@@ -32,6 +32,8 @@ namespace WhatTheHack
         public static HediffDef WTH_BeltModule;
         public static HediffDef WTH_HeavilyDamaged;
         public static HediffDef WTH_SpeedModule;
+        public static HediffDef WTH_OverdriveModule;
+        public static HediffDef WTH_Overdrive;
 
 
         public static DamageDef WTH_RegeneratedPartDamage;
@@ -51,6 +53,7 @@ namespace WhatTheHack
         //public static JobDef WTH_Ability;
         public static JobDef WTH_Ability_Repair;
         public static JobDef WTH_Ability_SelfDestruct;
+        public static JobDef WTH_Ability_Overdrive;
         public static JobDef WTH_PerformMaintenance;
         public static JobDef WTH_HackRogueAI;
 

@@ -180,6 +180,10 @@ namespace WhatTheHack.Harmony
             {
                 gizmoList.Add(CreateGizmo_EquipBelt(__instance, pawnData));
             }
+            if (hediffSet.HasHediff(WTH_DefOf.WTH_OverdriveModule))
+            {
+                gizmoList.Add(CreateGizmo_Overdrive(__instance, pawnData));
+            }
         }
         private static TargetingParameters GetTargetingParametersForTurret()
         {
@@ -447,6 +451,50 @@ namespace WhatTheHack.Harmony
                         __instance.jobs.StartJob(job, JobCondition.InterruptForced);
                     }
 
+                }
+            };
+            return gizmo;
+        }
+
+        private static Gizmo CreateGizmo_Overdrive(Pawn __instance, ExtendedPawnData pawnData)
+        {
+            Need_Power powerNeed = __instance.needs.TryGetNeed<Need_Power>();
+
+            JobDef jobDef = WTH_DefOf.WTH_Ability_Overdrive;
+            DefModExtension_Ability modExt = jobDef.GetModExtension<DefModExtension_Ability>();
+            bool alreadyOverdriving = __instance.health.hediffSet.HasHediff(WTH_DefOf.WTH_Overdrive);
+            bool needsMorePower = powerNeed.CurLevel < modExt.powerDrain;
+            bool notActicated = !__instance.IsActivated();
+
+            bool isDisabled = needsMorePower || notActicated || alreadyOverdriving;
+            string disabledReason = "";
+            if (isDisabled)
+            {
+                if (alreadyOverdriving)
+                {
+                    disabledReason = "WTH_Reason_AlreadyOverdriving".Translate();
+                }
+                else if (needsMorePower)
+                {
+                    disabledReason = "WTH_Reason_NeedsMorePower".Translate(new object[] { modExt.powerDrain });
+                }
+                else if (notActicated)
+                {
+                    disabledReason = "WTH_Reason_NotActivated".Translate();
+                }
+            }
+
+            Gizmo gizmo = new Command_Action
+            {
+                defaultLabel = "WTH_Gizmo_Overdrive_Label".Translate(),
+                defaultDesc = "WTH_Gizmo_Overdrive_Description".Translate(),
+                icon = ContentFinder<Texture2D>.Get(("Things/" + "OverdriveModule"), true),
+                disabled = isDisabled,
+                disabledReason = disabledReason,
+                action = delegate
+                {
+                    Job job = new Job(WTH_DefOf.WTH_Ability_Overdrive, __instance);
+                    __instance.jobs.StartJob(job, JobCondition.InterruptForced);
                 }
             };
             return gizmo;

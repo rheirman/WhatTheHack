@@ -17,7 +17,7 @@ namespace WhatTheHack.Stats
             {
                 foreach (Hediff h in pawn.health.hediffSet.hediffs)
                 {
-                    if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.armorOffset > 0)
+                    if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.armorOffset != 0)
                     {
                         sb.AppendLine(h.def.label + ": " + modExt.armorOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset));
                     }
@@ -32,7 +32,7 @@ namespace WhatTheHack.Stats
                 float offset = 0;
                 foreach (Hediff h in pawn.health.hediffSet.hediffs)
                 {
-                    if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.armorOffset > 0)
+                    if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.armorOffset != 0)
                     {
                         offset += val * modExt.armorOffset;
                     }

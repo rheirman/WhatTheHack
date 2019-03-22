@@ -51,7 +51,7 @@
 		</li>
 	</modExtensions>
   </JobDef>
-    
+  
   <JobDef parent="WTH_Base_Ability">
     <defName>WTH_Ability_Repair</defName>
     <reportString>Using repair ability</reportString>
@@ -63,6 +63,20 @@
 			<powerDrain>40</powerDrain>
 			<fuelDrain>5</fuelDrain>
 			<hediffTarget>WTH_Repairing</hediffTarget>
+		</li>
+	</modExtensions>
+  </JobDef>
+  
+  <JobDef>
+    <defName>WTH_Ability_Overdrive</defName>
+    <reportString>Using overdrive ability</reportString>
+    <driverClass>WhatTheHack.Jobs.JobDriver_MechanoidAbility</driverClass>
+    <casualInterruptible>false</casualInterruptible>
+	<modExtensions>
+		<li Class="WhatTheHack.DefModExtension_Ability">
+			<warmupTicks>150</warmupTicks>
+			<powerDrain>10</powerDrain>
+			<hediffSelf>WTH_Overdrive</hediffSelf>
 		</li>
 	</modExtensions>
   </JobDef>
