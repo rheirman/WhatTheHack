@@ -132,9 +132,9 @@ namespace WhatTheHack
             {
                 if (b is Building_BaseMechanoidPlatform platform &&
                 !b.IsBurning() &&
-                !b.IsForbidden(pawn) &&
-                pawn.CanReserve(b) &&
-                (pawn.ownership.OwnedBed == null && platform.owners.NullOrEmpty() || platform.owners.Contains(pawn)))
+                !b.IsForbidden(targetPawn) &&
+                targetPawn.CanReserve(b) &&
+                (targetPawn.ownership.OwnedBed == null && platform.owners.NullOrEmpty() || platform.owners.Contains(targetPawn)))
                 {
                     CompFlickable flickable = platform.TryGetComp<CompFlickable>();
                     if(flickable != null && !flickable.SwitchIsOn)

@@ -18,46 +18,26 @@ namespace WhatTheHack.Harmony
     {
         static bool Prefix(Pawn sleeper, Pawn traveler, ref Building_Bed __result)
         {
-            /*
-            if (sleeper.RaceProps.Animal && (__result is Building_MechanoidPlatform || __result is Building_HackingTable))
-            {
-                return false;
-            }
-            */
-
-            if (!sleeper.RaceProps.IsMechanoid || !sleeper.IsHacked())
+            if (!sleeper.IsHacked())
             {
                 return true;
             }
 
             if (HealthAIUtility.ShouldSeekMedicalRest(sleeper))
             {
-                if (!sleeper.IsHacked())
+                if (sleeper.OnBaseMechanoidPlatform())
                 {
-                    if (sleeper.OnHackingTable())
-                    {
-                        __result = sleeper.CurrentBed();
-                        return false;
-                    }
-                    else
-                    {
-                        __result = Utilities.GetAvailableHackingTable(traveler, sleeper);
-                        return false;
-                    }
+                    __result = sleeper.CurrentBed();
+                    return false;
                 }
                 else
                 {
-                    if (sleeper.OnBaseMechanoidPlatform())
-                    {
-                        __result = sleeper.CurrentBed();
-                        return false;
-                    }
-                    else
-                    {
-                        __result = Utilities.GetAvailableMechanoidPlatform(traveler, sleeper);
-                        return false;
-                    }
+                    Log.Message("GetAvailableMechanoidPlatform for: " + sleeper.Name + " called");
+                    __result = Utilities.GetAvailableMechanoidPlatform(traveler, sleeper);
+                    Log.Message("__result = " + __result);
+                    return false;
                 }
+                
             }
             return true;
         }
