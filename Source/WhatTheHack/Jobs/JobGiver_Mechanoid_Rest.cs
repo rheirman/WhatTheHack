@@ -14,38 +14,33 @@ namespace WhatTheHack.Jobs
         protected override Job TryGiveJob(Pawn pawn)
         {
             Job job = null;
-            if (pawn.Faction == Faction.OfPlayer &&
-                pawn.IsHacked() &&
-                !pawn.IsActivated() &&
-                !pawn.CanStartWorkNow()
-                )
-            {
-                if (pawn.OnBaseMechanoidPlatform() || pawn.OnHackingTable())
-                {
-                    job = new Job(WTH_DefOf.WTH_Mechanoid_Rest, pawn.CurrentBed());
-                }
-                else{
-                    Building_BaseMechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(pawn, pawn);
-                    if (!pawn.Downed && closestAvailablePlatform != null && pawn.CanReserve(closestAvailablePlatform))
-                    {
-                        if(pawn.CurJob != null)
-                        {
-                            pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
-                        }
-                        job = new Job(WTH_DefOf.WTH_Mechanoid_Rest, closestAvailablePlatform);
-                    }
 
+            if (pawn.OnBaseMechanoidPlatform() || pawn.OnHackingTable())
+            {
+                job = new Job(WTH_DefOf.WTH_Mechanoid_Rest, pawn.CurrentBed());
+            }
+            else
+            {
+                Building_BaseMechanoidPlatform closestAvailablePlatform = Utilities.GetAvailableMechanoidPlatform(pawn, pawn);
+                if (!pawn.Downed && closestAvailablePlatform != null && pawn.CanReserve(closestAvailablePlatform))
+                {
+                    if (pawn.CurJob != null)
+                    {
+                        pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                    }
+                    job = new Job(WTH_DefOf.WTH_Mechanoid_Rest, closestAvailablePlatform);
                 }
 
             }
-            if(job != null)
+            if (job != null)
             {
-                if(pawn.CurJob != null && pawn.CurJob.def != WTH_DefOf.WTH_Mechanoid_Rest)
+                if (pawn.CurJob != null && pawn.CurJob.def != WTH_DefOf.WTH_Mechanoid_Rest)
                 {
                     pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
                 }
             }
             return job;
         }
+        
     }
 }

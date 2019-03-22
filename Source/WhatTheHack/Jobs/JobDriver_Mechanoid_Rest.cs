@@ -37,11 +37,8 @@ namespace WhatTheHack.Jobs
             {
                 Log.Message("RestingPlace is Building_BaseMechanoidPlatform");
                 yield return Toils_Bed.ClaimBedIfNonMedical(TargetIndex.A);
+                yield return GoToPlatform(TargetIndex.A);
             }
-
-            yield return GoToPlatform(TargetIndex.A);
-            
-
             //goToPlatform.AddPreInitAction(new Action(delegate { Log.Message("first toil pre-initaction"); }));
             Toil toil = new Toil();
             toil.defaultCompleteMode = ToilCompleteMode.Never;
@@ -63,7 +60,7 @@ namespace WhatTheHack.Jobs
                    ReadyForNextToil();
                 }          
                 
-                if ((pawn.health.hediffSet.HasNaturallyHealingInjury() || (pawn.OnHackingTable() && HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn))))
+                if (pawn.health.hediffSet.HasNaturallyHealingInjury() || pawn.OnHackingTable())
                 {
                     pawn.jobs.posture = PawnPosture.LayingInBed;
                 }
