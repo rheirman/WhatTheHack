@@ -277,6 +277,9 @@
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-12</severityPerDay>
 			</li>
+			<li Class="HediffCompProperties_Effecter">
+				<stateEffecter>WTH_Overdrive</stateEffecter>
+			</li>
 		</comps>
 		<stages>
 			<li>

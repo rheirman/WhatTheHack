@@ -23,4 +23,17 @@
 	  <fadeOutTime>3.0</fadeOutTime>
 	</mote>
 	</ThingDef>
+	<ThingDef ParentName="MoteBase">
+		<defName>WTH_Mote_Overdrive</defName>
+		<graphicData>
+		  <texPath>Things/Mote/LightningGlow</texPath>
+		  <shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<altitudeLayer>MetaOverlays</altitudeLayer>
+		<mote>
+		  <fadeInTime>0.02</fadeInTime>
+		  <solidTime>0.1</solidTime>
+		  <fadeOutTime>0.02</fadeOutTime>
+		</mote>
+	</ThingDef>
 </Defs>
