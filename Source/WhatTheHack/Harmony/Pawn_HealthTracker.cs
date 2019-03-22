@@ -15,6 +15,20 @@ using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
 {
+    [HarmonyPatch(typeof(Pawn_HealthTracker), "SetDead")]
+    static class Pawn_HealthTracker_SetDead
+    {
+        static void Prefix(Pawn_HealthTracker __instance)
+        {
+            List<Hediff> removedHediffs = __instance.hediffSet.hediffs.FindAll((Hediff h) => h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && Rand.Chance(modExt.destroyOnDeathChance));
+            foreach (Hediff hediff in removedHediffs)
+            {
+                __instance.AddHediff(WTH_DefOf.WTH_DestroyedModule, hediff.Part);
+            }
+            __instance.hediffSet.hediffs = __instance.hediffSet.hediffs.Except(removedHediffs).ToList();
+        }
+    }
+
     [HarmonyPatch(typeof(Pawn_HealthTracker), "HasHediffsNeedingTend")]
     static class Pawn_HealthTracker_HasHediffsNeedingTend
     {

@@ -27,6 +27,12 @@
 		</stages>
 	</HediffDef>
 	
+	<HediffDef>
+		<defName>WTH_DestroyedModule</defName>
+		<isBad>true</isBad>
+		<label>destroyed module</label>
+	</HediffDef>
+	
   	<HediffDef>
 		<defName>WTH_RegeneratedPart</defName>
 		<hediffClass>Hediff_Injury</hediffClass>
@@ -61,6 +67,7 @@
 				<canUninstall>true</canUninstall>
 				<powerRateOffset>0.1</powerRateOffset>
 				<spawnChance>0.15</spawnChance>
+				<destroyOnDeathChance>0.75</destroyOnDeathChance>
 			</li>
 		</modExtensions>
 	</HediffDef>
@@ -86,6 +93,7 @@
 				<canUninstall>true</canUninstall>
 				<armorOffset>0.4</armorOffset>
 				<spawnChance>0.15</spawnChance>
+				<destroyOnDeathChance>0.5</destroyOnDeathChance>
 			</li>
 		</modExtensions>
 	</HediffDef>
@@ -109,6 +117,7 @@
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_GrowingModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
+				<destroyOnDeathChance>0.5</destroyOnDeathChance>
 			</li>
 			<li Class="WhatTheHack.DefModExtension_Hediff_WorkModule">
 				<workTypes>
@@ -129,6 +138,7 @@
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_FirefightingModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
+				<destroyOnDeathChance>0.5</destroyOnDeathChance>
 			</li>
 			<li Class="WhatTheHack.DefModExtension_Hediff_WorkModule">
 				<workTypes>
@@ -157,6 +167,7 @@
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_CleaningModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
+				<destroyOnDeathChance>0.5</destroyOnDeathChance>
 			</li>
 			<li Class="WhatTheHack.DefModExtension_Hediff_WorkModule">
 				<workTypes>
@@ -185,6 +196,7 @@
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_HaulingModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
+				<destroyOnDeathChance>0.5</destroyOnDeathChance>
 			</li>
 			<li Class="WhatTheHack.DefModExtension_Hediff_WorkModule">
 				<workTypes>
@@ -215,6 +227,7 @@
 				<canUninstall>true</canUninstall>
 				<batteryCapacityOffset>0.5</batteryCapacityOffset>
 				<spawnChance>0.15</spawnChance>
+				<destroyOnDeathChance>0.5</destroyOnDeathChance>
 			</li>
 		</modExtensions>
 	</HediffDef>
@@ -238,7 +251,7 @@
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_VanometricModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
-				<spawnChance>0.02</spawnChance>
+				<spawnChance>0.01</spawnChance>
 			</li>
 		</modExtensions>
 	</HediffDef>
@@ -254,6 +267,7 @@
 				<hasAbility>true</hasAbility>
 				<canUninstall>true</canUninstall>
 				<spawnChance>0.15</spawnChance>
+				<destroyOnDeathChance>1.0</destroyOnDeathChance>
 			</li>
 		</modExtensions>
 	</HediffDef>
@@ -269,6 +283,7 @@
 				<hasAbility>true</hasAbility>
 				<canUninstall>true</canUninstall>
 				<spawnChance>0.15</spawnChance>
+				<destroyOnDeathChance>0.75</destroyOnDeathChance>
 			</li>
 		</modExtensions>
 	</HediffDef>
@@ -320,6 +335,7 @@
 				<hasAbility>true</hasAbility>
 				<canUninstall>true</canUninstall>
 				<spawnChance>0.15</spawnChance>
+				<destroyOnDeathChance>0.75</destroyOnDeathChance>
 			</li>
 		</modExtensions>
 	  </HediffDef>
@@ -333,6 +349,7 @@
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_BeltModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
+				<destroyOnDeathChance>0.5</destroyOnDeathChance>
 			</li>
 		</modExtensions>
 	  </HediffDef>
@@ -347,6 +364,7 @@
 				<extraButcherProduct>WTH_TurretModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
 				<spawnChance>0.15</spawnChance>
+				<destroyOnDeathChance>0.6</destroyOnDeathChance>
 			</li>
 		</modExtensions>
 	  </HediffDef>

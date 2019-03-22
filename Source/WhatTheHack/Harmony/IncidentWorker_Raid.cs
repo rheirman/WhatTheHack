@@ -39,11 +39,7 @@ namespace WhatTheHack.Harmony
         public static List<Pawn> SpawnHackedMechanoids(List<Pawn> pawns, IncidentParms parms)
         {
             //only call Arrive method when sure it's not already called. (can happen due to other mods)
-            if(pawns.Count > 0 && !pawns[0].Spawned)
-            {
-                parms.raidArrivalMode.Worker.Arrive(pawns, parms);
-            }
-            if (pawns.Count == 0 || !(parms.raidArrivalMode == PawnsArrivalModeDefOf.EdgeWalkIn))
+            if (pawns.Count == 0)
             {
                 return pawns;
             }
@@ -67,7 +63,8 @@ namespace WhatTheHack.Harmony
                 IEnumerable<PawnKindDef> selectedPawns = (from a in DefDatabase<PawnKindDef>.AllDefs
                                                   where a.RaceProps.IsMechanoid &&
                                                   cumulativePoints + a.combatPower < maxMechPoints &&
-                                                  Utilities.IsAllowedInModOptions(a.race.defName, parms.faction)
+                                                  Utilities.IsAllowedInModOptions(a.race.defName, parms.faction) &&
+                                                  (parms.raidArrivalMode == PawnsArrivalModeDefOf.EdgeWalkIn || a.RaceProps.baseBodySize <= 1) //Only allow small mechs to use drop pods
                                                   //&& IsMountableUtility.isAllowedInModOptions(a.defName)
                                                   select a);
 
@@ -80,8 +77,8 @@ namespace WhatTheHack.Harmony
 
 
                     Pawn mechanoid = PawnGenerator.GeneratePawn(pawnKindDef, parms.faction);
-                    IntVec3 loc = CellFinder.RandomClosewalkCellNear(parms.spawnCenter, map, 8, null);
-                    GenSpawn.Spawn(mechanoid, loc, map, parms.spawnRotation);
+                    //IntVec3 loc = CellFinder.RandomClosewalkCellNear(parms.spawnCenter, map, 8, null);
+                    //GenSpawn.Spawn(mechanoid, loc, map, parms.spawnRotation);
                     mechanoid.health.AddHediff(WTH_DefOf.WTH_TargetingHacked);
                     mechanoid.health.AddHediff(WTH_DefOf.WTH_BackupBattery);
                     Need_Power powerNeed = (Need_Power)mechanoid.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power);
@@ -103,6 +100,10 @@ namespace WhatTheHack.Harmony
                 {
                     pawn.equipment = new Pawn_EquipmentTracker(pawn);
                 }
+            }
+            if (pawns.Count > 0 && !pawns[0].Spawned)
+            {
+                parms.raidArrivalMode.Worker.Arrive(pawns, parms);
             }
             return pawns;
         }

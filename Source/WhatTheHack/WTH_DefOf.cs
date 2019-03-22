@@ -35,6 +35,7 @@ namespace WhatTheHack
         public static HediffDef WTH_OverdriveModule;
         public static HediffDef WTH_ArmorModule;
         public static HediffDef WTH_Overdrive;
+        public static HediffDef WTH_DestroyedModule;
 
 
         public static DamageDef WTH_RegeneratedPartDamage;

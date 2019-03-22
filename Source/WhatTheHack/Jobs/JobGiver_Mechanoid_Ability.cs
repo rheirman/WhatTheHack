@@ -40,7 +40,7 @@ namespace WhatTheHack.Jobs
                 Job job = new Job(WTH_DefOf.WTH_Ability_Repair, pawn);
                 return job;
             }
-            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_OverdriveModule) && Rand.Chance(0.1f))
+            if (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_OverdriveModule) && Rand.Chance(0.25f))
             {
                 Thing targetFound = FindTargetFor(pawn);
 
