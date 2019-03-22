@@ -65,7 +65,6 @@ namespace WhatTheHack.Harmony
                                                   cumulativePoints + a.combatPower < maxMechPoints &&
                                                   Utilities.IsAllowedInModOptions(a.race.defName, parms.faction) &&
                                                   (parms.raidArrivalMode == PawnsArrivalModeDefOf.EdgeWalkIn || a.RaceProps.baseBodySize <= 1) //Only allow small mechs to use drop pods
-                                                  //&& IsMountableUtility.isAllowedInModOptions(a.defName)
                                                   select a);
 
                 if (selectedPawns != null)
@@ -74,11 +73,12 @@ namespace WhatTheHack.Harmony
                 }
                 if (pawnKindDef != null)
                 {
-
-
                     Pawn mechanoid = PawnGenerator.GeneratePawn(pawnKindDef, parms.faction);
-                    //IntVec3 loc = CellFinder.RandomClosewalkCellNear(parms.spawnCenter, map, 8, null);
-                    //GenSpawn.Spawn(mechanoid, loc, map, parms.spawnRotation);
+                    if(parms.raidArrivalMode == PawnsArrivalModeDefOf.EdgeWalkIn)
+                    {
+                        IntVec3 loc = CellFinder.RandomClosewalkCellNear(parms.spawnCenter, map, 8, null);
+                        GenSpawn.Spawn(mechanoid, loc, map, parms.spawnRotation);
+                    }
                     mechanoid.health.AddHediff(WTH_DefOf.WTH_TargetingHacked);
                     mechanoid.health.AddHediff(WTH_DefOf.WTH_BackupBattery);
                     Need_Power powerNeed = (Need_Power)mechanoid.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power);
@@ -86,7 +86,6 @@ namespace WhatTheHack.Harmony
                     pawns.Add(mechanoid);
                     cumulativePoints += pawnKindDef.combatPower;
                     AddModules(mechanoid);
-
                 }
                 else
                 {
@@ -111,16 +110,10 @@ namespace WhatTheHack.Harmony
         private static void AddModules(Pawn mechanoid)
         {
             List<HediffDef> modules = new List<HediffDef>();
-            modules.Add(WTH_DefOf.WTH_SpeedModule);
-            modules.Add(WTH_DefOf.WTH_TurretModule);
-            modules.Add(WTH_DefOf.WTH_VanometricModule);
-            modules.Add(WTH_DefOf.WTH_BatteryExpansionModule);
-            modules.Add(WTH_DefOf.WTH_RepairModule);
-            modules.Add(WTH_DefOf.WTH_SelfDestruct);
-            modules.Add(WTH_DefOf.WTH_OverdriveModule);
-            modules.Add(WTH_DefOf.WTH_ArmorModule);
-            //TODO: belt module
-
+            foreach(HediffDef hediff in Base.allSpawnableModules)
+            {
+                modules.Add(hediff);
+            }
 
             int i = 0;
             int count = modules.Count;
@@ -144,22 +137,61 @@ namespace WhatTheHack.Harmony
                     {
                         continue;
                     }
-                    mechanoid.health.AddHediff(WTH_DefOf.WTH_MountedTurret);
-                    ThingDef turretDef = DefDatabase<ThingDef>.AllDefs.Where((ThingDef td) => td.HasComp(typeof(CompMountable))).RandomElement();
-                    Thing thing = ThingMaker.MakeThing(turretDef, ThingDefOf.Steel);
-                    CompMountable comp = thing.GetInnerIfMinified().TryGetComp<CompMountable>();
-                    comp.MountToPawn(mechanoid);
+                    ConfigureTurretModule(mechanoid);
                 }
-                mechanoid.health.AddHediff(hediff);
+                if (hediff == WTH_DefOf.WTH_BeltModule)
+                {
+                    if (mechanoid.verbTracker.PrimaryVerb.IsMeleeAttack)
+                    {
+                        continue;
+                    }
+                    ConfigureBeltModule(mechanoid);
+                }
                 if (hediff == WTH_DefOf.WTH_RepairModule)
                 {
-                    mechanoid.InitializeComps();
-                    if(mechanoid.TryGetComp<CompRefuelable>() is CompRefuelable comp)
-                    {
-                        Traverse.Create(comp).Field("fuel").SetValue(comp.Props.fuelCapacity);
-                    }
+                    ConfigureRepairModule(mechanoid);
+                }
+                mechanoid.health.AddHediff(hediff);
+            }
+        }
+
+        private static void ConfigureRepairModule(Pawn mechanoid)
+        {
+            mechanoid.InitializeComps();
+            if (mechanoid.TryGetComp<CompRefuelable>() is CompRefuelable comp)
+            {
+                Traverse.Create(comp).Field("fuel").SetValue(comp.Props.fuelCapacity);
+            }
+        }
+
+        private static void ConfigureTurretModule(Pawn mechanoid)
+        {
+            mechanoid.health.AddHediff(WTH_DefOf.WTH_MountedTurret);
+            ThingDef turretDef = DefDatabase<ThingDef>.AllDefs.Where((ThingDef td) => td.HasComp(typeof(CompMountable))).RandomElement();
+            Thing thing = ThingMaker.MakeThing(turretDef, ThingDefOf.Steel);
+            CompMountable comp = thing.GetInnerIfMinified().TryGetComp<CompMountable>();
+            comp.MountToPawn(mechanoid);
+        }
+
+        private static void ConfigureBeltModule(Pawn mechanoid)
+        {
+            if (mechanoid.apparel == null)
+            {
+                mechanoid.apparel = new Pawn_ApparelTracker(mechanoid);
+            }
+            if (mechanoid.outfits == null)
+            {
+                if (mechanoid.story == null)
+                {
+                    mechanoid.story = new Pawn_StoryTracker(mechanoid);
+                }
+                if (mechanoid.story.bodyType == null)
+                {
+                    mechanoid.story.bodyType = BodyTypeDefOf.Fat; //any body type will do, so why not pick "Fat". 
                 }
             }
+            Thing belt = ThingMaker.MakeThing(Base.allBelts.RandomElement());
+            mechanoid.apparel.Wear(belt as Apparel);
         }
         //do nothing
     }

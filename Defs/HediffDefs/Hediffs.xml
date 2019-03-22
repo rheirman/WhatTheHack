@@ -350,6 +350,7 @@
 				<extraButcherProduct>WTH_BeltModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
 				<destroyOnDeathChance>0.5</destroyOnDeathChance>
+				<spawnChance>0.15</spawnChance>
 			</li>
 		</modExtensions>
 	  </HediffDef>

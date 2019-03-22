@@ -57,6 +57,8 @@ namespace WhatTheHack
         internal static List<ThingDef> allMechs;
         internal static List<String> allFactionNames;
         internal static List<WorkTypeDef> allowedMechWork = new List<WorkTypeDef>();
+        internal static List<ThingDef> allBelts = new List<ThingDef>();
+        internal static List<HediffDef> allSpawnableModules = new List<HediffDef>();
 
         //temp accessible storage
         internal float daysOfFuel = 0;
@@ -83,8 +85,10 @@ namespace WhatTheHack
             allowedMechWork.Add(WorkTypeDefOf.Firefighter);
             allowedMechWork.Add(WTH_DefOf.Cleaning);
             allowedMechWork.Add(WTH_DefOf.PlantCutting);
+            allBelts = DefDatabase<ThingDef>.AllDefs.Where((ThingDef t) => Utilities.IsBelt(t.apparel)).ToList();
+            allSpawnableModules = DefDatabase<HediffDef>.AllDefs.Where((HediffDef h) => h.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.spawnChance > 0).ToList();
 
-            Predicate<ThingDef> isMech = (ThingDef d) => d.race != null && d.race.IsMechanoid;
+            Predicate <ThingDef> isMech = (ThingDef d) => d.race != null && d.race.IsMechanoid;
             Predicate<FactionDef> isHackingFaction = (FactionDef d) => !d.isPlayer && d != FactionDefOf.Mechanoid && d != FactionDefOf.Insect;
             allMechs = (from td in DefDatabase<ThingDef>.AllDefs where isMech(td) select td).ToList();
             allFactionNames = (from td  in DefDatabase<FactionDef>.AllDefs
