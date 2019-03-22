@@ -35,7 +35,6 @@ namespace WhatTheHack.Jobs
             this.FailOnDespawnedOrNull(TargetIndex.A);
             if(RestingPlace is Building_BaseMechanoidPlatform)
             {
-                Log.Message("RestingPlace is Building_BaseMechanoidPlatform");
                 yield return Toils_Bed.ClaimBedIfNonMedical(TargetIndex.A);
                 yield return GoToPlatform(TargetIndex.A);
             }

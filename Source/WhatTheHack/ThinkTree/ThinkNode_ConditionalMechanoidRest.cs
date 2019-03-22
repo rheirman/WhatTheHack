@@ -17,22 +17,7 @@ namespace WhatTheHack.ThinkTree
             }
             else if (HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn) && pawn.health.surgeryBills.FirstShouldDoNow is Bill b && b.recipe == WTH_DefOf.WTH_HackMechanoid)
             {
-                Log.Message("ThinkNode_ConditionalMechanoidRest satisfied for mech");
                 return true;
-            }
-            else
-            {
-                Log.Message("meh :(");
-                Log.Message("HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn): " + HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn));
-                if(pawn.health.surgeryBills.FirstShouldDoNow is Bill bill)
-                {
-                    Log.Message("pawn.health.surgeryBills.FirstShouldDoNow is Bill b && b.recipe == WTH_DefOf.WTH_HackMechanoid: " + (bill.recipe == WTH_DefOf.WTH_HackMechanoid));
-
-                }
-                else
-                {
-                    Log.Message("pawn.health.surgeryBills.FirstShouldDoNow is no Bill");
-                }
             }
             return false;
         }

@@ -125,9 +125,9 @@
 	<products>
 	  <WTH_OverdriveModule>1</WTH_OverdriveModule>
 	</products>
-		<skillRequirements>
-			<Crafting>8</Crafting>
-		</skillRequirements>
+	<skillRequirements>
+		<Crafting>8</Crafting>
+	</skillRequirements>
 	<workSkill>Crafting</workSkill>
 	<researchPrerequisite>WTH_OverdriveModule</researchPrerequisite>
   </RecipeDef>  

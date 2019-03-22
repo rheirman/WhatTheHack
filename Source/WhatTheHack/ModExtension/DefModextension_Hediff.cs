@@ -14,6 +14,7 @@ namespace WhatTheHack
         public float powerRateOffset = 0f;
         public float batteryCapacityOffset = 0f;
         public float firingRateOffset = 0f;
+        public float spawnChance = 0f;
         public bool canUninstall = false;
     }
 }

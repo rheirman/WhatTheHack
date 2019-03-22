@@ -60,6 +60,7 @@
 				<extraButcherProduct>WTH_SpeedModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
 				<powerRateOffset>0.1</powerRateOffset>
+				<spawnChance>0.15</spawnChance>
 			</li>
 		</modExtensions>
 	</HediffDef>
@@ -84,6 +85,7 @@
 				<extraButcherProduct>WTH_ArmorModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
 				<armorOffset>0.4</armorOffset>
+				<spawnChance>0.15</spawnChance>
 			</li>
 		</modExtensions>
 	</HediffDef>
@@ -212,6 +214,7 @@
 				<extraButcherProduct>WTH_BatteryExpansionModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
 				<batteryCapacityOffset>0.5</batteryCapacityOffset>
+				<spawnChance>0.15</spawnChance>
 			</li>
 		</modExtensions>
 	</HediffDef>
@@ -235,6 +238,7 @@
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_VanometricModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
+				<spawnChance>0.02</spawnChance>
 			</li>
 		</modExtensions>
 	</HediffDef>
@@ -249,6 +253,7 @@
 				<extraButcherProduct>WTH_SelfDestructModule</extraButcherProduct>
 				<hasAbility>true</hasAbility>
 				<canUninstall>true</canUninstall>
+				<spawnChance>0.15</spawnChance>
 			</li>
 		</modExtensions>
 	</HediffDef>
@@ -263,6 +268,7 @@
 				<extraButcherProduct>WTH_OverdriveModule</extraButcherProduct>
 				<hasAbility>true</hasAbility>
 				<canUninstall>true</canUninstall>
+				<spawnChance>0.15</spawnChance>
 			</li>
 		</modExtensions>
 	</HediffDef>
@@ -313,6 +319,7 @@
 				<extraButcherProduct>WTH_RepairModule</extraButcherProduct>
 				<hasAbility>true</hasAbility>
 				<canUninstall>true</canUninstall>
+				<spawnChance>0.15</spawnChance>
 			</li>
 		</modExtensions>
 	  </HediffDef>
@@ -339,6 +346,7 @@
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_TurretModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
+				<spawnChance>0.15</spawnChance>
 			</li>
 		</modExtensions>
 	  </HediffDef>
@@ -449,6 +457,7 @@
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>AIPersonaCore</extraButcherProduct>
+				<spawnChance>0.01</spawnChance>
 			</li>
 		</modExtensions>
 	  </HediffDef>

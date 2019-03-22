@@ -32,9 +32,7 @@ namespace WhatTheHack.Harmony
                 }
                 else
                 {
-                    Log.Message("GetAvailableMechanoidPlatform for: " + sleeper.Name + " called");
                     __result = Utilities.GetAvailableMechanoidPlatform(traveler, sleeper);
-                    Log.Message("__result = " + __result);
                     return false;
                 }
                 

@@ -116,17 +116,24 @@ namespace WhatTheHack.Harmony
             modules.Add(WTH_DefOf.WTH_BatteryExpansionModule);
             modules.Add(WTH_DefOf.WTH_RepairModule);
             modules.Add(WTH_DefOf.WTH_SelfDestruct);
+            modules.Add(WTH_DefOf.WTH_OverdriveModule);
+            modules.Add(WTH_DefOf.WTH_ArmorModule);
+            //TODO: belt module
 
 
             int i = 0;
             int count = modules.Count;
             while (i < count)
             {
-                if (Rand.Chance(0))
+                if (Rand.Chance(1 - modules[i].GetModExtension<DefModextension_Hediff>().spawnChance))
                 {//Chance that the mod is NOT used
                     modules.RemoveAt(i);
+                    count--;
                 }
-                i++;
+                else
+                {   
+                    i++;
+                }
             }
             foreach (HediffDef hediff in modules)
             {
