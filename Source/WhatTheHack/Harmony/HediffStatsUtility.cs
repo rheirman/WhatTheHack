@@ -23,11 +23,11 @@ namespace WhatTheHack.Harmony
             }
             if (instance.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt)
             {
-                if (modExt.armorFactor > 0)
+                if (modExt.armorOffset > 0)
                 {
                     //yield return new StatDrawEntry(StatCategoryDefOf.Basics, "WTH_StatDrawEntry_ArmorFactor".Translate(), (modExt.armorFactor - 1).ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset), 0);
-                    yield return new StatDrawEntry(StatDefOf.ArmorRating_Blunt.category, StatDefOf.ArmorRating_Blunt, modExt.armorFactor, StatRequest.For(instance.pawn));
-                    yield return new StatDrawEntry(StatDefOf.ArmorRating_Sharp.category, StatDefOf.ArmorRating_Sharp, modExt.armorFactor, StatRequest.For(instance.pawn));
+                    yield return new StatDrawEntry(StatDefOf.ArmorRating_Blunt.category, StatDefOf.ArmorRating_Blunt, modExt.armorOffset, StatRequest.For(instance.pawn));
+                    yield return new StatDrawEntry(StatDefOf.ArmorRating_Sharp.category, StatDefOf.ArmorRating_Sharp, modExt.armorOffset, StatRequest.For(instance.pawn));
                 }
                 if (modExt.batteryCapacityOffset > 0)
                 {

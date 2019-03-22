@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
+<Operation Class = "PatchOperationAdd">
+	<xpath>*/StatDef[defName="ArmorRating_Sharp" or defName="ArmorRating_Blunt"]/parts</xpath>
+	<value>
+		<li Class="WhatTheHack.Stats.StatPart_Armor">
+			<priority>999</priority>
+		</li>
+	</value>
+</Operation>
+
 <Operation Class = "PatchOperationInsert">
 	<xpath>*/DutyDef[defName="AssaultColony"]/thinkNode/subNodes/li[1]</xpath>
 	<value>

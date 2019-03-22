@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,21 +8,20 @@ using Verse;
 
 namespace WhatTheHack.Stats
 {
-    class StatPart_BatteryCapacity : StatPart
+    class StatPart_Armor : StatPart
     {
         public override string ExplanationPart(StatRequest req)
         {
             StringBuilder sb = new StringBuilder();
             if (req.Thing is Pawn pawn)
             {
-                sb.AppendLine("Body size contribution: +" + pawn.BodySize * 100);
                 foreach (Hediff h in pawn.health.hediffSet.hediffs)
                 {
-                    if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.batteryCapacityOffset > 0)
+                    if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.armorOffset > 0)
                     {
-                        sb.AppendLine(h.def.label + ": " + modExt.batteryCapacityOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset));
+                        sb.AppendLine(h.def.label + ": " + modExt.armorOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset));
                     }
-                }              
+                }
             }
             return sb.ToString();
         }
@@ -29,13 +29,12 @@ namespace WhatTheHack.Stats
         {
             if (req.Thing is Pawn pawn)
             {
-                val += pawn.BodySize * 100;
                 float offset = 0;
                 foreach (Hediff h in pawn.health.hediffSet.hediffs)
                 {
-                    if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.batteryCapacityOffset > 0)
+                    if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.armorOffset > 0)
                     {
-                        offset += val * modExt.batteryCapacityOffset;
+                        offset += val * modExt.armorOffset;
                     }
                 }
                 val += offset;

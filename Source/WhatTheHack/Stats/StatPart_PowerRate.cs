@@ -17,14 +17,17 @@ namespace WhatTheHack.Stats
                 sb.AppendLine("Body size contribution: +" + pawn.BodySize * 150);
                 foreach (Hediff h in pawn.health.hediffSet.hediffs)
                 {
-                    if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt)
+                    if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.powerRateOffset > 0)
                     {
                         sb.AppendLine(h.def.label + ": " +  modExt.powerRateOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset));
                     }
                 }
                 
             }
-            sb.AppendLine("power fall modifier (set in options): " + (1f - Base.powerFallModifier.Value).ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset));
+            if(Base.powerFallModifier.Value != 1f)
+            { 
+                sb.AppendLine("power fall modifier (set in options): " + (1f - Base.powerFallModifier.Value).ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset));
+            }
             return sb.ToString();
         }
         public override void TransformValue(StatRequest req, ref float val)
@@ -35,7 +38,7 @@ namespace WhatTheHack.Stats
                 float offset = 0;
                 foreach(Hediff h in pawn.health.hediffSet.hediffs)
                 {
-                    if(h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt)
+                    if(h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.powerRateOffset > 0)
                     {
                         offset += val * modExt.powerRateOffset;
                     }

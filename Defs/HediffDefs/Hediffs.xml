@@ -83,7 +83,7 @@
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_ArmorModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
-				<armorFactor>1.4</armorFactor>
+				<armorOffset>0.4</armorOffset>
 			</li>
 		</modExtensions>
 	</HediffDef>
