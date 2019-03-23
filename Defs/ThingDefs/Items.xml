@@ -213,7 +213,7 @@
   <ThingDef ParentName="BodyPartBase">
     <defName>WTH_SpeedModule</defName>
     <label>speed module</label>
-    <description>Can be installed in a mechanoid. Increases the movement speed of the mechanoid by 25% at the cost of 10% extra power consumption.</description>
+    <description>Can be installed in a mechanoid. Increases the movement speed of the mechanoid at the cost of extra power consumption.</description>
     <graphicData>
       <texPath>Things/SpeedModule</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -238,7 +238,7 @@
   <ThingDef ParentName="BodyPartBase">
     <defName>WTH_ArmorModule</defName>
     <label>armor module</label>
-    <description>Can be installed in a mechanoid. Increases the armor(blunt and sharp) of the mechanoid by 40% at the cost of 20% movement speed.</description>
+    <description>Can be installed in a mechanoid. Increases the armor(blunt and sharp) of the mechanoid at the cost of movement speed.</description>
     <graphicData>
       <texPath>Things/ArmorModule</texPath>
       <graphicClass>Graphic_Single</graphicClass>

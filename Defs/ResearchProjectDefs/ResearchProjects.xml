@@ -90,7 +90,7 @@
 		<label>armor module</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>Upgrade module that aims to increase the armor of mechanoids. Small layers of plasteel nano-fibers are inserted underneath the mechanoid's outer layer to protect critical parts. Increases sharp and blunt protection by 30% at the cost of a movement speed penalty.</description>
+		<description>Upgrade module that aims to increase the armor of mechanoids. Small layers of plasteel nano-fibers are inserted underneath the mechanoid's outer layer to protect critical parts. Increases sharp and blunt protection at the cost of a movement speed penalty.</description>
 		<baseCost>1600</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>

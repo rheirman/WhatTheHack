@@ -8,13 +8,15 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 using WhatTheHack.Needs;
+using WhatTheHack.Storage;
 
 namespace WhatTheHack.Comps
 {
-    class CompMountable : ThingComp
+    public class CompMountable : ThingComp
     {
         public Pawn mountedTo = null;
         public float drawOffset = 0;
+
         public Pawn MountedTo {
             get
             {
@@ -35,7 +37,6 @@ namespace WhatTheHack.Comps
             SetPowerComp();
             Configure();
             SetDrawOffset();
-            //parent.holdingOwner = pawn.inventory.innerContainer;
         }
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
@@ -50,6 +51,7 @@ namespace WhatTheHack.Comps
                 {
                     mountedTo.health.RemoveHediff(mountedTo.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.WTH_MountedTurret));
                 }
+                Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(mountedTo).turretMount = null;
                 mountedTo = null;
             }
         }
@@ -57,18 +59,13 @@ namespace WhatTheHack.Comps
         public override void CompTick()
         {
             base.CompTick();
-            if (Active)
+            if (!Active)
             {
-                Configure();
-            }
-            if (Active)
-            {
-                LetMountedToWaitIfReserved();
-            }
-            if (Active && parent.IsHashIntervalTick(120))
-            {
-                ConsumePowerIfNeeded();
-            }
+                return;
+            }           
+            Configure();
+            LetMountedToWaitIfReserved();
+
             if(mountedTo.health != null && !mountedTo.health.hediffSet.HasHediff(WTH_DefOf.WTH_TurretModule))
             {
                 Uninstall();
@@ -112,13 +109,22 @@ namespace WhatTheHack.Comps
                 OutOfInventory();
             }
             SetPowerComp();
+            LinkToMountedTo();
             if (parent.Spawned)
             {
                 parent.Position = mountedTo.Position;
             }
-            if(parent.Faction != mountedTo.Faction)
+            if (parent.Faction != mountedTo.Faction)
             {
                 parent.SetFaction(mountedTo.Faction);
+            }
+        }
+
+        private void LinkToMountedTo()
+        {
+            if (Base.Instance.GetExtendedDataStorage() is ExtendedDataStorage store && mountedTo != null)
+            {
+                store.GetExtendedDataFor(mountedTo).turretMount = this;
             }
         }
 
