@@ -183,7 +183,7 @@ namespace WhatTheHack.Needs
                 }
                 if(platform != null)
                 {
-                    result += platform.GetStatValue(WTH_DefOf.WTH_RechargeSpeed);
+                    result += platform.GetStatValue(WTH_DefOf.WTH_RechargeRate);
                 }
                 result /= GenDate.TicksPerDay;
                 return result;

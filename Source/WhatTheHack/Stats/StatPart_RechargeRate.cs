@@ -8,8 +8,9 @@ using WhatTheHack.Buildings;
 
 namespace WhatTheHack.Stats
 {
-    class StatPart_RechargeSpeed : StatPart
+    class StatPart_RechargeRate : StatPart
     {
+        private const float fuelToPowerFactor = 15f;
         public override string ExplanationPart(StatRequest req)
         {
             StringBuilder sb = new StringBuilder();
@@ -19,7 +20,7 @@ namespace WhatTheHack.Stats
             }
             else if(req.Thing is Building_PortableChargingPlatform portablePlatform)
             {
-                sb.AppendLine("WTH_Explanation_PowerFromFuel".Translate() + ": " + portablePlatform.refuelableComp.Props.fuelConsumptionRate * 15f);
+                sb.AppendLine("WTH_Explanation_PowerFromFuel".Translate() + ": " + portablePlatform.refuelableComp.Props.fuelConsumptionRate * fuelToPowerFactor);
             }
             if(Base.powerChargeModifier != 1)
             {
@@ -37,7 +38,7 @@ namespace WhatTheHack.Stats
             }
             else if (req.Thing is Building_PortableChargingPlatform portablePlatform)
             {
-                val += portablePlatform.refuelableComp.Props.fuelConsumptionRate *15f;
+                val += portablePlatform.refuelableComp.Props.fuelConsumptionRate * fuelToPowerFactor;
             }
             if (Base.powerChargeModifier != 1)
             {

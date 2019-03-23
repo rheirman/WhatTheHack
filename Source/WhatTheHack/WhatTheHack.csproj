@@ -91,9 +91,11 @@
     <Compile Include="Stats\StatPart_Armor.cs" />
     <Compile Include="Stats\StatPart_BatteryCapacity.cs" />
     <Compile Include="Stats\StatPart_FiringRate.cs" />
+    <Compile Include="Stats\StatPart_PartConsumptionRate.cs" />
     <Compile Include="Stats\StatPart_PowerProduction.cs" />
     <Compile Include="Stats\StatPart_PowerRate.cs" />
-    <Compile Include="Stats\StatPart_RechargeSpeed.cs" />
+    <Compile Include="Stats\StatPart_RechargeRate.cs" />
+    <Compile Include="Stats\StatPart_RepairRate.cs" />
     <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidAbility.cs" />
     <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidRest.cs" />
     <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidWork.cs" />

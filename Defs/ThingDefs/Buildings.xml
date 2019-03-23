@@ -90,7 +90,6 @@
       <MaxHitPoints>180</MaxHitPoints>
       <Flammability>1.0</Flammability>
       <Cleanliness>-2</Cleanliness>
-	  <WTH_MechanitesEffictiveness>1.0</WTH_MechanitesEffictiveness>
     </statBases>
     <size>(5,2)</size>
     <designationCategory>Production</designationCategory>
@@ -112,7 +111,7 @@
 	  <li>WTH_Craft_AdditionalBatteryModule</li>
 	  <li>WTH_Craft_VanometricModule</li>
 	  <li>WTH_Craft_BeltModule</li>
-  	  <li>WTH_Craft_GrowingModule</li>
+  	<li>WTH_Craft_GrowingModule</li>
 	  <li>WTH_Craft_FirefightingModule</li>
 	  <li>WTH_Craft_HaulingModule</li>
 	  <li>WTH_Craft_CleaningModule</li>
@@ -172,6 +171,7 @@
       <WorkToBuild>4000</WorkToBuild>
       <MaxHitPoints>350</MaxHitPoints>
       <Flammability>1.0</Flammability>
+    	<WTH_RepairRate>240</WTH_RepairRate>
     </statBases>
     <size>(3,3)</size>
     <passability>PassThroughOnly</passability>
@@ -193,7 +193,7 @@
 	  <li Class="CompProperties_Refuelable">
 		<fuelLabel>Loaded mechanoid parts</fuelLabel>
 		<fuelGizmoLabel>Loaded mechanoid parts</fuelGizmoLabel>
-        <fuelConsumptionRate>40.0</fuelConsumptionRate>
+        <fuelConsumptionRate>16.0</fuelConsumptionRate>
         <fuelCapacity>40.0</fuelCapacity>
         <fuelFilter>
           <thingDefs>
@@ -201,7 +201,7 @@
           </thingDefs>
         </fuelFilter>
         <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-		 <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+		<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
         <initialConfigurableTargetFuelLevel>10.0</initialConfigurableTargetFuelLevel>
       </li>
 	  <li Class="CompProperties_Forbiddable" />
@@ -213,7 +213,6 @@
     </comps>
 	<building>
 		<bed_humanlike>false</bed_humanlike>
-		<bed_healPerDay>125</bed_healPerDay>
 		<bed_showSleeperBody>True</bed_showSleeperBody>
 		<canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
 		<ai_chillDestination>false</ai_chillDestination>
@@ -274,7 +273,6 @@
 		</comps>
 		<building>
 			<bed_humanlike>false</bed_humanlike>
-			<bed_healPerDay>850</bed_healPerDay>
 			<bed_showSleeperBody>True</bed_showSleeperBody>
 			<canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
 			<ai_chillDestination>false</ai_chillDestination>
@@ -477,7 +475,7 @@
 		</li>
 		<li Class="CompProperties_Facility">
 			<statOffsets>
-				<WTH_MechanitesEffictiveness>0.1</WTH_MechanitesEffictiveness>
+				<WTH_RepairRate>30</WTH_RepairRate>
 			</statOffsets>
 			<maxSimultaneous>9</maxSimultaneous>
 		</li>
