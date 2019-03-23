@@ -12,6 +12,7 @@ using Harmony;
 using WhatTheHack.Comps;
 using WhatTheHack.Recipes;
 using UnityEngine;
+using System.Diagnostics;
 
 namespace WhatTheHack
 {
@@ -78,7 +79,6 @@ namespace WhatTheHack
         public override void DefsLoaded()
         {
             base.DefsLoaded();
-
             //TODO: Store this somewhere global.
             allowedMechWork.Add(WorkTypeDefOf.Hauling);
             allowedMechWork.Add(WorkTypeDefOf.Growing);

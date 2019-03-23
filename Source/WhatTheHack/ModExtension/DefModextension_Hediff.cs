@@ -12,6 +12,7 @@ namespace WhatTheHack
         public bool hasAbility = false;
         public float armorOffset = 0f;
         public float powerRateOffset = 0f;
+        public float powerProduction = 0f;
         public float batteryCapacityOffset = 0f;
         public float firingRateOffset = 0f;
         public float spawnChance = 0f;

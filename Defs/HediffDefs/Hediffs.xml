@@ -252,6 +252,7 @@
 				<extraButcherProduct>WTH_VanometricModule</extraButcherProduct>
 				<canUninstall>true</canUninstall>
 				<spawnChance>0.01</spawnChance>
+				<powerProduction>1000</powerProduction> 
 			</li>
 		</modExtensions>
 	</HediffDef>

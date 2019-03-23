@@ -29,11 +29,11 @@ namespace WhatTheHack.Harmony
                     yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, StatDefOf.ArmorRating_Sharp.label, modExt.armorOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset), 0);
                 }
                 if (modExt.batteryCapacityOffset != 0) {
-                    yield return new StatDrawEntry(WTH_DefOf.WTH_StatCategory_WhatTheHack, WTH_DefOf.WTH_BatteryCapacity.label, modExt.batteryCapacityOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset), 0);
+                    yield return new StatDrawEntry(WTH_DefOf.WTH_StatCategory_HackedMechanoid, WTH_DefOf.WTH_BatteryCapacity.label, modExt.batteryCapacityOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset), 0);
                 }
                 if (modExt.powerRateOffset != 0)
                 {
-                    yield return new StatDrawEntry(WTH_DefOf.WTH_StatCategory_WhatTheHack, WTH_DefOf.WTH_PowerRate.label, modExt.powerRateOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset), 0);
+                    yield return new StatDrawEntry(WTH_DefOf.WTH_StatCategory_HackedMechanoid, WTH_DefOf.WTH_PowerRate.label, modExt.powerRateOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset), 0);
                 }
                 if(modExt.firingRateOffset != 0)
                 {

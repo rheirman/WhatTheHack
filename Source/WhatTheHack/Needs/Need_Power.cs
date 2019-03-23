@@ -28,6 +28,10 @@ namespace WhatTheHack.Needs
                 this.lastLevel = CurLevel;
                 this.CurLevel -= this.PowerFallPerTick * 150f;
             }
+            if(this.CurLevel > this.lastLevel)
+            {
+                MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, WTH_DefOf.WTH_Mote_Charging);
+            }
             SetHediffs();
         }
 
@@ -106,24 +110,26 @@ namespace WhatTheHack.Needs
             
         }
 
+        //Can be negative in case of power production. 
         public float PowerFallPerTick
         {
             get
             {
-
+                float result = -PowerProduction;
                 if (this.CurCategory == PowerCategory.NoPower)
                 {
-                    return 0;
+                    return result;
                 }
                 if (DirectlyPowered(pawn))
                 {
-                    return 0;
+                    return result;
                 }
                 if (pawn.HasValidCaravanPlatform() && pawn.GetCaravan() != null && pawn.GetCaravan().HasFuel())
                 {
-                    return 0;
+                    return result;
                 }
-                return this.PowerRate; //TODO no magic number;
+                result += this.PowerRate;
+                return result;
             }
         }
 
@@ -161,9 +167,16 @@ namespace WhatTheHack.Needs
                 return pawn.GetStatValue(WTH_DefOf.WTH_PowerRate)/GenDate.TicksPerDay;
             }
         }
+        private float PowerProduction
+        {
+            get
+            {
+                return pawn.GetStatValue(WTH_DefOf.WTH_PowerProduction) / GenDate.TicksPerDay;
+            }
+        }
         public bool DirectlyPowered(Pawn pawn)
         {
-            return (!base.pawn.IsActivated() && base.pawn.OnBaseMechanoidPlatform() && ((Building_BaseMechanoidPlatform)base.pawn.CurrentBed()).HasPowerNow()) || pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_VanometricModule);
+            return (!base.pawn.IsActivated() && base.pawn.OnBaseMechanoidPlatform() && ((Building_BaseMechanoidPlatform)base.pawn.CurrentBed()).HasPowerNow());
         }
 
         public override void SetInitialLevel()

@@ -82,8 +82,11 @@ namespace WhatTheHack
         public static StatDef WTH_ControllerBeltRadius;
         public static StatDef WTH_MechanitesEffictiveness;
         public static StatDef WTH_PowerRate;
+        public static StatDef WTH_PowerProduction;
         public static StatDef WTH_BatteryCapacity;
-        public static StatCategoryDef WTH_StatCategory_WhatTheHack;
+        public static StatCategoryDef WTH_StatCategory_HackedMechanoid;
+        public static StatCategoryDef WTH_StatCategory_Colonist;
+        public static StatCategoryDef WTH_StatCategory_Platform;
 
         public static ResearchProjectDef WTH_TurretModule_GunTurrets;
         public static ResearchProjectDef WTH_TurretModule_Mortars;
