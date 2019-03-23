@@ -198,6 +198,19 @@ namespace WhatTheHack
             }
             return false;
         }
+        public static Building_PortableChargingPlatform CaravanPlatform(this Pawn pawn)
+        {
+            Caravan caravan = pawn.GetCaravan();
+            if (caravan != null)
+            {
+                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+                if (pawnData.caravanPlatform != null && pawnData.caravanPlatform.CaravanPawn == pawn)
+                {
+                    return pawnData.caravanPlatform;
+                }
+            }
+            return null;
+        }
         public static bool IsActivated(this Pawn pawn)
         {
             ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();

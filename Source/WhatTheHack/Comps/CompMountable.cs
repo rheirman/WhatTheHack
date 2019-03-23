@@ -72,19 +72,6 @@ namespace WhatTheHack.Comps
             }
         }
 
-        private void ConsumePowerIfNeeded()
-        {
-            CompPowerTrader compPower = parent.GetComp<CompPowerTrader>();
-            CompFlickable compFlickable = parent.GetComp<CompFlickable>();
-            if (compPower != null && compFlickable != null && compFlickable.SwitchIsOn && parent.Spawned)
-            {
-                if (mountedTo.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) is Need_Power powerNeed && !powerNeed.DirectlyPowered(mountedTo))
-                {
-                    powerNeed.CurLevel -= 0.35f + compPower.Props.basePowerConsumption * 0.0015f;
-                }
-            }
-        }
-
         private void LetMountedToWaitIfReserved()
         {
             Building_TurretGun turret = (Building_TurretGun)parent;

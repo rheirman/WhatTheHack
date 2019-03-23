@@ -14,7 +14,7 @@ namespace WhatTheHack.Stats
             StringBuilder sb = new StringBuilder();
             if (req.Thing is Pawn pawn)
             {
-                sb.AppendLine("Body size contribution: +" + pawn.BodySize * 100);
+                sb.AppendLine("WTH_Explanation_BodySizeContr".Translate() + ": +" + pawn.BodySize * 100);
                 foreach (Hediff h in pawn.health.hediffSet.hediffs)
                 {
                     if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.batteryCapacityOffset != 0)

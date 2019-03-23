@@ -140,12 +140,6 @@ namespace WhatTheHack.Harmony
                 return;
             }
 
-            if (pawn.HasValidCaravanPlatform() && pawn.GetCaravan() != null && pawn.GetCaravan().HasFuel())
-            {
-                float powerPerTick = 0.5f * WTH_DefOf.WTH_PortableChargingPlatform.GetCompProperties<CompProperties_Refuelable>().fuelConsumptionRate * 15 / GenDate.TicksPerDay; //TODO: no magic number
-                RechargeMechanoid(pawn, pawn.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power), powerPerTick);
-            }
-
             if (pawn.IsHashIntervalTick(10) && pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing))
             {
                     TryHealRandomInjury(__instance, pawn, 4000f / RimWorld.GenDate.TicksPerDay);
@@ -168,26 +162,7 @@ namespace WhatTheHack.Harmony
             {
                 TryRegeneratePart(pawn, platform);
                 RegainWeapon(pawn);
-
             }
-
-            if (platform.HasPowerNow())
-            {
-                Need powerNeed = pawn.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power);
-                float powerPerTick = 0;
-                if (platform.PowerComp != null)
-                {
-                    powerPerTick = platform.PowerComp.Props.basePowerConsumption / GenDate.TicksPerDay; 
-                }
-                else
-                {
-                    platform.refuelableComp.ConsumeFuel(platform.refuelableComp.Props.fuelConsumptionRate / GenDate.TicksPerDay);
-                    powerPerTick = platform.refuelableComp.Props.fuelConsumptionRate * 15 / GenDate.TicksPerDay; //TODO: no magic number
-                }
-
-                RechargeMechanoid(pawn, powerNeed, powerPerTick);
-            }
-
         }
 
         private static void SelfDestruct(Pawn pawn)
@@ -215,23 +190,6 @@ namespace WhatTheHack.Harmony
             }
         }
 
-        private static void RechargeMechanoid(Pawn pawn, Need powerNeed, float powerPerTick)
-        {
-            powerPerTick *= Base.powerChargeModifier;
-            if (powerNeed.CurLevel + powerPerTick * 100 < powerNeed.MaxLevel)
-            {
-                if (pawn.IsHashIntervalTick(100))
-                {
-                    MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, WTH_DefOf.WTH_Mote_Charging);
-                    powerNeed.CurLevel += powerPerTick * 100;
-                }
-            }
-            else if (powerNeed.CurLevel < powerNeed.MaxLevel)
-            {
-                powerNeed.CurLevel = powerNeed.MaxLevel;
-            }
-        }
-
         private static void TryRegeneratePart(Pawn pawn, Building_BaseMechanoidPlatform platform)
         {
             Hediff_MissingPart hediff = FindBiggestMissingBodyPart(pawn);
@@ -249,9 +207,7 @@ namespace WhatTheHack.Harmony
             DamageWorker_AddInjury addInjury = new DamageWorker_AddInjury();
             addInjury.Apply(new DamageInfo(WTH_DefOf.WTH_RegeneratedPartDamage, hediff.Part.def.GetMaxHealth(pawn) - 1, 0, -1, pawn, hediff.Part), pawn);
 
-                //pawn.health.AddHediff(WTH_DefOf.WTH_RegeneratedPart);
-
-            
+         
         }
 
         //almost literal copy vanilla CompUseEffect_FixWorstHealthCondition.FindBiggestMissingBodyPart, only returns the hediff instead. 

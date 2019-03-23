@@ -84,6 +84,7 @@ namespace WhatTheHack
         public static StatDef WTH_PowerRate;
         public static StatDef WTH_PowerProduction;
         public static StatDef WTH_BatteryCapacity;
+        public static StatDef WTH_RechargeSpeed;
         public static StatCategoryDef WTH_StatCategory_HackedMechanoid;
         public static StatCategoryDef WTH_StatCategory_Colonist;
         public static StatCategoryDef WTH_StatCategory_Platform;

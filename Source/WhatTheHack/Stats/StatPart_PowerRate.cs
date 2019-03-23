@@ -16,7 +16,7 @@ namespace WhatTheHack.Stats
             StringBuilder sb = new StringBuilder();
             if (req.Thing is Pawn pawn)
             {
-                sb.AppendLine("Body size contribution: +" + pawn.BodySize * 150);
+                sb.AppendLine("WTH_Explanation_BodySizeContr".Translate() + ": +" + pawn.BodySize * 150);
                 foreach (Hediff h in pawn.health.hediffSet.hediffs)
                 {
                     if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.powerRateOffset != 0)
@@ -36,7 +36,7 @@ namespace WhatTheHack.Stats
             
             if(Base.powerFallModifier.Value != 1f)
             { 
-                sb.AppendLine("power fall modifier (set in options): " + (1f - Base.powerFallModifier.Value).ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset));
+                sb.AppendLine("WTH_Explanation_PowerFallModifier".Translate() + ": " + (1f - Base.powerFallModifier.Value).ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset));
             }
             return sb.ToString();
         }

@@ -171,7 +171,22 @@ namespace WhatTheHack.Needs
         {
             get
             {
-                return pawn.GetStatValue(WTH_DefOf.WTH_PowerProduction) / GenDate.TicksPerDay;
+                float result = pawn.GetStatValue(WTH_DefOf.WTH_PowerProduction);
+                Building_BaseMechanoidPlatform platform = null;
+                if(pawn.CurrentBed() is Building_BaseMechanoidPlatform mapPlatform && mapPlatform.HasPowerNow()){
+                    platform = mapPlatform;
+                }
+                else if (pawn.CaravanPlatform() is Building_PortableChargingPlatform caravanPlatform && pawn.GetCaravan().HasFuel())
+                {
+                    platform = caravanPlatform;
+                    platform.refuelableComp.ConsumeFuel(platform.refuelableComp.Props.fuelConsumptionRate / GenDate.TicksPerDay * 150f);
+                }
+                if(platform != null)
+                {
+                    result += platform.GetStatValue(WTH_DefOf.WTH_RechargeSpeed);
+                }
+                result /= GenDate.TicksPerDay;
+                return result;
             }
         }
         public bool DirectlyPowered(Pawn pawn)

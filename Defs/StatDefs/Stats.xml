@@ -52,6 +52,19 @@
 		  </li>
 		</parts>
 	</StatDef>
+	
+	<StatDef>
+		<defName>WTH_RechargeSpeed</defName>
+		<label>Power recharge per day</label>
+		<description>How much power the platform recharges the mechanoid each day, assuming it is powered/fueled all day</description>
+		<category>WTH_StatCategory_Platform</category>
+		<defaultBaseValue>0</defaultBaseValue>
+		<minValue>0</minValue>
+		<toStringStyle>Integer</toStringStyle>
+		<parts>
+			<li Class="WhatTheHack.Stats.StatPart_RechargeSpeed"></li>
+		</parts>
+	</StatDef>
 
 	<StatDef>
 		<defName>WTH_ControllerBeltRadius</defName>

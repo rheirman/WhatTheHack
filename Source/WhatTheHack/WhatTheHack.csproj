@@ -93,6 +93,7 @@
     <Compile Include="Stats\StatPart_FiringRate.cs" />
     <Compile Include="Stats\StatPart_PowerProduction.cs" />
     <Compile Include="Stats\StatPart_PowerRate.cs" />
+    <Compile Include="Stats\StatPart_RechargeSpeed.cs" />
     <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidAbility.cs" />
     <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidRest.cs" />
     <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidWork.cs" />
