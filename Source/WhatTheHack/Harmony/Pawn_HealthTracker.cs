@@ -142,7 +142,7 @@ namespace WhatTheHack.Harmony
 
             if (pawn.IsHashIntervalTick(10) && pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing))
             {
-                    TryHealRandomInjury(__instance, pawn, 4000f / RimWorld.GenDate.TicksPerDay);
+                TryHealRandomInjury(__instance, pawn, 4000f / RimWorld.GenDate.TicksPerDay);
             }
 
             if (!(pawn.CurrentBed() is Building_BaseMechanoidPlatform))

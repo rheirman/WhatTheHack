@@ -9,19 +9,23 @@ using Verse;
 namespace WhatTheHack.Harmony
 {
     [HarmonyPatch(typeof(HediffStatsUtility), "SpecialDisplayStats")]
-    class HediffStatsUtility_SpecialDisplayStats
+    public class HediffStatsUtility_SpecialDisplayStats
     {
         static void Postfix(HediffStage stage, Hediff instance, ref IEnumerable<StatDrawEntry> __result)
         {
-            __result = SpecialDisplayStats(stage, instance, __result);
+            if(instance != null)
+            {
+                __result = SpecialDisplayStats(stage, instance.def, __result);
+            }
+
         }
-        static IEnumerable<StatDrawEntry> SpecialDisplayStats(HediffStage stage, Hediff instance, IEnumerable<StatDrawEntry> __result)
+        public static IEnumerable<StatDrawEntry> SpecialDisplayStats(HediffStage stage, HediffDef instance, IEnumerable<StatDrawEntry> __result)
         {
             foreach(StatDrawEntry entry in __result)
             {
                 yield return entry;
             }
-            if (instance.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt)
+            if (instance.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt)
             {
                 if (modExt.armorOffset != 0)
                 {
@@ -35,7 +39,8 @@ namespace WhatTheHack.Harmony
                 {
                     yield return new StatDrawEntry(WTH_DefOf.WTH_StatCategory_HackedMechanoid, WTH_DefOf.WTH_PowerRate.label, modExt.powerRateOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset), 0);
                 }
-                if(modExt.firingRateOffset != 0)
+
+                if (modExt.firingRateOffset != 0)
                 {
                     yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, StatDefOf.RangedWeapon_Cooldown.label, modExt.firingRateOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset), 0);
                     yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, StatDefOf.MeleeWeapon_CooldownMultiplier.label, modExt.firingRateOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset), 0);

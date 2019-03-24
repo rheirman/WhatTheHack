@@ -60,6 +60,7 @@ namespace WhatTheHack
         internal static List<WorkTypeDef> allowedMechWork = new List<WorkTypeDef>();
         internal static List<ThingDef> allBelts = new List<ThingDef>();
         internal static List<HediffDef> allSpawnableModules = new List<HediffDef>();
+        internal static List<SkillDef> allowedMechSkills = new List<SkillDef>();
 
         //temp accessible storage
         internal float daysOfFuel = 0;
@@ -85,6 +86,17 @@ namespace WhatTheHack
             allowedMechWork.Add(WorkTypeDefOf.Firefighter);
             allowedMechWork.Add(WTH_DefOf.Cleaning);
             allowedMechWork.Add(WTH_DefOf.PlantCutting);
+            foreach(WorkTypeDef wtd in allowedMechWork)
+            {
+                foreach(SkillDef skill in wtd.relevantSkills)
+                {
+                    if (!allowedMechSkills.Contains(skill))
+                    {
+                        allowedMechSkills.Add(skill);
+                    }
+                }
+            }
+
             allBelts = DefDatabase<ThingDef>.AllDefs.Where((ThingDef t) => Utilities.IsBelt(t.apparel)).ToList();
             allSpawnableModules = DefDatabase<HediffDef>.AllDefs.Where((HediffDef h) => h.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.spawnChance > 0).ToList();
 

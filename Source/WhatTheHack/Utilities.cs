@@ -217,6 +217,46 @@ namespace WhatTheHack
             Base.Instance.daysOfFuel = daysOfFuel;
             Base.Instance.daysOfFuelReason = daysOfFuelReason.ToString();
         }
+
+        public static bool ShouldGetStatValue(Pawn pawn, StatDef stat)
+        {
+            if (pawn.IsHacked() && pawn.skills != null)
+            {
+                return StatAllowed(stat);
+            }
+            else
+            {
+                return pawn.skills != null;
+            }
+        }
+
+
+        private static bool StatAllowed(StatDef stat)
+        {
+            bool found = false;
+            if (!stat.skillNeedFactors.NullOrEmpty())
+            {
+                foreach (SkillNeed sn in stat.skillNeedFactors)
+                {
+                    if (Base.allowedMechSkills.Contains(sn.skill))
+                    {
+                        found = true;
+                    }
+                }
+            }
+            if (!stat.skillNeedOffsets.NullOrEmpty())
+            {
+                foreach (SkillNeed sn in stat.skillNeedOffsets)
+                {
+                    if (Base.allowedMechSkills.Contains(sn.skill))
+                    {
+                        found = true;
+                    }
+                }
+            }
+
+            return found;
+        }
     }
 
 }
