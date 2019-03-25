@@ -15,7 +15,7 @@ namespace WhatTheHack.ThinkTree
             {
                 return true;
             }
-            else if (HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn) && pawn.health.surgeryBills.FirstShouldDoNow is Bill b && b.recipe == WTH_DefOf.WTH_HackMechanoid)
+            else if (HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn) && pawn.OnHackingTable())
             {
                 return true;
             }
