@@ -70,13 +70,14 @@
   <JobDef>
     <defName>WTH_Ability_Overdrive</defName>
     <reportString>Using overdrive ability</reportString>
-    <driverClass>WhatTheHack.Jobs.JobDriver_MechanoidAbility</driverClass>
+    <driverClass>WhatTheHack.Jobs.JobDriver_MechanoidAbility_Overdrive</driverClass>
     <casualInterruptible>false</casualInterruptible>
 	<modExtensions>
 		<li Class="WhatTheHack.DefModExtension_Ability">
 			<warmupTicks>150</warmupTicks>
-			<powerDrain>10</powerDrain>
+			<powerDrain>30</powerDrain>
 			<hediffSelf>WTH_Overdrive</hediffSelf>
+			<failChance>0.15</failChance>
 		</li>
 	</modExtensions>
   </JobDef>

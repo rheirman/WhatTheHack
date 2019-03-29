@@ -9,7 +9,7 @@ using WhatTheHack.Needs;
 
 namespace WhatTheHack.Jobs
 {
-    class JobDriver_MechanoidAbility : JobDriver
+    public class JobDriver_MechanoidAbility : JobDriver
     {
         public bool finished = false;
         public override bool TryMakePreToilReservations(bool errorOnFailed)
@@ -49,7 +49,7 @@ namespace WhatTheHack.Jobs
             }
         }
 
-        private void PerformAbility(DefModExtension_Ability modExt)
+        protected virtual void PerformAbility(DefModExtension_Ability modExt)
         {
             if (modExt.fuelDrain > 0 && pawn.TryGetComp<CompRefuelable>() is CompRefuelable refuelableComp)
             {
@@ -59,6 +59,11 @@ namespace WhatTheHack.Jobs
             {
                 powerNeed.CurLevel -= modExt.powerDrain;
             }
+            if (Rand.Chance(modExt.failChance))
+            {
+                FailAbility(modExt);
+                return;
+            }
             if (modExt.hediffSelf != null)
             {
                 pawn.health.AddHediff(modExt.hediffSelf);
@@ -67,6 +72,10 @@ namespace WhatTheHack.Jobs
             {
                 pawn.health.AddHediff(modExt.hediffTarget);
             }
+        }
+        protected virtual void FailAbility(DefModExtension_Ability modExt)
+        {
+
         }
     }
 }

@@ -55,7 +55,7 @@ namespace WhatTheHack.Harmony
         {
             Random rand = new Random(DateTime.Now.Millisecond);
             int rndInt = rand.Next(1, 1000);
-            if (rndInt <= 5) //TODO: no magic number
+            if (rndInt <= 4) //TODO: no magic number
             {
                 Need_Maintenance need = pawn.needs.TryGetNeed<Need_Maintenance>();
                 need.CurLevel = 0;

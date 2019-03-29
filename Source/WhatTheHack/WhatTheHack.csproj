@@ -84,6 +84,7 @@
     <Compile Include="Harmony\Pawn_SkillTracker.cs" />
     <Compile Include="Harmony\ThingDef.cs" />
     <Compile Include="Jobs\Depricated\JobDriver_Ability.cs" />
+    <Compile Include="Jobs\JobDriver_MechanoidAbility_Overdrive.cs" />
     <Compile Include="Jobs\JobGiver_Mechanoid_Rest.cs" />
     <Compile Include="Jobs\JobGiver_Work_Mechanoid.cs" />
     <Compile Include="Jobs\JobGiver_Mechanoid_Ability.cs" />

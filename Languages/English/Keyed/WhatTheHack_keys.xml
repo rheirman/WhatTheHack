@@ -412,7 +412,11 @@ You can repeat this operation as many times as needed as a means to get more mec
 	<WTH_Explanation_PowerFromFuel>Power from fuel</WTH_Explanation_PowerFromFuel>
 	<WTH_Explanation_ConsumptionRate>Consumption rate of platform</WTH_Explanation_ConsumptionRate>
 	<WTH_Explanation_RepairConsumptionModifier>Repair consumption modifier (set in mod settings)</WTH_Explanation_RepairConsumptionModifier>
-
+	<WTH_Letter_OverdriveFailed1_Description>Something snapped in the head of the mechanoid named {0} due to its overdrive module overdriving past hardware safety limits and causing short-circuits instead of overdriving the mechanoid. Urgent maintenance is needed.</WTH_Letter_OverdriveFailed1_Description>
+	<WTH_Letter_MediumMaintenanceDamage_Label>Hardware hack damaged</WTH_Letter_MediumMaintenanceDamage_Label>
+	<WTH_Letter_MediumMaintenanceDamage_Description>To overdrive module pushed the hardware limits of the mechanoid named {0} slightly too far, possibly damaging the hardware hacks performed on the mechanoid instead of overdriving it. Maintenance is needed soon.</WTH_Letter_MediumMaintenanceDamage_Description>
+	<WTH_Letter_OverdiveGoneTooFar_Label>Overdrive gone too far</WTH_Letter_OverdiveGoneTooFar_Label>
+	<WTH_Letter_OverdiveGoneTooFar_Description>As an unintended side effect of the high currents drawn by the overdrive module of the mechanoid named {0}, the overdrive module itself is actually overdriving! The module has a much greater effect than intended, though it also drains insane amounts of power. This can be dangerous for mechanoids with damaged internals.</WTH_Letter_OverdiveGoneTooFar_Description>
 	<!-- end added in v1.2 -->
 	
 	
