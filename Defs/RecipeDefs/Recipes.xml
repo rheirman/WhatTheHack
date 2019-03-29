@@ -181,6 +181,53 @@
   </RecipeDef>  
   
   <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_CargoModule</defName>
+	<label>craft cargo module</label>
+	<description>Craft a cargo module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>40</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>10</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>2</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>Plasteel</li>
+			<li>WTH_MechanoidParts</li>
+			<li>WTH_MechanoidChip</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_CargoModule>1</WTH_CargoModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_CargoModule</researchPrerequisite>
+  </RecipeDef>  
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
 	<defName>WTH_Craft_OpticSensorModule</defName>
 	<label>craft optic sensor module</label>
 	<description>Craft an optic sensor module</description>
@@ -1049,6 +1096,38 @@
 			<li>Reactor</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>WTH_SpeedModule</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>WTH_InstallCargoModule</defName>
+		<label>install cargo module</label>
+		<description>Install a cargo module.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Installing cargo module.</jobString>
+		<workAmount>5000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_CargoModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>		
+		<addsHediff>WTH_CargoModule</addsHediff>
 		<modExtensions>
 			<li Class="WhatTheHack.DefModExtension_Recipe">
 				<requireBed>true</requireBed>

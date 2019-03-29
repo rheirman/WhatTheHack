@@ -119,6 +119,7 @@
 	  <li>WTH_Craft_ArmorModule</li>
 	  <li>WTH_Craft_OverdriveModule</li>
 	  <li>WTH_Craft_OpticSensorModule</li>
+	  <li>WTH_Craft_CargoModule</li>
     </recipes>
     <comps>
       <li Class="CompProperties_Power">

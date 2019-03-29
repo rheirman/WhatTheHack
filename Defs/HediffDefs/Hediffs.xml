@@ -73,6 +73,31 @@
 	</HediffDef>
 	
 	<HediffDef>
+		<defName>WTH_CargoModule</defName>
+		<label>cargo module</label>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>	
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Manipulation</capacity>
+					  <offset>-0.1</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>		
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_CargoModule</extraButcherProduct>
+				<canUninstall>true</canUninstall>
+				<destroyOnDeathChance>0.5</destroyOnDeathChance>
+				<carryingCapacityOffset>1.0</carryingCapacityOffset>
+			</li>
+		</modExtensions>
+	</HediffDef>
+	
+	<HediffDef>
 		<defName>WTH_OpticSensorModule</defName>
 		<label>optic sensor module</label>
 		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>

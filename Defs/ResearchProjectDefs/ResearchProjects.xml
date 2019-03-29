@@ -114,6 +114,20 @@
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
+		<defName>WTH_CargoModule</defName>
+		<label>cargo module</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>An upgrade module that greatly boosts the carrying capacity of mechanoids. The size of the module is adjustable to the mechanoid for which it is used, yet it's still a bit bulky, imposing a small penalty to the manipulation stat of the mechanoid.</description>
+		<baseCost>1000</baseCost>
+		<prerequisites>
+		  <li>WTH_MechanoidWorkshop</li>
+		</prerequisites>
+		<researchViewX>1</researchViewX>
+		<researchViewY>5</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
 		<defName>WTH_OverdriveModule</defName>
 		<label>overdrive module</label>
 		<tab>WTH_ResearchTab</tab>

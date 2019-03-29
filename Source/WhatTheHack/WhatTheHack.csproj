@@ -91,6 +91,7 @@
     <Compile Include="Recipes\Recipe_ModifyMechanoid_UninstallModule.cs" />
     <Compile Include="Stats\StatPart_Armor.cs" />
     <Compile Include="Stats\StatPart_BatteryCapacity.cs" />
+    <Compile Include="Stats\StatPart_CarryingCapacity.cs" />
     <Compile Include="Stats\StatPart_FiringRate.cs" />
     <Compile Include="Stats\StatPart_PartConsumptionRate.cs" />
     <Compile Include="Stats\StatPart_PowerProduction.cs" />

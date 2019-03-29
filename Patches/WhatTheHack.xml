@@ -10,6 +10,13 @@
 	</value>
 </Operation>
 
+<Operation Class = "PatchOperationAdd">
+	<xpath>Defs/StatDef[defName="CarryingCapacity"]/parts</xpath>
+	<value>
+		<li Class="WhatTheHack.Stats.StatPart_CarryingCapacity"/>
+	</value>
+</Operation>
+
 <Operation Class="PatchOperationSequence">
 	<success>Always</success>
 	<operations>
@@ -112,6 +119,7 @@
 				<li>WTH_InstallFirefightingModule</li>
 				<li>WTH_InstallOverdriveModule</li>
 				<li>WTH_InstallOpticSensorModule</li>
+				<li>WTH_InstallCargoModule</li>
 			</value>
 		</li> 
 	</operations>
@@ -142,6 +150,7 @@
 					<li>WTH_InstallFirefightingModule</li>
 					<li>WTH_InstallOverdriveModule</li>
 					<li>WTH_InstallOpticSensorModule</li>
+					<li>WTH_InstallCargoModule</li>
 				</recipes>		
 			</value>
 		</li> 

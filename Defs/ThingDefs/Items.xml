@@ -236,6 +236,31 @@
   </ThingDef>
   
   <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_CargoModule</defName>
+    <label>cargo module</label>
+    <description>Can be installed in a mechanoid. Increases the carrying capacity of the mechanoid at the cost of a small manipulation penalty.</description>
+    <graphicData>
+      <texPath>Things/CargoModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>7000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartBase">
     <defName>WTH_OpticSensorModule</defName>
     <label>optic sensor module</label>
     <description>Can be installed in a mechanoid. Improves the sight of the mechanoid at the cost of a small amount of extra power consumption.</description>
