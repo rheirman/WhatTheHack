@@ -55,9 +55,7 @@ namespace WhatTheHack.Harmony
             }
 
             int minHackedMechPoints = Math.Min(Base.minHackedMechPoints, Base.maxHackedMechPoints);
-            Log.Message("minHackedMechPoints : " + minHackedMechPoints);
             float maxMechPoints = parms.points * ((float)rand.Next(minHackedMechPoints, Base.maxHackedMechPoints)) / 100f; //TODO: no magic numbers
-            Log.Message("maxHackedMechPoints: " + maxMechPoints);
             float cumulativePoints = 0;
             Map map = parms.target as Map;
             while (cumulativePoints < maxMechPoints)
@@ -74,13 +72,8 @@ namespace WhatTheHack.Harmony
                 {
                     selectedPawns.TryRandomElement(out pawnKindDef);
                 }
-                else
-                {
-                    Log.Message("selectedPawns was null");
-                }
                 if (pawnKindDef != null)
                 {
-                    Log.Message("selectedPawns was not null, spawning mech!");
                     Pawn mechanoid = PawnGenerator.GeneratePawn(pawnKindDef, parms.faction);
                     if(parms.raidArrivalMode == PawnsArrivalModeDefOf.EdgeWalkIn)
                     {
