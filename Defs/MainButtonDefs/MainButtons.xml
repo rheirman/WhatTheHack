@@ -4,6 +4,6 @@
 		<label>Mechanoids</label>
 		<description>An overview of your hacked mechanoids, in which you can also set work priorities for mechs with the right upgrade modules installed</description>
 		<tabWindowClass>WhatTheHack.TabWindow.MainTabWindow_Work_Mechanoids</tabWindowClass>
-		<order>45</order>
+		<order>11</order>
 	</MainButtonDef>
 </Defs>
