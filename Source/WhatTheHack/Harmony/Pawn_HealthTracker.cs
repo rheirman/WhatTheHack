@@ -18,7 +18,7 @@ namespace WhatTheHack.Harmony
     [HarmonyPatch(typeof(Pawn_HealthTracker), "SetDead")]
     static class Pawn_HealthTracker_SetDead
     {
-        static void Prefix(Pawn_HealthTracker __instance)
+        static void Postfix(Pawn_HealthTracker __instance)
         {
             List<Hediff> removedHediffs = __instance.hediffSet.hediffs.FindAll((Hediff h) => h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && Rand.Chance(modExt.destroyOnDeathChance));
             foreach (Hediff hediff in removedHediffs)
