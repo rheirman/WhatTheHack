@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_RoamingMechanoidsPart.label>배회하는 메카노이드들</WTH_RoamingMechanoidsPart.label>
+  <WTH_RoamingMechanoidsPart.description>이 지역을 돌아다니는 메카노이드들</WTH_RoamingMechanoidsPart.description>
+  <WTH_RoamingMechanoidsPart.descriptionDialogue>근처 주민들은 이 지역을 배회하는 여러대의 메카노이드들을 발견했다고 합니다. 조심하십시오.</WTH_RoamingMechanoidsPart.descriptionDialogue>
+
+  <WTH_MechanoidTemplePart.label>메카노이드 위치</WTH_MechanoidTemplePart.label>
+  <WTH_MechanoidTemplePart.description>원거리 광물 스캐너가 이 위치에서 상대적으로 먼거리에 메카노이드 부품의 존재를 감지했다는 것을 감안하면, 그 중 상당수가 메카노이드에 부착되있을 가능성이 높습니다.</WTH_MechanoidTemplePart.description>
+  <WTH_MechanoidTemplePart.descriptionDialogue>원거리 광물 스캐너에 의해 많은 양의 메카노이드 부품이 감지되는 지역입니다.</WTH_MechanoidTemplePart.descriptionDialogue>
+
+
+</LanguageData>
