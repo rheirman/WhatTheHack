@@ -3,11 +3,12 @@
 
   <WTH_CarryToHackingTable.reportString>메카노이드를 해킹 작업대로 운송</WTH_CarryToHackingTable.reportString>
   <WTH_ClearHackingTable.reportString>해킹 작업대에서 메카노이드를 치우는 중.</WTH_ClearHackingTable.reportString>
-  <WTH_Mechanoid_Rest.reportString>메카노이드 정비고(충전소)에 연결중</WTH_Mechanoid_Rest.reportString>
+  <WTH_Mechanoid_Rest.reportString>메카노이드 설비에 연결 중.</WTH_Mechanoid_Rest.reportString>
   <WTH_ControlMechanoid.reportString>메카노이드 제어</WTH_ControlMechanoid.reportString>
-  <WTH_ControlMechanoid_Goto.reportString>메카노이드 제어 (이동중)</WTH_ControlMechanoid_Goto.reportString>
+  <WTH_ControlMechanoid_Goto.reportString>메카노이드 제어 (이동 중)</WTH_ControlMechanoid_Goto.reportString>
   <WTH_Ability.reportString>능력 사용</WTH_Ability.reportString>
-  <WTH_PerformMaintenance.reportString>유지관리 수행</WTH_PerformMaintenance.reportString>
+  <WTH_PerformMaintenance.reportString>메카노이드 유지관리 수행</WTH_PerformMaintenance.reportString>
+  <WTH_HackRogueAI.reportString>로그 AI 해킹하는 중.</WTH_HackRogueAI.reportString>
 
 
 </LanguageData>
