@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+  <WTH_MechanitesEffictiveness.label>메카나이트 효과 계수</WTH_MechanitesEffictiveness.label>
+  <WTH_MechanitesEffictiveness.description>활성화된 메카노이드 정비고의 수리 속도 및 메카나이트 자원 효율성은 이 인자에 영향을 받습니다.</WTH_MechanitesEffictiveness.description>
+
   <WTH_ControllerBeltRadius.label>원격제어 범위</WTH_ControllerBeltRadius.label>
   <WTH_ControllerBeltRadius.description>이 벨트를 사용하여 메카노이드를 제어할 수 있는 최대 범위</WTH_ControllerBeltRadius.description>
 
@@ -8,7 +11,7 @@
   <WTH_HackingMaintenanceSpeed.description>해킹된 메카노이드의 정비를 수행하는 속도입니다.</WTH_HackingMaintenanceSpeed.description>
 
   <WTH_HackingSuccessChance.label>해킹 성공 확률</WTH_HackingSuccessChance.label>
-  <WTH_HackingSuccessChance.description> 메카노이드를 해킹하거나 개조할 때 성공할 확률입니다.\n 실제 성공 가능성은 해킹의 어려움과 기계적인 요소가 얼마나 강력한지에 의해 영향을 받습니다.</WTH_HackingSuccessChance.description>
+  <WTH_HackingSuccessChance.description>메카노이드를 해킹하거나 개조할 때 성공할 확률입니다.\n 실제 성공 가능성은 해킹의 어려움과 기계적인 요소가 얼마나 강력한지에 의해 영향을 받습니다.</WTH_HackingSuccessChance.description>
 
 
 </LanguageData>
