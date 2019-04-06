@@ -462,7 +462,7 @@ namespace WhatTheHack.Harmony
 
             JobDef jobDef = WTH_DefOf.WTH_Ability_Overdrive;
             DefModExtension_Ability modExt = jobDef.GetModExtension<DefModExtension_Ability>();
-            bool alreadyOverdriving = __instance.health.hediffSet.HasHediff(WTH_DefOf.WTH_Overdrive);
+            bool alreadyOverdriving = __instance.health.hediffSet.HasHediff(WTH_DefOf.WTH_Overdrive) || __instance.health.hediffSet.HasHediff(WTH_DefOf.WTH_Overdrive_GoneTooFar);
             bool needsMorePower = powerNeed.CurLevel < modExt.powerDrain;
             bool notActicated = !__instance.IsActivated();
 

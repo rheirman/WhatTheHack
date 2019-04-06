@@ -4,7 +4,7 @@
     <sustain>true</sustain>
     <context>MapOnly</context>
     <eventNames />
-    <maxSimultaneous>1</maxSimultaneous>  
+    <maxSimultaneous>5</maxSimultaneous>  
     <priorityMode>PrioritizeNearest</priorityMode>  
     <subSounds>
       <li>

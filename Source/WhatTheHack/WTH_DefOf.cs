@@ -117,6 +117,8 @@ namespace WhatTheHack
 
         public static PawnTableDef WTH_Work_Mechanoids;
 
+        public static SoundDef WTH_Sound_Overdrive;
+
         //vanilla
         public static IncidentDef ShortCircuit;
         public static BodyPartDef Reactor;
@@ -131,6 +133,8 @@ namespace WhatTheHack
 
         public static WorkTypeDef PlantCutting;
         public static WorkTypeDef Cleaning;
+
+        
 
     }
 }

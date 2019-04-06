@@ -82,6 +82,7 @@
     <Compile Include="Harmony\HediffStatsUtility.cs" />
     <Compile Include="Harmony\PawnUIOverlay.cs" />
     <Compile Include="Harmony\Pawn_SkillTracker.cs" />
+    <Compile Include="Harmony\Sustainer.cs" />
     <Compile Include="Harmony\ThingDef.cs" />
     <Compile Include="Jobs\Depricated\JobDriver_Ability.cs" />
     <Compile Include="Jobs\JobDriver_MechanoidAbility_Overdrive.cs" />
