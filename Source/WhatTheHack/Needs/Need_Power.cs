@@ -15,7 +15,7 @@ namespace WhatTheHack.Needs
     {
         private float lastLevel = 0;
         public bool shouldAutoRecharge = true;
-        public float canStartWorkThreshold = 0;
+        public float canStartWorkThreshold = 0.5f;
 
         public Need_Power(Pawn pawn) : base(pawn)
         {

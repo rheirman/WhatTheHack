@@ -58,7 +58,7 @@ namespace WhatTheHack.Recipes
         protected override void HackingFailEvent(Pawn hacker, Pawn hackee, BodyPartRecord part, Random r)
         {
             base.HackingFailEvent(hacker, hackee, part, r);
-            Messages.Message("MessageMedicalOperationFailureMinor".Translate(new object[]{ hacker.LabelShort, hackee.LabelShort }), hackee, MessageTypeDefOf.NegativeHealthEvent, true);
+            Messages.Message("MessageMedicalOperationFailureMinor".Translate(new object[]{ hacker.LabelShort, hackee.LabelShort, this.recipe.LabelCap}), hackee, MessageTypeDefOf.NegativeHealthEvent, true);
             foreach (IngredientCount ic in recipe.ingredients)
             {
                 Thing t = ThingMaker.MakeThing(ic.filter.AnyAllowedDef, null);

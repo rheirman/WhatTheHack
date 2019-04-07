@@ -119,7 +119,7 @@ namespace WhatTheHack.Recipes
                     Messages.Message("MessageMedicalOperationFailureFatal".Translate(new object[]
                     {
                         hacker.LabelShort,
-                        hacker.LabelShort,
+                        hackee.LabelShort,
                         this.recipe.LabelCap
                     }), hackee, MessageTypeDefOf.NegativeHealthEvent, true);
                 }
