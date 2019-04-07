@@ -233,7 +233,7 @@ namespace WhatTheHack.Needs
             base.ExposeData();
             Scribe_Values.Look<float>(ref lastLevel, "lastLevel");
             Scribe_Values.Look<bool>(ref shouldAutoRecharge, "shoulAutoRecharge", true);
-            Scribe_Values.Look<float>(ref canStartWorkThreshold, "canStartWorkThreshold", 0.4f);
+            Scribe_Values.Look<float>(ref canStartWorkThreshold, "canStartWorkThreshold", 0.5f);
         }
 
     }

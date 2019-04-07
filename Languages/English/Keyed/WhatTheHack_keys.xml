@@ -395,7 +395,7 @@ You can repeat this operation as many times as needed as a means to get more mec
 	<WTH_Gizmo_Work_Label>Work mode</WTH_Gizmo_Work_Label>
 	<WTH_Gizmo_Work_Description>Enable work mode for the mechanoid. With this mode enabled, the mechanoid will automatically start up if there are any jobs it can do, and if its power is higher than the minimum power threshold for working that is configured.</WTH_Gizmo_Work_Description>
 	<WTH_Gizmo_WorkThreshold_Label>Min. power work</WTH_Gizmo_WorkThreshold_Label>
-	<WTH_Gizmo_WorkThreshold_Description>Configure the minimum percentage of power the mechanoid needs to have before it is allowed to leave its platform to start working.</WTH_Gizmo_WorkThreshold_Description>
+	<WTH_Gizmo_WorkThreshold_Description>Configure the minimum percentage of power the mechanoid needs to have before it is allowed to leave its platform to start working. The mechanoid will then work until its power is almost depleted (if auto-recharging is enabled for the mech). It's recommended to set it high enough so that the mechanoid has enough power to work with.</WTH_Gizmo_WorkThreshold_Description>
 	<WTH_SetCanStartWorkThreshold>Power needed to start work: {0} %</WTH_SetCanStartWorkThreshold>
 	<WTH_Gizmo_SetMechanoidOwner_Description>Assign this platform to be owned by a specific mechanoid</WTH_Gizmo_SetMechanoidOwner_Description>
 	<WTH_UninstallModule>uninstall {0}</WTH_UninstallModule>
@@ -417,6 +417,7 @@ You can repeat this operation as many times as needed as a means to get more mec
 	<WTH_Letter_MediumMaintenanceDamage_Description>To overdrive module pushed the hardware limits of the mechanoid named {0} slightly too far, possibly damaging the hardware hacks performed on the mechanoid instead of overdriving it. Maintenance is needed soon.</WTH_Letter_MediumMaintenanceDamage_Description>
 	<WTH_Letter_OverdiveGoneTooFar_Label>Overdrive gone too far</WTH_Letter_OverdiveGoneTooFar_Label>
 	<WTH_Letter_OverdiveGoneTooFar_Description>As an unintended side effect of the high currents drawn by the overdrive module of the mechanoid named {0}, the overdrive module itself is actually overdriving! The module has a much greater effect than intended, though it also drains insane amounts of power. This can be dangerous for mechanoids with damaged internals.</WTH_Letter_OverdiveGoneTooFar_Description>
+	<WTH_Warning_WorkThreshold>Setting the threshold this low only makes sense if auto-recharging is disabled for the mech, and you want the mech to work until it collapses. Read the button's description if this is unclear.</WTH_Warning_WorkThreshold>
 	<!-- end added in v1.2 -->
 	
 	

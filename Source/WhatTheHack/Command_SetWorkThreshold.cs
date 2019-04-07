@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,10 @@ namespace WhatTheHack
             Dialog_Slider window = new Dialog_Slider(textGetter, 0, 100, delegate (int value)
             {
                 powerNeed.canStartWorkThreshold = value/100f;
+                if(powerNeed.canStartWorkThreshold < powerNeed.PercentageThreshLowPower + 0.05f)
+                {
+                    Messages.Message("WTH_Warning_WorkThreshold".Translate(), MessageTypeDefOf.CautionInput);
+                }
             }, (int) (powerNeed.canStartWorkThreshold * 100f));
             Find.WindowStack.Add(window);
         }
