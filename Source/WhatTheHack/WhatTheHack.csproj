@@ -82,6 +82,7 @@
     <Compile Include="Comps\CompProperties_Overlays.cs" />
     <Compile Include="Harmony\HediffStatsUtility.cs" />
     <Compile Include="Harmony\PawnUIOverlay.cs" />
+    <Compile Include="Harmony\Pawn_CallTracker.cs" />
     <Compile Include="Harmony\Pawn_SkillTracker.cs" />
     <Compile Include="Harmony\Sustainer.cs" />
     <Compile Include="Harmony\ThingDef.cs" />
