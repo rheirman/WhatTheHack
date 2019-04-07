@@ -491,7 +491,8 @@
 			<li Class="WhatTheHack.DefModExtension_Hediff">
 				<extraButcherProduct>WTH_RepairArm</extraButcherProduct>
 				<hasAbility>true</hasAbility>
-				<canUninstall>false</canUninstall>
+				<canUninstall>true</canUninstall>
+				<destroyOnDeathChance>0.75</destroyOnDeathChance>
 			</li>
 		</modExtensions>
 	  </HediffDef>
