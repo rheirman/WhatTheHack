@@ -73,7 +73,7 @@ The following update will continue in this direction, and even more ways of gett
 		
 	</HugsLib.UpdateFeatureDef>
 	
-		<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+	<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
 		<defName>WhatTheHack_1_1_0</defName>
 		<assemblyVersion>1.1.0</assemblyVersion>
 		<content>Hi there fellow hackers. I've just released a Huge update for What the Hack?!
@@ -110,5 +110,47 @@ Rogue AI(left), Hiveship Hacking facility (right).
 The next update will focus on adding more upgrade modules.
 		</content>
 	</HugsLib.UpdateFeatureDef>
+	
+	<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+		<defName>WhatTheHack_1_2_0</defName>
+		<assemblyVersion>1.2.0</assemblyVersion>
+		<content>What the Hack v1.2 - "All work and no play" - has been released. 
+		
+&lt;color=orange&gt;Main additions&lt;/color&gt;
+- Work modules! The ultimate way to humiliate the mechanoids you've beaten. Currently there are modules for hauling, cleaning, firefighting and growing/plant-cutting. 
+|img:Preview/HaulingModule,Preview/CleaningModule,Preview/FirefightingModule,Preview/GrowingModule|
+- Many other modules, including ones for improving armor, sight, speed, carrying capacity, and one that let's you overdrive mechanoids!
+|img:Preview/ArmorModule,Preview/OpticSensorModule,Preview/SpeedModule,Preview/CargoModule,Preview/OverdriveModule|
+- Enemy hacked mechanoids now show up with random modules installed, and have the AI to use active abilities given by certain modules. 
+- Mechanoids can now own platforms like how your colonists can own beds.
+- A new tab is added that gives an overview of your hacked mechanoids, and lets you assign them to work (if they have the right modules installed). 
+- All stats related to this mod have been reworked and made more transparent. For instance, you can see exactly how much power a mech drains each day, how much power capacity it has etc. 
+- Modules can now be uninstalled from mechanoids (without killing the mechanoid and disassembling it). 
+
+&lt;color=orange&gt;I'd like to thank Madman666 for his great work on all the sprites featured in this updated!!&lt;/color&gt;
+ 
+&lt;color=orange&gt;Smaller Additions and tweaks&lt;/color&gt;
+- All buildings related to this mod are now organized under a separate "Hacking" architect-tab. 
+- Re-organized research tab (Credits go to Cenbes for this) 
+- Greatly lowered default mechanoid power consumption (was really needed now that we have work-modules). 
+- Lowered cost to repair mechanoids. 
+- Slightly increased maintenance cost. 
+- Added warning for when the player is low on mechanoid parts. 
+- Replaced sprite for mechanoid workshop so that the dimensions are consistent with other large workbenches. 
+- Mechanoids are now labelled by their names so they are more easily distinguishable. 
+- Small hacked mechanoids (body size 1 or lower) now also show up in drop-pod raids. 
+- Modules - except the really rare ones - have a large chance to break when a mechanoid is downed. This is to balance out the larger influx of modules due to enemy hacked mechs spawning with them. 
+- Many hard-coded values have been moved to XML, making further expansions easier. 
+- Many other under-the-hood changes to make this mod more future-proof. 
+
+&lt;color=orange&gt;Fixes&lt;/color&gt;
+- Conflict with Giddy-up!, preventing hacked mechanoids to spawn. 
+- 10 jobs 1 tick error when using mechanoid controller belt. (Credits go to diddily for this fix) 
+
+&lt;color=orange&gt;Liking the update? Please consider buying me a coffee to support more updates like these! You can find a link to my Ko-fi page on the workshop page of What the Hack.&lt;/color&gt;
+
+		</content>
+	</HugsLib.UpdateFeatureDef>
+	
 	
 </Defs>
