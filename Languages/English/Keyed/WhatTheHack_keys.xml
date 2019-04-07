@@ -418,6 +418,15 @@ You can repeat this operation as many times as needed as a means to get more mec
 	<WTH_Letter_OverdiveGoneTooFar_Label>Overdrive gone too far</WTH_Letter_OverdiveGoneTooFar_Label>
 	<WTH_Letter_OverdiveGoneTooFar_Description>As an unintended side effect of the high currents drawn by the overdrive module of the mechanoid named {0}, the overdrive module itself is actually overdriving! The module has a much greater effect than intended, though it also drains insane amounts of power. This can be dangerous for mechanoids with damaged internals.</WTH_Letter_OverdiveGoneTooFar_Description>
 	<WTH_Warning_WorkThreshold>Setting the threshold this low only makes sense if auto-recharging is disabled for the mech, and you want the mech to work until it collapses. Read the button's description if this is unclear.</WTH_Warning_WorkThreshold>
+	<WTH_Alert_LowMechanoidParts>Low mechanoid parts</WTH_Alert_LowMechanoidParts>
+	<WTH_Alert_LowMechanoidPartsDesc>You only have {0} mechanoid parts left in storage for maintaining your mechanoids.</WTH_Alert_LowMechanoidPartsDesc>
+	<WTH_Alert_NoMechanoidPartsDesc>You have no mechanoid parts left in storage for maintaining your mechanoids.</WTH_Alert_NoMechanoidPartsDesc>
+	<WTH_Alert_LowMechanoidPartsSolution>This problem can be solved by: 
+- Buying mechanoid parts in outlander towns or from traders. 
+- Doing world quests while bringing a portable disassembling bench (check out the LRMS-tuning research if you want to actively find world quests).
+- Luring mechanoids to your base by inducing an emergency signal using a downed mechanoid. 
+- Luring mechanoids to your base by hacking a hive-ship using the hive-ship hacking facility.</WTH_Alert_LowMechanoidPartsSolution>
+	
 	<!-- end added in v1.2 -->
 	
 	

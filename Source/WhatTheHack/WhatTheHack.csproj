@@ -54,6 +54,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alerts\Alert_LowMechanoidParts.cs" />
     <Compile Include="Alerts\Alert_RogueAI_MoodVeryLow.cs" />
     <Compile Include="Alerts\Alert_RogueAI_MoodLow.cs" />
     <Compile Include="Alerts\Alert_RogueAI_NoPower.cs" />
