@@ -463,7 +463,7 @@
   <ThingDef ParentName="BodyPartBase">
     <defName>WTH_RepairArm</defName>
     <label>repair arm</label>
-    <description>Can be installed in mechanoid with a repair module to give them the ability to repair any other mechanoid on the field.</description>
+    <description>Can be used to replace the arm of a mechanoid with a repair module installed to give it the ability to repair any other mechanoid on the field.</description>
     <graphicData>
       <texPath>Things/RepairArm</texPath>
       <graphicClass>Graphic_Single</graphicClass>
