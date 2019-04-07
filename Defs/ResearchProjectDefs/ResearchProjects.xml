@@ -11,7 +11,7 @@
 	  <li>MicroelectronicsBasics</li>
 	</prerequisites>
 		<researchViewX>0</researchViewX>
-		<researchViewY>0</researchViewY>
+		<researchViewY>3</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -25,8 +25,8 @@
 		  <li>BiofuelRefining</li>
 		  <li>WTH_HackingBasics</li>
 		</prerequisites>
-		<researchViewX>0</researchViewX>
-		<researchViewY>1</researchViewY>
+		<researchViewX>1</researchViewX>
+		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -39,8 +39,8 @@
 		<prerequisites>
 		  <li>WTH_HackingBasics</li>
 		</prerequisites>
-		<researchViewX>0</researchViewX>
-		<researchViewY>2</researchViewY>
+		<researchViewX>2</researchViewX>
+		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -67,8 +67,8 @@
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
-		<researchViewX>1</researchViewX>
-		<researchViewY>4</researchViewY>
+		<researchViewX>6</researchViewX>
+		<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -81,8 +81,8 @@
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
-		<researchViewX>0</researchViewX>
-		<researchViewY>3</researchViewY>
+		<researchViewX>2</researchViewX>
+		<researchViewY>1.5</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -95,8 +95,8 @@
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
-		<researchViewX>0</researchViewX>
-		<researchViewY>4</researchViewY>
+		<researchViewX>3</researchViewX>
+		<researchViewY>1.5</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -109,8 +109,8 @@
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
-		<researchViewX>0</researchViewX>
-		<researchViewY>5</researchViewY>
+		<researchViewX>4</researchViewX>
+		<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -123,8 +123,8 @@
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
-		<researchViewX>1</researchViewX>
-		<researchViewY>5</researchViewY>
+		<researchViewX>3</researchViewX>
+		<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 	
 
@@ -139,8 +139,8 @@
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
-		<researchViewX>2</researchViewX>
-		<researchViewY>1</researchViewY>
+		<researchViewX>5</researchViewX>
+		<researchViewY>3</researchViewY>
 	</ResearchProjectDef>
 	
 	
@@ -154,7 +154,7 @@
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
-		<researchViewX>2</researchViewX>
+		<researchViewX>5</researchViewX>
 		<researchViewY>2</researchViewY>
 	</ResearchProjectDef>
 		
@@ -168,7 +168,7 @@
 		<prerequisites>
 		  <li>WTH_RepairModule</li>
 		</prerequisites>
-		<researchViewX>3</researchViewX>
+		<researchViewX>6</researchViewX>
 		<researchViewY>2</researchViewY>
 	</ResearchProjectDef>
 	
@@ -183,7 +183,7 @@
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
 		<researchViewX>2</researchViewX>
-		<researchViewY>3</researchViewY>
+		<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -197,7 +197,7 @@
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
 		<researchViewX>2</researchViewX>
-		<researchViewY>4</researchViewY>
+		<researchViewY>2.5</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -211,7 +211,7 @@
 		  <li>WTH_TurretModule</li>
 		</prerequisites>
 		<researchViewX>3</researchViewX>
-		<researchViewY>3</researchViewY>
+		<researchViewY>2.5</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -225,7 +225,7 @@
 		  <li>WTH_TurretModule</li>
 		</prerequisites>
 		<researchViewX>3</researchViewX>
-		<researchViewY>4</researchViewY>
+		<researchViewY>3</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -239,7 +239,7 @@
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
 		<researchViewX>2</researchViewX>
-		<researchViewY>5</researchViewY>
+		<researchViewY>3.5</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -253,7 +253,7 @@
 		  <li>WTH_BatteryExpansionModule</li>
 		</prerequisites>
 		<researchViewX>3</researchViewX>
-		<researchViewY>6</researchViewY>
+		<researchViewY>4.3</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -267,7 +267,7 @@
 		  <li>WTH_BatteryExpansionModule</li>
 		</prerequisites>
 		<researchViewX>3</researchViewX>
-		<researchViewY>5</researchViewY>
+		<researchViewY>3.5</researchViewY>
 	</ResearchProjectDef>
 	
 		
@@ -281,8 +281,8 @@
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
 		</prerequisites>
-		<researchViewX>2</researchViewX>
-		<researchViewY>6</researchViewY>
+		<researchViewX>5</researchViewX>
+		<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -295,8 +295,8 @@
 		<prerequisites>
 		  <li>WTH_HackingRemoteControl</li>
 		</prerequisites>
-		<researchViewX>3</researchViewX>
-		<researchViewY>1</researchViewY>
+		<researchViewX>6</researchViewX>
+		<researchViewY>3</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -309,8 +309,8 @@
 		<prerequisites>
 		  <li>WTH_HackingBasics</li>
 		</prerequisites>
-		<researchViewX>1</researchViewX>
-		<researchViewY>1</researchViewY>
+		<researchViewX>3</researchViewX>
+		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -324,8 +324,8 @@ If you're looking for hive data, these sites with a lot of mechanoids are a good
 		<prerequisites>
 		  <li>WTH_HackingBasics</li>
 		</prerequisites>
-		<researchViewX>2</researchViewX>
-		<researchViewY>0</researchViewY>
+		<researchViewX>1</researchViewX>
+		<researchViewY>5</researchViewY>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
@@ -339,8 +339,8 @@ Without a consciousness, it still provides a small boost to the resource efficie
 		<prerequisites>
 		  <li>WTH_LRMSTuning</li>
 		</prerequisites>
-		<researchViewX>3</researchViewX>
-		<researchViewY>0</researchViewY>
+		<researchViewX>2</researchViewX>
+		<researchViewY>5</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -353,8 +353,8 @@ Without a consciousness, it still provides a small boost to the resource efficie
 		<prerequisites>
 		  <li>WTH_RogueAI</li>
 		</prerequisites>
-		<researchViewX>4</researchViewX>
-		<researchViewY>0</researchViewY>
+		<researchViewX>3</researchViewX>
+		<researchViewY>5</researchViewY>
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
@@ -368,8 +368,8 @@ A more human-friendly alternative is to look for mechanoid infested sites on the
 		<prerequisites>
 		  <li>WTH_RogueAI</li>
 		</prerequisites>
-		<researchViewX>4</researchViewX>
-		<researchViewY>1</researchViewY>
+		<researchViewX>3</researchViewX>
+		<researchViewY>6</researchViewY>
 	</ResearchProjectDef>
 	
 </Defs>
