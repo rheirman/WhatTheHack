@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
   <WTH_ShutDown.label>シャットダウン</WTH_ShutDown.label>
@@ -43,7 +43,6 @@
   <WTH_ReplacedAI.label>AI人格コア搭載済</WTH_ReplacedAI.label>
   <WTH_TargetingHacked.label>敵味方識別装置ハック済</WTH_TargetingHacked.label>
   <WTH_BackupBattery.label>予備バッテリーで稼働中</WTH_BackupBattery.label>
-  <WTH_LocomotionHacked.label>位置情報装置ハック済</WTH_LocomotionHacked.label>
   <WTH_TargetingHackedPoorly.label>敵味方識別装置が整備不足</WTH_TargetingHackedPoorly.label>
   <WTH_TargetingDestroyed.label>敵味方識別装置が故障</WTH_TargetingDestroyed.label>
   <WTH_LowMaintenance.label>整備不足</WTH_LowMaintenance.label>
