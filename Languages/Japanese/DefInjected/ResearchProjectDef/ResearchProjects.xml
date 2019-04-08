@@ -13,6 +13,21 @@
   <WTH_MechanoidWorkshop.label>メカノイド工作台</WTH_MechanoidWorkshop.label>
   <WTH_MechanoidWorkshop.description>全種類のメカノイドに関連する作業と改良に使う部品やモジュールを製造したり、高度なメカノイド部品を回収するために使用されるメカノイド工作台を建設できるようになります。</WTH_MechanoidWorkshop.description>
 
+  <WTH_WorkModules.label>労働モジュール</WTH_WorkModules.label>
+  <WTH_WorkModules.description>メカノイドが運搬、清掃、消火、栽培などの簡単な作業を実行可能にする、アップグレードモジュールを研究します。元々メカノイドは戦闘用に設計されており、単純労働用にメカノイドを改造することはおそらくメカノイド設計者への侮辱でしょう。</WTH_WorkModules.description>
+
+  <WTH_SpeedModule.label>移動速度モジュール</WTH_SpeedModule.label>
+  <WTH_SpeedModule.description>ほどほどな追加電力消費と引き換えにして、メカノイドの移動速度を向上させることを目的としたアップグレードモジュール。メカノイドは、限られた発電量で稼働するように設計されており、エネルギー効率を良くするために、彼らの移動システムは設定された上限速度で移動するように設計されています。多少のシステムハッキングや、ハードウェアの追加によって、ハードウェアに大きくダメージを与えることなく、設計仕様よりも移動速度を向上することができます。この行為によって消費電力が増大します。</WTH_SpeedModule.description>
+
+  <WTH_ArmorModule.label>装甲モジュール</WTH_ArmorModule.label>
+  <WTH_ArmorModule.description>メカノイドの装甲を増やすことを目的としたアップグレードモジュール。重要な部品を保護するために、メカノイドの外層の下に薄い石膏ナノファイバーの層を挿入します。移動速度のペナルティと引き換えにして、打撲系と突刺系への防御力を強化します。</WTH_ArmorModule.description>
+
+  <WTH_OpticSensorModule.label>光学センサーモジュール</WTH_OpticSensorModule.label>
+  <WTH_OpticSensorModule.description>メカノイドの視界を改善することを目的としたアップグレードモジュール。それは少量の消費電力を追加します。メカノイドのセンサー技術は、現在の最先端の人体センサー技術よりも進歩しています。しかし、惑星を歩き回っているメカノイドに装備されているセンサーは、一般的に何百年も前の古さです。それはセンサーが装備された長い年月が経過してもまだ機能することは素晴らしいですが、その品質は、時間の経過とともに減衰します。性能が低い人造の光学センサーを追加しても、メカノイドの視界は改善されます。</WTH_OpticSensorModule.description>
+
+  <WTH_CargoModule.label>貨物モジュール</WTH_CargoModule.label>
+  <WTH_CargoModule.description>メカノイドの輸送能力を大幅に向上させるアップグレードモジュール。モジュールのサイズは、それを使用するメカノイドに合わせて調整可能ですが、少しかさばるので、メカノイドの運動性に小さなペナルティを与えます。</WTH_CargoModule.description>
+
   <WTH_HackingRemoteControl.label>メカノイド制御ベルト</WTH_HackingRemoteControl.label>
   <WTH_HackingRemoteControl.description>メカノイド工作台で作成可能な「メカノイド制御ベルト」を使用して、入植者が直接メカノイドを制御する方法を学びます。ちなみに、コロニーの非暴力主義の入植者たちはコレを使用する事で罪を感じることなく、戦闘に参加することができます。結局のところ、殺しをやっているのはメカノイドなので、暴力じゃありませんよね？</WTH_HackingRemoteControl.description>
 
@@ -36,6 +51,9 @@
 
   <WTH_BatteryExpansionModule.label>バッテリー 増設モジュール</WTH_BatteryExpansionModule.label>
   <WTH_BatteryExpansionModule.description>メカノイドが内部に蓄えることができる総電力を増加させるモジュールであり、運動性を少し犠牲にしています。</WTH_BatteryExpansionModule.description>
+
+  <WTH_OverdriveModule.label>オーバードライブモジュール</WTH_OverdriveModule.label>
+  <WTH_OverdriveModule.description>このモジュールが作動すると、メカノイドをオーバークロックし、その電力系統をオーバードライブするアップグレードモジュール。その結果、短時間ですがメカノイドの移動速度、発射速度、意識が大幅に向上します。この行為は大量の電力を消費し、ハードウェアの安全性の限界を超えて増強するため、予期しない結果を招く可能性があります。</WTH_OverdriveModule.description>
 
   <WTH_VanometricModule.label>自家発電モジュール</WTH_VanometricModule.label>
   <WTH_VanometricModule.description>運動性を少し犠牲にして、メカノイドに無限の電力を供給するために、ワノメトリック発電器を含むモジュールです。</WTH_VanometricModule.description>
