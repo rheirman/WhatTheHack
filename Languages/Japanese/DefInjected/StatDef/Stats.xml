@@ -1,8 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <WTH_MechanitesEffictiveness.label>メカノイド有効係数</WTH_MechanitesEffictiveness.label>
-  <WTH_MechanitesEffictiveness.description>メカノイドベッドによって活性化されるメカノイドの修復速度およびパーツ消費効率は、この係数の影響を受けます。</WTH_MechanitesEffictiveness.description>
+  <WTH_PowerProduction.label>1日あたりの発電量</WTH_PowerProduction.label>
+  <WTH_PowerProduction.description>メカノイドが毎日どのくらいの電力を発電するか</WTH_PowerProduction.description>
+
+  <WTH_PowerRate.label>1日あたりの電力消費</WTH_PowerRate.label>
+  <WTH_PowerRate.description>メカノイドが毎日どのくらいの電力を使用しているか</WTH_PowerRate.description>
+
+  <WTH_BatteryCapacity.label>バッテリー容量</WTH_BatteryCapacity.label>
+  <WTH_BatteryCapacity.description>メカノイドの最大電力容量</WTH_BatteryCapacity.description>
+
+  <WTH_RechargeRate.label>1日あたりの充電量</WTH_RechargeRate.label>
+  <WTH_RechargeRate.description>メカノイドが毎日どのくらいの電力を充電しているか</WTH_RechargeRate.description>
+
+  <WTH_RepairRate.label>1日あたりの修理量</WTH_RepairRate.label>
+  <WTH_RepairRate.description>メカノイドベッドが1日に修理できるダメージ量</WTH_RepairRate.description>
+
+  <WTH_PartConsumptionRate.label>修理中1日あたりの消費メカノイドパーツ</WTH_PartConsumptionRate.label>
+  <WTH_PartConsumptionRate.description>メカノイドベッドで修理されている際に1日に消費されるメカノイドパーツ数。メカノイドベッドが修復しない場合は、メカノイドパーツを消費しません。</WTH_PartConsumptionRate.description>
 
   <WTH_ControllerBeltRadius.label>制御半径</WTH_ControllerBeltRadius.label>
   <WTH_ControllerBeltRadius.description>このベルトを使用してメカノイドを制御できる最大範囲(半径)です。</WTH_ControllerBeltRadius.description>
