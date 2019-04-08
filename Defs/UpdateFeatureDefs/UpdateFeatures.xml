@@ -142,6 +142,7 @@ The next update will focus on adding more upgrade modules.
 - Modules - except the really rare ones - have a large chance to break when a mechanoid is downed. This is to balance out the larger influx of modules due to enemy hacked mechs spawning with them. 
 - Many hard-coded values have been moved to XML, making further expansions easier. 
 - Many other under-the-hood changes to make this mod more future-proof. 
+- Hacked mechs of friendly factions now always die when downed (this prevents some issues when the player want to hack them). 
 
 &lt;color=orange&gt;Fixes&lt;/color&gt;
 - Conflict with Giddy-up!, preventing hacked mechanoids to spawn. 

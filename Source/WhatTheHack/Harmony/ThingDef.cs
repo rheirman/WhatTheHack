@@ -24,14 +24,14 @@ namespace WhatTheHack.Harmony
             {
                 yield return entry;
             }
-            if (__instance.isTechHediff)
+            if (__instance != null && __instance.isTechHediff)
             {
                 foreach (RecipeDef def in from x in DefDatabase<RecipeDef>.AllDefs
                                           where x.IsIngredient(__instance)
                                           select x)
                 {
                     HediffDef hediff = def.addsHediff;
-                    if (hediff.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt)
+                    if (hediff != null && hediff.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt)
                     {
                        foreach(StatDrawEntry entry in HediffStatsUtility_SpecialDisplayStats.SpecialDisplayStats(null, hediff, new List<StatDrawEntry>()))
                         {

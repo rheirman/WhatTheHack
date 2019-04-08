@@ -659,8 +659,8 @@
   
   <RecipeDef ParentName="WTH_Craft_Module_Base">
 	<defName>WTH_Craft_SelfDestructModule</defName>
-	<label>craft selft-destruct module</label>
-	<description>Craft a selft-destruct module</description>
+	<label>craft self-destruct module</label>
+	<description>Craft a self-destruct module</description>
 	<ingredients>
 		<li>
 			<filter>
