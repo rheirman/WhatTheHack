@@ -1,13 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
   <WTH_ExtractBrainData.label>脳からデータを抽出する</WTH_ExtractBrainData.label>
-  <WTH_ExtractBrainData.description>メカノイドテクノロジーを使用して人間の脳からすべてのデータを抽出します。現在の技術では、この行為の結果として脳を破壊せずに実行できません。より知力スキルの高いポーンは、より多くのデータをもたらすでしょう。</WTH_ExtractBrainData.description>
+  <WTH_ExtractBrainData.description>メカノイドテクノロジーを使用して人間の脳からすべてのデータを抽出します。この手術は患者の事を一切考慮していません。現在の技術では、この行為の結果として脳が必ず破壊されてしまいます。より知力スキルの高いポーンは、より多くのデータをもたらすでしょう。</WTH_ExtractBrainData.description>
   <WTH_ExtractBrainData.jobString>脳からデータを抽出中</WTH_ExtractBrainData.jobString>
 
   <WTH_Scrap_AdvancedMechanoidChip.label>先進メカノイドチップを解体</WTH_Scrap_AdvancedMechanoidChip.label>
   <WTH_Scrap_AdvancedMechanoidChip.description>先進メカノイドチップを解体する。</WTH_Scrap_AdvancedMechanoidChip.description>
   <WTH_Scrap_AdvancedMechanoidChip.jobString>チップを解体中</WTH_Scrap_AdvancedMechanoidChip.jobString>
+
+  <WTH_Craft_OverdriveModule.label>オーバードライブモジュールを作成</WTH_Craft_OverdriveModule.label>
+  <WTH_Craft_OverdriveModule.description>オーバードライブモジュールを作成する。</WTH_Craft_OverdriveModule.description>
+  <WTH_Craft_OverdriveModule.jobString>モジュールを製作中</WTH_Craft_OverdriveModule.jobString>
+
+  <WTH_Craft_SpeedModule.label>移動速度モジュールを作る</WTH_Craft_SpeedModule.label>
+  <WTH_Craft_SpeedModule.description>移動速度モジュールを作成する。</WTH_Craft_SpeedModule.description>
+  <WTH_Craft_SpeedModule.jobString>モジュールを製作中</WTH_Craft_SpeedModule.jobString>
+
+  <WTH_Craft_CargoModule.label>貨物モジュールを作る</WTH_Craft_CargoModule.label>
+  <WTH_Craft_CargoModule.description>貨物モジュールを作成する。</WTH_Craft_CargoModule.description>
+  <WTH_Craft_CargoModule.jobString>モジュールを製作中</WTH_Craft_CargoModule.jobString>
+
+  <WTH_Craft_OpticSensorModule.label>光学センサーモジュールを作る</WTH_Craft_OpticSensorModule.label>
+  <WTH_Craft_OpticSensorModule.description>光学センサーモジュールを作成する。</WTH_Craft_OpticSensorModule.description>
+  <WTH_Craft_OpticSensorModule.jobString>モジュールを製作中</WTH_Craft_OpticSensorModule.jobString>
+
+  <WTH_Craft_ArmorModule.label>装甲モジュールを作る</WTH_Craft_ArmorModule.label>
+  <WTH_Craft_ArmorModule.description>装甲モジュールを作成する。</WTH_Craft_ArmorModule.description>
+  <WTH_Craft_ArmorModule.jobString>モジュールを製作中</WTH_Craft_ArmorModule.jobString>
+
+  <WTH_Craft_FirefightingModule.label>消火モジュールを作る</WTH_Craft_FirefightingModule.label>
+  <WTH_Craft_FirefightingModule.description>消火モジュールを作成する。</WTH_Craft_FirefightingModule.description>
+  <WTH_Craft_FirefightingModule.jobString>モジュールを製作中</WTH_Craft_FirefightingModule.jobString>
+
+  <WTH_Craft_GrowingModule.label>栽培モジュールを作る</WTH_Craft_GrowingModule.label>
+  <WTH_Craft_GrowingModule.description>栽培モジュールを作成する。</WTH_Craft_GrowingModule.description>
+  <WTH_Craft_GrowingModule.jobString>モジュールを製作中</WTH_Craft_GrowingModule.jobString>
+
+  <WTH_Craft_CleaningModule.label>掃除モジュールを作る</WTH_Craft_CleaningModule.label>
+  <WTH_Craft_CleaningModule.description>掃除モジュールを作成する。</WTH_Craft_CleaningModule.description>
+  <WTH_Craft_CleaningModule.jobString>モジュールを製作中</WTH_Craft_CleaningModule.jobString>
+
+  <WTH_Craft_HaulingModule.label>運搬モジュールを作る</WTH_Craft_HaulingModule.label>
+  <WTH_Craft_HaulingModule.description>運搬モジュールを作成する。</WTH_Craft_HaulingModule.description>
+  <WTH_Craft_HaulingModule.jobString>モジュールを製作中</WTH_Craft_HaulingModule.jobString>
 
   <WTH_Craft_AdditionalBatteryModule.label>バッテリー増設モジュールを作る</WTH_Craft_AdditionalBatteryModule.label>
   <WTH_Craft_AdditionalBatteryModule.description>バッテリー増設モジュールを作成する。</WTH_Craft_AdditionalBatteryModule.description>
@@ -17,7 +53,7 @@
   <WTH_Craft_VanometricModule.description>自家発電モジュールを作成する。</WTH_Craft_VanometricModule.description>
   <WTH_Craft_VanometricModule.jobString>モジュールを製作中</WTH_Craft_VanometricModule.jobString>
 
-  <WTH_Craft_SelfDestructModule.label>自爆モジュール</WTH_Craft_SelfDestructModule.label>
+  <WTH_Craft_SelfDestructModule.label>自爆モジュールを作る</WTH_Craft_SelfDestructModule.label>
   <WTH_Craft_SelfDestructModule.description>自爆モジュールを作成する。</WTH_Craft_SelfDestructModule.description>
   <WTH_Craft_SelfDestructModule.jobString>モジュールを製作中</WTH_Craft_SelfDestructModule.jobString>
 
@@ -49,9 +85,41 @@
   <WTH_ImplantAI.description>AI人格コアを、ハックしたメカノイドに埋め込み、戦闘用の完全な制御を可能にします。</WTH_ImplantAI.description>
   <WTH_ImplantAI.jobString>メカノイドをハック中</WTH_ImplantAI.jobString>
 
-  <!-- <WTH_HackLocomotion.label>メカノイド移動システムをハックする</WTH_HackLocomotion.label> -->
-  <!-- <WTH_HackLocomotion.description>メカノイドの運動システムをハックして、受信機をメカノイドに追加して、遠隔制御装置を使用して入植民が操作できるようにします。</WTH_HackLocomotion.description> -->
-  <!-- <WTH_HackLocomotion.jobString>メカノイドをハック中</WTH_HackLocomotion.jobString> -->
+  <WTH_InstallOverdriveModule.label>オーバードライブモジュールを取り付ける</WTH_InstallOverdriveModule.label>
+  <WTH_InstallOverdriveModule.description>オーバードライブモジュールを取り付ける。</WTH_InstallOverdriveModule.description>
+  <WTH_InstallOverdriveModule.jobString>オーバードライブモジュールを取り付け中</WTH_InstallOverdriveModule.jobString>
+
+  <WTH_InstallSpeedModule.label>移動速度モジュールを取り付ける</WTH_InstallSpeedModule.label>
+  <WTH_InstallSpeedModule.description>移動速度モジュールを取り付ける。</WTH_InstallSpeedModule.description>
+  <WTH_InstallSpeedModule.jobString>移動速度モジュールを取り付け中</WTH_InstallSpeedModule.jobString>
+
+  <WTH_InstallCargoModule.label>貨物モジュールを取り付ける</WTH_InstallCargoModule.label>
+  <WTH_InstallCargoModule.description>貨物モジュールを取り付ける。</WTH_InstallCargoModule.description>
+  <WTH_InstallCargoModule.jobString>貨物モジュールを取り付け中</WTH_InstallCargoModule.jobString>
+
+  <WTH_InstallOpticSensorModule.label>光学センサーモジュールを取り付ける</WTH_InstallOpticSensorModule.label>
+  <WTH_InstallOpticSensorModule.description>光学センサーモジュールを取り付ける。</WTH_InstallOpticSensorModule.description>
+  <WTH_InstallOpticSensorModule.jobString>光学センサーモジュールを取り付け中</WTH_InstallOpticSensorModule.jobString>
+
+  <WTH_InstallArmorModule.label>装甲モジュールを取り付ける</WTH_InstallArmorModule.label>
+  <WTH_InstallArmorModule.description>装甲モジュールを取り付ける。</WTH_InstallArmorModule.description>
+  <WTH_InstallArmorModule.jobString>装甲モジュールを取り付け中</WTH_InstallArmorModule.jobString>
+
+  <WTH_InstallGrowingModule.label>栽培モジュールを取り付ける</WTH_InstallGrowingModule.label>
+  <WTH_InstallGrowingModule.description>栽培モジュールを取り付ける。</WTH_InstallGrowingModule.description>
+  <WTH_InstallGrowingModule.jobString>栽培モジュールを取り付け中</WTH_InstallGrowingModule.jobString>
+
+  <WTH_InstallFirefightingModule.label>消火モジュールを取り付ける</WTH_InstallFirefightingModule.label>
+  <WTH_InstallFirefightingModule.description>消火モジュールを取り付ける。</WTH_InstallFirefightingModule.description>
+  <WTH_InstallFirefightingModule.jobString>消火モジュールを取り付け中</WTH_InstallFirefightingModule.jobString>
+
+  <WTH_InstallCleaningModule.label>掃除モジュールを取り付ける</WTH_InstallCleaningModule.label>
+  <WTH_InstallCleaningModule.description>掃除モジュールを取り付ける。</WTH_InstallCleaningModule.description>
+  <WTH_InstallCleaningModule.jobString>掃除モジュールを取り付け中</WTH_InstallCleaningModule.jobString>
+
+  <WTH_InstallHaulingModule.label>運搬モジュールを取り付ける</WTH_InstallHaulingModule.label>
+  <WTH_InstallHaulingModule.description>運搬モジュールを取り付ける。</WTH_InstallHaulingModule.description>
+  <WTH_InstallHaulingModule.jobString>運搬モジュールを取り付け中</WTH_InstallHaulingModule.jobString>
 
   <WTH_InstallRepairArm.label>修理アームを装着</WTH_InstallRepairArm.label>
   <WTH_InstallRepairArm.description>修理アームを装着する。</WTH_InstallRepairArm.description>

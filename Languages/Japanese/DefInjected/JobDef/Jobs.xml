@@ -7,6 +7,9 @@
   <WTH_ControlMechanoid.reportString>メカノイドを制御中</WTH_ControlMechanoid.reportString>
   <WTH_ControlMechanoid_Goto.reportString>メカノイドを制御中(移動中)</WTH_ControlMechanoid_Goto.reportString>
   <WTH_Ability.reportString>能力を使用した</WTH_Ability.reportString>
+  <WTH_Ability_SelfDestruct.reportString>自爆機能を使用中</WTH_Ability_SelfDestruct.reportString>
+  <WTH_Ability_Repair.reportString>修理機能を使用中</WTH_Ability_Repair.reportString>
+  <WTH_Ability_Overdrive.reportString>オーバードライブを使用中</WTH_Ability_Overdrive.reportString>
   <WTH_PerformMaintenance.reportString>整備を実行中</WTH_PerformMaintenance.reportString>
   <WTH_HackRogueAI.reportString>ローグAIをハック中</WTH_HackRogueAI.reportString>
 

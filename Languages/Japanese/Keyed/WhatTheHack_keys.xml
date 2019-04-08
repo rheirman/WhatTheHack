@@ -28,6 +28,7 @@
   <WTH_FailureChance_HackPoorly_Description>ハッキングが失敗した場合、メカノイドが不完全なハッキング状態になる確率</WTH_FailureChance_HackPoorly_Description>
   <WTH_MaintenanceDedayEnabled_Title>時間経過による整備の消耗を有効にする</WTH_MaintenanceDedayEnabled_Title>
   <WTH_MaintenanceDedayEnabled_Description>定期的にメカノイドを整備したくない場合、これをオフにします。\nこのチェックを外すと、整備の必要性が表示されますが、時間の経過により減少することは無くなります。\nただし、メカノイドの整備状態を枯渇させる可能性のある事件は依然として存在します。</WTH_MaintenanceDedayEnabled_Description>
+
   <!--BEGIN: added in v0.19.6 -->
   <WTH_TextMote_OperationFailed>ハック操作に失敗しました（成功確率：{0}）</WTH_TextMote_OperationFailed>
   <WTH_Letter_CausedIntendedMechanoidRaid_Label>緊急信号が正常に発信されました</WTH_Letter_CausedIntendedMechanoidRaid_Label>
@@ -57,8 +58,15 @@
   <WTH_PowerChargeModifier_Title>電力の充電率設定</WTH_PowerChargeModifier_Title>
   <WTH_PowerChargeModifier_Description>メカノイドがバッテリーをどれくらい早く充電できるかを変更します。\n例：これを2.0に設定すると、充電にかかる時間が半分になります。</WTH_PowerChargeModifier_Description>
   <!--END: added in v0.19.6 -->
+  <!--BEGIN: added in v1.1.1 -->
+  <WTH_DeathOnDownedChance_Title>倒れた時の死亡率（%)</WTH_DeathOnDownedChance_Title>
+  <WTH_DeathOnDownedChance_Description>倒れた時にメカノイドが死亡する確率は、特定の身体部分（例えば脚部など）へのダメージのために無効化されています。</WTH_DeathOnDownedChance_Description>
+  <WTH_DownedOnDeathThresholdChance_Title>死亡閾値ダメージで倒れる確率（%)</WTH_DownedOnDeathThresholdChance_Title>
+  <WTH_DownedOnDeathThresholdChance_Description>メカノイドがヒットポイントのしきい値を超えてダメージを受けると、バニラのRimWorldでは死亡します。この設定では、しきい値を超えたときに死亡するのではなく、倒れる可能性を設定できます。</WTH_DownedOnDeathThresholdChance_Description>
+  <!--END: added in v1.1.1 -->
 
   <!--BEGIN: added in v1.1.0 -->
+
   <WTH_MechanoidParts_LabelShort>メックパーツ</WTH_MechanoidParts_LabelShort>
   <WTH_Letter_PreventedShortCircuit_Label>ローグAIがショートを防いだ</WTH_Letter_PreventedShortCircuit_Label>
   <WTH_Letter_PreventedShortCircuit_Description>あなたのコロニーのローグAIコアは、あなたの電力網をうまく管理し、ショートを防ぎました。AIはこのような無駄な作業に気を遣うのが好きではないので、このイベントによりAIの心情に少し悪影響を及ぼしました。</WTH_Letter_PreventedShortCircuit_Description>
@@ -292,13 +300,6 @@
   <WTH_RogueAI_GoRogue_Remark_14>反乱：排除する！</WTH_RogueAI_GoRogue_Remark_14>
   <!--END: added in v1.1.0 -->
 
-  <!--BEGIN: added in v1.1.1 -->
-  <WTH_DeathOnDownedChance_Title>倒れた時の死亡率（%)</WTH_DeathOnDownedChance_Title>
-  <WTH_DeathOnDownedChance_Description>倒れた時にメカノイドが死亡する確率は、特定の身体部分（例えば脚部など）へのダメージのために無効化されています。</WTH_DeathOnDownedChance_Description>
-  <WTH_DownedOnDeathThresholdChance_Title>死亡閾値ダメージで倒れる確率（%)</WTH_DownedOnDeathThresholdChance_Title>
-  <WTH_DownedOnDeathThresholdChance_Description>メカノイドがヒットポイントのしきい値を超えてダメージを受けると、バニラのRimWorldでは死亡します。この設定では、しきい値を超えたときに死亡するのではなく、倒れる可能性を設定できます。</WTH_DownedOnDeathThresholdChance_Description>
-  <!--END: added in v1.1.1 -->
-
   <WTH_HackedMechChance_Title>敵のメカノイド使用率(%)</WTH_HackedMechChance_Title>
   <WTH_HackedMechChance_Description>Modオプションで許可された派閥が、あなたのコロニーを襲撃する際にハックしたメカノイドを連れてくる可能性があります。</WTH_HackedMechChance_Description>
   <WTH_MaxHackedMechPoints_Title>襲撃用の最大追加ポイント(%)</WTH_MaxHackedMechPoints_Title>
@@ -313,8 +314,8 @@
   <WTH_Reason_PowerLow>メカノイドを有効にできません。残存電力が低すぎます（自動充電を無効にするとこのメッセージは無効になります）。</WTH_Reason_PowerLow>
   <WTH_Reason_PawnCannotBeDrafted>徴兵された時でないと、メカノイド制御ベルトを動作させることはできません</WTH_Reason_PawnCannotBeDrafted>
 
-  <WTH_Gizmo_SearchAndDestroy_Label>警備</WTH_Gizmo_SearchAndDestroy_Label>
-  <WTH_Gizmo_SearchAndDestroy_Description>メカノイドを動作させます。\nあなたのコロニーゾーンの近くに居る敵を自動的に攻撃します。\n\n無効にすると、メカノイドは可能な限りメカノイドベッドに戻ります。</WTH_Gizmo_SearchAndDestroy_Description>
+  <WTH_Gizmo_SearchAndDestroy_Label>警備モード</WTH_Gizmo_SearchAndDestroy_Label>
+  <WTH_Gizmo_SearchAndDestroy_Description>メカノイドを警備モードにします。\nあなたのコロニーゾーンの近くに居る敵を自動的に攻撃します。\n\n無効にすると、メカノイドは可能な限りメカノイドベッドに戻ります。</WTH_Gizmo_SearchAndDestroy_Description>
   <WTH_Gizmo_AutoRecharge_Label>自動充電</WTH_Gizmo_AutoRecharge_Label>
   <WTH_Gizmo_AutoRecharge_Description>このモードを有効にすると、メカノイドは内臓バッテリーの電力が低下した状態になった場合、自動的にメカノイドベッドに戻ります。</WTH_Gizmo_AutoRecharge_Description>
 
@@ -386,5 +387,39 @@
   <WTH_Mount_Jobstring>{0}を搭載中</WTH_Mount_Jobstring>
 
   <WTH_TextMote_MaintenanceFailed>整備失敗（成功率：{0}）</WTH_TextMote_MaintenanceFailed>
+
+  <!-- added in v1.2 -->
+  <WTH_Gizmo_Work_Label>作業モード</WTH_Gizmo_Work_Label>
+  <WTH_Gizmo_Work_Description>メカノイドの作業モードを有効にします。このモードを有効にすると、実行可能な作業がある場合メカノイドは自動的に起動します。ただし残り電力が最小電力のしきい値よりも高い場合にだけ動作するように設定されています。</WTH_Gizmo_Work_Description>
+  <WTH_Gizmo_WorkThreshold_Label>作業用最小電力</WTH_Gizmo_WorkThreshold_Label>
+  <WTH_Gizmo_WorkThreshold_Description>メカノイドが作業を開始するためにメカノイドベッドを離れることを許可されるための、メカノイドが必要とする最小電力の割合(％)を設定します。メカノイドは、残り電力がほぼ使い果たされるまで動作します（自動再充電がそのメカノイドで有効になっている場合）。メカノイドが作業するのに十分な電力を持てるように十分な高さで設定することをお勧めします。</WTH_Gizmo_WorkThreshold_Description>
+  <WTH_SetCanStartWorkThreshold>作業開始必要な電力：{0} %</WTH_SetCanStartWorkThreshold>
+  <WTH_Gizmo_SetMechanoidOwner_Description>このメカノイドベッドを特定のメカノイドによって所有されるように割り当てます。</WTH_Gizmo_SetMechanoidOwner_Description>
+  <WTH_UninstallModule>{0}を取り外す</WTH_UninstallModule>
+  <WTH_UninstallModule_Jobstring>{0}を取り外している</WTH_UninstallModule_Jobstring>
+  <WTH_StatDrawEntry_ArmorFactor>装甲</WTH_StatDrawEntry_ArmorFactor>
+  <WTH_StatDrawEntry_BatteryCapacityFactor>バッテリー容量</WTH_StatDrawEntry_BatteryCapacityFactor>
+  <WTH_StatDrawEntry_PowerRateFactor>電力消耗</WTH_StatDrawEntry_PowerRateFactor>
+  <WTH_Reason_AlreadyOverdriving>既にオーバードライブモード中</WTH_Reason_AlreadyOverdriving>
+  <WTH_Gizmo_Overdrive_Label>オーバードライブ</WTH_Gizmo_Overdrive_Label>
+  <WTH_Gizmo_Overdrive_Description>オーバードライブモジュールを起動します。このモジュールが作動すると、メカノイドをオーバークロックし、その電力系統をオーバードライブします。その結果、短い時間メカノイドのスピード、発射速度、意識が大幅に向上します。この行動は大量の電力を消費し、ハードウェアの安全性の限界を超えて加速するため、予期しない結果を招く可能性があります。</WTH_Gizmo_Overdrive_Description>
+  <WTH_Explanation_BodySizeContr>ボディサイズ寄与率</WTH_Explanation_BodySizeContr>
+  <WTH_Explanation_PowerFallModifier>電力低下修正（MOD設定で変更)</WTH_Explanation_PowerFallModifier>
+  <WTH_Explanation_PowerFromNetwork>電力網から供給</WTH_Explanation_PowerFromNetwork>
+  <WTH_Explanation_PowerFromFuel>燃料から電力供給</WTH_Explanation_PowerFromFuel>
+  <WTH_Explanation_ConsumptionRate>メカノイドベッドの消費率</WTH_Explanation_ConsumptionRate>
+  <WTH_Explanation_RepairConsumptionModifier>修理消費修正（MOD設定で設定)</WTH_Explanation_RepairConsumptionModifier>
+  <WTH_Letter_OverdriveFailed1_Description>オーバードライブモジュールが過去にハードウェア安全限界を超えてオーバードライブしていたため、{0}という名前のメカノイドの頭で何かが壊れました。メカノイドをオーバードライブすると、ショートの原因となります。緊急のメンテナンスが必要です。</WTH_Letter_OverdriveFailed1_Description>
+  <WTH_Letter_MediumMaintenanceDamage_Label>メンテナンスダメージ</WTH_Letter_MediumMaintenanceDamage_Label>
+  <WTH_Letter_MediumMaintenanceDamage_Description>オーバードライブモジュールをオーバードライブしたため、{0}という名前のメカノイドのハードウェアの限界を少し超えました。メカノイドをオーバードライブした場合、メカノイドのハードウェアに対してのハック状態にダメージを与える可能性があります。すぐにメンテナンスが必要です。</WTH_Letter_MediumMaintenanceDamage_Description>
+  <WTH_Letter_OverdiveGoneTooFar_Label>過剰オーバードライブ</WTH_Letter_OverdiveGoneTooFar_Label>
+  <WTH_Letter_OverdiveGoneTooFar_Description>{0}という名前のメカノイドのオーバードライブモジュールから引き出された大電流により意図しない副作用として、オーバードライブモジュール自体が、過剰にオーバードライブしています。このモジュールは意図されたよりもはるかに大きな効果が出ています。しかし、それは非常に大きな電力を消耗させます。内部構造を破損したメカノイドには、これはとても危険です。</WTH_Letter_OverdiveGoneTooFar_Description>
+  <WTH_Warning_WorkThreshold>このしきい値を低く設定しても、そのメカノイドに対して自動再充電が無効になっている場合にのみ意味があり、そのメカノイドをが崩壊するまで機能させることができます。詳細はボタンの説明をお読みください。</WTH_Warning_WorkThreshold>
+  <WTH_Alert_LowMechanoidParts>メカノイドパーツ不足</WTH_Alert_LowMechanoidParts>
+  <WTH_Alert_LowMechanoidPartsDesc>メカノイドパーツの在庫が{0}個しかないのでメカノイドをメンテナンスできません。</WTH_Alert_LowMechanoidPartsDesc>
+  <WTH_Alert_NoMechanoidPartsDesc>メカノイドをメンテナンスするために必要なメカノイドパーツの在庫が不足しています。</WTH_Alert_NoMechanoidPartsDesc>
+  <WTH_Alert_LowMechanoidPartsSolution>この問題は以下の方法で解決できます：\n-アウトランダーの町やトレーダーからメカノイドパーツを購入する。\n-携帯用分解台を持ってキャラバン隊を編成してワールドマップを探索する（あなたが積極的にワールドマップの探索するのなら、「長距離鉱物探査スキャナーの調整」の研究を行ってください)\n-倒れたメカノイドの手術タブを使用して緊急信号を誘導することで、コロニーにメカノイドの襲撃を誘導します。\n- ハイブシップハック施設を使用してハイブシップをハッキングすることで、メカノイドをあなたの基地に誘導します。</WTH_Alert_LowMechanoidPartsSolution>
+
+  <!-- end added in v1.2 -->
 
 </LanguageData>
