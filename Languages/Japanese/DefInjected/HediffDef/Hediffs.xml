@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
   <WTH_ShutDown.label>シャットダウン</WTH_ShutDown.label>
@@ -7,24 +7,38 @@
   <WTH_HeavilyDamaged.label>甚大な損傷</WTH_HeavilyDamaged.label>
   <WTH_HeavilyDamaged.labelNoun>メカノイドに対するダメージが大きすぎると、無力化されます。</WTH_HeavilyDamaged.labelNoun>
 
+  <WTH_DestroyedModule.label>壊れたモジュール</WTH_DestroyedModule.label>
+
   <WTH_RegeneratedPart.label>身体パーツ再生</WTH_RegeneratedPart.label>
   <WTH_RegeneratedPart.labelNoun>新規再生部品</WTH_RegeneratedPart.labelNoun>
 
+  <WTH_SpeedModule.label>移動速度モジュール</WTH_SpeedModule.label>
+  <WTH_CargoModule.label>貨物モジュール</WTH_CargoModule.label>
+  <WTH_OpticSensorModule.label>光学センサーモジュール</WTH_OpticSensorModule.label>
+  <WTH_ArmorModule.label>装甲モジュール</WTH_ArmorModule.label>
+  <WTH_GrowingModule.label>栽培モジュール</WTH_GrowingModule.label>
+  <WTH_FirefightingModule.label>消火モジュール</WTH_FirefightingModule.label>
+  <WTH_CleaningModule.label>掃除モジュール</WTH_CleaningModule.label>
+  <WTH_HaulingModule.label>運搬モジュール</WTH_HaulingModule.label>
   <WTH_BatteryExpansionModule.label>拡張バッテリー</WTH_BatteryExpansionModule.label>
-  <WTH_VanometricModule.label>自家発電モジュール搭載済</WTH_VanometricModule.label>
-  <WTH_SelfDestruct.label>自爆モジュール搭載済</WTH_SelfDestruct.label>
-  <WTH_RepairModule.label>修理モジュール搭載済</WTH_RepairModule.label>
-  <WTH_BeltModule.label>ベルト装着モジュール搭載済</WTH_BeltModule.label>
-  <WTH_TurretModule.label>タレットモジュール搭載済</WTH_TurretModule.label>
+  <WTH_VanometricModule.label>自家発電モジュール</WTH_VanometricModule.label>
+  <WTH_SelfDestruct.label>自爆モジュール</WTH_SelfDestruct.label>
+  <WTH_OverdriveModule.label>オーバードライブモジュール</WTH_OverdriveModule.label>
+  <WTH_Overdrive.label>オーバードライブ中</WTH_Overdrive.label>
+  <WTH_Overdrive_GoneTooFar.label>オーバードライブ暴走中</WTH_Overdrive_GoneTooFar.label>
+  <WTH_RepairModule.label>修理モジュール</WTH_RepairModule.label>
+  <WTH_BeltModule.label>ベルト装着モジュール</WTH_BeltModule.label>
+  <WTH_TurretModule.label>タレットモジュール</WTH_TurretModule.label>
   <WTH_MountedTurret.label>タレット搭載済</WTH_MountedTurret.label>
 
   <WTH_RepairArm.label>修理アーム</WTH_RepairArm.label>
   <WTH_RepairArm.comps.HediffComp_VerbGiver.tools.fist.label>こぶし(修理アーム)</WTH_RepairArm.comps.HediffComp_VerbGiver.tools.fist.label>
   <WTH_RepairArm.labelNoun>修理アーム</WTH_RepairArm.labelNoun>
 
+  <WTH_SelfDestructed.label>自爆した</WTH_SelfDestructed.label>
   <WTH_Repairing.label>重要部に電力を供給</WTH_Repairing.label>
 
-  <!-- <WTH_Overcharged.label>overcharged</WTH_Overcharged.label> -->
+  <!-- <WTH_Overcharged.label>過充電</WTH_Overcharged.label> -->
 
   <WTH_ReplacedAI.label>AI人格コア搭載済</WTH_ReplacedAI.label>
   <WTH_TargetingHacked.label>敵味方識別装置ハック済</WTH_TargetingHacked.label>
