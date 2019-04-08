@@ -40,6 +40,11 @@ namespace WhatTheHack.Harmony
         public static List<Pawn> SpawnHackedMechanoids(List<Pawn> pawns, IncidentParms parms)
         {
             //only call Arrive method when sure it's not already called. (can happen due to other mods)
+            if (pawns.Count > 0 && !pawns[0].Spawned)
+            {
+                parms.raidArrivalMode.Worker.Arrive(pawns, parms);
+            }
+
             if (pawns.Count == 0)
             {
                 return pawns;
@@ -58,6 +63,8 @@ namespace WhatTheHack.Harmony
             float maxMechPoints = parms.points * ((float)rand.Next(minHackedMechPoints, Base.maxHackedMechPoints)) / 100f; //TODO: no magic numbers
             float cumulativePoints = 0;
             Map map = parms.target as Map;
+            List<Pawn> addedPawns = new List<Pawn>();
+
             while (cumulativePoints < maxMechPoints)
             {
                 PawnKindDef pawnKindDef = null;
@@ -84,7 +91,7 @@ namespace WhatTheHack.Harmony
                     mechanoid.health.AddHediff(WTH_DefOf.WTH_BackupBattery);
                     Need_Power powerNeed = (Need_Power)mechanoid.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power);
                     powerNeed.CurLevel = powerNeed.MaxLevel;
-                    pawns.Add(mechanoid);
+                    addedPawns.Add(mechanoid);
                     cumulativePoints += pawnKindDef.combatPower;
                     AddModules(mechanoid);
                 }
@@ -93,6 +100,11 @@ namespace WhatTheHack.Harmony
                     break;
                 }
             }
+            if (addedPawns.Count > 0 && !addedPawns[0].Spawned)
+            {
+                parms.raidArrivalMode.Worker.Arrive(addedPawns, parms);
+            }
+            pawns.AddRange(addedPawns);
 
             foreach (Pawn pawn in pawns)
             {
@@ -100,10 +112,6 @@ namespace WhatTheHack.Harmony
                 {
                     pawn.equipment = new Pawn_EquipmentTracker(pawn);
                 }
-            }
-            if (pawns.Count > 0 && !pawns[0].Spawned)
-            {
-                parms.raidArrivalMode.Worker.Arrive(pawns, parms);
             }
             return pawns;
         }
