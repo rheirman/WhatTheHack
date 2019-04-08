@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
   <WTH_MechanoidParts.label>メカノイドパーツ</WTH_MechanoidParts.label>
@@ -12,6 +12,33 @@
 
   <WTH_ExtractedBrainData.label>脳抽出データ</WTH_ExtractedBrainData.label>
   <WTH_ExtractedBrainData.description>生きていた人間の脳から抽出されたデータ情報です。ローグ AIに与えるために使用できます。</WTH_ExtractedBrainData.description>
+
+  <WTH_GrowingModule.label>栽培モジュール</WTH_GrowingModule.label>
+  <WTH_GrowingModule.description>植物の収穫と栽培を可能にするためにメカノイドに取り付けることができます。</WTH_GrowingModule.description>
+
+  <WTH_FirefightingModule.label>消火モジュール</WTH_FirefightingModule.label>
+  <WTH_FirefightingModule.description>消火を可能にするためにメカノイドに取り付けることができます。</WTH_FirefightingModule.description>
+
+  <WTH_CleaningModule.label>掃除モジュール</WTH_CleaningModule.label>
+  <WTH_CleaningModule.description>自動的にクリーニング作業を実行可能にするためにメカノイドに取り付けることができます。</WTH_CleaningModule.description>
+
+  <WTH_OverdriveModule.label>オーバードライブモジュール</WTH_OverdriveModule.label>
+  <WTH_OverdriveModule.description>メカノイドに取り付けることができます。このモジュールが作動すると、メカノイドをオーバークロックし、その電力系統をオーバードライブします。その結果、短時間ですがメカノイドの移動速度、発射速度、意識が大幅に向上します。この行為は大量の電力を消費し、ハードウェアの安全性の限界を超えて増強するため、予期しない結果を招く可能性があります。</WTH_OverdriveModule.description>
+
+  <WTH_SpeedModule.label>移動速度モジュール</WTH_SpeedModule.label>
+  <WTH_SpeedModule.description>メカノイドに取り付けることができます。電力消費の追加と引き換えに、メカノイドの移動速度を上げます。</WTH_SpeedModule.description>
+
+  <WTH_CargoModule.label>貨物モジュール</WTH_CargoModule.label>
+  <WTH_CargoModule.description>メカノイドに取り付けることができます。運動性に小さなペナルティを与えるのと引き換えに、メカノイドの運搬能力を高めます。</WTH_CargoModule.description>
+
+  <WTH_OpticSensorModule.label>光学センサーモジュール</WTH_OpticSensorModule.label>
+  <WTH_OpticSensorModule.description>メカノイドに取り付けることができます。少しの電力消費の追加と引き換えに、メカノイドの反応範囲を改善します。</WTH_OpticSensorModule.description>
+
+  <WTH_ArmorModule.label>装甲モジュール</WTH_ArmorModule.label>
+  <WTH_ArmorModule.description>メカノイドに取り付けることができます。移動速度を犠牲にして、メカノイドの装甲（打撲系と突刺系）を増やします。</WTH_ArmorModule.description>
+
+  <WTH_HaulingModule.label>運搬モジュール</WTH_HaulingModule.label>
+  <WTH_HaulingModule.description>メカノイドに取り付けて、運搬作業を自動的に実行できるようにすることができます。</WTH_HaulingModule.description>
 
   <WTH_TurretModule.label>タレットモジュール</WTH_TurretModule.label>
   <WTH_TurretModule.description>メカノイドに取り付けることができ、タレットや迫撃砲を搭載することができます。</WTH_TurretModule.description>
@@ -29,7 +56,7 @@
   <WTH_RepairModule.description>これらをメカノイドに取り付けると、メカノイドが屋外で自分自身を修理する能力を与えます。</WTH_RepairModule.description>
 
   <WTH_RepairArm.label>修理アーム</WTH_RepairArm.label>
-  <WTH_RepairArm.description>他のメカノイドを屋外で修理できるようになる、修理モジュールをメカノイドに取り付けることができます.</WTH_RepairArm.description>
+  <WTH_RepairArm.description>修理モジュールの付いた修理用の腕をメカノイドの腕と交換して、他のメカノイドを屋外で修理できるようになります。</WTH_RepairArm.description>
 
   <WTH_BeltModule.label>ベルト装着モジュール</WTH_BeltModule.label>
   <WTH_BeltModule.description>メカノイドに取り付けることでシールドベルトやスモークポップベルトのような人間用のベルトをメカノイドに装備させることができます。</WTH_BeltModule.description>
