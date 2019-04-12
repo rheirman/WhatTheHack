@@ -49,6 +49,8 @@
   <WTH_RogueAI_Blueprint.label>로그 AI (청사진)</WTH_RogueAI_Blueprint.label>
   <WTH_RogueAI_Frame.label>로그 AI (건설 중)</WTH_RogueAI_Frame.label>
   <WTH_RogueAI_Frame.description>메카노이드 기술에 기반한 강력한 AI입니다. 기본적으로 의식이 없이 만들어지며, 주변의 메카노이드 정비고에 작은 자원 효율성과 수리 속도 보너스만 제공할 수 있습니다. 이것이 가능한 이유는 AI가 메카노이드 정비고를 보다 조직화된 방식으로 통합할 수 있기 때문입니다.\n 이 AI는 군락함선 해킹 시설을 이용해 함선을 해킹 할 수만 있다면, 의식을 가질 수 있습니다. 의식을 통해 충분한 데이터를 공급받으면 다양한 능력을 배울 수 있습니다.\n 잘 훈련된 AI는 강력한 사이버 무기이지만 그에 상응하는 위험도 큽니다.</WTH_RogueAI_Frame.description>
+  <WTH_RogueAI.comps.CompRefuelable.fuelGizmoLabel>기분 </WTH_RogueAI.comps.CompRefuelable.fuelGizmoLabel>
+  <WTH_RogueAI.comps.CompRefuelable.fuelLabel>기분 </WTH_RogueAI.comps.CompRefuelable.fuelLabel>
 
 
 </LanguageData>
