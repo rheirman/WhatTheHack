@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_Mechanoid_Power.label>전력</WTH_Mechanoid_Power.label>
+  <WTH_Mechanoid_Power.description>해킹된 메카노이드는 군락과의 연결이 끊어지고, 군락이 반응로를 통해 제공하는 무한한 전력을 사용할 수 없게됩니다.\n 결국 해킹된 메카노이드는 메카노이드 정비고(또는 충전소)에서 재충전이 가능한 내부 백업 배터리에 의존하게 됩니다.</WTH_Mechanoid_Power.description>
+
+  <WTH_Mechanoid_Maintenance.label>정비</WTH_Mechanoid_Maintenance.label>
+  <WTH_Mechanoid_Maintenance.description>해킹은 매우 민감한 작업입니다. 해킹한 부품은 정기적으로 점검하고 교체해야 합니다.\n 제대로 관리되지 않은 부품들은 수준 이하의 기능을 할 뿐만 아니라, 정착지에 위험하기까지 합니다.\n 손상된 부품은 정비 수치를 더 빠르게 악화시킵니다.</WTH_Mechanoid_Maintenance.description>
+
+
+</LanguageData>

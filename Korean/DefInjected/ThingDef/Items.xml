@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_MechanoidParts.label>메카노이드 부품</WTH_MechanoidParts.label>
+  <WTH_MechanoidParts.description>파괴된 메카노이드에게서 떼어낸 부품입니다. 메카노이드를 해킹하고 수리하는데 필요합니다.</WTH_MechanoidParts.description>
+
+  <WTH_MechanoidChip.label>고급 메카노이드 칩</WTH_MechanoidChip.label>
+  <WTH_MechanoidChip.description>무력화되거나 파괴된 메카노이드에게서 찾아낸 고급 메카노이드 칩입니다. \n 좀 더 복잡한 해킹 작업이나, 고급 모듈 제작에 필요합니다.</WTH_MechanoidChip.description>
+
+  <WTH_MechanoidData.label>군락 데이터</WTH_MechanoidData.label>
+  <WTH_MechanoidData.description>메카노이드 군락의 데이터 기록입니다. 인간은 그러한 양의 데이터를 이해할 수 없지만, 이 데이터 중 일부를 활용해 로그 AI의 구축 및 그것의 코어에 유용한 것을 제공할 수 있을겁니다.\n 또한 우리 측 메카노이드 기술에 접목하여 더 많은 탐구를 진행할 수 있습니다.</WTH_MechanoidData.description>
+
+  <WTH_ExtractedBrainData.label>추출된 뇌 데이터</WTH_ExtractedBrainData.label>
+  <WTH_ExtractedBrainData.description>인간의 뇌에서 추출한 데이터 기록입니다. 로그 AI의 코어에 제공할 수 있습니다.</WTH_ExtractedBrainData.description>
+  
+  <WTH_GrowingModule.label>재배 모듈</WTH_GrowingModule.label>
+  <WTH_GrowingModule.description>해킹된 메카노이드에 설치할 수 있는 작업 모듈입니다.\n 해당 모듈이 설치된 메카노이드는 재배, 제초/벌목 및 수확 작업을 할 수 있게 됩니다.</WTH_GrowingModule.description>
+
+  <WTH_FirefightingModule.label>소방 모듈</WTH_FirefightingModule.label>
+  <WTH_FirefightingModule.description>해킹된 메카노이드에 설치할 수 있는 작업 모듈입니다.\n 해당 모듈이 설치된 메카노이드는 소방 작업을 할 수 있게 됩니다.</WTH_FirefightingModule.description>
+
+  <WTH_CleaningModule.label>청소 모듈</WTH_CleaningModule.label>
+  <WTH_CleaningModule.description>해킹된 메카노이드에 설치할 수 있는 작업 모듈입니다.\n 해당 모듈이 설치된 메카노이드는 자동으로 청소 작업을 수행합니다.</WTH_CleaningModule.description>
+
+  <WTH_OverdriveModule.label>오버드라이브 모듈</WTH_OverdriveModule.label>
+  <WTH_OverdriveModule.description>해킹된 메카노이드에 설치할 수 있는 업그레이드 모듈입니다.\n 이 모듈이 활성화되면 메카노이드의 오버클럭이 시작되며, 해당 메카노이드의 전원 네트워크를 오버드라이브 시킵니다. 이로 인해 짧은 시간 동안 메카노이드의 이동 속도와 발사 속도, 의식이 크게 향상됩니다.\n 이 절차는 많은 전력을 소비하고, 이로인해 하드웨어 안전 한계를 초과하므로 예상치 못한 결과를 초래할 수 있습니다.</WTH_OverdriveModule.description>
+
+  <WTH_SpeedModule.label>속도 모듈</WTH_SpeedModule.label>
+  <WTH_SpeedModule.description>해킹된 메카노이드에 설치할 수 있는 업그레이드 모듈입니다.\n 전력을 추가로 소비하여, 메카노이드의 이동 속도를 높입니다.</WTH_SpeedModule.description>
+
+  <WTH_CargoModule.label>화물 모듈</WTH_CargoModule.label>
+  <WTH_CargoModule.description>해킹된 메카노이드에 설치할 수 있는 업그레이드 모듈입니다.\n 약간의 조작 패널티를 대가로 메카노이드의 운반 능력을 증가시킵니다.</WTH_CargoModule.description>
+
+  <WTH_OpticSensorModule.label>광학 센서 모듈</WTH_OpticSensorModule.label>
+  <WTH_OpticSensorModule.description>해킹된 메카노이드에 설치할 수 있는 업그레이드 모듈입니다.\n 소량의 추가 전력을 소비하여, 메카노이드의 시력을 향상시킵니다.</WTH_OpticSensorModule.description>
+
+  <WTH_ArmorModule.label>장갑 모듈</WTH_ArmorModule.label>
+  <WTH_ArmorModule.description>해킹된 메카노이드에 설치할 수 있는 업그레이드 모듈입니다.\n 이동 속도를 희생하는 대가로 메카노이드의 방어도(날카로움/둔탁함)를 증가시킵니다.</WTH_ArmorModule.description>
+
+  <WTH_HaulingModule.label>운반 모듈</WTH_HaulingModule.label>
+  <WTH_HaulingModule.description>해킹된 메카노이드에 설치할 수 있는 작업 모듈입니다.\n 해당 모듈이 설치된 메카노이드는 자동으로 운반 작업을 수행합니다.</WTH_HaulingModule.description>
+
+  <WTH_TurretModule.label>포탑 모듈</WTH_TurretModule.label>
+  <WTH_TurretModule.description>해킹된 메카노이드에 설치할 수 있는 모듈입니다. \n 이 모듈이 설치된 메카노이드는 포탑과 박격포를 탑재할 수 있습니다.</WTH_TurretModule.description>
+
+  <WTH_SelfDestructModule.label>자폭 모듈</WTH_SelfDestructModule.label>
+  <WTH_SelfDestructModule.description>치명적인 자폭 옵션을 제공하기 위해 해킹된 메카노이드에 설치할 수 있는 자폭 모듈입니다. \n 평소에는 플라스틸 보호장치로 의도치않은 폭발을 막습니다.</WTH_SelfDestructModule.description>
+
+  <WTH_BatteryExpansionModule.label>배터리 확장 모듈</WTH_BatteryExpansionModule.label>
+  <WTH_BatteryExpansionModule.description>해킹된 메카노이드에 설치할 수 있는 업그레이드 모듈입니다.\n 약간의 이동 속도를 희생하는 대가로 메카노이드에 추가 배터리 용량을 제공합니다.</WTH_BatteryExpansionModule.description>
+
+  <WTH_VanometricModule.label>베노메트릭 모듈</WTH_VanometricModule.label>
+  <WTH_VanometricModule.description>해킹된 메카노이드에 설치할 수 있는 업그레이드 모듈입니다.\n 약간의 이동 속도를 희생하는 대가로 메카노이드에 무한히 전력을 공급합니다.</WTH_VanometricModule.description>
+
+  <WTH_RepairModule.label>수리 모듈</WTH_RepairModule.label>
+  <WTH_RepairModule.description>해킹된 메카노이드에 설치할 수 있는 모듈입니다.\n 메카노이드가 어떤 현장에서도 자가 수리할 수 있는 능력을 제공합니다. 단 수복 절차가 진행중일 시 어떠한 다른 행동도 할 수 없습니다.</WTH_RepairModule.description>
+
+  <WTH_RepairArm.label>정비용 팔</WTH_RepairArm.label>
+  <WTH_RepairArm.description>해킹된 메카노이드에 설치할 수 있는 모듈입니다.\n 현장에 있는 다른 메카노이드 기체를 수리할 수 있는 능력을 제공합니다. 수리 모듈과 함께 메카노이드에 설치할 수 있습니다.</WTH_RepairArm.description>
+
+  <WTH_BeltModule.label>벨트 모듈</WTH_BeltModule.label>
+  <WTH_BeltModule.description>해킹된 메카노이드에 설치할 수 있는 모듈입니다.\n 이 모듈이 설치된 메카노이드는 방어 벨트나 연막 벨트 등의 벨트류 장비를 사용할 수 있습니다.</WTH_BeltModule.description>
+
+
+</LanguageData>

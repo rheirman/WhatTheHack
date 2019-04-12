@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_HackingTable.label>메카노이드 해킹 작업대</WTH_HackingTable.label>
+  <WTH_HackingTable.description>무력화된 메카노이드의 해킹 및 수리용 설비가 갖춰진 작업대입니다.</WTH_HackingTable.description>
+  <WTH_HackingTable_Blueprint.label>메카노이드 해킹 작업대 (청사진)</WTH_HackingTable_Blueprint.label>
+  <WTH_HackingTable_Frame.label>메카노이드 해킹 작업대 (건설 중)</WTH_HackingTable_Frame.label>
+  <WTH_HackingTable_Frame.description>무력화된 메카노이드의 해킹 및 수리용 설비가 갖춰진 작업대입니다.</WTH_HackingTable_Frame.description>
+
+  <WTH_TableMechanoidWorkshop.label>메카노이드 작업대</WTH_TableMechanoidWorkshop.label>
+  <WTH_TableMechanoidWorkshop.description>고급 메카노이드 칩을 분해하여 사용가능한 메카노이드 부품으로 만들 수 있는 메카노이드 작업대 입니다.\n 또한 이 작업대에서 모든 종류의 메카노이드 관련 모듈 제작 및 업그레이드를 진행할 수 있습니다.</WTH_TableMechanoidWorkshop.description>
+  <WTH_TableMechanoidWorkshop_Blueprint.label>메카노이드 작업대 (청사진)</WTH_TableMechanoidWorkshop_Blueprint.label>
+  <WTH_TableMechanoidWorkshop_Blueprint_Install.label>메카노이드 작업대 (청사진)</WTH_TableMechanoidWorkshop_Blueprint_Install.label>
+  <WTH_TableMechanoidWorkshop_Frame.label>메카노이드 작업대 (건설 중)</WTH_TableMechanoidWorkshop_Frame.label>
+  <WTH_TableMechanoidWorkshop_Frame.description>고급 메카노이드 칩을 분해하여 사용가능한 메카노이드 부품으로 만들 수 있는 메카노이드 작업대 입니다.\n 또한 이 작업대에서 모든 종류의 메카노이드 관련 모듈 제작 및 업그레이드를 진행할 수 있습니다.</WTH_TableMechanoidWorkshop_Frame.description>
+
+  <WTH_MechanoidPlatform.label>메카노이드 정비고</WTH_MechanoidPlatform.label>
+  <WTH_MechanoidPlatform.description>메카노이드 정비고는 메카노이드의 유지보수 및 충전용 발전소로 사용됩니다.</WTH_MechanoidPlatform.description>
+  <WTH_MechanoidPlatform_Blueprint.label>메카노이드 정비고 (청사진)</WTH_MechanoidPlatform_Blueprint.label>
+  <WTH_MechanoidPlatform_Frame.label>메카노이드 정비고 (건설 중)</WTH_MechanoidPlatform_Frame.label>
+  <WTH_MechanoidPlatform_Frame.description>메카노이드 정비고는 메카노이드의 유지보수 및 충전용 발전소로 사용됩니다.</WTH_MechanoidPlatform_Frame.description>
+  <WTH_MechanoidPlatform.comps.CompRefuelable.fuelGizmoLabel>메카노이드 부품 적재량 </WTH_MechanoidPlatform.comps.CompRefuelable.fuelGizmoLabel>
+  <WTH_MechanoidPlatform.comps.CompRefuelable.fuelLabel>메카노이드 부품 적재량 </WTH_MechanoidPlatform.comps.CompRefuelable.fuelLabel>
+
+  <WTH_PortableChargingPlatform.label>WTH_휴대용 충전소</WTH_PortableChargingPlatform.label>
+  <WTH_PortableChargingPlatform.description>세계를 탐험하는 동안 메카노이드에 전력을 공급할 수 있는 휴대용 화학 연료 충전소입니다.\n 또한, 메카노이드 장치를 위한 임시 전원 해결책을 설치/제거할 수도 있습니다.</WTH_PortableChargingPlatform.description>
+  <WTH_PortableChargingPlatform_Blueprint.label>WTH_휴대용 충전소 (청사진)</WTH_PortableChargingPlatform_Blueprint.label>
+  <WTH_PortableChargingPlatform_Blueprint_Install.label>WTH_휴대용 충전소 (청사진)</WTH_PortableChargingPlatform_Blueprint_Install.label>
+  <WTH_PortableChargingPlatform_Frame.label>WTH_휴대용 충전소 (건설 중)</WTH_PortableChargingPlatform_Frame.label>
+  <WTH_PortableChargingPlatform_Frame.description>세계를 탐험하는 동안 메카노이드에 전력을 공급할 수 있는 휴대용 화학 연료 충전소입니다.\n 또한, 메카노이드 장치를 위한 임시 전원 해결책을 설치/제거할 수도 있습니다.</WTH_PortableChargingPlatform_Frame.description>
+  
+  <WTH_PortableDisassemblingBench.label>WTH_휴대용 분해 작업대</WTH_PortableDisassemblingBench.label>
+  <WTH_PortableDisassemblingBench.description>세계를 탐험하는 동안 메카노이드를 분해하는 데 필요한 모든 것을 담고 있는 튼튼하고 휴대 가능한 작업대입니다.\n 이 작업대는 전력에 의존하지 않으므로 이동간에 사용하기 편리하지만, 그 대신 효율성이 약간 떨어집니다.</WTH_PortableDisassemblingBench.description>
+  <WTH_PortableDisassemblingBench_Blueprint.label>WTH_휴대용 분해 작업대 (청사진)</WTH_PortableDisassemblingBench_Blueprint.label>
+  <WTH_PortableDisassemblingBench_Blueprint_Install.label>WTH_휴대용 분해 작업대 (청사진)</WTH_PortableDisassemblingBench_Blueprint_Install.label>
+  <WTH_PortableDisassemblingBench_Frame.label>WTH_휴대용 분해 작업대 (건설 중)</WTH_PortableDisassemblingBench_Frame.label>
+  <WTH_PortableDisassemblingBench_Frame.description>세계를 탐험하는 동안 메카노이드를 분해하는 데 필요한 모든 것을 담고 있는 튼튼하고 휴대 가능한 작업대입니다.\n 이 작업대는 전력에 의존하지 않으므로 이동간에 사용하기 편리하지만, 그 대신 효율성이 약간 떨어집니다.</WTH_PortableDisassemblingBench_Frame.description>
+
+  <WTH_DisassemblingBenchMinified.label>WTH_휴대용 분해 작업대 (포장됨)</WTH_DisassemblingBenchMinified.label>
+
+  <WTH_MechanoidBeacon.label>군락함선 해킹 시설</WTH_MechanoidBeacon.label>
+  <WTH_MechanoidBeacon.description>메카노이드 해킹 분야의 최첨단 기술이 집약된 이 시설은 로그 AI가 행성 궤도를 도는 메카노이드 군락함선에 악성 코드를 전송하여, 함선에 존재할 베일에 쌓인 첨단 지식을 얻기 위한 것입니다. 로그 AI의 의식을 형성하기 위해서는 이 지식이 반드시 필요합니다.\n 로그 AI가 동일한 지도에서 만들어진 후에만 활성화 될 수 있습니다.</WTH_MechanoidBeacon.description>
+  <WTH_MechanoidBeacon_Blueprint.label>군락함선 해킹 시설 (청사진)</WTH_MechanoidBeacon_Blueprint.label>
+  <WTH_MechanoidBeacon_Frame.label>군락함선 해킹 시설 (건설 중)</WTH_MechanoidBeacon_Frame.label>
+  <WTH_MechanoidBeacon_Frame.description>메카노이드 해킹 분야의 최첨단 기술이 집약된 이 시설은 로그 AI가 행성 궤도를 도는 메카노이드 군락함선에 악성 코드를 전송하여, 함선에 존재할 베일에 쌓인 첨단 지식을 얻기 위한 것입니다. 로그 AI의 의식을 형성하기 위해서는 이 지식이 반드시 필요합니다.\n 로그 AI가 동일한 지도에서 만들어진 후에만 활성화 될 수 있습니다.</WTH_MechanoidBeacon_Frame.description>
+
+  <WTH_RogueAI.label>로그 AI</WTH_RogueAI.label>
+  <WTH_RogueAI.description>메카노이드 기술에 기반한 강력한 AI입니다. 기본적으로 의식이 없이 만들어지며, 주변의 메카노이드 정비고에 작은 자원 효율성과 수리 속도 보너스만 제공할 수 있습니다. 이것이 가능한 이유는 AI가 메카노이드 정비고를 보다 조직화된 방식으로 통합할 수 있기 때문입니다.\n 이 AI는 군락함선 해킹 시설을 이용해 함선을 해킹 할 수만 있다면, 의식을 가질 수 있습니다. 의식을 통해 충분한 데이터를 공급받으면 다양한 능력을 배울 수 있습니다.\n 잘 훈련된 AI는 강력한 사이버 무기이지만 그에 상응하는 위험도 큽니다.</WTH_RogueAI.description>
+  <WTH_RogueAI_Blueprint.label>로그 AI (청사진)</WTH_RogueAI_Blueprint.label>
+  <WTH_RogueAI_Frame.label>로그 AI (건설 중)</WTH_RogueAI_Frame.label>
+  <WTH_RogueAI_Frame.description>메카노이드 기술에 기반한 강력한 AI입니다. 기본적으로 의식이 없이 만들어지며, 주변의 메카노이드 정비고에 작은 자원 효율성과 수리 속도 보너스만 제공할 수 있습니다. 이것이 가능한 이유는 AI가 메카노이드 정비고를 보다 조직화된 방식으로 통합할 수 있기 때문입니다.\n 이 AI는 군락함선 해킹 시설을 이용해 함선을 해킹 할 수만 있다면, 의식을 가질 수 있습니다. 의식을 통해 충분한 데이터를 공급받으면 다양한 능력을 배울 수 있습니다.\n 잘 훈련된 AI는 강력한 사이버 무기이지만 그에 상응하는 위험도 큽니다.</WTH_RogueAI_Frame.description>
+  <WTH_RogueAI.comps.CompRefuelable.fuelGizmoLabel>기분 </WTH_RogueAI.comps.CompRefuelable.fuelGizmoLabel>
+  <WTH_RogueAI.comps.CompRefuelable.fuelLabel>기분 </WTH_RogueAI.comps.CompRefuelable.fuelLabel>
+
+
+</LanguageData>

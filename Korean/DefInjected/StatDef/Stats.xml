@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_PowerProduction.label>일일 전력 생산량</WTH_PowerProduction.label>
+  <WTH_PowerProduction.description>메카노이드가 하루에 생산하는 전력량</WTH_PowerProduction.description>
+
+  <WTH_PowerRate.label>일일 전력 소비량</WTH_PowerRate.label>
+  <WTH_PowerRate.description>메카노이드가 하루에 소비하는 전력량</WTH_PowerRate.description>
+
+  <WTH_BatteryCapacity.label>배터리 용량</WTH_BatteryCapacity.label>
+  <WTH_BatteryCapacity.description>메카노이드의 총 배터리 용량입니다.</WTH_BatteryCapacity.description>
+
+  <WTH_RechargeRate.label>일일 전력 재충전량</WTH_RechargeRate.label>
+  <WTH_RechargeRate.description>메카노이드 설비가 하루 종일 전원을 공급받거나 연료를 공급받는다고 가정할 때, 메카노이드 설비가 메카노이드에게 매일 얼마나 많은 전력을 재충전해주는 지를 나타냅니다.</WTH_RechargeRate.description>
+
+  <WTH_RepairRate.label>일일 수리량</WTH_RepairRate.label>
+  <WTH_RepairRate.description>메카노이드 설비가 메카노이드를 수리할 시, 하루동안 수리할 수 있는 손상의 양입니다.</WTH_RepairRate.description>
+
+  <WTH_PartConsumptionRate.label>일일 메카노이드 부품 소비량(수리)</WTH_PartConsumptionRate.label>
+  <WTH_PartConsumptionRate.description>메카노이드 설비가 메카노이드를 수리 중일 때, 하루에 얼마나 많은 메카노이드 부품을 소비하는지 나타냅니다.\n 만약 수리를 하지 않는다면, 부품 역시 소모되지 않습니다.</WTH_PartConsumptionRate.description>
+
+  <WTH_ControllerBeltRadius.label>원격제어 범위</WTH_ControllerBeltRadius.label>
+  <WTH_ControllerBeltRadius.description>이 벨트를 사용하여 메카노이드를 제어할 수 있는 최대 범위</WTH_ControllerBeltRadius.description>
+
+  <WTH_HackingMaintenanceSpeed.label>정비 속도</WTH_HackingMaintenanceSpeed.label>
+  <WTH_HackingMaintenanceSpeed.description>해킹된 메카노이드의 정비를 수행하는 속도입니다.</WTH_HackingMaintenanceSpeed.description>
+
+  <WTH_HackingSuccessChance.label>해킹 성공 확률</WTH_HackingSuccessChance.label>
+  <WTH_HackingSuccessChance.description>메카노이드를 해킹하거나 개조할 때 성공할 확률입니다.\n 실제 성공 가능성은 해킹의 어려움과 기계적인 요소가 얼마나 강력한지에 의해 영향을 받습니다.</WTH_HackingSuccessChance.description>
+
+
+</LanguageData>

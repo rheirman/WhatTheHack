@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_ExtractBrainData.label>뇌 데이터 추출</WTH_ExtractBrainData.label>
+  <WTH_ExtractBrainData.description>메카노이드 기술을 사용하여, 살아있는 인간의 뇌에서 모든 데이터를 추출합니다.\n 현재의 기술로는 뇌를 파괴하지 않고는 할 수 없습니다. 똑똑한 인간은 더 많은 데이터를 산출할 것입니다.</WTH_ExtractBrainData.description>
+  <WTH_ExtractBrainData.jobString>뇌 데이터 추출하는 중.</WTH_ExtractBrainData.jobString>
+
+  <WTH_Scrap_AdvancedMechanoidChip.label>고급 메카노이드 칩 분해</WTH_Scrap_AdvancedMechanoidChip.label>
+  <WTH_Scrap_AdvancedMechanoidChip.description>고급 메카노이드 칩을 분해하여 사용가능한 메카노이드 부품으로 만듭니다.</WTH_Scrap_AdvancedMechanoidChip.description>
+  <WTH_Scrap_AdvancedMechanoidChip.jobString>고급 칩 분해하는 중.</WTH_Scrap_AdvancedMechanoidChip.jobString>
+  
+  <WTH_Craft_OverdriveModule.label>오버드라이브 모듈 제작</WTH_Craft_OverdriveModule.label>
+  <WTH_Craft_OverdriveModule.description>해킹된 메카노이드에 설치시, 모듈이 활성화되는 짧은 시간 동안 메카노이드의 이동 속도와 발사 속도, 의식을 크게 끌어올릴 수 있는 오버드라이브 모듈을 제작합니다.</WTH_Craft_OverdriveModule.description>
+  <WTH_Craft_OverdriveModule.jobString>오버드라이브 모듈 제작하는 중.</WTH_Craft_OverdriveModule.jobString>
+
+  <WTH_Craft_SpeedModule.label>속도 모듈 제작</WTH_Craft_SpeedModule.label>
+  <WTH_Craft_SpeedModule.description>해킹된 메카노이드에 설치시, 전력을 추가로 소비하여 메카노이드의 이동 속도를 높일 수 있는 속도 모듈을 제작합니다.</WTH_Craft_SpeedModule.description>
+  <WTH_Craft_SpeedModule.jobString>속도 모듈 제작하는 중.</WTH_Craft_SpeedModule.jobString>
+
+  <WTH_Craft_CargoModule.label>화물 모듈 제작</WTH_Craft_CargoModule.label>
+  <WTH_Craft_CargoModule.description>해킹된 메카노이드에 설치시, 약간의 조작 패널티를 대가로 메카노이드의 운반 능력을 증가시키는 화물 모듈을 제작합니다.</WTH_Craft_CargoModule.description>
+  <WTH_Craft_CargoModule.jobString>화물 모듈 제작하는 중.</WTH_Craft_CargoModule.jobString>
+
+  <WTH_Craft_OpticSensorModule.label>광학 센서 모듈 제작</WTH_Craft_OpticSensorModule.label>
+  <WTH_Craft_OpticSensorModule.description>해킹된 메카노이드에 설치시, 소량의 추가 전력을 소비하여 메카노이드의 시력을 향상시키는 광학 센서 모듈을 제작합니다.</WTH_Craft_OpticSensorModule.description>
+  <WTH_Craft_OpticSensorModule.jobString>광학 센서 모듈 제작하는 중.</WTH_Craft_OpticSensorModule.jobString>
+
+  <WTH_Craft_ArmorModule.label>장갑 모듈 제작</WTH_Craft_ArmorModule.label>
+  <WTH_Craft_ArmorModule.description>해킹된 메카노이드에 설치시, 이동 속도를 희생하는 대가로 메카노이드의 방어도(날카로움/둔탁함)를 증가시키는 장갑 모듈을 제작합니다.</WTH_Craft_ArmorModule.description>
+  <WTH_Craft_ArmorModule.jobString>장갑 모듈 제작하는 중.</WTH_Craft_ArmorModule.jobString>
+
+  <WTH_Craft_FirefightingModule.label>소방 모듈 제작</WTH_Craft_FirefightingModule.label>
+  <WTH_Craft_FirefightingModule.description>해킹된 메카노이드에 설치시, 해당 모듈이 설치된 메카노이드가 소방 작업을 할 수 있게하는 소방 모듈을 제작합니다.</WTH_Craft_FirefightingModule.description>
+  <WTH_Craft_FirefightingModule.jobString>소방 모듈 제작하는 중.</WTH_Craft_FirefightingModule.jobString>
+
+  <WTH_Craft_GrowingModule.label>재배 모듈 제작</WTH_Craft_GrowingModule.label>
+  <WTH_Craft_GrowingModule.description>해킹된 메카노이드에 설치시, 해당 모듈이 설치된 메카노이드가 재배, 제초/벌목 및 수확 작업을 할 수 있게하는 재배 모듈을 제작합니다.</WTH_Craft_GrowingModule.description>
+  <WTH_Craft_GrowingModule.jobString>재배 모듈 제작하는 중.</WTH_Craft_GrowingModule.jobString>
+
+  <WTH_Craft_CleaningModule.label>청소 모듈 제작</WTH_Craft_CleaningModule.label>
+  <WTH_Craft_CleaningModule.description>해킹된 메카노이드에 설치시, 해당 모듈이 설치된 메카노이드가 자동으로 청소 작업을 할 수 있게하는 청소 모듈을 제작합니다.</WTH_Craft_CleaningModule.description>
+  <WTH_Craft_CleaningModule.jobString>청소 모듈 제작하는 중.</WTH_Craft_CleaningModule.jobString>
+
+  <WTH_Craft_HaulingModule.label>운반 모듈 제작</WTH_Craft_HaulingModule.label>
+  <WTH_Craft_HaulingModule.description>해킹된 메카노이드에 설치시, 해당 모듈이 설치된 메카노이드가 자동으로 운반 작업을 할 수 있게하는 운반 모듈을 제작합니다.</WTH_Craft_HaulingModule.description>
+  <WTH_Craft_HaulingModule.jobString>운반 모듈 제작하는 중.</WTH_Craft_HaulingModule.jobString>
+
+  <WTH_Craft_AdditionalBatteryModule.label>배터리 확장 모듈 제작</WTH_Craft_AdditionalBatteryModule.label>
+  <WTH_Craft_AdditionalBatteryModule.description>해킹된 메카노이드에 설치시, 내장 배터리 용량을 확장할 수있는 모듈을 제작합니다.</WTH_Craft_AdditionalBatteryModule.description>
+  <WTH_Craft_AdditionalBatteryModule.jobString>배터리 확장 모듈 제작하는 중.</WTH_Craft_AdditionalBatteryModule.jobString>
+
+  <WTH_Craft_VanometricModule.label>베노메트릭 모듈 제작</WTH_Craft_VanometricModule.label>
+  <WTH_Craft_VanometricModule.description>해킹된 메카노이드에 설치시, 기동력을 약간 낮추는 대신 무한히 전력을 공급 받을 수 있는 베노메트릭 전력 생산 모듈을 제작합니다.</WTH_Craft_VanometricModule.description>
+  <WTH_Craft_VanometricModule.jobString>베노메트릭 모듈 제작하는 중.</WTH_Craft_VanometricModule.jobString>
+
+  <WTH_Craft_SelfDestructModule.label>자폭 모듈 제작</WTH_Craft_SelfDestructModule.label>
+  <WTH_Craft_SelfDestructModule.description>해킹된 메카노이드에 설치시, 메카노이드에 자폭 명령을 내릴 수 있는 자폭 모듈을 제작합니다.</WTH_Craft_SelfDestructModule.description>
+  <WTH_Craft_SelfDestructModule.jobString>자폭 모듈 제작하는 중.</WTH_Craft_SelfDestructModule.jobString>
+
+  <WTH_Craft_TurretModule.label>포탑 모듈 제작</WTH_Craft_TurretModule.label>
+  <WTH_Craft_TurretModule.description>해킹된 메카노이드에 설치시, 포탑 및 박격포를 탑재할 수 있는 모듈을 제작합니다.</WTH_Craft_TurretModule.description>
+  <WTH_Craft_TurretModule.jobString>포탑 모듈 제작하는 중.</WTH_Craft_TurretModule.jobString>
+
+  <WTH_Craft_RepairModule.label>수리 모듈 제작</WTH_Craft_RepairModule.label>
+  <WTH_Craft_RepairModule.description>해킹된 메카노이드에 설치시, 자가 수리가 가능한 수리 모듈을 제작합니다.</WTH_Craft_RepairModule.description>
+  <WTH_Craft_RepairModule.jobString>수리 모듈 제작하는 중.</WTH_Craft_RepairModule.jobString>
+
+  <WTH_Craft_RepairArm.label>정비용 팔 제작</WTH_Craft_RepairArm.label>
+  <WTH_Craft_RepairArm.description>해킹된 메카노이드에 설치시, 다른 메카노이드 기체를 수리할 수 있는 정비용 팔을 제작합니다.</WTH_Craft_RepairArm.description>
+  <WTH_Craft_RepairArm.jobString>정비용 팔 제작하는 중.</WTH_Craft_RepairArm.jobString>
+
+  <WTH_Craft_BeltModule.label>벨트 모듈 제작</WTH_Craft_BeltModule.label>
+  <WTH_Craft_BeltModule.description>해킹된 메카노이드에 설치시, 방어 벨트 또는 연막 벨트 등을 사용할 수 있는 벨트 모듈을 제작합니다.</WTH_Craft_BeltModule.description>
+  <WTH_Craft_BeltModule.jobString>벨트 모듈 제작하는 중.</WTH_Craft_BeltModule.jobString>
+
+  <WTH_HackMechanoid.label>해킹 장비로 메카노이드 해킹 시도</WTH_HackMechanoid.label>
+  <WTH_HackMechanoid.description>무력화된 메카노이드의 표적 감지기를 해킹하여 아군 대신 적을 목표로 삼게 만듭니다.</WTH_HackMechanoid.description>
+  <WTH_HackMechanoid.jobString>메카노이드 해킹하는 중.</WTH_HackMechanoid.jobString>
+  
+  <WTH_InduceEmergencySignal.label>비상 신호 송출하기</WTH_InduceEmergencySignal.label>
+  <WTH_InduceEmergencySignal.description>무력화된 메카노이드의 자기 방어 매커니즘을 일부 해킹하여,\n 인근 메카노이드 군락에 비상 신호를 송출합니다.(위험할 수 있음!)</WTH_InduceEmergencySignal.description>
+  <WTH_InduceEmergencySignal.jobString>메카노이드 해킹하는 중.</WTH_InduceEmergencySignal.jobString>
+
+  <WTH_ImplantAI.label>AI 보조통제장치 삽입</WTH_ImplantAI.label>
+  <WTH_ImplantAI.description>인공자아핵을 조정한 장치를 메카노이드에 삽입합니다.\n 이로써 해당 메카노이드를 모든 전투 상황에 맞게 완벽히 제어할 수 있습니다.</WTH_ImplantAI.description>
+  <WTH_ImplantAI.jobString>메카노이드 해킹하는 중.</WTH_ImplantAI.jobString>
+  
+  <WTH_InstallOverdriveModule.label>오버드라이브 모듈 설치</WTH_InstallOverdriveModule.label>
+  <WTH_InstallOverdriveModule.description>해킹된 메카노이드에 모듈이 활성화되는 짧은 시간 동안 메카노이드의 이동 속도와 발사 속도, 의식을 크게 끌어올릴 수 있는 오버드라이브 모듈을 설치합니다.</WTH_InstallOverdriveModule.description>
+  <WTH_InstallOverdriveModule.jobString>오버드라이브 모듈 설치하는 중.</WTH_InstallOverdriveModule.jobString>
+
+  <WTH_InstallSpeedModule.label>속도 모듈 설치</WTH_InstallSpeedModule.label>
+  <WTH_InstallSpeedModule.description>해킹된 메카노이드에 전력을 추가로 소비하여 메카노이드의 이동 속도를 높일 수 있는 속도 모듈을 설치합니다.</WTH_InstallSpeedModule.description>
+  <WTH_InstallSpeedModule.jobString>속도 모듈 설치하는 중.</WTH_InstallSpeedModule.jobString>
+
+  <WTH_InstallCargoModule.label>화물 모듈 설치</WTH_InstallCargoModule.label>
+  <WTH_InstallCargoModule.description>해킹된 메카노이드에 약간의 조작 패널티를 대가로 메카노이드의 운반 능력을 증가시키는 화물 모듈을 설치합니다.</WTH_InstallCargoModule.description>
+  <WTH_InstallCargoModule.jobString>화물 모듈 설치하는 중.</WTH_InstallCargoModule.jobString>
+
+  <WTH_InstallOpticSensorModule.label>광학 센서 모듈 설치</WTH_InstallOpticSensorModule.label>
+  <WTH_InstallOpticSensorModule.description>해킹된 메카노이드에 소량의 추가 전력을 소비하여 메카노이드의 시력을 향상시키는 광학 센서 모듈을 설치합니다.</WTH_InstallOpticSensorModule.description>
+  <WTH_InstallOpticSensorModule.jobString>광학 센서 모듈 설치하는 중.</WTH_InstallOpticSensorModule.jobString>
+
+  <WTH_InstallArmorModule.label>장갑 모듈 설치</WTH_InstallArmorModule.label>
+  <WTH_InstallArmorModule.description>해킹된 메카노이드에 이동 속도를 희생하는 대가로 메카노이드의 방어도(날카로움/둔탁함)를 증가시키는 장갑 모듈을 설치합니다.</WTH_InstallArmorModule.description>
+  <WTH_InstallArmorModule.jobString>장갑 모듈 설치하는 중.</WTH_InstallArmorModule.jobString>
+
+  <WTH_InstallGrowingModule.label>재배 모듈 설치</WTH_InstallGrowingModule.label>
+  <WTH_InstallGrowingModule.description>해킹된 메카노이드에 해당 모듈이 설치된 메카노이드가 재배, 제초/벌목 및 수확 작업을 할 수 있게하는 재배 모듈을 설치합니다.</WTH_InstallGrowingModule.description>
+  <WTH_InstallGrowingModule.jobString>재배 모듈 설치하는 중.</WTH_InstallGrowingModule.jobString>
+
+  <WTH_InstallFirefightingModule.label>소방 모듈 설치</WTH_InstallFirefightingModule.label>
+  <WTH_InstallFirefightingModule.description>해킹된 메카노이드에 해당 모듈이 설치된 메카노이드가 소방 작업을 할 수 있게하는 소방 모듈을 설치합니다.</WTH_InstallFirefightingModule.description>
+  <WTH_InstallFirefightingModule.jobString>소방 모듈 설치하는 중.</WTH_InstallFirefightingModule.jobString>
+
+  <WTH_InstallCleaningModule.label>청소 모듈 설치</WTH_InstallCleaningModule.label>
+  <WTH_InstallCleaningModule.description>해킹된 메카노이드에 해당 모듈이 설치된 메카노이드가 자동으로 청소 작업을 할 수 있게하는 청소 모듈을 설치합니다.</WTH_InstallCleaningModule.description>
+  <WTH_InstallCleaningModule.jobString>청소 모듈 설치하는 중.</WTH_InstallCleaningModule.jobString>
+
+  <WTH_InstallHaulingModule.label>운반 모듈 설치</WTH_InstallHaulingModule.label>
+  <WTH_InstallHaulingModule.description>해킹된 메카노이드에 해당 모듈이 설치된 메카노이드가 자동으로 운반 작업을 할 수 있게하는 운반 모듈을 설치합니다.</WTH_InstallHaulingModule.description>
+  <WTH_InstallHaulingModule.jobString>운반 모듈 설치하는 중.</WTH_InstallHaulingModule.jobString>
+
+  <WTH_InstallRepairArm.label>정비용 팔 설치</WTH_InstallRepairArm.label>
+  <WTH_InstallRepairArm.description>해킹된 메카노이드에 다른 메카노이드 기체를 수리할 수 있는 정비용 팔을 설치합니다.</WTH_InstallRepairArm.description>
+  <WTH_InstallRepairArm.jobString>정비용 팔 설치하는 중.</WTH_InstallRepairArm.jobString>
+
+  <WTH_InstallTurretModule.label>포탑 모듈 설치</WTH_InstallTurretModule.label>
+  <WTH_InstallTurretModule.description>해킹된 메카노이드에 포탑과 박격포에 구조적인 지지와 인터페이스를 모두 제공하는 포탑 모듈을 설치합니다.\n 포장할 수 있는 모든 포탑은 이 모듈과 호환될 수 있습니다. 이것은 강력한 업그레이드이지만, 포탑은 추가 전력을 요구하고 파괴되었을 때는 폭발하는 경향을 보입니다.\n 대형 메카노이드에만 탑재할 수 있습니다.</WTH_InstallTurretModule.description>
+  <WTH_InstallTurretModule.jobString>포탑 모듈 설치하는 중.</WTH_InstallTurretModule.jobString>
+
+  <WTH_InstallRepairModule.label>수리 모듈 설치</WTH_InstallRepairModule.label>
+  <WTH_InstallRepairModule.description>해킹된 메카노이드에 메카노이드 부품을 적재할 수 있고 메카노이드 장치의 전원 공급을 내부 기계로 재전송할 수 있는 수리 모듈을 설치합니다.\n 해당 모듈을 사용하면 메카나이트가 활성화되며, 메카노이드는 적재된 부품을 사용하여 수리되지만 수리 절차 중에는 어떤 행동도 할 수 없게 됩니다.</WTH_InstallRepairModule.description>
+  <WTH_InstallRepairModule.jobString>수리 모듈 설치하는 중.</WTH_InstallRepairModule.jobString>
+
+  <WTH_InstallSelfDestruct.label>자폭 모듈 설치</WTH_InstallSelfDestruct.label>
+  <WTH_InstallSelfDestruct.description>해킹된 메카노이드에 고폭탄이 설치된 자폭 모듈을 설치합니다. 유사시 고폭탄 뇌관을 단락시켜 메카노이드를 자폭시키는 기능을 추가합니다.\n 플라스틸로 구성된 보호장치는 폭발물이 의도치 않게 터지는 것을 방지합니다.</WTH_InstallSelfDestruct.description>
+  <WTH_InstallSelfDestruct.jobString>자폭 모듈 설치하는 중.</WTH_InstallSelfDestruct.jobString>
+
+  <WTH_InstallBeltModule.label>벨트 모듈 설치</WTH_InstallBeltModule.label>
+  <WTH_InstallBeltModule.description>해킹된 메카노이드가 방어 벨트나 연막 벨트 등의 장비를 사용할 수 있게하는 벨트 모듈을 설치합니다.</WTH_InstallBeltModule.description>
+  <WTH_InstallBeltModule.jobString>벨트 모듈 설치하는 중.</WTH_InstallBeltModule.jobString>
+
+  <WTH_InstallBatteryExpansionModule.label>배터리 확장 모듈 설치</WTH_InstallBatteryExpansionModule.label>
+  <WTH_InstallBatteryExpansionModule.description>해킹된 메카노이드에 약간의 기동성을 희생하는 대가로 메카노이드에게 추가 배터리 용량을 제공하는 배터리 확장 모듈을 설치합니다.</WTH_InstallBatteryExpansionModule.description>
+  <WTH_InstallBatteryExpansionModule.jobString>배터리 확장 모듈 설치하는 중.</WTH_InstallBatteryExpansionModule.jobString>
+
+  <WTH_InstallVanometricModule.label>베노메트릭 모듈 설치</WTH_InstallVanometricModule.label>
+  <WTH_InstallVanometricModule.description>해킹된 메카노이드에 약간의 기동성을 희생하는 대가로 메카노이드에게 무한히 전력을 공급하는 베노메트릭 모듈을 설치합니다.</WTH_InstallVanometricModule.description>
+  <WTH_InstallVanometricModule.jobString>베노메트릭 모듈 설치하는 중.</WTH_InstallVanometricModule.jobString>
+
+  <WTH_ShutDownMechanoid.label>전원 정지</WTH_ShutDownMechanoid.label>
+  <WTH_ShutDownMechanoid.description>메카노이드의 전원을 정지합니다.</WTH_ShutDownMechanoid.description>
+  <WTH_ShutDownMechanoid.jobString>메카노이드 전원 정지하는 중.</WTH_ShutDownMechanoid.jobString>
+
+
+</LanguageData>

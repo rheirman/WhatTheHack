@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_RoamingMechanoidsCore.label>배회하는 메카노이드들</WTH_RoamingMechanoidsCore.label>
+  <WTH_RoamingMechanoidsCore.description>메카노이드들이 이 지역을 배회하고 있는 것 같습니다.</WTH_RoamingMechanoidsCore.description>
+
+  <WTH_MechanoidTempleCore.label>메카노이드 위치</WTH_MechanoidTempleCore.label>
+  <WTH_MechanoidTempleCore.description>원거리 광물 스캐너에 의해 감지된 대형 메카노이드 구조물입니다.</WTH_MechanoidTempleCore.description>
+
+
+</LanguageData>

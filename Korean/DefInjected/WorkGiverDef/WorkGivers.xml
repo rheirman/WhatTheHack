@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_DoBillsPortableDisassemblingBench.label>메카노이드 분해</WTH_DoBillsPortableDisassemblingBench.label>
+  <WTH_DoBillsPortableDisassemblingBench.verb>분해</WTH_DoBillsPortableDisassemblingBench.verb>
+  <WTH_DoBillsPortableDisassemblingBench.gerund>분해하기</WTH_DoBillsPortableDisassemblingBench.gerund>
+  
+  <WTH_DoBillsMechanoidWorkshop.label>메카노이드 작업대에서 물건 제작</WTH_DoBillsMechanoidWorkshop.label>
+  <WTH_DoBillsMechanoidWorkshop.verb>제작</WTH_DoBillsMechanoidWorkshop.verb>
+  <WTH_DoBillsMechanoidWorkshop.gerund>제작하기</WTH_DoBillsMechanoidWorkshop.gerund>
+  
+  <WTH_DoBillsMedicalMechanoidOperation.label>메카노이드 개조</WTH_DoBillsMedicalMechanoidOperation.label>
+  <WTH_DoBillsMedicalMechanoidOperation.verb>개조</WTH_DoBillsMedicalMechanoidOperation.verb>
+  <WTH_DoBillsMedicalMechanoidOperation.gerund>개조하기</WTH_DoBillsMedicalMechanoidOperation.gerund>
+
+  <WTH_HaulMechanoid.label>메카노이드 운반</WTH_HaulMechanoid.label>
+  <WTH_HaulMechanoid.verb>운반</WTH_HaulMechanoid.verb>
+  <WTH_HaulMechanoid.gerund>운반하기</WTH_HaulMechanoid.gerund>
+
+  <WTH_MaintainMechanoid.label>메카노이드 정비</WTH_MaintainMechanoid.label>
+  <WTH_MaintainMechanoid.verb>메카노이드 정비</WTH_MaintainMechanoid.verb>
+  <WTH_MaintainMechanoid.gerund>메카노이드 정비하기</WTH_MaintainMechanoid.gerund>
+
+  <WTH_MaintainMechanoid_Urgent.label>메카노이드 긴급정비</WTH_MaintainMechanoid_Urgent.label>
+  <WTH_MaintainMechanoid_Urgent.verb>메카노이드 긴급정비</WTH_MaintainMechanoid_Urgent.verb>
+  <WTH_MaintainMechanoid_Urgent.gerund>메카노이드 긴급정비하기</WTH_MaintainMechanoid_Urgent.gerund>
+
+  <WTH_HackRogueAI.label>로그 AI 해킹</WTH_HackRogueAI.label>
+  <WTH_HackRogueAI.verb>로그 AI 해킹</WTH_HackRogueAI.verb>
+  <WTH_HackRogueAI.gerund>로그 AI 해킹하기</WTH_HackRogueAI.gerund>
+
+
+</LanguageData>

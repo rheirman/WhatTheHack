@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_ShutDown.label>전원 정지</WTH_ShutDown.label>
+  <WTH_ShutDown.labelNoun>전원을 정지합니다.</WTH_ShutDown.labelNoun>
+  
+  <WTH_HeavilyDamaged.label>심하게 손상됨</WTH_HeavilyDamaged.label>
+  <WTH_HeavilyDamaged.labelNoun>상당한 피해를 받음.</WTH_HeavilyDamaged.labelNoun>
+
+  <WTH_DestroyedModule.label>파괴된 모듈</WTH_DestroyedModule.label>
+
+  <WTH_RegeneratedPart.label>부위 재생</WTH_RegeneratedPart.label>
+  <WTH_RegeneratedPart.labelNoun>파손된 부위를 대체하도록 부품을 재생성합니다.</WTH_RegeneratedPart.labelNoun>
+  
+  <WTH_SpeedModule.label>속도 모듈</WTH_SpeedModule.label>
+  <WTH_CargoModule.label>화물 모듈</WTH_CargoModule.label>
+  <WTH_OpticSensorModule.label>광학 센서 모듈</WTH_OpticSensorModule.label>
+  <WTH_ArmorModule.label>장갑 모듈</WTH_ArmorModule.label>
+  <WTH_GrowingModule.label>재배 모듈</WTH_GrowingModule.label>
+  <WTH_FirefightingModule.label>소방 모듈</WTH_FirefightingModule.label>
+  <WTH_CleaningModule.label>청소 모듈</WTH_CleaningModule.label>
+  <WTH_HaulingModule.label>운반 모듈</WTH_HaulingModule.label>
+  <WTH_BatteryExpansionModule.label>확장된 배터리</WTH_BatteryExpansionModule.label>
+  <WTH_VanometricModule.label>베노메트릭 모듈</WTH_VanometricModule.label>
+  <WTH_SelfDestruct.label>자폭 모듈</WTH_SelfDestruct.label>
+  <WTH_OverdriveModule.label>오버드라이브 모듈</WTH_OverdriveModule.label>
+  <WTH_Overdrive.label>오버드라이브</WTH_Overdrive.label>
+  <WTH_Overdrive_GoneTooFar.label>과부화</WTH_Overdrive_GoneTooFar.label>
+  <WTH_RepairModule.label>수리 모듈</WTH_RepairModule.label>
+  <WTH_BeltModule.label>벨트 모듈</WTH_BeltModule.label>
+  <WTH_TurretModule.label>포탑 모듈</WTH_TurretModule.label>
+  <WTH_MountedTurret.label>포탑 탑재됨</WTH_MountedTurret.label>
+
+  <WTH_RepairArm.label>정비용 팔</WTH_RepairArm.label>
+  <WTH_RepairArm.comps.0.tools.0.label>주먹</WTH_RepairArm.comps.0.tools.0.label>
+  <WTH_RepairArm.labelNoun>정비용 팔</WTH_RepairArm.labelNoun>
+  
+  <WTH_SelfDestructed.label>폭발함</WTH_SelfDestructed.label>
+  <WTH_Repairing.label>메카나이트 수리</WTH_Repairing.label>
+
+<!-- <WTH_Overcharged.label>과충전</WTH_Overcharged.label> -->
+
+  <WTH_ReplacedAI.label>대체된 AI</WTH_ReplacedAI.label>
+  <WTH_TargetingHacked.label>해킹됨</WTH_TargetingHacked.label>
+  <WTH_BackupBattery.label>백업 배터리로 가동</WTH_BackupBattery.label>
+  <WTH_LocomotionHacked.label>해킹된 이동 시스템</WTH_LocomotionHacked.label>
+  <WTH_TargetingHackedPoorly.label>잘못된 해킹</WTH_TargetingHackedPoorly.label>
+  <WTH_TargetingDestroyed.label>파괴됨</WTH_TargetingDestroyed.label>
+  <WTH_LowMaintenance.label>약간의 정비 부족</WTH_LowMaintenance.label>
+  <WTH_VeryLowMaintenance.label>심각한 정비 부족</WTH_VeryLowMaintenance.label>
+  <WTH_VeryLowPower.label>매우 낮은 전력</WTH_VeryLowPower.label>
+  <WTH_NoPower.label>전력 고갈</WTH_NoPower.label>
+
+
+</LanguageData>
