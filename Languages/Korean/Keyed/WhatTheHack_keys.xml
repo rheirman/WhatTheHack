@@ -415,7 +415,7 @@
   <WTH_Explanation_ConsumptionRate>정비고 부품 소비율</WTH_Explanation_ConsumptionRate>
   <WTH_Explanation_RepairConsumptionModifier>수리시 부품 소비량 (모드 설정에서 설정가능)</WTH_Explanation_RepairConsumptionModifier>
   <WTH_Letter_OverdriveFailed1_Label>심각한 하드웨어 해킹 손상</WTH_Letter_OverdriveFailed1_Label>
-  <WTH_Letter_OverdriveFailed1_Description>해킹된 메카노이드 {0}의 머리 부분에서 무언가 망가지는 소리가 났습니다.\n 정착민이 급히 확인해본 결과. 그 이유는 해당 메카노이드가 얼마전 오버드라이브 모듈을 활성화하였고, 그로인해 하드웨어 안전 한계를 심각한 수준으로 초과하게되어 내부 회로의 단락이 발생한 것으로 보입니다.\n 긴급 정비가 필요합니다.</WTH_Letter_OverdriveFailed1_Description>
+  <WTH_Letter_OverdriveFailed1_Description>해킹된 메카노이드 {0}의 머리 부분에서 무언가 망가지는 소리가 났습니다.\n 정착민 중 한명이 급히 확인해본 결과. 그 이유는 해당 메카노이드가 얼마전 오버드라이브 모듈을 활성화하였고, 그로인해 하드웨어 안전 한계를 심각한 수준으로 초과하게되어 내부 회로의 단락이 발생한 것으로 보입니다.\n 긴급 정비가 필요합니다.</WTH_Letter_OverdriveFailed1_Description>
   <WTH_Letter_MediumMaintenanceDamage_Label>하드웨어 해킹 손상</WTH_Letter_MediumMaintenanceDamage_Label>
   <WTH_Letter_MediumMaintenanceDamage_Description>해킹된 메카노이드 {0}의 오버드라이브 모듈이 활성화되었지만, 과충전 수치가 {0}의 하드웨어 안전 한계치를 약간 초과했습니다.\n 그로인해 오버드라이브가 활성화 되는 대신, 하드웨어 해킹이 손상될 수 있는 상황입니다.\n 조속한 정비가 필요합니다.</WTH_Letter_MediumMaintenanceDamage_Description>
   <WTH_Letter_OverdiveGoneTooFar_Label>지나친 오버드라이브</WTH_Letter_OverdiveGoneTooFar_Label>

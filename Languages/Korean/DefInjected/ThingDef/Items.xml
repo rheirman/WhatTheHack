@@ -8,7 +8,7 @@
   <WTH_MechanoidChip.description>무력화되거나 파괴된 메카노이드에게서 찾아낸 고급 메카노이드 칩입니다. \n 좀 더 복잡한 해킹 작업이나, 고급 모듈 제작에 필요합니다.</WTH_MechanoidChip.description>
 
   <WTH_MechanoidData.label>군락 데이터</WTH_MechanoidData.label>
-  <WTH_MechanoidData.description>메카노이드 군락의 데이터 기록입니다. 인간은 그러한 양의 데이터를 이해할 수 없지만, 이 데이터 중 일부를 활용해 로그 AI의 구축 및 그것의 코어에 유용한 것을 제공할 수 있을겁니다.\n  또한 우리 측 메카노이드 기술에 접목하여 더 많은 탐구를 진행할 수 있습니다.</WTH_MechanoidData.description>
+  <WTH_MechanoidData.description>메카노이드 군락의 데이터 기록입니다. 인간은 그러한 양의 데이터를 이해할 수 없지만, 이 데이터 중 일부를 활용해 로그 AI의 구축 및 그것의 코어에 유용한 것을 제공할 수 있을겁니다.\n 또한 우리 측 메카노이드 기술에 접목하여 더 많은 탐구를 진행할 수 있습니다.</WTH_MechanoidData.description>
 
   <WTH_ExtractedBrainData.label>추출된 뇌 데이터</WTH_ExtractedBrainData.label>
   <WTH_ExtractedBrainData.description>인간의 뇌에서 추출한 데이터 기록입니다. 로그 AI의 코어에 제공할 수 있습니다.</WTH_ExtractedBrainData.description>
