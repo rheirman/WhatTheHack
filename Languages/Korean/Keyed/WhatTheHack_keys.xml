@@ -15,7 +15,7 @@
   <WTH_Letter_Mech_Reverted_Label>해킹 풀림</WTH_Letter_Mech_Reverted_Label>
   <WTH_Letter_Mech_Reverted_Description>제대로 관리 받지 못한 어떤 메카노이드의 해킹이 풀렸습니다. \n 해당 메카노이드는 다시 군락의 통제를 받습니다.</WTH_Letter_Mech_Reverted_Description>
   <WTH_Letter_HackedPoorlyEvent_Label>잘못된 해킹 - 부서짐</WTH_Letter_HackedPoorlyEvent_Label>
-  <WTH_Letter_HackedPoorlyEvent_Description>제대로 해킹되지 않은 메카노이드의 머리부분이 기능고장을 일으켰습니다. \n 긴급정비가 필요합니다.</WTH_Letter_HackedPoorlyEvent_Description>
+  <WTH_Letter_HackedPoorlyEvent_Description>제대로 해킹되지 않은 메카노이드의 머리 부분이 기능고장을 일으켰습니다. \n 긴급 정비가 필요합니다.</WTH_Letter_HackedPoorlyEvent_Description>
   <WTH_FailureChance_Nothing_Title>실패 확률 : 아무일도 일어나지 않음</WTH_FailureChance_Nothing_Title>
   <WTH_FailureChance_Nothing_Description>해킹 실패시 해당 사건이 일어날 확률</WTH_FailureChance_Nothing_Description>
   <WTH_FailureChance_CauseRaid_Title>실패 확률 : 습격 발생</WTH_FailureChance_CauseRaid_Title>
@@ -86,11 +86,11 @@
   <WTH_Gizmo_TalkGibberish_Label>현명한 메시지 출력</WTH_Gizmo_TalkGibberish_Label>
   <WTH_Gizmo_TalkGibberish_Description>로그 AI가 데이터를 분석해 놀라운 지혜를 담고있는 메시지를 출력하도록 합니다.\n 대부분의 인간은 이러한 메시지의 우수성을 이해하지 못하기 때문에, 이러한 행위는 대부분 데이터 낭비입니다. AI의 기분 수준이 이미 최고조에 달했을 때 더 많은 데이터를 AI에 제공하고자 할 때만 유용합니다.\n AI는 데이터 공유를 원하지 않기 때문에 {0} 수준의 기분이 감소합니다.</WTH_Gizmo_TalkGibberish_Description>
   <WTH_Reason_TalkedTooRecently>로그 AI는 너무 최근에 말했습니다.</WTH_Reason_TalkedTooRecently>
-  <WTH_Reason_ReactorWarmingUp>우주선 원자로가 가동절차를 진행 중인 동안에는 활성화할 수 없습니다.</WTH_Reason_ReactorWarmingUp>
+  <WTH_Reason_ReactorWarmingUp>우주선 반응로가 가동절차를 진행 중인 동안에는 활성화할 수 없습니다.</WTH_Reason_ReactorWarmingUp>
   <WTH_Reason_BeaconActive>해킹 신호가 이미 전송되는 동안에는 활성화할 수 없습니다.</WTH_Reason_BeaconActive>
   <WTH_Reason_NoRogueAI>지도상에 시설을 통제할 수 있는 로그 AI가 없습니다. 같은 전력 네트워크에 AI를 구축하십시오.</WTH_Reason_NoRogueAI>
   <WTH_Reason_NotConscious>로그 AI는 아직 의식이 없기 때문에, 이것을 사용할 사람이 필요합니다.\n 그 사람은 군락함선 해킹 시설을 통해 궤도상의 군락함선을 해킹 할 수 있습니다.</WTH_Reason_NotConscious>
-  <WTH_BeaconWarmupWarning>이것을 활성화시킬 때, 여러분의 정착지에 있는 로그 AI가 궤도상에 있는 군락함선을 해킹하기 시작할 것입니다.\n 로그 AI는 이 작업을 가능한 눈에 띄지않게 하기 위해 예방 조치를 취하겠지만, 이것은 의심할 여지 없이 메카노이드 군락의 주의를 끌 것입니다. 해킹 과정에서 정착지가 심한 공격을 받을 것으로 예상됩니다.\n 이 절차를 완료하는데는 약 {0}일이 소요되며, 이 절차를 취소하는 유일한 방법은 송신기를 파괴하는 것입니다.\n 만약 당신이 살아남는다면, 이 로그 AI는 강력하지만 잠재적으로 위험할 수 있는 동맹이 될 것입니다. 이 작업을 필요한 횟수만큼 반복하여, 더 많은 메카노이드 데이터를 얻을 수 있습니다.\n 그러나 매번 성공할 때마다, 군락함선은 그들의 보안을 향상시킬 것이며, 그로인해 이후의 시도는 완료되는데 더 많은 시간이 걸릴 것입니다.</WTH_BeaconWarmupWarning>
+  <WTH_BeaconWarmupWarning>이것을 활성화시킬 때, 여러분의 정착지에 있는 로그 AI가 궤도상에 있는 군락함선을 해킹하기 시작할 것입니다.\n 로그 AI는 이 작업을 가능한 눈에 띄지않게 하기 위해 예방 조치를 취하겠지만, 이것은 의심할 여지 없이 메카노이드 군락의 주의를 끌 것입니다. 해킹 과정에서 정착지가 심한 공격을 받을 것으로 예상됩니다.\n 이 절차를 완료하는데는 약 {0}일이 소요되며, 이 절차를 취소하는 유일한 방법은 송신기를 파괴하는 것입니다.\n 만약 당신이 살아남는다면, 이 로그 AI는 강력하지만 잠재적으로 위험할 수 있는 동맹이 될 것입니다. 이 작업을 필요한 횟수만큼 반복하여, 더 많은 군락 데이터를 얻을 수 있습니다.\n 그러나 매번 성공할 때마다 군락함선은 그들의 보안을 더욱 향상시킬 것이며, 그로인해 이후의 해킹 시도는 완료되는데 더 많은 시간이 걸릴 것입니다.</WTH_BeaconWarmupWarning>
   <WTH_CompHibernatable_MechanoidBeacon_StartUpDays>군락함선 해킹까지 필요한 일수 : {0}일</WTH_CompHibernatable_MechanoidBeacon_StartUpDays>
   <WTH_CompHibernatable_MechanoidBeacon_Cooldown>군락함선을 다시 해킹할 수 있을 때까지의 일수 : {0}일</WTH_CompHibernatable_MechanoidBeacon_Cooldown>
   <WTH_MechanoidBeaconStartup_Label>해킹 시작</WTH_MechanoidBeaconStartup_Label>
@@ -98,11 +98,11 @@
   <WTH_MechanoidBeaconComplete_Label>군락함선 해킹완료</WTH_MechanoidBeaconComplete_Label>
   <WTH_MechanoidBeaconComplete_Description>당신의 로그 AI는 군락함선 해킹 시설을 통해 성공적으로 군락함선을 해킹했습니다.\n AI의 진정한 잠재력은 곧 밝혀질 수 있겠지만, 현재의 상태라면 그것은 여전히 있을 수 있는 일의 그림자에 불과합니다.\n AI가 원하는 데이터를 제공하여 레벨을 조정하고, 만족감을 유지하세요. 그렇지 않으면 여러분은 이런 강력한 AI에 동조하는 결정을 내린 걸 후회할지도 모릅니다.</WTH_MechanoidBeaconComplete_Description>
 
-  <!-- Disabled this for now, but it might be added in the future.
-	<WTH_MoodAutoDeactivate_Title>Mood Rogue AI should deactivate abilities</WTH_MoodAutoDeactivate_Title>
-	<WTH_MoodAutoDeactivate_Description>The mood threshold at which the Rogue AI automatically disables any abilities that drain its mood.</WTH_MoodAutoDeactivate_Description>
-	<WTH_Message_MoodAutoDeactivate>The Rogue AI automatically disabled any mood draining abilities because its mood is too low. You can configure the threshold at which this happens in the mod options of What the Hack.</WTH_Message_MoodAutoDeactivate>
-	<WTH_Reason_MoodAutoDeactivate>The mood of the Rogue AI is below the threshold configured in the mod options of What the Hack. You can lower this threshold at your own risk</WTH_Reason_MoodAutoDeactivate>
+   <!-- Disabled this for now, but it might be added in the future.
+	<WTH_MoodAutoDeactivate_Title>로그 AI가 자동으로 능력을 비활성화 하는 기분 임계치.</WTH_MoodAutoDeactivate_Title>
+	<WTH_MoodAutoDeactivate_Description>로그 AI의 기분이 너무 악화되면, 자신의 기분을 나쁘게하는 어떤 능력들을 자동으로 비활성화합니다.\n 이때 어느수준까지 자신의 기분이 악화되어야 로그 AI가 능력을 자동으로 비활성화하는지에 대한 기분 임계치를 설정합니다.</WTH_MoodAutoDeactivate_Description>
+	<WTH_Message_MoodAutoDeactivate>로그 AI는 현재 기분이 너무 나쁘기 때문에, 자신의 기분을 악화시키는 능력들을 자동으로 비활성화 했습니다. What the hack?! 모드 옵션에서 이 문제가 발생하는데 관여하는 임계값을 설정할 수 있습니다.</WTH_Message_MoodAutoDeactivate>
+	<WTH_Reason_MoodAutoDeactivate>로그 AI의 기분이 What the hack?! 모드 옵션에서 설정된 임계값 이하입니다. 위험을 감수하고 이 임계값을 낮출 수 있습니다.</WTH_Reason_MoodAutoDeactivate>
 	-->
 
   <WTH_Alert_RogueAI_DrainingMood_Label>기분이 저조한 로그 AI</WTH_Alert_RogueAI_DrainingMood_Label>
@@ -319,7 +319,7 @@
   <WTH_Reason_PawnCannotBeDrafted>소집시 메카노이드 원격제어 벨트를 활성화할 수 없습니다.</WTH_Reason_PawnCannotBeDrafted>
 
   <WTH_Gizmo_SearchAndDestroy_Label>활성화</WTH_Gizmo_SearchAndDestroy_Label>
-  <WTH_Gizmo_SearchAndDestroy_Description>수색 파괴 모드를 활성화합니다. 메카노이드가 자동으로 개척지 근처의 적을 공격합니다. \n 비활성화시 메카노이드는 가능하다면 메카노이드 정비고(또는 충전소)로 되돌아갑니다.</WTH_Gizmo_SearchAndDestroy_Description>
+  <WTH_Gizmo_SearchAndDestroy_Description>파괴 모드를 활성화합니다. 메카노이드가 자동으로 개척지 근처의 적을 공격합니다. \n 비활성화시 메카노이드는 가능하다면 메카노이드 정비고(또는 충전소)로 되돌아갑니다.</WTH_Gizmo_SearchAndDestroy_Description>
   <WTH_Gizmo_AutoRecharge_Label>자동 충전</WTH_Gizmo_AutoRecharge_Label>
   <WTH_Gizmo_AutoRecharge_Description>이 모드가 활성화되면, 메카노이드는 전력이 부족할 때 \n 메카노이드 정비고(또는 충전소)로 자동으로 복귀할 것입니다.</WTH_Gizmo_AutoRecharge_Description>
   
@@ -363,7 +363,7 @@
   <WTH_Alert_Maintenance_Low_Label>정비가 필요한 메카노이드</WTH_Alert_Maintenance_Low_Label>
   <WTH_Alert_Maintenance_Low_Description>해당 메카노이드는 제대로 관리되지 않고 있습니다. : {0} 되도록이면 기술자들이 관심을 가지고, 정비를 할 수 있게 하십시오.</WTH_Alert_Maintenance_Low_Description>
   <WTH_Alert_Maintenance_VeryLow_Label>극심한 정비 부족</WTH_Alert_Maintenance_VeryLow_Label>
-  <WTH_Alert_Maintenance_VeryLow_Description>해당 메카노이드의 해킹된 장비들은 매우 형편없이 유지되고 있으며, 당신의 정착지에 잠재적인 위협이 되어가고 있습니다.: {0} 해킹이 언제든지 풀릴 수 있는 위험한 상황입니다. 메카노이드를 정비하거나 전원을 정지시키는 것. 이 두가지 방법 중 하나는 반드시 조치해야합니다.</WTH_Alert_Maintenance_VeryLow_Description>
+  <WTH_Alert_Maintenance_VeryLow_Description>해당 메카노이드의 해킹된 장비들은 매우 형편없이 유지되고 있으며, 당신의 정착지에 잠재적인 위협이 되어가고 있습니다.: {0} \n 해킹이 언제든지 풀릴 수 있는 위험한 상황입니다. 메카노이드를 정비하거나 전원을 정지시키는 것. 이 두가지 방법 중 하나는 반드시 조치해야합니다.</WTH_Alert_Maintenance_VeryLow_Description>
   <WTH_FactionRestrictions_OK>허용</WTH_FactionRestrictions_OK>
   <WTH_FactionRestrictions_NOK>비허용</WTH_FactionRestrictions_NOK>
   <WTH_FactionRestrictions_Label>각 세력에서 해킹할 수 있는 메카노이드 구성.</WTH_FactionRestrictions_Label>
@@ -391,6 +391,46 @@
   <WTH_Mount_Jobstring>{0} 탑재하는 중.</WTH_Mount_Jobstring>
 
   <WTH_TextMote_MaintenanceFailed>정비(유지 관리) 실패 (성공 가능성 : {0})</WTH_TextMote_MaintenanceFailed>
+  
+  <!-- added in v1.2 -->
+  <WTH_Gizmo_Work_Label>작업 모드</WTH_Gizmo_Work_Label>
+  <WTH_Gizmo_Work_Description>메카노이드의 작업 모드를 활성화합니다.\n 이 모드를 활성화하면 메카노이드가 수행할 수 있는 작업이 있고, 구성되는 작업에 드는 전력 값이 메카노이드의 최소 전력 임계 값보다 높은 경우 메카노이드가 자동으로 작업을 시작합니다.</WTH_Gizmo_Work_Description>
+  <WTH_Gizmo_WorkThreshold_Label>작업시 최소 전력 비율</WTH_Gizmo_WorkThreshold_Label>
+  <WTH_Gizmo_WorkThreshold_Description>메카노이드가 정비고(또는 충전소)를 떠나 작동을 시작하기 전에 필요한 최소 전력 비율을 설정합니다.\n (메카노이드의 '자동 충전' 활성화시)메카노이드는 최소 전력 비율 값에 비교해, 현재 전력이 거의 고갈될 때까지 작동합니다.\n 메카노이드가 작동할 수 있는 충분한 전력을 갖도록, 값을 보다 여유롭게 설정하는 것이 좋습니다.</WTH_Gizmo_WorkThreshold_Description>
+  <WTH_SetCanStartWorkThreshold>작업 시작에 필요한 전력 : {0} %</WTH_SetCanStartWorkThreshold>
+  <WTH_Gizmo_SetMechanoidOwner_Description>특정 메카노이드에게 정비고(또는 충전소)를 할당합니다.</WTH_Gizmo_SetMechanoidOwner_Description>
+  <WTH_UninstallModule>{0} 제거</WTH_UninstallModule>
+  <WTH_UninstallModule_Jobstring>{0} 제거하는 중.</WTH_UninstallModule_Jobstring>
+  <WTH_StatDrawEntry_ArmorFactor>방어도</WTH_StatDrawEntry_ArmorFactor>
+  <WTH_StatDrawEntry_BatteryCapacityFactor>배터리 용량</WTH_StatDrawEntry_BatteryCapacityFactor>
+  <WTH_StatDrawEntry_PowerRateFactor>전력 소모값</WTH_StatDrawEntry_PowerRateFactor>
+  <WTH_Reason_AlreadyOverdriving>이미 오버드라이브가 활성화 중입니다.</WTH_Reason_AlreadyOverdriving>
+  <WTH_Gizmo_Overdrive_Label>오버드라이브</WTH_Gizmo_Overdrive_Label>
+  <WTH_Gizmo_Overdrive_Description>오버드라이브 모듈을 활성화합니다.\n 이 모듈이 활성화되면 메카노이드의 오버클럭이 시작되며, 해당 메카노이드의 전원 네트워크를 오버드라이브 시킵니다. 이로 인해 짧은 시간 동안 메카노이드의 이동 속도와 발사 속도, 의식이 크게 향상됩니다.\n 이 절차는 많은 전력을 소비하고, 이로인해 하드웨어 안전 한계를 초과하므로 예상치 못한 결과를 초래할 수 있습니다.</WTH_Gizmo_Overdrive_Description>
+  <WTH_Explanation_BodySizeContr>신체 크기</WTH_Explanation_BodySizeContr>
+  <WTH_Explanation_PowerFallModifier>전력 소비 수치 (모드 설정에서 설정가능)</WTH_Explanation_PowerFallModifier>
+  <WTH_Explanation_PowerFromNetwork>네트워크에서 전력 공급</WTH_Explanation_PowerFromNetwork>
+  <WTH_Explanation_PowerFromFuel>연료에서 전력 공급</WTH_Explanation_PowerFromFuel>
+  <WTH_Explanation_PowerChargeModifier>전력 충전 계수</WTH_Explanation_PowerChargeModifier>
+  <WTH_Explanation_ConsumptionRate>정비고 부품 소비율</WTH_Explanation_ConsumptionRate>
+  <WTH_Explanation_RepairConsumptionModifier>수리시 부품 소비량 (모드 설정에서 설정가능)</WTH_Explanation_RepairConsumptionModifier>
+  <WTH_Letter_OverdriveFailed1_Label>심각한 하드웨어 해킹 손상</WTH_Letter_OverdriveFailed1_Label>
+  <WTH_Letter_OverdriveFailed1_Description>해킹된 메카노이드 {0}의 머리 부분에서 무언가 망가지는 소리가 났습니다.\n 정착민 중 한명이 급히 확인해본 결과. 그 이유는 해당 메카노이드가 얼마전 오버드라이브 모듈을 활성화하였고, 그로인해 하드웨어 안전 한계를 심각한 수준으로 초과하게되어 내부 회로의 단락이 발생한 것으로 보입니다.\n 긴급 정비가 필요합니다.</WTH_Letter_OverdriveFailed1_Description>
+  <WTH_Letter_MediumMaintenanceDamage_Label>하드웨어 해킹 손상</WTH_Letter_MediumMaintenanceDamage_Label>
+  <WTH_Letter_MediumMaintenanceDamage_Description>해킹된 메카노이드 {0}의 오버드라이브 모듈이 활성화되었지만, 과충전 수치가 {0}의 하드웨어 안전 한계치를 약간 초과했습니다.\n 그로인해 오버드라이브가 활성화 되는 대신, 하드웨어 해킹이 손상될 수 있는 상황입니다.\n 조속한 정비가 필요합니다.</WTH_Letter_MediumMaintenanceDamage_Description>
+  <WTH_Letter_OverdiveGoneTooFar_Label>지나친 오버드라이브</WTH_Letter_OverdiveGoneTooFar_Label>
+  <WTH_Letter_OverdiveGoneTooFar_Description>해킹된 메카노이드 {0}의 오버드라이브 모듈에서 발생한 고전류로 인해, 예상치 못한 부작용이 발생했습니다. 오버드라이브 모듈 자체가 과부화된 상태입니다!\n 현재 모듈은 의도한 것보다 훨씬 큰 효과를 발휘하지만, 엄청난 양의 전력을 소비합니다. 이 현상은 내부가 손상된 메카노이드의 경우, 위험할 수 있습니다.</WTH_Letter_OverdiveGoneTooFar_Description>
+  <WTH_Warning_WorkThreshold>이 임계값을 낮게 설정하는 것은, 메카노이드에 대해 '자동 충전'이 비활성화된 경우에만 의미가 있습니다.\n 메카노이드가 쓰러질 때까지 작동하기를 원할 경우에만 낮게 설정하십시오. 이 설명이 명확하지 않다면, 버튼의 설명을 읽어보십시오.</WTH_Warning_WorkThreshold>
+  <WTH_Alert_LowMechanoidParts>메카노이드 부품 부족</WTH_Alert_LowMechanoidParts>
+  <WTH_Alert_LowMechanoidPartsDesc>메카노이드 부품이 부족합니다!\n\n  현재 보유한 메카노이드 부품 : {0}개\n\n당신이 해킹된 메카노이드의 정비 및 유지를 하기위해서는, 추가로 메카노이드 부품을 확보해야합니다.</WTH_Alert_LowMechanoidPartsDesc>
+  <WTH_Alert_NoMechanoidPartsDesc>메카노이드 부품이 고갈되었습니다!\n당신이 해킹된 메카노이드의 정비 및 유지를 하기위해서는, 추가로 메카노이드 부품을 확보해야합니다.</WTH_Alert_NoMechanoidPartsDesc>
+  <WTH_Alert_LowMechanoidPartsSolution>당신은 현재 해킹된 메카노이드를 정비 및 유지하기 위한 메카노이드 부품이 부족합니다.\n 이 문제는 다음 방법으로 해결할 수 있습니다. : 
+- 외지인 마을이나 상인, 궤도 상선에서 메카노이드 부품을 구입하십시오. 
+- 휴대용 분해 작업대를 가지고 나가, 세계 퀘스트를 수행하십시오.(세계 퀘스트를 보다 적극적으로 찾고 싶다면, "WTH: 원거리 광물 스캐너 조정" 연구를 활용하십시오.)
+- 무력화된 메카노이드를 이용해 비상 신호를 송출하고, 정착지 또는 기지로 메카노이드를 유인하십시오. ("WTH: 비상 신호 송출법" 연구가 선행되어야 함.) 
+- 군락함선 해킹 시설을 이용해 군락함선을 해킹하고, 정착지 또는 기지로 메카노이드를 유인하십시오. ("WTH: 군락함선 해킹 시설" / "WTH: 로그 AI" 연구가 선행되어야 함.)</WTH_Alert_LowMechanoidPartsSolution>
+
+  <!-- end added in v1.2 -->
 
 
 </LanguageData>
