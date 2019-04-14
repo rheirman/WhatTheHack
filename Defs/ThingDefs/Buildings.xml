@@ -173,7 +173,7 @@
       <WorkToBuild>4000</WorkToBuild>
       <MaxHitPoints>350</MaxHitPoints>
       <Flammability>1.0</Flammability>
-    	<WTH_RepairRate>240</WTH_RepairRate>
+    	<WTH_RepairRate>360</WTH_RepairRate>
     </statBases>
     <size>(3,3)</size>
     <passability>PassThroughOnly</passability>
@@ -195,8 +195,8 @@
 	  <li Class="CompProperties_Refuelable">
 		<fuelLabel>Loaded mechanoid parts</fuelLabel>
 		<fuelGizmoLabel>Loaded mechanoid parts</fuelGizmoLabel>
-        <fuelConsumptionRate>16.0</fuelConsumptionRate>
-        <fuelCapacity>40.0</fuelCapacity>
+        <fuelConsumptionRate>20.0</fuelConsumptionRate>
+        <fuelCapacity>50.0</fuelCapacity>
         <fuelFilter>
           <thingDefs>
             <li>WTH_MechanoidParts</li>
@@ -477,7 +477,7 @@
 		</li>
 		<li Class="CompProperties_Facility">
 			<statOffsets>
-				<WTH_RepairRate>30</WTH_RepairRate>
+				<WTH_RepairRate>50</WTH_RepairRate>
 			</statOffsets>
 			<maxSimultaneous>9</maxSimultaneous>
 		</li>

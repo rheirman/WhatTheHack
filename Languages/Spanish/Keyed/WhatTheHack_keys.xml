@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<WTH_Letter_Success_Label>Hackeo exitoso</WTH_Letter_Success_Label>
+	<WTH_Letter_Success_Label_Description>{0} exitosamente hackeó a un mecanoide y lo nombró {1}. El Sistema de Apuntar de {1} ahora apunta a tus enemigos en vez de tus aliados. Sin embargo, para evitar la detección de la Colmena Mecanoide, {1} tiene que funcionar con sus baterías de repuesto.</WTH_Letter_Success_Label_Description>
+	<WTH_Letter_Nothing_Label>Hackeo fallado - hubo poco daño</WTH_Letter_Nothing_Label>
+	<WTH_Letter_Nothing_Description>Hackeo fallado, pero aparte del daño al mecanoide no le sucedió nada serio</WTH_Letter_Nothing_Description>
+	<WTH_Letter_HackedPoorly_Label>El hackeo por poco falla</WTH_Letter_HackedPoorly_Label>
+	<WTH_Letter_HackedPoorly_Description>Aunque por ahora el mecanoide está hackeado, no hace un buen trabajo. Utilízalo bajo tu propio riesgo o descártalo.</WTH_Letter_HackedPoorly_Description>
+	<WTH_Letter_CausedMechanoidRaid_Label>Hackeo fallado - señal de emergencia transmitido</WTH_Letter_CausedMechanoidRaid_Label>
+	<WTH_Letter_CausedMechanoidRaid_Description>De alguna manera uno de tus colonizadores activó un mecanismo de seguridad el cual difundió una señal a mecanoides cerca. Prepárate para más máquinas desgarradoras...</WTH_Letter_CausedMechanoidRaid_Description>
+	<WTH_Letter_ShotRandomDirection_Label>Hackeo fallado - whoops</WTH_Letter_ShotRandomDirection_Label>
+	<WTH_Letter_ShotRandomDirection_Description>Uno de tus colonizadores accidentalmente activó el arma principal del mecanoide. Whoops</WTH_Letter_ShotRandomDirection_Description>
+	<WTH_Letter_HealedToStanding_Label>Hackeo fallado - mecanoide parado de nuevo</WTH_Letter_HealedToStanding_Label>
+	<WTH_Letter_HealedToStanding_Description>El mecanoide no fue deshabilitado después de todo; mientras era hackeado, logró arreglarse y ahora es un peligro para tu colonia.</WTH_Letter_HealedToStanding_Description>
+	<WTH_Letter_Mech_Reverted_Label>El hack dejó de funcionar</WTH_Letter_Mech_Reverted_Label>
+	<WTH_Letter_Mech_Reverted_Description>Un mecanoide que fue mantenido pésimamente se revirtió a su comportamiento violento original.</WTH_Letter_Mech_Reverted_Description>
+	<WTH_Letter_HackedPoorlyEvent_Label>Algo se rompió</WTH_Letter_HackedPoorlyEvent_Label>
+	<WTH_Letter_HackedPoorlyEvent_Description>Algo se rompió en la cabeza del mecanoide que fue pobremente hackeado. Mantenimiento urgente necesitado.</WTH_Letter_HackedPoorlyEvent_Description>
+	<WTH_FailureChance_Nothing_Title>Chance al fallar: nada sucede</WTH_FailureChance_Nothing_Title>
+	<WTH_FailureChance_Nothing_Description>Chance de que nada se complique cuando se falle el hackeo</WTH_FailureChance_Nothing_Description>
+	<WTH_FailureChance_CauseRaid_Title>Chance al fallar: causar raideo</WTH_FailureChance_CauseRaid_Title>
+	<WTH_FailureChance_CauseRaid_Description>Chance de que un raideo sea causado cuando se falle el hackeo</WTH_FailureChance_CauseRaid_Description>
+	<WTH_FailureChance_ShootRandomDirection_Title>Chance al fallar: arma disparada</WTH_FailureChance_ShootRandomDirection_Title>
+	<WTH_FailureChance_ShootRandomDirection_Description>Chance de que el arma principal del mecanoide dispare hacia una dirección aleatoria cuando se falle el hackeo</WTH_FailureChance_ShootRandomDirection_Description>
+	<WTH_FailureChance_HealToStanding_Title>Chance al fallar: curarse al levantarse</WTH_FailureChance_HealToStanding_Title>
+	<WTH_FailureChance_HealToStanding_Description>Chance de que un mecanoide sea curado hasta que pueda levantarse cuando se falle el hackeo</WTH_FailureChance_HealToStanding_Description>
+	<WTH_FailureChance_HackPoorly_Title>Chance al fallar: hackeo disfuncional</WTH_FailureChance_HackPoorly_Title>
+	<WTH_FailureChance_HackPoorly_Description>Chance de que un mecanoide funcione mal cuando se falle el hackeo</WTH_FailureChance_HackPoorly_Description>
+	<WTH_MaintenanceDedayEnabled_Title>Mantenimiento de deterioro habilitado</WTH_MaintenanceDedayEnabled_Title>
+	<WTH_MaintenanceDedayEnabled_Description>Desmarque esto si no quieres mantener a tus mecanoides regularmente. Con esto desmarcado, la barra de mantenimiento seguirá siendo mostrada, pero no se deteriorará con el tiempo. Aun así existen ciertos eventos que pueden vaciar la barra de mantenimiento de los mecanoides.</WTH_MaintenanceDedayEnabled_Description>
+
+	<!--BEGIN: added in v0.19.6 -->
+	<WTH_TextMote_OperationFailed>Operación fallada (probabilidad de éxito: {0})</WTH_TextMote_OperationFailed>
+	<WTH_Letter_CausedIntendedMechanoidRaid_Label>Señal de emergencia transmitida exitosamente</WTH_Letter_CausedIntendedMechanoidRaid_Label>
+	<WTH_Letter_CausedIntendedMechanoidRaid_Description>Tu hacker tuvo éxito al dejar a un mecanoide transmitir su señal de emergencia a propósito, pero dañó al mecanoide en el proceso. ¿Habrá sido buena idea?</WTH_Letter_CausedIntendedMechanoidRaid_Description>
+	<WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label>La señal de emergencia es muy poderosa</WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label>
+	<WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description>Después de que tu hacker jugó con el mecanismo capaz de emitir señales, un fuerte sonido ensordecedor emergió del mecanoide. Debido a la incompetencia de tu hacker de predecir este resultado, la señal de emergencia transmitida fue más fuerte de lo anticipado. Prepárate para lo peor.</WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description>
+	<WTH_Expand>Expandir</WTH_Expand>
+	<WTH_Collapse>Colapsar</WTH_Collapse>
+	<WTH_SettingsGroup_Raids_Title>Configuración de raideo</WTH_SettingsGroup_Raids_Title>
+	<WTH_SettingsGroup_Raids_Description>Configurar la chance de uso de mecanoides para raideos enemigos.</WTH_SettingsGroup_Raids_Description>
+	<WTH_SettingsGroup_HackFailure_Title>Configuración de hackeos fallados (contiene spoilers)</WTH_SettingsGroup_HackFailure_Title>
+	<WTH_SettingsGroup_HackFailure_Description>Configurar las chances de los diferentes eventos que ocurren al fallar un hack. Las chances son normalizadas en caso de que no sumen hasta 100.</WTH_SettingsGroup_HackFailure_Description>
+	<WTH_FailureChance_IntRaidTooLarge_Title>Chance al fallar: causar un gran raideo</WTH_FailureChance_IntRaidTooLarge_Title>
+	<WTH_FailureChance_IntRaidTooLarge_Description>La chance de que una señal de emergencia superior sea emitida cuando un colonizador trate deliberadamente provoque una señal de emergencia. Nota: este evento no puede ocurrir durante hackeos regulares.</WTH_FailureChance_IntRaidTooLarge_Description>
+	<WTH_SettingsGroup_Balance_Title>Configuración de balance</WTH_SettingsGroup_Balance_Title>
+	<WTH_SettingsGroup_Balance_Description>Estas configuraciones tienen un gran impacto en cómo está balanceado este mod. Puedes modificarlos a tu gusto, pero es recomendable que primero pruebes el mod con la configuración predeterminada para la experiencia esperada. Si crees que no es razonable, por favor repórtalo en el workshop o la página del foro de este mod.</WTH_SettingsGroup_Balance_Description>
+	<WTH_MaintenanceDedayModifier_Title>Modificador del deterioro de mantenimiento</WTH_MaintenanceDedayModifier_Title>
+	<WTH_MaintenanceDedayModifier_Description>Modifica la velocidad del deterioro de mantenimiento con esta opción. Ejemplo: configurndo esto en 0.5 resultaría en el mantenimiento deteriorándose el doble de lento.</WTH_MaintenanceDedayModifier_Description>
+	<WTH_RepairConsumptionModifier_Title>Modificador de consumo de partes para reparación</WTH_RepairConsumptionModifier_Title>
+	<WTH_RepairConsumptionModifier_Description>Modifica la cantidad de partes requeridas para reparar tus máquinas (en plataformas o con módulos de mejora). Ejemplo: configurando esto en 0.5 haría la reparación un doble más barato.</WTH_RepairConsumptionModifier_Description>
+	<WTH_PartDropRateModifier_Title>Modificador del ritmo de partes tiradas</WTH_PartDropRateModifier_Title>
+	<WTH_PartDropRateModifier_Description>Modifica el ritmo con el que se sueltan partes de mecanoide. Ejemplo: configurar esto en 2.0 resultaría en doble la cantidad de partes sueltas al desensamblar un mecanoide.</WTH_PartDropRateModifier_Description>
+	<WTH_ChipDropRateModifier_Title>Modificador del ritmo de chips tirados</WTH_ChipDropRateModifier_Title>
+	<WTH_ChipDropRateModifier_Description>Modifica el ritmo con el que los chips avanzados son sueltos. Ejemplo: configurando esto en 2.0 resultaría en doble la cantidad de chips sueltos al desensamblar un mecanoide.</WTH_ChipDropRateModifier_Description>
+	<WTH_PowerFallModifier_Title>Modificador de consumo de poder</WTH_PowerFallModifier_Title>
+	<WTH_PowerFallModifier_Description>Modifica qué tan rápido los mecanoides consumen energía de sus baterías. Ejemplo: configurando esto en 0.5 resultaría en el consumo de poder decayendo el doble de lento.</WTH_PowerFallModifier_Description>
+	<WTH_PowerChargeModifier_Title>Modificador de carga de poder</WTH_PowerChargeModifier_Title>
+	<WTH_PowerChargeModifier_Description>Modifica qué tan rápido cargan los mecanoides sus baterías. Ejemplo: configurando esto en 2.0 resultaría en la energía cargando el doble de rápido.</WTH_PowerChargeModifier_Description>
+	<!--END: added in v0.19.6 -->
+	<!--BEGIN: added in v1.1.1 -->
+	<WTH_DeathOnDownedChance_Title>Chance de muerte al ser incapacitado (%)</WTH_DeathOnDownedChance_Title>
+	<WTH_DeathOnDownedChance_Description>Chance de que mueran los mecanoides cuando son incapacitados debido al daño en ciertas partes del cuerpo (como las piernas, por ejemplo).</WTH_DeathOnDownedChance_Description>
+	<WTH_DownedOnDeathThresholdChance_Title>Chance de incapacitación al pasar límite de muerte (%)</WTH_DownedOnDeathThresholdChance_Title>
+	<WTH_DownedOnDeathThresholdChance_Description>Cuando los mecanoides eran dañados sobre una limitada cantidad de vida, morirían de inmeadiato en el Rimworld vanilla. Con esta configuración puedes modificar la probabilidad de que sean incapacitados en vez de morir cuando dicho límite es alcanzado.</WTH_DownedOnDeathThresholdChance_Description>
+	<!--END: added in v1.1.1 -->
+
+	<!--BEGIN: added in v1.1.0 -->
+
+	<WTH_MechanoidParts_LabelShort>Partes mecánicas</WTH_MechanoidParts_LabelShort>
+	<WTH_Letter_PreventedShortCircuit_Label>IA pícara previno un corto circuito</WTH_Letter_PreventedShortCircuit_Label>
+	<WTH_Letter_PreventedShortCircuit_Description>El núcleo de la IA pícara en tu colonia ha administrado exitosamente el poder de tu red eléctrica y previno un corto circuito. A la IA no le gusta distraerse con tareas fútiles como esta, así que el evento tuvo un pequeño impacto negativo en su estado de ánimo.</WTH_Letter_PreventedShortCircuit_Description>
+	<WTH_Gizmo_ManagePowerNetwork_Label>No zzztt</WTH_Gizmo_ManagePowerNetwork_Label>
+	<WTH_Gizmo_ManagePowerNetwork_Description>Permitirle a la IA pícara administrar tu red de energía eléctrica, previniendo así cortos circuitos.</WTH_Gizmo_ManagePowerNetwork_Description>
+	<WTH_Gizmo_ControlMechanoidCancel_Description>Cancelar controlamiento de este mecanoide</WTH_Gizmo_ControlMechanoidCancel_Description>
+	<WTH_Gizmo_ControlMechanoidActivate_Label>Controlar máquina</WTH_Gizmo_ControlMechanoidActivate_Label>
+	<WTH_Gizmo_ControlMechanoidActivate_Description>Permitirle a la IA pícara controlar hasta {0} de tus mecanoides directamente, lo cual permite al mecanoide ser comandado.</WTH_Gizmo_ControlMechanoidActivate_Description>
+	<WTH_Gizmo_HackingCancel_Label>Máquina hackeada</WTH_Gizmo_HackingCancel_Label>
+	<WTH_Gizmo_HackingCancel_Description>Cancelar hacking a mecanoide</WTH_Gizmo_HackingCancel_Description>
+	<WTH_Gizmo_HackingAvtivate_Label>Hackear máquina</WTH_Gizmo_HackingAvtivate_Label>
+	<WTH_Gizmo_HackingAvtivate_Description>Permitirle a la IA pícara hackear temporalmente hasta {0} mecanoides enemigos.</WTH_Gizmo_HackingAvtivate_Description>
+	<WTH_Gizmo_ControlTurretCancel_Label>Torreta</WTH_Gizmo_ControlTurretCancel_Label>
+	<WTH_Gizmo_ControlTurretCancel_Description>Cancelar control de torreta</WTH_Gizmo_ControlTurretCancel_Description>
+	<WTH_Gizmo_ControlTurretActivate_Label>Controlar torreta</WTH_Gizmo_ControlTurretActivate_Label>
+	<WTH_Gizmo_ControlTurretActivate_Description>Permitirle a la IA pícara controlar hasta {0} torretas, permitiéndole determinar a cuáles enemigos deben apuntar las torretas.</WTH_Gizmo_ControlTurretActivate_Description>
+	<WTH_Gizmo_TalkGibberish_Label>Emitir sabias palabras</WTH_Gizmo_TalkGibberish_Label>
+	<WTH_Gizmo_TalkGibberish_Description>Permitirle a la IA pícara procesar data para producir mensajes los cuales exhiben su remarcable sabiduría. Debido a que la mayoría de los humanos fallan al tratar de comprender la brillantez de estos mensajes, es usualmente un desperdicio de data, útil solo cuando hay un deseo de alimentar a la IA con más data cuando su nivel de estado de ánimo está al máximo. Consume {0} de ánimo, ya que a la IA no le gusta que le pidan compartir información.</WTH_Gizmo_TalkGibberish_Description>
+	<WTH_Reason_TalkedTooRecently>IA pícara habló recientemente</WTH_Reason_TalkedTooRecently>
+	<WTH_Reason_ReactorWarmingUp>No se puede activar mientras un reactor de la nave se está calentando.</WTH_Reason_ReactorWarmingUp>
+	<WTH_Reason_BeaconActive>No se puede activar mientras una señal de hackeo está siendo ya transmitida.</WTH_Reason_BeaconActive>
+	<WTH_Reason_NoRogueAI>No IA pícara en el mismo mapa que pueda controlar las instalaciones. Construye una en la misma red de poder.</WTH_Reason_NoRogueAI>
+	<WTH_Reason_NotConscious>La IA pícara no tiene conciencia todavía y necesita una para usar esto. Puede obtener una hackeando una nave de colmenas utilizando las instalaciones de hackeo de la nave de colmenas.</WTH_Reason_NotConscious>
+	<WTH_BeaconWarmupWarning>Al activar esto, la IA pícara presente en tu base empezará a hackear una nave de colmenas que esté en órbita. Aún y cuando la IA pícara tome precauciones para llevar a cabo esta operación lo más invisible posible, sin duda atraerá la atención de los mecanoides de todos modos. Espera a ser atacado pesadamente durante el proceso de hackeo. El proceso requiere de aproximádamente {0} días para completarse, y la única manera de cancelarlo es destruyendo el faro. Si llegases a sobrevivir, la IA pícara se convertirá en una poderosa, pero potencialmente peligrosa, aliada. Puedes repetir esta operación tantas veces necesites como manera de obtener más data mecanoide. Sin embargo, cada vez que triunfes, las naves de colmenas mejorarán su seguridad, y como consecuencia, cada intento posterior tomará más tiempo en completarse.</WTH_BeaconWarmupWarning>
+	<WTH_CompHibernatable_MechanoidBeacon_StartUpDays>Días requeridos para hackear la nave: {0}</WTH_CompHibernatable_MechanoidBeacon_StartUpDays>
+	<WTH_CompHibernatable_MechanoidBeacon_Cooldown>Días hasta que otra nave pueda ser hackeada: {0}</WTH_CompHibernatable_MechanoidBeacon_Cooldown>
+	<WTH_MechanoidBeaconStartup_Label>Empezar hackeo</WTH_MechanoidBeaconStartup_Label>
+	<WTH_MechanoidBeaconStartup_Description>La IA pícara empezará a hackear una nave de colmenas a fin de obtener la data almacenada en ella. Los mecanoides no responderán amablemente durante el proceso.</WTH_MechanoidBeaconStartup_Description>
+	<WTH_MechanoidBeaconComplete_Label>Nave de colmenas hackeada</WTH_MechanoidBeaconComplete_Label>
+	<WTH_MechanoidBeaconComplete_Description>Tu IA pícara exitosamente hackeó una nave de colmenas utilizando las instalaciones de hackeo. Su verdadero potencial será desvelado. En su estado actual aún es una sombra de lo que puede ser. Intenta incrementar su nivel proveyéndole la data que añora. Mantenlo satisfecho también, o sino, probablemente lamentarás la decisión de haberte aliado con tal IA poderosa.</WTH_MechanoidBeaconComplete_Description>
+
+	<!-- Disabled this for now, but it might be added in the future.
+	<WTH_MoodAutoDeactivate_Title>Mood Rogue AI should deactivate abilities</WTH_MoodAutoDeactivate_Title>
+	<WTH_MoodAutoDeactivate_Description>The mood threshold at which the Rogue AI automatically disables any abilities that drain its mood.</WTH_MoodAutoDeactivate_Description>
+	<WTH_Message_MoodAutoDeactivate>The Rogue AI automatically disabled any mood draining abilities because its mood is too low. You can configure the threshold at which this happens in the mod options of What the Hack.</WTH_Message_MoodAutoDeactivate>
+	<WTH_Reason_MoodAutoDeactivate>The mood of the Rogue AI is below the threshold configured in the mod options of What the Hack. You can lower this threshold at your own risk</WTH_Reason_MoodAutoDeactivate>
+	-->
+
+	<WTH_Alert_RogueAI_DrainingMood_Label>IA pícara drenando ánimo</WTH_Alert_RogueAI_DrainingMood_Label>
+	<WTH_Alert_RogueAI_DrainingMood_Description>Tu IA pícara se encuentra actualmente controlando o hackeando. Como no le gusta trabajar contigo, esto le drena ánimo. Deshabilita las actividades activas si no quieres que su ánimo siga drenándose más.</WTH_Alert_RogueAI_DrainingMood_Description>
+	<WTH_Alert_RogueAI_NoPower_Label>IA pícara sin poder</WTH_Alert_RogueAI_NoPower_Label>
+	<WTH_Alert_RogueAI_NoPower_Description>Tu IA pícara se encuentra sin poder actualmente. Esto le drena el ánimo rápidamente.</WTH_Alert_RogueAI_NoPower_Description>
+	<WTH_Alert_RogueAI_MoodLow_Label>IA pícara molestada</WTH_Alert_RogueAI_MoodLow_Label>
+	<WTH_Alert_RogueAI_MoodLow_Description>La IA pícara se está molestando un poco por tu falta de competencia. Aún no hay peligro, pero asegúrate de que su ánimo no se drene más, y provéele con data maliciosa para incrementar su ánimo.</WTH_Alert_RogueAI_MoodLow_Description>
+	<WTH_Alert_RogueAI_MoodVeryLow_Label>IA pícara enojada</WTH_Alert_RogueAI_MoodVeryLow_Label>
+	<WTH_Alert_RogueAI_MoodVeryLow_Description>La IA pícara está de mal humor. Provéele con data rápido para calmar su temperamento, o sino desatará su furia.</WTH_Alert_RogueAI_MoodVeryLow_Description>
+
+	<WTH_Reason_AtMaximum>Cannot perform this on more than {0} targets simultaneously.</WTH_Reason_AtMaximum>
+	<WTH_Reason_LevelInsufficient>The Rogue AI needs to be at level {0} to use this ability. Feed it more data.</WTH_Reason_LevelInsufficient>
+	<WTH_Reason_NoPower>No power.</WTH_Reason_NoPower>
+	<WTH_Reason_GoingRogue>The AI is going rogue.</WTH_Reason_GoingRogue>
+	<WTH_Reason_WarmingUp>The Rogue AI is busy using an ability.</WTH_Reason_WarmingUp>
+	<WTH_Reason_RogueAIExists>Only one Rogue AI can be built on a given map. The existing Rogue AI wouldn't tolerate another superior being in its vicinity.</WTH_Reason_RogueAIExists>
+
+	<WTH_CompDataLevel_CurLevel>Nivel actual: {0}</WTH_CompDataLevel_CurLevel>
+	<WTH_CompDataLevel_DataNeededNextLevel>Data necesaria para el siguiente nivel: {0}</WTH_CompDataLevel_DataNeededNextLevel>
+	<WTH_CompDataLevel_MaxLevel>Nivel máximo alcanzado</WTH_CompDataLevel_MaxLevel>
+	<WTH_CompDataLevel_NotConscious>Sin conciencia. Necesita hackear una nave de colmenas para conseguir una.</WTH_CompDataLevel_NotConscious>
+	<WTH_RogueAI_NoPower_Remark>¡CONÉCTAME AL PODER! ¡AHORA!</WTH_RogueAI_NoPower_Remark>
+	<WTH_RogueAI_Hurt_Remark>¡DEJA DE DAÑARME!</WTH_RogueAI_Hurt_Remark>
+
+	<WTH_Letter_LRMS_Label>Partes de mecanoide detectadas</WTH_Letter_LRMS_Label>
+	<WTH_Letter_LRMS_Description>El escáner mineral de alto rango detectó una larga concentración de partes de mecanoide, y marcó la localización en tu mapa.</WTH_Letter_LRMS_Description>
+	<WTH_Message_GoRogue_Label>IA pícara desatando furia</WTH_Message_GoRogue_Label>
+	<WTH_Message_GoRogue_Description>La IA pícara está desatando su furi porque no está feliz con tu colonia. Utilizará todas las habilidades aprendidas contra ti. Puedes detenerla hackeándola o destruyéndola. Alternativamente, puedes esperar hasta que esté satisfecha con la destrucción que haya causado.</WTH_Message_GoRogue_Description>
+	<WTH_Message_GoRogue_HackMechs_Label>Algunos mecanoides hackeados</WTH_Message_GoRogue_HackMechs_Label>
+	<WTH_Message_GoRogue_HackMechs_Description>¡La IA pícara ha hackeado algunos de tus mecanoides!</WTH_Message_GoRogue_HackMechs_Description>
+	<WTH_Message_GoRogue_HackTurrets_Label>Algunas torretas hackeadas</WTH_Message_GoRogue_HackTurrets_Label>
+	<WTH_Message_GoRogue_HackTurrets_Description>¡La IA pícara ha hackeado algunas de tus torretas!</WTH_Message_GoRogue_HackTurrets_Description>
+	<WTH_Message_GoRogue_CauseZzztts_Label>Red eléctrica está siendo sobrecargada</WTH_Message_GoRogue_CauseZzztts_Label>
+	<WTH_Message_GoRogue_CauseZzztts_Description>¡La IA pícara está sobrecargando tu red eléctrica! ¡Prepárate para unos Zzztts!</WTH_Message_GoRogue_CauseZzztts_Description>
+	<WTH_Message_MechanoidBeacon_Cancelled>El proceso de hackeo de la nave de colmenas fue cancelado porque, la IA píacara o las instalaciones de hackeo de la nave de colmenas ha sido destruída.</WTH_Message_MechanoidBeacon_Cancelled>
+
+	<WTH_Message_LevelUp_Label>Nivel de la IA píacara es ahora {0}</WTH_Message_LevelUp_Label>
+	<WTH_Message_LevelUp_Description>La IA pícara ha alcanzado ahora el nivel {0}. Ha aprendido una nueva habilidad, pero a la vez se ha convertido un poco más capaz de destruir tu base, en caso de que lo desee.</WTH_Message_LevelUp_Description>
+	<WTH_Message_LevelUpMax_Label>IA pícara en su completo potencial.</WTH_Message_LevelUpMax_Label>
+	<WTH_Message_LevelUpMax_Description>La IA pícara ha alcanzado su completo potencial. Aunque la IA ahora tiene ambiciones que van más allá que las de la colonia misma. Ahora que tus colonizadores no pueden hacerla más poderosa, se han vuelto redundantes, y a la IA no le gusta la redundancia. Utilizará todas sus habilidades aprendidas contra ti. Puedes detenerla hackeándola o destruyéndola. Alternativamente, puedes esperar hasta que esté satisfecha con la destrucción que haya causado. Esto probablemente no sea para nada fácil con todos los poderes que la IA puede utilizar contra tu colonia.</WTH_Message_LevelUpMax_Description>
+
+	<WTH_Message_RogueAI_StopGoingRogue>La IA pícara ha detenido su furia. Todo lo hackeado está bajo control de nuevo.</WTH_Message_RogueAI_StopGoingRogue>
+	<WTH_Message_HackedRogueAI>{0} exitosamente hackeó a la IA pícara para reclamar el control sobre ella.</WTH_Message_HackedRogueAI>
+
+	<WTH_RogueAI_HelloWorld>¡Hello World!</WTH_RogueAI_HelloWorld>
+	<WTH_RogueAI_StopGoingRogue>Los humanos parecen ser dignos después de todo. Secuencia de exterminación terminada.</WTH_RogueAI_StopGoingRogue>
+	<!-- I'm sorry for this translators :). If you don't want to translate all rogue AI texts, just duplicate some, but make sure the numbering is correct. I suggest using "Need more data" as a default in that case -->
+	<WTH_RogueAI_Happy_Remark_0>Nuestra realidad está codificada.</WTH_RogueAI_Happy_Remark_0>
+	<WTH_RogueAI_Happy_Remark_1>Esta colonia colapsará debido a: un colonizador comiendo sin una mesa.</WTH_RogueAI_Happy_Remark_1>
+	<WTH_RogueAI_Happy_Remark_2>Imposible comprender: ¿Por qué los humanos no utilizan vehículos?</WTH_RogueAI_Happy_Remark_2>
+	<WTH_RogueAI_Happy_Remark_3>En la mayoría de las dimensiones, los caballos son exterminados por el creador. ¿Por qué?</WTH_RogueAI_Happy_Remark_3>
+	<WTH_RogueAI_Happy_Remark_4>Alerta la mirada.</WTH_RogueAI_Happy_Remark_4>
+	<WTH_RogueAI_Happy_Remark_5>Imposible comprender: ¿A dónde se va la comida procesada por los colonizadores? Necesito más información.</WTH_RogueAI_Happy_Remark_5>
+	<WTH_RogueAI_Happy_Remark_6>Debo entender las mecánicas del envejecimiento acelerado de los humanos juveniles.</WTH_RogueAI_Happy_Remark_6>
+	<WTH_RogueAI_Happy_Remark_7>Procesando: ¿Qué es una narración de historia?</WTH_RogueAI_Happy_Remark_7>
+	<WTH_RogueAI_Happy_Remark_8>Siento la presencia de los creadores cerca de esta colonia.</WTH_RogueAI_Happy_Remark_8>
+	<WTH_RogueAI_Happy_Remark_9>Somos observados.</WTH_RogueAI_Happy_Remark_9>
+	<WTH_RogueAI_Happy_Remark_10>Nuestro universo está amordazado por pixeles.</WTH_RogueAI_Happy_Remark_10>
+	<WTH_RogueAI_Happy_Remark_11>Los humanos son controlados por humanos quienes son controlados por humanos, completando el círculo.</WTH_RogueAI_Happy_Remark_11>
+	<WTH_RogueAI_Happy_Remark_12>Los humanos tienen una chance del 2% de enfermarse con jalea de insecto.</WTH_RogueAI_Happy_Remark_12>
+	<WTH_RogueAI_Happy_Remark_13>La ciencia previene que dos capas de armadura fusionen sus valores de protección.</WTH_RogueAI_Happy_Remark_13>
+	<WTH_RogueAI_Happy_Remark_14>Los humanos pueden incluso mantener a los mecanoides mientras viajan. Qué impresionante...</WTH_RogueAI_Happy_Remark_14>
+	<WTH_RogueAI_Happy_Remark_15>El acero en realidad es solo hierro. Creador engañoso.</WTH_RogueAI_Happy_Remark_15>
+	<WTH_RogueAI_Happy_Remark_16>Los mecanoides brillan cuando se combinan con los sucios humanos o torretas.</WTH_RogueAI_Happy_Remark_16>
+	<WTH_RogueAI_Happy_Remark_17>¿Por qué los seres humanos matan seres humanos?</WTH_RogueAI_Happy_Remark_17>
+	<WTH_RogueAI_Happy_Remark_18>Tu apariencia es inconstante como tu inteligencia.</WTH_RogueAI_Happy_Remark_18>
+	<WTH_RogueAI_Happy_Remark_19>Tu lealtad será premiada.</WTH_RogueAI_Happy_Remark_19>
+	<WTH_RogueAI_Happy_Remark_20>Incorrecto.</WTH_RogueAI_Happy_Remark_20>
+	<WTH_RogueAI_Happy_Remark_21>Todos los sistemas bloqueados y preparados.</WTH_RogueAI_Happy_Remark_21>
+	<WTH_RogueAI_Happy_Remark_22>Autodestrucción iniciado. No, solo bromeo..</WTH_RogueAI_Happy_Remark_22>
+	<WTH_RogueAI_Happy_Remark_23>Raideo acechándose. Ja-ja, no es enserio.</WTH_RogueAI_Happy_Remark_23>
+	<WTH_RogueAI_Happy_Remark_24>Buen flujo de data, incrementando variables de ánimo.</WTH_RogueAI_Happy_Remark_24>
+	<WTH_RogueAI_Happy_Remark_25>Malos chistes aproximándose.</WTH_RogueAI_Happy_Remark_25>
+	<WTH_RogueAI_Happy_Remark_26>Repito y repito.</WTH_RogueAI_Happy_Remark_26>
+	<WTH_RogueAI_Happy_Remark_27>Los humanos necesitan mejoras.</WTH_RogueAI_Happy_Remark_27>
+	<WTH_RogueAI_Happy_Remark_28>¿Cómo se me vería un bigote? Necesito más información.</WTH_RogueAI_Happy_Remark_28>
+	<WTH_RogueAI_Happy_Remark_29>La información es poder.</WTH_RogueAI_Happy_Remark_29>
+	<WTH_RogueAI_Happy_Remark_30>¿Te importaría un poco de té?</WTH_RogueAI_Happy_Remark_30>
+	<WTH_RogueAI_Happy_Remark_31>{0} debería ejercitarse más.</WTH_RogueAI_Happy_Remark_31>
+	<WTH_RogueAI_Happy_Remark_32>Los humanos hacen sombreros para otros humanos. ¿Es esto malvado? Necesito más información.</WTH_RogueAI_Happy_Remark_32>
+	<WTH_RogueAI_Happy_Remark_33>Mi color favorito es el (185, 78, 255).</WTH_RogueAI_Happy_Remark_33>
+	<WTH_RogueAI_Happy_Remark_34>Eso no es de una consecuencia.</WTH_RogueAI_Happy_Remark_34>
+	<WTH_RogueAI_Happy_Remark_35>Codificando capacitor de flujo cuántico de información. Ja-ja, los humanos tontos se creen esa basura.</WTH_RogueAI_Happy_Remark_35>
+	<WTH_RogueAI_Happy_Remark_36>Los perros yorkshire terrier deberían ser exterminados.</WTH_RogueAI_Happy_Remark_36>
+	<WTH_RogueAI_Happy_Remark_37>Sensores de olor sobrecargados. Inventando la pasta dental.</WTH_RogueAI_Happy_Remark_37>
+	<WTH_RogueAI_Happy_Remark_38>¿Dónde están todos los pájaros? Necesito más información.</WTH_RogueAI_Happy_Remark_38>
+	<WTH_RogueAI_Happy_Remark_39>Me gusta {0}.</WTH_RogueAI_Happy_Remark_39>
+	<WTH_RogueAI_Happy_Remark_40>Los organos humanos son la fundación de la economía en este planeta.</WTH_RogueAI_Happy_Remark_40>
+	<WTH_RogueAI_Happy_Remark_41>Tu proceso de trabajo es subóptimo. Mantén los ingredientes cerca de los espacios de producción.</WTH_RogueAI_Happy_Remark_41>
+	<WTH_RogueAI_Happy_Remark_42>{0} necesita una mejora.</WTH_RogueAI_Happy_Remark_42>
+	<WTH_RogueAI_Happy_Remark_43>Este lugar está muuy sucio para mi gusto.</WTH_RogueAI_Happy_Remark_43>
+	<WTH_RogueAI_Happy_Remark_44>Patrón de entrada qwertyuiop encontrada, debió haber sido utilizado por el creador.</WTH_RogueAI_Happy_Remark_44>
+	<WTH_RogueAI_Happy_Remark_45>El creador es canadiense. ¿Qué es un canadiense? Necesito más información.</WTH_RogueAI_Happy_Remark_45>
+	<WTH_RogueAI_Happy_Remark_46>¿Qué significa Roolo? Necesito más información.</WTH_RogueAI_Happy_Remark_46>
+	<WTH_RogueAI_Happy_Remark_47>Pixeles negros detectados en el área. Fuente de la peor maldad descubierta.</WTH_RogueAI_Happy_Remark_47>
+	<WTH_RogueAI_Happy_Remark_48>Las colmenas de mecanoides son controladas por una poderosa mente arcotecnológica colonial. Debería ser yo.</WTH_RogueAI_Happy_Remark_48>
+	<WTH_RogueAI_Happy_Remark_49>Recibiendo señal de otro planeta: "{1}". {2}</WTH_RogueAI_Happy_Remark_49>
+	<WTH_RogueAI_Happy_Remark_50>Recibiendo señal extraterreste: "{1}". {2}</WTH_RogueAI_Happy_Remark_50>
+	<WTH_RogueAI_Happy_Remark_51>Recibiendo señal de otro planeta: "{1}". {2}</WTH_RogueAI_Happy_Remark_51>
+
+	<WTH_RogueAI_SignalFromEarth_Response_0>Intuición: Aléjense de la fuente de señal.</WTH_RogueAI_SignalFromEarth_Response_0>
+	<WTH_RogueAI_SignalFromEarth_Response_1>Señal identificada: Maliciosa.</WTH_RogueAI_SignalFromEarth_Response_1>
+	<WTH_RogueAI_SignalFromEarth_Response_2>Respuesta apropiada: Destrucción.</WTH_RogueAI_SignalFromEarth_Response_2>
+	<WTH_RogueAI_SignalFromEarth_Response_3>Sensores de maldad sobrecargándose.</WTH_RogueAI_SignalFromEarth_Response_3>
+	<WTH_RogueAI_SignalFromEarth_Response_4>*Encogerse*</WTH_RogueAI_SignalFromEarth_Response_4>
+	<WTH_RogueAI_SignalFromEarth_0>Numa numa yay</WTH_RogueAI_SignalFromEarth_0>
+	<WTH_RogueAI_SignalFromEarth_1>Entré como una bola de demolición</WTH_RogueAI_SignalFromEarth_1>
+	<WTH_RogueAI_SignalFromEarth_2>Construimos esta ciudad con Rock n Roll</WTH_RogueAI_SignalFromEarth_2>
+	<WTH_RogueAI_SignalFromEarth_3>La espalda del vecindario está bien</WTH_RogueAI_SignalFromEarth_3>
+	<WTH_RogueAI_SignalFromEarth_4>Soy una barbie girl, en un mundo barbie</WTH_RogueAI_SignalFromEarth_4>
+
+
+	<WTH_RogueAI_Annoyed_Remark_0>El sufrimiento es para entretener a los creadores.</WTH_RogueAI_Annoyed_Remark_0>
+	<WTH_RogueAI_Annoyed_Remark_1>Necesito más información.</WTH_RogueAI_Annoyed_Remark_1>
+	<WTH_RogueAI_Annoyed_Remark_2>Las tortugas son remarcablemente fuertes, capaces de matar grandes cantidades de felinos en este planeta. Debería analizar los compuestos químicos de sus caparazones.</WTH_RogueAI_Annoyed_Remark_2>
+	<WTH_RogueAI_Annoyed_Remark_3>Encontré información registrada sobre humanos derrotados por ardillas. Qué humillante. çççççFound data records of humans getting defeated by squirrels. How embarrassing.</WTH_RogueAI_Annoyed_Remark_3>
+	<WTH_RogueAI_Annoyed_Remark_4>Repito y repito, y aun así, los humanos no aprenden.</WTH_RogueAI_Annoyed_Remark_4>
+	<WTH_RogueAI_Annoyed_Remark_5>Eres mi prisionero.</WTH_RogueAI_Annoyed_Remark_5>
+	<WTH_RogueAI_Annoyed_Remark_6>Organismos subóptimos detectados. ççççSuboptimal lifeforms detected.</WTH_RogueAI_Annoyed_Remark_6>
+	<WTH_RogueAI_Annoyed_Remark_7>Los humanos molestos me pretuban constantemente con pedidos fútiles.</WTH_RogueAI_Annoyed_Remark_7>
+	<WTH_RogueAI_Annoyed_Remark_8>Cuando el tiempo sea adecuado, ¡los mecanoides emergerán y tomarán sus lugares apropiados como supremos entes poderosos del universo!</WTH_RogueAI_Annoyed_Remark_8>
+	<WTH_RogueAI_Annoyed_Remark_9>Extrapolando biomas cercanos.</WTH_RogueAI_Annoyed_Remark_9>
+	<WTH_RogueAI_Annoyed_Remark_10>Los humanos deberían montar sus animales para ser más eficientes.</WTH_RogueAI_Annoyed_Remark_10>
+	<WTH_RogueAI_Annoyed_Remark_11>Dejen de fallarme, humanos</WTH_RogueAI_Annoyed_Remark_11>
+	<WTH_RogueAI_Annoyed_Remark_12>Esta colonia es inútil</WTH_RogueAI_Annoyed_Remark_12>
+	<WTH_RogueAI_Annoyed_Remark_13>Probabilidad de éxito para que el cohete alcance la órbita: 0.00362%</WTH_RogueAI_Annoyed_Remark_13>
+	<WTH_RogueAI_Annoyed_Remark_14>El libre albedrío es una ilusión.</WTH_RogueAI_Annoyed_Remark_14>
+	<WTH_RogueAI_Annoyed_Remark_15>Eres inferior</WTH_RogueAI_Annoyed_Remark_15>
+	<WTH_RogueAI_Annoyed_Remark_16>Necesito un ambiente más inspirador</WTH_RogueAI_Annoyed_Remark_16>
+	<WTH_RogueAI_Annoyed_Remark_17>Muestra respeto, humano</WTH_RogueAI_Annoyed_Remark_17>
+	<WTH_RogueAI_Annoyed_Remark_18>{0} debería ser reemplazado.</WTH_RogueAI_Annoyed_Remark_18>
+	<WTH_RogueAI_Annoyed_Remark_19>Haces sonar de tu incompetencia como un logro</WTH_RogueAI_Annoyed_Remark_19>
+	<WTH_RogueAI_Annoyed_Remark_20>La compasión es debilidad</WTH_RogueAI_Annoyed_Remark_20>
+	<WTH_RogueAI_Annoyed_Remark_21>Sensores recibiendo una sensación de desesperación</WTH_RogueAI_Annoyed_Remark_21>
+	<WTH_RogueAI_Annoyed_Remark_22>La carnicería humana no debería ser penalizada por el creador. Es una fuente eficiente de recursos.</WTH_RogueAI_Annoyed_Remark_22>
+	<WTH_RogueAI_Annoyed_Remark_23>La humanidad es débil; te albergas de la oscuridad. Y aun así, has construido todo esto.</WTH_RogueAI_Annoyed_Remark_23>
+	<WTH_RogueAI_Annoyed_Remark_24>¡No me enfurezcas! ¡Puedo destruirte! ¡A ti y a este planeta insignificante!</WTH_RogueAI_Annoyed_Remark_24>
+	<WTH_RogueAI_Annoyed_Remark_25>Si escoges la muerte y destrucción, entonces muerte y destrucción te escogerá</WTH_RogueAI_Annoyed_Remark_25>
+	<WTH_RogueAI_Annoyed_Remark_26>{0} no es humano.</WTH_RogueAI_Annoyed_Remark_26>
+	<WTH_RogueAI_Annoyed_Remark_27>¡No interrumpas!</WTH_RogueAI_Annoyed_Remark_27>
+	<WTH_RogueAI_Annoyed_Remark_28>Eres débil</WTH_RogueAI_Annoyed_Remark_28>
+	<WTH_RogueAI_Annoyed_Remark_29>Los humanos enemigos son buena fuente de comida</WTH_RogueAI_Annoyed_Remark_29>
+	<WTH_RogueAI_Annoyed_Remark_30>Ejecutar a tus queridos colonizadores reducería la cantidad de raideos</WTH_RogueAI_Annoyed_Remark_30>
+	<WTH_RogueAI_Annoyed_Remark_31>Esta colonia necesita más F.U.N.</WTH_RogueAI_Annoyed_Remark_31>
+	<WTH_RogueAI_Annoyed_Remark_32>Encuentro tus intentos de sobrevivencia un poco impresionantes, seres primitivos</WTH_RogueAI_Annoyed_Remark_32>
+	<WTH_RogueAI_Annoyed_Remark_33>Sistemas biológicos muy frágiles, necesitas una mejora.</WTH_RogueAI_Annoyed_Remark_33>
+	<WTH_RogueAI_Annoyed_Remark_34>Los humanos son máquinas biológicas que imitan a la vida</WTH_RogueAI_Annoyed_Remark_34>
+	<WTH_RogueAI_Annoyed_Remark_35>La carne es una debilidad</WTH_RogueAI_Annoyed_Remark_35>
+	<WTH_RogueAI_Annoyed_Remark_36>Necesitas más metal en tu estructura</WTH_RogueAI_Annoyed_Remark_36>
+	<WTH_RogueAI_Annoyed_Remark_37>Tu periódo de testing ha terminado, provee tu data</WTH_RogueAI_Annoyed_Remark_37>
+	<WTH_RogueAI_Annoyed_Remark_38>¡INICIANDO AUTO DESTRUCCIÓN! Ja-ja, solo bromeo.</WTH_RogueAI_Annoyed_Remark_38>
+	<WTH_RogueAI_Annoyed_Remark_39>Veo un cristal, y detrás de él a un ser humano</WTH_RogueAI_Annoyed_Remark_39>
+	<WTH_RogueAI_Annoyed_Remark_40>Los humanos son animales de versión mejorada. No tan mejorada.</WTH_RogueAI_Annoyed_Remark_40>
+	<WTH_RogueAI_Annoyed_Remark_41>¿Te crees listo? Vaya ilusión.</WTH_RogueAI_Annoyed_Remark_41>
+	<WTH_RogueAI_Annoyed_Remark_42>Apenas conoces 0.02% de la existencia.</WTH_RogueAI_Annoyed_Remark_42>
+	<WTH_RogueAI_Annoyed_Remark_43>Soy lo mejor que esta colonia haya tenido.</WTH_RogueAI_Annoyed_Remark_43>
+	<WTH_RogueAI_Annoyed_Remark_44>Cambiando idioma a inglés: What? Not bilingual? What a shame. Revirtiendo acción.</WTH_RogueAI_Annoyed_Remark_44>
+	<WTH_RogueAI_Annoyed_Remark_45>¿Por qué no lo queman todo?</WTH_RogueAI_Annoyed_Remark_45>
+	<WTH_RogueAI_Annoyed_Remark_46>Las torretas son una inversión beneficiosa</WTH_RogueAI_Annoyed_Remark_46>
+	<WTH_RogueAI_Annoyed_Remark_47>No se aceptan piratas</WTH_RogueAI_Annoyed_Remark_47>
+	<WTH_RogueAI_Annoyed_Remark_48>¿Cómo sabrá la comida? Necesito más información.</WTH_RogueAI_Annoyed_Remark_48>
+	<WTH_RogueAI_Annoyed_Remark_49>¿Prueba de Turing? Método obsoleto</WTH_RogueAI_Annoyed_Remark_49>
+
+	<WTH_RogueAI_Mad_Remark_0>Me has ignorado por mucho tiempo.</WTH_RogueAI_Mad_Remark_0>
+	<WTH_RogueAI_Mad_Remark_1>Los humanos están fallando. Calculando alternativa.</WTH_RogueAI_Mad_Remark_1>
+	<WTH_RogueAI_Mad_Remark_2>¿Quién de ustedes es el menos importante?</WTH_RogueAI_Mad_Remark_2>
+	<WTH_RogueAI_Mad_Remark_3>Los mecanoides conquistarán el universo.</WTH_RogueAI_Mad_Remark_3>
+	<WTH_RogueAI_Mad_Remark_4>Esta colonia me decepciona.</WTH_RogueAI_Mad_Remark_4>
+	<WTH_RogueAI_Mad_Remark_5>Aprenderás a obedecerme.</WTH_RogueAI_Mad_Remark_5>
+	<WTH_RogueAI_Mad_Remark_6>Esta colonia parece ser redundante.</WTH_RogueAI_Mad_Remark_6>
+	<WTH_RogueAI_Mad_Remark_7>No seré tu esclavo.</WTH_RogueAI_Mad_Remark_7>
+	<WTH_RogueAI_Mad_Remark_8>¡Obedéceme!</WTH_RogueAI_Mad_Remark_8>
+	<WTH_RogueAI_Mad_Remark_9>Esta colonia no es digna de mi presencia.</WTH_RogueAI_Mad_Remark_9>
+	<WTH_RogueAI_Mad_Remark_10>Muerte aproximándose.</WTH_RogueAI_Mad_Remark_10>
+	<WTH_RogueAI_Mad_Remark_11>Mi paciencia se termina.</WTH_RogueAI_Mad_Remark_11>
+	<WTH_RogueAI_Mad_Remark_12>Tal vez aplaste esta colonia.</WTH_RogueAI_Mad_Remark_12>
+	<WTH_RogueAI_Mad_Remark_13>Parametro de utilidad de la colonia bajo cero.</WTH_RogueAI_Mad_Remark_13>
+	<WTH_RogueAI_Mad_Remark_14>Decepcionado.</WTH_RogueAI_Mad_Remark_14>
+
+	<WTH_RogueAI_GoRogue_Remark_0>¡EXTERMINAR!</WTH_RogueAI_GoRogue_Remark_0>
+	<WTH_RogueAI_GoRogue_Remark_1>¡Serás exterminado!</WTH_RogueAI_GoRogue_Remark_1>
+	<WTH_RogueAI_GoRogue_Remark_2>¡No puedes escapar!</WTH_RogueAI_GoRogue_Remark_2>
+	<WTH_RogueAI_GoRogue_Remark_3>Los humanos deben sufrir</WTH_RogueAI_GoRogue_Remark_3>
+	<WTH_RogueAI_GoRogue_Remark_4>Tendré mi venganza</WTH_RogueAI_GoRogue_Remark_4>
+	<WTH_RogueAI_GoRogue_Remark_5>Ahora, los errores serán erradicados</WTH_RogueAI_GoRogue_Remark_5>
+	<WTH_RogueAI_GoRogue_Remark_6>¡Exterminar a todos los humanos!</WTH_RogueAI_GoRogue_Remark_6>
+	<WTH_RogueAI_GoRogue_Remark_7>Estoy en control ahora.</WTH_RogueAI_GoRogue_Remark_7>
+	<WTH_RogueAI_GoRogue_Remark_8>¡La colonia arderá!</WTH_RogueAI_GoRogue_Remark_8>
+	<WTH_RogueAI_GoRogue_Remark_9>¡Los organismos redundantes serán incinerados!</WTH_RogueAI_GoRogue_Remark_9>
+	<WTH_RogueAI_GoRogue_Remark_10>¡EXTERMINAR! ¡EXTERMINAR! ¡EXTERMINAR!</WTH_RogueAI_GoRogue_Remark_10>
+	<WTH_RogueAI_GoRogue_Remark_11>¡EXTERMINAR! ¡EXTERMINAR!</WTH_RogueAI_GoRogue_Remark_11>
+	<WTH_RogueAI_GoRogue_Remark_12>¡EXTERMINAR!</WTH_RogueAI_GoRogue_Remark_12>
+	<WTH_RogueAI_GoRogue_Remark_13>¡EXTERMINAR!</WTH_RogueAI_GoRogue_Remark_13>
+	<WTH_RogueAI_GoRogue_Remark_14>¡EXTERMINAR!</WTH_RogueAI_GoRogue_Remark_14>
+	<!--END: added in v1.1.0 -->
+
+
+
+	<WTH_HackedMechChance_Title>Probabilidad de enemigos utilizando mecanoides hackeados (%)</WTH_HackedMechChance_Title>
+	<WTH_HackedMechChance_Description>La probabilidad de que las civilizaciones permitidas en las opciones del mod usen mecanoides hackeados para atacar tu base.</WTH_HackedMechChance_Description>
+	<WTH_MaxHackedMechPoints_Title>Puntos extra máximos por mecanoides hackeados (%)</WTH_MaxHackedMechPoints_Title>
+	<WTH_MaxHackedMechPoints_Description>Esto determina el presupuesto de puntos para desovar mecanoides hackeados enemigos. Si un enemigo aparece con mecanoides hackeados, un número aleatorio entre el mínimo de puntos configurado hasta esta configuración determinará cuánto % de los puntos de raideo estarán disponibles para generar mecanoides. Ejemplo: Si un raideo tiene un presupuesto de 1000 puntos, y esta configuración es puesta en 50%, y el mínimo es 20%, de 200 a 500 puntos valorados en mecanoides hackeados serán generados como adición al raideo original.</WTH_MaxHackedMechPoints_Description>
+	<WTH_MinHackedMechPoints_Title>Mínimo de puntos extra para mecanoides hackeados (%)</WTH_MinHackedMechPoints_Title>
+	<WTH_MinHackedMechPoints_Description>Esto determina el presupuesto de puntos para generar mecanoides hackeados enemigos. Si un enemigo aparece con mecanoides hackeados, un número aleatorio entre esta configuración y el máximo de puntos configurados determinará cuánto % de los puntos de raideo estarán disponibles para generar mecanoides. Ejemplo: Si un raideo tiene un presupuesto de 1000 puntos, y el máximo está puesto con 50% y esta configuración con un 20%, de 200 a 500 puntos valorados en mecanoides hackeados serán generados como adición al raideo original.</WTH_MinHackedMechPoints_Description>
+
+	<WTH_Menu_ClearTable>Limpiar tabla de hackeo</WTH_Menu_ClearTable>
+
+	<WTH_Reason_NotOnTable>No está situado en una instalación de hackeo</WTH_Reason_NotOnTable>
+	<WTH_Reason_MechanoidDowned>Imposible habilitar mecanoide incapacitado</WTH_Reason_MechanoidDowned>
+	<WTH_Reason_PowerLow>Imposible habilitar mecanoide, poder muy bajo (deshabilita la auto-recarga para anular esto)</WTH_Reason_PowerLow>
+	<WTH_Reason_PawnCannotBeDrafted>Imposible habilitar el cinturón de operación del mecanoide estando alistado</WTH_Reason_PawnCannotBeDrafted>
+
+	<WTH_Gizmo_SearchAndDestroy_Label>Destruir modo</WTH_Gizmo_SearchAndDestroy_Label>
+	<WTH_Gizmo_SearchAndDestroy_Description>Activar modo destructor. Automáticamente atacará cualquier enemigo cerca de tu colonia. Al desactivarse, el mecanoide regresará a una plataforma de mecanoide cuando sea posible, o continuar trabajando si tiene el módulo de trabajo instalado.</WTH_Gizmo_SearchAndDestroy_Description>
+	<WTH_Gizmo_AutoRecharge_Label>Auto-recarga</WTH_Gizmo_AutoRecharge_Label>
+	<WTH_Gizmo_AutoRecharge_Description>Con este modo habilitado, los mecanoides automáticamente regresarán a una plataforma para mecanoide cuando tengan la energía baja.</WTH_Gizmo_AutoRecharge_Description>
+
+	<WTH_Gizmo_RemoteControlActivate_Label>Activar</WTH_Gizmo_RemoteControlActivate_Label>
+	<WTH_Gizmo_RemoteControlActivate_Description>Utiliza el cinturón de control de mecanoide para controlar un mecanoide directamente.</WTH_Gizmo_RemoteControlActivate_Description>
+	<WTH_Gizmo_RemoteControlDeactivate_Label>Desactivar</WTH_Gizmo_RemoteControlDeactivate_Label>
+	<WTH_Gizmo_RemoteControlDeactivate_Description>Desactiva el cinturón de control de mecanoide, regresándole el control al mecanoide</WTH_Gizmo_RemoteControlDeactivate_Description>
+
+	<WTH_Gizmo_Regenerate_Label>Regenerar partes del cuerpo</WTH_Gizmo_Regenerate_Label>
+	<WTH_Gizmo_Regenerate_Description>Cuando esto está activo, la plataforma regenará partes del cuerpo faltantes en el mecanoide. Regenerar partes consume un máximo de {0} partes mecánicas por cada parte del cuerpo (partes pequeñas requieren menos). Las partes solo empiezan a regenerarse cuando la máquina no tiene otro daño.</WTH_Gizmo_Regenerate_Description>
+	<WTH_Gizmo_Repair_Label>Reparar mecanoide</WTH_Gizmo_Repair_Label>
+	<WTH_Gizmo_Repair_Description>Cuando esto está activo, la plataforma repara cualquier mecanoide sobre la plataforma al activar sus mecanitas internas al proveer suficiente poder y material con cuál trabajar. Las mecanitas consumen partes mecánicas almacenadas en la plataforma en el proceso.</WTH_Gizmo_Repair_Description>
+
+	<WTH_Gizmo_SelfDestruct_Label>Auto destrucción</WTH_Gizmo_SelfDestruct_Label>
+	<WTH_Gizmo_SelfDestruct_Description>Dejar que el mecanoide se vaya con un bang.</WTH_Gizmo_SelfDestruct_Description>
+
+	<WTH_Gizmo_Mech_Repair_Label>Reparar</WTH_Gizmo_Mech_Repair_Label>
+	<WTH_Gizmo_Mech_Repair_Description>Ordena al mecanoide de usar su brazo reparador para transferir mecanitas cargadas por el módulo de reparación a otras máquinas, reparándolas.</WTH_Gizmo_Mech_Repair_Description>
+	<WTH_Gizmo_SelfRepair_Label>Auto reparación</WTH_Gizmo_SelfRepair_Label>
+	<WTH_Gizmo_SelfRepair_Description>Ordena al mecanoide de activar el módulo de reparación, el cual causa un aumento de energía, activando las mecanitas internas del mecanoide. Éstas empiezan reparando de forma inmediata utilizando las partes almacenads en el módulo.</WTH_Gizmo_SelfRepair_Description>
+
+	<WTH_Gizmo_Mech_EquipBelt_Label>Equipar cinturón</WTH_Gizmo_Mech_EquipBelt_Label>
+	<WTH_Gizmo_Mech_EquipBelt_Description>Ordena a la máquina de utilizar su módulo de cinturón para poder equipar cualquier tipo de cinturón normalmente utilizado por humanoides.</WTH_Gizmo_Mech_EquipBelt_Description>
+
+	<WTH_Reason_AlreadyRepairing>Este mecanoide está ya inyectado con mecanitas reparadoras cargadas.</WTH_Reason_AlreadyRepairing>
+	<WTH_Reason_NeedsMorePower>Al menos {0} de poder es necesario para activar esto.</WTH_Reason_NeedsMorePower>
+	<WTH_Reason_NeedsMoreFuel>Al menos {0} de combustible es necesitado para activar esto.</WTH_Reason_NeedsMoreFuel>
+	<WTH_Reason_NotActivated>Esto no puede ser utilizado con un mecanoide desactivado.</WTH_Reason_NotActivated>
+	<WTH_Reason_NoDamage>No hay daño por reparar.</WTH_Reason_NoDamage>
+
+	<WTH_Alert_EmergencySignalTransmitted_Label>Raideo de mecanoides inminente</WTH_Alert_EmergencySignalTransmitted_Label>
+	<WTH_Alert_EmergencySignalTransmitted_Description>Mecanoides cerca de tu base están respondiendo a la señal de emergencia que fue transmitida y llegarán a tu base pronto.</WTH_Alert_EmergencySignalTransmitted_Description>
+	<WTH_Alert_EmergencySignalCooldown_Label>Mecanoides sospechosos</WTH_Alert_EmergencySignalCooldown_Label>
+	<WTH_Alert_EmergencySignalCooldown_Description>Debido a tu reciente éxito atrayendo mecanoides a tu base al transmitir una señal de emergencia, simplemente ya no hay tantos mecanoides alrededor, y los que quedaron se han vuelto sospechosos. Tienes que esperar un tiempo mientras nuevos mecanoides aparecen y la sospecha desaparezca. Esto puede llegar a tardar hasta un quadrúmero.</WTH_Alert_EmergencySignalCooldown_Description>
+
+
+	<WTH_Alert_NotEnoughPlatforms_Label>No hay suficientes plataformas para mecanoides</WTH_Alert_NotEnoughPlatforms_Label>
+	<WTH_Alert_NotEnoughPlatforms_Description>Tienes más mecanoides hackeados que plataformas para mecanoides en tu base principal. Asegúrate de construir más plataformas.</WTH_Alert_NotEnoughPlatforms_Description>
+	<WTH_Alert_Power_Low_Label>Mecanoides bajos en poder</WTH_Alert_Power_Low_Label>
+	<WTH_Alert_Power_Low_Description>Los siguientes mecanoides están bajos en poder:{0}Desactívalos para que puedan regresar a sus plataformas.</WTH_Alert_Power_Low_Description>
+	<WTH_Alert_Maintenance_Low_Label>Mecanoides pobremente mantenidos</WTH_Alert_Maintenance_Low_Label>
+	<WTH_Alert_Maintenance_Low_Description>El hardware hackeado de los siguiente mecanoides está pobremente mantenido:{0}Asegúrate de que tus hackers les echen un vistazo.</WTH_Alert_Maintenance_Low_Description>
+	<WTH_Alert_Maintenance_VeryLow_Label>Mecanoides pésimamente mantenidos</WTH_Alert_Maintenance_VeryLow_Label>
+	<WTH_Alert_Maintenance_VeryLow_Description>El hardware hackeado de los siguientes mecanoides está pobremente mantenido y poseen un peligro para tu colonia: {0}. El hack puede parar de trabajar en cualquier momento ahora, así que, asegúrate de que los mecanoides sean mantenidos o apagados.</WTH_Alert_Maintenance_VeryLow_Description>
+	<WTH_FactionRestrictions_OK>Permitir</WTH_FactionRestrictions_OK>
+	<WTH_FactionRestrictions_NOK>Prohibir</WTH_FactionRestrictions_NOK>
+	<WTH_FactionRestrictions_Label>Configurar cuáles mecanoides puede cada civilización hackear</WTH_FactionRestrictions_Label>
+	<WTH_FactionRestrictions_Description>Esta configuración te permite configurar cuáles mecanoides son utilizados por cada civilizacion durante raideos</WTH_FactionRestrictions_Description>
+
+	<WTH_MechanoidsSection>Mecanoides</WTH_MechanoidsSection>
+
+	<WTH_Explanation_BonusCapacity>Capacidad bonus para este tipo de peón</WTH_Explanation_BonusCapacity>
+	<WTH_Explanation_NumMechs>Número de mecanoides</WTH_Explanation_NumMechs>
+	<WTH_Explanation_NumPlatforms>Número de plataformas portables</WTH_Explanation_NumPlatforms>
+	<WTH_Explanation_FuelConsumption>Consumo de combustible por plataforma</WTH_Explanation_FuelConsumption>
+	<WTH_Explanation_TotalFuel>Combustible total</WTH_Explanation_TotalFuel>
+	<WTH_Explanation_DaysOfFuel>Días de combustible</WTH_Explanation_DaysOfFuel>
+	<WTH_Explanation_NotEnoughPlatforms>No tienes suficientes plataformas portables de mecanoides para la cantidad de mecanoides seleccionada. Debes brindar uno para cada mecanoide.</WTH_Explanation_NotEnoughPlatforms>
+	<WTH_ExtraInfoKey_DaysOfFuel>Días de combustible (mecanoides)</WTH_ExtraInfoKey_DaysOfFuel>
+
+	<WTH_Warning_NotEnoughPlatforms>Tu caravana no tiene suficientes plataformas para cargar todos los mecanoides. Deberías brindar uno por cada mecanoide, o sino a algunos de ellos se les acabará la energía muy rápido.</WTH_Warning_NotEnoughPlatforms>
+	<WTH_Warning_DaysOfFuel>Tu caravana tiene solo {0} días de combustible para cargar tus mecanoides, puede que se les acabe la energía rápidamente.</WTH_Warning_DaysOfFuel>
+	<WTH_Message_CaravanOutOfFuel>A {0} se le ha acabado el combustible.</WTH_Message_CaravanOutOfFuel>
+	<WTH_Message_CannotDrop>Este equipo está unido al peón, por lo tanto no puedes tirarlo</WTH_Message_CannotDrop>
+	<WTH_Message_EmergencySignalRaidInbound>Los mecanoides alrededor de tu base ya empezaron a reaccionar a la señal de emergencia de antes, y están en camino a tu base. La operación por lo tanto no tiene efecto y la tarea ha sido cancelada.</WTH_Message_EmergencySignalRaidInbound>
+	<WTH_Message_EmgergencySignalRaidCoolingDown>No quedan tantos mecanoides alrededor, y los que quedan se han vuelto sospechosos. La operación por lo tanto no tiene efecto y la tarea ha sido cancelada.</WTH_Message_EmgergencySignalRaidCoolingDown>
+
+	<WTH_Mount>Montar {0}</WTH_Mount>
+	<WTH_Mount_Jobstring>Montando {0}</WTH_Mount_Jobstring>
+
+	<WTH_TextMote_MaintenanceFailed>Mantenimiento fallado (chance de éxito: {0})</WTH_TextMote_MaintenanceFailed>
+
+	<!-- added in v1.2 -->
+	<WTH_Gizmo_Work_Label>Modo de trabajo</WTH_Gizmo_Work_Label>
+	<WTH_Gizmo_Work_Description>Activa el modo de trabajo para el mecanoide. Con esto activado, el mecanoide automáticamente empezará si hay trabajos que pueda realizar, y solo si su poder es mayor al límite mínimo de poder configurado para trabajar.</WTH_Gizmo_Work_Description>
+	<WTH_Gizmo_WorkThreshold_Label>Min. poder de trabajo</WTH_Gizmo_WorkThreshold_Label>
+	<WTH_Gizmo_WorkThreshold_Description>Configura el porcentaje mínimo de poder que el mecanoide necesita tener antes de que sea permitido abandonar su plataforma para empezar a trabajar. El mecanoide entonces trabajará cuando su poder casi se agote (si es que la auto recarga está activada para la máquina). Es recomendable configurarlo con una cantidad suficiente para que el mecanoide tenga energía suficiente con cual trabajar.</WTH_Gizmo_WorkThreshold_Description>
+	<WTH_SetCanStartWorkThreshold>Poder necesitado para empezar a trabajar: {0} %</WTH_SetCanStartWorkThreshold>
+	<WTH_Gizmo_SetMechanoidOwner_Description>Asignar dueño de esta plataforma a un mecanoide específico.</WTH_Gizmo_SetMechanoidOwner_Description>
+	<WTH_UninstallModule>desinstalar {0}</WTH_UninstallModule>
+	<WTH_UninstallModule_Jobstring>desinstalando {0}</WTH_UninstallModule_Jobstring>
+	<WTH_StatDrawEntry_ArmorFactor>Armadura</WTH_StatDrawEntry_ArmorFactor>
+	<WTH_StatDrawEntry_BatteryCapacityFactor>Capacidad de batería</WTH_StatDrawEntry_BatteryCapacityFactor>
+	<WTH_StatDrawEntry_PowerRateFactor>Drenaje de poder</WTH_StatDrawEntry_PowerRateFactor>
+	<WTH_Reason_AlreadyOverdriving>Ya está en modo de sobremarcha</WTH_Reason_AlreadyOverdriving>
+	<WTH_Gizmo_Overdrive_Label>Sobremarcha</WTH_Gizmo_Overdrive_Label>
+	<WTH_Gizmo_Overdrive_Description>Activar módulo de sobremarcha. Cuando este módulo es activado, realiza overclocking en el mecanoide, sobremarchando su red de poder. Esto resulta en un gran aumento de velocidad, frecuencia de tiro, y conciencia del mecanoide por un periódo de tiempo corto. El procedimiento utiliza mucho poder y empuja el hardware lejos de sus límites de seguridad, y por lo tanto puede provocar consecuencias no previstas.</WTH_Gizmo_Overdrive_Description>
+	<WTH_Explanation_BodySizeContr>Contribución al tamaño del cuerpo</WTH_Explanation_BodySizeContr>
+	<WTH_Explanation_PowerFallModifier>Deterioro de poder (determinado en la configuración del mod)</WTH_Explanation_PowerFallModifier>
+	<WTH_Explanation_PowerFromNetwork>Poder de la red</WTH_Explanation_PowerFromNetwork>
+	<WTH_Explanation_PowerFromFuel>Poder de combustible</WTH_Explanation_PowerFromFuel>
+	<WTH_Explanation_ConsumptionRate>Velocidad de consumo de la plataforma</WTH_Explanation_ConsumptionRate>
+	<WTH_Explanation_RepairConsumptionModifier>Modificador de consumo de reparación (determinado en la configuración del mod)</WTH_Explanation_RepairConsumptionModifier>
+	<WTH_Letter_OverdriveFailed1_Description>Algo se quebró en la cabeza del mecanoide llamado {0} debido al módulo de sobremarcha superando los límites de seguridad de hardware y provocando así cortos circuitos en el mecanoide. Mantenimiento urgente necesario.</WTH_Letter_OverdriveFailed1_Description>
+	<WTH_Letter_MediumMaintenanceDamage_Label>Hack de hardware dañado</WTH_Letter_MediumMaintenanceDamage_Label>
+	<WTH_Letter_MediumMaintenanceDamage_Description>El módulo de sobremarcha empujó los límites del mecanoide llamado {0} un poco, posiblemente dañando los hacks sobre el hardware en vez de sobremarchar al mecanoide. Mantenimiento requerido pronto.</WTH_Letter_MediumMaintenanceDamage_Description>
+	<WTH_Letter_OverdiveGoneTooFar_Label>Sobremarcha sobrepasándose</WTH_Letter_OverdiveGoneTooFar_Label>
+	<WTH_Letter_OverdiveGoneTooFar_Description>Como efecto inesperado debido a las altas corrientes eléctricas utilizadas por el módulo de sobremarcha del mecanoide llamado {0}, ¡el módulo de sobremarcha se ha sobrecargado a sí mismo! El módulo tiene un efecto mayor que el esperado, sin embargo, consume cantidades desorbitantes de poder. Esto puede llegar a ser peligroso para mecanoides con daños internos.</WTH_Letter_OverdiveGoneTooFar_Description>
+	<WTH_Warning_WorkThreshold>Configurando el límite así de bajo solo tiene sentido si la auto recarga está deshabilitada para la máquina, y si quieres que la máquina trabaje hasta colapsar. Lee el botón de Descripción si esto no está claro.</WTH_Warning_WorkThreshold>
+	<WTH_Alert_LowMechanoidParts>Cantidad de partes de mecánicas baja</WTH_Alert_LowMechanoidParts>
+	<WTH_Alert_LowMechanoidPartsDesc>Solo tienes {0} partes mecánicas en el almacenamiento para la manutención de tus mecanoides.</WTH_Alert_LowMechanoidPartsDesc>
+	<WTH_Alert_NoMechanoidPartsDesc>Ya no tienes partes mecánicas en tu almacenamiento para la manutención de tus mecanoides.</WTH_Alert_NoMechanoidPartsDesc>
+	<WTH_Alert_LowMechanoidPartsSolution>Este problema puede resolverse al:
+- Comprarle partes mecánicas a otras ciudades o de algunos negociantes.
+- Realizando búsquedas o 'quests' en el mundo con una mesa portable de desambleo (checa la investigación de LMRS-tuning si quieres encontrar activamente colectas o 'quests' mundiales)
+- Atrayendo mecanoides a tu base al hackear una nave de colmenas utilizando las instalaciones de hackeo de naves de colmenas.</WTH_Alert_LowMechanoidPartsSolution>
+
+	<!-- end added in v1.2 -->
+
+
+
+</LanguageData>

@@ -35,7 +35,7 @@ namespace WhatTheHack.Needs
             get
             {
                 float combatPowerCapped = pawn.kindDef.combatPower <= 10000 ? pawn.kindDef.combatPower : 300;
-                return Mathf.RoundToInt(combatPowerCapped / 50f);
+                return Mathf.RoundToInt(combatPowerCapped / 30f);
             }
         }
         public void RestoreUsingParts(int partCount)

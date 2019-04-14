@@ -14,7 +14,7 @@ namespace WhatTheHack.WorldIncidents
 {
     public class GenStep_HiveTemple : GenStep
     {
-        private int Size = new IntRange(12, 32).RandomInRange;
+        private int size = new IntRange(16, 28).RandomInRange;
 
         private static List<CellRect> possibleRects = new List<CellRect>();
 
@@ -39,7 +39,8 @@ namespace WhatTheHack.WorldIncidents
             thingMakerParams.filter.SetAllow(WTH_DefOf.WTH_MechanoidData, true);
 
             resolveParams.thingSetMakerParams = thingMakerParams;
-            resolveParams.mechanoidsCount =  Math.Max(1, Mathf.RoundToInt((genStepParams.siteCoreOrPart.parms.threatPoints * 1.3f) / 200f));
+            float sizeFactor = size / 20f;
+            resolveParams.mechanoidsCount =  Math.Max(1, Mathf.RoundToInt((genStepParams.siteCoreOrPart.parms.threatPoints * sizeFactor) / 100f));
 
             BaseGen.globalSettings.map = map;
             BaseGen.globalSettings.minBuildings = 1;
@@ -50,10 +51,10 @@ namespace WhatTheHack.WorldIncidents
 
         private CellRect getRect(CellRect centralPoint, Map map)
         {
-            possibleRects.Add(item: new CellRect(minX: centralPoint.minX - 1 - Size, minZ: centralPoint.CenterCell.z - 8, width: Size, height: Size));
-            possibleRects.Add(item: new CellRect(minX: centralPoint.maxX + 1, minZ: centralPoint.CenterCell.z - 8, width: Size, height: Size));
-            possibleRects.Add(item: new CellRect(minX: centralPoint.CenterCell.x - 8, minZ: centralPoint.minZ - 1 - Size, width: Size, height: Size));
-            possibleRects.Add(item: new CellRect(minX: centralPoint.CenterCell.x - 8, minZ: centralPoint.maxZ + 1, width: Size, height: Size));
+            possibleRects.Add(item: new CellRect(minX: centralPoint.minX - 1 - size, minZ: centralPoint.CenterCell.z - 8, width: size, height: size));
+            possibleRects.Add(item: new CellRect(minX: centralPoint.maxX + 1, minZ: centralPoint.CenterCell.z - 8, width: size, height: size));
+            possibleRects.Add(item: new CellRect(minX: centralPoint.CenterCell.x - 8, minZ: centralPoint.minZ - 1 - size, width: size, height: size));
+            possibleRects.Add(item: new CellRect(minX: centralPoint.CenterCell.x - 8, minZ: centralPoint.maxZ + 1, width: size, height: size));
             CellRect mapRect = new CellRect(minX: 0, minZ: 0, width: map.Size.x, height: map.Size.z);
             possibleRects.RemoveAll(match: (CellRect x) => !x.FullyContainedWithin(within: mapRect));
             if (possibleRects.Any<CellRect>())

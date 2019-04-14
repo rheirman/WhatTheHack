@@ -93,12 +93,12 @@
 		<li>WTH_ExtractBrainData</li> 
 	</value>
 </Operation>
-<!--Add mechanoid specific operations-->
+<!--Add mechanoid specific operations, we take into account that some mods don't use BaseMechanoid, that some mods define the raceprops in both their base as in the def itself, and we take into account that mechs could, or could not already have recipes.-->
 <Operation Class="PatchOperationSequence">
 	<success>Always</success>
 	<operations>
 		<li Class="PatchOperationAdd">
-			<xpath>Defs/ThingDef[race/fleshType = "Mechanoid"]/recipes</xpath>
+			<xpath>Defs/ThingDef[@ParentName="BaseMechanoid" or (race/fleshType = "Mechanoid" and not (@ParentName="BaseMechanoid") and not (@Name="BaseMechanoid"))]/recipes</xpath>
 			<value>
 				<li>WTH_HackMechanoid</li>
 				<li>WTH_InduceEmergencySignal</li>
@@ -128,7 +128,7 @@
 	<success>Always</success>
 	<operations>
 		<li Class="PatchOperationAdd">
-			<xpath>Defs/ThingDef[race/fleshType = "Mechanoid" and not (recipes)]</xpath>
+			<xpath>Defs/ThingDef[@ParentName="BaseMechanoid" or (race/fleshType = "Mechanoid" and not (@ParentName="BaseMechanoid") and not (@Name="BaseMechanoid"))]</xpath>
 			<value>
 				<recipes>
 					<li>WTH_HackMechanoid</li>
@@ -178,7 +178,7 @@
 	<success>Always</success>
 	<operations>
 		<li Class="PatchOperationAdd">
-			<xpath>Defs/ThingDef[race/fleshType = "Mechanoid"]/comps[not(descendant::li[@Class = "CompProperties_Refuelable"])]</xpath>
+			<xpath>Defs/ThingDef[@ParentName="BaseMechanoid" or (race/fleshType = "Mechanoid" and not (@ParentName="BaseMechanoid") and not (@Name="BaseMechanoid"))]/comps[not(descendant::li[@Class = "CompProperties_Refuelable"])]</xpath>
 			<value>
 				<li Class="CompProperties_Refuelable">
 				    <fuelLabel>Loaded mechanoid parts</fuelLabel>
@@ -201,7 +201,7 @@
 	<success>Always</success>
 	<operations>
 		<li Class="PatchOperationAdd">
-			<xpath>Defs/ThingDef[race/fleshType = "Mechanoid" and not(comps)]</xpath>
+			<xpath>Defs/ThingDef[(@ParentName="BaseMechanoid" or (race/fleshType = "Mechanoid" and not (@ParentName="BaseMechanoid") and not (@Name="BaseMechanoid"))) and not(comps)]</xpath>
 			<value>
 				<comps>
 					<li Class="CompProperties_Refuelable">
