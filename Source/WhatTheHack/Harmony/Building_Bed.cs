@@ -16,14 +16,24 @@ namespace WhatTheHack.Harmony
     {
         static void Postfix(Building_Bed __instance, ref IntVec3 __result)
         {
-            if(__instance is Building_MechanoidPlatform)
+            if(__instance is Building_BaseMechanoidPlatform)
             {
                 __result = __instance.InteractionCell;
             }       
         }
     }
-    
-    
+
+    [HarmonyPatch(typeof(Building_Bed), "get_MaxAssignedPawnsCount")]
+    static class Building_Bed_get_MaxAssignedPawnsCount
+    {
+        static void Postfix(Building_Bed __instance, ref int __result)
+        {
+            if (__instance is Building_BaseMechanoidPlatform) {
+                __result = 1;
+            }
+        }
+    }
+
     [HarmonyPatch(typeof(Building_Bed), "get_AssigningCandidates")]
     static class Building_Bed_AssigningCandidates
     {

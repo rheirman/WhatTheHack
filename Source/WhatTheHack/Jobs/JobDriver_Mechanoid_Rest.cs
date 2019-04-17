@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using Harmony;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,8 +58,13 @@ namespace WhatTheHack.Jobs
                 if (RestingPlace is Building_BaseMechanoidPlatform && pawn.ownership.OwnedBed != RestingPlace)
                 {
                    ReadyForNextToil();
-                }          
-                
+                }
+                if (RestingPlace.owners.FirstOrDefault((Pawn p) => p != pawn) is Pawn otherPawn)
+                {
+                    pawn.ownership.UnclaimBed();
+                    ReadyForNextToil();
+                }
+
                 if (pawn.health.hediffSet.HasNaturallyHealingInjury() || pawn.OnHackingTable())
                 {
                     pawn.jobs.posture = PawnPosture.LayingInBed;

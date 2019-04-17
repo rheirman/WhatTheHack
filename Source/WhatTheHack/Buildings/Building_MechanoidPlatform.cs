@@ -81,6 +81,5 @@ namespace WhatTheHack.Buildings
             Scribe_Values.Look(ref repairActive, "repairActive", true);
         }
 
-
     }
 }

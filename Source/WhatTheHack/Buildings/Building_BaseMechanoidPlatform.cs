@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using Harmony;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,8 +35,20 @@ namespace WhatTheHack.Buildings
                     curOccupant.jobs.StartJob(new Job(WTH_DefOf.WTH_Mechanoid_Rest, this) {count = 1}, JobCondition.InterruptForced);
                 }
             }
-            Medical = false;
+            if (this.Medical)
+            {
+                Traverse.Create(this).Field("medicalInt").SetValue(false);
+            }
+
+            //Medical = false;
         }
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Traverse.Create(this).Field("medicalInt").SetValue(false);
+
+        }
+
         public override IEnumerable<Gizmo> GetGizmos()
         {
             foreach(Gizmo gizmo in base.GetGizmos())
@@ -54,5 +67,6 @@ namespace WhatTheHack.Buildings
                 hotKey = KeyBindingDefOf.Misc3
             };
         }
+
     }
 }

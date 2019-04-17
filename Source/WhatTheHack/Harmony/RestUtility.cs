@@ -12,6 +12,7 @@ using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
 {
+
     [HarmonyPatch(typeof(RestUtility), "FindBedFor")]
     [HarmonyPatch(new Type[] { typeof(Pawn), typeof(Pawn), typeof(bool), typeof(bool), typeof(bool) })]
     class RestUtility_FindBedFor
