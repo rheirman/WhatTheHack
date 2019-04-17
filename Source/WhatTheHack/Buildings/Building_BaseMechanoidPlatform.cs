@@ -34,6 +34,7 @@ namespace WhatTheHack.Buildings
                     curOccupant.jobs.StartJob(new Job(WTH_DefOf.WTH_Mechanoid_Rest, this) {count = 1}, JobCondition.InterruptForced);
                 }
             }
+            Medical = false;
         }
         public override IEnumerable<Gizmo> GetGizmos()
         {

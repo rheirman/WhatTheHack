@@ -1,6 +1,6 @@
 <Defs>
   <DesignationCategoryDef>
-    <defName>Hacking</defName>
+    <defName>WTH_Hacking</defName>
     <label>hacking</label>
     <order>99</order>
     <specialDesignatorClasses>

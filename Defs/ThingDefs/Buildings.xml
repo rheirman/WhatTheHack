@@ -47,7 +47,7 @@
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <hasInteractionCell>true</hasInteractionCell>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-    <designationCategory>Hacking</designationCategory>
+    <designationCategory>WTH_Hacking</designationCategory>
     <surfaceType>Item</surfaceType>
     <researchPrerequisites>
       <li>WTH_HackingBasics</li>
@@ -92,7 +92,7 @@
       <Cleanliness>-2</Cleanliness>
     </statBases>
     <size>(5,2)</size>
-    <designationCategory>Hacking</designationCategory>
+    <designationCategory>WTH_Hacking</designationCategory>
     <passability>PassThroughOnly</passability>
     <pathCost>70</pathCost>
     <hasInteractionCell>True</hasInteractionCell>
@@ -180,7 +180,7 @@
     <pathCost>70</pathCost>
     <hasInteractionCell>True</hasInteractionCell>
     <interactionCellOffset>(0,0,0)</interactionCellOffset>
-    <designationCategory>Hacking</designationCategory>
+    <designationCategory>WTH_Hacking</designationCategory>
     <surfaceType>Item</surfaceType>
 	 <researchPrerequisites>
       <li>WTH_HackingBasics</li>
@@ -252,7 +252,7 @@
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(1,0,0)</interactionCellOffset>
-		<designationCategory>Hacking</designationCategory>
+		<designationCategory>WTH_Hacking</designationCategory>
 		<surfaceType>Item</surfaceType>
 		 <researchPrerequisites>
 		  <li>WTH_HackingBasics</li>
@@ -284,7 +284,7 @@
     <ThingDef ParentName="FurnitureBase">
 		<defName>WTH_PortableDisassemblingBench</defName>
 		<thingClass>Building_WorkTable</thingClass>
-	    <designationCategory>Hacking</designationCategory>
+	    <designationCategory>WTH_Hacking</designationCategory>
 		<label>portable disassembling bench</label>
 		<description>A sturdy and portable bench that contains everything needed for disassembling the mechanoids that didn't welcome your colonists with much hospitality during their trip. Its tools don't depend on power, which is convenient for trips, but also makes it slightly less efficient.</description>
 		<graphicData>
@@ -417,7 +417,7 @@
     <placeWorkers>
       <li>PlaceWorker_NotUnderRoof</li>
     </placeWorkers>
-	<designationCategory>Hacking</designationCategory>
+	<designationCategory>WTH_Hacking</designationCategory>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	<researchPrerequisites><li>WTH_HiveshipHackingFacility</li></researchPrerequisites>
@@ -446,7 +446,7 @@
     <castEdgeShadows>true</castEdgeShadows>
     <fillPercent>0.5</fillPercent>
     <designationHotKey>Misc4</designationHotKey>
-    <designationCategory>Hacking</designationCategory>
+    <designationCategory>WTH_Hacking</designationCategory>
     <canOverlapZones>false</canOverlapZones>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
     <statBases>
