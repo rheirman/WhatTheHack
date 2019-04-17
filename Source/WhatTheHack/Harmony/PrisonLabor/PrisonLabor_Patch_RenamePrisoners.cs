@@ -42,8 +42,9 @@ namespace WhatTheHack.Harmony.PrisonLabour
             }
         }
 
-        public static void Stub(Pawn pawn)
+        public static bool Stub(Pawn pawn)
         {
+            return false;
             //This is patched when harmony can't find the CE method ShouldReload. 
         }
     }
