@@ -45,10 +45,29 @@ namespace WhatTheHack.Harmony
                 bonus += p.def.GetModExtension<DefModExtension_PawnMassCapacity>().bonusMassCapacity;
             }
             __result += bonus;
+            float offset = 0;
+            if(explanation == null)
+            {
+                explanation = new StringBuilder();
+            }
             if (explanation != null && bonus > 0)
             {
-                explanation.AppendLine();
+                explanation.AppendLine("- " + p.def.label + ": " + bonus.ToStringByStyle(ToStringStyle.Integer, ToStringNumberSense.Offset));
             }
+            if (p.health != null && p.health.hediffSet != null)
+            {
+                foreach (Hediff h in p.health.hediffSet.hediffs)
+                {
+                    if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.carryingCapacityOffset != 0)
+                    {
+                        explanation.AppendLine();
+                        explanation.AppendLine("- " + h.def.label + ": " + modExt.carryingCapacityOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset));
+                        offset += modExt.carryingCapacityOffset;
+                    }
+                }
+            }
+            __result += offset * __result;
+
         }
     }
 }

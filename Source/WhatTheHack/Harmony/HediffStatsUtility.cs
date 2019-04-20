@@ -46,6 +46,11 @@ namespace WhatTheHack.Harmony
                     yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, StatDefOf.MeleeWeapon_CooldownMultiplier.label, modExt.firingRateOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset), 0);
                     yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, StatDefOf.AimingDelayFactor.label, modExt.firingRateOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset), 0);
                 }
+                
+                if(modExt.carryingCapacityOffset != 0)
+                {
+                    yield return new StatDrawEntry(StatCategoryDefOf.Basics, StatDefOf.CarryingCapacity.label, modExt.carryingCapacityOffset.ToStringByStyle(ToStringStyle.PercentZero, ToStringNumberSense.Offset),0);
+                }
             }
         }
     }
