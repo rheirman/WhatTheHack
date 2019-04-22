@@ -40,12 +40,12 @@ namespace WhatTheHack.Harmony
         private static void MaintainMechsIfNeeded(Caravan caravan, List<Thing> allParts, List<Pawn> allHackedMechs)
         {
             Thing partItem = allParts.First();
-            List<Pawn> allPawnsCapableOfMaintenance = caravan.AllThings.Where((Thing t) => t is Pawn pawn && !pawn.Dead && !pawn.Downed && pawn.workSettings.WorkIsActive(WTH_DefOf.WTH_Hack)).Cast<Pawn>().ToList();
+            List<Pawn> allPawnsCapableOfMaintenance = caravan.AllThings.Where((Thing t) => t is Pawn pawn && !pawn.Dead && !pawn.Downed).Cast<Pawn>().ToList();
             if (allPawnsCapableOfMaintenance.NullOrEmpty())
             {
                 return;
             }
-            List<Pawn> allMechsNeedingMaintenance = allHackedMechs.Where((Pawn p) => p.needs.TryGetNeed<Need_Maintenance>() is Need_Maintenance needM && needM.CurCategory >= MaintenanceCategory.LowMaintenance).ToList();
+            List<Pawn> allMechsNeedingMaintenance = allHackedMechs.Where((Pawn p) => p.needs.TryGetNeed<Need_Maintenance>() is Need_Maintenance needM && needM.CurLevelPercentage < 0.5f).ToList();
             if (allMechsNeedingMaintenance.NullOrEmpty())
             {
                 return;
