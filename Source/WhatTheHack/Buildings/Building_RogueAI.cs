@@ -59,7 +59,6 @@ namespace WhatTheHack.Buildings
 
         private bool warnedPlayerAboutMood = false;
 
-
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);

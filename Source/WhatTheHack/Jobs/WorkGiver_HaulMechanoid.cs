@@ -30,6 +30,10 @@ namespace WhatTheHack.Jobs
         {
             Job result = null;
             Pawn mech = t as Pawn;
+            if (pawn == mech)
+            {
+                return null;
+            }
             if(mech != null && HaulAIUtility.PawnCanAutomaticallyHaulFast(pawn, t, forced))
             {
                 Building_HackingTable closestAvailableTable = Utilities.GetAvailableHackingTable(pawn, mech);
