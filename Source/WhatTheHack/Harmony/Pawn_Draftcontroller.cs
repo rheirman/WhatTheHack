@@ -67,6 +67,10 @@ namespace WhatTheHack.Harmony
                 {
                     toggleCommand.Disable("WTH_Reason_PowerLow".Translate());
                 }
+                if (__instance.pawn.ShouldBeMaintained())
+                {
+                    toggleCommand.Disable("WTH_Reason_MaintenanceLow".Translate());
+                }
             }
         }
 

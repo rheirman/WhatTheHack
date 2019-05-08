@@ -252,6 +252,7 @@ namespace WhatTheHack
                 Need_Power powerNeed = pawn.needs.TryGetNeed<Need_Power>();
                 if(pawn.Downed ||
                     pawn.ShouldRecharge() ||
+                    pawn.ShouldBeMaintained() || 
                     (pawn.OnBaseMechanoidPlatform() && powerNeed.CurLevelPercentage <= powerNeed.canStartWorkThreshold) ||
                     pawn.OnHackingTable())
                 {

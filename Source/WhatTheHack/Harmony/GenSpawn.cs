@@ -7,6 +7,7 @@ using System.Reflection.Emit;
 using System.Text;
 using Verse;
 using WhatTheHack.Comps;
+using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
 {
@@ -39,6 +40,12 @@ namespace WhatTheHack.Harmony
             if(newThing.def == WTH_DefOf.WTH_TableMechanoidWorkshop)
             {
                 LessonAutoActivator.TeachOpportunity(WTH_DefOf.WTH_Modification, OpportunityType.Important);
+            }
+            //disable mechs on map arrival
+            if (!respawningAfterLoad && newThing is Pawn pawn && pawn.IsHacked() && pawn.Faction == Faction.OfPlayer && Base.Instance.GetExtendedDataStorage() is ExtendedDataStorage store)
+            {
+                ExtendedPawnData extendedPawnData = store.GetExtendedDataFor(pawn);
+                extendedPawnData.isActive = false;
             }
         }
 
