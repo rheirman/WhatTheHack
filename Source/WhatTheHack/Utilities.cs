@@ -89,7 +89,7 @@ namespace WhatTheHack
         public static bool IsBelt(ApparelProperties apparel)
         {
             //Apparel is a belt when it can only be attached to a waist and nothing else. 
-            if (apparel != null && apparel.bodyPartGroups.Count == 1 && apparel.bodyPartGroups[0] == WTH_DefOf.Waist)
+            if (apparel != null && apparel.layers.Contains(ApparelLayerDefOf.Belt))
             {
                 return true;
             }
