@@ -15,6 +15,10 @@ namespace WhatTheHack.ThinkTree
             {
                 return true;
             }
+            else if (pawn.ShouldRecharge() || pawn.ShouldBeMaintained())
+            {
+                return true;
+            }
             else if (HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn) && pawn.OnHackingTable())
             {
                 return true;

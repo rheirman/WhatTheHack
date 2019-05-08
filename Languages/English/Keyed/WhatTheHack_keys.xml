@@ -428,7 +428,12 @@ You can repeat this operation as many times as needed as a means to get more mec
 - Luring mechanoids to your base by hacking a hive-ship using the hive-ship hacking facility.</WTH_Alert_LowMechanoidPartsSolution>
 	
 	<!-- end added in v1.2 -->
+	<!-- added in v1.2.6 --> 
+	<WTH_Gizmo_MaintenanceThreshold_Label>Min. Maintenance</WTH_Gizmo_MaintenanceThreshold_Label>
+	<WTH_Gizmo_MaintenanceThreshold_Description>If the maintenance bar of a mechanoid is below the threshold set with this button, it'll return to its platform for maintenance. Mechanoids that are on their platform, are always maintained when their maintenance is below 50%.</WTH_Gizmo_MaintenanceThreshold_Description>
+	<WTH_SetMaintenanceThreshold>Minimum maintenance: {0} %</WTH_SetMaintenanceThreshold>	
+	<WTH_Reason_MaintenanceLow>Maintenance is lower than the configured minimum maintenance threshold. Lower this threshold, or maintain the mechanoid.</WTH_Reason_MaintenanceLow>
 	
-	
+	<!-- end added in v1.2.6 --> 
 	
 </LanguageData>

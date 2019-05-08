@@ -22,29 +22,6 @@ namespace WhatTheHack.Harmony
         {
 
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-
-            if (!pawn.RaceProps.IsMechanoid)
-            {
-                return;
-            }
-
-            ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
-            if (store != null)
-            {
-                //de-activate if should auto recharge and power is very low. 
-                ExtendedPawnData pawnData = store.GetExtendedDataFor(pawn);
-                if (pawn.ShouldRecharge() &&
-                    pawn.IsActivated()
-                    )
-                {
-                    pawn.drafter.Drafted = false;
-                    pawnData.isActive = false;
-                }
-            }
-            if (pawn.Downed)
-            {
-                return;
-            }
             if(pawn.IsHacked() && pawn.IsActivated() && pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_TargetingHackedPoorly))
             {
                 HackedPoorlyEvent(pawn);

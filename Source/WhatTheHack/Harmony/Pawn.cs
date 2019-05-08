@@ -140,6 +140,7 @@ namespace WhatTheHack.Harmony
             ExtendedPawnData pawnData = store.GetExtendedDataFor(__instance);
             gizmoList.Add(CreateGizmo_SearchAndDestroy(__instance, pawnData));
             Need_Power powerNeed = __instance.needs.TryGetNeed<Need_Power>();
+            Need_Maintenance maintenanceNeed = __instance.needs.TryGetNeed<Need_Maintenance>();
             if (powerNeed != null)
             {
                 gizmoList.Add(CreateGizmo_AutoRecharge(__instance, powerNeed));
@@ -163,6 +164,10 @@ namespace WhatTheHack.Harmony
                 {
                     gizmoList.Add(CreateGizmo_WorkThreshold(__instance, powerNeed));
                 }
+            }
+            if(maintenanceNeed != null)
+            {
+                gizmoList.Add(CreateGizmo_MaintenanceThreshold(__instance, maintenanceNeed));
             }
             if (hediffSet.HasHediff(WTH_DefOf.WTH_SelfDestruct))
             {
@@ -244,6 +249,22 @@ namespace WhatTheHack.Harmony
             return gizmo;
         }
 
+        private static Gizmo CreateGizmo_MaintenanceThreshold(Pawn __instance, Need_Maintenance maintenanceNeed)
+        {
+            string disabledReason = "";
+            bool disabled = false;
+            Gizmo gizmo = new Command_SetMaintenanceThreshold
+            {
+                maintenanceNeed = maintenanceNeed,
+                defaultLabel = "WTH_Gizmo_MaintenanceThreshold_Label".Translate(),
+                defaultDesc = "WTH_Gizmo_MaintenanceThreshold_Description".Translate(),
+                disabled = disabled,
+                disabledReason = disabledReason,
+                icon = ContentFinder<Texture2D>.Get(("UI/" + "MechMaintenanceThreshold"), true),
+            };
+            return gizmo;
+        }
+
         private static Gizmo CreateGizmo_SearchAndDestroy(Pawn __instance, ExtendedPawnData pawnData)
         {
             string disabledReason = "";
@@ -257,6 +278,11 @@ namespace WhatTheHack.Harmony
             {
                 disabled = true;
                 disabledReason = "WTH_Reason_PowerLow".Translate();
+            }
+            else if (__instance.ShouldBeMaintained())
+            {
+                disabled = true;
+                disabledReason = "WTH_Reason_MaintenanceLow".Translate();
             }
             Gizmo gizmo = new Command_Toggle
             {

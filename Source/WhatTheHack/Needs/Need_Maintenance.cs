@@ -10,10 +10,10 @@ using WhatTheHack.ThinkTree;
 
 namespace WhatTheHack.Needs
 {
-    class Need_Maintenance : Need
+    public class Need_Maintenance : Need
     {
         private float lastLevel = 0;
-
+        public float maintenanceThreshold = 0.2f;
         public Need_Maintenance(Pawn pawn) : base(pawn)
         {
             
@@ -204,6 +204,7 @@ namespace WhatTheHack.Needs
         {
             base.ExposeData();
             Scribe_Values.Look<float>(ref lastLevel, "lastLevel");
+            Scribe_Values.Look<float>(ref maintenanceThreshold, "maintenanceThreshold", 0.2f);
         }
 
         private static void UnHackMechanoid(Pawn pawn)

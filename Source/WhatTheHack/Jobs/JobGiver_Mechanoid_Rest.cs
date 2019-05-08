@@ -6,6 +6,7 @@ using System.Text;
 using Verse;
 using Verse.AI;
 using WhatTheHack.Buildings;
+using WhatTheHack.Storage;
 
 namespace WhatTheHack.Jobs
 {
@@ -14,7 +15,12 @@ namespace WhatTheHack.Jobs
         protected override Job TryGiveJob(Pawn pawn)
         {
             Job job = null;
-
+            if (pawn.IsActivated() && (pawn.ShouldRecharge() || pawn.ShouldBeMaintained()))
+            {
+                pawn.drafter.Drafted = false;
+                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+                pawnData.isActive = false;
+            }
             if (pawn.OnBaseMechanoidPlatform() || pawn.OnHackingTable())
             {
                 job = new Job(WTH_DefOf.WTH_Mechanoid_Rest, pawn.CurrentBed());

@@ -70,6 +70,7 @@
     <Compile Include="Buildings\Building_PortableChargingPlatform.cs" />
     <Compile Include="Buildings\Building_RogueAI.cs" />
     <Compile Include="Buildings\MinifiedThing_Custom.cs" />
+    <Compile Include="Command_SetMaintenanceThreshold.cs" />
     <Compile Include="Command_SetWorkThreshold.cs" />
     <Compile Include="Comps\CompHibernatable_MechanoidBeacon.cs" />
     <Compile Include="Comps\CompMountable.cs" />
