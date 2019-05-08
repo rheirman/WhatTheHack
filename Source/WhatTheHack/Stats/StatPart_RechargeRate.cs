@@ -47,10 +47,6 @@ namespace WhatTheHack.Stats
                 {
                     val += refuelableComp.Props.fuelConsumptionRate * fuelToPowerFactor;
                 }
-                else
-                {
-                    Log.Message("refuelableComp is null");
-                }
             }
             if (Base.powerChargeModifier != 1)
             {

@@ -58,7 +58,6 @@ namespace WhatTheHack.Recipes
         protected override void HackingFailEvent(Pawn hacker, Pawn hackee, BodyPartRecord part, Random r)
         {
             base.HackingFailEvent(hacker, hackee, part, r);
-            Log.Message("hackee.LabelShort: " + hackee.LabelShort);
             Messages.Message("MessageMedicalOperationFailureMinor".Translate(hacker.LabelShort, hackee.def.label, hacker.Named("SURGEON"), hackee.Named("PATIENT")), hackee, MessageTypeDefOf.NegativeHealthEvent, true);
             HealthUtility.GiveInjuriesOperationFailureMinor(hackee, part);
             foreach (IngredientCount ic in recipe.ingredients)

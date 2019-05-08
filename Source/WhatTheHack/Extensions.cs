@@ -237,9 +237,6 @@ namespace WhatTheHack
         {
             if (pawn.needs.TryGetNeed<Need_Maintenance>() is Need_Maintenance maintenanceNeed)
             {
-                Log.Message("maintenanceNeed.CurLevelPercentage: " + maintenanceNeed.CurLevelPercentage);
-                Log.Message("maintenanceNeed.maintenanceThreshold: " + maintenanceNeed.maintenanceThreshold);
-
                 return maintenanceNeed.CurLevelPercentage < maintenanceNeed.maintenanceThreshold;
             }
             return false;

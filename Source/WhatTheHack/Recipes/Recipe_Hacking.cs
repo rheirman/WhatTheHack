@@ -116,7 +116,6 @@ namespace WhatTheHack.Recipes
                     {
                         hackee.Kill(null, null);
                     }
-                    Log.Message("hackee.LabelShort: " + hackee.LabelShort);
                     Messages.Message("MessageMedicalOperationFailureFatal".Translate(hacker.LabelShort, hackee.LabelShort, this.recipe.LabelCap, hacker.Named("SURGEON"), hackee.Named("PATIENT")), hackee, MessageTypeDefOf.NegativeHealthEvent, true);
                 }
                 else
