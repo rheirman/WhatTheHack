@@ -116,12 +116,8 @@ namespace WhatTheHack.Recipes
                     {
                         hackee.Kill(null, null);
                     }
-                    Messages.Message("MessageMedicalOperationFailureFatal".Translate(new object[]
-                    {
-                        hacker.LabelShort,
-                        hackee.LabelShort,
-                        this.recipe.LabelCap
-                    }), hackee, MessageTypeDefOf.NegativeHealthEvent, true);
+                    Log.Message("hackee.LabelShort: " + hackee.LabelShort);
+                    Messages.Message("MessageMedicalOperationFailureFatal".Translate(hacker.LabelShort, hackee.LabelShort, this.recipe.LabelCap, hacker.Named("SURGEON"), hackee.Named("PATIENT")), hackee, MessageTypeDefOf.NegativeHealthEvent, true);
                 }
                 else
                 {
@@ -133,6 +129,7 @@ namespace WhatTheHack.Recipes
         }
 
         protected virtual void HackingFailEvent(Pawn hacker, Pawn hackee, BodyPartRecord part, System.Random r) {
+            ((Building_HackingTable)hackee.CurrentBed()).TryAddPawnForModification(hackee, recipe);
         }
 
         //Used to make hacking more powerful mechs more difficult. Capped at 1000 points. At this value, hacking is 50% more difficult.  

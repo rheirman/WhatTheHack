@@ -57,8 +57,9 @@
 	</value>
 </Operation>
 
-<Operation Class ="PatchOperationInsert">
-	<xpath>(Defs/ThinkTreeDef[defName = "Mechanoid"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_Subtree"])[1]</xpath>
+<Operation Class ="PatchOperationAdd">
+	<xpath>Defs/ThinkTreeDef[defName = "Mechanoid" or defName = "Mechanoid_Skullywag"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes</xpath>
+	<order>Prepend</order>
 	<value>
 		<li Class="WhatTheHack.ThinkTree.ThinkNode_ConditionalMechanoidRest">
 			<subNodes>
@@ -231,7 +232,7 @@
 		</value>
 	</Operation> 
 	<Operation Class="PatchOperationInsert">
-		<xpath>Defs/ThinkTreeDef[defName = "Mechanoid"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[treeDef="LordDuty"]</xpath> <!--Priority is important here, hence the insert after this specific subNode--> 
+		<xpath>Defs/ThinkTreeDef[defName = "Mechanoid" or defName = "Mechanoid_Skullywag"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[treeDef="LordDuty"]</xpath> <!--Priority is important here, hence the insert after this specific subNode--> 
 		<value>
 			<!-- Make sure mechanoids don't wander about when drafted --> 
 			<li Class="ThinkNode_ConditionalDrafted">
