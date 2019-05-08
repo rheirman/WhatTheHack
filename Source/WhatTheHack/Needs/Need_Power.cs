@@ -179,13 +179,13 @@ namespace WhatTheHack.Needs
                 else if (pawn.CaravanPlatform() is Building_PortableChargingPlatform caravanPlatform && pawn.GetCaravan().HasFuel())
                 {
                     platform = caravanPlatform;
-                    platform.refuelableComp.ConsumeFuel(platform.refuelableComp.Props.fuelConsumptionRate / GenDate.TicksPerDay * 150f);
                 }
                 if(platform != null)
                 {
                     result += platform.GetStatValue(WTH_DefOf.WTH_RechargeRate);
+
                 }
-                result /= GenDate.TicksPerDay;
+                result /= (float) GenDate.TicksPerDay;
                 return result;
             }
         }

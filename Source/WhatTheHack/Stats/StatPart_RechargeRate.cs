@@ -38,7 +38,19 @@ namespace WhatTheHack.Stats
             }
             else if (req.Thing is Building_PortableChargingPlatform portablePlatform)
             {
-                val += portablePlatform.refuelableComp.Props.fuelConsumptionRate * fuelToPowerFactor;
+                CompRefuelable refuelableComp = portablePlatform.refuelableComp;
+                if (portablePlatform.refuelableComp == null)
+                {
+                    refuelableComp = portablePlatform.TryGetComp<CompRefuelable>();
+                }
+                if(refuelableComp != null)
+                {
+                    val += refuelableComp.Props.fuelConsumptionRate * fuelToPowerFactor;
+                }
+                else
+                {
+                    Log.Message("refuelableComp is null");
+                }
             }
             if (Base.powerChargeModifier != 1)
             {
