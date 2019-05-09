@@ -409,17 +409,24 @@
   <WTH_Explanation_PowerFromFuel>燃料から電力供給</WTH_Explanation_PowerFromFuel>
   <WTH_Explanation_ConsumptionRate>メカノイドベッドの消費率</WTH_Explanation_ConsumptionRate>
   <WTH_Explanation_RepairConsumptionModifier>修理消費修正（MOD設定で設定)</WTH_Explanation_RepairConsumptionModifier>
-  <WTH_Letter_OverdriveFailed1_Description>オーバードライブモジュールが過去にハードウェア安全限界を超えてオーバードライブしていたため、{0}という名前のメカノイドの頭で何かが壊れました。メカノイドをオーバードライブすると、ショートの原因となります。緊急のメンテナンスが必要です。</WTH_Letter_OverdriveFailed1_Description>
-  <WTH_Letter_MediumMaintenanceDamage_Label>メンテナンスダメージ</WTH_Letter_MediumMaintenanceDamage_Label>
-  <WTH_Letter_MediumMaintenanceDamage_Description>オーバードライブモジュールをオーバードライブしたため、{0}という名前のメカノイドのハードウェアの限界を少し超えました。メカノイドをオーバードライブした場合、メカノイドのハードウェアに対してのハック状態にダメージを与える可能性があります。すぐにメンテナンスが必要です。</WTH_Letter_MediumMaintenanceDamage_Description>
+  <WTH_Letter_OverdriveFailed1_Description>オーバードライブモジュールが過去にハードウェア安全限界を超えてオーバードライブしていたため、{0}という名前のメカノイドの頭で何かが壊れました。メカノイドをオーバードライブすると、ショートの原因となります。緊急の整備が必要です。</WTH_Letter_OverdriveFailed1_Description>
+  <WTH_Letter_MediumMaintenanceDamage_Label>整備ダメージ</WTH_Letter_MediumMaintenanceDamage_Label>
+  <WTH_Letter_MediumMaintenanceDamage_Description>オーバードライブモジュールをオーバードライブしたため、{0}という名前のメカノイドのハードウェアの限界を少し超えました。メカノイドをオーバードライブした場合、メカノイドのハードウェアに対してのハック状態にダメージを与える可能性があります。すぐに整備が必要です。</WTH_Letter_MediumMaintenanceDamage_Description>
   <WTH_Letter_OverdiveGoneTooFar_Label>過剰オーバードライブ</WTH_Letter_OverdiveGoneTooFar_Label>
   <WTH_Letter_OverdiveGoneTooFar_Description>{0}という名前のメカノイドのオーバードライブモジュールから引き出された大電流により意図しない副作用として、オーバードライブモジュール自体が、過剰にオーバードライブしています。このモジュールは意図されたよりもはるかに大きな効果が出ています。しかし、それは非常に大きな電力を消耗させます。内部構造を破損したメカノイドには、これはとても危険です。</WTH_Letter_OverdiveGoneTooFar_Description>
   <WTH_Warning_WorkThreshold>このしきい値を低く設定しても、そのメカノイドに対して自動再充電が無効になっている場合にのみ意味があり、そのメカノイドをが崩壊するまで機能させることができます。詳細はボタンの説明をお読みください。</WTH_Warning_WorkThreshold>
   <WTH_Alert_LowMechanoidParts>メカノイドパーツ不足</WTH_Alert_LowMechanoidParts>
-  <WTH_Alert_LowMechanoidPartsDesc>メカノイドパーツの在庫が{0}個しかないのでメカノイドをメンテナンスできません。</WTH_Alert_LowMechanoidPartsDesc>
-  <WTH_Alert_NoMechanoidPartsDesc>メカノイドをメンテナンスするために必要なメカノイドパーツの在庫が不足しています。</WTH_Alert_NoMechanoidPartsDesc>
+  <WTH_Alert_LowMechanoidPartsDesc>メカノイドパーツの在庫が{0}個しかないのでメカノイドを整備できません。</WTH_Alert_LowMechanoidPartsDesc>
+  <WTH_Alert_NoMechanoidPartsDesc>メカノイドを整備するために必要なメカノイドパーツの在庫が不足しています。</WTH_Alert_NoMechanoidPartsDesc>
   <WTH_Alert_LowMechanoidPartsSolution>この問題は以下の方法で解決できます：\n-アウトランダーの町やトレーダーからメカノイドパーツを購入する。\n-携帯用分解台を持ってキャラバン隊を編成してワールドマップを探索する（あなたが積極的にワールドマップの探索するのなら、「長距離鉱物探査スキャナーの調整」の研究を行ってください)\n-倒れたメカノイドの手術タブを使用して緊急信号を誘導することで、コロニーにメカノイドの襲撃を誘導します。\n- ハイブシップハック施設を使用してハイブシップをハッキングすることで、メカノイドをあなたの基地に誘導します。</WTH_Alert_LowMechanoidPartsSolution>
 
   <!-- end added in v1.2 -->
+  <!-- added in v1.2.6 -->
+  <WTH_Gizmo_MaintenanceThreshold_Label>最小整備率</WTH_Gizmo_MaintenanceThreshold_Label>
+  <WTH_Gizmo_MaintenanceThreshold_Description>メカノイドの整備表示バーがこのボタンで設定されたしきい値(%)を下回ると、整備のためにメカノイドベッドに戻ります。それらのメカノイドベッドに居るメカノイドは、それらの整備状態が50%未満である場合は常時整備され続けます。</WTH_Gizmo_MaintenanceThreshold_Description>
+  <WTH_SetMaintenanceThreshold>最小整備率：{0} %</WTH_SetMaintenanceThreshold>
+  <WTH_Reason_MaintenanceLow>整備の状態が、設定されている最小整備率のしきい値を下回っています。しきい値を下げるか、メカノイドの整備を行ってください。</WTH_Reason_MaintenanceLow>
+
+  <!-- end added in v1.2.6 -->
 
 </LanguageData>
