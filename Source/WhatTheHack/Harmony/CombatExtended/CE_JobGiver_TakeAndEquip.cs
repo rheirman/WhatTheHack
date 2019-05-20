@@ -63,6 +63,7 @@ namespace WhatTheHack.Harmony
             //For mechanoids replace the check of is p.RaceProps.HumanLike by custom logic
             if (p.RaceProps.IsMechanoid && p.IsHacked())
             {
+                Log.Message("mech should reload called");
                 //return true when a mechanoid is hacked and does not have much ammo. 
                 ThingComp inventory = TryGetCompByTypeName(p, "CompInventory", "CombatExtended");
                 ThingWithComps eq = p.equipment.Primary;
@@ -89,6 +90,7 @@ namespace WhatTheHack.Harmony
                             {
                                 p.equipment.AddEquipment(eq.SplitOff(1) as ThingWithComps);
                             }
+                            Log.Message("mech should reload returning true");
                             return true;
                         }
                     }
