@@ -1,6 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+  <WTH_PowerProduction.label>日产电量</WTH_PowerProduction.label>
+  <WTH_PowerProduction.description>这个机械体每天产出的电量</WTH_PowerProduction.description>
+
+  <WTH_PowerRate.label>日耗电量</WTH_PowerRate.label>
+  <WTH_PowerRate.description>机械体每日消耗的电量。</WTH_PowerRate.description>
+
+  <WTH_BatteryCapacity.label>电池容量</WTH_BatteryCapacity.label>
+  <WTH_BatteryCapacity.description>机械体的电池容量。</WTH_BatteryCapacity.description>
+
+  <WTH_RechargeRate.label>日充电量</WTH_RechargeRate.label>
+  <WTH_RechargeRate.description>当机械平台全天有能量供应时，每日可以给机械体提供的电量。</WTH_RechargeRate.description>
+
+  <WTH_RepairRate.label>日修复值</WTH_RepairRate.label>
+  <WTH_RepairRate.description>机械平台每日可修复机械体的受损程度。</WTH_RepairRate.description>
+
+  <WTH_PartConsumptionRate.label>日消耗零件</WTH_PartConsumptionRate.label>
+  <WTH_PartConsumptionRate.description>平台在进行维修时每日消耗的零件数量。当平台不进行维修工作时，不会消耗任何零件。</WTH_PartConsumptionRate.description>
+
   <WTH_ControllerBeltRadius.label>控制半径</WTH_ControllerBeltRadius.label>
   <WTH_ControllerBeltRadius.description>这个腰带可以控制机械的最远距离。</WTH_ControllerBeltRadius.description>
 
@@ -8,7 +26,7 @@
   <WTH_HackingMaintenanceSpeed.description>角色骇入和维护机械体的速度。</WTH_HackingMaintenanceSpeed.description>
 
   <WTH_HackingSuccessChance.label>骇入成功几率</WTH_HackingSuccessChance.label>
-  <WTH_HackingSuccessChance.description>角色进行骇入机械时的成功率，实际几率会受到骇入难度和机械装置的影响。</WTH_HackingSuccessChance.description>
+  <WTH_HackingSuccessChance.description>角色进行骇入机械体时的成功率，实际几率会受到骇入难度和机械装置的影响。</WTH_HackingSuccessChance.description>
 
 
 </LanguageData>

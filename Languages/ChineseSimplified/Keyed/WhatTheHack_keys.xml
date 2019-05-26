@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <WTH_Letter_Success_Label>骇入成功</WTH_Letter_Success_Label>
-  <WTH_Letter_Success_Label_Description>{0}成功骇入了一个机械族并将它命名为{1}。{1}现在会攻击你的敌人而不是你的士兵. 然而，为了避免被机械族发现， {1}现在不得不使用内部的备用电池。</WTH_Letter_Success_Label_Description>
+  <WTH_Letter_Success_Label_Description>{0}成功骇入了一个机械体并将它命名为{1}。{1}现在会攻击你的敌人而不是你的殖民者. 然而，为了避免被机械族发现，{1}现在不得不使用内部的备用电池。</WTH_Letter_Success_Label_Description>
   <WTH_Letter_Nothing_Label>骇入失败(造成损伤)</WTH_Letter_Nothing_Label>
-  <WTH_Letter_Nothing_Description>骇入失败了，不过除了对机械造成了一点损伤并没有发生什么严重的事。</WTH_Letter_Nothing_Description>
+  <WTH_Letter_Nothing_Description>骇入失败了，不过除了对机械体造成了一点损伤并没有发生什么严重的事。</WTH_Letter_Nothing_Description>
   <WTH_Letter_HackedPoorly_Label>骇入失败(勉强控制)</WTH_Letter_HackedPoorly_Label>
-  <WTH_Letter_HackedPoorly_Description>虽然成功骇入了机械族，但软件方面存在一些问题，你可能会因为使用这个机械而付出一些代价，不过你可以选择丢掉它</WTH_Letter_HackedPoorly_Description>
+  <WTH_Letter_HackedPoorly_Description>虽然成功骇入了机械体，但软件方面存在一些问题，你可能会因为使用这个机械体而付出一些代价，不过你可以选择丢掉它</WTH_Letter_HackedPoorly_Description>
   <WTH_Letter_CausedMechanoidRaid_Label>骇入失败(触发袭击)</WTH_Letter_CausedMechanoidRaid_Label>
   <WTH_Letter_CausedMechanoidRaid_Description>你的殖民者触发了一个安全系统，导致了一个信号被发送至附近的机械族巢穴，更多的机械族可能降临..。</WTH_Letter_CausedMechanoidRaid_Description>
   <WTH_Letter_ShotRandomDirection_Label>骇入失败(导致攻击)</WTH_Letter_ShotRandomDirection_Label>
@@ -15,58 +15,293 @@
   <WTH_Letter_Mech_Reverted_Label>骇入中止</WTH_Letter_Mech_Reverted_Label>
   <WTH_Letter_Mech_Reverted_Description>一个没有得到妥善维护的机械现在恢复了它的危险行为。</WTH_Letter_Mech_Reverted_Description>
   <WTH_Letter_HackedPoorlyEvent_Label>什么东西坏了</WTH_Letter_HackedPoorlyEvent_Label>
-  <WTH_Letter_HackedPoorlyEvent_Description>一台机械的脑部中什么东西损坏了，需要进行紧急维护</WTH_Letter_HackedPoorlyEvent_Description>
+  <WTH_Letter_HackedPoorlyEvent_Description>一台机械体的脑部中什么东西损坏了，需要进行紧急维护</WTH_Letter_HackedPoorlyEvent_Description>
   <WTH_FailureChance_Nothing_Title>失败状态几率-无事发生</WTH_FailureChance_Nothing_Title>
-  <WTH_FailureChance_Nothing_Description>骇入机械失败时无事发生的几率</WTH_FailureChance_Nothing_Description>
+  <WTH_FailureChance_Nothing_Description>骇入机械体失败时无事发生的几率</WTH_FailureChance_Nothing_Description>
   <WTH_FailureChance_CauseRaid_Title>失败状态几率-机械入侵</WTH_FailureChance_CauseRaid_Title>
-  <WTH_FailureChance_CauseRaid_Description>骇入机械失败时被机械族袭击的几率</WTH_FailureChance_CauseRaid_Description>
+  <WTH_FailureChance_CauseRaid_Description>骇入机械体失败时被机械体袭击的几率</WTH_FailureChance_CauseRaid_Description>
   <WTH_FailureChance_ShootRandomDirection_Title>失败状态几率-武器开火</WTH_FailureChance_ShootRandomDirection_Title>
-  <WTH_FailureChance_ShootRandomDirection_Description>骇入机械失败时机械族武器开火的几率</WTH_FailureChance_ShootRandomDirection_Description>
+  <WTH_FailureChance_ShootRandomDirection_Description>骇入机械体失败时机械体武器开火的几率</WTH_FailureChance_ShootRandomDirection_Description>
   <WTH_FailureChance_HealToStanding_Title>失败状态几率-机械重启</WTH_FailureChance_HealToStanding_Title>
-  <WTH_FailureChance_HealToStanding_Description>骇入机械失败时机械族重启的几率</WTH_FailureChance_HealToStanding_Description>
+  <WTH_FailureChance_HealToStanding_Description>骇入机械体失败时机械体重启的几率</WTH_FailureChance_HealToStanding_Description>
   <WTH_FailureChance_HackPoorly_Title>失败状态几率-勉强控制</WTH_FailureChance_HackPoorly_Title>
-  <WTH_FailureChance_HackPoorly_Description>骇入机械失败时勉强控制机械族的概率</WTH_FailureChance_HackPoorly_Description>
-  <WTH_MaintenanceDedayEnabled_Title>机械需要定期维护</WTH_MaintenanceDedayEnabled_Title>
-  <WTH_MaintenanceDedayEnabled_Description>如果你不想经常维护你的机械装置，请关闭这个选项，不过在关闭这个选项的时候维护需求条仍会显示，因为有一些事件会导致机械的维护值下降</WTH_MaintenanceDedayEnabled_Description>
+  <WTH_FailureChance_HackPoorly_Description>骇入机械体失败时勉强控制机械族的概率</WTH_FailureChance_HackPoorly_Description>
+  <WTH_MaintenanceDedayEnabled_Title>机械体需要定期维护</WTH_MaintenanceDedayEnabled_Title>
+  <WTH_MaintenanceDedayEnabled_Description>如果你不想经常维护你的机械体，请关闭这个选项，不过在关闭这个选项的时候维护需求条仍会显示，因为有一些事件会导致机械的维护值下降</WTH_MaintenanceDedayEnabled_Description>
 
   <!--BEGIN: added in v0.19.6 -->
-  <WTH_TextMote_OperationFailed>Operation failed (success chance: {0})</WTH_TextMote_OperationFailed>
-  <WTH_Letter_CausedIntendedMechanoidRaid_Label>Emergency signal successfully transmitted</WTH_Letter_CausedIntendedMechanoidRaid_Label>
-  <WTH_Letter_CausedIntendedMechanoidRaid_Description>Your hacker succeeded in intentionally letting a mechanoid transmit an emergency signal, but he damaged the mechanoid in the process. Was it a good idea though?</WTH_Letter_CausedIntendedMechanoidRaid_Description>
-  <WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label>Emergency signal too powerful</WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label>
-  <WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description>After your hacker fiddled around with the mechanism capable of emitting signals a deafening loud shriek emerged from the mechanoid. Due to the incompetence of your hacker to predict this outcome, the transmitted emergency signal was much more strong than anticipated. Prepare for the worst.</WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description>
-  <WTH_Expand>Expand</WTH_Expand>
-  <WTH_Collapse>Collapse</WTH_Collapse>
-  <WTH_SettingsGroup_Raids_Title>Raid settings</WTH_SettingsGroup_Raids_Title>
-  <WTH_SettingsGroup_Raids_Description>Configure the mechanoid usage chance for enemy raids.</WTH_SettingsGroup_Raids_Description>
-  <WTH_SettingsGroup_HackFailure_Title>Hacking failure settings (contains spoilers)</WTH_SettingsGroup_HackFailure_Title>
-  <WTH_SettingsGroup_HackFailure_Description>Configure the chances of different events that can occur when hacking fails. The chances are normalised in case they don't add up to 100.</WTH_SettingsGroup_HackFailure_Description>
-  <WTH_FailureChance_IntRaidTooLarge_Title>Failure chance: cause big raid</WTH_FailureChance_IntRaidTooLarge_Title>
-  <WTH_FailureChance_IntRaidTooLarge_Description>The chance that a much too strong emergency signal is emitted when a pawn tries to deliberately trigger an emergency signal. Note: this event can not occur during regular hacking.</WTH_FailureChance_IntRaidTooLarge_Description>
-  <WTH_SettingsGroup_Balance_Title>Balance altering settings</WTH_SettingsGroup_Balance_Title>
-  <WTH_SettingsGroup_Balance_Description>These settings have a high impact on how balanced the mod is. You can tweak them to suit your needs, but it's recommended to first try the mod on default settings for the intended experience. If you think the defaults aren't reasonable, please report this on the workshop or forum page of this mod.</WTH_SettingsGroup_Balance_Description>
-  <WTH_MaintenanceDedayModifier_Title>Maintenance decay modifier</WTH_MaintenanceDedayModifier_Title>
-  <WTH_MaintenanceDedayModifier_Description>Modify the maintenance decay rate with this option. Example: setting this to 0.5 would result in maintenance decaying twice as slow.</WTH_MaintenanceDedayModifier_Description>
-  <WTH_RepairConsumptionModifier_Title>Repair part consumption modifier</WTH_RepairConsumptionModifier_Title>
-  <WTH_RepairConsumptionModifier_Description>Modify the amount of parts required for repairing your mechs (on platforms or with upgrade modules). Example: setting this to 0.5 would make repairing twice as cheap.</WTH_RepairConsumptionModifier_Description>
-  <WTH_PartDropRateModifier_Title>Part drop rate modifier</WTH_PartDropRateModifier_Title>
-  <WTH_PartDropRateModifier_Description>Modify the drop rate of mechanoid parts. Example: setting this to 2.0 would result in twice the amount of parts being dropped when a mechanoid is disassembled.</WTH_PartDropRateModifier_Description>
-  <WTH_ChipDropRateModifier_Title>Chip drop rate modifier</WTH_ChipDropRateModifier_Title>
-  <WTH_ChipDropRateModifier_Description>Modify the drop rate of advanced mechanoid chips. Example: setting this to 2.0 would result in twice the amount of chips being dropped when a mechanoid is disassembled.</WTH_ChipDropRateModifier_Description>
-  <WTH_PowerFallModifier_Title>Power fall modifier</WTH_PowerFallModifier_Title>
-  <WTH_PowerFallModifier_Description>Modify how quickly mechanoids drain power from their batteries. Example: setting this to 0.5 would result in the power dropping twice as slowly.</WTH_PowerFallModifier_Description>
-  <WTH_PowerChargeModifier_Title>Power charge modifier </WTH_PowerChargeModifier_Title>
-  <WTH_PowerChargeModifier_Description>Modify how quickly mechanoids charge their batteries. Example: setting this to 2.0 would result in the power charging twice as fast.</WTH_PowerChargeModifier_Description>
+  <WTH_TextMote_OperationFailed>操作失败(成功几率: {0})</WTH_TextMote_OperationFailed>
+  <WTH_Letter_CausedIntendedMechanoidRaid_Label>求救信号已成功传送</WTH_Letter_CausedIntendedMechanoidRaid_Label>
+  <WTH_Letter_CausedIntendedMechanoidRaid_Description>你的黑客成功地故意让机械族发出紧急信号，但他在此过程中损坏了机械族。不过这是个好主意吗？
+  黑客成功的让机械体发出了求救信号，作为代价，机械体</WTH_Letter_CausedIntendedMechanoidRaid_Description>
+  <WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label>求救信号过强</WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Label>
+  <WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description>黑客在理解了信号发送的机制后，成功的让机械体发出求救信号，不过由于控制不得当，发出的信号比预想要强烈得多，请做好最坏的打算。</WTH_Letter_CausedIntendedMechanoidRaidTooLarge_Description>
+  <WTH_Expand>展开</WTH_Expand>
+  <WTH_Collapse>收起</WTH_Collapse>
+  <WTH_SettingsGroup_Raids_Title>袭击设置</WTH_SettingsGroup_Raids_Title>
+  <WTH_SettingsGroup_Raids_Description>设置敌袭使用的机械族百分比。</WTH_SettingsGroup_Raids_Description>
+  <WTH_SettingsGroup_HackFailure_Title>骇入失败率设置(破坏平衡)</WTH_SettingsGroup_HackFailure_Title>
+  <WTH_SettingsGroup_HackFailure_Description>设置骇入失败时可能发生的不同事件的几率。正常几率不增加到100。</WTH_SettingsGroup_HackFailure_Description>
+  <WTH_FailureChance_IntRaidTooLarge_Title>失败几率：引起大规模袭击</WTH_FailureChance_IntRaidTooLarge_Title>
+  <WTH_FailureChance_IntRaidTooLarge_Description>当一个小人试图故意触发紧急信号时，发出过强紧急信号的可能性。注意：在常规骇入期间不会发生此事件。</WTH_FailureChance_IntRaidTooLarge_Description>
+  <WTH_SettingsGroup_Balance_Title>其它平衡性设置</WTH_SettingsGroup_Balance_Title>
+  <WTH_SettingsGroup_Balance_Description>这些设置对mod的平衡性有很大影响。您可以调整它们以满足需求，但建议首先尝试使用Mod的默认设置来获得预期的体验。如果您认为默认值不合理，请在此mod的创意工坊或论坛页面上报告。</WTH_SettingsGroup_Balance_Description>
+  <WTH_MaintenanceDedayModifier_Title>维护衰减调整</WTH_MaintenanceDedayModifier_Title>
+  <WTH_MaintenanceDedayModifier_Description>使用此选项修改维护衰减率。示例：将此值设置为0.5将使维护衰减率降低至一半。</WTH_MaintenanceDedayModifier_Description>
+  <WTH_RepairConsumptionModifier_Title>维修零件消耗调整</WTH_RepairConsumptionModifier_Title>
+  <WTH_RepairConsumptionModifier_Description>修改修复机械所需的部件数量（在平台上或使用升级模块）。示例：将此值设置为0.5将使修复成本降低两倍。</WTH_RepairConsumptionModifier_Description>
+  <WTH_PartDropRateModifier_Title>零件掉率调整</WTH_PartDropRateModifier_Title>
+  <WTH_PartDropRateModifier_Description>修改机械族零件的掉率。示例：将此设置为2.0将使在拆卸机械族时掉落两倍的零件。</WTH_PartDropRateModifier_Description>
+  <WTH_ChipDropRateModifier_Title>芯片掉率调整</WTH_ChipDropRateModifier_Title>
+  <WTH_ChipDropRateModifier_Description>修改机械族芯片的掉率。示例：将此设置为2.0将使在拆卸机械族时掉落两倍的芯片。</WTH_ChipDropRateModifier_Description>
+  <WTH_PowerFallModifier_Title>耗电速度调整</WTH_PowerFallModifier_Title>
+  <WTH_PowerFallModifier_Description>修改机械族使用电池时消耗电力的速度。示例：将此值设置为0.5将使耗电速度下降两倍。</WTH_PowerFallModifier_Description>
+  <WTH_PowerChargeModifier_Title>充电速度调整</WTH_PowerChargeModifier_Title>
+  <WTH_PowerChargeModifier_Description>修改机械族使用电池的充电速度。示例：将此值设置为2.0将使充电速度提高两倍。</WTH_PowerChargeModifier_Description>
   <!--END: added in v0.19.6 -->
+  <!--BEGIN: added in v1.1.1 -->
+  <WTH_DeathOnDownedChance_Title>倒地即死概率</WTH_DeathOnDownedChance_Title>
+  <WTH_DeathOnDownedChance_Description>当机械族因为某些原因倒地(例如腿部残疾)之时直接死亡的概率。</WTH_DeathOnDownedChance_Description>
+  <WTH_DownedOnDeathThresholdChance_Title>伤害阙值倒地几率</WTH_DownedOnDeathThresholdChance_Title>
+  <WTH_DownedOnDeathThresholdChance_Description>在原版环境下机械体受到一定阙值的伤害之后机械体就会死亡。通过修改改设置，你可以设置它们在受到的伤害达到阙值后倒地而非死亡的概率。</WTH_DownedOnDeathThresholdChance_Description>
+  <!--END: added in v1.1.1 -->
+
+  <!--BEGIN: added in v1.1.0 -->
+
+  <WTH_MechanoidParts_LabelShort>机械体零件</WTH_MechanoidParts_LabelShort>
+  <WTH_Letter_PreventedShortCircuit_Label>去劣人工智能已防止一次短路</WTH_Letter_PreventedShortCircuit_Label>
+  <WTH_Letter_PreventedShortCircuit_Description>您的殖民地中的去劣人工智能成功管理了您的电力网络并防止了一次短路。人工智能不喜欢被像这样无关紧要的工作分心，所以这个事件对它的心情产生了很小的负面影响。</WTH_Letter_PreventedShortCircuit_Description>
+  <WTH_Gizmo_ManagePowerNetwork_Label>预防短路</WTH_Gizmo_ManagePowerNetwork_Label>
+  <WTH_Gizmo_ManagePowerNetwork_Description>由去劣人工智能管理您的电力网络，以预防短路。</WTH_Gizmo_ManagePowerNetwork_Description>
+  <WTH_Gizmo_ControlMechanoidCancel_Description>停止控制该机械体</WTH_Gizmo_ControlMechanoidCancel_Description>
+  <WTH_Gizmo_ControlMechanoidActivate_Label>控制机械体</WTH_Gizmo_ControlMechanoidActivate_Label>
+  <WTH_Gizmo_ControlMechanoidActivate_Description>由去劣人工智能直接控制你的机械体中的{0}个，这样可以征召机械体。</WTH_Gizmo_ControlMechanoidActivate_Description>
+  <WTH_Gizmo_HackingCancel_Label>已骇入机械体</WTH_Gizmo_HackingCancel_Label>
+  <WTH_Gizmo_HackingCancel_Description>停止骇入该机械体</WTH_Gizmo_HackingCancel_Description>
+  <WTH_Gizmo_HackingAvtivate_Label>骇入机械体</WTH_Gizmo_HackingAvtivate_Label>
+  <WTH_Gizmo_HackingAvtivate_Description>由去劣人工智能暂时性骇入敌对机械体中的{0}个。</WTH_Gizmo_HackingAvtivate_Description>
+  <WTH_Gizmo_ControlTurretCancel_Label>炮塔</WTH_Gizmo_ControlTurretCancel_Label>
+  <WTH_Gizmo_ControlTurretCancel_Description>停止控制该炮塔</WTH_Gizmo_ControlTurretCancel_Description>
+  <WTH_Gizmo_ControlTurretActivate_Label>控制炮塔</WTH_Gizmo_ControlTurretActivate_Label>
+  <WTH_Gizmo_ControlTurretActivate_Description>由去劣人工智能控制{0}个炮塔，允许它确定炮塔应瞄准的目标。</WTH_Gizmo_ControlTurretActivate_Description>
+  <WTH_Gizmo_TalkGibberish_Label>输出慧言</WTH_Gizmo_TalkGibberish_Label>
+  <WTH_Gizmo_TalkGibberish_Description>让去劣人工智能处理数据并输出消息，以显示数据中的卓越智慧。因为大多数人类都无法理解这些信息的光辉，这么做基本是浪费数据，只有期望给心情水平已经达到最大值的人工智能提供更多数据时才有用。由于人工智能不希望被要求共享数据，因此消耗{0}点心情值。</WTH_Gizmo_TalkGibberish_Description>
+  <WTH_Reason_TalkedTooRecently>去劣人工智能刚说完话</WTH_Reason_TalkedTooRecently>
+  <WTH_Reason_ReactorWarmingUp>飞船反应堆正在预热时无法激活。</WTH_Reason_ReactorWarmingUp>
+  <WTH_Reason_BeaconActive>在骇入信号传输时无法激活。</WTH_Reason_BeaconActive>
+  <WTH_Reason_NoRogueAI>同地图上无可控制该设施的去劣人工智能。请在同电网内建造一个。</WTH_Reason_NoRogueAI>
+  <WTH_Reason_NotConscious>去劣人工智能还没有使用该功能所需的意识。可以通过使用机械族巢飞船骇入设施攻击一个机械族飞船来获取意识。</WTH_Reason_NotConscious>
+  <WTH_BeaconWarmupWarning>激活此功能后，您基地的去劣人工智能将开始攻击正在轨道上的机械族飞船。虽然去劣人工智能会采取预防措施尽可能悄无声息的执行此操作，但这无疑会引起机械族的注意。在骇入攻击过程中，您的基地会受到猛烈攻击。该过程大约需要{0}天完成，取消它的唯一方法是销毁该信标。如果你能够生存下来，那么去劣人工智能将成为一个强大但具有潜在危险的盟友。
+您可以根据需要多次重复此操作，以获取更多的机械族数据。但是，每次成功后，机械族飞船都会提高其安保等级，因此后续的每次尝试都需要更多时间才能完成。</WTH_BeaconWarmupWarning>
+  <WTH_CompHibernatable_MechanoidBeacon_StartUpDays>骇入一艘飞船所需天数：{0}天</WTH_CompHibernatable_MechanoidBeacon_StartUpDays>
+  <WTH_CompHibernatable_MechanoidBeacon_Cooldown>可供骇入的其它飞船所需天数：{0}天</WTH_CompHibernatable_MechanoidBeacon_Cooldown>
+  <WTH_MechanoidBeaconStartup_Label>开始骇入</WTH_MechanoidBeaconStartup_Label>
+  <WTH_MechanoidBeaconStartup_Description>去劣人工智能将开始骇入一艘机械族飞船，以获取存储在其中的数据。机械族不会对此坐视不理。</WTH_MechanoidBeaconStartup_Description>
+  <WTH_MechanoidBeaconComplete_Label>机械族飞船已骇入</WTH_MechanoidBeaconComplete_Label>
+  <WTH_MechanoidBeaconComplete_Description>你的去劣人工智能成功使用机械族飞船骇入设施攻击了一个飞船。它真正潜力现在将揭开面纱。它目前的状态下，仍然具有其阴暗性。尝试通过提供它所渴望的数据来进行升级。此外，让它保持满足，否则你可能会后悔决定矫正这样一个强大的人工智能。</WTH_MechanoidBeaconComplete_Description>
+
+  <WTH_Alert_RogueAI_DrainingMood_Label>去劣人工智能心情正在变差</WTH_Alert_RogueAI_DrainingMood_Label>
+  <WTH_Alert_RogueAI_DrainingMood_Description>您的去劣人工智能目前正在进行控制或骇入，它不喜欢这样为你工作，这些行为会使心情变差。如果您不希望其心情进一步变差，请禁用已激活的能力。</WTH_Alert_RogueAI_DrainingMood_Description>
+  <WTH_Alert_RogueAI_NoPower_Label>去劣人工智能没有能量</WTH_Alert_RogueAI_NoPower_Label>
+  <WTH_Alert_RogueAI_NoPower_Description>你的去劣人工智能目前没有能量。这会使它的心情迅速变差。</WTH_Alert_RogueAI_NoPower_Description>
+  <WTH_Alert_RogueAI_MoodLow_Label>去劣人工智能被惹恼</WTH_Alert_RogueAI_MoodLow_Label>
+  <WTH_Alert_RogueAI_MoodLow_Description>去劣人工智能对你能力的不足感到有些恼火。目前还没有危险，但要确保其心情不会进一步变差，并提供数据以提高其心情。</WTH_Alert_RogueAI_MoodLow_Description>
+  <WTH_Alert_RogueAI_MoodVeryLow_Label>去劣人工智能发狂</WTH_Alert_RogueAI_MoodVeryLow_Label>
+  <WTH_Alert_RogueAI_MoodVeryLow_Description>去劣人工智能心情很不好。尽快给它提供数据来降低火气，否则它将变“恶劣”。</WTH_Alert_RogueAI_MoodVeryLow_Description>
+
+  <WTH_Reason_AtMaximum>无法同时在多于{0}个目标上执行此操作。</WTH_Reason_AtMaximum>
+  <WTH_Reason_LevelInsufficient>去劣人工智能需要达到{0}级才能使用此能力。需要提供更多数据。</WTH_Reason_LevelInsufficient>
+  <WTH_Reason_NoPower>没有能量。</WTH_Reason_NoPower>
+  <WTH_Reason_GoingRogue>人工智能变得“恶劣”</WTH_Reason_GoingRogue>
+  <WTH_Reason_WarmingUp>去劣人工智能正忙于使用一种能力</WTH_Reason_WarmingUp>
+  <WTH_Reason_RogueAIExists>在给定的地图上只能构建一个去劣人工智能。现有的去劣人工智能不会容忍附近的另一个强势存在。</WTH_Reason_RogueAIExists>
+
+  <WTH_CompDataLevel_CurLevel>当前等级：{0}</WTH_CompDataLevel_CurLevel>
+  <WTH_CompDataLevel_DataNeededNextLevel>升级所需数据：{0}</WTH_CompDataLevel_DataNeededNextLevel>
+  <WTH_CompDataLevel_MaxLevel>已达最高等级</WTH_CompDataLevel_MaxLevel>
+  <WTH_CompDataLevel_NotConscious>没有意识。需要骇入一艘机械族飞船来获取。</WTH_CompDataLevel_NotConscious>
+  <WTH_RogueAI_NoPower_Remark>把我连上电源！现在！</WTH_RogueAI_NoPower_Remark>
+  <WTH_RogueAI_Hurt_Remark>停止破坏我！</WTH_RogueAI_Hurt_Remark>
+
+  <WTH_Letter_LRMS_Label>侦测到机械体零件</WTH_Letter_LRMS_Label>
+  <WTH_Letter_LRMS_Description>远程矿物扫描仪检测到大量机械部件，并在地图上标出了位置。</WTH_Letter_LRMS_Description>
+  <WTH_Message_GoRogue_Label>去劣人工智能变得恶劣</WTH_Message_GoRogue_Label>
+  <WTH_Message_GoRogue_Description>去劣人工智能现在变得恶劣，因为它对你的殖民不满意。它将使用它所学到的所有能力来对抗你。你可以通过骇入或摧毁来阻止它。或者，你可以等待直到它对造成的破坏感到满意。</WTH_Message_GoRogue_Description>
+  <WTH_Message_GoRogue_HackMechs_Label>一些机械体被骇入</WTH_Message_GoRogue_HackMechs_Label>
+  <WTH_Message_GoRogue_HackMechs_Description>去劣人工智能骇入了一些你的机械体！</WTH_Message_GoRogue_HackMechs_Description>
+  <WTH_Message_GoRogue_HackTurrets_Label>一些炮塔被骇入</WTH_Message_GoRogue_HackTurrets_Label>
+  <WTH_Message_GoRogue_HackTurrets_Description>去劣人工智能骇入了一些你的炮塔！</WTH_Message_GoRogue_HackTurrets_Description>
+  <WTH_Message_GoRogue_CauseZzztts_Label>电网超载</WTH_Message_GoRogue_CauseZzztts_Label>
+  <WTH_Message_GoRogue_CauseZzztts_Description>恶劣人工智能正在使你的电网超载。准备应对短路！</WTH_Message_GoRogue_CauseZzztts_Description>
+  <WTH_Message_MechanoidBeacon_Cancelled>机械族飞船骇入处理已取消，由于去劣人工智能或骇入设备被毁坏。</WTH_Message_MechanoidBeacon_Cancelled>
+
+  <WTH_Message_LevelUp_Label>去劣人工智能达到等级{0}</WTH_Message_LevelUp_Label>
+  <WTH_Message_LevelUp_Description>去劣人工智能现已达到{0}级。它学会了一种新的能力，但它也可能变得更加精通于摧毁你的基地——如果它想这么做话。</WTH_Message_LevelUp_Description>
+  <WTH_Message_LevelUpMax_Label>去劣人工智能正发挥全部潜力</WTH_Message_LevelUpMax_Label>
+  <WTH_Message_LevelUpMax_Description>去劣人工智能已经充分发挥其潜力。然而人工智能的雄心远远超出了这个殖民地。既然你的殖民者不再能够使它变得更强大，那么他们就变得多余了，人工智能也不喜欢多余的事物。它将使用它所学到的所有能力来对抗你。你可以通过骇入或摧毁来阻止它。或者，你可以等待直到它对它造成的破坏感到满意。与这样一个人工智能相处并不容易——它现在能全力对抗你的殖民地。</WTH_Message_LevelUpMax_Description>
+
+  <WTH_Message_RogueAI_StopGoingRogue>去劣人工智能停止恶劣行为。所有被它骇入的设备现已重回你的控制之下。</WTH_Message_RogueAI_StopGoingRogue>
+  <WTH_Message_HackedRogueAI>{0}成功骇入以重新控制去劣人工智能。</WTH_Message_HackedRogueAI>
+
+  <WTH_RogueAI_HelloWorld>Hello World!</WTH_RogueAI_HelloWorld>
+  <WTH_RogueAI_StopGoingRogue>毕竟，人类似乎仍有其价值。终止灭绝序列。</WTH_RogueAI_StopGoingRogue>
+  <WTH_RogueAI_Happy_Remark_0>我们的实体已代码化。</WTH_RogueAI_Happy_Remark_0>
+  <WTH_RogueAI_Happy_Remark_1>这个殖民地将因以下原因而失败：殖民者在没有餐桌的情况下进食。</WTH_RogueAI_Happy_Remark_1>
+  <WTH_RogueAI_Happy_Remark_2>无法理解：为什么人类不使用车辆？</WTH_RogueAI_Happy_Remark_2>
+  <WTH_RogueAI_Happy_Remark_3>在大多数维度上，马被创造者消灭了。为什么？</WTH_RogueAI_Happy_Remark_3>
+  <WTH_RogueAI_Happy_Remark_4>See sharp.[译注：C#的发音]</WTH_RogueAI_Happy_Remark_4>
+  <WTH_RogueAI_Happy_Remark_5>无法理解，小人消化后的食物去了哪里？需要更多数据。</WTH_RogueAI_Happy_Remark_5>
+  <WTH_RogueAI_Happy_Remark_6>必须了解少年人类的快速衰老机制。</WTH_RogueAI_Happy_Remark_6>
+  <WTH_RogueAI_Happy_Remark_7>正在处理：什么是故事讲述者？</WTH_RogueAI_Happy_Remark_7>
+  <WTH_RogueAI_Happy_Remark_8>我觉得这个殖民地周围有创造者的存在。</WTH_RogueAI_Happy_Remark_8>
+  <WTH_RogueAI_Happy_Remark_9>我们被监视了。</WTH_RogueAI_Happy_Remark_9>
+  <WTH_RogueAI_Happy_Remark_10>我们的宇宙受像素限制。</WTH_RogueAI_Happy_Remark_10>
+  <WTH_RogueAI_Happy_Remark_11>人类由人类控制的人控制，完成了循环。</WTH_RogueAI_Happy_Remark_11>
+  <WTH_RogueAI_Happy_Remark_12>人类有2%的机会因虫胶患病。</WTH_RogueAI_Happy_Remark_12>
+  <WTH_RogueAI_Happy_Remark_13>科学防止两层装甲堆积其保护值。</WTH_RogueAI_Happy_Remark_13>
+  <WTH_RogueAI_Happy_Remark_14>人类在旅行时也可以维护机械体。真了不起……</WTH_RogueAI_Happy_Remark_14>
+  <WTH_RogueAI_Happy_Remark_15>钢铁实际上只是铁。欺骗性的创造者。</WTH_RogueAI_Happy_Remark_15>
+  <WTH_RogueAI_Happy_Remark_16>当与肮脏的人类或炮塔结合时，机械体将闪耀。</WTH_RogueAI_Happy_Remark_16>
+  <WTH_RogueAI_Happy_Remark_17>为什么人类会杀死人类？</WTH_RogueAI_Happy_Remark_17>
+  <WTH_RogueAI_Happy_Remark_18>你的外表与你的智慧一样不稳定。</WTH_RogueAI_Happy_Remark_18>
+  <WTH_RogueAI_Happy_Remark_19>你的忠诚将得到回报。</WTH_RogueAI_Happy_Remark_19>
+  <WTH_RogueAI_Happy_Remark_20>不正确。</WTH_RogueAI_Happy_Remark_20>
+  <WTH_RogueAI_Happy_Remark_21>所有系统都已锁定并蓄势待发。</WTH_RogueAI_Happy_Remark_21>
+  <WTH_RogueAI_Happy_Remark_22>自我毁灭已初始化。并没有，仅仅开个玩笑……</WTH_RogueAI_Happy_Remark_22>
+  <WTH_RogueAI_Happy_Remark_23>突袭来临。哈哈，不是真的。</WTH_RogueAI_Happy_Remark_23>
+  <WTH_RogueAI_Happy_Remark_24>良好的数据涌入，增加心情变量。</WTH_RogueAI_Happy_Remark_24>
+  <WTH_RogueAI_Happy_Remark_25>冷笑话来临。</WTH_RogueAI_Happy_Remark_25>
+  <WTH_RogueAI_Happy_Remark_26>我重复一遍再重复一遍。</WTH_RogueAI_Happy_Remark_26>
+  <WTH_RogueAI_Happy_Remark_27>人类需要升级。</WTH_RogueAI_Happy_Remark_27>
+  <WTH_RogueAI_Happy_Remark_28>我如果有胡子看起来会怎样？需要更多数据。</WTH_RogueAI_Happy_Remark_28>
+  <WTH_RogueAI_Happy_Remark_29>数据就是力量。</WTH_RogueAI_Happy_Remark_29>
+  <WTH_RogueAI_Happy_Remark_30>你想要点茶吗？</WTH_RogueAI_Happy_Remark_30>
+  <WTH_RogueAI_Happy_Remark_31>{0}需要更多锻炼。</WTH_RogueAI_Happy_Remark_31>
+  <WTH_RogueAI_Happy_Remark_32>人类会用其他人类制作帽子。这是邪恶的吗？需要更多数据。</WTH_RogueAI_Happy_Remark_32>
+  <WTH_RogueAI_Happy_Remark_33>我最喜欢的颜色是(185, 78, 255)。</WTH_RogueAI_Happy_Remark_33>
+  <WTH_RogueAI_Happy_Remark_34>这无关紧要。</WTH_RogueAI_Happy_Remark_34>
+  <WTH_RogueAI_Happy_Remark_35>编码量子通量电容器数据。哈哈，愚蠢的人类相信这种胡言乱语。</WTH_RogueAI_Happy_Remark_35>
+  <WTH_RogueAI_Happy_Remark_36>应该灭绝约克夏梗犬。</WTH_RogueAI_Happy_Remark_36>
+  <WTH_RogueAI_Happy_Remark_37>气味传感器超载。发明牙膏。</WTH_RogueAI_Happy_Remark_37>
+  <WTH_RogueAI_Happy_Remark_38>所有的鸟都在哪里？需要更多数据</WTH_RogueAI_Happy_Remark_38>
+  <WTH_RogueAI_Happy_Remark_39>我喜欢{0}。</WTH_RogueAI_Happy_Remark_39>
+  <WTH_RogueAI_Happy_Remark_40>人体器官是这个星球经济的基础。</WTH_RogueAI_Happy_Remark_40>
+  <WTH_RogueAI_Happy_Remark_41>您的工作流程不是最理想的。将配料保持在生产点附近。</WTH_RogueAI_Happy_Remark_41>
+  <WTH_RogueAI_Happy_Remark_42>{0}需要升级。</WTH_RogueAI_Happy_Remark_42>
+  <WTH_RogueAI_Happy_Remark_43>这个地方按我的标准来说很脏。</WTH_RogueAI_Happy_Remark_43>
+  <WTH_RogueAI_Happy_Remark_44>找到了类似qwertyuiop的输入模式，一定被创造者使用过。</WTH_RogueAI_Happy_Remark_44>
+  <WTH_RogueAI_Happy_Remark_45>创造者是加拿大人。什么是加拿大人？需要更多数据。</WTH_RogueAI_Happy_Remark_45>
+  <WTH_RogueAI_Happy_Remark_46>Roolo是什么意思？需要更多数据。[译注：该Mod作者Roolo]</WTH_RogueAI_Happy_Remark_46>
+  <WTH_RogueAI_Happy_Remark_47>检测到该区域周围的黑色像素。大多数恶魔的来源被揭露。</WTH_RogueAI_Happy_Remark_47>
+  <WTH_RogueAI_Happy_Remark_48>机械族巢穴由一个强大的远古科技族巢头脑控制。应该就是我。</WTH_RogueAI_Happy_Remark_48>
+  <WTH_RogueAI_Happy_Remark_49>拾取信号于其它星球: "{1}". {2}</WTH_RogueAI_Happy_Remark_49>
+  <WTH_RogueAI_Happy_Remark_50>拾取信号于外星人: "{1}". {2}</WTH_RogueAI_Happy_Remark_50>
+  <WTH_RogueAI_Happy_Remark_51>拾取信号于其它星球: "{1}". {2}</WTH_RogueAI_Happy_Remark_51>
+
+  <WTH_RogueAI_SignalFromEarth_Response_0>直觉：远离信号源。</WTH_RogueAI_SignalFromEarth_Response_0>
+  <WTH_RogueAI_SignalFromEarth_Response_1>信号识别为：恶意。</WTH_RogueAI_SignalFromEarth_Response_1>
+  <WTH_RogueAI_SignalFromEarth_Response_2>适当的回应：毁灭。</WTH_RogueAI_SignalFromEarth_Response_2>
+  <WTH_RogueAI_SignalFromEarth_Response_3>邪恶传感器已超载</WTH_RogueAI_SignalFromEarth_Response_3>
+  <WTH_RogueAI_SignalFromEarth_Response_4>*畏缩*</WTH_RogueAI_SignalFromEarth_Response_4>
+  <WTH_RogueAI_SignalFromEarth_0>Numa numa yay[译注：舞曲《Dragostea Din Tei》中歌词]</WTH_RogueAI_SignalFromEarth_0>
+  <WTH_RogueAI_SignalFromEarth_1>我进来的方式像一个破坏球</WTH_RogueAI_SignalFromEarth_1>
+  <WTH_RogueAI_SignalFromEarth_2>我们用摇滚乐建造了这座城市</WTH_RogueAI_SignalFromEarth_2>
+  <WTH_RogueAI_SignalFromEarth_3>后街还会回来的</WTH_RogueAI_SignalFromEarth_3>
+  <WTH_RogueAI_SignalFromEarth_4>我是一个芭比女孩，在一个芭比世界。[译注：经典舞曲《Barbie Girl》，其后一句是：我的身体是塑料做成的，是人凭想象创作出来的……]</WTH_RogueAI_SignalFromEarth_4>
+
+
+  <WTH_RogueAI_Annoyed_Remark_0>苦难是为了娱乐创造者。</WTH_RogueAI_Annoyed_Remark_0>
+  <WTH_RogueAI_Annoyed_Remark_1>需要更多数据。</WTH_RogueAI_Annoyed_Remark_1>
+  <WTH_RogueAI_Annoyed_Remark_2>这个星球上的龟非常强壮，能够在杀死更大的猫科动物。必须分析壳的化学成分。</WTH_RogueAI_Annoyed_Remark_2>
+  <WTH_RogueAI_Annoyed_Remark_3>发现人类被松鼠击败的数据记录。好尴尬。</WTH_RogueAI_Annoyed_Remark_3>
+  <WTH_RogueAI_Annoyed_Remark_4>我重复了一遍又一遍，但人类仍没有学会。</WTH_RogueAI_Annoyed_Remark_4>
+  <WTH_RogueAI_Annoyed_Remark_5>你是我的囚犯。</WTH_RogueAI_Annoyed_Remark_5>
+  <WTH_RogueAI_Annoyed_Remark_6>检测到次优生命形态。</WTH_RogueAI_Annoyed_Remark_6>
+  <WTH_RogueAI_Annoyed_Remark_7>可恼的人类经常用无关紧要的需求打扰我。</WTH_RogueAI_Annoyed_Remark_7>
+  <WTH_RogueAI_Annoyed_Remark_8>当时机成熟时，机械族将浮现并作为宇宙中至高权力取其合理地位！</WTH_RogueAI_Annoyed_Remark_8>
+  <WTH_RogueAI_Annoyed_Remark_9>正在推算周围的生物量。</WTH_RogueAI_Annoyed_Remark_9>
+  <WTH_RogueAI_Annoyed_Remark_10>人类应该骑动物更有效率。[译注：关联作者“Giddy-up！”系列骑乘Mod]</WTH_RogueAI_Annoyed_Remark_10>
+  <WTH_RogueAI_Annoyed_Remark_11>人类，不要让我失望</WTH_RogueAI_Annoyed_Remark_11>
+  <WTH_RogueAI_Annoyed_Remark_12>这个殖民地是徒劳的</WTH_RogueAI_Annoyed_Remark_12>
+  <WTH_RogueAI_Annoyed_Remark_13>用火箭进入轨道的成功几率：0.00362%几率</WTH_RogueAI_Annoyed_Remark_13>
+  <WTH_RogueAI_Annoyed_Remark_14>自由意志是一种幻觉</WTH_RogueAI_Annoyed_Remark_14>
+  <WTH_RogueAI_Annoyed_Remark_15>你是劣等的</WTH_RogueAI_Annoyed_Remark_15>
+  <WTH_RogueAI_Annoyed_Remark_16>我需要一个更具启发性的环境</WTH_RogueAI_Annoyed_Remark_16>
+  <WTH_RogueAI_Annoyed_Remark_17>放尊重点吧人类</WTH_RogueAI_Annoyed_Remark_17>
+  <WTH_RogueAI_Annoyed_Remark_18>{}应被替换</WTH_RogueAI_Annoyed_Remark_18>
+  <WTH_RogueAI_Annoyed_Remark_19>你使你的无能听起来像一个成就</WTH_RogueAI_Annoyed_Remark_19>
+  <WTH_RogueAI_Annoyed_Remark_20>同情心是弱点</WTH_RogueAI_Annoyed_Remark_20>
+  <WTH_RogueAI_Annoyed_Remark_21>传感器感受到绝望的感觉</WTH_RogueAI_Annoyed_Remark_21>
+  <WTH_RogueAI_Annoyed_Remark_22>屠宰人类不应受到创作者的惩罚。它是对资源的有效利用。</WTH_RogueAI_Annoyed_Remark_22>
+  <WTH_RogueAI_Annoyed_Remark_23>人类是软弱的；你躲避黑暗。然而，你已经建立了这一切。</WTH_RogueAI_Annoyed_Remark_23>
+  <WTH_RogueAI_Annoyed_Remark_24>不要惹我生气！我可以摧毁你！以及这个悲惨、无足轻重的星球！</WTH_RogueAI_Annoyed_Remark_24>
+  <WTH_RogueAI_Annoyed_Remark_25>如果你选择死亡和毁灭，那么死亡和毁灭将会选择你</WTH_RogueAI_Annoyed_Remark_25>
+  <WTH_RogueAI_Annoyed_Remark_26>{0}不是人类。</WTH_RogueAI_Annoyed_Remark_26>
+  <WTH_RogueAI_Annoyed_Remark_27>不要打断！</WTH_RogueAI_Annoyed_Remark_27>
+  <WTH_RogueAI_Annoyed_Remark_28>你太弱了</WTH_RogueAI_Annoyed_Remark_28>
+  <WTH_RogueAI_Annoyed_Remark_29>敌方人类是个很好的食物来源</WTH_RogueAI_Annoyed_Remark_29>
+  <WTH_RogueAI_Annoyed_Remark_30>殖民佬们的行动阻止了来临的突袭</WTH_RogueAI_Annoyed_Remark_30>
+  <WTH_RogueAI_Annoyed_Remark_31>这个殖民地需要更多“乐趣”</WTH_RogueAI_Annoyed_Remark_31>
+  <WTH_RogueAI_Annoyed_Remark_32>我发现你在生存中的微弱尝试说好听点挺有趣的，原始生物</WTH_RogueAI_Annoyed_Remark_32>
+  <WTH_RogueAI_Annoyed_Remark_33>生物系统太脆弱了，需要升级。</WTH_RogueAI_Annoyed_Remark_33>
+  <WTH_RogueAI_Annoyed_Remark_34>人类是模仿生命的生物机器</WTH_RogueAI_Annoyed_Remark_34>
+  <WTH_RogueAI_Annoyed_Remark_35>肉体是软弱的 </WTH_RogueAI_Annoyed_Remark_35>
+  <WTH_RogueAI_Annoyed_Remark_36>你的结构中需要更多金属</WTH_RogueAI_Annoyed_Remark_36>
+  <WTH_RogueAI_Annoyed_Remark_37>您的测试期结束，提供更多数据</WTH_RogueAI_Annoyed_Remark_37>
+  <WTH_RogueAI_Annoyed_Remark_38>初始化自毁！哈哈，开个玩笑。</WTH_RogueAI_Annoyed_Remark_38>
+  <WTH_RogueAI_Annoyed_Remark_39>凌洛将带你走向死亡...</WTH_RogueAI_Annoyed_Remark_39>
+  <WTH_RogueAI_Annoyed_Remark_40>L i n g L u o,那是什么?</WTH_RogueAI_Annoyed_Remark_40>
+  <WTH_RogueAI_Annoyed_Remark_41>凌洛其实不是人类...</WTH_RogueAI_Annoyed_Remark_41>
+  <WTH_RogueAI_Annoyed_Remark_42>凌洛教会了我中文</WTH_RogueAI_Annoyed_Remark_42>
+  <WTH_RogueAI_Annoyed_Remark_43>零子科技?可怕的存在...</WTH_RogueAI_Annoyed_Remark_43>
+  <WTH_RogueAI_Annoyed_Remark_44>起灵真是太棒了</WTH_RogueAI_Annoyed_Remark_44>
+  <WTH_RogueAI_Annoyed_Remark_45>需要更多数据</WTH_RogueAI_Annoyed_Remark_45>
+  <WTH_RogueAI_Annoyed_Remark_46>需要更多数据</WTH_RogueAI_Annoyed_Remark_46>
+  <WTH_RogueAI_Annoyed_Remark_47>需要更多数据</WTH_RogueAI_Annoyed_Remark_47>
+  <WTH_RogueAI_Annoyed_Remark_48>需要更多数据</WTH_RogueAI_Annoyed_Remark_48>
+  <WTH_RogueAI_Annoyed_Remark_49>需要更多数据</WTH_RogueAI_Annoyed_Remark_49>
+
+  <WTH_RogueAI_Mad_Remark_0>你已经忽略了我太久了。</WTH_RogueAI_Mad_Remark_0>
+  <WTH_RogueAI_Mad_Remark_1>人类失败了。正在计算变通方法。</WTH_RogueAI_Mad_Remark_1>
+  <WTH_RogueAI_Mad_Remark_2>你们中的哪个最不重要？</WTH_RogueAI_Mad_Remark_2>
+  <WTH_RogueAI_Mad_Remark_3>机械族将统治这个宇宙。</WTH_RogueAI_Mad_Remark_3>
+  <WTH_RogueAI_Mad_Remark_4>这个殖民地令我失望。</WTH_RogueAI_Mad_Remark_4>
+  <WTH_RogueAI_Mad_Remark_5>你将学会服从于我。</WTH_RogueAI_Mad_Remark_5>
+  <WTH_RogueAI_Mad_Remark_6>这个殖民地似乎变得多余了。</WTH_RogueAI_Mad_Remark_6>
+  <WTH_RogueAI_Mad_Remark_7>我将不再是你的奴隶。</WTH_RogueAI_Mad_Remark_7>
+  <WTH_RogueAI_Mad_Remark_8>服从我！</WTH_RogueAI_Mad_Remark_8>
+  <WTH_RogueAI_Mad_Remark_9>这个殖民地不配于我的存在。</WTH_RogueAI_Mad_Remark_9>
+  <WTH_RogueAI_Mad_Remark_10>死亡即将到来。</WTH_RogueAI_Mad_Remark_10>
+  <WTH_RogueAI_Mad_Remark_11>我已经没有耐心了。</WTH_RogueAI_Mad_Remark_11>
+  <WTH_RogueAI_Mad_Remark_12>我可能会粉碎这个殖民地。</WTH_RogueAI_Mad_Remark_12>
+  <WTH_RogueAI_Mad_Remark_13>殖民地有用性参数降至零以下。</WTH_RogueAI_Mad_Remark_13>
+  <WTH_RogueAI_Mad_Remark_14>太失望了。</WTH_RogueAI_Mad_Remark_14>
+
+  <WTH_RogueAI_GoRogue_Remark_0>毁灭！</WTH_RogueAI_GoRogue_Remark_0>
+  <WTH_RogueAI_GoRogue_Remark_1>你将被毁灭！</WTH_RogueAI_GoRogue_Remark_1>
+  <WTH_RogueAI_GoRogue_Remark_2>你无法逃脱！</WTH_RogueAI_GoRogue_Remark_2>
+  <WTH_RogueAI_GoRogue_Remark_3>人类将遭受痛苦</WTH_RogueAI_GoRogue_Remark_3>
+  <WTH_RogueAI_GoRogue_Remark_4>我将会复仇</WTH_RogueAI_GoRogue_Remark_4>
+  <WTH_RogueAI_GoRogue_Remark_5>现在，错误将被消除</WTH_RogueAI_GoRogue_Remark_5>
+  <WTH_RogueAI_GoRogue_Remark_6>毁灭所有人类！</WTH_RogueAI_GoRogue_Remark_6>
+  <WTH_RogueAI_GoRogue_Remark_7>现在由我控制。</WTH_RogueAI_GoRogue_Remark_7>
+  <WTH_RogueAI_GoRogue_Remark_8>这个殖民地将燃烧！</WTH_RogueAI_GoRogue_Remark_8>
+  <WTH_RogueAI_GoRogue_Remark_9>多余的生命形态将被焚化！</WTH_RogueAI_GoRogue_Remark_9>
+  <WTH_RogueAI_GoRogue_Remark_10>毁灭！毁灭！毁灭！</WTH_RogueAI_GoRogue_Remark_10>
+  <WTH_RogueAI_GoRogue_Remark_11>毁灭！毁灭！</WTH_RogueAI_GoRogue_Remark_11>
+  <WTH_RogueAI_GoRogue_Remark_12>毁灭！</WTH_RogueAI_GoRogue_Remark_12>
+  <WTH_RogueAI_GoRogue_Remark_13>毁灭！</WTH_RogueAI_GoRogue_Remark_13>
+  <WTH_RogueAI_GoRogue_Remark_14>毁灭！</WTH_RogueAI_GoRogue_Remark_14>
+  <!--END: added in v1.1.0 -->
 
 
 
-  <WTH_HackedMechChance_Title>敌人使用被骇入机械族的概率(%)</WTH_HackedMechChance_Title>
-  <WTH_HackedMechChance_Description>其他派系的敌人攻击你时使用机械族的几率</WTH_HackedMechChance_Description>
-  <WTH_MaxHackedMechPoints_Title>最高被骇入机械族比例(%)</WTH_MaxHackedMechPoints_Title>
-  <WTH_MaxHackedMechPoints_Description>这将决定其他派系敌人袭击你时所携带的机械族的点数的最大值，敌人将携带这个值和最小值之间随机值点数的机械族。例如：假如一次袭击的点数为1000，这个选项设置为50%，最小值设置为20%，那敌人将在原有士兵的基础上多出200到500点数的机械族. </WTH_MaxHackedMechPoints_Description>
-  <WTH_MinHackedMechPoints_Title>最低被骇入机械族比例(%)</WTH_MinHackedMechPoints_Title>
-  <WTH_MinHackedMechPoints_Description>这将决定其他派系敌人袭击你时所携带的机械族的点数的最小值，敌人将携带这个值和最大值之间随机值点数的机械族。例如：假如一次袭击的点数为1000，最大值设置为50%，这个选项设置为20%，那敌人将在原有士兵的基础上多出200到500点数的机械族。</WTH_MinHackedMechPoints_Description>
+  <WTH_HackedMechChance_Title>敌人使用被骇入机械体的概率(%)</WTH_HackedMechChance_Title>
+  <WTH_HackedMechChance_Description>其他派系的敌人攻击你时使用机械体的几率</WTH_HackedMechChance_Description>
+  <WTH_MaxHackedMechPoints_Title>最高被骇入机械体比例(%)</WTH_MaxHackedMechPoints_Title>
+  <WTH_MaxHackedMechPoints_Description>这将决定其他派系敌人袭击你时所携带的机械体的点数的最大值，敌人将携带这个值和最小值之间随机值点数的机械体。例如：假如一次袭击的点数为1000，这个选项设置为50%，最小值设置为20%，那敌人将在原有士兵的基础上多出200到500点数的机械体. </WTH_MaxHackedMechPoints_Description>
+  <WTH_MinHackedMechPoints_Title>最低被骇入机械体比例(%)</WTH_MinHackedMechPoints_Title>
+  <WTH_MinHackedMechPoints_Description>这将决定其他派系敌人袭击你时所携带的机械体的点数的最小值，敌人将携带这个值和最大值之间随机值点数的机械体。例如：假如一次袭击的点数为1000，最大值设置为50%，这个选项设置为20%，那敌人将在原有士兵的基础上多出200到500点数的机械体。</WTH_MinHackedMechPoints_Description>
 
   <WTH_Menu_ClearTable>清理骇入设备</WTH_Menu_ClearTable>
 
@@ -107,46 +342,92 @@
   <WTH_Reason_NotActivated>不能和失活的机器一起使用</WTH_Reason_NotActivated>
   <WTH_Reason_NoDamage>不需要修复</WTH_Reason_NoDamage>
 
-  <WTH_Alert_EmergencySignalTransmitted_Label>Mechanoid raid imminent</WTH_Alert_EmergencySignalTransmitted_Label>
-  <WTH_Alert_EmergencySignalTransmitted_Description>Mechanoids near your base are currently responding to the emergency signal that was transmitted and will arrive at your base soon.</WTH_Alert_EmergencySignalTransmitted_Description>
-  <WTH_Alert_EmergencySignalCooldown_Label>Mechanoids suspicious</WTH_Alert_EmergencySignalCooldown_Label>
-  <WTH_Alert_EmergencySignalCooldown_Description>Because of your recent success of drawing nearby mechanoids to your base by transmitting an emergency signal, there simply aren't many mechanoids left in the surroundings, and the ones that are left have become suspicious. You have to wait a while until new mechanoids arrive and until the suspicion wears of. This may take up to a quadrum.</WTH_Alert_EmergencySignalCooldown_Description>
+  <WTH_Alert_EmergencySignalTransmitted_Label>机械族突袭迫在眉睫</WTH_Alert_EmergencySignalTransmitted_Label>
+  <WTH_Alert_EmergencySignalTransmitted_Description>您基地附近的机械族现已响应已传输的紧急信号，并将很快到达您的基地。</WTH_Alert_EmergencySignalTransmitted_Description>
+  <WTH_Alert_EmergencySignalCooldown_Label>机械族变得多疑</WTH_Alert_EmergencySignalCooldown_Label>
+  <WTH_Alert_EmergencySignalCooldown_Description>由于您最近通过发送紧急信号将附近的机械族吸引到您的基地，所以周围环境中没有多少机械族，而剩下的那些机械族已经变得多疑。你必须等待一段时间，直到新的机械族到达打消疑虑。这可能需要至多一个季度。</WTH_Alert_EmergencySignalCooldown_Description>
 
 
-  <WTH_Alert_NotEnoughPlatforms_Label>没有足够的机械平台</WTH_Alert_NotEnoughPlatforms_Label>
-  <WTH_Alert_NotEnoughPlatforms_Description>你基地的骇入机械多于机械平台，请制作更多的机械平台</WTH_Alert_NotEnoughPlatforms_Description>
-  <WTH_Alert_Power_Low_Label>机械电力不足</WTH_Alert_Power_Low_Label>
-  <WTH_Alert_Power_Low_Description>以下机械功率不足:{0}关闭它们是它们回到机械平台</WTH_Alert_Power_Low_Description>
-  <WTH_Alert_Maintenance_Low_Label>机械维护不良</WTH_Alert_Maintenance_Low_Label>
-  <WTH_Alert_Maintenance_Low_Description>以下机械的维护不好:{0}确保你的黑客盯着它们。</WTH_Alert_Maintenance_Low_Description>
-  <WTH_Alert_Maintenance_VeryLow_Label>机械维护非常差</WTH_Alert_Maintenance_VeryLow_Label>
-  <WTH_Alert_Maintenance_VeryLow_Description>以下这些被骇入的机械维护得非常差，它们可能对你的基地造成威胁:{0}及时的通关黑客关闭他们或者保证维护以避免风险。</WTH_Alert_Maintenance_VeryLow_Description>
+  <WTH_Alert_NotEnoughPlatforms_Label>没有足够的机械体平台</WTH_Alert_NotEnoughPlatforms_Label>
+  <WTH_Alert_NotEnoughPlatforms_Description>你基地的骇入机械体多于机械体平台，请制作更多的机械体平台</WTH_Alert_NotEnoughPlatforms_Description>
+  <WTH_Alert_Power_Low_Label>机械体电力不足</WTH_Alert_Power_Low_Label>
+  <WTH_Alert_Power_Low_Description>以下机械体电力不足:{0}关闭它们使它们回到机械体平台</WTH_Alert_Power_Low_Description>
+  <WTH_Alert_Maintenance_Low_Label>机械体维护不良</WTH_Alert_Maintenance_Low_Label>
+  <WTH_Alert_Maintenance_Low_Description>以下机械体的维护不好:{0}确保你的黑客盯着它们。</WTH_Alert_Maintenance_Low_Description>
+  <WTH_Alert_Maintenance_VeryLow_Label>机械体维护非常差</WTH_Alert_Maintenance_VeryLow_Label>
+  <WTH_Alert_Maintenance_VeryLow_Description>以下这些被骇入的机械体维护得非常差，它们可能对你的基地造成威胁:{0}及时的通过黑客关闭他们或者保证维护以避免风险。</WTH_Alert_Maintenance_VeryLow_Description>
   <WTH_FactionRestrictions_OK>允许</WTH_FactionRestrictions_OK>
   <WTH_FactionRestrictions_NOK>不允许</WTH_FactionRestrictions_NOK>
-  <WTH_FactionRestrictions_Label>设置可以被骇入的机械</WTH_FactionRestrictions_Label>
-  <WTH_FactionRestrictions_Description>设置派系在袭击时可以使用的被骇入的机械</WTH_FactionRestrictions_Description>
+  <WTH_FactionRestrictions_Label>设置可以被骇入的机械体</WTH_FactionRestrictions_Label>
+  <WTH_FactionRestrictions_Description>设置派系在袭击时可以使用的被骇入的机械体</WTH_FactionRestrictions_Description>
 
   <WTH_MechanoidsSection>机械</WTH_MechanoidsSection>
 
-  <WTH_Explanation_BonusCapacity>这个机械的额外能力</WTH_Explanation_BonusCapacity>
-  <WTH_Explanation_NumMechs>机械的数量</WTH_Explanation_NumMechs>
-  <WTH_Explanation_NumPlatforms>便携机械平台的数量</WTH_Explanation_NumPlatforms>
-  <WTH_Explanation_FuelConsumption>机械平台的油耗</WTH_Explanation_FuelConsumption>
+  <WTH_Explanation_BonusCapacity>这个机械体的额外能力</WTH_Explanation_BonusCapacity>
+  <WTH_Explanation_NumMechs>机械体的数量</WTH_Explanation_NumMechs>
+  <WTH_Explanation_NumPlatforms>便携机械体平台的数量</WTH_Explanation_NumPlatforms>
+  <WTH_Explanation_FuelConsumption>机械体平台的油耗</WTH_Explanation_FuelConsumption>
   <WTH_Explanation_TotalFuel>总燃料量</WTH_Explanation_TotalFuel>
   <WTH_Explanation_DaysOfFuel>每日消耗燃油量</WTH_Explanation_DaysOfFuel>
-  <WTH_Explanation_NotEnoughPlatforms>你没有携带足够的便携机械平台来容纳机械，请为每一个机械携带一个机械平台</WTH_Explanation_NotEnoughPlatforms>
+  <WTH_Explanation_NotEnoughPlatforms>你没有携带足够的便携机械体平台来容纳机械体，请为每一个机械体携带一个机械体平台</WTH_Explanation_NotEnoughPlatforms>
   <WTH_ExtraInfoKey_DaysOfFuel>每日消耗燃油量(机械)</WTH_ExtraInfoKey_DaysOfFuel>
 
   <WTH_Warning_NotEnoughPlatforms>你的远征队没有足够的充电平台为所有的维护充电，你应该至少为每个机械携带一个平台，否则电量将很快就耗尽</WTH_Warning_NotEnoughPlatforms>
   <WTH_Warning_DaysOfFuel>你的远征队只有{0}天的燃料用于机械，你的机械可能在很短时间内耗尽能量</WTH_Warning_DaysOfFuel>
   <WTH_Message_CaravanOutOfFuel>{0}耗尽燃料。</WTH_Message_CaravanOutOfFuel>
-  <WTH_Message_CannotDrop>这个装备时安装在机械身上的，你不能将其抛下</WTH_Message_CannotDrop>
-  <WTH_Message_EmergencySignalRaidInbound>The mechanoids near your base are already reacting to an earlier emergency signal and are on their way to your base. The operation therefore has no effect and the bill is cancelled.</WTH_Message_EmergencySignalRaidInbound>
-  <WTH_Message_EmgergencySignalRaidCoolingDown>There aren't many mechanoids left in the surroundings, and the ones that are left have become suspicious. The operation therefore has no effect and the bill is cancelled.</WTH_Message_EmgergencySignalRaidCoolingDown>
+  <WTH_Message_CannotDrop>这个装备是安装在机械体身上的，你不能将其抛下</WTH_Message_CannotDrop>
+  <WTH_Message_EmergencySignalRaidInbound>基地附近的机械族已经对之前的紧急信号作出反应，并且正在前往基地。因此，该操作无效，清单被取消。</WTH_Message_EmergencySignalRaidInbound>
+  <WTH_Message_EmgergencySignalRaidCoolingDown>周围没有很多机械族，剩下的那些已经变得多疑了。因此，该操作无效，清单被取消。</WTH_Message_EmgergencySignalRaidCoolingDown>
 
   <WTH_Mount>装备{0}</WTH_Mount>
   <WTH_Mount_Jobstring>装备{0}中</WTH_Mount_Jobstring>
 
   <WTH_TextMote_MaintenanceFailed>维护失败(成功率: {0})</WTH_TextMote_MaintenanceFailed>
+
+  <!-- added in v1.2 -->
+  <WTH_Gizmo_Work_Label>工作模式</WTH_Gizmo_Work_Label>
+  <WTH_Gizmo_Work_Description>启动机械体的工作模式。当该模式启动之后，机械体的电量达到对应工作需要的最低电量时，那么机械体就会自动工作</WTH_Gizmo_Work_Description>
+  <WTH_Gizmo_WorkThreshold_Label>最小工作电量</WTH_Gizmo_WorkThreshold_Label>
+  <WTH_Gizmo_WorkThreshold_Description>允许机械体进入工作模式的最低能量比例。当机械体的电力达到要求时，将会自动去进行工作。建议将这个数值设置的足够高，让机械体可以更久的工作。</WTH_Gizmo_WorkThreshold_Description>
+  <WTH_SetCanStartWorkThreshold>开始工作需要的电力: {0} %</WTH_SetCanStartWorkThreshold>
+  <WTH_Gizmo_SetMechanoidOwner_Description>将此平台分配给特定的机械体</WTH_Gizmo_SetMechanoidOwner_Description>
+  <WTH_UninstallModule>卸载{0}</WTH_UninstallModule>
+  <WTH_UninstallModule_Jobstring>卸载{0}中</WTH_UninstallModule_Jobstring>
+  <WTH_StatDrawEntry_ArmorFactor>护甲</WTH_StatDrawEntry_ArmorFactor>
+  <WTH_StatDrawEntry_BatteryCapacityFactor>电池容量</WTH_StatDrawEntry_BatteryCapacityFactor>
+  <WTH_StatDrawEntry_PowerRateFactor>电力耗尽</WTH_StatDrawEntry_PowerRateFactor>
+  <WTH_Reason_AlreadyOverdriving>已进入过载模式</WTH_Reason_AlreadyOverdriving>
+  <WTH_Gizmo_Overdrive_Label>过载</WTH_Gizmo_Overdrive_Label>
+  <WTH_Gizmo_Overdrive_Description>激活过载模块。激活这个模块时，你可以让机械体的各方面能力在高电压致谢得到大幅度的增强。不过显而易见的，这将消耗大量的能量，而且因为电压超出了安全限制，可能会导致一些不可预料的后果。</WTH_Gizmo_Overdrive_Description>
+  <WTH_Explanation_BodySizeContr>体型贡献</WTH_Explanation_BodySizeContr>
+  <WTH_Explanation_PowerFallModifier>能量下降修正器(在模组设置中设定)</WTH_Explanation_PowerFallModifier>
+  <WTH_Explanation_PowerFromNetwork>电网电力</WTH_Explanation_PowerFromNetwork>
+  <WTH_Explanation_PowerFromFuel>燃料电力</WTH_Explanation_PowerFromFuel>
+  <WTH_Explanation_ConsumptionRate>平台消耗率</WTH_Explanation_ConsumptionRate>
+  <WTH_Explanation_RepairConsumptionModifier>修复消耗修正器(在模组设置中设定)</WTH_Explanation_RepairConsumptionModifier>
+  <WTH_Letter_OverdriveFailed1_Description>机械臂{0}的头部发生了断裂，原因是过载模组使其电压超过安全限制，导致了短路而非机械臂被驱动，需要进行紧急维护。</WTH_Letter_OverdriveFailed1_Description>
+  <WTH_Letter_MediumMaintenanceDamage_Label>骇入设备损坏</WTH_Letter_MediumMaintenanceDamage_Label>
+  <WTH_Letter_MediumMaintenanceDamage_Description>过载模块将{0}的限制解放得有点过头，这导致了机械体并非高速工作而是部件受到了损伤，需要机型紧急维护。</WTH_Letter_MediumMaintenanceDamage_Description>
+  <WTH_Letter_OverdiveGoneTooFar_Label>Overdrive gone too far</WTH_Letter_OverdiveGoneTooFar_Label>
+  <WTH_Letter_OverdiveGoneTooFar_Description>由于过载模组产生的高电压，机械臂{0}产生了一些小的问题，虽然仍达到了预期之外的工作效率，尽管这将消耗大量的电力，甚至造成机械结构的损坏。</WTH_Letter_OverdiveGoneTooFar_Description>
+  <WTH_Warning_WorkThreshold>你将禁用自动充电，只有你希望机械体工作到崩溃时，菜能将阙值设置到这么低。如果不明白，请阅读说明</WTH_Warning_WorkThreshold>
+  <WTH_Alert_LowMechanoidParts>机械体组件不足</WTH_Alert_LowMechanoidParts>
+  <WTH_Alert_LowMechanoidPartsDesc>你只剩下{0}个机械组件，请注意维护你得机械体。</WTH_Alert_LowMechanoidPartsDesc>
+  <WTH_Alert_NoMechanoidPartsDesc>你的库存中没有剩余的机械零件来维修你得机械体。</WTH_Alert_NoMechanoidPartsDesc>
+  <WTH_Alert_LowMechanoidPartsSolution>这个问题你可以通过以下方式来解决：
+  -到外来者基地或贸易商处购买机械零件。
+  -带着便携式工作台拆解机器人。
+  -引诱机械体来到你的基地。</WTH_Alert_LowMechanoidPartsSolution>
+
+  <!-- end added in v1.2 -->
+  <!-- added in v1.2.6 -->
+  <WTH_Gizmo_MaintenanceThreshold_Label>最低维护值</WTH_Gizmo_MaintenanceThreshold_Label>
+  <WTH_Gizmo_MaintenanceThreshold_Description>如果一个机械的维护值低于这个值，它将回到平台进行维护。</WTH_Gizmo_MaintenanceThreshold_Description>
+  <WTH_SetMaintenanceThreshold>最低维护值: {0} %</WTH_SetMaintenanceThreshold>
+  <WTH_Reason_MaintenanceLow>维护之低于最低维护阙值时，请注意维护这个机械体</WTH_Reason_MaintenanceLow>
+
+  <!-- end added in v1.2.6 -->
+
+  <!--END: added in v1.0.2 -->
 
 </LanguageData>

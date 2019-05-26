@@ -5,6 +5,7 @@
 
   <WTH_Mote_Charging.label>Mote</WTH_Mote_Charging.label>
   <WTH_Mote_HealingCrossGreen.label>Mote</WTH_Mote_HealingCrossGreen.label>
+  <WTH_Mote_Overdrive.label>Mote</WTH_Mote_Overdrive.label>
 
 
   <!-- These are Mote ThingDefs. Remain the same， DO NOT translate them. -->

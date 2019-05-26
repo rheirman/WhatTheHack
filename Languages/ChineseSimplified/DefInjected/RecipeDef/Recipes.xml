@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_ExtractBrainData.label>提取大脑数据</WTH_ExtractBrainData.label>
+  <WTH_ExtractBrainData.description>使用机械族技术从人脑中提取其全部数据。现有技术下，如果不破坏大脑，就无法做到这一点。聪明的小人会产生更多数据。</WTH_ExtractBrainData.description>
+  <WTH_ExtractBrainData.jobString>正在提取大脑数据。</WTH_ExtractBrainData.jobString>
+
+  <WTH_Scrap_AdvancedMechanoidChip.label>销毁先进机械体芯片</WTH_Scrap_AdvancedMechanoidChip.label>
+  <WTH_Scrap_AdvancedMechanoidChip.description>销毁先进机械体芯片。</WTH_Scrap_AdvancedMechanoidChip.description>
+  <WTH_Scrap_AdvancedMechanoidChip.jobString>组织销毁中。</WTH_Scrap_AdvancedMechanoidChip.jobString>
+
+  <WTH_Craft_OverdriveModule.label>制作过载模块</WTH_Craft_OverdriveModule.label>
+  <WTH_Craft_OverdriveModule.description>制作过载模块</WTH_Craft_OverdriveModule.description>
+  <WTH_Craft_OverdriveModule.jobString>制作中</WTH_Craft_OverdriveModule.jobString>
+
+  <WTH_Craft_SpeedModule.label>制作提速模块</WTH_Craft_SpeedModule.label>
+  <WTH_Craft_SpeedModule.description>制作提速模块</WTH_Craft_SpeedModule.description>
+  <WTH_Craft_SpeedModule.jobString>制作中</WTH_Craft_SpeedModule.jobString>
+
+  <WTH_Craft_CargoModule.label>制作货运模块</WTH_Craft_CargoModule.label>
+  <WTH_Craft_CargoModule.description>制作货运模块</WTH_Craft_CargoModule.description>
+  <WTH_Craft_CargoModule.jobString>制作中</WTH_Craft_CargoModule.jobString>
+
+  <WTH_Craft_OpticSensorModule.label>制作光学传感器模块</WTH_Craft_OpticSensorModule.label>
+  <WTH_Craft_OpticSensorModule.description>制作光学传感器模块</WTH_Craft_OpticSensorModule.description>
+  <WTH_Craft_OpticSensorModule.jobString>制作中</WTH_Craft_OpticSensorModule.jobString>
+
+  <WTH_Craft_ArmorModule.label>制作护甲模块</WTH_Craft_ArmorModule.label>
+  <WTH_Craft_ArmorModule.description>制作护甲模块</WTH_Craft_ArmorModule.description>
+  <WTH_Craft_ArmorModule.jobString>制作中</WTH_Craft_ArmorModule.jobString>
+
+  <WTH_Craft_FirefightingModule.label>制作防火模块</WTH_Craft_FirefightingModule.label>
+  <WTH_Craft_FirefightingModule.description>制作防火模块</WTH_Craft_FirefightingModule.description>
+  <WTH_Craft_FirefightingModule.jobString>制作中</WTH_Craft_FirefightingModule.jobString>
+
+  <WTH_Craft_GrowingModule.label>制作种植模块</WTH_Craft_GrowingModule.label>
+  <WTH_Craft_GrowingModule.description>制作种植模块</WTH_Craft_GrowingModule.description>
+  <WTH_Craft_GrowingModule.jobString>制作中</WTH_Craft_GrowingModule.jobString>
+
+  <WTH_Craft_CleaningModule.label>制作清扫模块</WTH_Craft_CleaningModule.label>
+  <WTH_Craft_CleaningModule.description>制作清扫模块</WTH_Craft_CleaningModule.description>
+  <WTH_Craft_CleaningModule.jobString>制作中</WTH_Craft_CleaningModule.jobString>
+
+  <WTH_Craft_HaulingModule.label>制作载货模块</WTH_Craft_HaulingModule.label>
+  <WTH_Craft_HaulingModule.description>制作载货模块</WTH_Craft_HaulingModule.description>
+  <WTH_Craft_HaulingModule.jobString>制作中</WTH_Craft_HaulingModule.jobString>
+
+  <WTH_Craft_AdditionalBatteryModule.label>制作扩容电池模块</WTH_Craft_AdditionalBatteryModule.label>
+  <WTH_Craft_AdditionalBatteryModule.description>制作扩容电池模块</WTH_Craft_AdditionalBatteryModule.description>
+  <WTH_Craft_AdditionalBatteryModule.jobString>组织制作中</WTH_Craft_AdditionalBatteryModule.jobString>
+
+  <WTH_Craft_VanometricModule.label>制作脉境电池模块</WTH_Craft_VanometricModule.label>
+  <WTH_Craft_VanometricModule.description>制作脉境电池模块</WTH_Craft_VanometricModule.description>
+  <WTH_Craft_VanometricModule.jobString>制作中</WTH_Craft_VanometricModule.jobString>
+
+  <WTH_Craft_SelfDestructModule.label>制作自毁模块</WTH_Craft_SelfDestructModule.label>
+  <WTH_Craft_SelfDestructModule.description>制作自毁模块</WTH_Craft_SelfDestructModule.description>
+  <WTH_Craft_SelfDestructModule.jobString>制作中</WTH_Craft_SelfDestructModule.jobString>
+
+  <WTH_Craft_TurretModule.label>制作炮塔模块</WTH_Craft_TurretModule.label>
+  <WTH_Craft_TurretModule.description>制作炮塔模块</WTH_Craft_TurretModule.description>
+  <WTH_Craft_TurretModule.jobString>制作中</WTH_Craft_TurretModule.jobString>
+
+  <WTH_Craft_RepairModule.label>制作维护模块</WTH_Craft_RepairModule.label>
+  <WTH_Craft_RepairModule.description>制作维护模块</WTH_Craft_RepairModule.description>
+  <WTH_Craft_RepairModule.jobString>制作中</WTH_Craft_RepairModule.jobString>
+
+  <WTH_Craft_RepairArm.label>制作维护臂</WTH_Craft_RepairArm.label>
+  <WTH_Craft_RepairArm.description>制作维护臂</WTH_Craft_RepairArm.description>
+  <WTH_Craft_RepairArm.jobString>制作中</WTH_Craft_RepairArm.jobString>
+
+  <WTH_Craft_BeltModule.label>制作腰带模块</WTH_Craft_BeltModule.label>
+  <WTH_Craft_BeltModule.description>制作腰带模块</WTH_Craft_BeltModule.description>
+  <WTH_Craft_BeltModule.jobString>制作中</WTH_Craft_BeltModule.jobString>
+
+  <WTH_HackMechanoid.label>破解机械体目标装置</WTH_HackMechanoid.label>
+  <WTH_HackMechanoid.description>破解机械体的目标装置，使其攻击你得敌人而不是你</WTH_HackMechanoid.description>
+  <WTH_HackMechanoid.jobString>正在骇入机械体</WTH_HackMechanoid.jobString>
+
+  <WTH_InduceEmergencySignal.label>尝试诱导紧急信号</WTH_InduceEmergencySignal.label>
+  <WTH_InduceEmergencySignal.description>殖民者将试图故意触发机械体中的自卫机制，该机制在激活时将紧急信号传送给附近的机械体，从而吸引他们。 这是获得一些额外机械部件的好方法，也是使你的基地走向毁灭的好方法。操作非常困难，即使成功执行，机械体也会受损，变得无法修复</WTH_InduceEmergencySignal.description>
+  <WTH_InduceEmergencySignal.jobString>正在骇入机械体</WTH_InduceEmergencySignal.jobString>
+
+  <WTH_ImplantAI.label>植入人工智能</WTH_ImplantAI.label>
+  <WTH_ImplantAI.description>在机械体中植入人工智能，使得在战斗中可以完全控制机械体</WTH_ImplantAI.description>
+  <WTH_ImplantAI.jobString>正在骇入机械体</WTH_ImplantAI.jobString>
+
+  <WTH_InstallOverdriveModule.label>植入过载模块</WTH_InstallOverdriveModule.label>
+  <WTH_InstallOverdriveModule.description>植入过载模块</WTH_InstallOverdriveModule.description>
+  <WTH_InstallOverdriveModule.jobString>植入过载模块</WTH_InstallOverdriveModule.jobString>
+
+  <WTH_InstallSpeedModule.label>植入提速模块</WTH_InstallSpeedModule.label>
+  <WTH_InstallSpeedModule.description>植入提速模块</WTH_InstallSpeedModule.description>
+  <WTH_InstallSpeedModule.jobString>植入提速模块</WTH_InstallSpeedModule.jobString>
+
+  <WTH_InstallCargoModule.label>植入载货模块</WTH_InstallCargoModule.label>
+  <WTH_InstallCargoModule.description>植入载货模块</WTH_InstallCargoModule.description>
+  <WTH_InstallCargoModule.jobString>植入载货模块</WTH_InstallCargoModule.jobString>
+
+  <WTH_InstallOpticSensorModule.label>植入光学传感器模块</WTH_InstallOpticSensorModule.label>
+  <WTH_InstallOpticSensorModule.description>植入光学传感器模块</WTH_InstallOpticSensorModule.description>
+  <WTH_InstallOpticSensorModule.jobString>植入光学传感器模块</WTH_InstallOpticSensorModule.jobString>
+
+  <WTH_InstallArmorModule.label>植入护甲模块</WTH_InstallArmorModule.label>
+  <WTH_InstallArmorModule.description>植入护甲模块</WTH_InstallArmorModule.description>
+  <WTH_InstallArmorModule.jobString>植入护甲模块</WTH_InstallArmorModule.jobString>
+
+  <WTH_InstallGrowingModule.label>植入种植模块</WTH_InstallGrowingModule.label>
+  <WTH_InstallGrowingModule.description>植入种植模块</WTH_InstallGrowingModule.description>
+  <WTH_InstallGrowingModule.jobString>植入种植模块</WTH_InstallGrowingModule.jobString>
+
+  <WTH_InstallFirefightingModule.label>植入防火模块</WTH_InstallFirefightingModule.label>
+  <WTH_InstallFirefightingModule.description>植入防火模块</WTH_InstallFirefightingModule.description>
+  <WTH_InstallFirefightingModule.jobString>植入防火模块</WTH_InstallFirefightingModule.jobString>
+
+  <WTH_InstallCleaningModule.label>植入清扫模块</WTH_InstallCleaningModule.label>
+  <WTH_InstallCleaningModule.description>植入清扫模块</WTH_InstallCleaningModule.description>
+  <WTH_InstallCleaningModule.jobString>植入清扫模块</WTH_InstallCleaningModule.jobString>
+
+  <WTH_InstallHaulingModule.label>植入载货模块</WTH_InstallHaulingModule.label>
+  <WTH_InstallHaulingModule.description>植入载货模块</WTH_InstallHaulingModule.description>
+  <WTH_InstallHaulingModule.jobString>植入载货模块</WTH_InstallHaulingModule.jobString>
+
+  <WTH_InstallRepairArm.label>安装维护臂</WTH_InstallRepairArm.label>
+  <WTH_InstallRepairArm.description>安装维护臂</WTH_InstallRepairArm.description>
+  <WTH_InstallRepairArm.jobString>正在安装维护臂</WTH_InstallRepairArm.jobString>
+
+  <WTH_InstallTurretModule.label>安装炮塔模块</WTH_InstallTurretModule.label>
+  <WTH_InstallTurretModule.description>安装一个可以装载炮塔的接口，这个模块在受到摧毁时可能爆炸，只能安装在大型机械上</WTH_InstallTurretModule.description>
+  <WTH_InstallTurretModule.jobString>正在改装机械体</WTH_InstallTurretModule.jobString>
+
+  <WTH_InstallRepairModule.label>安装维护模块</WTH_InstallRepairModule.label>
+  <WTH_InstallRepairModule.description>一个可以储存机械零件的模块，可以利用电力修复机械，不过在修复的时候会停止行动</WTH_InstallRepairModule.description>
+  <WTH_InstallRepairModule.jobString>正在改装机械体</WTH_InstallRepairModule.jobString>
+
+  <WTH_InstallSelfDestruct.label>安装自毁模块</WTH_InstallSelfDestruct.label>
+  <WTH_InstallSelfDestruct.description>添加一个由高爆弹为核心的自毁装置，玻璃钢外壳用于防止误触</WTH_InstallSelfDestruct.description>
+  <WTH_InstallSelfDestruct.jobString>正在改装机械体</WTH_InstallSelfDestruct.jobString>
+
+  <WTH_InstallBeltModule.label>安装腰带模块</WTH_InstallBeltModule.label>
+  <WTH_InstallBeltModule.description>安装这个模块在机械身上使得它们可以安装护盾腰带或烟雾腰带。</WTH_InstallBeltModule.description>
+  <WTH_InstallBeltModule.jobString>正在改装机械体</WTH_InstallBeltModule.jobString>
+
+  <WTH_InstallBatteryExpansionModule.label>安装扩容电池模块</WTH_InstallBatteryExpansionModule.label>
+  <WTH_InstallBatteryExpansionModule.description>安装这个模块以给机械带来额外的电量，但会降低一点移动速度</WTH_InstallBatteryExpansionModule.description>
+  <WTH_InstallBatteryExpansionModule.jobString>正在改装机械体</WTH_InstallBatteryExpansionModule.jobString>
+
+  <WTH_InstallVanometricModule.label>安装脉境电池模块</WTH_InstallVanometricModule.label>
+  <WTH_InstallVanometricModule.description>安装这个模块以给机械带来无限的电量，但会降低一点移动速度</WTH_InstallVanometricModule.description>
+  <WTH_InstallVanometricModule.jobString>正在改装机械体</WTH_InstallVanometricModule.jobString>
+
+  <WTH_ShutDownMechanoid.label>关机</WTH_ShutDownMechanoid.label>
+  <WTH_ShutDownMechanoid.description>关闭机械体</WTH_ShutDownMechanoid.description>
+  <WTH_ShutDownMechanoid.jobString>正在关闭机械体</WTH_ShutDownMechanoid.jobString>
+
+</LanguageData>
