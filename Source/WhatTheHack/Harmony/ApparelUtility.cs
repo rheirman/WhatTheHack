@@ -23,6 +23,7 @@ namespace WhatTheHack.Harmony
 
     //Can never wear two belts together. 
     
+    /*
     [HarmonyPatch(typeof(ApparelUtility), "CanWearTogether")]
     class ApparelUtility_CanWearTogether
     {
@@ -35,5 +36,6 @@ namespace WhatTheHack.Harmony
             return true;
         }
     }
+    */
    
 }

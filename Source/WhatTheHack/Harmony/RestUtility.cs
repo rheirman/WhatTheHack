@@ -102,16 +102,18 @@ namespace WhatTheHack.Harmony
     {
         static bool Prefix(Pawn p, ref Building_Bed __result)
         {
-            if (!p.RaceProps.IsMechanoid || p.Map == null)
+            if (p.jobs == null || p.CurJob == null)
             {
                 return true;
             }
-            
-            if (p.jobs.curDriver != null && p.CurJob != null && p.CurJob.def != WTH_DefOf.WTH_Mechanoid_Rest)
+            if (!(p.RaceProps != null && p.RaceProps.IsMechanoid) || p.Map == null)
+            {
+                return true;
+            }
+            if (p.CurJob.def != WTH_DefOf.WTH_Mechanoid_Rest)
             { 
                 return true;              
             }
-
             List<Thing> thingList = p.Position.GetThingList(p.Map);
             foreach (Thing thing in thingList)
             {
