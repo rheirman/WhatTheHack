@@ -431,6 +431,13 @@
 - 군락함선 해킹 시설을 이용해 군락함선을 해킹하고, 정착지 또는 기지로 메카노이드를 유인하십시오. ("WTH: 군락함선 해킹 시설" / "WTH: 로그 AI" 연구가 선행되어야 함.)</WTH_Alert_LowMechanoidPartsSolution>
 
   <!-- end added in v1.2 -->
+  <!-- added in v1.2.6 --> 
+  <WTH_Gizmo_MaintenanceThreshold_Label>정비 임계값(최저)</WTH_Gizmo_MaintenanceThreshold_Label>
+  <WTH_Gizmo_MaintenanceThreshold_Description>메카노이드의 정비 수치가 이 버튼으로 설정된 임계값보다 낮으면, 해당 메카노이드는 정비를 위해 정비고로 돌아갈 것입니다.\n 정비고에 연결된 메카노이드는 정비 수치가 50% 미만일 때 항상 유지됩니다.</WTH_Gizmo_MaintenanceThreshold_Description>
+  <WTH_SetMaintenanceThreshold>정비 임계값(최저) : {0} %</WTH_SetMaintenanceThreshold>	
+  <WTH_Reason_MaintenanceLow>정비 수치가 설정된 정비 임계값(최저)보다 낮습니다. 이 임계값을 낮추거나 메카노이드를 정비하십시오.</WTH_Reason_MaintenanceLow>
+  
+  <!-- end added in v1.2.6 --> 
 
 
 </LanguageData>
