@@ -5,34 +5,61 @@
   <WTH_MechanoidParts.description>废弃的机械零件，用于维护或骇入机械。</WTH_MechanoidParts.description>
 
   <WTH_MechanoidChip.label>先进机械体组件</WTH_MechanoidChip.label>
-  <WTH_MechanoidChip.description>从机械体中获得的更高级的芯片，可用于高级的骇入行为。</WTH_MechanoidChip.description>
+  <WTH_MechanoidChip.description>从机械体中获得的高级的芯片，可用于高级的骇入行为。</WTH_MechanoidChip.description>
 
-  <WTH_MechanoidData.label>机械族巢数据</WTH_MechanoidData.label>
-  <WTH_MechanoidData.description>来自机械巢的数据记录。人类无法理解如此巨量的数据，但能够使用其中的一些来构建和维持AI核心，使用这个机械族科技的AI核心可以进一步探索这些数据。</WTH_MechanoidData.description>
+  <WTH_MechanoidData.label>机械族数据</WTH_MechanoidData.label>
+  <WTH_MechanoidData.description>来自机械巢穴的数据。人类无法直接的理解如此巨量的数据，但能够使用其中的一些来构建和维持AI核心，使用这个机械族科技的AI核心可以进一步探索这些数据。</WTH_MechanoidData.description>
 
   <WTH_ExtractedBrainData.label>大脑数据</WTH_ExtractedBrainData.label>
   <WTH_ExtractedBrainData.description>由人类大脑提取到的数据记录，可用于维持去劣AI。</WTH_ExtractedBrainData.description>
 
-  <WTH_TurretModule.label>炮塔模组</WTH_TurretModule.label>
-  <WTH_TurretModule.description>安装于机械体，使之可以安装炮塔或迫击炮。</WTH_TurretModule.description>
+  <WTH_GrowingModule.label>种植模块</WTH_GrowingModule.label>
+  <WTH_GrowingModule.description>可以安装在机械体身上的一种模块，让它们学会种植和收割。</WTH_GrowingModule.description>
 
-  <WTH_SelfDestructModule.label>自毁模组</WTH_SelfDestructModule.label>
-  <WTH_SelfDestructModule.description>可以安装在机械体上使他们在合适的时机自爆。</WTH_SelfDestructModule.description>
+  <WTH_FirefightingModule.label>防火模块</WTH_FirefightingModule.label>
+  <WTH_FirefightingModule.description>可以安装在机械体身上的一种模块，让它们可以在需要的时候去灭火。</WTH_FirefightingModule.description>
 
-  <WTH_BatteryExpansionModule.label>扩容电池模组</WTH_BatteryExpansionModule.label>
-  <WTH_BatteryExpansionModule.description>给机械体带来额外的电量，但消耗一点移动能力。</WTH_BatteryExpansionModule.description>
+  <WTH_CleaningModule.label>清扫模块</WTH_CleaningModule.label>
+  <WTH_CleaningModule.description>可以安装在机械体身上的一种模块，让它们可以辨识污秽并进行清扫。</WTH_CleaningModule.description>
 
-  <WTH_VanometricModule.label>脉境电池模组</WTH_VanometricModule.label>
-  <WTH_VanometricModule.description>给机械体带来无限的电量，但消耗一点移动能力。</WTH_VanometricModule.description>
+  <WTH_OverdriveModule.label>过载模块</WTH_OverdriveModule.label>
+  <WTH_OverdriveModule.description>可以安装在机械体身上的一种模块，在这个模块激活的时候，会发送强大的电流刺激机械体的神经网络，使之机械臂运行速度，设计速度和意识大幅度提升。但这将消耗大量电量，同时可能造成硬件的损坏。</WTH_OverdriveModule.description>
 
-  <WTH_RepairModule.label>维护模组</WTH_RepairModule.label>
-  <WTH_RepairModule.description>可以安装在机械体身上使得它们可以自我修复。</WTH_RepairModule.description>
+  <WTH_SpeedModule.label>提速模块</WTH_SpeedModule.label>
+  <WTH_SpeedModule.description>可以安装在机械体身上的一种模块，以消耗额外的电力为代价，提高机械体的移动速度。</WTH_SpeedModule.description>
+
+  <WTH_CargoModule.label>载货模块</WTH_CargoModule.label>
+  <WTH_CargoModule.description>可以安装在机械体身上的一种模块，对机械臂稍加改造，提升机械体的载货能力，作为代价，会稍稍降低机械臂的灵活性。</WTH_CargoModule.description>
+
+  <WTH_OpticSensorModule.label>光学传感器模块</WTH_OpticSensorModule.label>
+  <WTH_OpticSensorModule.description>可以安装在机械体身上的一种模块，以额外消耗少量电力为代价，提高机械体的视觉</WTH_OpticSensorModule.description>
+
+  <WTH_ArmorModule.label>护甲模块</WTH_ArmorModule.label>
+  <WTH_ArmorModule.description>可以安装在机械体身上的一种模块，可以提升机械体的防御能力（钝器与锐器），因为过于沉重，会降低机械体的移动速度</WTH_ArmorModule.description>
+
+  <WTH_HaulingModule.label>搬运模块</WTH_HaulingModule.label>
+  <WTH_HaulingModule.description>可以安装在机械体身上的一种模块，使其可以进行搬运作业</WTH_HaulingModule.description>
+
+  <WTH_TurretModule.label>炮塔模块</WTH_TurretModule.label>
+  <WTH_TurretModule.description>可以安装在机械体身上的一种模块，使之可以安装炮塔或迫击炮。</WTH_TurretModule.description>
+
+  <WTH_SelfDestructModule.label>自毁模块</WTH_SelfDestructModule.label>
+  <WTH_SelfDestructModule.description>可以安装在机械体身上的一种模块，使他们可以在合适的时机自爆。</WTH_SelfDestructModule.description>
+
+  <WTH_BatteryExpansionModule.label>扩容电池模块</WTH_BatteryExpansionModule.label>
+  <WTH_BatteryExpansionModule.description>可以安装在机械体身上的一种模块，提供额外的电量，不过会稍微拖慢机械体的移动速度。</WTH_BatteryExpansionModule.description>
+
+  <WTH_VanometricModule.label>脉境电池模块</WTH_VanometricModule.label>
+  <WTH_VanometricModule.description>可以安装在机械体身上的一种模块，提供无限的电量，不过会稍微拖慢机械体的移动速度。</WTH_VanometricModule.description>
+
+  <WTH_RepairModule.label>维护模块</WTH_RepairModule.label>
+  <WTH_RepairModule.description>可以安装在机械体身上的一种模块，让机械体可以进行自我维护。</WTH_RepairModule.description>
 
   <WTH_RepairArm.label>维护臂</WTH_RepairArm.label>
-  <WTH_RepairArm.description>可以安装在机械体身上，配合维护模组使得它们可以自我维护所有组件。</WTH_RepairArm.description>
+  <WTH_RepairArm.description>可以安装在机械体身上，配合维护模块使得机械体可以自我维护所有组件。</WTH_RepairArm.description>
 
-  <WTH_BeltModule.label>腰带模组</WTH_BeltModule.label>
-  <WTH_BeltModule.description>可以安装在机械体身上使得它们可以安装护盾腰带或烟雾腰带。</WTH_BeltModule.description>
+  <WTH_BeltModule.label>腰带模块</WTH_BeltModule.label>
+  <WTH_BeltModule.description>可以安装在机械体身上的一种模块，使机械体可以安装护盾腰带或烟雾腰带。</WTH_BeltModule.description>
 
 
 </LanguageData>
