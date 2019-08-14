@@ -56,11 +56,12 @@ namespace WhatTheHack.WorldIncidents
         private IEnumerable<Pawn> GeneratePawns(GenStepParams parms, Map map)
         {
             float points = (parms.siteCoreOrPart == null) ? this.defaultPointsRange.RandomInRange : parms.siteCoreOrPart.parms.threatPoints;
+            points *= 1.3f;
             PawnGroupMakerParms pawnGroupMakerParms = new PawnGroupMakerParms();
             pawnGroupMakerParms.groupKind = PawnGroupKindDefOf.Combat;
             pawnGroupMakerParms.tile = map.Tile;
             pawnGroupMakerParms.faction = Faction.OfMechanoids;
-            pawnGroupMakerParms.points = Mathf.Max(points, 200f);
+            pawnGroupMakerParms.points = Mathf.Max(points, 500f);
             
             if (parms.siteCoreOrPart != null)
             {
