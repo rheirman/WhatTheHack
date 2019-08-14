@@ -7,8 +7,11 @@
   <WTH_ControlMechanoid.reportString>控制机械体</WTH_ControlMechanoid.reportString>
   <WTH_ControlMechanoid_Goto.reportString>控制机械体(移动)</WTH_ControlMechanoid_Goto.reportString>
   <WTH_Ability.reportString>使用能力</WTH_Ability.reportString>
+  <WTH_Ability_SelfDestruct.reportString>激活自毁程序</WTH_Ability_SelfDestruct.reportString>
+  <WTH_Ability_Repair.reportString>激活修复程序</WTH_Ability_Repair.reportString>
+  <WTH_Ability_Overdrive.reportString>激活过载程序</WTH_Ability_Overdrive.reportString>
   <WTH_PerformMaintenance.reportString>进行维护</WTH_PerformMaintenance.reportString>
-  <WTH_HackRogueAI.reportString>骇入去劣AI</WTH_HackRogueAI.reportString>
+  <WTH_HackRogueAI.reportString>骇入去劣人工智能</WTH_HackRogueAI.reportString>
 
 
 </LanguageData>
