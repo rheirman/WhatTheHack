@@ -4,8 +4,8 @@
   <WTH_ShutDown.label>전원 정지</WTH_ShutDown.label>
   <WTH_ShutDown.labelNoun>전원을 정지합니다.</WTH_ShutDown.labelNoun>
   
-  <WTH_HeavilyDamaged.label>심하게 손상됨</WTH_HeavilyDamaged.label>
-  <WTH_HeavilyDamaged.labelNoun>상당한 피해를 받음</WTH_HeavilyDamaged.labelNoun>
+  <WTH_HeavilyDamaged.label>심각한 손상</WTH_HeavilyDamaged.label>
+  <WTH_HeavilyDamaged.labelNoun>상당한 피해</WTH_HeavilyDamaged.labelNoun>
 
   <WTH_DestroyedModule.label>파괴된 모듈</WTH_DestroyedModule.label>
 

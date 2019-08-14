@@ -20,23 +20,22 @@
   <WTH_Power.helpText>不像“野生”的机器人那样，被骇入的机械体不能使用它们内部的反应堆，因为这样会被机械族巢穴检测到，因此他们依靠内部电源工作，它们可以在机械体平台上补充电力，最后，它们可以通过改装来提高电池容量。</WTH_Power.helpText>
 
 
-
   <!-- Added in v0.19.6 -->
 
   <WTH_Concept_MechanoidParts.label>获取机械体组件</WTH_Concept_MechanoidParts.label>
   <WTH_Concept_MechanoidParts.helpText>经常储备一些机械体零件对进行修理很重要，更重要的是维护机械体。拆卸机械体是获得零件的主要方式，但您也可以通过外来贸易商或外地城镇来获得。一种获取更多可拆卸机械体的方法是执行“引诱紧急信号”操作于被击倒的未被骇入的机械体。你需要研究“引诱机械族”来才能进行该操作。</WTH_Concept_MechanoidParts.helpText>
 
-  <WTH_Concept_RogueAI.label>去劣AI：开发意识</WTH_Concept_RogueAI.label>
-  <WTH_Concept_RogueAI.helpText>要充分发挥去劣AI的潜力，请执行以下步骤：
+  <WTH_Concept_RogueAI.label>去劣人工智能：开发意识</WTH_Concept_RogueAI.label>
+  <WTH_Concept_RogueAI.helpText>要充分发挥去劣人工智能的潜力，请执行以下步骤：
 1.收集机械族巢数据。该研究完成后，您可以调整远程矿物扫描仪以扫描“机械体部件”。它会引导您到可以找到机械族巢数据的地方。
-2.建立一个机械族飞船骇入设备，并用它来攻击机械族飞船。你的去劣AI将利用黑客攻击后收集的知识来培养意识。</WTH_Concept_RogueAI.helpText>
+2.建立一个机械族飞船骇入设备，并用它来攻击机械族飞船。你的去劣人工智能将利用黑客攻击后收集的知识来培养意识。</WTH_Concept_RogueAI.helpText>
 
-  <WTH_Concept_RogueAI_LevelUp.label>去劣AI：升级</WTH_Concept_RogueAI_LevelUp.label>
-  <WTH_Concept_RogueAI_LevelUp.helpText>在你的去劣AI开发出意识之后，它仍可能具有其阴暗性。收集更多机械族巢数据并将其提供给您的去劣AI以进行升级。随着它的升级，它将获得更多的能力。
+  <WTH_Concept_RogueAI_LevelUp.label>去劣人工智能：升级</WTH_Concept_RogueAI_LevelUp.label>
+  <WTH_Concept_RogueAI_LevelUp.helpText>在你的去劣人工智能开发出意识之后，它的思维可能具有各种缺陷。你可以收集机械族巢穴数据以对其进行升级，升级将弥补缺陷并带来更多新的功能。
 提示：您还可以通过骇入攻击更多的机械族巢来收集数据，或者您可以从活人中提取人脑数据作为机械族巢数据的替代方案。</WTH_Concept_RogueAI_LevelUp.helpText>
 
-  <WTH_Concept_RogueAI_Mood.label>去劣AI：心情</WTH_Concept_RogueAI_Mood.label>
-  <WTH_Concept_RogueAI_Mood.helpText>留意你的去劣AI的心情。你当然不想它发疯！为其提供机械族数据或人脑数据可以改善其心情，使用能力、破坏它或不供电都会降低其心情。</WTH_Concept_RogueAI_Mood.helpText>
+  <WTH_Concept_RogueAI_Mood.label>去劣人工智能：心情</WTH_Concept_RogueAI_Mood.label>
+  <WTH_Concept_RogueAI_Mood.helpText>留意你的去劣人工智能的心情。你绝对不希望它发疯！为其提供机械族数据或人脑数据可以改善其心情，驱使它，攻击他或者拒绝供电都会导致其心情不佳。</WTH_Concept_RogueAI_Mood.helpText>
 
 
 </LanguageData>
