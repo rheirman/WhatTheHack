@@ -1,0 +1,513 @@
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WTH_MechanoidParts</defName>
+    <label>mechanoid parts</label>
+    <description>Parts scrapped from destroyed mechanoids. Needed for repairing and hacking mechanoids.</description>
+    <graphicData>
+      <texPath>Things/MechanoidParts</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>75</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>10</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.5</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+	<!-- this is added so it can be used for mineral scanner -->
+	<building>
+      <isResourceRock>false</isResourceRock>
+      <mineableThing>WTH_MechanoidParts</mineableThing>
+      <mineableYield>40</mineableYield>
+      <mineableScatterCommonality>0</mineableScatterCommonality>
+      <mineableScatterLumpSizeRange>
+        <min>0</min>
+        <max>0</max>
+      </mineableScatterLumpSizeRange>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>WTH_MechanoidChip</defName>
+    <label>advanced mechanoid chip</label>
+    <description>Advanced chips scavenged from downed or destroyed mechanoids. Needed for the more complicated hacking operations.</description>
+    <graphicData>
+      <texPath>Things/AIChip</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>75</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>55</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="ResourceBase">
+    <defName>WTH_MechanoidData</defName>
+    <label>hive data</label>
+    <description>Data records from the mechanoid hive. Humans are incapable of comprehending such quantities of data, but might be able to use some of it to construct and feed an AI core using mechanoid technology that can further explore it.</description>
+    <graphicData>
+      <texPath>Things/MechanoidData</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>75</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>35</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.7</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>WTH_ExtractedBrainData</defName>
+    <label>extracted brain data</label>
+    <description>Data records extracted from a human brain. Can be used to feed a Rogue AI.</description>
+    <graphicData>
+      <texPath>Things/ExtractedBrainData</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>75</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>35</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.7</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_GrowingModule</defName>
+    <label>growing module</label>
+    <description>Can be installed in a mechanoid to make it capable of plant cutting and growing.</description>
+    <graphicData>
+      <texPath>Things/GrowingModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>7000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+    
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_FirefightingModule</defName>
+    <label>Firefighting module</label>
+    <description>Can be installed in a mechanoid to make it capable of fighting fires.</description>
+    <graphicData>
+      <texPath>Things/FirefightingModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>5000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_CleaningModule</defName>
+    <label>cleaning module</label>
+    <description>Can be installed in a mechanoid to make it capable of automatically performing cleaning jobs</description>
+    <graphicData>
+      <texPath>Things/CleaningModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>7000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_OverdriveModule</defName>
+    <label>overdrive module</label>
+    <description>Can be installed in a mechanoid. When this module is activated, it overclocks the mechanoid, overdriving its power network. This results in greatly boosting the speed, firing rate, and consciousness of the mechanoid for a short period of time. The procedure draws a lot of power and pushes beyond hardware safety limits, and can therefore have unforeseen consequences.</description>
+    <graphicData>
+      <texPath>Things/OverdriveModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>6000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_SpeedModule</defName>
+    <label>speed module</label>
+    <description>Can be installed in a mechanoid. Increases the movement speed of the mechanoid at the cost of extra power consumption.</description>
+    <graphicData>
+      <texPath>Things/SpeedModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>7000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_CargoModule</defName>
+    <label>cargo module</label>
+    <description>Can be installed in a mechanoid. Increases the carrying capacity of the mechanoid at the cost of a small manipulation penalty.</description>
+    <graphicData>
+      <texPath>Things/CargoModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>7000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_OpticSensorModule</defName>
+    <label>optic sensor module</label>
+    <description>Can be installed in a mechanoid. Improves the sight of the mechanoid at the cost of a small amount of extra power consumption.</description>
+    <graphicData>
+      <texPath>Things/OpticSensorModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>7000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_ArmorModule</defName>
+    <label>armor module</label>
+    <description>Can be installed in a mechanoid. Increases the armor(blunt and sharp) of the mechanoid at the cost of movement speed.</description>
+    <graphicData>
+      <texPath>Things/ArmorModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>7000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>1.2</Mass>
+      <Flammability>0.5</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+    
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_HaulingModule</defName>
+    <label>hauling module</label>
+    <description>Can be installed in mechanoids to make it capable of automatically performing hauling jobs</description>
+    <graphicData>
+      <texPath>Things/HaulingModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>7000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+   <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_TurretModule</defName>
+    <label>turret module</label>
+    <description>Can be installed in mechanoids with at least a body size of 2 and allows turrets and mortars to be installed on it.</description>
+    <graphicData>
+      <texPath>Things/TurretModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>8000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_SelfDestructModule</defName>
+    <label>Self destruct module</label>
+    <description>Can be installed in mechanoids to give them a deadly self-destruct option.</description>
+    <graphicData>
+      <texPath>Things/SelfDestructModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>3000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_BatteryExpansionModule</defName>
+    <label>Battery expansion module</label>
+    <description>Can be installed in mechanoids to give them extra battery capacity, at the cost of a small movement penalty.</description>
+    <graphicData>
+      <texPath>Things/BatteryExpansionModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>6000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+    
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_VanometricModule</defName>
+    <label>Vanometric power cell module</label>
+    <description>Can be installed in mechanoids to give them an infinite power supply, at the cost of a small movement penalty.</description>
+    <graphicData>
+      <texPath>Things/VanometricModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>10000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_RepairModule</defName>
+    <label>repair module</label>
+    <description>Can be installed in mechanoids to give them the ability to repair themselves on the field.</description>
+    <graphicData>
+      <texPath>Things/RepairModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>5000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_RepairArm</defName>
+    <label>repair arm</label>
+    <description>Can be used to replace the arm of a mechanoid with a repair module installed to give it the ability to repair any other mechanoid on the field.</description>
+    <graphicData>
+      <texPath>Things/RepairArm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>4000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartBase">
+    <defName>WTH_BeltModule</defName>
+    <label>belt module</label>
+    <description>Can be installed in mechanoids so they can equip belts like shield belts and smokepop belts.</description>
+    <graphicData>
+      <texPath>Things/BeltModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+	  <WorkToMake>7000</WorkToMake>
+      <MaxHitPoints>70</MaxHitPoints>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <SellPriceFactor>0.70</SellPriceFactor>
+	</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+ 
+</Defs>

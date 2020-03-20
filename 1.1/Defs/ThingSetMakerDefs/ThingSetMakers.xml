@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> 
+ <ThingSetMakerDef>
+    <defName>WTH_MapGen_MechanoidTempleContents</defName>
+    <root Class="ThingSetMaker_Sum">
+      <options>
+	    <li>
+          <chance>1.0</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>WTH_MechanoidData</li>
+                </thingDefs>
+              </filter>
+              <countRange>
+                <min>20</min>
+                <max>30</max>
+              </countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+		<li>
+          <chance>0.5</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>WTH_MechanoidParts</li>
+                </thingDefs>
+              </filter>
+              <countRange>
+                <min>15</min>
+                <max>40</max>
+              </countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+		<li>
+          <chance>0.5</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>WTH_MechanoidChip</li>
+                </thingDefs>
+              </filter>
+              <countRange>
+                <min>1</min>
+                <max>5</max>
+              </countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.8</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Luciferium</li>
+                </thingDefs>
+              </filter>
+              <countRange>
+                <min>5</min>
+                <max>20</max>
+              </countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.4</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentSpacer</li>
+                </thingDefs>
+              </filter>
+              <countRange>
+                <min>1</min>
+                <max>4</max>
+              </countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.4</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>MedicineUltratech</li>
+                </thingDefs>
+              </filter>
+              <countRange>
+                <min>2</min>
+                <max>8</max>
+              </countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.25</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <categories>
+                  <li>Artifacts</li>
+                </categories>
+              </filter>
+              <countRange>
+                <min>1</min>
+                <max>2</max>
+              </countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+      
+      </options>
+    </root>
+  </ThingSetMakerDef>
+</Defs> 

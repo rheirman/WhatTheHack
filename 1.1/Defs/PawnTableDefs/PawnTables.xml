@@ -1,0 +1,11 @@
+<Defs>
+  <PawnTableDef>
+    <defName>WTH_Work_Mechanoids</defName>
+    <workerClass>PawnTable_PlayerPawns</workerClass>
+    <columns>
+      <li>Label</li>
+      <li>CopyPasteWorkPriorities</li>
+      <li>RemainingSpace</li>
+    </columns>
+  </PawnTableDef>
+</Defs>

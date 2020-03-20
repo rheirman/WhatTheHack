@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RuleDef>
+    <defName>WTH_MechanoidTemple</defName>
+    <symbol>mechanoidTemple</symbol>
+    <resolvers>
+      <li Class="WhatTheHack.WorldIncidents.SymbolResolver_MechanoidTemple">
+        <minRectSize>(6, 5)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+   <RuleDef>
+    <defName>WTH_Interior_MechanoidTemple</defName>
+    <symbol>interior_mechanoidTemple</symbol>
+    <resolvers>
+      <li Class="WhatTheHack.WorldIncidents.SymbolResolver_Interior_MechanoidTemple">
+        <minRectSize>(4, 3)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+</Defs>

@@ -1,0 +1,30 @@
+<Defs>
+  <SoundDef>
+    <defName>WTH_Sound_Overdrive</defName>  
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <eventNames />
+    <maxSimultaneous>5</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Misc/OrbitalBeam/OrbitalBeamSubtle</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>
+          <min>1.25</min>        
+          <max>1.35</max>
+        </pitchRange>
+        <volumeRange>
+          <min>5</min>        
+          <max>7</max>
+        </volumeRange>
+        <sustainAttack>0.5</sustainAttack>      
+        <sustainRelease>0.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

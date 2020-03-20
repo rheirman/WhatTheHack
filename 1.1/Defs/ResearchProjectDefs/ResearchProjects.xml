@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ResearchProjectDef>
+	<defName>WTH_HackingBasics</defName>
+	<label>mechanoid hacking basics</label>
+	<tab>WTH_ResearchTab</tab>
+	<techLevel>Spacer</techLevel>
+	<description>Gives access to the hacking table and the mechanoid platform. The hacking table can be used to hack into the targeting system of mechanoids, making sure they attack your enemy instead of your colony when activated. Also allows you to build mechanoid platforms, which are needed as a repair and as a power station for mechanoids.</description>
+	<baseCost>1000</baseCost>
+	<prerequisites>
+	  <li>MicroelectronicsBasics</li>
+	</prerequisites>
+		<researchViewX>0</researchViewX>
+		<researchViewY>3</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_PortableChemfuelPlatform</defName>
+		<label>Portable chemfuel charging platform</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Allows the creation of portable chemfuel charging platforms, which supply your mechanoids with power while they explore the world. Can also be installed/uninstalled for a temporary power solution for your mechanoids.</description>
+		<baseCost>500</baseCost>
+		<prerequisites>
+		  <li>BiofuelRefining</li>
+		  <li>WTH_HackingBasics</li>
+		</prerequisites>
+		<researchViewX>1</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_PortableDisassemblingBench</defName>
+		<label>Portable disassembling bench</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<baseCost>800</baseCost>
+		<description>A sturdy and portable bench used for disassembling mechanoids during trips. Its tools don't depend on power, which is convenient for trips, but also makes it slightly less efficient.</description>
+		<prerequisites>
+		  <li>WTH_HackingBasics</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_MechanoidWorkshop</defName>
+		<label>mechanoid workshop</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Build a mechanoid workshop, which is used to construct all kinds of mechanoid related contraptions and upgrades, and also for scrapping advanced mechanoid parts.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+		  <li>WTH_HackingBasics</li>
+		</prerequisites>
+		<researchViewX>1</researchViewX>
+		<researchViewY>3</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_WorkModules</defName>
+		<label>work modules</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Several upgrade modules that make mechanoids capable of performing several simple tasks like hauling, cleaning, firefighting and growing. Mechanoids were designed for combat, and modifying them to let them perform simple chores is probably an insult to their creators.</description>
+		<baseCost>3500</baseCost>
+		<prerequisites>
+		  <li>WTH_MechanoidWorkshop</li>
+		</prerequisites>
+		<researchViewX>6</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_SpeedModule</defName>
+		<label>speed module</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Upgrade module that aims to increase the speed of mechanoids, at the cost of a moderate amount of extra power consumption. Mechanoids are designed to run with a limited reactor capacity. To be energy efficient, their locomotion system is designed to run at a certain capped speed. With some hacking, and by adding some hardware, this speed can be increased above design specifications, without causing any damage to the hardware. The procedure does result in a higher power consumption.</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+		  <li>WTH_MechanoidWorkshop</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>1.5</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_ArmorModule</defName>
+		<label>armor module</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Upgrade module that aims to increase the armor of mechanoids. Small layers of plasteel nano-fibers are inserted underneath the mechanoid's outer layer to protect critical parts. Increases sharp and blunt protection at the cost of a movement speed penalty.</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+		  <li>WTH_MechanoidWorkshop</li>
+		</prerequisites>
+		<researchViewX>3</researchViewX>
+		<researchViewY>1.5</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_OpticSensorModule</defName>
+		<label>optic sensor module</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>An upgrade module that aims to improve the sight of mechanoids. It drains a small amount of power. Mechanoid sensor technology is more advanced than the current state-of the art of human sensor technology. However, the sensors present on mechanoids roaming the planet generally have an age of hundreds of years. It is impressive that these sensors still function after ages of wearing, but they their quality does decay ovver time. Adding human-made sensors, despite them being inferior, can still improve the mechanoid's sight</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+		  <li>WTH_MechanoidWorkshop</li>
+		</prerequisites>
+		<researchViewX>4</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_CargoModule</defName>
+		<label>cargo module</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>An upgrade module that greatly boosts the carrying capacity of mechanoids. The size of the module is adjustable to the mechanoid for which it is used, yet it's still a bit bulky, imposing a small penalty to the manipulation stat of the mechanoid.</description>
+		<baseCost>1000</baseCost>
+		<prerequisites>
+		  <li>WTH_MechanoidWorkshop</li>
+		</prerequisites>
+		<researchViewX>3</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+	
+
+	
+	<ResearchProjectDef>
+		<defName>WTH_HackingRemoteControl</defName>
+		<label>mechanoid controller belt</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Learn how to control mechanoids directly with colonists using a mechanoid controller belt which can be crafted at the mechanoid workshop. Finally your non-violent colonists can participate in battle without feeling guilty. After all, it's the mechanoids doing the killing, not them, right?</description>
+		<baseCost>1600</baseCost>
+		<prerequisites>
+		  <li>WTH_MechanoidWorkshop</li>
+		</prerequisites>
+		<researchViewX>5</researchViewX>
+		<researchViewY>3</researchViewY>
+	</ResearchProjectDef>
+	
+	
+	<ResearchProjectDef>
+		<defName>WTH_RepairModule</defName>
+		<label>Repair module</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>The repair module can be installed in the reactor of mechanoids. It can be loaded with mechanoid parts, and is capable of very rapidly drawing a large amount of power from the mechanoid, and redirecting it the the mech's internal mechanites. This activates the mechanites, which can repair damage consuming the parts, while slowing down the mechanoid temporarily.</description>
+		<baseCost>1600</baseCost>
+		<prerequisites>
+		  <li>WTH_MechanoidWorkshop</li>
+		</prerequisites>
+		<researchViewX>5</researchViewX>
+		<researchViewY>2</researchViewY>
+	</ResearchProjectDef>
+		
+	<ResearchProjectDef>
+		<defName>WTH_RepairArm</defName>
+		<label>Repair arm</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Can be used to replace the arm of a mechanoid that has a repair module installed. This arm is capable of transferring mechanites charged by the repair module to other mechanoids, resulting in the other mechanoids being repaired. The arm is however not very suitable for combat.</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+		  <li>WTH_RepairModule</li>
+		</prerequisites>
+		<researchViewX>6</researchViewX>
+		<researchViewY>2</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_SelfDestruct</defName>
+		<label>Self destruct module</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>A simple upgrade, consisting of two mortar shells and a wire that short circuits when activated. A plasteel casing prevents that the explosives go off unintentionally. Let your mechs go with a bang!</description>
+		<baseCost>800</baseCost>
+		<prerequisites>
+		  <li>WTH_MechanoidWorkshop</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_TurretModule</defName>
+		<label>Turret module</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>A module that provides both structural support and and interface for gun turrets and mortars. More research is required for installing each type of turret.</description>
+		<baseCost>2400</baseCost>
+		<prerequisites>
+		  <li>WTH_MechanoidWorkshop</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>2.5</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_TurretModule_GunTurrets</defName>
+		<label>Gun turret mounting</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Learn how to mount gun turrets on the turret module. Any gun turret that can be uninstalled after building, can be installed on the turret module. This module can only be installed on large mechanoids.</description>
+		<baseCost>1600</baseCost>
+		<prerequisites>
+		  <li>WTH_TurretModule</li>
+		</prerequisites>
+		<researchViewX>3</researchViewX>
+		<researchViewY>2.5</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_TurretModule_Mortars</defName>
+		<label>Mortar mounting</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Learn how to mount mortars on the turret module. Mortars still have to be operated manually by colonists and don't draw any power from the mechanoid. This upgrade has only a few benefits compared to using traditional mortars (quicker setup when raiding, less space needed). However, having a few mortars installed on mechanoids is a good way to impress your enemies.</description>
+		<baseCost>800</baseCost>
+		<prerequisites>
+		  <li>WTH_TurretModule</li>
+		</prerequisites>
+		<researchViewX>3</researchViewX>
+		<researchViewY>3</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_BatteryExpansionModule</defName>
+		<label>Battery expansion module</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>A module that increases the total power a mechanoid can store, at the cost of a small movement penalty.</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+		  <li>WTH_MechanoidWorkshop</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>3.5</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_OverdriveModule</defName>
+		<label>overdrive module</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Upgrade module that, when activated, overclocks the mechanoid, temporarily overdriving its power network. This results in greatly boosting the speed, firing rate, and consciousness of the mechanoid for a short period of time. The procedure draws a lot of power and pushes beyond hardware safety limits, and can therefore have unforeseen consequences.</description>
+		<baseCost>1600</baseCost>
+		<prerequisites>
+		  <li>WTH_BatteryExpansionModule</li>
+		</prerequisites>
+		<researchViewX>3</researchViewX>
+		<researchViewY>4.3</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_VanometricModule</defName>
+		<label>Vanometric power module</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>A module that contains a vanometric power cell to provide a mechanoid with an infinite power supply, at the cost of a small movement penalty.</description>
+		<baseCost>2200</baseCost>
+		<prerequisites>
+		  <li>WTH_BatteryExpansionModule</li>
+		</prerequisites>
+		<researchViewX>3</researchViewX>
+		<researchViewY>3.5</researchViewY>
+	</ResearchProjectDef>
+	
+		
+	<ResearchProjectDef>
+		<defName>WTH_BeltModule</defName>
+		<label>Belt interface module</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>A module installable on any hacked mechanoid, which acts as an interface to technically advanced belts like shield belts and smokepop belts normally worn by humanoids.</description>
+		<baseCost>1800</baseCost>
+		<prerequisites>
+		  <li>WTH_MechanoidWorkshop</li>
+		</prerequisites>
+		<researchViewX>5</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_HackingAdvanced</defName>
+		<label>AI implanting</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Research the possibility to implant AI Persona Cores in hacked mechanoids, giving full control over them for combat purposes.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+		  <li>WTH_HackingRemoteControl</li>
+		</prerequisites>
+		<researchViewX>6</researchViewX>
+		<researchViewY>3</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_InduceEmergencySignal</defName>
+		<label>Attracting mechanoids</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Makes it possible to let your colonists deliberately try to trigger a self-defence mechanism in a downed, non-hacked mechanoid. This mechanism then transmits an emergency signal to nearby mechanoids, attracting them. This is a reliable, but deadly way of getting some extra mechanoid parts.</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+		  <li>WTH_HackingBasics</li>
+		</prerequisites>
+		<researchViewX>3</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_LRMSTuning</defName>
+		<label>Long range mineral scanner tuning</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Allows the long range mineral scanner to scan for locations on the world with a high concentration of mechanoid parts. Of course the parts won't be just lying around. More likely they are attached to mechanoids. Live mechanoids.. 
+If you're looking for hive data, these sites with a lot of mechanoids are a good place to search.</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+		  <li>WTH_HackingBasics</li>
+		</prerequisites>
+		<researchViewX>1</researchViewX>
+		<researchViewY>5</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>WTH_RogueAI</defName>
+		<label>Rogue AI</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>A potentially very powerful AI, based on mechanoid technology. By default, it has not developed a consciousness yet. To get a consciousness, it requires access to the knowledge found in mechanoid hive ships. With a consciousness it can become a powerful, but dangerous cyberweapon, with a unquenchable thirst for more data. 
+Without a consciousness, it still provides a small boost to the resource efficiency and repair speed of surrounding mechanoid platforms, as it is able to manage mechanites to cooperate in a more organised manner.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+		  <li>WTH_LRMSTuning</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>5</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_HiveshipHackingFacility</defName>
+		<label>Hiveship hacking facility</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>This high-tech facility allows the rogue AI to transmit its malicious code all the way to mechanoid hive ships orbiting the planet, in an attempt to gain access to the advanced knowledge present in those ships. The Rogue AI needs this knowledge to form a consciousness. Can only be activated after a Rogue AI has been built on the same map.</description>
+		<baseCost>1500</baseCost>
+		<prerequisites>
+		  <li>WTH_RogueAI</li>
+		</prerequisites>
+		<researchViewX>3</researchViewX>
+		<researchViewY>5</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>WTH_ExtractBrainData</defName>
+		<label>Human brain data extraction</label>
+		<tab>WTH_ResearchTab</tab>
+		<techLevel>Spacer</techLevel>
+		<description>Learn how to perform a gruesome surgery that is used to extracts all the data from a live human brain, and stores it using mechanoid technology. The more intelligent the owner of the brain, the more data can be extracted. This is a quick way to get data needed for the Rogue AI, but the more morally aware colonists certainly wouldn't like using it. 
+A more human-friendly alternative is to look for mechanoid infested sites on the world map using long range mineral scanner tuning.</description>
+		<baseCost>1000</baseCost>
+		<prerequisites>
+		  <li>WTH_RogueAI</li>
+		</prerequisites>
+		<researchViewX>3</researchViewX>
+		<researchViewY>6</researchViewY>
+	</ResearchProjectDef>
+	
+</Defs>

@@ -1,0 +1,11 @@
+<Defs>
+  <DamageDef>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <defName>WTH_RegeneratedPartDamage</defName>
+    <label>part is regenerating</label>
+    <hasForcefulImpact>false</hasForcefulImpact>
+    <makesBlood>false</makesBlood>
+    <canInterruptJobs>false</canInterruptJobs>
+	<hediff>WTH_RegeneratedPart</hediff>
+  </DamageDef>
+</Defs>

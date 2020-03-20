@@ -1,0 +1,108 @@
+<Defs>
+  <WorkGiverDef>
+    <defName>WTH_DoBillsPortableDisassemblingBench</defName>
+    <label>disassemble mechanoids</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Crafting</workType>
+    <priorityInType>75</priorityInType>
+    <fixedBillGiverDefs>
+      <li>WTH_PortableDisassemblingBench</li>
+    </fixedBillGiverDefs>
+    <verb>work</verb>
+    <gerund>working at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+  
+  <WorkGiverDef>
+    <defName>WTH_DoBillsMechanoidWorkshop</defName>
+    <label>make things at the mechanoid workshop</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>WTH_Hack</workType>
+    <priorityInType>75</priorityInType>
+    <fixedBillGiverDefs>
+      <li>WTH_TableMechanoidWorkshop</li>
+    </fixedBillGiverDefs>
+    <verb>work</verb>
+    <gerund>working at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+  
+  <WorkGiverDef>
+    <defName>WTH_DoBillsMedicalMechanoidOperation</defName>
+    <label>operate on mechanoids</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>WTH_Hack</workType>
+    <priorityInType>110</priorityInType>
+    <billGiversAllMechanoids>true</billGiversAllMechanoids>
+    <billGiversAllMechanoidsCorpses>true</billGiversAllMechanoidsCorpses>
+    <verb>modify</verb>
+    <gerund>modifying</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+  
+  <WorkGiverDef>
+    <defName>WTH_HaulMechanoid</defName>
+    <label>haul mechanoids</label>
+    <giverClass>WhatTheHack.Jobs.WorkGiver_HaulMechanoid</giverClass>
+    <workType>Hauling</workType>
+    <priorityInType>110</priorityInType>
+    <verb>haul</verb>
+    <gerund>hauling</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+  
+    
+  <WorkGiverDef>
+    <defName>WTH_MaintainMechanoid</defName>
+    <label>maintenance on mechanoids</label>
+    <giverClass>WhatTheHack.Jobs.WorkGiver_PerformMaintenance</giverClass>
+    <workType>WTH_Hack</workType>
+    <priorityInType>115</priorityInType>
+    <verb>perform maintenance</verb>
+    <gerund>performing maintenance</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+  
+  <WorkGiverDef>
+    <defName>WTH_MaintainMechanoid_Urgent</defName>
+    <label>urgent maintenance on mechanoids</label>
+    <giverClass>WhatTheHack.Jobs.WorkGiver_PerformMaintenanceUrgent</giverClass>
+    <workType>WTH_Hack</workType>
+    <priorityInType>120</priorityInType>
+    <verb>perform maintenance</verb>
+    <gerund>performing maintenance on</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+  
+  <WorkGiverDef>
+    <defName>WTH_HackRogueAI</defName>
+    <label>hack Rogue AI</label>
+    <giverClass>WhatTheHack.Jobs.WorkGiver_HackRogueAI</giverClass>
+    <workType>WTH_Hack</workType>
+    <priorityInType>150</priorityInType>
+    <verb>hack Rogue AI</verb>
+    <gerund>hacking Rogue AI</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+</Defs>

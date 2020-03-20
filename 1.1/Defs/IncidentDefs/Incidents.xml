@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<IncidentDef>
+		<defName>WTH_RoamingMechanoids</defName>
+		<label>roaming mechanoids</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>World</li>
+		</targetTags>
+		<workerClass>WhatTheHack.WorldIncidents.IncidentWorker_RoamingMechanoids</workerClass>
+		<letterLabel>Roaming mechanoids</letterLabel>
+		<letterDef>NeutralEvent</letterDef>
+		<letterText>A neighbouring town contacted you through the radio, saying that some of their townsmen were attacked by mechanoids. They explained where the incident occurred to warn your colony. The location is marked on the map. You can choose to ignore the warning, and visit the place. It can be a good opportunity to get some extra mechaniod parts, or to get a few men killed.</letterText>
+		<baseChance>0.6</baseChance>
+		<earliestDay>15</earliestDay>
+		<minRefireDays>45</minRefireDays>
+	</IncidentDef>
+</Defs>

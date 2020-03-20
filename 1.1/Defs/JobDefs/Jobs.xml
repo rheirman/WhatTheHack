@@ -1,0 +1,97 @@
+<Defs>
+  <JobDef>
+    <defName>WTH_CarryToHackingTable</defName>
+    <driverClass>WhatTheHack.Jobs.JobDriver_CarryToHackingTable</driverClass>
+    <reportString>Carrying mechanoid to hacking table</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>WTH_ClearHackingTable</defName>
+    <driverClass>WhatTheHack.Jobs.JobDriver_ClearHackingTable</driverClass>
+    <reportString>Remove the mechanoid from the mechanoid table to make room</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>WTH_Mechanoid_Rest</defName>
+    <driverClass>WhatTheHack.Jobs.JobDriver_Mechanoid_Rest</driverClass>
+    <reportString>Linked to facility</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>WTH_ControlMechanoid</defName>
+    <driverClass>WhatTheHack.Jobs.JobDriver_ControlMechanoid</driverClass>
+    <reportString>Controlling mechanoid</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>WTH_ControlMechanoid_Goto</defName>
+    <driverClass>WhatTheHack.Jobs.JobDriver_ControlMechanoid_Goto</driverClass>
+    <reportString>Controlling mechanoid (moving)</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+ 
+  
+  <JobDef> <!-- This job has become deprecated. It's still there to prevent errors in existing saves -->
+    <defName>WTH_Ability</defName>
+    <driverClass>WhatTheHack.Jobs.JobDriver_MechanoidAbility</driverClass>
+    <reportString>Using ability</reportString>
+	<casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
+    <defName>WTH_Ability_SelfDestruct</defName>
+    <reportString>Using self-destruct ability</reportString>
+    <driverClass>WhatTheHack.Jobs.JobDriver_MechanoidAbility</driverClass>
+    <casualInterruptible>false</casualInterruptible>
+	<modExtensions>
+		<li Class="WhatTheHack.DefModExtension_Ability">
+			<warmupTicks>150</warmupTicks>
+			<powerDrain>10</powerDrain>
+			<hediffSelf>WTH_SelfDestructed</hediffSelf>
+		</li>
+	</modExtensions>
+  </JobDef>
+  
+  <JobDef parent="WTH_Base_Ability">
+    <defName>WTH_Ability_Repair</defName>
+    <reportString>Using repair ability</reportString>
+    <driverClass>WhatTheHack.Jobs.JobDriver_MechanoidAbility</driverClass>
+    <casualInterruptible>false</casualInterruptible>
+	<modExtensions>
+		<li Class="WhatTheHack.DefModExtension_Ability">
+			<warmupTicks>300</warmupTicks>
+			<powerDrain>40</powerDrain>
+			<fuelDrain>5</fuelDrain>
+			<hediffTarget>WTH_Repairing</hediffTarget>
+		</li>
+	</modExtensions>
+  </JobDef>
+  
+  <JobDef>
+    <defName>WTH_Ability_Overdrive</defName>
+    <reportString>Using overdrive ability</reportString>
+    <driverClass>WhatTheHack.Jobs.JobDriver_MechanoidAbility_Overdrive</driverClass>
+    <casualInterruptible>false</casualInterruptible>
+	<modExtensions>
+		<li Class="WhatTheHack.DefModExtension_Ability">
+			<warmupTicks>150</warmupTicks>
+			<powerDrain>30</powerDrain>
+			<hediffSelf>WTH_Overdrive</hediffSelf>
+			<failChance>0.15</failChance>
+		</li>
+	</modExtensions>
+  </JobDef>
+  
+  <JobDef>
+    <defName>WTH_PerformMaintenance</defName>
+    <driverClass>WhatTheHack.Jobs.JobDriver_PerformMaintenance</driverClass>
+    <reportString>Performing maintenance</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>WTH_HackRogueAI</defName>
+    <driverClass>WhatTheHack.Jobs.JobDriver_HackRogueAI</driverClass>
+    <reportString>Hacking Rogue AI</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+ </Defs>

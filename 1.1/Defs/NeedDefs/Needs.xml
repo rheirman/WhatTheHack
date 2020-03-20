@@ -1,0 +1,20 @@
+<Defs>
+	<NeedDef>
+		<defName>WTH_Mechanoid_Power</defName>
+		<onlyIfCausedByHediff>true</onlyIfCausedByHediff>
+		<needClass>WhatTheHack.Needs.Need_Power</needClass>
+		<label>power</label>
+		<description>When a mechanoid is hacked, its internal reactor is shut down to avoid detection by the mechanoid hive. As a result, hacked mechanoids depend on their internal backup battery, which can be recharged on mechanoid platforms</description>
+		<listPriority>35</listPriority>
+		<showForCaravanMembers>true</showForCaravanMembers>
+	</NeedDef>
+	<NeedDef>
+		<defName>WTH_Mechanoid_Maintenance</defName>
+		<onlyIfCausedByHediff>true</onlyIfCausedByHediff>
+		<needClass>WhatTheHack.Needs.Need_Maintenance</needClass>
+		<label>maintenance</label>
+		<description>Hacking is a delicate business. The hacked parts need to be checked and replaced regularly. A poorly maintained mech not only functions suboptimal, it can also be a danger to the colony. Damaged mechs deteriorate more quickly.</description>
+		<listPriority>35</listPriority>
+		<showForCaravanMembers>true</showForCaravanMembers>
+	</NeedDef>
+</Defs>

@@ -1,0 +1,11 @@
+<Defs>
+  <DesignationCategoryDef>
+    <defName>WTH_Hacking</defName>
+    <label>hacking</label>
+    <order>99</order>
+    <specialDesignatorClasses>
+      <li>Designator_Cancel</li>
+      <li>Designator_Deconstruct</li>
+    </specialDesignatorClasses>
+  </DesignationCategoryDef>
+</Defs>
