@@ -1,0 +1,718 @@
+  <Defs>
+  
+	<HediffDef ParentName="DiseaseBase">
+		<defName>WTH_ShutDown</defName>
+		<label>shut down</label>
+		<description>shut down</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<initialSeverity>0.001</initialSeverity>
+		<lethalSeverity>0</lethalSeverity>
+		<defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+		<labelNoun>a shutdown command</labelNoun>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>WTH_HeavilyDamaged</defName>
+		<isBad>true</isBad>
+		<label>heavily damaged</label>
+		<description>heavily damaged</description>
+		<labelNoun>The sheer amount of damage to the mechanoid incapacitates it</labelNoun>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Moving</capacity>
+					  <offset>-1</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>WTH_DestroyedModule</defName>
+		<isBad>true</isBad>
+		<label>destroyed module</label>
+		<description>destroyed module</description>
+	</HediffDef>
+	
+  	<HediffDef>
+		<defName>WTH_RegeneratedPart</defName>
+		<hediffClass>Hediff_Injury</hediffClass>
+		<tendable>true</tendable>
+		<displayWound>true</displayWound>
+		<label>regenerating part</label>
+		<description>regenerating part</description>
+		<defaultLabelColor>(1.0, 0.5, 0.1)</defaultLabelColor>
+		<labelNoun>a freshly replaced part that is regenerating</labelNoun>
+		<injuryProps>
+		  <painPerSeverity>0.01</painPerSeverity>
+		</injuryProps>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>WTH_SpeedModule</defName>
+		<label>speed module</label>
+		<description>speed module</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>	
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Moving</capacity>
+					  <offset>0.3</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>		
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_SpeedModule</extraButcherProduct>
+				<canUninstall>true</canUninstall>
+				<powerRateOffset>0.25</powerRateOffset>
+				<spawnChance>0.12</spawnChance>
+				<destroyOnDeathChance>0.8</destroyOnDeathChance>
+			</li>
+		</modExtensions>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>WTH_CargoModule</defName>
+		<label>cargo module</label>
+		<description>cargo module</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>	
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Manipulation</capacity>
+					  <offset>-0.1</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>		
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_CargoModule</extraButcherProduct>
+				<canUninstall>true</canUninstall>
+				<destroyOnDeathChance>0.7</destroyOnDeathChance>
+				<carryingCapacityOffset>1.0</carryingCapacityOffset>
+			</li>
+		</modExtensions>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>WTH_OpticSensorModule</defName>
+		<label>optic sensor module</label>
+		<description>optic sensor module</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>	
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Sight</capacity>
+					  <offset>0.2</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>		
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_OpticSensorModule</extraButcherProduct>
+				<canUninstall>true</canUninstall>
+				<powerRateOffset>0.1</powerRateOffset>
+				<spawnChance>0.12</spawnChance>
+				<destroyOnDeathChance>0.8</destroyOnDeathChance>
+			</li>
+		</modExtensions>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>WTH_ArmorModule</defName>
+		<label>armor module</label>
+		<description>armor module</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>	
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Moving</capacity>
+					  <offset>-0.2</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>		
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_ArmorModule</extraButcherProduct>
+				<canUninstall>true</canUninstall>
+				<armorOffset>0.4</armorOffset>
+				<spawnChance>0.13</spawnChance>
+				<destroyOnDeathChance>0.65</destroyOnDeathChance>
+			</li>
+		</modExtensions>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>WTH_GrowingModule</defName>
+		<label>growing module</label>
+		<description>growing module</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>	
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Manipulation</capacity>
+					  <offset>-0.1</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>		
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_GrowingModule</extraButcherProduct>
+				<canUninstall>true</canUninstall>
+				<destroyOnDeathChance>0.65</destroyOnDeathChance>
+			</li>
+			<li Class="WhatTheHack.DefModExtension_Hediff_WorkModule">
+				<workTypes>
+					<li>Growing</li>
+					<li>PlantCutting</li>
+				</workTypes>
+				<skillLevel>4</skillLevel>
+			</li>
+		</modExtensions>
+	</HediffDef>
+		
+	<HediffDef>
+		<defName>WTH_FirefightingModule</defName>
+		<label>firefighting module</label>
+		<description>firefighting module</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>	
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_FirefightingModule</extraButcherProduct>
+				<canUninstall>true</canUninstall>
+				<destroyOnDeathChance>0.65</destroyOnDeathChance>
+			</li>
+			<li Class="WhatTheHack.DefModExtension_Hediff_WorkModule">
+				<workTypes>
+					<li>Firefighter</li>
+				</workTypes>
+			</li>
+		</modExtensions>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>WTH_CleaningModule</defName>
+		<label>cleaning module</label>
+		<description>cleaning module</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>	
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Manipulation</capacity>
+					  <offset>-0.1</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>		
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_CleaningModule</extraButcherProduct>
+				<canUninstall>true</canUninstall>
+				<destroyOnDeathChance>0.65</destroyOnDeathChance>
+			</li>
+			<li Class="WhatTheHack.DefModExtension_Hediff_WorkModule">
+				<workTypes>
+					<li>Cleaning</li>
+				</workTypes>
+			</li>
+		</modExtensions>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>WTH_HaulingModule</defName>
+		<label>hauling module</label>
+		<description>hauling module</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>	
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Manipulation</capacity>
+					  <offset>-0.1</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>		
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_HaulingModule</extraButcherProduct>
+				<canUninstall>true</canUninstall>
+				<destroyOnDeathChance>0.65</destroyOnDeathChance>
+			</li>
+			<li Class="WhatTheHack.DefModExtension_Hediff_WorkModule">
+				<workTypes>
+					<li>Hauling</li>
+				</workTypes>
+			</li>
+		</modExtensions>
+	  </HediffDef>
+	
+	<HediffDef>
+		<defName>WTH_BatteryExpansionModule</defName>
+		<label>Battery expansion</label>
+		<description>Battery expansion</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Moving</capacity>
+					  <offset>-0.05</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_BatteryExpansionModule</extraButcherProduct>
+				<canUninstall>true</canUninstall>
+				<batteryCapacityOffset>0.5</batteryCapacityOffset>
+				<spawnChance>0.12</spawnChance>
+				<destroyOnDeathChance>0.75</destroyOnDeathChance>
+			</li>
+		</modExtensions>
+	</HediffDef>
+	
+  	<HediffDef>
+		<defName>WTH_VanometricModule</defName>
+		<label>Vanometric module</label>
+		<description>Vanometric module</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Moving</capacity>
+					  <offset>-0.1</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_VanometricModule</extraButcherProduct>
+				<canUninstall>true</canUninstall>
+				<spawnChance>0.01</spawnChance>
+				<powerProduction>1000</powerProduction> 
+			</li>
+		</modExtensions>
+	</HediffDef>
+	
+    <HediffDef>
+		<defName>WTH_SelfDestruct</defName>
+		<label>self destruct module</label>
+		<description>self destruct module</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_SelfDestructModule</extraButcherProduct>
+				<hasAbility>true</hasAbility>
+				<canUninstall>true</canUninstall>
+				<spawnChance>0.15</spawnChance>
+				<destroyOnDeathChance>1.0</destroyOnDeathChance>
+			</li>
+		</modExtensions>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>WTH_OverdriveModule</defName>
+		<label>overdrive module</label>
+		<description>overdrive module</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_OverdriveModule</extraButcherProduct>
+				<hasAbility>true</hasAbility>
+				<canUninstall>true</canUninstall>
+				<spawnChance>0.12</spawnChance>
+				<destroyOnDeathChance>0.8</destroyOnDeathChance>
+			</li>
+		</modExtensions>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>WTH_Overdrive</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<label>overdriving</label>
+		<description>overdriving</description>
+		<maxSeverity>1.0</maxSeverity>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-12</severityPerDay>
+			</li>
+			<li Class="HediffCompProperties_Effecter">
+				<stateEffecter>WTH_Overdrive</stateEffecter>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Moving</capacity>
+					  <offset>0.5</offset>
+					</li>
+					<li>
+					  <capacity>Consciousness</capacity>
+					  <offset>0.3</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<firingRateOffset>-0.3</firingRateOffset>
+				<powerRateOffset>0.5</powerRateOffset>
+			</li>
+		</modExtensions>
+	</HediffDef>  
+	
+	<HediffDef>
+		<defName>WTH_Overdrive_GoneTooFar</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>true</isBad>
+		<label>overdriving too much</label>
+		<description>overdriving too much</description>
+		<maxSeverity>1.0</maxSeverity>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-12</severityPerDay>
+			</li>
+			<li Class="HediffCompProperties_Effecter">
+				<stateEffecter>WTH_Overdrive</stateEffecter>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Moving</capacity>
+					  <offset>2.0</offset>
+					</li>
+					<li>
+					  <capacity>Consciousness</capacity>
+					  <offset>-0.2</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<firingRateOffset>-1</firingRateOffset>
+				<powerRateOffset>15</powerRateOffset>
+			</li>
+		</modExtensions>
+	</HediffDef>  
+	
+  	<HediffDef>
+		<defName>WTH_RepairModule</defName>
+		<label>repair module</label>
+		<description>repair module</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_RepairModule</extraButcherProduct>
+				<hasAbility>true</hasAbility>
+				<canUninstall>true</canUninstall>
+				<spawnChance>0.12</spawnChance>
+				<destroyOnDeathChance>0.75</destroyOnDeathChance>
+			</li>
+		</modExtensions>
+	  </HediffDef>
+	  	    
+	   <HediffDef>
+		<defName>WTH_BeltModule</defName>
+		<label>belt module</label>
+		<description>belt module</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>		
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_BeltModule</extraButcherProduct>
+				<canUninstall>true</canUninstall>
+				<destroyOnDeathChance>0.65</destroyOnDeathChance>
+				<spawnChance>0.1</spawnChance>
+			</li>
+		</modExtensions>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>WTH_TurretModule</defName>
+		<label>turret module</label>
+		<description>turret module</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>		
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_TurretModule</extraButcherProduct>
+				<canUninstall>true</canUninstall>
+				<spawnChance>0.1</spawnChance>
+				<destroyOnDeathChance>0.75</destroyOnDeathChance>
+			</li>
+		</modExtensions>
+	  </HediffDef>
+	  
+	  <HediffDef >
+		<defName>WTH_MountedTurret</defName>
+		<label>turret mounted</label>
+		<description>turret mounted</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+	  </HediffDef>
+	  
+	  <HediffDef ParentName="AddedBodyPartBase">
+		<defName>WTH_RepairArm</defName>
+		<label>repair arm</label>
+		<description>repair arm</description>
+		<labelNoun>a repair arm</labelNoun>
+		<addedPartProps>
+		  <solid>true</solid>
+		  <partEfficiency>0.8</partEfficiency>
+		</addedPartProps>
+		<comps>
+		  <li Class="HediffCompProperties_VerbGiver">
+			<tools>
+			  <li>
+				<label>fist</label>
+				<capacities>
+				  <li>Blunt</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>2</cooldownTime>
+			  </li>
+			</tools>
+		  </li>
+		</comps>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>WTH_RepairArm</extraButcherProduct>
+				<hasAbility>true</hasAbility>
+				<canUninstall>true</canUninstall>
+				<destroyOnDeathChance>0.75</destroyOnDeathChance>
+			</li>
+		</modExtensions>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>WTH_SelfDestructed</defName>
+		<label>exploded</label>
+		<description>exploded</description>
+		<isBad>true</isBad>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>WTH_Repairing</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>charged repairing mechanites</label>
+		<description>charged repairing mechanites</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+		<maxSeverity>1.0</maxSeverity>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-5</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+					  <capacity>Moving</capacity>
+					  <offset>-0.1</offset>
+					</li>
+				</capMods>  
+			</li>
+		</stages>
+	  
+	  </HediffDef>
+	  <!--
+	  <HediffDef>
+		<defName>WTH_Overcharged</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>overcharged</label>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+		<maxSeverity>1.0</maxSeverity>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-5</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+        <li>
+			<capMods>
+				<li>
+				  <capacity>Moving</capacity>
+				  <offset>0.30</offset>
+				  <capacity>Consciousness</capacity>
+				  <offset>0.10</offset>
+				  <capacity>Manipulation</capacity>
+				  <offset>0.20</offset>
+				</li>
+			</capMods>  
+		</li>
+      </stages>
+	  </HediffDef>
+	  -->
+	  
+  	  <HediffDef>
+		<defName>WTH_ReplacedAI</defName>
+		<label>AI replaced</label>
+		<description>AI replaced</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<extraButcherProduct>AIPersonaCore</extraButcherProduct>
+				<spawnChance>0.01</spawnChance>
+			</li>
+		</modExtensions>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>WTH_TargetingHacked</defName>
+		<label>targeting hacked</label>
+		<description>targeting hacked</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<causesNeed>WTH_Mechanoid_Maintenance</causesNeed>
+		<isBad>false</isBad>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>WTH_BackupBattery</defName>
+		<label>running on backup battery</label>
+		<description>running on backup battery</description>
+		<defaultLabelColor>(0.5, 0.5, 0.9)</defaultLabelColor>
+		<causesNeed>WTH_Mechanoid_Power</causesNeed>
+		<isBad>false</isBad>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>WTH_TargetingHackedPoorly</defName>
+		<label>targeting hacked poorly</label>
+		<description>targeting hacked poorly</description>
+		<defaultLabelColor>(1.0, 0.5, 0.1)</defaultLabelColor>
+		<causesNeed>WTH_Mechanoid_Maintenance</causesNeed>
+		<isBad>false</isBad>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>WTH_TargetingDestroyed</defName>
+		<label>targeting destroyed</label>
+		<description>targeting destroyed</description>
+		<defaultLabelColor>(1.0, 0.5, 0.1)</defaultLabelColor>
+		<isBad>false</isBad>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>WTH_LowMaintenance</defName>
+		<label>poorly maintained</label>
+		<description>poorly maintained</description>
+		<isBad>true</isBad>
+		<stages>
+		  <li>
+			<capMods>
+			  <li>
+				<capacity>Moving</capacity>
+				<offset>-0.10</offset>
+			  </li>
+			  <li>
+			  	<capacity>Manipulation</capacity>
+				<offset>-0.10</offset>
+			  </li>
+			</capMods>
+		  </li>
+		</stages>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>WTH_VeryLowMaintenance</defName>
+		<label>very poorly maintained</label>
+		<description>very poorly maintained</description>
+		<isBad>true</isBad>
+		<stages>
+		  <li>
+			<capMods>
+			  <li>
+				<capacity>Moving</capacity>
+				<offset>-0.20</offset>
+			  </li>
+			  <li>
+			  	<capacity>Manipulation</capacity>
+				<offset>-0.20</offset>
+			  </li>
+			  <li>
+			  	<capacity>Consciousness</capacity>
+				<offset>-0.20</offset>
+			  </li>
+			</capMods>
+		  </li>
+		</stages>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>WTH_VeryLowPower</defName>
+		<label>very low power</label>
+		<description>very low power</description>
+		<isBad>true</isBad>
+		<stages>
+		  <li>
+			<capMods>
+			  <li>
+				<capacity>Moving</capacity>
+				<offset>-0.30</offset>
+			  </li>
+			</capMods>
+		  </li>
+		</stages>
+	  </HediffDef>
+	  
+	  <HediffDef>
+		<defName>WTH_NoPower</defName>
+		<label>no power</label>
+		<description>no power</description>
+		<isBad>true</isBad>
+		<stages>
+		  <li>
+			<capMods>
+			  <li>
+				<capacity>Moving</capacity>
+				<offset>-1.0</offset>
+			  </li>
+			  <li>
+				<capacity>Manipulation</capacity>
+				<offset>-1.0</offset>
+			  </li>
+			</capMods>
+		  </li>
+		</stages>
+	  </HediffDef>
+  </Defs>
+  

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <QuestScriptDef>
+    <defName>WTH_RoamingMechanoidsEncounterQuest</defName>
+    <rootSelectionWeight>0.1</rootSelectionWeight>
+    <rootMinPoints>0</rootMinPoints>
+    <autoAccept>true</autoAccept>
+    <canGiveRoyalFavor>true</canGiveRoyalFavor>
+	<defaultChallengeRating>2</defaultChallengeRating>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[asker_nameDef]'s [monster] [contract]</li>
+		<li>monster->monster</li>
+        <li>monster->monster hunt</li>
+        <li>monster->beast hunting</li>
+        <li>monster->creature</li>
+        <li>contract->contract</li>
+        <li>contract->mission</li>
+        <li>contract->arrangement</li>
+        <li>c
+		ontract->undertaking</li>
+        <li>contract->holy task</li>
+        
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[asker_nameFull], [asker_faction_leaderTitle] of [asker_faction_name], has reported missing caravans traveling through the area. Witnesses report that the area is a Basilisk hunting ground.\n\nContrary to popular belief, basilisks cannot turn anything to stone with their gaze, however, their acid, venom, claws and teeth provide them many other ways to kill. Several Glitterworld universities proclaim that a Basilisk's venom is the most potent across the rimworlds.\n\nMonster class traits: Being a Draconid, Basilisk can move over difficult terrain with ease.\n\n.
+		\nIf we succeed, [allRewardsDescriptions]</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        
+       
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="QuestNode_GetPawn">
+          <storeAs>asker</storeAs>
+          <mustBeFactionLeader>true</mustBeFactionLeader>
+          <allowPermanentEnemyFaction>false</allowPermanentEnemyFaction>
+        </li>
+
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+        </li>
+
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <storeFactionAs>siteFaction</storeFactionAs>
+          <sitePartsTags>
+            <li><tag>WTH_RoamingMechanoidsEncounterCore</tag></li>
+          </sitePartsTags>
+          
+        </li>
+
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$faction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+        
+        <li Class="QuestNode_GetSiteThreatPoints">
+          <storeAs>sitePoints</storeAs>
+          <sitePartsParams>$sitePartsParams</sitePartsParams>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_GetDefaultRewardValueFromPoints</def>
+          <parms>
+            <!-- Use the actual threat points generated (some site parts define a minimum threshold) -->
+            <points>$sitePoints</points>
+          </parms>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+        </li>
+        
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+        </li>
+
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label>Quest expired: [resolvedQuestName]</label>
+                <text>The monsters have left this area, and you won't hear from them until they have claimed their next victims. The quest [resolvedQuestName] has expired.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <li Class="QuestNode_Signal">
+          <inSignal>site.AllEnemiesDefeated</inSignal>
+          <node Class="QuestNode_GiveRewards">
+            <parms>
+              <allowGoodwill>true</allowGoodwill>
+              <allowRoyalFavor>true</allowRoyalFavor>
+              <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+            </parms>
+            <customLetterLabel>Payment arrived</customLetterLabel>
+            <customLetterText>You have defeated the monsters!\n\nThe payment from [asker_faction_name] has arrived.</customLetterText>
+            <nodeIfChosenPawnSignalUsed Class="QuestNode_Letter">
+              <letterDef>ChoosePawn</letterDef>
+              <label>[asker_faction_royalFavorLabel]</label>
+              <text>These colonists participated in the epic hunt for the quest [resolvedQuestName]. [asker_definite] wants to know who should receive the [royalFavorReward_amount] [asker_faction_royalFavorLabel] favor for this service.</text>
+              <useColonistsOnMap>$site</useColonistsOnMap>
+              <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+            </nodeIfChosenPawnSignalUsed>
+          </node>
+        </li>
+        <li Class="QuestNode_End">
+          <inSignal>site.AllEnemiesDefeated</inSignal>
+          <outcome>Success</outcome>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+	<SitePartDef Name="WTH_MechanoidEncounterCoreBase" Abstract="True">
+
+		<label>mechanoid encounter</label>
+		<description>a place where mechanoids are roaming.</description>
+		<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+		<approachOrderString>Attack {0}</approachOrderString>
+		<approachingReportString>Attacking {0}</approachingReportString>
+		<forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
+		<wantsThreatPoints>true</wantsThreatPoints>
+
+	</SitePartDef>
+
+	<SitePartDef ParentName="WTH_MechanoidEncounterCoreBase">
+		<defName>WTH_RoamingMechanoidsCore</defName>
+    <label>Roaming mechanoids</label>
+	<description>Mechanoids seem to be roaming around this area.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>UI/Scyther_side</expandingIconTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <forceExitAndRemoveMapCountdownDurationDays>10</forceExitAndRemoveMapCountdownDurationDays>
+		<tags Inherit="False">
+			<li>WTH_RoamingMechanoidsEncounterCore</li>
+		</tags>
+	</SitePartDef>
+
+	<SitePartDef ParentName="WTH_MechanoidEncounterCoreBase">
+		<defName>WTH_MechanoidTempleCore</defName>
+    <label>Mechanoid location</label>
+	<description>A large mechanoid structure detected by your long range mineral scanner.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>Things/MechanoidParts</expandingIconTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <forceExitAndRemoveMapCountdownDurationDays>10</forceExitAndRemoveMapCountdownDurationDays>
+		<tags Inherit="False">
+			<li>WTH_MechanoidTempleEncounterCore</li>
+		</tags>
+	</SitePartDef>
+
+</Defs>
