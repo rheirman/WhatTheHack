@@ -54,14 +54,27 @@ namespace WhatTheHack
                 foreach (KeyValuePair<String, Record> kvInner in kv.Value)
                 {
                     XmlElement childInner = xmlDoc.CreateElement(kvInner.Key);
-                    StringWriter writer = new StringWriter();
-                    serializer.Serialize(writer, kvInner.Value, ns);
-                    childInner.InnerXml = writer.ToString();
+                    childInner.InnerXml = SerializeToString(kvInner.Value);
                     child.AppendChild(childInner);
                 }
                 root.AppendChild(child);
             }
             return xmlDoc.OuterXml;
+        }
+        private string SerializeToString<T>(T value)
+        {
+            var emptyNamespaces = new XmlSerializerNamespaces(new[] { XmlQualifiedName.Empty });
+            var serializer = new XmlSerializer(value.GetType());
+            var settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.OmitXmlDeclaration = true;
+
+            using (var stream = new StringWriter())
+            using (var writer = XmlWriter.Create(stream, settings))
+            {
+                serializer.Serialize(writer, value, emptyNamespaces);
+                return stream.ToString();
+            }
         }
     }
 

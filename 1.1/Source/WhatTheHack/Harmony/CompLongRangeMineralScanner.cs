@@ -75,19 +75,14 @@ namespace WhatTheHack.Harmony
 
     }
 
-    /** 
-     * Adds extra option in long range mineral scanner so you can scan for mechanoid parts. 
-     **/
-     /*
+
    [HarmonyPatch]
    public static class CompLongRangeMineralScanner_CompGetGizmosExtra
    {
         //Code is inside m__0 method inside iterator so TargetMethod is used to access it. 
         static MethodBase TargetMethod()
-       {
-           var predicateClass = typeof(CompLongRangeMineralScanner).GetNestedTypes(AccessTools.all)
-               .FirstOrDefault(t => t.FullName.Contains("c__Iterator0"));
-           return predicateClass.GetMethods(AccessTools.all).FirstOrDefault(m => m.Name.Contains("m__0"));
+        {
+            return typeof(CompLongRangeMineralScanner).GetNestedTypes(AccessTools.all).FirstOrDefault((c) => c.Name == "<>c").GetMethods(AccessTools.all).FirstOrDefault(m => m.Name.Contains("b__7_0"));
         }
         
        static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -97,7 +92,7 @@ namespace WhatTheHack.Harmony
            {
                CodeInstruction instruction = instructionsList[i];
 
-               if ((MethodInfo)instructionsList[i].operand == typeof(WindowStack).GetMethod("Add"))
+               if (instructionsList[i].operand as MethodInfo == typeof(WindowStack).GetMethod("Add"))
                {
                     //replace call to WindowStack.Add to method that performs WindowStack.Add but also adds a mechanoid part option     
                     yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(CompLongRangeMineralScanner_CompGetGizmosExtra), "AddMechPartsOption"));//Injected code     
@@ -141,5 +136,4 @@ namespace WhatTheHack.Harmony
             instance.Add(menu);
         }
    }
-  */
 }

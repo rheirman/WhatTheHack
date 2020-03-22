@@ -11,4 +11,8 @@
 &lt;color=orange&gt;&lt;b&gt;Dependencies &lt;/b&gt;&lt;/color&gt;
 This mod depends on Hugslib. Load order should be: Hugslib -> What the Hack!?.
 	</description>	
+    <loadAfter>
+	  <li>UnlimitedHugs.HugsLib</li>
+    </loadAfter>
+	<packageId>roolo.whatthehack</packageId>
 </ModMetaData>
