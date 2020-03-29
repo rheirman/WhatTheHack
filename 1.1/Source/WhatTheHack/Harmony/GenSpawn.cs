@@ -30,6 +30,7 @@ namespace WhatTheHack.Harmony
 
         static void Postfix(ref Thing newThing, bool respawningAfterLoad)
         {
+
             AddBatteryHediffIfNeeded(newThing);
             RemoveConditionalComps(newThing);
             if (respawningAfterLoad)

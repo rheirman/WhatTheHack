@@ -33,18 +33,18 @@ namespace WhatTheHack.Harmony
                 }
                 if (thing == WTH_DefOf.WTH_MechanoidParts)
                 {
-                    Log.Message("thing scanned is mech parts!");
                 //    Traverse.Create(__instance).Field("daysWorkingSinceLastMinerals").SetValue(0f);
                     if (!TileFinder.TryFindNewSiteTile(out int tile, MinDistance, MaxDistance, true, false))
                         return false;
-                    Log.Message("found new site tile");
 
                     Slate slate = new Slate();
                     slate.Set<Map>("map", worker.Map, false);
                     slate.Set<ThingDef>("targetMineable", thing, false);
                     slate.Set<Pawn>("worker", worker, false);
-
-                    Log.Message("generating WTH_LongRangeMineralScannerMechParts quest");
+                    if (!WTH_DefOf.WTH_LongRangeMineralScannerMechParts.CanRun(slate))
+                    {
+                        return true;
+                    }
                     Quest quest = QuestUtility.GenerateQuestAndMakeAvailable(WTH_DefOf.WTH_LongRangeMineralScannerMechParts, slate);
                     Find.LetterStack.ReceiveLetter(quest.name, quest.description, LetterDefOf.PositiveEvent, null, null, quest, null, null);
                     return false;

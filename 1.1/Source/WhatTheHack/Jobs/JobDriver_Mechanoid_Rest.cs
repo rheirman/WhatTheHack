@@ -44,6 +44,7 @@ namespace WhatTheHack.Jobs
             toil.defaultCompleteMode = ToilCompleteMode.Never;
             toil.initAction = delegate
             {
+
                 if ((pawn.health.hediffSet.HasNaturallyHealingInjury() || pawn.OnHackingTable()))
                 {
                     pawn.jobs.posture = PawnPosture.LayingInBed;
@@ -52,14 +53,17 @@ namespace WhatTheHack.Jobs
                 this.job.checkOverrideOnExpire = true;
                 pawn.ClearAllReservations();
                 pawn.Position = RestingPlace.GetSleepingSlotPos(RestingPlace is Building_HackingTable ? Building_HackingTable.SLOTINDEX : Building_BaseMechanoidPlatform.SLOTINDEX);
+
             };
+
             toil.tickAction = delegate
-            {             
+            {
+
                 if (RestingPlace is Building_BaseMechanoidPlatform && pawn.ownership.OwnedBed != RestingPlace)
                 {
                    ReadyForNextToil();
                 }
-                if (RestingPlace.TryGetComp<CompAssignableToPawn_Bed>().AssignedPawns.FirstOrDefault((Pawn p) => p != pawn) is Pawn otherPawn)
+                if (RestingPlace.TryGetComp<CompAssignableToPawn_Bed>() is CompAssignableToPawn_Bed compAssignable && compAssignable.AssignedPawns.FirstOrDefault((Pawn p) => p != pawn) is Pawn otherPawn)
                 {
                     pawn.ownership.UnclaimBed();
                     ReadyForNextToil();
@@ -75,6 +79,7 @@ namespace WhatTheHack.Jobs
                     RotateToSouth();
                 }
             };
+
             yield return toil;
 
         }

@@ -25,7 +25,6 @@ namespace WhatTheHack.Harmony
                 {
                     if (BothBelts(apparel.def, wornApp.def))
                     {
-                        Log.Message("drop belt!");
                         bool forbid = __instance.pawn.Faction != null && __instance.pawn.Faction.HostileTo(Faction.OfPlayer);
                         Apparel apparel2;
                         if (!__instance.pawn.apparel.TryDrop(wornApp, out apparel2, __instance.pawn.PositionHeld, forbid))
