@@ -12,6 +12,8 @@ namespace WhatTheHack
     [DefOf]
     public class WTH_DefOf
     {
+        public static QuestScriptDef WTH_LongRangeMineralScannerMechParts;
+
         public static HediffDef WTH_TargetingHacked;
         public static HediffDef WTH_BackupBattery;
         public static HediffDef WTH_ReplacedAI;
@@ -109,8 +111,6 @@ namespace WhatTheHack
         public static ConceptDef WTH_Concept_RogueAI;
         public static ConceptDef WTH_Concept_RogueAI_LevelUp;
         public static ConceptDef WTH_Concept_RogueAI_Mood;
-        public static SitePartDef WTH_RoamingMechanoidsCore;
-        public static SitePartDef WTH_MechanoidTempleCore;
 
         public static SitePartDef WTH_RoamingMechanoidsPart;
         public static SitePartDef WTH_MechanoidTemplePart;

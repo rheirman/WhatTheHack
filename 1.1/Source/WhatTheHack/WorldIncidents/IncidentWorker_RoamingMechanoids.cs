@@ -8,6 +8,7 @@ using Verse;
 
 namespace WhatTheHack.WorldIncidents
 {
+    /*
     public class IncidentWorker_RoamingMechanoids : IncidentWorker
     {
         private const int MinDistance = 2;
@@ -52,4 +53,5 @@ namespace WhatTheHack.WorldIncidents
             return TileFinder.TryFindNewSiteTile(out tile, MinDistance, MaxDistance, true, false);
         }
     }
+    */
 }

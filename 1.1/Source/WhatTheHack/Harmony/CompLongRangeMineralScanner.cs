@@ -33,38 +33,20 @@ namespace WhatTheHack.Harmony
                 }
                 if (thing == WTH_DefOf.WTH_MechanoidParts)
                 {
+                    Log.Message("thing scanned is mech parts!");
                 //    Traverse.Create(__instance).Field("daysWorkingSinceLastMinerals").SetValue(0f);
                     if (!TileFinder.TryFindNewSiteTile(out int tile, MinDistance, MaxDistance, true, false))
                         return false;
+                    Log.Message("found new site tile");
 
                     Slate slate = new Slate();
                     slate.Set<Map>("map", worker.Map, false);
                     slate.Set<ThingDef>("targetMineable", thing, false);
                     slate.Set<Pawn>("worker", worker, false);
-                    if (!QuestScriptDefOf.LongRangeMineralScannerLump.CanRun(slate))
-                    {
-                        return true;
-                    }
-                    Quest quest = QuestUtility.GenerateQuestAndMakeAvailable(QuestScriptDefOf.LongRangeMineralScannerLump, slate);
-                    Find.LetterStack.ReceiveLetter("WTH_Letter_LRMS_Label".Translate(), "WTH_Letter_LRMS_Description".Translate(), LetterDefOf.PositiveEvent, null, null, quest, null, null);
-                    /*
-                    Site site = SiteMaker.MakeSite(WTH_DefOf.WTH_MechanoidTempleCore,
 
-                                                   tile, Faction.OfMechanoids, true);
-
-                    if (site == null)
-                        return false;
-
-                    int randomInRange = TimeoutDaysRange.RandomInRange;
-
-                    site.Tile = tile;
-                    site.GetComponent<TimeoutComp>().StartTimeout(ticks: randomInRange * GenDate.TicksPerDay);
-                    site.SetFaction(Faction.OfMechanoids);
-
-                    //site.customLabel = "TODO";
-                    Find.WorldObjects.Add(o: site);
-                    Find.LetterStack.ReceiveLetter(label: "WTH_Letter_LRMS_Label".Translate(), text: "WTH_Letter_LRMS_Description".Translate(), textLetterDef: LetterDefOf.PositiveEvent, lookTargets: site);
-                    */
+                    Log.Message("generating WTH_LongRangeMineralScannerMechParts quest");
+                    Quest quest = QuestUtility.GenerateQuestAndMakeAvailable(WTH_DefOf.WTH_LongRangeMineralScannerMechParts, slate);
+                    Find.LetterStack.ReceiveLetter(quest.name, quest.description, LetterDefOf.PositiveEvent, null, null, quest, null, null);
                     return false;
                 }
             }

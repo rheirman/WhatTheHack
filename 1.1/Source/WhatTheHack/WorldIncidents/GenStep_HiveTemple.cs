@@ -40,7 +40,8 @@ namespace WhatTheHack.WorldIncidents
 
             resolveParams.thingSetMakerParams = thingMakerParams;
             float sizeFactor = size / 20f;
-            resolveParams.mechanoidsCount =  Math.Max(1, Mathf.RoundToInt((genStepParams.sitePart.parms.threatPoints * sizeFactor) / 100f));
+
+            resolveParams.mechanoidsCount =  Math.Max(5, Mathf.RoundToInt((genStepParams.sitePart.parms.threatPoints * sizeFactor) / 100f));
 
             BaseGen.globalSettings.map = map;
             BaseGen.globalSettings.minBuildings = 1;
