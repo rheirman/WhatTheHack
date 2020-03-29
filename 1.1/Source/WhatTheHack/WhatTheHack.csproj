@@ -70,6 +70,7 @@
     <Compile Include="Comps\CompProperties_DataLevel.cs" />
     <Compile Include="Comps\CompDataLevel.cs" />
     <Compile Include="Comps\CompProperties_Overlays.cs" />
+    <Compile Include="Harmony\CaravanUtility.cs" />
     <Compile Include="Harmony\HediffStatsUtility.cs" />
     <Compile Include="Harmony\JobDriver_Wear.cs" />
     <Compile Include="Harmony\PawnUIOverlay.cs" />
