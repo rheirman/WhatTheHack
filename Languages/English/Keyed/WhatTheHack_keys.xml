@@ -436,4 +436,11 @@ You can repeat this operation as many times as needed as a means to get more mec
 	
 	<!-- end added in v1.2.6 --> 
 	
+	<!-- added in v2.0.1 --> 
+	<WTH_Reason_MissingHediff>Mechanoid missing {0}</WTH_Reason_MissingHediff>
+	<WTH_Reason_MortarResearch>Missing mortar mounting research</WTH_Reason_MortarResearch>
+	<WTH_Reason_TurretResearch>Missing turret mounting research</WTH_Reason_TurretResearch>
+	<WTH_Reason_BodySize>Mechanoid too small for module</WTH_Reason_BodySize>
+	<!-- end added in v2.0.1 --> 
+
 </LanguageData>

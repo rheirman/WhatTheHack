@@ -16,11 +16,20 @@ namespace WhatTheHack.Recipes
     public abstract class Recipe_Hacking : RecipeWorker
     {
         protected bool allowMultipleParts = false;
-        protected abstract bool CanApplyOn(Pawn pawn);
+        public virtual bool CanApplyOn(Pawn pawn, out string reason)
+        {
+            reason = "";
+            return true;
+        }
+        protected virtual bool IsValidPawn(Pawn pawn) {
+            return true;
+        }
+        
+
         public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
         {
             bool partFound = false;
-            if (CanApplyOn(pawn))
+            if (IsValidPawn(pawn))
             {
                 //Copy from vanilla. Much more complex than needed, but does the trick
                 for (int i = 0; i < recipe.appliedOnFixedBodyParts.Count; i++)
@@ -48,13 +57,13 @@ namespace WhatTheHack.Recipes
                             }
                         }
                     }
-                }
-                if (recipe.GetModExtension<DefModExtension_Recipe>() is DefModExtension_Recipe ext && !ext.needsFixedBodyPart && !partFound)
-                {
-                    yield return null;
+
+                    if (recipe.GetModExtension<DefModExtension_Recipe>() is DefModExtension_Recipe ext && !ext.needsFixedBodyPart && !partFound)
+                    {
+                        yield return null;
+                    }
                 }
             }
-
         }
         public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {

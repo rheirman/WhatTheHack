@@ -14,24 +14,30 @@ namespace WhatTheHack.Recipes
 {
     public class Recipe_ModifyMechanoid : Recipe_Hacking
     {
-        protected override bool CanApplyOn(Pawn pawn)
+        public override bool CanApplyOn(Pawn pawn, out string reason)
         {
-            bool hasRequiredHediff = true;
-            bool hasRequiredBodySize = true;
+            reason = "";
             if (recipe.HasModExtension<DefModExtension_Recipe>()) {
 
                 DefModExtension_Recipe ext = recipe.GetModExtension<DefModExtension_Recipe>();
                 if(ext.requiredHediff != null && !pawn.health.hediffSet.HasHediff(ext.requiredHediff))
                 {
-                    hasRequiredHediff = false;
+                    reason = "WTH_Reason_MissingHediff".Translate(ext.requiredHediff.label);
+                    return false;
                 }
-                if(pawn.BodySize < ext.minBodySize)
+                
+                bool ignoreBodySize = recipe.addsHediff == WTH_DefOf.WTH_TurretModule && pawn.def.GetModExtension<DefModExtension_TurretModule>() is DefModExtension_TurretModule modExt && modExt.ignoreMinBodySize;
+                if (!ignoreBodySize && pawn.BodySize < ext.minBodySize)
                 {
-                    hasRequiredBodySize = false;
+                    reason = "WTH_Reason_BodySize".Translate(ext.minBodySize);
+                    return false;
                 }
             }
-
-            return pawn.IsHacked() && !pawn.health.hediffSet.HasHediff(recipe.addsHediff) && hasRequiredHediff && hasRequiredBodySize;
+            return true;
+        }
+        protected override bool IsValidPawn(Pawn pawn)
+        {
+            return pawn.IsHacked() && !pawn.health.hediffSet.HasHediff(recipe.addsHediff);
         }
 
         protected override void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)

@@ -70,6 +70,7 @@
     <Compile Include="Comps\CompProperties_DataLevel.cs" />
     <Compile Include="Comps\CompDataLevel.cs" />
     <Compile Include="Comps\CompProperties_Overlays.cs" />
+    <Compile Include="Harmony\HealthCardUtility.cs" />
     <Compile Include="Harmony\HediffStatsUtility.cs" />
     <Compile Include="Harmony\JobDriver_Wear.cs" />
     <Compile Include="Harmony\PawnUIOverlay.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Jobs\JobGiver_Work_Mechanoid.cs" />
     <Compile Include="Jobs\JobGiver_Mechanoid_Ability.cs" />
     <Compile Include="ModExtension\DefModExtension_Ability.cs" />
+    <Compile Include="ModExtension\DefModExtension_TurretModule.cs" />
     <Compile Include="Recipes\Recipe_ModifyMechanoid_UninstallModule.cs" />
     <Compile Include="Stats\StatPart_Armor.cs" />
     <Compile Include="Stats\StatPart_BatteryCapacity.cs" />

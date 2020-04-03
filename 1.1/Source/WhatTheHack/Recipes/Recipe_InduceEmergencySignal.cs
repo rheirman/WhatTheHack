@@ -10,7 +10,7 @@ namespace WhatTheHack.Recipes
 {
     class Recipe_InduceEmergencySignal : Recipe_Hacking
     {
-        protected override bool CanApplyOn(Pawn pawn)
+        protected override bool IsValidPawn(Pawn pawn)
         {
             return !pawn.IsHacked();
         }

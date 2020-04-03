@@ -11,16 +11,22 @@ namespace WhatTheHack.Recipes
 {
     public class Recipe_MountTurret : Recipe_Hacking
     {
-        protected override bool CanApplyOn(Pawn pawn)
+        protected override bool IsValidPawn(Pawn pawn)
         {
-            bool hasRequiredHediff = true;
+            return pawn.IsHacked() && !pawn.health.hediffSet.HasHediff(recipe.addsHediff) && pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_TurretModule);
+        }
+
+        public override bool CanApplyOn(Pawn pawn, out string reason)
+        {
+            reason = "";
             if (recipe.HasModExtension<DefModExtension_Recipe>())
             {
 
                 DefModExtension_Recipe ext = recipe.GetModExtension<DefModExtension_Recipe>();
                 if (ext.requiredHediff != null && !pawn.health.hediffSet.HasHediff(ext.requiredHediff))
                 {
-                    hasRequiredHediff = false;
+                    reason = "WTH_Reason_MissingHediff".Translate(ext.requiredHediff.label);
+                    return false;
                 }
             }
             bool isArtillery = recipe.ingredients.FirstOrDefault((IngredientCount ic) => ic.FixedIngredient is ThingDef td && td.placeWorkers != null && td.placeWorkers.FirstOrDefault((Type t) => t == typeof(PlaceWorker_NotUnderRoof)) != null) != null;
@@ -30,13 +36,15 @@ namespace WhatTheHack.Recipes
 
             if(isArtillery && !mortarResearchCompleted)
             {
+                reason = "WTH_Reason_MortarResearch".Translate();
                 return false;
             }
             if(isTurretGun && !turretGunResearchCompleted)
             {
+                reason = "WTH_Reason_TurretResearch".Translate();
                 return false;
             }
-            return pawn.IsHacked() && !pawn.health.hediffSet.HasHediff(recipe.addsHediff) && hasRequiredHediff;
+            return true;
         }
 
         protected override void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
