@@ -3,6 +3,7 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
 using UnityEngine;
@@ -22,24 +23,21 @@ namespace WhatTheHack.Harmony
             Label label = ilg.DefineLabel();
             foreach (CodeInstruction instruction in instructionsList)
             {
-                if(instruction.operand == typeof(Pawn).GetMethod("get_IsColonist"))
+                if(instruction.operand as MethodInfo == typeof(Pawn).GetMethod("get_IsColonist"))
                 {
                     yield return new CodeInstruction(OpCodes.Call, typeof(CharacterCardUtility_DrawCharacterCard).GetMethod("IsColonistOrHackedMech"));
+                    flag = true;
                 }
                 else
                 {
                     yield return instruction;
                 }
-                if (instruction.operand == typeof(Pawn).GetMethod("MainDesc"))
-                {
-                    flag = true;
-                }
-                if(flag && instruction.operand == typeof(TooltipHandler).GetMethod("TipRegion", new Type[] {typeof(Rect), typeof(Func < string >), typeof(int)}))
+                if(flag && instructionsList[i - 1].opcode == OpCodes.Sub)
                 {
                     instructionsList[i+1].labels.Add(label);
                     yield return new CodeInstruction(OpCodes.Ldarg_1);//Load "pawn" argument. 
                     yield return new CodeInstruction(OpCodes.Call, typeof(CharacterCardUtility_DrawCharacterCard).GetMethod("ShouldReturn"));//Check if pawn is hacked
-                    yield return new CodeInstruction(OpCodes.Brfalse, label);//if pawn is not hacked, continue normal flow. What argument to provide here? 
+                    yield return new CodeInstruction(OpCodes.Brfalse, label);//if pawn is not hacked, continue normal flow. 
                     yield return new CodeInstruction(OpCodes.Ret);//else, return the function
                     flag = false;
                 }
@@ -62,6 +60,7 @@ namespace WhatTheHack.Harmony
             {
                 GUI.EndGroup();
                 return true;
+
             }
             return false;
         }
