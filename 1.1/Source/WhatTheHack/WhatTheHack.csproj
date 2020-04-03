@@ -74,9 +74,11 @@
     <Compile Include="Harmony\JobDriver_Wear.cs" />
     <Compile Include="Harmony\PawnUIOverlay.cs" />
     <Compile Include="Harmony\Pawn_CallTracker.cs" />
+    <Compile Include="Harmony\Pawn_EquipmentTracker.cs" />
     <Compile Include="Harmony\Pawn_SkillTracker.cs" />
     <Compile Include="Harmony\PrisonLabor\PrisonLabor_Patch_RenamePrisoners.cs" />
     <Compile Include="Harmony\Sustainer.cs" />
+    <Compile Include="Harmony\test.cs" />
     <Compile Include="Harmony\ThingDef.cs" />
     <Compile Include="Jobs\Depricated\JobDriver_Ability.cs" />
     <Compile Include="Jobs\JobDriver_MechanoidAbility_Overdrive.cs" />
@@ -102,7 +104,6 @@
     <Compile Include="Harmony\CombatExtended\CE_JobGiver_TakeAndEquip.cs" />
     <Compile Include="Harmony\CompProperties_Refuelable.cs" />
     <Compile Include="Harmony\PawnColumnDefGenerator.cs" />
-    <Compile Include="Harmony\Pawn_StoryTracker.cs" />
     <Compile Include="Harmony\ShipUtility.cs" />
     <Compile Include="Harmony\Building_TurretGun.cs" />
     <Compile Include="Harmony\Caravan.cs" />

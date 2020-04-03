@@ -3,6 +3,7 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
 using Verse;
@@ -21,7 +22,7 @@ namespace WhatTheHack.Harmony
             int i = 0;
             foreach (CodeInstruction instruction in instructionsList)
             {
-                if (instruction.operand == typeof(Pawn).GetField("skills") && instructionsList[i + 1].opcode == OpCodes.Brfalse)
+                if (instruction.operand as MethodInfo == typeof(Pawn).GetField("skills") && instructionsList[i + 1].opcode == OpCodes.Brfalse)
                 {
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
                     yield return new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(StatWorker), "stat"));
@@ -44,7 +45,7 @@ namespace WhatTheHack.Harmony
             var instructionsList = new List<CodeInstruction>(instructions);
             foreach (CodeInstruction instruction in instructionsList)
             {
-                if (instruction.operand == typeof(Pawn).GetField("skills"))
+                if (instruction.operand as MethodInfo == typeof(Pawn).GetField("skills"))
                 {
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
                     yield return new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(StatWorker), "stat"));

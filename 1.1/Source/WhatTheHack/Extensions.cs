@@ -29,6 +29,10 @@ namespace WhatTheHack
         }
         public static bool IsHacked(this Pawn pawn)
         {
+            if (!pawn.RaceProps.IsMechanoid)
+            {
+                return false;
+            }
             if (pawn.health != null && (pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_TargetingHacked) || pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_TargetingHackedPoorly)))
             {
                 return true;

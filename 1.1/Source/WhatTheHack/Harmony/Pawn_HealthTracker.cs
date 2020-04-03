@@ -4,6 +4,7 @@ using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
 using Verse;
@@ -56,7 +57,7 @@ namespace WhatTheHack.Harmony
             {
                 CodeInstruction instruction = instructionsList[i];
 
-                if (instruction.operand == typeof(RaceProperties).GetMethod("get_IsMechanoid"))
+                if (instruction.operand as MethodInfo == typeof(RaceProperties).GetMethod("get_IsMechanoid"))
                 {
                     flag = true;
                 }

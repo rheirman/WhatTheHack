@@ -19,6 +19,32 @@ using WhatTheHack.Storage;
 
 namespace WhatTheHack.Harmony
 {
+    [HarmonyPatch(typeof(Pawn), "GetDisabledWorkTypes")]
+    class Pawn_GetDisabledWorkTypes
+    {
+        static bool Prefix(Pawn __instance, ref List<WorkTypeDef> __result)
+        {
+            if (__instance.IsHacked())
+            {
+                List<WorkTypeDef> shouldForbid = new List<WorkTypeDef>();
+                ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
+                if (store != null)
+                {
+                    ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(__instance);
+                    foreach (WorkTypeDef def in DefDatabase<WorkTypeDef>.AllDefs)
+                    {
+                        if (pawnData.workTypes == null || !pawnData.workTypes.Contains(def))
+                        {
+                            shouldForbid.Add(def);
+                        }
+                    }
+                    __result = shouldForbid;
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
 
     [HarmonyPatch(typeof(Pawn), "Kill")]
     static class Pawn_Kill
@@ -34,19 +60,6 @@ namespace WhatTheHack.Harmony
                 }
                 __instance.RemoveAllLinks();
             }
-        }
-    }
-
-    [HarmonyPatch(typeof(Pawn), "DropAndForbidEverything")]
-    class Pawn_DropAndForbidEverything
-    {
-        static bool Prefix(Pawn __instance)
-        {
-            if (__instance.RaceProps.IsMechanoid && !__instance.Dead)
-            {
-                return false;
-            }
-            return true;
         }
     }
 

@@ -86,6 +86,7 @@ namespace WhatTheHack
             allowedMechWork.Add(WorkTypeDefOf.Firefighter);
             allowedMechWork.Add(WTH_DefOf.Cleaning);
             allowedMechWork.Add(WTH_DefOf.PlantCutting);
+            
             foreach(WorkTypeDef wtd in allowedMechWork)
             {
                 foreach(SkillDef skill in wtd.relevantSkills)
@@ -96,6 +97,8 @@ namespace WhatTheHack
                     }
                 }
             }
+            allowedMechSkills.Add(SkillDefOf.Melee);
+            allowedMechSkills.Add(SkillDefOf.Shooting);
 
             allBelts = DefDatabase<ThingDef>.AllDefs.Where((ThingDef t) => Utilities.IsBelt(t.apparel)).ToList();
             allSpawnableModules = DefDatabase<HediffDef>.AllDefs.Where((HediffDef h) => h.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.spawnChance > 0).ToList();

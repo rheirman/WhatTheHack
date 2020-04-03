@@ -3,6 +3,7 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
 using Verse;
@@ -25,7 +26,7 @@ namespace WhatTheHack.Harmony
                 CodeInstruction instruction = instructionsList[i];
                             
                 //Replace Arrive method by SpawnHackedMechanoids (which also calls Arrive). This avoids the need of ldgarg calls, which seem to change after literally every update of Rimworld.
-                if (instruction.operand == AccessTools.Method(typeof(PawnsArrivalModeWorker), "Arrive"))
+                if (instruction.operand as MethodInfo == AccessTools.Method(typeof(PawnsArrivalModeWorker), "Arrive"))
                 {
                     yield return new CodeInstruction(OpCodes.Call, typeof(IncidentWorker_Raid_TryExecuteWorker).GetMethod("SpawnHackedMechanoids"));
                     continue;

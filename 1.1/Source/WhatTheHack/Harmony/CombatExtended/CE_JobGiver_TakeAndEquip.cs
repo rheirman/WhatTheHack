@@ -39,11 +39,11 @@ namespace WhatTheHack.Harmony
             for (var i = 0; i < instructionsList.Count; i++)
             {
                 CodeInstruction instruction = instructionsList[i];
-                if (instruction.operand == typeof(Pawn).GetMethod("get_RaceProps"))
+                if (instruction.operand as MethodInfo == typeof(Pawn).GetMethod("get_RaceProps"))
                 {
                     yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(CE_JobGiver_TakeAndEquip_TryGiveJob), "ShouldReload", new Type[] { typeof(Pawn) }));//Injected code     
                 }
-                else if (instruction.operand == AccessTools.Method(typeof(RaceProperties), "get_Humanlike"))
+                else if (instruction.operand as MethodInfo == AccessTools.Method(typeof(RaceProperties), "get_Humanlike"))
                 {
                     //Ommit this instruction
                 }

@@ -38,7 +38,7 @@ namespace WhatTheHack.Jobs
             this.FailOnAggroMentalState(TargetIndex.A);
             //this.FailOn(() => !this.DropPod.Accepts(this.Takee));
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.OnCell).FailOnDestroyedNullOrForbidden(TargetIndex.A).FailOnDespawnedNullOrForbidden(TargetIndex.B).FailOn(() => this.HackingTable.GetCurOccupant(Building_HackingTable.SLOTINDEX) != null && this.HackingTable.GetCurOccupant(Building_HackingTable.SLOTINDEX).OnHackingTable()).FailOn(() => !this.pawn.CanReach(this.Takee, PathEndMode.OnCell, Danger.Deadly, false, TraverseMode.ByPawn)).FailOnSomeonePhysicallyInteracting(TargetIndex.A);
-            yield return Toils_Haul.StartCarryThing(TargetIndex.A, false, false, false);
+            yield return Toils_Haul.StartCarryThing(TargetIndex.A);
             yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.InteractionCell);
 
             //yield return Toils_Haul.CarryHauledThingToCell(TargetIndex.A)

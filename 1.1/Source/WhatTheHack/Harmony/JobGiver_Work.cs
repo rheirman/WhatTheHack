@@ -17,7 +17,11 @@ namespace WhatTheHack.Harmony
         {
             if (__result == false)
             {
-                __result = (giver.def.nonColonistsCanDo || pawn.IsColonist || pawn.IsHacked() && pawn.workSettings != null) && (pawn.story == null || !pawn.story.DisabledWorkTagsBackstoryAndTraits.HasFlag(giver.def.workTags)) && !giver.ShouldSkip(pawn, false) && giver.MissingRequiredCapacity(pawn) == null;
+                __result = (giver.def.nonColonistsCanDo || pawn.IsColonist || pawn.IsHacked() && pawn.workSettings != null) && (pawn.story == null || !pawn.WorkTypeIsDisabled(giver.def.workType)) && !giver.ShouldSkip(pawn, false) && giver.MissingRequiredCapacity(pawn) == null;
+            }
+            if (pawn.IsHacked())
+            {
+                Log.Message("PawnCanUseWorkGiver returning: " + __result + " for " + pawn.Name + ", Giver: " + giver.def.defName);
             }
         }
     }

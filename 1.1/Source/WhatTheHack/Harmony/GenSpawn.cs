@@ -3,6 +3,7 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
 using Verse;
@@ -100,7 +101,7 @@ namespace WhatTheHack.Harmony
             var instructionsList = new List<CodeInstruction>(instructions);
             foreach (CodeInstruction instruction in instructionsList)
             {
-                if(instruction.operand == typeof(GenSpawn).GetMethod("WipeExistingThings"))
+                if(instruction.operand as MethodInfo == typeof(GenSpawn).GetMethod("WipeExistingThings"))
                 {
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
                     yield return new CodeInstruction(OpCodes.Call, typeof(GenSpawn_Spawn).GetMethod("Modified_WipeExistingThings"));
