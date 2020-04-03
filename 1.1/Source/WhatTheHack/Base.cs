@@ -406,7 +406,7 @@ namespace WhatTheHack
 
         public override void WorldLoaded()
         {
-            _extendedDataStorage = UtilityWorldObjectManager.GetUtilityWorldObject<ExtendedDataStorage>();
+            _extendedDataStorage = Find.World.GetComponent<ExtendedDataStorage>();
             _extendedDataStorage.Cleanup();
             base.WorldLoaded();
         }

@@ -1,4 +1,5 @@
 ﻿using HugsLib.Utils;
+using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace WhatTheHack.Storage
     /**
      * Class initially intended for attaching custom data to pawns. Right now it's misused a bit for other data aswell. Refactoring it to be more general won't be compatible with existing saves, and creating separate classes for each type of data will result in too much boilerplate to my taste. 
      **/
-    public class ExtendedDataStorage : UtilityWorldObject, IExposable
+    public class ExtendedDataStorage : WorldComponent, IExposable
     {
         private Dictionary<int, ExtendedPawnData> _store =
             new Dictionary<int, ExtendedPawnData>();
@@ -26,6 +27,10 @@ namespace WhatTheHack.Storage
         internal int lastEmergencySignalTick = 0;
         internal int lastEmergencySignalDelay = 0;
         internal int lastEmergencySignalCooldown = 0;
+
+        public ExtendedDataStorage(World world) : base(world)
+        {
+        }
 
         public override void ExposeData()
         {
