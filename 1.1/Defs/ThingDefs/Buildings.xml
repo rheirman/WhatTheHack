@@ -276,6 +276,10 @@
 			<initialConfigurableTargetFuelLevel>10.0</initialConfigurableTargetFuelLevel>
 		  </li>
 		  <li Class="CompProperties_Forbiddable" />
+		  <li Class="CompProperties_AssignableToPawn">
+			<drawAssignmentOverlay>false</drawAssignmentOverlay>
+			<compClass>CompAssignableToPawn_Bed</compClass>
+		  </li>
 		</comps>
 		<building>
 			<bed_humanlike>false</bed_humanlike>
