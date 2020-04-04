@@ -27,30 +27,29 @@ namespace WhatTheHack.Harmony
             }
             if (instance.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt)
             {
-                Thing thing = null;
                 if (modExt.armorOffset != 0)
                 {
-                    yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, StatDefOf.ArmorRating_Blunt, modExt.armorOffset, StatRequest.For(thing));
-                    yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, StatDefOf.ArmorRating_Sharp, modExt.armorOffset, StatRequest.For(thing));
+                    yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, StatDefOf.ArmorRating_Blunt, modExt.armorOffset, StatRequest.ForEmpty());
+                    yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, StatDefOf.ArmorRating_Sharp, modExt.armorOffset, StatRequest.ForEmpty());
                 }
                 if (modExt.batteryCapacityOffset != 0) {
-                    yield return new StatDrawEntry(WTH_DefOf.WTH_StatCategory_HackedMechanoid, WTH_DefOf.WTH_BatteryCapacityPercentage, modExt.batteryCapacityOffset, StatRequest.For(thing));
+                    yield return new StatDrawEntry(WTH_DefOf.WTH_StatCategory_Hidden, WTH_DefOf.WTH_BatteryCapacityPercentage, modExt.batteryCapacityOffset, StatRequest.ForEmpty());
                 }
                 if (modExt.powerRateOffset != 0)
                 {
-                    yield return new StatDrawEntry(WTH_DefOf.WTH_StatCategory_HackedMechanoid, WTH_DefOf.WTH_PowerRatePercentage, modExt.powerRateOffset, StatRequest.For(thing));
+                    yield return new StatDrawEntry(WTH_DefOf.WTH_StatCategory_Hidden, WTH_DefOf.WTH_PowerRatePercentage, modExt.powerRateOffset, StatRequest.ForEmpty());
                 }
 
                 if (modExt.firingRateOffset != 0)
                 {
-                    yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, StatDefOf.RangedWeapon_Cooldown, modExt.firingRateOffset, StatRequest.For(thing));
-                    yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, StatDefOf.MeleeWeapon_CooldownMultiplier, modExt.firingRateOffset, StatRequest.For(thing));
-                    yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, StatDefOf.AimingDelayFactor, modExt.firingRateOffset, StatRequest.For(thing));
+                    yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, StatDefOf.RangedWeapon_Cooldown, modExt.firingRateOffset, StatRequest.ForEmpty());
+                    yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, StatDefOf.MeleeWeapon_CooldownMultiplier, modExt.firingRateOffset, StatRequest.ForEmpty());
+                    yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, StatDefOf.AimingDelayFactor, modExt.firingRateOffset, StatRequest.ForEmpty());
                 }
                 
                 if(modExt.carryingCapacityOffset != 0)
                 {
-                    yield return new StatDrawEntry(StatCategoryDefOf.Basics, StatDefOf.CarryingCapacity, modExt.carryingCapacityOffset, StatRequest.For(thing));
+                    yield return new StatDrawEntry(StatCategoryDefOf.Basics, StatDefOf.CarryingCapacity, modExt.carryingCapacityOffset, StatRequest.ForEmpty());
                 }
             }
         }

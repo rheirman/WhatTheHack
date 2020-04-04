@@ -1,3 +1,4 @@
+
 <Defs> 
 	<StatDef>
 		<defName>WTH_PowerProduction</defName>
@@ -27,6 +28,7 @@
 		<defName>WTH_PowerRatePercentage</defName>
 		<label>Power drain per day</label>
 		<description>How much power the mechanoid uses each day</description>
+		<category>WTH_StatCategory_Hidden</category>
 		<toStringStyle>PercentZero</toStringStyle>
 		<formatString>+{0}</formatString>
 		<alwaysHide>true</alwaysHide>
@@ -47,6 +49,7 @@
 		<defName>WTH_BatteryCapacityPercentage</defName>
 		<label>Battery capacity</label>
 		<description>The total battery capacity of the mechanoid</description>
+		<category>WTH_StatCategory_Hidden</category>
 		<toStringStyle>PercentZero</toStringStyle>
 		<formatString>+{0}</formatString>
 		<alwaysHide>true</alwaysHide>
@@ -63,7 +66,7 @@
 			<li Class="WhatTheHack.Stats.StatPart_RechargeRate"></li>
 		</parts>
 	</StatDef>
-	
+
 	<StatDef>
 		<defName>WTH_RepairRate</defName>
 		<label>Repair amount per day</label>
@@ -79,7 +82,7 @@
 		  </li>
 		</parts>
 	</StatDef>
-	
+
 	<StatDef>
 		<defName>WTH_PartConsumptionRate</defName>
 		<label>Mechanoid parts consumed per day during repairs</label>
@@ -92,7 +95,7 @@
 			<li Class="WhatTheHack.Stats.StatPart_PartConsumptionRate"></li>
 		</parts>
 	</StatDef>
-	
+
 	<StatDef>
 		<defName>WTH_ControllerBeltRadius</defName>
 		<label>Control radius</label>
@@ -113,7 +116,7 @@
 		  </li>
 		</parts>
 	</StatDef>
-	  
+
 	<StatDef>
 		<defName>WTH_HackingMaintenanceSpeed</defName>
 		<label>maintenance speed</label>

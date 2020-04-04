@@ -33,10 +33,6 @@ namespace WhatTheHack.Recipes
             if (pawn.story == null)
             {
                 pawn.story = new Pawn_StoryTracker(pawn);
-                if (pawn.WorkTagIsDisabled(WorkTags.Violent))
-                {
-                    Log.Message("Violence is disabled for mech");
-                }
             }
             if(pawn.ownership == null)
             {

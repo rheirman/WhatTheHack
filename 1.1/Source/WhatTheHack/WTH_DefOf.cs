@@ -96,6 +96,7 @@ namespace WhatTheHack
         public static StatCategoryDef WTH_StatCategory_HackedMechanoid;
         public static StatCategoryDef WTH_StatCategory_Colonist;
         public static StatCategoryDef WTH_StatCategory_Platform;
+        public static StatCategoryDef WTH_StatCategory_Hidden;
 
         public static ResearchProjectDef WTH_TurretModule_GunTurrets;
         public static ResearchProjectDef WTH_TurretModule_Mortars;
