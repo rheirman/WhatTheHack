@@ -177,7 +177,7 @@
       <WorkToBuild>4000</WorkToBuild>
       <MaxHitPoints>350</MaxHitPoints>
       <Flammability>1.0</Flammability>
-    	<WTH_RepairRate>360</WTH_RepairRate>
+	  <WTH_RepairRate>300</WTH_RepairRate>
     </statBases>
     <size>(3,3)</size>
     <passability>PassThroughOnly</passability>

@@ -77,7 +77,7 @@
 			<warmupTicks>150</warmupTicks>
 			<powerDrain>30</powerDrain>
 			<hediffSelf>WTH_Overdrive</hediffSelf>
-			<failChance>0.15</failChance>
+			<failChance>0.1</failChance>
 		</li>
 	</modExtensions>
   </JobDef>
