@@ -49,9 +49,9 @@ namespace WhatTheHack.Buildings
         private const int MINTEXTTIMEOUT = 6;
         private const float TEXTDURATION = 4f;
 
-        private float moodDrainCtrlMech = 0.1f;
-        private float moodDrainCtrlTur = 0.1f;
-        private float moodDrainHack = 0.4f;
+        private float moodDrainCtrlMech = 0.075f;
+        private float moodDrainCtrlTur = 0.075f;
+        private float moodDrainHack = 0.3f;
         private float moodDrainNoPower = 0.2f;
         private float moodDrainDamage = 2.0f;
         private float moodDrainForceTalkGibberish = 5.0f;
