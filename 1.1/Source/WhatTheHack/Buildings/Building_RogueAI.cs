@@ -554,7 +554,7 @@ namespace WhatTheHack.Buildings
             {
                 if (target is Pawn mech)
                 {
-                    DoAbility(delegate { ControlMechanoid(mech); }, 500);        
+                    DoAbility(delegate { ControlMechanoid(mech); }, 250);        
                 }
             };
             return command;
@@ -643,7 +643,7 @@ namespace WhatTheHack.Buildings
             {
                 if (target is Pawn mech)
                 {
-                    DoAbility(delegate { HackMech(mech); }, 1000);
+                    DoAbility(delegate { HackMech(mech); }, 600);
                 }
             };
             return command;
@@ -730,7 +730,7 @@ namespace WhatTheHack.Buildings
             {
                 if (target is Building_TurretGun turret)
                 {            
-                    DoAbility(delegate { controlledTurrets.Add(turret); }, 500);
+                    DoAbility(delegate { controlledTurrets.Add(turret); }, 250);
                 }
             };
             return command;
