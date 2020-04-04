@@ -87,8 +87,10 @@ namespace WhatTheHack
         public static StatDef WTH_ControllerBeltRadius;
         public static StatDef WTH_RepairRate;
         public static StatDef WTH_PowerRate;
+        public static StatDef WTH_PowerRatePercentage;
         public static StatDef WTH_PowerProduction;
         public static StatDef WTH_BatteryCapacity;
+        public static StatDef WTH_BatteryCapacityPercentage;
         public static StatDef WTH_RechargeRate;
         public static StatDef WTH_PartConsumptionRate;
         public static StatCategoryDef WTH_StatCategory_HackedMechanoid;

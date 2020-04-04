@@ -34,7 +34,7 @@ namespace WhatTheHack.Stats
                 {
                     if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.armorOffset != 0)
                     {
-                        offset += val * modExt.armorOffset;
+                        offset += val + modExt.armorOffset;
                     }
                 }
                 val += offset;

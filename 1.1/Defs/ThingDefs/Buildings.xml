@@ -42,6 +42,10 @@
       </li>
       <li Class="CompProperties_Flickable"/>
 	  <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_Bed</compClass>
+      </li>
     </comps>
     <fillPercent>0.5</fillPercent>
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
