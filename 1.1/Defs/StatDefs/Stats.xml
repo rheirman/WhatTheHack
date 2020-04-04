@@ -30,6 +30,7 @@
 		<category>WTH_StatCategory_HackedMechanoid</category>
 		<toStringStyle>PercentZero</toStringStyle>
 		<formatString>+{0}</formatString>
+		<alwaysHide>true</alwaysHide>
 	</StatDef>
 	<StatDef>
 		<defName>WTH_BatteryCapacity</defName>
@@ -50,6 +51,7 @@
 		<category>WTH_StatCategory_HackedMechanoid</category>
 		<toStringStyle>PercentZero</toStringStyle>
 		<formatString>+{0}</formatString>
+		<alwaysHide>true</alwaysHide>
 	</StatDef>
 	<StatDef>
 		<defName>WTH_RechargeRate</defName>
