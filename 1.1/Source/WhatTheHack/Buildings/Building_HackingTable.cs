@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using HarmonyLib;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace WhatTheHack.Buildings
         //public Pawn OccupiedBy { get => occupiedByInt;}
         public CompPowerTrader powerComp;
         public const int SLOTINDEX = 2;
+        Func<string> getInspectStringFunc = null;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
@@ -53,6 +55,16 @@ namespace WhatTheHack.Buildings
         public bool HasPowerNow()
         {
             return this.powerComp != null && this.powerComp.PowerOn;
+        }
+        //Compatibility with animals logic. Calls ThingWithComps.GetInspectString() instead of BuildingBed.GetInspectString (which is targeted by Animals Logic). Store the function for performance.
+        public override string GetInspectString()
+        {
+            if(getInspectStringFunc == null)
+            {
+                var ptr = typeof(ThingWithComps).GetMethod("GetInspectString").MethodHandle.GetFunctionPointer();
+                getInspectStringFunc = (Func<string>)Activator.CreateInstance(typeof(Func<string>), this, ptr);
+            }
+            return getInspectStringFunc();
         }
 
     }

@@ -304,4 +304,14 @@
 			</li>
 		</value>
 	</Operation>
+	
+	<!-- Save our ship 2 compatibility --> 
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Save Our Ship 2</li>
+		</mods>
+		<match Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[(@ParentName="BaseShuttle") or (@Name="BaseShuttle")]/comps/li[(@Class = "CompProperties_Refuelable") and (descendant::fuelLabel)]</xpath>
+		</match>
+	</Operation>
 </Patch>
