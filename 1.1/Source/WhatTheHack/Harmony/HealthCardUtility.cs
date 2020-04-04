@@ -15,10 +15,8 @@ namespace WhatTheHack.Harmony
     {
         static bool Prefix(Pawn pawn, RecipeDef recipe, BodyPartRecord part, ref FloatMenuOption __result)
         {
-            Log.Message("GenerateSurgeryOption prefix called");
             if(recipe.Worker is Recipe_Hacking worker)
             {
-                Log.Message("recipe.Worker is Recipe_Hacking worker");
                 if (!worker.CanApplyOn(pawn, out string reason)){
                     if(reason == "")
                     {
@@ -34,14 +32,7 @@ namespace WhatTheHack.Harmony
                     text += " (" + reason + ")";
                     floatMenuOption = new FloatMenuOption(text, null);
                     __result = floatMenuOption;
-                    Log.Message("generating option for " + recipe.defName);
                     return false;
-                }
-                else
-                {
-                    Log.Message("Can apply on " + worker.CanApplyOn(pawn, out string r));
-                    Log.Message("reason: " + r);
-                    Log.Message("recipe: " + recipe.defName);
                 }
             }
             return true;

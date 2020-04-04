@@ -17,7 +17,6 @@ namespace WhatTheHack.Jobs
          */
         public override ThinkResult TryIssueJobPackage(Pawn pawn, JobIssueParams jobParams)
         {
-            Log.Message("TryIssueJobPackage called for mech");
             emergency = true; 
             ThinkResult result = base.TryIssueJobPackage(pawn, jobParams);
             if(result.Job == null)
@@ -25,14 +24,8 @@ namespace WhatTheHack.Jobs
                 emergency = false;
                 result = base.TryIssueJobPackage(pawn, jobParams);
             }
-            if (result.Job != null)
-            {
-                Log.Message("TryIssueJobPackage returned job: " + result.Job.def.defName);
-            }
             else
-            {
-                Log.Message("result job was null");
-                
+            {                
                 foreach (var workGiver in pawn.workSettings.WorkGiversInOrderNormal)
                 {
                     //Log.Message("pawn has normal work giver: " + workGiver);

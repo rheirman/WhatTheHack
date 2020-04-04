@@ -25,10 +25,8 @@ namespace WhatTheHack.Harmony
     {
         static bool Prefix(Pawn_EquipmentTracker __instance)
         {
-            Log.Message("Prefix DestroyEquipment");
             if (__instance.pawn.RaceProps.IsMechanoid && !__instance.pawn.Dead)
             {
-                Log.Message("DestroyEquipment skipped");
                 return false;
             }
             return true;

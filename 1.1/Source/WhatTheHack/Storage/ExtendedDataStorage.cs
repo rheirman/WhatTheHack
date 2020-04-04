@@ -84,7 +84,7 @@ namespace WhatTheHack.Storage
             {
                 _store.Remove(key);
             }
-            Log.Message("Cleaned up " + shouldRemove.Count + " depricated records from What the Hack!?");
+            Log.Message("Cleaned up " + shouldRemove.Count + " deprecated records from What the Hack!?");
         }
         
 

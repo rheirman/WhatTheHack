@@ -13,7 +13,6 @@ namespace WhatTheHack.ThinkTree
         protected override bool Satisfied(Pawn pawn)
         {
             bool result = pawn.workSettings != null && pawn.CanStartWorkNow() && !pawn.Drafted;
-            Log.Message("mech can start work: " + result);
             return result;
         }
     }
