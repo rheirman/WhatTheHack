@@ -27,7 +27,6 @@
 		<defName>WTH_PowerRatePercentage</defName>
 		<label>Power drain per day</label>
 		<description>How much power the mechanoid uses each day</description>
-		<category>WTH_StatCategory_HackedMechanoid</category>
 		<toStringStyle>PercentZero</toStringStyle>
 		<formatString>+{0}</formatString>
 		<alwaysHide>true</alwaysHide>
@@ -48,7 +47,6 @@
 		<defName>WTH_BatteryCapacityPercentage</defName>
 		<label>Battery capacity</label>
 		<description>The total battery capacity of the mechanoid</description>
-		<category>WTH_StatCategory_HackedMechanoid</category>
 		<toStringStyle>PercentZero</toStringStyle>
 		<formatString>+{0}</formatString>
 		<alwaysHide>true</alwaysHide>
