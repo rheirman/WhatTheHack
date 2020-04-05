@@ -16,5 +16,10 @@
   <Mech_Scyther.comps.CompRefuelable.fuelGizmoLabel>予備メカノイドパーツ</Mech_Scyther.comps.CompRefuelable.fuelGizmoLabel>
   <Mech_Scyther.comps.CompRefuelable.fuelLabel>予備メカノイドパーツ</Mech_Scyther.comps.CompRefuelable.fuelLabel>
 
+  <!-- Pikeman -->
+
+  <Mech_Pikeman.comps.CompRefuelable.fuelGizmoLabel>予備メカノイドパーツ</Mech_Pikeman.comps.CompRefuelable.fuelGizmoLabel>
+  <Mech_Pikeman.comps.CompRefuelable.fuelLabel>予備メカノイドパーツ</Mech_Pikeman.comps.CompRefuelable.fuelLabel>
+
 
 </LanguageData>
