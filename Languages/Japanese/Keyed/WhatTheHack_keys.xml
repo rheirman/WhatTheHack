@@ -412,6 +412,7 @@
   <WTH_Letter_OverdriveFailed1_Description>オーバードライブモジュールが過去にハードウェア安全限界を超えてオーバードライブしていたため、{0}という名前のメカノイドの頭で何かが壊れました。メカノイドをオーバードライブすると、ショートの原因となります。緊急の整備が必要です。</WTH_Letter_OverdriveFailed1_Description>
   <WTH_Letter_MediumMaintenanceDamage_Label>整備ダメージ</WTH_Letter_MediumMaintenanceDamage_Label>
   <WTH_Letter_MediumMaintenanceDamage_Description>オーバードライブモジュールをオーバードライブしたため、{0}という名前のメカノイドのハードウェアの限界を少し超えました。メカノイドをオーバードライブした場合、メカノイドのハードウェアに対してのハック状態にダメージを与える可能性があります。すぐに整備が必要です。</WTH_Letter_MediumMaintenanceDamage_Description>
+  <WTH_Letter_HighMaintenanceDamage_Description>オーバードライブモジュールをオーバードライブしたため、{0}という名前のメカノイドのハードウェアの限界を大きく超えました。メカノイドをオーバードライブした場合、メカノイドのハードウェアに対してのハック状態ほぼ完全に焼き尽くしてしまいました。早急に整備が必要です。</WTH_Letter_HighMaintenanceDamage_Description>
   <WTH_Letter_OverdiveGoneTooFar_Label>過剰オーバードライブ</WTH_Letter_OverdiveGoneTooFar_Label>
   <WTH_Letter_OverdiveGoneTooFar_Description>{0}という名前のメカノイドのオーバードライブモジュールから引き出された大電流により意図しない副作用として、オーバードライブモジュール自体が、過剰にオーバードライブしています。このモジュールは意図されたよりもはるかに大きな効果が出ています。しかし、それは非常に大きな電力を消耗させます。内部構造を破損したメカノイドには、これはとても危険です。</WTH_Letter_OverdiveGoneTooFar_Description>
   <WTH_Warning_WorkThreshold>このしきい値を低く設定しても、そのメカノイドに対して自動再充電が無効になっている場合にのみ意味があり、そのメカノイドをが崩壊するまで機能させることができます。詳細はボタンの説明をお読みください。</WTH_Warning_WorkThreshold>
@@ -428,5 +429,12 @@
   <WTH_Reason_MaintenanceLow>整備の状態が、設定されている最小整備率のしきい値を下回っています。しきい値を下げるか、メカノイドの整備を行ってください。</WTH_Reason_MaintenanceLow>
 
   <!-- end added in v1.2.6 -->
+
+  <!-- added in v2.0.1 -->
+  <WTH_Reason_MissingHediff>メカノイドは{0}を失いました</WTH_Reason_MissingHediff>
+  <WTH_Reason_MortarResearch>迫撃砲搭載の研究が未完了</WTH_Reason_MortarResearch>
+  <WTH_Reason_TurretResearch>タレット砲搭載の研究が未完了</WTH_Reason_TurretResearch>
+  <WTH_Reason_BodySize>このメカノイドはモジュールを搭載するには小さすぎます</WTH_Reason_BodySize>
+  <!-- end added in v2.0.1 -->
 
 </LanguageData>

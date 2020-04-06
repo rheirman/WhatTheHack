@@ -2,53 +2,114 @@
 <LanguageData>
 
   <WTH_ShutDown.label>シャットダウン</WTH_ShutDown.label>
+  <WTH_ShutDown.description>シャットダウン</WTH_ShutDown.description>
   <WTH_ShutDown.labelNoun>シャットダウン命令</WTH_ShutDown.labelNoun>
 
   <WTH_HeavilyDamaged.label>甚大な損傷</WTH_HeavilyDamaged.label>
+  <WTH_HeavilyDamaged.description>甚大な損傷</WTH_HeavilyDamaged.description>
   <WTH_HeavilyDamaged.labelNoun>メカノイドに対するダメージが大きすぎると、無力化されます。</WTH_HeavilyDamaged.labelNoun>
 
   <WTH_DestroyedModule.label>壊れたモジュール</WTH_DestroyedModule.label>
+  <WTH_DestroyedModule.description>壊れたモジュール</WTH_DestroyedModule.description>
 
   <WTH_RegeneratedPart.label>身体パーツ再生</WTH_RegeneratedPart.label>
+  <WTH_RegeneratedPart.description>身体パーツ再生</WTH_RegeneratedPart.description>
   <WTH_RegeneratedPart.labelNoun>新規再生部品</WTH_RegeneratedPart.labelNoun>
 
   <WTH_SpeedModule.label>移動速度モジュール</WTH_SpeedModule.label>
+  <WTH_SpeedModule.description>移動速度モジュール</WTH_SpeedModule.description>
+
   <WTH_CargoModule.label>貨物モジュール</WTH_CargoModule.label>
+  <WTH_CargoModule.description>貨物モジュール</WTH_CargoModule.description>
+
   <WTH_OpticSensorModule.label>光学センサーモジュール</WTH_OpticSensorModule.label>
+  <WTH_OpticSensorModule.description>光学センサーモジュール</WTH_OpticSensorModule.description>
+
   <WTH_ArmorModule.label>装甲モジュール</WTH_ArmorModule.label>
+  <WTH_ArmorModule.description>装甲モジュール</WTH_ArmorModule.description>
+
   <WTH_GrowingModule.label>栽培モジュール</WTH_GrowingModule.label>
+  <WTH_GrowingModule.description>栽培モジュール</WTH_GrowingModule.description>
+
   <WTH_FirefightingModule.label>消火モジュール</WTH_FirefightingModule.label>
+  <WTH_FirefightingModule.description>消火モジュール</WTH_FirefightingModule.description>
+
   <WTH_CleaningModule.label>掃除モジュール</WTH_CleaningModule.label>
+  <WTH_CleaningModule.description>掃除モジュール</WTH_CleaningModule.description>
+
   <WTH_HaulingModule.label>運搬モジュール</WTH_HaulingModule.label>
+  <WTH_HaulingModule.description>運搬モジュール</WTH_HaulingModule.description>
+
   <WTH_BatteryExpansionModule.label>拡張バッテリー</WTH_BatteryExpansionModule.label>
+  <WTH_BatteryExpansionModule.description>拡張バッテリー</WTH_BatteryExpansionModule.description>
+
   <WTH_VanometricModule.label>自家発電モジュール</WTH_VanometricModule.label>
+  <WTH_VanometricModule.description>自家発電モジュール</WTH_VanometricModule.description>
+
   <WTH_SelfDestruct.label>自爆モジュール</WTH_SelfDestruct.label>
+  <WTH_SelfDestruct.description>自爆モジュール</WTH_SelfDestruct.description>
+
   <WTH_OverdriveModule.label>オーバードライブモジュール</WTH_OverdriveModule.label>
+  <WTH_OverdriveModule.description>オーバードライブモジュール</WTH_OverdriveModule.description>
+
   <WTH_Overdrive.label>オーバードライブ中</WTH_Overdrive.label>
+  <WTH_Overdrive.description>オーバードライブ中</WTH_Overdrive.description>
+
   <WTH_Overdrive_GoneTooFar.label>オーバードライブ暴走中</WTH_Overdrive_GoneTooFar.label>
+  <WTH_Overdrive_GoneTooFar.description>オーバードライブ暴走中</WTH_Overdrive_GoneTooFar.description>
+
   <WTH_RepairModule.label>修理モジュール</WTH_RepairModule.label>
+  <WTH_RepairModule.description>修理モジュール</WTH_RepairModule.description>
+
   <WTH_BeltModule.label>ベルト装着モジュール</WTH_BeltModule.label>
+  <WTH_BeltModule.description>ベルト装着モジュール</WTH_BeltModule.description>
+
   <WTH_TurretModule.label>タレットモジュール</WTH_TurretModule.label>
+  <WTH_TurretModule.description>タレットモジュール</WTH_TurretModule.description>
+
   <WTH_MountedTurret.label>タレット搭載済</WTH_MountedTurret.label>
+  <WTH_MountedTurret.description>タレット搭載済</WTH_MountedTurret.description>
 
   <WTH_RepairArm.label>修理アーム</WTH_RepairArm.label>
+  <WTH_RepairArm.description>修理アーム</WTH_RepairArm.description>
   <WTH_RepairArm.comps.HediffComp_VerbGiver.tools.fist.label>こぶし(修理アーム)</WTH_RepairArm.comps.HediffComp_VerbGiver.tools.fist.label>
   <WTH_RepairArm.labelNoun>修理アーム</WTH_RepairArm.labelNoun>
 
   <WTH_SelfDestructed.label>自爆した</WTH_SelfDestructed.label>
+  <WTH_SelfDestructed.description>自爆した</WTH_SelfDestructed.description>
+
   <WTH_Repairing.label>重要部に電力を供給</WTH_Repairing.label>
+  <WTH_Repairing.description>重要部に電力を供給</WTH_Repairing.description>
 
   <!-- <WTH_Overcharged.label>過充電</WTH_Overcharged.label> -->
+  <!-- <WTH_Overcharged.description>過充電</WTH_Overcharged.description> -->
 
   <WTH_ReplacedAI.label>AI人格コア搭載済</WTH_ReplacedAI.label>
+  <WTH_ReplacedAI.description>AI人格コア搭載済</WTH_ReplacedAI.description>
+
   <WTH_TargetingHacked.label>敵味方識別装置ハック済</WTH_TargetingHacked.label>
+  <WTH_TargetingHacked.description>敵味方識別装置ハック済</WTH_TargetingHacked.description>
+
   <WTH_BackupBattery.label>予備バッテリーで稼働中</WTH_BackupBattery.label>
+  <WTH_BackupBattery.description>予備バッテリーで稼働中</WTH_BackupBattery.description>
+
   <WTH_TargetingHackedPoorly.label>敵味方識別装置が整備不足</WTH_TargetingHackedPoorly.label>
+  <WTH_TargetingHackedPoorly.description>敵味方識別装置が整備不足</WTH_TargetingHackedPoorly.description>
+
   <WTH_TargetingDestroyed.label>敵味方識別装置が故障</WTH_TargetingDestroyed.label>
+  <WTH_TargetingDestroyed.description>敵味方識別装置が故障</WTH_TargetingDestroyed.description>
+
   <WTH_LowMaintenance.label>整備不足</WTH_LowMaintenance.label>
+  <WTH_LowMaintenance.description>整備不足</WTH_LowMaintenance.description>
+
   <WTH_VeryLowMaintenance.label>危機的整備状態</WTH_VeryLowMaintenance.label>
+  <WTH_VeryLowMaintenance.description>危機的整備状態</WTH_VeryLowMaintenance.description>
+
   <WTH_VeryLowPower.label>電力残量低下</WTH_VeryLowPower.label>
+  <WTH_VeryLowPower.description>電力残量低下</WTH_VeryLowPower.description>
+
   <WTH_NoPower.label>電力残量なし</WTH_NoPower.label>
+  <WTH_NoPower.description>電力残量なし</WTH_NoPower.description>
 
 
 </LanguageData>

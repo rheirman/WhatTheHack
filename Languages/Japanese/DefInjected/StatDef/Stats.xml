@@ -7,8 +7,16 @@
   <WTH_PowerRate.label>1日あたりの電力消費</WTH_PowerRate.label>
   <WTH_PowerRate.description>メカノイドが毎日どのくらいの電力を使用しているか</WTH_PowerRate.description>
 
+  <WTH_PowerRatePercentage.label>1日あたりの電力消費量％</WTH_PowerRatePercentage.label>
+  <WTH_PowerRatePercentage.description>メカノイドが一日にどれだけの電力を消費するかのパーセンテージ</WTH_PowerRatePercentage.description>
+  <WTH_PowerRatePercentage.formatString>+{0}</WTH_PowerRatePercentage.formatString>
+
   <WTH_BatteryCapacity.label>バッテリー容量</WTH_BatteryCapacity.label>
-  <WTH_BatteryCapacity.description>メカノイドの最大電力容量</WTH_BatteryCapacity.description>
+  <WTH_BatteryCapacity.description>メカノイドの合計最大電力容量</WTH_BatteryCapacity.description>
+
+  <WTH_BatteryCapacityPercentage.label>バッテリー容量％</WTH_BatteryCapacityPercentage.label>
+  <WTH_BatteryCapacityPercentage.description>メカノイドの合計最大電力容量のパーセンテージ</WTH_BatteryCapacityPercentage.description>
+  <WTH_BatteryCapacityPercentage.formatString>+{0}</WTH_BatteryCapacityPercentage.formatString>
 
   <WTH_RechargeRate.label>1日あたりの充電量</WTH_RechargeRate.label>
   <WTH_RechargeRate.description>メカノイドが毎日どのくらいの電力を充電しているか</WTH_RechargeRate.description>
