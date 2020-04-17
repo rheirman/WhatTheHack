@@ -22,9 +22,22 @@
     <thingCategories>
       <li>Manufactured</li>
     </thingCategories>
-	<!-- this is added so it can be used for mineral scanner -->
+  </ThingDef>
+  
+  <!-- this is added for the long range mineral scanner. This will never appear in game, so no translation needed. -->
+  <ThingDef ParentName="RockBase">
+    <defName>WTH_MineableMechanoidParts</defName>
+    <label>mechanoid parts</label>
+    <description>Parts scrapped from destroyed mechanoids. Needed for repairing and hacking mechanoids.</description>
+    <graphicData>
+      <texPath>Things/MechanoidParts</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+	</statBases>
 	<building>
-      <isResourceRock>false</isResourceRock>
+      <isResourceRock>true</isResourceRock>
       <mineableThing>WTH_MechanoidParts</mineableThing>
       <mineableYield>40</mineableYield>
       <mineableScatterCommonality>0</mineableScatterCommonality>
@@ -34,7 +47,7 @@
       </mineableScatterLumpSizeRange>
     </building>
   </ThingDef>
-
+  
   <ThingDef ParentName="ResourceBase">
     <defName>WTH_MechanoidChip</defName>
     <label>advanced mechanoid chip</label>

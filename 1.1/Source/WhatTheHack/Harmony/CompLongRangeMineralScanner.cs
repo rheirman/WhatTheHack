@@ -31,7 +31,7 @@ namespace WhatTheHack.Harmony
                 {
                     return true;
                 }
-                if (thing == WTH_DefOf.WTH_MechanoidParts)
+                if (thing == WTH_DefOf.WTH_MineableMechanoidParts)
                 {
                 //    Traverse.Create(__instance).Field("daysWorkingSinceLastMinerals").SetValue(0f);
                     if (!TileFinder.TryFindNewSiteTile(out int tile, MinDistance, MaxDistance, true, false))
@@ -92,7 +92,7 @@ namespace WhatTheHack.Harmony
             List<FloatMenuOption> options = Traverse.Create(menu).Field("options").GetValue<List<FloatMenuOption>>();
             //options.Add(new FloatMenuOption());
             bool researchComplete = DefDatabase<ResearchProjectDef>.AllDefs.FirstOrDefault((ResearchProjectDef rp) => rp == WTH_DefOf.WTH_LRMSTuning && rp.IsFinished) != null;
-            ThingDef mechanoidParts = WTH_DefOf.WTH_MechanoidParts;
+            ThingDef mechanoidParts = WTH_DefOf.WTH_MineableMechanoidParts;
 
             if (researchComplete)
             {

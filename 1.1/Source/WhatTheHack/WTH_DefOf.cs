@@ -73,6 +73,7 @@ namespace WhatTheHack
         public static ThingDef WTH_MechanoidPlatform;
         public static ThingDef WTH_PortableChargingPlatform;
         public static ThingDef WTH_MechanoidParts;
+        public static ThingDef WTH_MineableMechanoidParts;
         public static ThingDef WTH_MechanoidChip;
         public static ThingDef WTH_Mote_Charging;
         public static ThingDef WTH_Mote_HealingCrossGreen;

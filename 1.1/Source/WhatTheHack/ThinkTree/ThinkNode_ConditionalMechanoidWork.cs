@@ -12,7 +12,7 @@ namespace WhatTheHack.ThinkTree
     {
         protected override bool Satisfied(Pawn pawn)
         {
-            bool result = pawn.workSettings != null && pawn.CanStartWorkNow() && !pawn.Drafted;
+            bool result = pawn.IsHacked() && pawn.workSettings != null && pawn.CanStartWorkNow() && !pawn.Drafted;
             return result;
         }
     }

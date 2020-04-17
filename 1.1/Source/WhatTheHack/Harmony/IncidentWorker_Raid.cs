@@ -144,7 +144,7 @@ namespace WhatTheHack.Harmony
                 if (hediff == WTH_DefOf.WTH_TurretModule)
                 {
                     bool ignoreBodySize = mechanoid.def.GetModExtension<DefModExtension_TurretModule>() is DefModExtension_TurretModule modExt && modExt.ignoreMinBodySize;
-                    if (!ignoreBodySize && mechanoid.BodySize < 2.0f)
+                    if (!ignoreBodySize && mechanoid.BodySize < 1.5f)
                     {
                         continue;
                     }
