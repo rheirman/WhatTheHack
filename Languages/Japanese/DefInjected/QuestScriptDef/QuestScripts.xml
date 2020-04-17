@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WTH_RoamingMechanoidsEncounterQuest.questNameRules.rulesStrings>
+    <li>questName->[prefix]の[mechanoids]</li>
+    <li>prefix-> 放浪中</li>
+    <li>mechanoids->メカノイドたち</li>
+  </WTH_RoamingMechanoidsEncounterQuest.questNameRules.rulesStrings>
+
+  <WTH_RoamingMechanoidsEncounterQuest.questDescriptionRules.rulesStrings>
+    <li>questDescription->[asker_faction_name]の[asker_faction_leaderTitle][asker_nameFull]は,無線であなたに連絡してきました.彼らの町がメカノイドたちに襲われたと言っています.彼らはあなたのコロニーに警告するために事件が起きた場所を説明しました.その場所は地図に印が付いています.この警告を無視して,その場所に向かうこともできます.予備のメカノイドパーツを手に入れるかもしれませんが,数人の仲間が死ぬかもしれません.\n\nもし我々が撃退に成功すると,[allRewardsDescriptions]</li>
+  </WTH_RoamingMechanoidsEncounterQuest.questDescriptionRules.rulesStrings>
+
+  <WTH_RoamingMechanoidsEncounterQuest.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>クエストの期限切れ：[resolvedQuestName]</WTH_RoamingMechanoidsEncounterQuest.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>
+  <WTH_RoamingMechanoidsEncounterQuest.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>メカノイドパーツを発見した長距離鉱物探査スキャナーが突然シャットダウンして再起動しました.発見された場所の痕跡が全て消去されています.何者かがあなたのコロニーをハッキングしたのかも？クエスト[resolvedQuestName]の期限が切れました.</WTH_RoamingMechanoidsEncounterQuest.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>
+
+  <WTH_RoamingMechanoidsEncounterQuest.root.nodes.Signal.node.customLetterLabel.slateRef>報酬が届いた</WTH_RoamingMechanoidsEncounterQuest.root.nodes.Signal.node.customLetterLabel.slateRef>
+  <WTH_RoamingMechanoidsEncounterQuest.root.nodes.Signal.node.customLetterText.slateRef>メカノイドを討伐しました！\n\n[asker_faction_name]からの報酬が届きました.</WTH_RoamingMechanoidsEncounterQuest.root.nodes.Signal.node.customLetterText.slateRef>
+
+  <WTH_RoamingMechanoidsEncounterQuest.root.nodes.siteAllEnemiesDefeated.node.nodeIfChosenPawnSignalUsed.label.slateRef>[asker_faction_royalFavorLabel]</WTH_RoamingMechanoidsEncounterQuest.root.nodes.siteAllEnemiesDefeated.node.nodeIfChosenPawnSignalUsed.label.slateRef>
+  <WTH_RoamingMechanoidsEncounterQuest.root.nodes.siteAllEnemiesDefeated.node.nodeIfChosenPawnSignalUsed.text.slateRef>これらの入植者たちは[resolvedQuestName]に参加しました.[asker_definite]は、この奉仕に対して[royalFavorReward_amount][asker_faction_royalFavorLabel]報酬を誰が受けるのか知りたがっています.</WTH_RoamingMechanoidsEncounterQuest.root.nodes.siteAllEnemiesDefeated.node.nodeIfChosenPawnSignalUsed.text.slateRef>
+
+  <WTH_LongRangeMineralScannerMechParts.questNameRules.rulesStrings>
+    <li>questName->メカノイドパーツを発見</li>
+  </WTH_LongRangeMineralScannerMechParts.questNameRules.rulesStrings>
+
+  <WTH_LongRangeMineralScannerMechParts.questDescriptionRules.rulesStrings>
+    <li>questDescription->長距離鉱物探査スキャナーがメカノイドパーツの密集地点を検出して、地図上にその場所を記録しました.メカノイドパーツは木には生えないので,戦いの準備しましょう.\nメカノイドはコロニーがこの場所を発見を妨害する対抗措置を取るので,あなたがこの場所に向かうと決めたなら,迅速に行動する必要があります.</li>
+  </WTH_LongRangeMineralScannerMechParts.questDescriptionRules.rulesStrings>
+
+  <WTH_LongRangeMineralScannerMechParts.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>クエストの期限切れ：[resolvedQuestName]</WTH_LongRangeMineralScannerMechParts.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>
+  <WTH_LongRangeMineralScannerMechParts.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>メカノイドパーツを発見した長距離鉱物探査スキャナーが突然シャットダウンして再起動しました.発見された場所の痕跡が全て消去されています.何者かがあなたのコロニーをハッキングしたのかも？クエスト[resolvedQuestName]の期限が切れました.</WTH_LongRangeMineralScannerMechParts.root.nodes.WorldObjectTimeout.node.nodes.Letter.text.slateRef>
+
+</LanguageData>

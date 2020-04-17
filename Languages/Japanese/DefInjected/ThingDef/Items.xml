@@ -4,6 +4,12 @@
   <WTH_MechanoidParts.label>メカノイドパーツ</WTH_MechanoidParts.label>
   <WTH_MechanoidParts.description>破壊されたメカノイドから回収した身体パーツです。メカノイドの修理やハッキングに必要です。</WTH_MechanoidParts.description>
 
+
+  <!-- this is added for the long range mineral scanner. This will never appear in game, so no translation needed. -->
+
+  <WTH_MineableMechanoidParts.label>メカノイドパーツ</WTH_MineableMechanoidParts.label>
+  <WTH_MineableMechanoidParts.description>破壊されたメカノイドから回収した身体パーツです。メカノイドの修理やハッキングに必要です。</WTH_MineableMechanoidParts.description>
+
   <WTH_MechanoidChip.label>先進メカノイドチップ</WTH_MechanoidChip.label>
   <WTH_MechanoidChip.description>先進的なチップは、機能が停止したか破壊されたメカノイドから回収されます。より複雑なハッキング操作に必要です。</WTH_MechanoidChip.description>
 

@@ -3,14 +3,14 @@
 
   <WTH_RoamingMechanoidsPart.label>放浪メカノイド</WTH_RoamingMechanoidsPart.label>
   <WTH_RoamingMechanoidsPart.description>メカノイドはこのエリアを巡回しているようです。</WTH_RoamingMechanoidsPart.description>
-  <WTH_RoamingMechanoidsPart.descriptionDialogue>近隣の人々は、このエリアを巡回する何体かのメカノイドを発見しました。注意してください。</WTH_RoamingMechanoidsPart.descriptionDialogue>
+  <!-- <WTH_RoamingMechanoidsPart.descriptionDialogue>近隣の人々は、このエリアを巡回する何体かのメカノイドを発見しました。注意してください。</WTH_RoamingMechanoidsPart.descriptionDialogue> -->
   <WTH_RoamingMechanoidsPart.approachOrderString>{0}に向かいます</WTH_RoamingMechanoidsPart.approachOrderString>
   <WTH_RoamingMechanoidsPart.approachingReportString>{0}に到着しました</WTH_RoamingMechanoidsPart.approachingReportString>
   <WTH_RoamingMechanoidsPart.arrivedLetter>あなたのキャラバン隊が到着しました。メカノイド達の叫び声が遠くから聞こえます。戦いに備えてください。</WTH_RoamingMechanoidsPart.arrivedLetter>
 
   <WTH_MechanoidTemplePart.label>メカノイド反応地点</WTH_MechanoidTemplePart.label>
   <WTH_MechanoidTemplePart.description>長距離鉱物探査スキャナーが、比較的遠距離からこの場所にメカノイドパーツの存在を検出したことを考えると、そこにかなりの数のメカノイドが存在しているはずです。</WTH_MechanoidTemplePart.description>
-  <WTH_MechanoidTemplePart.descriptionDialogue>あなたの長距離鉱物探査スキャナーによってメカノイドパーツの濃度が高い場所が検出されました</WTH_MechanoidTemplePart.descriptionDialogue>
+  <!-- <WTH_MechanoidTemplePart.descriptionDialogue>あなたの長距離鉱物探査スキャナーによってメカノイドパーツの濃度が高い場所が検出されました</WTH_MechanoidTemplePart.descriptionDialogue> -->
   <WTH_MechanoidTemplePart.approachOrderString>{0}に向かいます</WTH_MechanoidTemplePart.approachOrderString>
   <WTH_MechanoidTemplePart.approachingReportString>{0}に到着しました</WTH_MechanoidTemplePart.approachingReportString>
   <WTH_MechanoidTemplePart.arrivedLetter>入植者たちは不吉な大きな建物に到着しました。その周辺に人間が生活している様子はありませんが、それは何年もの間放置されていたに違いありません。RimWorldの住人はこのような建物を避けます、そしてそれには正しい理由があります。</WTH_MechanoidTemplePart.arrivedLetter>
