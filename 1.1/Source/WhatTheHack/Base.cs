@@ -314,6 +314,7 @@ namespace WhatTheHack
                 Log.Message("adding implied recipe def for: " + r.defName);
                 r.label = "WTH_UninstallModule".Translate(new object[] { def.label });
                 r.jobString = "WTH_UninstallModule_Jobstring".Translate(new object[] { def.label });
+                r.appliedOnFixedBodyParts = new List<BodyPartDef>() { WTH_DefOf.Reactor };
                 r.workerClass = typeof(Recipe_ModifyMechanoid_UninstallModule);
                 r.anesthetize = false;
                 r.effectWorking = DefDatabase<EffecterDef>.AllDefs.FirstOrDefault((EffecterDef ed) => ed.defName == "Repair");

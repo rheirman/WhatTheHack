@@ -15,11 +15,8 @@ namespace WhatTheHack.Recipes
             if (recipe.GetModExtension<DefModExtension_Recipe>() is DefModExtension_Recipe modExt && modExt.requiredHediff != null)
             {
                 bool hasRequiredHediff = pawn.health.hediffSet.HasHediff(modExt.requiredHediff);
-                Log.Message("hasrequiredhediff: " + hasRequiredHediff);
-                Log.Message("is valid pawn: " + (pawn.IsHacked() && hasRequiredHediff));
                 return pawn.IsHacked() && hasRequiredHediff;
             }
-            Log.Message("Recipe_ModifyMechanoid_UninstallModule is not a valid pawn");
             return false;
         }
 
