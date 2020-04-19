@@ -45,7 +45,7 @@ namespace WhatTheHack.Harmony
             var instructionsList = new List<CodeInstruction>(instructions);
             foreach (CodeInstruction instruction in instructionsList)
             {
-                if (instruction.operand as MethodInfo == typeof(Pawn).GetField("skills"))
+                if (instruction.operand as MethodInfo == AccessTools.Field(typeof(Pawn), "skills"))
                 {
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
                     yield return new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(StatWorker), "stat"));

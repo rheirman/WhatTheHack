@@ -24,11 +24,12 @@ namespace WhatTheHack.Jobs
             return false;
         }
 
-        private static bool PawnNeedsMaintenance(Pawn mech)
+        private bool PawnNeedsMaintenance(Pawn mech)
         {
-            if (mech.needs != null && mech.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Maintenance) is Need_Maintenance need && need.CurLevel < need.maintenanceThreshold)
-            {
-                return true;
+            if (mech.needs != null && mech.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Maintenance) is Need_Maintenance need){
+                if(need.CurLevel < GetThresHold(need)){
+                    return true;
+                }
             }
             return false;
         }
