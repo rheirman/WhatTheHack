@@ -129,7 +129,6 @@
     <Compile Include="Harmony\MapParent.cs" />
     <Compile Include="Harmony\MassUtility.cs" />
     <Compile Include="Harmony\MinifyUtility.cs" />
-    <Compile Include="Harmony\PawnCapacitiesHandler.cs" />
     <Compile Include="Harmony\PowerConnectionMaker.cs" />
     <Compile Include="Harmony\ShieldBelt.cs" />
     <Compile Include="Harmony\JobGiver_Work.cs" />
