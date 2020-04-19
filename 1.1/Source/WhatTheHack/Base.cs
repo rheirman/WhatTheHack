@@ -311,6 +311,7 @@ namespace WhatTheHack
                 }
                 RecipeDef r = new RecipeDef();
                 r.defName = "WTH_UninstallModule_" + def.defName;
+                Log.Message("adding implied recipe def for: " + r.defName);
                 r.label = "WTH_UninstallModule".Translate(new object[] { def.label });
                 r.jobString = "WTH_UninstallModule_Jobstring".Translate(new object[] { def.label });
                 r.workerClass = typeof(Recipe_ModifyMechanoid_UninstallModule);

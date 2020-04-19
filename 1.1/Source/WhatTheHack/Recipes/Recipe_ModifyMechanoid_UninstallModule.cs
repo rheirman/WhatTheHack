@@ -12,7 +12,15 @@ namespace WhatTheHack.Recipes
     {
         protected override bool IsValidPawn(Pawn pawn)
         {
-            return pawn.IsHacked() && pawn.health.hediffSet.HasHediff(recipe.addsHediff);
+            if (recipe.GetModExtension<DefModExtension_Recipe>() is DefModExtension_Recipe modExt && modExt.requiredHediff != null)
+            {
+                bool hasRequiredHediff = pawn.health.hediffSet.HasHediff(modExt.requiredHediff);
+                Log.Message("hasrequiredhediff: " + hasRequiredHediff);
+                Log.Message("is valid pawn: " + (pawn.IsHacked() && hasRequiredHediff));
+                return pawn.IsHacked() && hasRequiredHediff;
+            }
+            Log.Message("Recipe_ModifyMechanoid_UninstallModule is not a valid pawn");
+            return false;
         }
 
         protected override void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)

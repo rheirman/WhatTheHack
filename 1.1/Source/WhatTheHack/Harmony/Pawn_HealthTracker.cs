@@ -149,7 +149,7 @@ namespace WhatTheHack.Harmony
         static void Postfix(Pawn_HealthTracker __instance)
         {
 
-            Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
+            Pawn pawn = __instance.hediffSet.pawn;
             if (!pawn.RaceProps.IsMechanoid)
             {
                 return;
@@ -183,6 +183,7 @@ namespace WhatTheHack.Harmony
                 TryRegeneratePart(pawn, platform);
                 RegainWeapon(pawn);
             }
+            
         }
 
         private static void SelfDestruct(Pawn pawn)

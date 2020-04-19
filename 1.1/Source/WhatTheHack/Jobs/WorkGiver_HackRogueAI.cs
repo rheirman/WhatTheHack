@@ -6,14 +6,32 @@ using System.Text;
 using Verse;
 using Verse.AI;
 using WhatTheHack.Buildings;
+using WhatTheHack.Storage;
 
 namespace WhatTheHack.Jobs
 {
     class WorkGiver_HackRogueAI : WorkGiver_Scanner
     {
+
+        public override bool ShouldSkip(Pawn pawn, bool forced = false)
+        {
+            ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
+            if (store != null)
+            {
+                ExtendedMapData mapData = store.GetExtendedDataFor(pawn.Map);
+                if(mapData.rogueAI != null && mapData.rogueAI.goingRogue)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             Building_RogueAI rogueAI = t as Building_RogueAI;
+            Log.Message("WorkGiver_HackRogueAI called");
             if (rogueAI != null && rogueAI.goingRogue)
             {
                 LocalTargetInfo target = rogueAI;
@@ -27,7 +45,12 @@ namespace WhatTheHack.Jobs
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             Building_RogueAI rogueAI = t as Building_RogueAI;
-            return new Job(WTH_DefOf.WTH_HackRogueAI, rogueAI);
+            Log.Message("Job on thing called!");
+            if(rogueAI != null)
+            {
+                return new Job(WTH_DefOf.WTH_HackRogueAI, rogueAI);
+            }
+            return null;
         }
 
         public override PathEndMode PathEndMode

@@ -11,6 +11,28 @@ namespace WhatTheHack.Jobs
 {
     class WorkGiver_PerformMaintenance : WorkGiver_Scanner
     {
+        public override bool ShouldSkip(Pawn pawn, bool forced = false)
+        {
+            if (pawn.skills == null || pawn.Faction != Faction.OfPlayer)
+            {
+                return true;
+            }
+            if ((pawn.Map.mapPawns.AllPawnsSpawned.FirstOrDefault(p => p.IsHacked() && PawnNeedsMaintenance(p)) == null))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private static bool PawnNeedsMaintenance(Pawn mech)
+        {
+            if (mech.needs != null && mech.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Maintenance) is Need_Maintenance need && need.CurLevel < need.maintenanceThreshold)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             Pawn targetPawn = t as Pawn;
