@@ -18,7 +18,7 @@ namespace WhatTheHack.Harmony
         //Since the code we want to change is inside a hidden inner function callod b__0, we get the method to be patched using the harmony access tools. 
         static MethodBase TargetMethod()
         {
-            return typeof(Selector).GetNestedTypes(AccessTools.all).FirstOrDefault((c) => c.Name =="<>c").GetMethods(AccessTools.all).FirstOrDefault(m => m.Name.Contains("b__29_1"));
+            return typeof(Selector).GetNestedTypes(AccessTools.all).FirstOrDefault((c) => c.Name =="<>c").GetMethods(AccessTools.all).FirstOrDefault(m => m.Name.Contains("SelectInsideDragBox") && m.Name.EndsWith("_1"));
         }
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
