@@ -13,20 +13,18 @@ namespace WhatTheHack.Harmony
     [HarmonyPatch(typeof(MapParent), "RecalculateHibernatableIncidentTargets")]
     class MapParent_RecalculateHibernatableIncidentTargets
     {
-        static void Postfix(MapParent __instance)
+        static void Postfix(MapParent __instance, ref HashSet<IncidentTargetTagDef> ___hibernatableIncidentTargets)
         {
             foreach (ThingWithComps current in __instance.Map.listerThings.ThingsOfDef(WTH_DefOf.WTH_MechanoidBeacon).OfType<ThingWithComps>())
             {
                 CompHibernatable compHibernatable = current.TryGetComp<CompHibernatable>();
                 if (compHibernatable != null && compHibernatable.State == HibernatableStateDefOf.Starting && compHibernatable.Props.incidentTargetWhileStarting != null)
                 {
-                    HashSet<IncidentTargetTagDef> hibernatableIncidentTargets = Traverse.Create(__instance).Field("hibernatableIncidentTargets").GetValue<HashSet<IncidentTargetTagDef>>();
-                    if (hibernatableIncidentTargets == null)
+                    if (___hibernatableIncidentTargets == null)
                     {
-                        hibernatableIncidentTargets = new HashSet<IncidentTargetTagDef>();
+                        ___hibernatableIncidentTargets = new HashSet<IncidentTargetTagDef>();
                     }
-                    hibernatableIncidentTargets.Add(compHibernatable.Props.incidentTargetWhileStarting);
-                    Traverse.Create(__instance).Field("hibernatableIncidentTargets").SetValue(hibernatableIncidentTargets);
+                    ___hibernatableIncidentTargets.Add(compHibernatable.Props.incidentTargetWhileStarting);
                 }
             }
         }

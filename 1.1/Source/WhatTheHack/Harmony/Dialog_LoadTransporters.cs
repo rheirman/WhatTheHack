@@ -11,12 +11,11 @@ namespace WhatTheHack.Harmony
     [HarmonyPatch(typeof(Dialog_LoadTransporters), "TryAccept")]
     class Dialog_LoadTransporters_TryAccept
     {
-        static void Postfix(Dialog_LoadTransporters __instance, bool __result)
+        static void Postfix(Dialog_LoadTransporters __instance, bool __result, ref List<TransferableOneWay> ___transferables)
         {
             if (__result)
             {
-                List<TransferableOneWay> transferables = Traverse.Create(__instance).Field("transferables").GetValue<List<TransferableOneWay>>();
-                Traverse.Create(__instance).Field("transferables").SetValue(Utilities.LinkPortablePlatforms(transferables));
+                ___transferables = Utilities.LinkPortablePlatforms(___transferables);
             }
         }
     }

@@ -12,11 +12,11 @@ namespace WhatTheHack.Harmony
     [HarmonyPatch(typeof(CompHibernatable), "Startup")]
     class CompHibernatable_Startup
     {
-        static void Postfix(CompHibernatable __instance)
+        static void Postfix(CompHibernatable __instance, ref int ___endStartupTick)
         {
             if(__instance.parent is Building_MechanoidBeacon beacon)
             {
-                Traverse.Create(__instance).Field("endStartupTicks").SetValue(Traverse.Create(__instance).Field("endStartupTicks").GetValue<int>() + beacon.GetComp<CompHibernatable_MechanoidBeacon>().extraStartUpDays * GenDate.TicksPerDay);
+                ___endStartupTick += beacon.GetComp<CompHibernatable_MechanoidBeacon>().extraStartUpDays * GenDate.TicksPerDay;
             }
         }
     }

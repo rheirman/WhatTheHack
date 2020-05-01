@@ -129,7 +129,7 @@
 	<success>Always</success>
 	<operations>
 		<li Class="PatchOperationAdd">
-			<xpath>Defs/ThingDef[@ParentName="BaseMechanoid" or (race/fleshType = "Mechanoid" and not (@ParentName="BaseMechanoid") and not (@Name="BaseMechanoid"))]</xpath>
+			<xpath>Defs/ThingDef[@ParentName="BaseMechanoid" or (race/fleshType = "Mechanoid" and not (@ParentName="BaseMechanoid") and not (@Name="BaseMechanoid")) and not (recipes)]</xpath>
 			<value>
 				<recipes>
 					<li>WTH_HackMechanoid</li>

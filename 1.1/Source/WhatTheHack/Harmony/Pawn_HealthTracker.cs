@@ -33,10 +33,9 @@ namespace WhatTheHack.Harmony
     [HarmonyPatch(typeof(Pawn_HealthTracker), "HasHediffsNeedingTend")]
     static class Pawn_HealthTracker_HasHediffsNeedingTend
     {
-        static bool Prefix(Pawn_HealthTracker __instance)
+        static bool Prefix(Pawn_HealthTracker __instance, ref Pawn ___pawn)
         {
-            Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            if (pawn.RaceProps.IsMechanoid && pawn.IsHacked())
+            if (___pawn.RaceProps.IsMechanoid && ___pawn.IsHacked())
             {
                 return false;
             }

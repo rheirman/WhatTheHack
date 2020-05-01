@@ -22,16 +22,15 @@ namespace WhatTheHack.Harmony
         private const int MaxDistance = 22;
         private static readonly IntRange TimeoutDaysRange = new IntRange(min: 25, max: 50);
 
-        static bool Prefix(CompLongRangeMineralScanner __instance, Pawn worker)
+        static bool Prefix(CompLongRangeMineralScanner __instance, Pawn worker, ref ThingDef ___targetMineable)
         {
             if (__instance!=null)
             {
-                ThingDef thing = Traverse.Create(__instance).Field("targetMineable").GetValue<ThingDef>();
-                if (thing == null)
+                if (___targetMineable == null)
                 {
                     return true;
                 }
-                if (thing == WTH_DefOf.WTH_MineableMechanoidParts)
+                if (___targetMineable == WTH_DefOf.WTH_MineableMechanoidParts)
                 {
                 //    Traverse.Create(__instance).Field("daysWorkingSinceLastMinerals").SetValue(0f);
                     if (!TileFinder.TryFindNewSiteTile(out int tile, MinDistance, MaxDistance, true, false))
@@ -39,7 +38,7 @@ namespace WhatTheHack.Harmony
 
                     Slate slate = new Slate();
                     slate.Set<Map>("map", worker.Map, false);
-                    slate.Set<ThingDef>("targetMineable", thing, false);
+                    slate.Set<ThingDef>("targetMineable", ___targetMineable, false);
                     slate.Set<Pawn>("worker", worker, false);
                     if (!WTH_DefOf.WTH_LongRangeMineralScannerMechParts.CanRun(slate))
                     {

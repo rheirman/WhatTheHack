@@ -11,10 +11,9 @@ namespace WhatTheHack.Harmony
     [HarmonyPatch(typeof(Dialog_SplitCaravan), "CountToTransferChanged")]
     class Dialog_SplitCaravan_CountToTransferChanged
     {
-        static void Postfix(Dialog_SplitCaravan __instance)
+        static void Postfix(Dialog_SplitCaravan __instance, ref List<TransferableOneWay> ___transferables)
         {
-            List<TransferableOneWay> transferables = Traverse.Create(__instance).Field("transferables").GetValue<List<TransferableOneWay>>();
-            Utilities.CalcDaysOfFuel(transferables);
+            Utilities.CalcDaysOfFuel(___transferables);
         }
     }
 }

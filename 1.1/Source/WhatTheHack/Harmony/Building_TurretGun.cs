@@ -13,15 +13,15 @@ namespace WhatTheHack.Harmony
     [HarmonyPatch(typeof(Building_TurretGun), "Tick")]
     class Building_TurretGun_Tick
     {
-        static void Postfix(Building_TurretGun __instance)
+        static void Postfix(Building_TurretGun __instance, TurretTop ___top)
         {
             if (__instance.GetComp<CompMountable>() is CompMountable comp && comp.Active)
             {
-                TurretTop top = Traverse.Create(__instance).Field("top").GetValue<TurretTop>();
-                float curRotation = Traverse.Create(top).Property("CurRotation").GetValue<float>();
+                //TODO: look into performance of this. Try to avoid Traverse. 
+                float curRotation = Traverse.Create(___top).Property("CurRotation").GetValue<float>();
                 if (__instance.Rotation != comp.mountedTo.Rotation)
                 {
-                    Traverse.Create(top).Property("CurRotation").SetValue(comp.mountedTo.Rotation.AsAngle);
+                    Traverse.Create(___top).Property("CurRotation").SetValue(comp.mountedTo.Rotation.AsAngle);
                     __instance.Rotation = comp.mountedTo.Rotation;
                 }
             }
@@ -30,10 +30,9 @@ namespace WhatTheHack.Harmony
     [HarmonyPatch(typeof(TurretTop), "TurretTopTick")]
     class TurretTop_TurretTopTick
     {
-        static bool Prefix(TurretTop __instance)
+        static bool Prefix(TurretTop __instance, Building_Turret ___parentTurret)
         {
-            Building_Turret parentTurret = Traverse.Create(__instance).Field("parentTurret").GetValue<Building_Turret>();
-            if (parentTurret.GetComp<CompMountable>() is CompMountable comp && comp.Active && !parentTurret.CurrentTarget.IsValid)
+            if (___parentTurret.GetComp<CompMountable>() is CompMountable comp && comp.Active && !___parentTurret.CurrentTarget.IsValid)
             {
                 return false;
             }

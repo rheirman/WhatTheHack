@@ -11,10 +11,9 @@ namespace WhatTheHack.Harmony
     [HarmonyPatch(typeof(Pawn_SkillTracker), "Learn")]
     class Pawn_SkillTracker_Learn
     {
-        static bool Prefix(Pawn_SkillTracker __instance)
+        static bool Prefix(Pawn_SkillTracker __instance, ref Pawn ___pawn)
         {
-            Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            if (pawn.IsHacked())
+            if (___pawn.IsHacked())
             {
                 return false;
             }

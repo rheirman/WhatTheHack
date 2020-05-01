@@ -18,13 +18,12 @@ namespace WhatTheHack.Harmony
     [HarmonyPatch(typeof(Pawn_JobTracker), "DetermineNextJob")]
     static class Pawn_JobTracker_DetermineNextJob
     {
-        static void Postfix(ref Pawn_JobTracker __instance, ref ThinkResult __result)
+        static void Postfix(ref Pawn_JobTracker __instance, ref ThinkResult __result, ref Pawn ___pawn)
         {
 
-            Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            if(pawn.IsHacked() && pawn.IsActivated() && pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_TargetingHackedPoorly))
+            if(___pawn.IsHacked() && ___pawn.IsActivated() && ___pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_TargetingHackedPoorly))
             {
-                HackedPoorlyEvent(pawn);
+                HackedPoorlyEvent(___pawn);
             }
         }
 
