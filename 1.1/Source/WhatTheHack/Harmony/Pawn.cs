@@ -54,6 +54,7 @@ namespace WhatTheHack.Harmony
                     __result = shouldForbid;
                     return false;
                 }
+                
             }
             return true;
         }

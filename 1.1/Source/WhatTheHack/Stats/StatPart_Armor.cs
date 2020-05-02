@@ -29,15 +29,13 @@ namespace WhatTheHack.Stats
         {
             if (req.Thing is Pawn pawn)
             {
-                float offset = 0;
                 foreach (Hediff h in pawn.health.hediffSet.hediffs)
                 {
                     if (h.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt && modExt.armorOffset != 0)
                     {
-                        offset += val + modExt.armorOffset;
+                        val += modExt.armorOffset;
                     }
                 }
-                val += offset;
             }
         }
     }

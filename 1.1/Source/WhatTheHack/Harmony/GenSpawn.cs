@@ -38,6 +38,16 @@ namespace WhatTheHack.Harmony
             {
                 NameUnnamedMechs(newThing);
                 AddOwnershipIfNeeded(newThing);
+                //Log.Message("aa");
+                if(newThing is Pawn p && p.IsHacked())
+                {
+                    var storage = Base.Instance.GetExtendedDataStorage();
+                    if(storage != null)
+                    {
+                        
+                        Utilities.InitWorkTypesAndSkills(p, storage.GetExtendedDataFor(p));
+                    }
+                }
             }
             if(newThing.def == WTH_DefOf.WTH_TableMechanoidWorkshop)
             {

@@ -17,7 +17,6 @@ namespace WhatTheHack.Jobs
          */
         public override ThinkResult TryIssueJobPackage(Pawn pawn, JobIssueParams jobParams)
         {
-            Log.Message("TryIssueJobPackage called!");
             emergency = true; 
             ThinkResult result = base.TryIssueJobPackage(pawn, jobParams);
             if(result.Job == null)

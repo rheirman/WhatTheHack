@@ -4,9 +4,9 @@
 		<alwaysShowWeapon>true</alwaysShowWeapon>
 		<thinkNode Class="ThinkNode_Priority">
 		  <subNodes>
-		  	<li Class="JobGiver_AIFightEnemies">
-			  <targetAcquireRadius>90</targetAcquireRadius>
-			  <targetKeepRadius>20</targetKeepRadius>
+			<li Class="JobGiver_AIFightEnemies">
+			  <targetAcquireRadius>65</targetAcquireRadius>
+			  <targetKeepRadius>72</targetKeepRadius>
 			</li>
 		  	<li Class="JobGiver_AIGotoNearestHostile" />
 		  </subNodes>

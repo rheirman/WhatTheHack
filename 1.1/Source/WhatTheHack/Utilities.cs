@@ -193,7 +193,37 @@ namespace WhatTheHack
             }
             CalcDaysOfFuel(numMechanoids, fuelAmount, ref fuelConsumption, numPlatforms, ref daysOfFuel, daysOfFuelReason);
         }
+        public static void InitWorkTypesAndSkills(Pawn pawn, ExtendedPawnData pawnData)
+        {
 
+            if (pawn.skills != null)
+            {
+                Log.Message("a");
+                if (pawn.skills.GetSkill(SkillDefOf.Shooting).Level == 0)
+                {
+                    pawn.skills.GetSkill(SkillDefOf.Shooting).Level = 8;
+                }
+                if (pawn.skills.GetSkill(SkillDefOf.Melee).Level == 0)
+                {
+                    pawn.skills.GetSkill(SkillDefOf.Melee).Level = 4;
+                }
+                Log.Message("b");
+
+            }
+            if (pawn.workSettings != null)
+            {
+                Log.Message("c");
+                var huntingWorkType = WorkTypeDefOf.Hunting;
+                if(pawnData.workTypes == null)
+                {
+                    Log.Message("WTHACK: " + pawn.Name);
+                    pawnData.workTypes = new List<WorkTypeDef>();
+                }
+                pawnData.workTypes.Add(huntingWorkType);
+                pawn.workSettings.SetPriority(huntingWorkType, 3);
+                Log.Message("d");
+            }
+        }
         public static void CalcDaysOfFuel(int numMechanoids, float fuelAmount, ref float fuelConsumption, int numPlatforms, ref float daysOfFuel, StringBuilder daysOfFuelReason)
         {
             if (numMechanoids == 0)

@@ -31,7 +31,6 @@ namespace WhatTheHack.Jobs
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             Building_RogueAI rogueAI = t as Building_RogueAI;
-            Log.Message("WorkGiver_HackRogueAI called");
             if (rogueAI != null && rogueAI.goingRogue)
             {
                 LocalTargetInfo target = rogueAI;
@@ -45,7 +44,6 @@ namespace WhatTheHack.Jobs
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             Building_RogueAI rogueAI = t as Building_RogueAI;
-            Log.Message("Job on thing called!");
             if(rogueAI != null)
             {
                 return new Job(WTH_DefOf.WTH_HackRogueAI, rogueAI);
