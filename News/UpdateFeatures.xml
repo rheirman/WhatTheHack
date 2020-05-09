@@ -23,4 +23,32 @@ Update notes:
 What the hack should still support any mechanoid, modded or not. This includes the new Pikeman mechanoid. If you do happen to find any issues, Please report them. Don't forget to include a HugsLib log. Press ctrl+f12 after the issue occurs, or press the green share log button to get a shareable link.
 		</content>
 	</HugsLib.UpdateFeatureDef>
+	<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase_WhatTheHack">
+		<defName>WhatTheHack_2_1_5</defName>
+		<assemblyVersion>2.1.5</assemblyVersion>
+		<content>
+What the Hack is updated to version 2.1.5
+		
+Update notes:
+- Fixed mechanoids not having a "work mode" button after installing a work module.
+&lt;color=orange&gt;&lt;b&gt;IMPORTANT NOTE: if you currently have mechanoids with work modules installed that lack the work mode button, just uninstall and then re-install the module, that should fix it. &lt;/b&gt;&lt;/color&gt; 
+
+Changelog for previous recent updates:
+
+v2.1.4: 
+- Big performance improvement.
+- Fixed conflict with Save our Ship 2 related to recipes being added to mechs.
+
+v2.1.3
+- Rimworld 1.1.2609 compatibility.
+
+v2.1.2
+- Fixed incorrect maintenance threshold (was introduced last update).
+
+v2.1.1
+- Fixed various performance issues. What the Hack should run much more smoothly now. This wouldn't have been possible without Dubs Performance Analyzer, so thumbs up to him.
+- Fixed not being able to uninstall upgrade modules.
+
+	</content>
+	</HugsLib.UpdateFeatureDef>
 </Defs>

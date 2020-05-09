@@ -198,7 +198,6 @@ namespace WhatTheHack
 
             if (pawn.skills != null)
             {
-                Log.Message("a");
                 if (pawn.skills.GetSkill(SkillDefOf.Shooting).Level == 0)
                 {
                     pawn.skills.GetSkill(SkillDefOf.Shooting).Level = 8;
@@ -207,21 +206,17 @@ namespace WhatTheHack
                 {
                     pawn.skills.GetSkill(SkillDefOf.Melee).Level = 4;
                 }
-                Log.Message("b");
-
             }
             if (pawn.workSettings != null)
             {
-                Log.Message("c");
                 var huntingWorkType = WorkTypeDefOf.Hunting;
                 if(pawnData.workTypes == null)
                 {
-                    Log.Message("WTHACK: " + pawn.Name);
+                    // Log.Message("WTHACK: " + pawn.Name);
                     pawnData.workTypes = new List<WorkTypeDef>();
                 }
                 pawnData.workTypes.Add(huntingWorkType);
                 pawn.workSettings.SetPriority(huntingWorkType, 3);
-                Log.Message("d");
             }
         }
         public static void CalcDaysOfFuel(int numMechanoids, float fuelAmount, ref float fuelConsumption, int numPlatforms, ref float daysOfFuel, StringBuilder daysOfFuelReason)

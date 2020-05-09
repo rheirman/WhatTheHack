@@ -22,6 +22,11 @@ namespace WhatTheHack.Recipes
             {
                 pawn.skills = new Pawn_SkillTracker(pawn);
             }
+            if(pawn.workSettings == null)
+            {
+                pawn.workSettings = new Pawn_WorkSettings(pawn);
+                pawn.workSettings.EnableAndInitialize();
+            }
             Utilities.InitWorkTypesAndSkills(pawn, pawnData);
             if (bill.recipe.addsHediff.GetModExtension<DefModExtension_Hediff_WorkModule>() is DefModExtension_Hediff_WorkModule modExt)
             {
