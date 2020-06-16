@@ -83,6 +83,10 @@ namespace WhatTheHack.Harmony
             {
                 return;
             }
+            if (warnings == null)
+            {
+                return;
+            }
             if(numPlatforms < numMechanoids)
             {
                 warnings.Add("WTH_Warning_NotEnoughPlatforms".Translate());

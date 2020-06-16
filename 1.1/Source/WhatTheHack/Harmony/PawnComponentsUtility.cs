@@ -24,6 +24,8 @@ namespace WhatTheHack.Harmony
             {
                 //If everything goes well, add drafter to the pawn 
                 pawn.drafter = new Pawn_DraftController(pawn);
+                if (pawn.psychicEntropy == null)
+                    pawn.psychicEntropy = new Pawn_PsychicEntropyTracker(pawn);
             }
         }
     }

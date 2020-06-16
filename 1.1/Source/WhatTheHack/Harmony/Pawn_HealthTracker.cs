@@ -259,7 +259,7 @@ namespace WhatTheHack.Harmony
             }
             Hediff_Injury hediff_Injury = hediffs.RandomElement();
             hediff_Injury.Heal(healAmount);
-            if (pawn.IsHashIntervalTick(50) && !pawn.IsHashIntervalTick(100) && !pawn.Position.Fogged(pawn.Map))
+            if (pawn.IsHashIntervalTick(50) && !pawn.IsHashIntervalTick(100) && pawn.Map != null && !pawn.Position.Fogged(pawn.Map))
             {
                 MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_HealingCross);
             }
