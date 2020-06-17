@@ -208,6 +208,15 @@ namespace WhatTheHack.Harmony
             {
                 PawnWeaponGenerator.TryGenerateWeaponFor(pawn, new PawnGenerationRequest(pawn.kindDef));
             }
+            if (pawn.def.defName == "SZMechNeko_Omega")
+            {
+                if (!pawn.inventory.innerContainer.Contains(Utilities.mechaNekoOMegaWeaponBDef) && !pawn.equipment.GetDirectlyHeldThings().Contains(Utilities.mechaNekoOMegaWeaponBDef))
+                {
+                    ThingWithComps inventoryWeapon = (ThingWithComps)ThingMaker.MakeThing(Utilities.mechaNekoOMegaWeaponBDef);
+                    PawnGenerator.PostProcessGeneratedGear(inventoryWeapon, pawn);
+                    pawn.inventory.innerContainer.TryAdd(inventoryWeapon, false);
+                }
+            }
         }
 
         private static void TryRegeneratePart(Pawn pawn, Building_BaseMechanoidPlatform platform)

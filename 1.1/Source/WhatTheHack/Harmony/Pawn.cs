@@ -216,6 +216,8 @@ namespace WhatTheHack.Harmony
             {
                 gizmoList.Add(CreateGizmo_Overdrive(__instance, pawnData));
             }
+            if (__instance.def.defName == "SZMechNeko_Omega")
+                gizmoList.Add(CreateGizmo_SwitchWeapon(__instance));
         }
         private static TargetingParameters GetTargetingParametersForTurret()
         {
@@ -459,6 +461,34 @@ namespace WhatTheHack.Harmony
             };
             return gizmo;
         }
+        private static Gizmo CreateGizmo_SwitchWeapon(Pawn __instance)
+        {
+            Gizmo gizmo = new Command_Action
+            {
+                defaultLabel = "Switch weapon",
+                defaultDesc = "Switch to inventory weapon",
+                icon = ContentFinder<Texture2D>.Get(("Things/" + "Mote_SwitchWeapon"), true),
+                disabled = false,
+                action = delegate
+                {
+                    ThingWithComps equippedWeapon = __instance.equipment.Primary;
+                    ThingWithComps inventoryWeapon = __instance.inventory.innerContainer.FirstOrDefault(x => x.def == Utilities.mechaNekoOMegaWeaponADef || x.def == Utilities.mechaNekoOMegaWeaponBDef) as ThingWithComps;
+
+                    if (equippedWeapon != null)
+                    {
+                        __instance.equipment.TryTransferEquipmentToContainer(equippedWeapon, __instance.inventory.innerContainer);
+                    }
+
+                    if (inventoryWeapon != null)
+                    {
+                        __instance.inventory.innerContainer.Remove(inventoryWeapon);
+                        __instance.equipment.AddEquipment(inventoryWeapon);
+                    }
+                }
+            };
+            return gizmo;
+        }
+
         private static Gizmo CreateGizmo_Repair(Pawn __instance, ExtendedPawnData pawnData)
         {
             CompRefuelable compRefuelable = __instance.GetComp<CompRefuelable>();

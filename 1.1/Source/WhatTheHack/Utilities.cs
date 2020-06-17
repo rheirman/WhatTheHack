@@ -13,6 +13,8 @@ namespace WhatTheHack
 {
     static class Utilities
     {
+        public static ThingDef mechaNekoOMegaWeaponADef = DefDatabase<ThingDef>.GetNamed("SZMechNeko_OmegaA");
+        public static ThingDef mechaNekoOMegaWeaponBDef = DefDatabase<ThingDef>.GetNamed("SZMechNeko_OmegaB");
         public static void ThrowStaticText(Vector3 loc, Map map, string text, Color color, float timeBeforeStartFadeout = -1f)
         {
             IntVec3 intVec = loc.ToIntVec3();
