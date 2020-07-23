@@ -58,4 +58,50 @@ namespace WhatTheHack.Harmony
         }
 
     }
+
+    [HarmonyPatch(typeof(FloatMenuMakerMap), "AddHumanlikeOrders")]
+    static class FloatMenuMakerMap_AddHumanlikeOrders
+    {
+        static void Postfix(ref Vector3 clickPos, ref Pawn pawn, ref List<FloatMenuOption> opts)
+        {
+            if (!pawn.story.traits.HasTrait(Utilities.hackerDef))
+                return;
+
+            TargetingParameters targetingParameters = new TargetingParameters
+            {
+                canTargetPawns = true,
+                canTargetBuildings = false
+            };
+
+            Pawn localpawn = pawn;
+
+            foreach (LocalTargetInfo localTargetInfo in GenUI.TargetsAt(clickPos, targetingParameters, true))
+            {
+                Pawn target = (Pawn)localTargetInfo.Thing;
+
+                if (target.Dead
+                    || !target.Downed
+                    || target.def.race == null
+                    || !target.def.race.IsMechanoid
+                    || target.Faction == Faction.OfPlayer)
+                {
+                    continue;
+                }
+
+                void HackAction()
+                {
+                    JobDef hackJobDef = new JobDef
+                    {
+                        defName = "WTH_HackDownedMecha",
+                        driverClass = typeof(Jobs.JobDriver_HackDownedMecha),
+                        reportString = "Hacking downed mecha",
+                        casualInterruptible = false
+                    };
+                    Job hack = new Job(hackJobDef, target);
+                    localpawn.jobs.TryTakeOrderedJob(hack);
+                }
+                opts.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption($"Hack mechanoid", HackAction, MenuOptionPriority.InitiateSocial, null, localTargetInfo.Thing), pawn, target));
+            }
+        }
+    }
 }
