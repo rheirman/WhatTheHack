@@ -16,8 +16,8 @@ namespace WhatTheHack.Harmony
             Pawn pawn = Traverse.Create(__instance).Property("PawnToShowInfoAbout").GetValue<Pawn>();
             if (pawn.IsHacked())
             {
-                //__result = false;
-                //return false;
+                __result = false;
+                return false;
             }
             return true;
         }
