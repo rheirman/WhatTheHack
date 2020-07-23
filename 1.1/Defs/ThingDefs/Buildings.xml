@@ -22,12 +22,17 @@
     </graphicData>
 	<castEdgeShadows>false</castEdgeShadows>
     <altitudeLayer>Building</altitudeLayer>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
     <passability>PassThroughOnly</passability>
     <pathCost>70</pathCost>
     <statBases>
       <MaxHitPoints>450</MaxHitPoints>
       <WorkToBuild>5000</WorkToBuild>
       <Flammability>1.0</Flammability>
+      <Mass>50</Mass>
     </statBases>
 	<rotatable>true</rotatable>
     <comps>
@@ -72,7 +77,7 @@
     <graphicData>
       <texPath>Things/MechanoidWorkshop</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(7,4)</drawSize>
+      <drawSize>(3.5,2)</drawSize>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>
         <cornerTR>Damage/Corner</cornerTR>
@@ -87,6 +92,7 @@
 	  <ComponentSpacer>2</ComponentSpacer>
     </costList>
     <altitudeLayer>Building</altitudeLayer>
+    <minifiedDef>MinifiedThing</minifiedDef>
     <fillPercent>0.5</fillPercent>
     <useHitPoints>True</useHitPoints>
     <statBases>
@@ -94,8 +100,9 @@
       <MaxHitPoints>180</MaxHitPoints>
       <Flammability>1.0</Flammability>
       <Cleanliness>-2</Cleanliness>
+      <Mass>20</Mass>
     </statBases>
-    <size>(5,2)</size>
+    <size>(3,1)</size>
     <designationCategory>WTH_Hacking</designationCategory>
     <passability>PassThroughOnly</passability>
     <pathCost>70</pathCost>
@@ -171,6 +178,10 @@
 	<rotatable>false</rotatable>
     <drawGUIOverlay>True</drawGUIOverlay>
     <altitudeLayer>Building</altitudeLayer>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
     <fillPercent>0.5</fillPercent>
     <useHitPoints>True</useHitPoints>
     <statBases>
@@ -178,12 +189,13 @@
       <MaxHitPoints>350</MaxHitPoints>
       <Flammability>1.0</Flammability>
 	  <WTH_RepairRate>300</WTH_RepairRate>
+      <Mass>30</Mass>
     </statBases>
-    <size>(3,3)</size>
+    <size>(3,2)</size>
     <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
+    <pathCost>10</pathCost>
     <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(0,0,0)</interactionCellOffset>
+    <interactionCellOffset>(0,0,1)</interactionCellOffset>
     <designationCategory>WTH_Hacking</designationCategory>
     <surfaceType>Item</surfaceType>
 	 <researchPrerequisites>
@@ -319,7 +331,7 @@
 		  <WorkToBuild>3500</WorkToBuild>
 		  <MaxHitPoints>250</MaxHitPoints>
 		  <Flammability>1.0</Flammability>
-		  <Mass>15</Mass>
+		  <Mass>1</Mass>
 		  <WorkTableWorkSpeedFactor>0.25</WorkTableWorkSpeedFactor>
 		</statBases>
 		<size>(2,1)</size>
