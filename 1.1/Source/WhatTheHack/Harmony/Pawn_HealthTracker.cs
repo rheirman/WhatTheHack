@@ -204,18 +204,26 @@ namespace WhatTheHack.Harmony
 
         private static void RegainWeapon(Pawn pawn)
         {
-            if(pawn.equipment.Primary == null)
-            {
-                PawnWeaponGenerator.TryGenerateWeaponFor(pawn, new PawnGenerationRequest(pawn.kindDef));
-            }
             if (pawn.def.defName == "SZMechNeko_Omega")
             {
-                if (!pawn.inventory.innerContainer.Contains(Utilities.mechaNekoOMegaWeaponBDef) && !pawn.equipment.GetDirectlyHeldThings().Contains(Utilities.mechaNekoOMegaWeaponBDef))
+                if (!pawn.inventory.innerContainer.Contains(Utilities.mechaNekoOMegaWeaponADef)
+                    && !pawn.equipment.GetDirectlyHeldThings().Contains(Utilities.mechaNekoOMegaWeaponADef))
+                {
+                    ThingWithComps inventoryWeapon = (ThingWithComps)ThingMaker.MakeThing(Utilities.mechaNekoOMegaWeaponADef);
+                    PawnGenerator.PostProcessGeneratedGear(inventoryWeapon, pawn);
+                    pawn.inventory.innerContainer.TryAdd(inventoryWeapon, false);
+                }
+                if (!pawn.inventory.innerContainer.Contains(Utilities.mechaNekoOMegaWeaponBDef)
+                    && !pawn.equipment.GetDirectlyHeldThings().Contains(Utilities.mechaNekoOMegaWeaponBDef))
                 {
                     ThingWithComps inventoryWeapon = (ThingWithComps)ThingMaker.MakeThing(Utilities.mechaNekoOMegaWeaponBDef);
                     PawnGenerator.PostProcessGeneratedGear(inventoryWeapon, pawn);
                     pawn.inventory.innerContainer.TryAdd(inventoryWeapon, false);
                 }
+            }
+            else if (pawn.equipment.Primary == null)
+            {
+                PawnWeaponGenerator.TryGenerateWeaponFor(pawn, new PawnGenerationRequest(pawn.kindDef));
             }
         }
 

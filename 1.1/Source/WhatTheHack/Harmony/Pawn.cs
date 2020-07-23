@@ -217,7 +217,10 @@ namespace WhatTheHack.Harmony
                 gizmoList.Add(CreateGizmo_Overdrive(__instance, pawnData));
             }
             if (__instance.def.defName == "SZMechNeko_Omega")
+            {
                 gizmoList.Add(CreateGizmo_SwitchWeapon(__instance));
+                gizmoList.Add(CreateGizmo_SwitchToMelee(__instance));
+            }
         }
         private static TargetingParameters GetTargetingParametersForTurret()
         {
@@ -483,6 +486,27 @@ namespace WhatTheHack.Harmony
                     {
                         __instance.inventory.innerContainer.Remove(inventoryWeapon);
                         __instance.equipment.AddEquipment(inventoryWeapon);
+                    }
+                }
+            };
+            return gizmo;
+        }
+
+        private static Gizmo CreateGizmo_SwitchToMelee(Pawn __instance)
+        {
+            Gizmo gizmo = new Command_Action
+            {
+                defaultLabel = "Melee",
+                defaultDesc = "Switch to melee",
+                icon = ContentFinder<Texture2D>.Get(("Things/" + "Mote_Fist"), true),
+                disabled = false,
+                action = delegate
+                {
+                    ThingWithComps equippedWeapon = __instance.equipment.Primary;
+
+                    if (equippedWeapon != null)
+                    {
+                        __instance.equipment.TryTransferEquipmentToContainer(equippedWeapon, __instance.inventory.innerContainer);
                     }
                 }
             };
