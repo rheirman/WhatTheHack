@@ -124,9 +124,11 @@ namespace WhatTheHack.Needs
                 {
                     return result;
                 }
-                if (pawn.HasValidCaravanPlatform() && pawn.GetCaravan() != null && pawn.GetCaravan().HasFuel())
+                if (pawn.GetCaravan() is Caravan caravan && caravan.HasFuel())
                 {
-                    return result;
+                    if (caravan.AllThings.Any(thing => thing.def == WTH_DefOf.WTH_PortableChargingPlatform
+                                                       || (thing.def == ThingDefOf.MinifiedThing && thing.GetInnerIfMinified().def == WTH_DefOf.WTH_PortableChargingPlatform)))
+                        return result;
                 }
                 result += this.PowerRate;
                 return result;
@@ -176,7 +178,7 @@ namespace WhatTheHack.Needs
                 if(pawn.CurrentBed() is Building_BaseMechanoidPlatform mapPlatform && mapPlatform.HasPowerNow()){
                     platform = mapPlatform;
                 }
-                else if (pawn.CaravanPlatform() is Building_PortableChargingPlatform caravanPlatform && pawn.GetCaravan().HasFuel())
+                else if (pawn.CaravanPlatformNew() is Building_PortableChargingPlatform caravanPlatform && pawn.GetCaravan().HasFuel())
                 {
                     platform = caravanPlatform;
                 }

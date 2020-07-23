@@ -215,6 +215,17 @@ namespace WhatTheHack
             }
             return null;
         }
+        public static Building_PortableChargingPlatform CaravanPlatformNew(this Pawn pawn)
+        {
+            Caravan caravan = pawn.GetCaravan();
+            if (caravan != null)
+            {
+                return (Building_PortableChargingPlatform)caravan.AllThings.FirstOrDefault(thing => thing.def == ThingDefOf.MinifiedThing
+                                                                                                    && thing.GetInnerIfMinified().def == WTH_DefOf.WTH_PortableChargingPlatform)
+                                                                           ?.GetInnerIfMinified();
+            }
+            return null;
+        }
         public static bool IsActivated(this Pawn pawn)
         {
             ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
