@@ -54,7 +54,7 @@ namespace WhatTheHack.Harmony
                     __result = shouldForbid;
                     return false;
                 }
-                
+
             }
             return true;
         }
@@ -89,7 +89,7 @@ namespace WhatTheHack.Harmony
                 return;
             }
 
-            if(bill != null && bill.recipe.HasModExtension<DefModExtension_Recipe>() && __instance.InteractionCell.IsValid)
+            if (bill != null && bill.recipe.HasModExtension<DefModExtension_Recipe>() && __instance.InteractionCell.IsValid)
             {
                 if (bill.recipe.GetModExtension<DefModExtension_Recipe>().requireBed == false || __instance.OnHackingTable())
                 {
@@ -104,7 +104,7 @@ namespace WhatTheHack.Harmony
         }
     }
 
-    
+
     [HarmonyPatch(typeof(Pawn), "get_IsColonistPlayerControlled")]
     public class Pawn_get_IsColonistPlayerControlled
     {
@@ -128,12 +128,12 @@ namespace WhatTheHack.Harmony
             {
                 return false;
             }
-            if(pawn.RemoteControlLink() != null && !pawn.RemoteControlLink().Drafted)
+            if (pawn.RemoteControlLink() != null && !pawn.RemoteControlLink().Drafted)
             {
                 float radius = Utilities.GetRemoteControlRadius(pawn.RemoteControlLink());
                 return pawn.Position.DistanceToSquared(pawn.RemoteControlLink().Position) <= radius * radius;
             }
-            if(pawn.ControllingAI() != null)
+            if (pawn.ControllingAI() != null)
             {
                 return true;
             }
@@ -184,15 +184,15 @@ namespace WhatTheHack.Harmony
                     }
                 }
             }
-            if(__instance.workSettings != null)
+            if (__instance.workSettings != null)
             {
                 gizmoList.Add(CreateGizmo_Work(__instance, pawnData));
-                if(powerNeed != null)
+                if (powerNeed != null)
                 {
                     gizmoList.Add(CreateGizmo_WorkThreshold(__instance, powerNeed));
                 }
             }
-            if(maintenanceNeed != null)
+            if (maintenanceNeed != null)
             {
                 gizmoList.Add(CreateGizmo_MaintenanceThreshold(__instance, maintenanceNeed));
             }
@@ -204,7 +204,7 @@ namespace WhatTheHack.Harmony
             {
                 gizmoList.Add(CreateGizmo_SelfRepair(__instance, pawnData));
             }
-            if(hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule) && hediffSet.HasHediff(WTH_DefOf.WTH_RepairArm))
+            if (hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule) && hediffSet.HasHediff(WTH_DefOf.WTH_RepairArm))
             {
                 gizmoList.Add(CreateGizmo_Repair(__instance, pawnData));
             }
@@ -218,9 +218,11 @@ namespace WhatTheHack.Harmony
             }
             if (__instance.def.defName == "SZMechNeko_Omega")
             {
-                gizmoList.Add(CreateGizmo_SwitchWeapon(__instance));
+                gizmoList.Add(CreateGizmo_SwitchToBlaster(__instance));
+                gizmoList.Add(CreateGizmo_SwitchToBomb(__instance));
                 gizmoList.Add(CreateGizmo_SwitchToMelee(__instance));
             }
+            gizmoList.Add(CreateGizmo_EnterCryptosleepCasket(__instance));
         }
         private static TargetingParameters GetTargetingParametersForTurret()
         {
@@ -256,13 +258,13 @@ namespace WhatTheHack.Harmony
                 toggleAction = () =>
                 {
                     pawnData.canWorkNow = !pawnData.canWorkNow;
-                    if(__instance.CurJob.def != WTH_DefOf.WTH_Mechanoid_Rest)
+                    if (__instance.CurJob.def != WTH_DefOf.WTH_Mechanoid_Rest)
                     {
                         __instance.jobs.EndCurrentJob(JobCondition.InterruptForced);
                     }
                 }
             };
-            return gizmo;        
+            return gizmo;
         }
         private static Gizmo CreateGizmo_WorkThreshold(Pawn __instance, Need_Power powerNeed)
         {
@@ -276,7 +278,7 @@ namespace WhatTheHack.Harmony
                 disabled = disabled,
                 disabledReason = disabledReason,
                 icon = ContentFinder<Texture2D>.Get(("UI/" + "MechanoidWorkThreshold"), true),
-                
+
             };
             return gizmo;
         }
@@ -464,28 +466,48 @@ namespace WhatTheHack.Harmony
             };
             return gizmo;
         }
-        private static Gizmo CreateGizmo_SwitchWeapon(Pawn __instance)
+        private static Gizmo CreateGizmo_SwitchToBlaster(Pawn __instance)
         {
             Gizmo gizmo = new Command_Action
             {
-                defaultLabel = "Switch weapon",
-                defaultDesc = "Switch to inventory weapon",
-                icon = ContentFinder<Texture2D>.Get(("Things/" + "Mote_SwitchWeapon"), true),
+                defaultLabel = "Use Blaster",
+                defaultDesc = "Switch to OMega Blaster weapon",
+                icon = ContentFinder<Texture2D>.Get(("Things/" + "SZMechNeko_OmegaB"), true),
                 disabled = false,
                 action = delegate
                 {
-                    ThingWithComps equippedWeapon = __instance.equipment.Primary;
-                    ThingWithComps inventoryWeapon = __instance.inventory.innerContainer.FirstOrDefault(x => x.def == Utilities.mechaNekoOMegaWeaponADef || x.def == Utilities.mechaNekoOMegaWeaponBDef) as ThingWithComps;
-
-                    if (equippedWeapon != null)
+                    if (__instance.inventory.innerContainer.FirstOrDefault(x => x.def == Utilities.mechaNekoOMegaWeaponBDef) is ThingWithComps inventoryBlaster)
                     {
-                        __instance.equipment.TryTransferEquipmentToContainer(equippedWeapon, __instance.inventory.innerContainer);
+                        if (__instance.equipment.Primary is ThingWithComps equippedWeapon)
+                        {
+                            __instance.equipment.TryTransferEquipmentToContainer(equippedWeapon, __instance.inventory.innerContainer);
+                        }
+                        __instance.inventory.innerContainer.Remove(inventoryBlaster);
+                        __instance.equipment.AddEquipment(inventoryBlaster);
                     }
+                }
+            };
+            return gizmo;
+        }
 
-                    if (inventoryWeapon != null)
+        private static Gizmo CreateGizmo_SwitchToBomb(Pawn __instance)
+        {
+            Gizmo gizmo = new Command_Action
+            {
+                defaultLabel = "Use Bomb launcher",
+                defaultDesc = "Switch to OMega Bomb launcher weapon",
+                icon = ContentFinder<Texture2D>.Get(("Things/" + "SZMechNeko_OmegaA"), true),
+                disabled = false,
+                action = delegate
+                {
+                    if (__instance.inventory.innerContainer.FirstOrDefault(x => x.def == Utilities.mechaNekoOMegaWeaponADef) is ThingWithComps inventoryBomb)
                     {
-                        __instance.inventory.innerContainer.Remove(inventoryWeapon);
-                        __instance.equipment.AddEquipment(inventoryWeapon);
+                        if (__instance.equipment.Primary is ThingWithComps equippedWeapon)
+                        {
+                            __instance.equipment.TryTransferEquipmentToContainer(equippedWeapon, __instance.inventory.innerContainer);
+                        }
+                        __instance.inventory.innerContainer.Remove(inventoryBomb);
+                        __instance.equipment.AddEquipment(inventoryBomb);
                     }
                 }
             };
@@ -507,6 +529,25 @@ namespace WhatTheHack.Harmony
                     if (equippedWeapon != null)
                     {
                         __instance.equipment.TryTransferEquipmentToContainer(equippedWeapon, __instance.inventory.innerContainer);
+                    }
+                }
+            };
+            return gizmo;
+        }
+
+        private static Gizmo CreateGizmo_EnterCryptosleepCasket(Pawn __instance)
+        {
+            Gizmo gizmo = new Command_Action
+            {
+                defaultLabel = "To CryptoCasket",
+                defaultDesc = "Enter CryptoSleepCasket",
+                icon = ContentFinder<Texture2D>.Get(("Things/" + "Casket"), true),
+                disabled = __instance.Downed,
+                action = delegate
+                {
+                    if (Building_CryptosleepCasket.FindCryptosleepCasketFor(__instance, __instance) is Building_CryptosleepCasket casket)
+                    {
+                        __instance.jobs.TryTakeOrderedJob(new Job(JobDefOf.EnterCryptosleepCasket, casket));
                     }
                 }
             };
@@ -551,7 +592,8 @@ namespace WhatTheHack.Harmony
                 disabled = isDisabled,
                 targetingParams = GetTargetingParametersForRepairing(),
                 disabledReason = disabledReason,
-                action = delegate(Thing target) {
+                action = delegate (Thing target)
+                {
                     if (target is Pawn mech)
                     {
                         Job job = new Job(WTH_DefOf.WTH_Ability_Repair, target);
@@ -628,7 +670,8 @@ namespace WhatTheHack.Harmony
                 disabled = isDisabled,
                 targetingParams = GetTargetingParametersForEquipBelt(pawn),
                 disabledReason = disabledReason,
-                action = delegate (Thing target) {
+                action = delegate (Thing target)
+                {
                     if (target is Apparel apparel && Utilities.IsBelt(apparel.def.apparel))
                     {
                         apparel.SetForbidden(false, true);
@@ -650,7 +693,7 @@ namespace WhatTheHack.Harmony
                 canTargetPawns = true,
                 canTargetBuildings = false,
                 mapObjectTargetsMustBeAutoAttackable = false,
-                
+
                 validator = delegate (TargetInfo targ)
                 {
                     if (!targ.HasThing)
@@ -658,9 +701,9 @@ namespace WhatTheHack.Harmony
                         return false;
                     }
                     Pawn pawn = targ.Thing as Pawn;
-                    return pawn != null 
+                    return pawn != null
                     && !pawn.Downed
-                    && pawn.IsHacked() 
+                    && pawn.IsHacked()
                     && pawn.health != null
                     && pawn.health.hediffSet.HasNaturallyHealingInjury()
                     && !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing);
@@ -680,13 +723,13 @@ namespace WhatTheHack.Harmony
                     if (!targ.HasThing)
                     {
                         return false;
-                    }         
+                    }
                     Apparel apparel = targ.Thing as Apparel;
-                    if(apparel == null)
+                    if (apparel == null)
                     {
                         return false;
                     }
-                    if(!pawn.HasReplacedAI() && apparel.def == WTH_DefOf.WTH_Apparel_MechControllerBelt)
+                    if (!pawn.HasReplacedAI() && apparel.def == WTH_DefOf.WTH_Apparel_MechControllerBelt)
                     {
                         return false;
                     }
