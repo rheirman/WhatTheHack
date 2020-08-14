@@ -20,16 +20,13 @@ namespace WhatTheHack.Harmony
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             
-            var instructionsList = new List<CodeInstruction>(instructions);
-            for (var i = 0; i < instructionsList.Count; i++)
+            foreach (CodeInstruction instruction in instructions)
             {
-                CodeInstruction instruction = instructionsList[i];
-                            
                 //Replace Arrive method by SpawnHackedMechanoids (which also calls Arrive). This avoids the need of ldgarg calls, which seem to change after literally every update of Rimworld.
                 if (instruction.operand as MethodInfo == AccessTools.Method(typeof(PawnsArrivalModeWorker), "Arrive"))
                 {
                     yield return new CodeInstruction(OpCodes.Call, typeof(IncidentWorker_Raid_TryExecuteWorker).GetMethod("SpawnHackedMechanoids"));
-                    continue;
+                    yield return new CodeInstruction(OpCodes.Pop);
                 }
                 else
                 {
@@ -37,8 +34,9 @@ namespace WhatTheHack.Harmony
                 }
             }
         }
+
         //returns pawns for compatibility reasons. 
-        public static List<Pawn> SpawnHackedMechanoids(List<Pawn> pawns, IncidentParms parms)
+        public static void SpawnHackedMechanoids(List<Pawn> pawns, IncidentParms parms)
         {
             //only call Arrive method when sure it's not already called. (can happen due to other mods)
             if (pawns.Count > 0 && !pawns[0].Spawned)
@@ -48,16 +46,16 @@ namespace WhatTheHack.Harmony
 
             if (pawns.Count == 0)
             {
-                return pawns;
+                return;
             }
             if (parms.faction == Faction.OfMechanoids)
             {
-                return pawns;
+                return;
             }
             Random rand = new Random(DateTime.Now.Millisecond);
             if (rand.Next(0, 100) > Base.hackedMechChance)
             {
-                return pawns;
+                return;
             }
 
             int minHackedMechPoints = Math.Min(Base.minHackedMechPoints, Base.maxHackedMechPoints);
@@ -114,7 +112,6 @@ namespace WhatTheHack.Harmony
                     pawn.equipment = new Pawn_EquipmentTracker(pawn);
                 }
             }
-            return pawns;
         }
 
         private static void AddModules(Pawn mechanoid)
