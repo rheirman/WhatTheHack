@@ -19,18 +19,20 @@ namespace WhatTheHack.Harmony
         [HarmonyPriority(Priority.First)]
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            
-            foreach (CodeInstruction instruction in instructions)
+            List<CodeInstruction> instructionList = instructions.ToList();
+
+            for (int i = 0; i < instructions.Count(); i++)
             {
-                //Replace Arrive method by SpawnHackedMechanoids (which also calls Arrive). This avoids the need of ldgarg calls, which seem to change after literally every update of Rimworld.
-                if (instruction.operand as MethodInfo == AccessTools.Method(typeof(PawnsArrivalModeWorker), "Arrive"))
+                if (instructionList[i].operand as MethodInfo == AccessTools.Method(typeof(PawnsArrivalModeWorker), "Arrive"))
                 {
+                    yield return instructionList[i];
+                    yield return instructionList[i - 2];
+                    yield return instructionList[i - 1];
                     yield return new CodeInstruction(OpCodes.Call, typeof(IncidentWorker_Raid_TryExecuteWorker).GetMethod("SpawnHackedMechanoids"));
-                    yield return new CodeInstruction(OpCodes.Pop);
                 }
                 else
                 {
-                    yield return instruction;
+                    yield return instructionList[i];
                 }
             }
         }
@@ -38,12 +40,6 @@ namespace WhatTheHack.Harmony
         //returns pawns for compatibility reasons. 
         public static void SpawnHackedMechanoids(List<Pawn> pawns, IncidentParms parms)
         {
-            //only call Arrive method when sure it's not already called. (can happen due to other mods)
-            if (pawns.Count > 0 && !pawns[0].Spawned)
-            {
-                parms.raidArrivalMode.Worker.Arrive(pawns, parms);
-            }
-
             if (pawns.Count == 0)
             {
                 return;
