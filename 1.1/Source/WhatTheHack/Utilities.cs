@@ -53,6 +53,8 @@ namespace WhatTheHack
             //Find and assign platform for each pawn. 
             foreach (Pawn pawn in pawns)
             {
+                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+                pawnData.caravanPlatform = null;
                 if (pawn.IsHacked() && !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_VanometricModule))
                 {
                     bool foundPlatform = false;
@@ -64,7 +66,6 @@ namespace WhatTheHack
                             if (platform != null && platform.CaravanPawn == null)
                             {
                                 platform.CaravanPawn = pawn;
-                                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
                                 pawnData.caravanPlatform = platform;
                                 foundPlatform = true;
                             }
