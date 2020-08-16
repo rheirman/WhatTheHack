@@ -36,9 +36,8 @@
     <statBases>
       <MaxHitPoints>70</MaxHitPoints>
 	</statBases>
-  <mineable>false</mineable>
 	<building>
-      <isResourceRock>false</isResourceRock>
+      <isResourceRock>true</isResourceRock>
       <mineableThing>WTH_MechanoidParts</mineableThing>
       <mineableYield>40</mineableYield>
       <mineableScatterCommonality>0</mineableScatterCommonality>
