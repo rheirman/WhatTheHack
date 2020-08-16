@@ -1,0 +1,47 @@
+<Defs> 
+ <ThingDef ParentName="ApparelBase">
+    <defName>WTH_Apparel_MechControllerBelt</defName>
+	<label>mechanoid controller belt</label>
+    <description>A remote control belt that can be used to control mechanoids that have their locomotion system hacked</description>
+	<thingClass>WhatTheHack.RemoteController</thingClass>
+	<graphicData>
+      <texPath>Things/MechControllerBelt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+    <statBases>
+		<Mass>3</Mass>
+		<WorkToMake>12000</WorkToMake>
+		<WTH_ControllerBeltRadius>22</WTH_ControllerBeltRadius>
+    </statBases>
+		<costList>
+			<ComponentIndustrial>6</ComponentIndustrial>
+			<Plasteel>25</Plasteel>
+			<WTH_MechanoidChip>5</WTH_MechanoidChip>
+			<Uranium>2</Uranium>
+		</costList>
+		<recipeMaker>
+			<unfinishedThingDef>UnfinishedBelt</unfinishedThingDef>
+			<researchPrerequisite>WTH_HackingRemoteControl</researchPrerequisite>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Machining</soundWorking>
+			<recipeUsers>
+				<li>WTH_TableMechanoidWorkshop</li>
+			</recipeUsers>
+		</recipeMaker>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+    <apparel>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <bodyPartGroups>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+    </apparel>
+  </ThingDef>
+</Defs>

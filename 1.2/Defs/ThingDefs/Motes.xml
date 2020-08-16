@@ -1,0 +1,39 @@
+<Defs>
+	<ThingDef ParentName="MoteBase">
+	<defName>WTH_Mote_Charging</defName>
+	<graphicData>
+	  <texPath>Things/Mote_Charging</texPath>
+	</graphicData>
+	<altitudeLayer>MetaOverlays</altitudeLayer>
+	<mote>
+	  <fadeInTime>0.08</fadeInTime>
+	  <solidTime>1.4</solidTime>
+	  <fadeOutTime>1.5</fadeOutTime>
+	</mote>
+	</ThingDef>
+	<ThingDef ParentName="MoteBase">
+	<defName>WTH_Mote_HealingCrossGreen</defName>
+	<graphicData>
+	  <texPath>Things/Mote_HealingCrossGreen</texPath>
+	</graphicData>
+	<altitudeLayer>MetaOverlays</altitudeLayer>
+	<mote>
+	  <fadeInTime>0.16</fadeInTime>
+	  <solidTime>1.4</solidTime>
+	  <fadeOutTime>3.0</fadeOutTime>
+	</mote>
+	</ThingDef>
+	<ThingDef ParentName="MoteBase">
+		<defName>WTH_Mote_Overdrive</defName>
+		<graphicData>
+		  <texPath>Things/Mote/LightningGlow</texPath>
+		  <shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<altitudeLayer>MetaOverlays</altitudeLayer>
+		<mote>
+		  <fadeInTime>0.02</fadeInTime>
+		  <solidTime>0.1</solidTime>
+		  <fadeOutTime>0.02</fadeOutTime>
+		</mote>
+	</ThingDef>
+</Defs>
