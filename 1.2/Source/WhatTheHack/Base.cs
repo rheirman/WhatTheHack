@@ -79,8 +79,6 @@ namespace WhatTheHack
 
         public override void DefsLoaded()
         {
-            Log.Message("loaded WTH for v1.2");
-
             base.DefsLoaded();
             //TODO: Store this somewhere global.
             allowedMechWork.Add(WorkTypeDefOf.Hauling);

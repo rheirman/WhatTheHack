@@ -105,7 +105,30 @@ namespace WhatTheHack.Harmony
         {
             Utilities.CalcDaysOfFuel(__instance.transferables);
         }
+    }
 
-       
+    [HarmonyPatch(typeof(Dialog_FormCaravan), "SelectApproximateBestFoodAndMedicine")]
+    static class Dialog_FormCaravan_SelectApproximateBestFoodAndMedicine
+    {
+        static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var instructionsList = new List<CodeInstruction>(instructions);
+            for (var i = 0; i < instructionsList.Count; i++)
+            {
+                CodeInstruction instruction = instructionsList[i];
+                if (instruction.operand as MethodInfo == AccessTools.Method(typeof(WildManUtility), "AnimalOrWildMan"))
+                {
+                    yield return new CodeInstruction(OpCodes.Call, typeof(Dialog_FormCaravan_SelectApproximateBestFoodAndMedicine).GetMethod("AnimalOrWildManOrHacked"));
+                }
+                else
+                {
+                    yield return instruction;
+                }
+            }
+        }
+        public static bool AnimalOrWildManOrHacked(Pawn pawn)
+        {
+            return WildManUtility.AnimalOrWildMan(pawn) || pawn.IsHacked();
+        }
     }
 }
