@@ -37,20 +37,20 @@ namespace WhatTheHack.Harmony
             }
         }
         //returns pawns for compatibility reasons. 
-        public static List<Pawn> SpawnHackedMechanoids(List<Pawn> pawns, IncidentParms parms)
+        public static void SpawnHackedMechanoids(List<Pawn> pawns, IncidentParms parms)
         {
             if (pawns.Count == 0)
             {
-                return pawns;
+                return;
             }
             if (parms.faction == Faction.OfMechanoids)
             {
-                return pawns;
+                return;
             }
             Random rand = new Random(DateTime.Now.Millisecond);
             if (rand.Next(0, 100) > Base.hackedMechChance)
             {
-                return pawns;
+                return;
             }
 
             int minHackedMechPoints = Math.Min(Base.minHackedMechPoints, Base.maxHackedMechPoints);
@@ -63,11 +63,11 @@ namespace WhatTheHack.Harmony
             {
                 PawnKindDef pawnKindDef = null;
                 IEnumerable<PawnKindDef> selectedPawns = (from a in DefDatabase<PawnKindDef>.AllDefs
-                                                  where a.RaceProps.IsMechanoid &&
-                                                  cumulativePoints + a.combatPower < maxMechPoints &&
-                                                  Utilities.IsAllowedInModOptions(a.race.defName, parms.faction) &&
-                                                  (parms.raidArrivalMode == PawnsArrivalModeDefOf.EdgeWalkIn || a.RaceProps.baseBodySize <= 1) //Only allow small mechs to use drop pods
-                                                  select a);
+                                                          where a.RaceProps.IsMechanoid &&
+                                                          cumulativePoints + a.combatPower < maxMechPoints &&
+                                                          Utilities.IsAllowedInModOptions(a.race.defName, parms.faction) &&
+                                                          (parms.raidArrivalMode == PawnsArrivalModeDefOf.EdgeWalkIn || a.RaceProps.baseBodySize <= 1) //Only allow small mechs to use drop pods
+                                                          select a);
 
                 if (selectedPawns != null)
                 {
@@ -76,7 +76,7 @@ namespace WhatTheHack.Harmony
                 if (pawnKindDef != null)
                 {
                     Pawn mechanoid = PawnGenerator.GeneratePawn(pawnKindDef, parms.faction);
-                    if(parms.raidArrivalMode == PawnsArrivalModeDefOf.EdgeWalkIn)
+                    if (parms.raidArrivalMode == PawnsArrivalModeDefOf.EdgeWalkIn)
                     {
                         IntVec3 loc = CellFinder.RandomClosewalkCellNear(parms.spawnCenter, map, 8, null);
                         GenSpawn.Spawn(mechanoid, loc, map, parms.spawnRotation);
@@ -107,8 +107,8 @@ namespace WhatTheHack.Harmony
                     pawn.equipment = new Pawn_EquipmentTracker(pawn);
                 }
             }
-            return pawns;
         }
+
 
         private static void AddModules(Pawn mechanoid)
         {
