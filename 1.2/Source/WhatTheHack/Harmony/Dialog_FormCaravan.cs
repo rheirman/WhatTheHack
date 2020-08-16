@@ -49,17 +49,18 @@ namespace WhatTheHack.Harmony
             for (var i = 0; i < instructionsList.Count; i++)
             {
                 CodeInstruction instruction = instructionsList[i];
-                if (i < instructionsList.Count - 2 && instructionsList[i + 1].opcode == OpCodes.Call && instructionsList[i + 1].operand == AccessTools.Method(typeof(Dialog_FormCaravan), "get_DaysWorthOfFood"))
+                if (instruction.opcode == OpCodes.Stloc_1)
                 {
+                    Log.Message("found Stloc_1");
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
-                    yield return new CodeInstruction(OpCodes.Ldloca_S, 4);
                     yield return new CodeInstruction(OpCodes.Call, typeof(Dialog_FormCaravan_DoBottomButtons).GetMethod("AddWarnings"));
                 }
                 yield return instruction;
             }
         }
 
-        public static void AddWarnings(Dialog_FormCaravan instance, ref List<string> warnings){
+        public static List<string> AddWarnings(List<string> warnings, Dialog_FormCaravan instance)
+        {
             int numMechanoids = 0;
             int numPlatforms = 0;
             foreach (TransferableOneWay tow in instance.transferables)
@@ -80,18 +81,20 @@ namespace WhatTheHack.Harmony
                     numPlatforms += tow.CountToTransfer;
                 }
             }
-            if(numMechanoids == 0)
+            if (numMechanoids == 0)
             {
-                return;
+                return warnings;
             }
-            if(numPlatforms < numMechanoids)
+            if (numPlatforms < numMechanoids)
             {
                 warnings.Add("WTH_Warning_NotEnoughPlatforms".Translate());
             }
             else if (Base.Instance.daysOfFuel < Traverse.Create(instance).Field("MaxDaysWorthOfFoodToShowWarningDialog").GetValue<float>())
             {
-                warnings.Add("WTH_Warning_DaysOfFuel".Translate(new Object[]{Base.Instance.daysOfFuel.ToString("0.#") }));
+                warnings.Add("WTH_Warning_DaysOfFuel".Translate(new Object[] { Base.Instance.daysOfFuel.ToString("0.#") }));
             }
+            return warnings;
+
         }
     }
 
@@ -102,30 +105,7 @@ namespace WhatTheHack.Harmony
         {
             Utilities.CalcDaysOfFuel(__instance.transferables);
         }
-    }
 
-    [HarmonyPatch(typeof(Dialog_FormCaravan), "SelectApproximateBestFoodAndMedicine")]
-    static class Dialog_FormCaravan_SelectApproximateBestFoodAndMedicine
-    {
-        static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var instructionsList = new List<CodeInstruction>(instructions);
-            for (var i = 0; i < instructionsList.Count; i++)
-            {
-                CodeInstruction instruction = instructionsList[i];
-                if (instruction.operand as MethodInfo == AccessTools.Method(typeof(WildManUtility), "AnimalOrWildMan"))
-                {
-                    yield return new CodeInstruction(OpCodes.Call, typeof(Dialog_FormCaravan_SelectApproximateBestFoodAndMedicine).GetMethod("AnimalOrWildManOrHacked"));
-                }
-                else
-                {
-                    yield return instruction;
-                }
-            }
-        }
-        public static bool AnimalOrWildManOrHacked(Pawn pawn)
-        {
-            return WildManUtility.AnimalOrWildMan(pawn) || pawn.IsHacked();
-        }
+       
     }
 }
