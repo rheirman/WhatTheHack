@@ -51,4 +51,21 @@ v2.1.1
 
 	</content>
 	</HugsLib.UpdateFeatureDef>
+	<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase_WhatTheHack">
+		<defName>WhatTheHack_3_0_0</defName>
+		<assemblyVersion>3.0.0</assemblyVersion>
+		<content>
+What the Hack is updated to support Rimworld 1.2. Moreover, this update comes with a bunch of fixes that also work for v1.1: 
+- Fixed caravanning with mechs breaking the needs of pawns in the caravan.
+- Fixed problem with assigning mechs to caravans. 
+- Fixed glitched meteorites with mech parts showing up. 
+- Renamed the long range mineral scanner tuning research to hive data tracking so people will hopefully understand how to get Hive data. 
+
+Credits go to NoirFry for helping out solving some of the issues. 
+
+If you run into any issues, please report them with a hugslib log (press ctrl+f12 in-game to get one). Enjoy the update!
+Cheers,
+Roolo
+		</content>
+	</HugsLib.UpdateFeatureDef>
 </Defs>
