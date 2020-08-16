@@ -69,6 +69,7 @@
     <Compile Include="Comps\CompProperties_DataLevel.cs" />
     <Compile Include="Comps\CompDataLevel.cs" />
     <Compile Include="Comps\CompProperties_Overlays.cs" />
+    <Compile Include="Harmony\Caravan_NeedsTracker.cs" />
     <Compile Include="Harmony\HealthCardUtility.cs" />
     <Compile Include="Harmony\HediffStatsUtility.cs" />
     <Compile Include="Harmony\JobDriver_Wear.cs" />
