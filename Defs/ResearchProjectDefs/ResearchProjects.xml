@@ -315,7 +315,7 @@
 	
 	<ResearchProjectDef>
 		<defName>WTH_LRMSTuning</defName>
-		<label>Long range mineral scanner tuning</label>
+		<label>Hive data tracking</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
 		<description>Allows the long range mineral scanner to scan for locations on the world with a high concentration of mechanoid parts. Of course the parts won't be just lying around. More likely they are attached to mechanoids. Live mechanoids.. 
