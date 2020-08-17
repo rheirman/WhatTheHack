@@ -67,7 +67,7 @@
   <WTH_InduceEmergencySignal.label>メカノイドの誘導</WTH_InduceEmergencySignal.label>
   <WTH_InduceEmergencySignal.description>あなたの入植者が意図的に、倒れた状態(シャットダウンされてない)で、未ハッキングなメカノイドの自己防衛システムを利用して緊急信号を出させてメカノイドの襲撃を誘発することを可能にします。この自己防衛システムは、付近にいるメカノイドに対して緊急信号を送信して、彼らを呼び寄せます。これは、在庫のメカノイドパーツを入手できる確実な方法ですが、同時に危険な手段です。</WTH_InduceEmergencySignal.description>
 
-  <WTH_LRMSTuning.label>長距離鉱物探査スキャナーの調整</WTH_LRMSTuning.label>
+  <WTH_LRMSTuning.label>ハイブデータの追跡</WTH_LRMSTuning.label>
   <WTH_LRMSTuning.description>長距離鉱物探査スキャナーが、メカノイドパーツの濃度が高い場所をスキャンすることを可能にします。もちろん、パーツはただ横たわっているわけではありません。当然活動中のメカノイドに装着されている可能性が高いです。\nもしハイブデータを探しているなら、メカノイドがたくさん居るこれらの場所は捜索するのに適してるでしょう。</WTH_LRMSTuning.description>
 
   <WTH_RogueAI.label>ローグAI</WTH_RogueAI.label>
@@ -78,6 +78,5 @@
 
   <WTH_ExtractBrainData.label>人間の脳データ抽出</WTH_ExtractBrainData.label>
   <WTH_ExtractBrainData.description>生きている人間の脳からすべてのデータを抽出するために使用されるぞっとしする手術を行う方法を学習して、メカノイドテクノロジーを利用してデータを保存します。より知力スキルの高い脳の所有者であれば、より多くのデータを抽出することができます。これはローグAIに必要なデータを素早く入手する方法ですが、道徳的な認識を持つ入植者なら確かにそれを使用したくないでしょう。\nより人道的な選択肢は、長距離鉱物探査スキャナーの調整を行って、ワールドマップ上のメカノイドに汚染された場所を探査することです。</WTH_ExtractBrainData.description>
-
 
 </LanguageData>
