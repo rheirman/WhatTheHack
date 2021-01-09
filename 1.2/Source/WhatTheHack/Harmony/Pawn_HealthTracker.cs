@@ -159,9 +159,9 @@ namespace WhatTheHack.Harmony
                 return;
             }
 
-            if (pawn.IsHashIntervalTick(10) && pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing))
-            {
-                TryHealRandomInjury(__instance, pawn, 4000f / RimWorld.GenDate.TicksPerDay);
+            if (pawn.IsHashIntervalTick(100) && pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing))
+            {   
+                TryHealRandomInjury(__instance, pawn, (400f / RimWorld.GenDate.TicksPerDay) * 100f); //TODO: use stat value instead of magic 400. 
             }
 
             if (!(pawn.CurrentBed() is Building_BaseMechanoidPlatform))
@@ -172,9 +172,9 @@ namespace WhatTheHack.Harmony
 
             if (platform.RepairActive && __instance.hediffSet.HasNaturallyHealingInjury() && !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing))
             {
-                if (pawn.IsHashIntervalTick(10) && platform.CanHealNow())
+                if (pawn.IsHashIntervalTick(100) && platform.CanHealNow())
                 {
-                    TryHealRandomInjury(__instance, pawn, (platform.GetStatValue(WTH_DefOf.WTH_RepairRate) * 10f) / RimWorld.GenDate.TicksPerDay , platform);
+                    TryHealRandomInjury(__instance, pawn, (platform.GetStatValue(WTH_DefOf.WTH_RepairRate) * 100f) / RimWorld.GenDate.TicksPerDay , platform);
                 }
             }
             if (!__instance.hediffSet.HasNaturallyHealingInjury() && platform.RegenerateActive && pawn.IsHashIntervalTick(100) && platform.refuelableComp.Fuel > 4f) //TODO: no magic number
@@ -259,7 +259,7 @@ namespace WhatTheHack.Harmony
             }
             Hediff_Injury hediff_Injury = hediffs.RandomElement();
             hediff_Injury.Heal(healAmount);
-            if (pawn.IsHashIntervalTick(50) && !pawn.IsHashIntervalTick(100) && pawn.Map != null && !pawn.Position.Fogged(pawn.Map))
+            if (pawn.IsHashIntervalTick(100) && !pawn.IsHashIntervalTick(200) && pawn.Map != null && !pawn.Position.Fogged(pawn.Map))
             {
                 MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_HealingCross);
             }
