@@ -68,9 +68,9 @@ namespace WhatTheHack.Jobs
             {
                 pawn.health.AddHediff(modExt.hediffSelf);
             }
-            if (modExt.hediffTarget != null)
+            if (modExt.hediffTarget != null && TargetPawn != null)
             {
-                pawn.health.AddHediff(modExt.hediffTarget);
+                TargetPawn.health.AddHediff(modExt.hediffTarget);
             }
         }
         protected virtual void FailAbility(DefModExtension_Ability modExt)
