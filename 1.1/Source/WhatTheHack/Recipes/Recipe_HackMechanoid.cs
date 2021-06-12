@@ -38,6 +38,10 @@ namespace WhatTheHack.Recipes
             {
                 pawn.ownership = new Pawn_Ownership(pawn);
             }
+            if (pawn.psychicEntropy == null)
+            {
+                pawn.psychicEntropy = new Pawn_PsychicEntropyTracker(pawn);
+            }
 
             pawn.Name = PawnBioAndNameGenerator.GeneratePawnName(pawn, NameStyle.Full);
             Find.LetterStack.ReceiveLetter("WTH_Letter_Success_Label".Translate(), "WTH_Letter_Success_Label_Description".Translate(new object[]{billDoer.Name.ToStringShort, pawn.Name}), LetterDefOf.PositiveEvent, pawn);
