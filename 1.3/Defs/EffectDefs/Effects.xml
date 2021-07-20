@@ -1,0 +1,34 @@
+<Defs>
+  <EffecterDef>
+    <defName>WTH_Overdrive</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_Sustainer</subEffecterClass>
+        <soundDef>WTH_Sound_Overdrive</soundDef>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>SparkFlash</fleckDef>
+        <spawnLocType>BetweenTouchingCells</spawnLocType>
+        <positionLerpFactor>0.49</positionLerpFactor>
+        <chancePerTick>0.005</chancePerTick>
+        <scale>
+          <min>2.5</min>
+          <max>3.5</max>
+        </scale>
+		<positionRadius>0.5</positionRadius>
+      </li>
+	  <li>
+        <subEffecterClass>SubEffecter_DrifterEmoteChance</subEffecterClass>
+        <moteDef>WTH_Mote_Overdrive</moteDef>
+        <spawnLocType>BetweenTouchingCells</spawnLocType>
+        <positionLerpFactor>0.49</positionLerpFactor>
+        <chancePerTick>0.25</chancePerTick>
+		<scale>
+          <min>3</min>
+          <max>3.5</max>
+        </scale>
+      </li>
+    </children>
+  </EffecterDef>
+</Defs>
