@@ -196,6 +196,20 @@ namespace WhatTheHack
         public static void InitWorkTypesAndSkills(Pawn pawn, ExtendedPawnData pawnData)
         {
 
+            if (pawnData.workTypes == null)
+            {
+                pawnData.workTypes = new List<WorkTypeDef>();
+            }
+            if (pawn.skills == null)
+            {
+                pawn.skills = new Pawn_SkillTracker(pawn);
+            }
+            if (pawn.workSettings == null)
+            {
+                pawn.workSettings = new Pawn_WorkSettings(pawn);
+                pawn.workSettings.EnableAndInitialize();
+            }
+
             if (pawn.skills != null)
             {
                 if (pawn.skills.GetSkill(SkillDefOf.Shooting).Level == 0)

@@ -84,6 +84,7 @@ namespace WhatTheHack
             //TODO: Store this somewhere global.
             allowedMechWork.Add(WorkTypeDefOf.Hauling);
             allowedMechWork.Add(WorkTypeDefOf.Growing);
+            allowedMechWork.Add(WorkTypeDefOf.Hunting);
             allowedMechWork.Add(WorkTypeDefOf.Firefighter);
             allowedMechWork.Add(WTH_DefOf.Cleaning);
             allowedMechWork.Add(WTH_DefOf.PlantCutting);

@@ -161,6 +161,7 @@ namespace WhatTheHack.Comps
         public override void PostExposeData()
         {
             base.PostExposeData();
+            //Scribe_Deep.Look(ref mountedTo, "mountedTo");
             Scribe_References.Look(ref mountedTo, "mountedTo");
             Scribe_Values.Look(ref drawOffset, "drawOffset");
         }

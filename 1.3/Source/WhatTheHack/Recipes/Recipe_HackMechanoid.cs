@@ -9,6 +9,7 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 using WhatTheHack.Buildings;
+using WhatTheHack.Storage;
 using WhatTheHack.ThinkTree;
 
 namespace WhatTheHack.Recipes
@@ -38,6 +39,9 @@ namespace WhatTheHack.Recipes
             {
                 pawn.ownership = new Pawn_Ownership(pawn);
             }
+            ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+
+            Utilities.InitWorkTypesAndSkills(pawn, pawnData);
 
             pawn.Name = PawnBioAndNameGenerator.GeneratePawnName(pawn, NameStyle.Full);
             Find.LetterStack.ReceiveLetter("WTH_Letter_Success_Label".Translate(), "WTH_Letter_Success_Label_Description".Translate(new object[]{billDoer.Name.ToStringShort, pawn.Name}), LetterDefOf.PositiveEvent, pawn);

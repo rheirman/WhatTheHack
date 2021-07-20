@@ -9,7 +9,7 @@ using Verse;
 namespace WhatTheHack.Harmony
 {
     //Make sure stat info for the hediffs of upgrade module items are shown
-   [HarmonyPatch(typeof(ThingDef), "SpecialDisplayStats")]
+    [HarmonyPatch(typeof(ThingDef), "SpecialDisplayStats")]
    static class ThingDef_SpecialDisplayStats
     {
         static void Postfix(StatRequest req, ThingDef __instance, ref IEnumerable<StatDrawEntry> __result)

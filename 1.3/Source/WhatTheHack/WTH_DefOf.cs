@@ -139,7 +139,7 @@ namespace WhatTheHack
         public static WorkTypeDef PlantCutting;
         public static WorkTypeDef Cleaning;
 
-        
+        public static ThingDef MineableSteel;
 
     }
 }

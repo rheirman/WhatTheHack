@@ -74,7 +74,9 @@
     <Compile Include="Harmony\Pawn_SkillTracker.cs" />
     <Compile Include="Harmony\PrisonLabor\PrisonLabor_Patch_RenamePrisoners.cs" />
     <Compile Include="Harmony\Sustainer.cs" />
+    <Compile Include="Harmony\Test.cs" />
     <Compile Include="Harmony\ThingDef.cs" />
+    <Compile Include="Harmony\ThingSetMaker_Meteorite.cs" />
     <Compile Include="Jobs\Depricated\JobDriver_Ability.cs" />
     <Compile Include="Jobs\JobDriver_MechanoidAbility_Overdrive.cs" />
     <Compile Include="Jobs\JobGiver_Mechanoid_Rest.cs" />
