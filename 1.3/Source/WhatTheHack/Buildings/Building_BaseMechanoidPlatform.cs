@@ -53,19 +53,22 @@ namespace WhatTheHack.Buildings
         {
             foreach(Gizmo gizmo in base.GetGizmos())
             {
-                yield return gizmo;
-            }
-            yield return new Command_Action
-            {
-                defaultLabel = "CommandThingSetOwnerLabel".Translate(),
-                icon = ContentFinder<Texture2D>.Get("UI/Commands/AssignOwner", true),
-                defaultDesc = "WTH_Gizmo_SetMechanoidOwner_Description".Translate(),
-                action = delegate
+                if(!(gizmo is Command_Toggle toggleCommand && toggleCommand.icon.name == "AsMedical"))
                 {
-                    Find.WindowStack.Add(new Dialog_AssignBuildingOwner(this.TryGetComp<CompAssignableToPawn_Bed>()));
-                },
-                hotKey = KeyBindingDefOf.Misc3
-            };
+                    yield return gizmo;
+                }
+            }
+            //yield return new Command_Action
+            //{
+            //    defaultLabel = "CommandThingSetOwnerLabel".Translate(),
+            //    icon = ContentFinder<Texture2D>.Get("UI/Commands/AssignOwner", true),
+            //    defaultDesc = "WTH_Gizmo_SetMechanoidOwner_Description".Translate(),
+            //    action = delegate
+            //    {
+            //        Find.WindowStack.Add(new Dialog_AssignBuildingOwner(this.TryGetComp<CompAssignableToPawn_Bed>()));
+            //    },
+            //    hotKey = KeyBindingDefOf.Misc3
+            //};
         }
 
     }

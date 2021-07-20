@@ -67,5 +67,17 @@ namespace WhatTheHack.Buildings
             return getInspectStringFunc();
         }
 
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            foreach (Gizmo gizmo in base.GetGizmos())
+            {
+                if (!(gizmo is Command_Toggle toggleCommand && (toggleCommand.icon.name == "AsMedical" || toggleCommand.icon.name == "AssignOwner")))
+                {
+                    yield return gizmo;
+                }
+            }
+        }
+
+
     }
 }
