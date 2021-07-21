@@ -979,7 +979,6 @@ namespace WhatTheHack.Buildings
         public override void Draw()
         {
             base.Draw();
-            Log.Message("draw called");
         }
         public override void ExposeData()
         {

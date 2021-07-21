@@ -16,7 +16,9 @@ namespace WhatTheHack.Harmony
     {
         static void Postfix(ThingSetMaker_Meteorite __instance, ref ThingDef __result)
         {
-            if(__result == WTH_DefOf.WTH_MechanoidParts)
+            Log.Message("FindRandomMineableDef called with " + __result.defName);
+
+            if (__result == WTH_DefOf.WTH_MineableMechanoidParts)
             {
                 __result = WTH_DefOf.MineableSteel;
                 Log.Message("Replaced WTH parts by steel");
