@@ -6,11 +6,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
+using Verse;
+using Verse.AI;
 using Verse.AI.Group;
+using WhatTheHack.Storage;
 using WhatTheHack.ThinkTree;
 
 namespace WhatTheHack.Harmony
 {
+
+    [HarmonyPatch(typeof(CaravanFormingUtility), "StartFormingCaravan")]
+    static class CaravanFormingUtility_StartFormingCaravan
+    {
+        static void Postfix(List<Pawn> pawns)
+        {
+            foreach (var pawn in pawns)
+            {
+                if (pawn.IsHacked())
+                {
+                    pawn.jobs.EndCurrentJob(JobCondition.InterruptForced, false);
+                    ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+                    pawnData.isActive = true;
+                }
+            }
+        }
+    }
+
     [HarmonyPatch(typeof(CaravanFormingUtility), "AllSendablePawns")]
     static class CaravanFormingUtility_AllSendablePawns
     {

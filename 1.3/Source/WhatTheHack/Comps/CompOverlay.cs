@@ -51,10 +51,8 @@ namespace WhatTheHack.Comps
             base.PostDraw();
             Building_RogueAI parent = this.parent as Building_RogueAI;
             DrawBackground(parent);
-            Log.Message("postdraw called");
             if (ShowEye)
             {
-                Log.Message("postdraw called, showEye is true");
                 DrawEye(parent);
             }
             
@@ -75,7 +73,6 @@ namespace WhatTheHack.Comps
             drawPosEye.y += 0.046875f;
             drawPosEye += overlay.offsetDefault;
             SetAnimationOffset(ref drawPosEye);
-            Log.Message("draw eye called!");
             gdEye.Graphic.Draw(drawPosEye, parent.Rotation, parent, 0f);
         }
 

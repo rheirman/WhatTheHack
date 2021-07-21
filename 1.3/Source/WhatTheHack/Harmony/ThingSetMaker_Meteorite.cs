@@ -14,7 +14,7 @@ namespace WhatTheHack.Harmony
     [HarmonyPatch(typeof(ThingSetMaker_Meteorite), "FindRandomMineableDef")]
     static class ThingSetMaker_Meteorite_FindRandomMineableDef
     {
-        static void Postfix(ThingSetMaker_Meteorite __instance, ThingDef __result)
+        static void Postfix(ThingSetMaker_Meteorite __instance, ref ThingDef __result)
         {
             if(__result == WTH_DefOf.WTH_MechanoidParts)
             {
