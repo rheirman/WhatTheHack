@@ -424,6 +424,7 @@
   </ThingDef>
   
 <ThingDef ParentName="BuildingBase">
+    <drawerType>MapMeshAndRealTime</drawerType>
     <defName>WTH_RogueAI</defName>
     <label>rogue AI</label>
 	<thingClass>WhatTheHack.Buildings.Building_RogueAI</thingClass>

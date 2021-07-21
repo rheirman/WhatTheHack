@@ -976,7 +976,11 @@ namespace WhatTheHack.Buildings
 
             Find.LetterStack.ReceiveLetter("WTH_Message_GoRogue_CauseZzztts_Label".Translate(), "WTH_Message_GoRogue_CauseZzztts_Description".Translate(), LetterDefOf.ThreatBig, new GlobalTargetInfo(this), null, null);
         }
-
+        public override void Draw()
+        {
+            base.Draw();
+            Log.Message("draw called");
+        }
         public override void ExposeData()
         {
             base.ExposeData();

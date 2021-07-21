@@ -21,7 +21,8 @@ namespace WhatTheHack.Comps
 
         public override void Initialize(CompProperties props)
         {
-            base.Initialize(props);
+            Log.Message("CompOverlay Initialize");
+            base.Initialize(props); 
             //SetLookAround();
         }
         public bool ShowEye
@@ -50,8 +51,10 @@ namespace WhatTheHack.Comps
             base.PostDraw();
             Building_RogueAI parent = this.parent as Building_RogueAI;
             DrawBackground(parent);
+            Log.Message("postdraw called");
             if (ShowEye)
             {
+                Log.Message("postdraw called, showEye is true");
                 DrawEye(parent);
             }
             
@@ -60,18 +63,19 @@ namespace WhatTheHack.Comps
         private void DrawBackground(Building_RogueAI parent)
         {
             CompProperties_Overlays.GraphicOverlay background = Props.background;
-            GraphicData gdRogueAI = background.graphicDataDefault;
+            GraphicData gdRogueAI = background.graphicData;
             gdRogueAI.Graphic.Draw(parent.DrawPos + new Vector3(0, -1, 0), parent.Rotation, parent, 0f);
         }
 
         private void DrawEye(Building_RogueAI parent)
         {
             CompProperties_Overlays.GraphicOverlay overlay = Props.GetEyeOverlay(parent.goingRogue ? Building_RogueAI.Mood.Mad : parent.CurMoodCategory);
-            GraphicData gdEye = overlay.graphicDataDefault;
+            GraphicData gdEye = overlay.graphicData;
             Vector3 drawPosEye = parent.DrawPos;
             drawPosEye.y += 0.046875f;
             drawPosEye += overlay.offsetDefault;
             SetAnimationOffset(ref drawPosEye);
+            Log.Message("draw eye called!");
             gdEye.Graphic.Draw(drawPosEye, parent.Rotation, parent, 0f);
         }
 

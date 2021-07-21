@@ -18,7 +18,7 @@ namespace WhatTheHack.Comps
 
         public class GraphicOverlay
         {
-            public GraphicData graphicDataDefault;
+            public GraphicData graphicData;
             public Vector3 offsetDefault = Vector3.zero;
         }
         public GraphicOverlay GetEyeOverlay(Building_RogueAI.Mood mood)
