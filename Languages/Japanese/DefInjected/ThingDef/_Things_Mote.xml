@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <WTH_Mote_Charging.label>Mote</WTH_Mote_Charging.label>
-  <WTH_Mote_HealingCrossGreen.label>Mote</WTH_Mote_HealingCrossGreen.label>
+  <!--<WTH_Mote_Charging.label>Mote</WTH_Mote_Charging.label>-->
+  <!--<WTH_Mote_HealingCrossGreen.label>Mote</WTH_Mote_HealingCrossGreen.label>-->
   <WTH_Mote_Overdrive.label>Mote</WTH_Mote_Overdrive.label>
 
 </LanguageData>
