@@ -40,8 +40,8 @@ namespace WhatTheHack.Harmony
         }
     }
 
-    [HarmonyPatch(typeof(Dialog_FormCaravan), "DoBottomButtons")]
-    class Dialog_FormCaravan_DoBottomButtons
+    [HarmonyPatch(typeof(Dialog_FormCaravan), "TrySend")]
+    class Dialog_FormCaravan_TrySend
     {
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -49,11 +49,11 @@ namespace WhatTheHack.Harmony
             for (var i = 0; i < instructionsList.Count; i++)
             {
                 CodeInstruction instruction = instructionsList[i];
-                if (instruction.opcode == OpCodes.Stloc_1)
+                if (instruction.opcode == OpCodes.Stloc_0)
                 {
                     Log.Message("found Stloc_1");
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
-                    yield return new CodeInstruction(OpCodes.Call, typeof(Dialog_FormCaravan_DoBottomButtons).GetMethod("AddWarnings"));
+                    yield return new CodeInstruction(OpCodes.Call, typeof(Dialog_FormCaravan_TrySend).GetMethod("AddWarnings"));
                 }
                 yield return instruction;
             }
