@@ -21,5 +21,10 @@
   <Mech_Pikeman.comps.CompRefuelable.fuelGizmoLabel>予備メカノイドパーツ</Mech_Pikeman.comps.CompRefuelable.fuelGizmoLabel>
   <Mech_Pikeman.comps.CompRefuelable.fuelLabel>予備メカノイドパーツ</Mech_Pikeman.comps.CompRefuelable.fuelLabel>
 
+  <!-- Termite -->
+
+  <Mech_Termite.comps.CompRefuelable.fuelGizmoLabel>予備メカノイドパーツ</Mech_Termite.comps.CompRefuelable.fuelGizmoLabel>
+  <Mech_Termite.comps.CompRefuelable.fuelLabel>予備メカノイドパーツ</Mech_Termite.comps.CompRefuelable.fuelLabel>
+
 
 </LanguageData>
