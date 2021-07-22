@@ -39,7 +39,7 @@ namespace WhatTheHack.Harmony
                 NameUnnamedMechs(newThing);
                 AddOwnershipIfNeeded(newThing);
                 //Log.Message("aa");
-                if(newThing is Pawn p && p.IsHacked())
+                if(newThing is Pawn p && p.IsHacked() && p.Faction == Faction.OfPlayer)
                 {
                     var storage = Base.Instance.GetExtendedDataStorage();
                     if(storage != null)
