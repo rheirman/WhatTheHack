@@ -525,6 +525,11 @@
 				</capMods>  
 			</li>
 		</stages>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Hediff">
+				<repairRate>400</repairRate>
+			</li>
+		</modExtensions>
 	  
 	  </HediffDef>
 	  <!--

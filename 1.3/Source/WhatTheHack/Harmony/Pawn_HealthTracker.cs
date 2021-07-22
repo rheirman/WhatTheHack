@@ -145,6 +145,8 @@ namespace WhatTheHack.Harmony
     [HarmonyPatch(typeof(Pawn_HealthTracker), "HealthTick")]
     static class Pawn_HealthTracker_HealthTick
     {
+        private const int healTickInterval = 200;
+
         static void Postfix(Pawn_HealthTracker __instance)
         {
 
@@ -158,31 +160,33 @@ namespace WhatTheHack.Harmony
                 SelfDestruct(pawn);
                 return;
             }
-            int healTickInterval = 200;
 
-            if (pawn.IsHashIntervalTick(healTickInterval) && pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing))
-            {   
-                TryHealRandomInjury(__instance, pawn, (400f / RimWorld.GenDate.TicksPerDay) * healTickInterval); //TODO: use stat value instead of magic 400. 
-            }
-
-            if (!(pawn.CurrentBed() is Building_BaseMechanoidPlatform))
+            if (pawn.IsHashIntervalTick(healTickInterval))
             {
-                return;
-            }
-            Building_BaseMechanoidPlatform platform = (Building_BaseMechanoidPlatform)pawn.CurrentBed();
+                var repairHediff = pawn.health.hediffSet.GetFirstHediffOfDef(WTH_DefOf.WTH_Repairing);
+                if (repairHediff != null && repairHediff.def.GetModExtension<DefModextension_Hediff>() is DefModextension_Hediff modExt)
+                {   
+                    TryHealRandomInjury(__instance, pawn, (modExt.repairRate / RimWorld.GenDate.TicksPerDay) * healTickInterval);
+                }
 
-            if (platform.RepairActive && __instance.hediffSet.HasNaturallyHealingInjury() && !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing))
-            {
-                if (pawn.IsHashIntervalTick(healTickInterval) && platform.CanHealNow())
+                if (!(pawn.CurrentBed() is Building_BaseMechanoidPlatform))
                 {
-                    TryHealRandomInjury(__instance, pawn, (platform.GetStatValue(WTH_DefOf.WTH_RepairRate) * healTickInterval) / RimWorld.GenDate.TicksPerDay , platform);
+                    return;
+                }
+                Building_BaseMechanoidPlatform platform = (Building_BaseMechanoidPlatform)pawn.CurrentBed();
+
+                if (platform.RepairActive && __instance.hediffSet.HasNaturallyHealingInjury() && !pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_Repairing) && platform.CanHealNow())
+                {
+
+                    TryHealRandomInjury(__instance, pawn, (platform.GetStatValue(WTH_DefOf.WTH_RepairRate) * healTickInterval) / RimWorld.GenDate.TicksPerDay, platform);
+                }
+                if (!__instance.hediffSet.HasNaturallyHealingInjury() && platform.RegenerateActive && platform.refuelableComp.Fuel >= 4f) //TODO: no magic number
+                {
+                    TryRegeneratePart(pawn, platform);
+                    RegainWeapon(pawn);
                 }
             }
-            if (!__instance.hediffSet.HasNaturallyHealingInjury() && platform.RegenerateActive && pawn.IsHashIntervalTick(100) && platform.refuelableComp.Fuel > 4f) //TODO: no magic number
-            {
-                TryRegeneratePart(pawn, platform);
-                RegainWeapon(pawn);
-            }
+           
             
         }
 
@@ -266,7 +270,7 @@ namespace WhatTheHack.Harmony
             }
             if(platform != null)
             {
-                platform.refuelableComp.ConsumeFuel((platform.GetStatValue(WTH_DefOf.WTH_PartConsumptionRate) * 10f)/GenDate.TicksPerDay);//TODO no magic number
+                platform.refuelableComp.ConsumeFuel((platform.GetStatValue(WTH_DefOf.WTH_PartConsumptionRate) * healTickInterval) /GenDate.TicksPerDay);//TODO no magic number
             }
         }
 

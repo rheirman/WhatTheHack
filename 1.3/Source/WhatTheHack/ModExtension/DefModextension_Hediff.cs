@@ -19,5 +19,6 @@ namespace WhatTheHack
         public float spawnChance = 0f;
         public float destroyOnDeathChance = 0f;
         public bool canUninstall = false;
+        public float repairRate = 0f;
     }
 }

@@ -204,7 +204,7 @@
         </fuelFilter>
         <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 		<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
-        <initialConfigurableTargetFuelLevel>10.0</initialConfigurableTargetFuelLevel>
+        <initialConfigurableTargetFuelLevel>15</initialConfigurableTargetFuelLevel>
       </li>
 	  <li Class="CompProperties_Forbiddable" />
 	  <li Class="CompProperties_AffectedByFacilities">

@@ -33,6 +33,10 @@ namespace WhatTheHack.Recipes
 
         private static void Cleanup(Pawn pawn, HediffDef removedHediff)
         {
+            if (removedHediff == WTH_DefOf.WTH_TurretModule && pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_MountedTurret))
+            {
+                pawn.health.RemoveHediff(pawn.health.hediffSet.hediffs.FirstOrDefault((Hediff h) => h.def == WTH_DefOf.WTH_MountedTurret));
+            }
             ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
             if (removedHediff.GetModExtension<DefModExtension_Hediff_WorkModule>() is DefModExtension_Hediff_WorkModule ext)
             {
