@@ -12,7 +12,5 @@
 </WhatTheHack_3_0_0.content>
 
   <WhatTheHack_4_0_0.modNameReadable>What the Hack?!</WhatTheHack_4_0_0.modNameReadable>
-  <WhatTheHack_4_0_0.content>
-Rimworld1.3をサポートするためにModを更新しました。1.3で機能させるために必要なすべての修正に加えて、このアップデートには以下の変更が含まれています。\n\n・メカノイドパーツの隕石は無くなります（テクスチャが壊れていた)\n・メカノイドは狩りをするオプションが追加されました。狩猟作業の優先順位を切り替える(または無効化）には、[メカノイド]タブを確認してください。\n作業モードをオンにして、メカノイドが狩りをできるようにします。\n \n&lt;color=orange&gt;&lt;b&gt;このアップデートの大部分で、多くの感謝がOglissに送られます。**&lt;/b&gt;&lt;/color&gt;\n\n問題が発生した場合、HugsLibのログで報告してください（ゲーム内でctrlキー+F12を押して問題ログを収集してください）。\n\nもうご存知かもしれませんが、私はもうModderとしてはあまり活動していませんが、すべてのModを存続させるつもりです。私がもう活動していない理由は、私が現在自分のゲームに取り組んでいるからです。\n\n&lt;color=orange&gt;&lt;b&gt;CursedCrew&lt;/b&gt;&lt;/color&gt;.私の作品が気に入ったら、ぜひチェックしてみてください！ 私が作成したすべてのModページにCursedCrewへのリンクがあります。\n\nアップデートをお楽しみください！\n\nそれでは、rooloより\n</WhatTheHack_4_0_0.content>
-
+  <WhatTheHack_4_0_0.content>\nWhat-the-Hackがアップデートされ、Rimworld 1.3をサポートするようになった。1.3で動作するために必要なすべての修正と共に、このアップデートには以下の変更が含まれます:\n・メカノイドパーツの隕石は無くなります（テクスチャが壊れていた）\n・メカノイドは狩猟をするオプションを追加しました。\n　狩猟作業の優先順位を切り替える（または無効）には、[メカノイド]タブを確認してください。\n\n&lt;color=orange&gt;&lt;b&gt;今回のアップデートの大部分はOglissのおかげです。**&lt;/b&gt;&lt;/color&gt;\n\n問題が発生した場合は、HugsLibのログで報告してください(ctrl+F12をゲーム内で押すとログを取得できます) 。\n\n\nご存知かもしれませんが、私はもうmodderとして活動していませんが、すべてのmodを存続させるつもりです。私が活動を停止した理由は、自分のゲーム&lt;color=orange&gt;&lt;b&gt;Cursed Crew&lt;/b&gt;&lt;/color&gt;に取り組んでいるためです。私の作品が気に入ったら、ぜひ確認してみてください！私が作成したすべてのmodのmodページにCursedCrewへのリンクがあります。\n\nアップデートをお楽しみください！\n\nMod作者:Roolo\n\n</WhatTheHack_4_0_0.content>
 </LanguageData>
