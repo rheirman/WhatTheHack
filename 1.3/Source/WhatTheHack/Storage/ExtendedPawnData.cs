@@ -72,7 +72,7 @@ namespace WhatTheHack.Storage
             Scribe_References.Look(ref controllingAI, "controllingAI");
             Scribe_References.Look(ref caravanPlatform, "caravanPlatform");
             Scribe_References.Look(ref originalFaction, "originalFaction");
-            Scribe_References.Look(ref turretMount, "turretMount");
+            //Scribe_References.Look(ref turretMount, "turretMount");
             Scribe_Collections.Look(ref workTypes, "workTypes");
         }
 

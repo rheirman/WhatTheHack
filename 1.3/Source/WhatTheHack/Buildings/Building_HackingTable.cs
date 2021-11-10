@@ -57,15 +57,15 @@ namespace WhatTheHack.Buildings
             return this.powerComp != null && this.powerComp.PowerOn;
         }
         //Compatibility with animals logic. Calls ThingWithComps.GetInspectString() instead of BuildingBed.GetInspectString (which is targeted by Animals Logic). Store the function for performance.
-        public override string GetInspectString()
-        {
-            if(getInspectStringFunc == null)
-            {
-                var ptr = typeof(ThingWithComps).GetMethod("GetInspectString").MethodHandle.GetFunctionPointer();
-                getInspectStringFunc = (Func<string>)Activator.CreateInstance(typeof(Func<string>), this, ptr);
-            }
-            return getInspectStringFunc();
-        }
+        //public override string GetInspectString()
+        //{
+        //    if(getInspectStringFunc == null)
+        //    {
+        //        var ptr = typeof(ThingWithComps).GetMethod("GetInspectString").MethodHandle.GetFunctionPointer();
+        //        getInspectStringFunc = (Func<string>)Activator.CreateInstance(typeof(Func<string>), this, ptr);
+        //    }
+        //    return getInspectStringFunc();
+        //}
 
         public override IEnumerable<Gizmo> GetGizmos()
         {

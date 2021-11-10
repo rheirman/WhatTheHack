@@ -12,7 +12,7 @@ using WhatTheHack.Storage;
 
 namespace WhatTheHack.Comps
 {
-    public class CompMountable : ThingComp, ILoadReferenceable
+    public class CompMountable : ThingComp
     {
         public Pawn mountedTo = null;
         public float drawOffset = 0;
@@ -204,11 +204,6 @@ namespace WhatTheHack.Comps
                 }
             }
             return backHeight;
-        }
-
-        public string GetUniqueLoadID()
-        {
-            return "TurretMount_" + parent.GetUniqueLoadID();
         }
     }
 }
