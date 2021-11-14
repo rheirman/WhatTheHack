@@ -117,33 +117,36 @@ namespace WhatTheHack.Harmony
     [HarmonyPatch(typeof(Pawn), "GetGizmos")]
     public class Pawn_GetGizmos
     {
-        public static void Postfix(ref IEnumerable<Gizmo> __result, Pawn __instance)
+        public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> gizmos, Pawn __instance)
         {
-            List<Gizmo> gizmoList = __result.ToList();
+            foreach (Gizmo gizmo in gizmos)
+            {
+                yield return gizmo;
+            }
+
             ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
             bool isCreatureMine = __instance.Faction != null && __instance.Faction.IsPlayer;
 
-            if (store == null || !isCreatureMine)
+            if (store == null || !isCreatureMine || !__instance.IsHacked())
             {
-                return;
-            }
-            if (__instance.IsHacked())
-            {
-                AddHackedPawnGizmos(__instance, ref gizmoList, store);
+                yield break;
             }
 
-            __result = gizmoList;
+            foreach (Gizmo gizmo in AddHackedPawnGizmos(__instance, store))
+            {
+                yield return gizmo;
+            }
         }
 
-        private static void AddHackedPawnGizmos(Pawn __instance, ref List<Gizmo> gizmoList, ExtendedDataStorage store)
+        private static IEnumerable<Gizmo> AddHackedPawnGizmos(Pawn __instance, ExtendedDataStorage store)
         {
             ExtendedPawnData pawnData = store.GetExtendedDataFor(__instance);
-            gizmoList.Add(CreateGizmo_SearchAndDestroy(__instance, pawnData));
+            yield return CreateGizmo_SearchAndDestroy(__instance, pawnData);
             Need_Power powerNeed = __instance.needs.TryGetNeed<Need_Power>();
             Need_Maintenance maintenanceNeed = __instance.needs.TryGetNeed<Need_Maintenance>();
             if (powerNeed != null)
             {
-                gizmoList.Add(CreateGizmo_AutoRecharge(__instance, powerNeed));
+                yield return CreateGizmo_AutoRecharge(__instance, powerNeed);
             }
             HediffSet hediffSet = __instance.health.hediffSet;
 
@@ -153,41 +156,41 @@ namespace WhatTheHack.Harmony
                 {
                     foreach (Gizmo apparelGizmo in __instance.apparel.GetGizmos())
                     {
-                        gizmoList.Add(apparelGizmo);
+                        yield return apparelGizmo;
                     }
                 }
             }
             if(__instance.workSettings != null)
             {
-                gizmoList.Add(CreateGizmo_Work(__instance, pawnData));
+                yield return CreateGizmo_Work(__instance, pawnData);
                 if(powerNeed != null)
                 {
-                    gizmoList.Add(CreateGizmo_WorkThreshold(__instance, powerNeed));
+                    yield return CreateGizmo_WorkThreshold(__instance, powerNeed);
                 }
             }
             if(maintenanceNeed != null)
             {
-                gizmoList.Add(CreateGizmo_MaintenanceThreshold(__instance, maintenanceNeed));
+                yield return CreateGizmo_MaintenanceThreshold(__instance, maintenanceNeed);
             }
             if (hediffSet.HasHediff(WTH_DefOf.WTH_SelfDestruct))
             {
-                gizmoList.Add(CreateGizmo_SelfDestruct(__instance, pawnData));
+                yield return CreateGizmo_SelfDestruct(__instance, pawnData);
             }
             if (hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule))
             {
-                gizmoList.Add(CreateGizmo_SelfRepair(__instance, pawnData));
+                yield return CreateGizmo_SelfRepair(__instance, pawnData);
             }
             if(hediffSet.HasHediff(WTH_DefOf.WTH_RepairModule) && hediffSet.HasHediff(WTH_DefOf.WTH_RepairArm))
             {
-                gizmoList.Add(CreateGizmo_Repair(__instance, pawnData));
+                yield return CreateGizmo_Repair(__instance, pawnData);
             }
             if (hediffSet.HasHediff(WTH_DefOf.WTH_BeltModule))
             {
-                gizmoList.Add(CreateGizmo_EquipBelt(__instance, pawnData));
+                yield return CreateGizmo_EquipBelt(__instance, pawnData);
             }
             if (hediffSet.HasHediff(WTH_DefOf.WTH_OverdriveModule))
             {
-                gizmoList.Add(CreateGizmo_Overdrive(__instance, pawnData));
+                yield return CreateGizmo_Overdrive(__instance, pawnData);
             }
         }
         private static TargetingParameters GetTargetingParametersForTurret()
