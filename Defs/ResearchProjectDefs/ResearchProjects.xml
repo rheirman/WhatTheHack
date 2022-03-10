@@ -233,7 +233,7 @@
 		<label>Battery expansion module</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>A module that increases the total power a mechanoid can store, at the cost of a small movement penalty.</description>
+		<description>A module that increases the total power a mechanoid can store at the cost of a small movement penalty.</description>
 		<baseCost>1200</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
