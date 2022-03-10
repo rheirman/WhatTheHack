@@ -191,7 +191,7 @@
 		<label>Turret module</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>A module that provides both structural support and and interface for gun turrets and mortars. More research is required for installing each type of turret.</description>
+		<description>A module that provides both structural support and an interface for gun turrets and mortars. More research is required for installing each type of turret.</description>
 		<baseCost>2400</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
