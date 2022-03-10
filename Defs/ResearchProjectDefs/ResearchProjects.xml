@@ -205,7 +205,7 @@
 		<label>Gun turret mounting</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>Learn how to mount gun turrets on the turret module. Any gun turret that can be uninstalled after building, can be installed on the turret module. This module can only be installed on large mechanoids.</description>
+		<description>Learn how to mount gun turrets on the turret module. Any gun turret that can be uninstalled after building can be installed on the turret module. This module can only be installed on large mechanoids.</description>
 		<baseCost>1600</baseCost>
 		<prerequisites>
 		  <li>WTH_TurretModule</li>
