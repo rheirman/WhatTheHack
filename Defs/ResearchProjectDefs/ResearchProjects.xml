@@ -333,8 +333,8 @@ If you're looking for hive data, these sites with numerous mechanoids are a good
 		<label>Rogue AI</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>A potentially very powerful AI, based on mechanoid technology. By default, it has not developed a consciousness yet. To get a consciousness, it requires access to the knowledge found in mechanoid hive ships. With a consciousness it can become a powerful, but dangerous cyberweapon, with a unquenchable thirst for more data. 
-Without a consciousness, it still provides a small boost to the resource efficiency and repair speed of surrounding mechanoid platforms, as it is able to manage mechanites to cooperate in a more organised manner.</description>
+		<description>A potentially very powerful AI based on mechanoid technology. By default, it has not developed a consciousness yet. To get a consciousness, it requires access to the knowledge found in mechanoid hive ships. With a consciousness, it can become a powerful but dangerous cyberweapon with an unquenchable thirst for more data. 
+Without a consciousness, it still provides a small boost to the resource efficiency and repair speed of surrounding mechanoid platforms, as it can manage mechanites to cooperate in a more organised manner.</description>
 		<baseCost>2000</baseCost>
 		<prerequisites>
 		  <li>WTH_LRMSTuning</li>
