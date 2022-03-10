@@ -378,7 +378,7 @@
     <defName>WTH_MechanoidBeacon</defName>
     <label>Hiveship hacking facility</label>
 	<thingClass>WhatTheHack.Buildings.Building_MechanoidBeacon</thingClass>
-	<description>This high-tech facility allows the rogue AI to transmit its malicious code all the way to mechanoid hive ships orbiting the planet, in an attempt to gain access to the advanced knowledge present in those ships. The Rogue AI needs this knowledge to form a consciousness. Can only be activated after a Rogue AI has been built on the same map.</description>
+	<description>This high-tech facility allows the rogue AI to transmit its malicious code to mechanoid hive ships orbiting the planet in an attempt to gain access to the advanced knowledge present in those ships. The Rogue AI needs this knowledge to gain consciousness. Can only be activated after a Rogue AI has been built on the same map.</description>
     <graphicData>
       <texPath>Things/MechanoidBeacon</texPath>
       <graphicClass>Graphic_Single</graphicClass>
