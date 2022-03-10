@@ -247,7 +247,7 @@
 		<label>overdrive module</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>Upgrade module that, when activated, overclocks the mechanoid, temporarily overdriving its power network. This results in greatly boosting the speed, firing rate, and consciousness of the mechanoid for a short period of time. The procedure draws a lot of power and pushes beyond hardware safety limits, and can therefore have unforeseen consequences.</description>
+		<description>Upgrade module that, when activated, overclocks the mechanoid, temporarily overdriving its power network. This greatly boosts the mechanoid's speed, firing rate, and consciousness for a short time. The procedure draws a lot of power, pushes beyond hardware safety limits, and has unforeseen consequences as a result.</description>
 		<baseCost>1600</baseCost>
 		<prerequisites>
 		  <li>WTH_BatteryExpansionModule</li>
