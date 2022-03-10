@@ -318,8 +318,8 @@
 		<label>Hive data tracking</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>Allows the long range mineral scanner to scan for locations on the world with a high concentration of mechanoid parts. Of course the parts won't be just lying around. More likely they are attached to mechanoids. Live mechanoids.. 
-If you're looking for hive data, these sites with a lot of mechanoids are a good place to search.</description>
+		<description>Allows the long-range mineral scanner to scan for locations planetwide with a high concentration of mechanoid parts. Of course, the parts won't be just lying around. More likely, they are attached to mechanoids. Live mechanoids.. 
+If you're looking for hive data, these sites with numerous mechanoids are a good place to search.</description>
 		<baseCost>1200</baseCost>
 		<prerequisites>
 		  <li>WTH_HackingBasics</li>
