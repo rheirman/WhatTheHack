@@ -362,8 +362,8 @@ Without a consciousness, it still provides a small boost to the resource efficie
 		<label>Human brain data extraction</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>Learn how to perform a gruesome surgery that is used to extracts all the data from a live human brain, and stores it using mechanoid technology. The more intelligent the owner of the brain, the more data can be extracted. This is a quick way to get data needed for the Rogue AI, but the more morally aware colonists certainly wouldn't like using it. 
-A more human-friendly alternative is to look for mechanoid infested sites on the world map using long range mineral scanner tuning.</description>
+		<description>Learn how to perform a gruesome surgery that extracts all the data from a live human brain and stores it using mechanoid technology. The more intelligent the owner of the brain, the more data can be extracted. This is a quick way to get data needed for the Rogue AI, but the more morally aware colonists certainly wouldn't like using it. 
+A more human-friendly alternative is to look for mechanoid-infested sites on the world map using long-range mineral scanner tuning.</description>
 		<baseCost>1000</baseCost>
 		<prerequisites>
 		  <li>WTH_RogueAI</li>
