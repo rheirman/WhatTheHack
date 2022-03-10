@@ -177,7 +177,7 @@
 		<label>Self destruct module</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>A simple upgrade, consisting of two mortar shells and a wire that short circuits when activated. A plasteel casing prevents that the explosives go off unintentionally. Let your mechs go with a bang!</description>
+		<description>A simple upgrade consisting of two mortar shells and a wire that short circuits when activated. A plasteel casing prevents the explosives from going off unintentionally. Let your mechs go out with a bang!</description>
 		<baseCost>800</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
