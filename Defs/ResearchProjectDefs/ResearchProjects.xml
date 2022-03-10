@@ -48,7 +48,7 @@
 		<label>mechanoid workshop</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>Build a mechanoid workshop, which is used to construct all kinds of mechanoid related contraptions and upgrades, and also for scrapping advanced mechanoid parts.</description>
+		<description>Build a mechanoid workshop, which is used to construct all kinds of mechanoid-related contraptions and upgrades, and also for scrapping advanced mechanoid parts.</description>
 		<baseCost>2000</baseCost>
 		<prerequisites>
 		  <li>WTH_HackingBasics</li>
