@@ -163,7 +163,7 @@
 		<label>Repair arm</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>Can be used to replace the arm of a mechanoid that has a repair module installed. This arm is capable of transferring mechanites charged by the repair module to other mechanoids, resulting in the other mechanoids being repaired. The arm is however not very suitable for combat.</description>
+		<description>Can be used to replace the arm of a mechanoid that has a repair module installed. This arm can transfer mechanites charged by the repair module to other mechanoids, repairing the other mechanoids. The arm is, however, not very suitable for combat.</description>
 		<baseCost>1200</baseCost>
 		<prerequisites>
 		  <li>WTH_RepairModule</li>
