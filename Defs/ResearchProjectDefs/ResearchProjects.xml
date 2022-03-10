@@ -304,7 +304,7 @@
 		<label>Attracting mechanoids</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>Makes it possible to let your colonists deliberately try to trigger a self-defence mechanism in a downed, non-hacked mechanoid. This mechanism then transmits an emergency signal to nearby mechanoids, attracting them. This is a reliable, but deadly way of getting some extra mechanoid parts.</description>
+		<description>Makes it possible to let your colonists deliberately try to trigger a self-defence mechanism in a downed, non-hacked mechanoid. This mechanism then transmits an emergency signal to nearby mechanoids, attracting them. This is a reliable but deadly way of getting some extra mechanoid parts.</description>
 		<baseCost>1200</baseCost>
 		<prerequisites>
 		  <li>WTH_HackingBasics</li>
