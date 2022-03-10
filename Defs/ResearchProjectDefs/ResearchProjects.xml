@@ -76,7 +76,7 @@
 		<label>speed module</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>Upgrade module that aims to increase the speed of mechanoids, at the cost of a moderate amount of extra power consumption. Mechanoids are designed to run with a limited reactor capacity. To be energy efficient, their locomotion system is designed to run at a certain capped speed. With some hacking, and by adding some hardware, this speed can be increased above design specifications, without causing any damage to the hardware. The procedure does result in a higher power consumption.</description>
+		<description>Upgrade module that aims to increase the speed of mechanoids at the cost of a moderate amount of extra power consumption. Mechanoids are designed to run with a limited reactor capacity. To be energy efficient, their locomotion system is designed to run at a certain capped speed. With some hacking, and by adding some hardware, this speed can be increased above design specifications, without causing any damage to the hardware. The procedure does result in a higher power consumption.</description>
 		<baseCost>1200</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
