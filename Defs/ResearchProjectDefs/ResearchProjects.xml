@@ -104,7 +104,7 @@
 		<label>optic sensor module</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>An upgrade module that aims to improve the sight of mechanoids. It drains a small amount of power. Mechanoid sensor technology is more advanced than the current state-of the art of human sensor technology. However, the sensors present on mechanoids roaming the planet generally have an age of hundreds of years. It is impressive that these sensors still function after ages of wearing, but they their quality does decay ovver time. Adding human-made sensors, despite them being inferior, can still improve the mechanoid's sight</description>
+		<description>An upgrade module that aims to improve the sight of mechanoids. It drains a small amount of power. Mechanoid sensor technology is more advanced than the current state-of-the-art human sensor technology. However, the sensors installed in mechanoids roaming the planet are hundreds of years old. It is impressive that these sensors still function after ages of wearing, but their quality does decay over time. Despite them being inferior, adding human-made sensors can still improve the mechanoid's sight.</description>
 		<baseCost>1200</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
