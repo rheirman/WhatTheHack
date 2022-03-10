@@ -149,7 +149,7 @@
 		<label>Repair module</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>The repair module can be installed in the reactor of mechanoids. It can be loaded with mechanoid parts, and is capable of very rapidly drawing a large amount of power from the mechanoid, and redirecting it the the mech's internal mechanites. This activates the mechanites, which can repair damage consuming the parts, while slowing down the mechanoid temporarily.</description>
+		<description>The repair module can be installed in the reactor of mechanoids. It can be loaded with mechanoid parts and very rapidly draw a large amount of power from the mechanoid, redirecting it to the mech's internal mechanites. This activates the mechanites, repairing damage by consuming the parts while temporarily slowing the mechanoid.</description>
 		<baseCost>1600</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
