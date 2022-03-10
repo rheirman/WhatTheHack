@@ -62,7 +62,7 @@
 		<label>work modules</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>Several upgrade modules that make mechanoids capable of performing several simple tasks like hauling, cleaning, firefighting and growing. Mechanoids were designed for combat, and modifying them to let them perform simple chores is probably an insult to their creators.</description>
+		<description>Several upgrade modules that make mechanoids capable of performing several simple tasks like hauling, cleaning, firefighting and growing. Mechanoids were designed for combat, and modifying them to perform simple chores is probably an insult to their creators.</description>
 		<baseCost>3500</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
