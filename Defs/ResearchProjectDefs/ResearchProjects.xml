@@ -261,7 +261,7 @@
 		<label>Vanometric power module</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>A module that contains a vanometric power cell to provide a mechanoid with an infinite power supply, at the cost of a small movement penalty.</description>
+		<description>A module that contains a vanometric power cell to provide a mechanoid with an infinite power supply at the cost of a small movement penalty.</description>
 		<baseCost>2200</baseCost>
 		<prerequisites>
 		  <li>WTH_BatteryExpansionModule</li>
