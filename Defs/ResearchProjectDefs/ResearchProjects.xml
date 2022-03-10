@@ -134,7 +134,7 @@
 		<label>mechanoid controller belt</label>
 		<tab>WTH_ResearchTab</tab>
 		<techLevel>Spacer</techLevel>
-		<description>Learn how to control mechanoids directly with colonists using a mechanoid controller belt which can be crafted at the mechanoid workshop. Finally your non-violent colonists can participate in battle without feeling guilty. After all, it's the mechanoids doing the killing, not them, right?</description>
+		<description>Learn how to control mechanoids directly with colonists using a mechanoid controller belt which can be crafted at the mechanoid workshop. Finally, your non-violent colonists can participate in battle without feeling guilty. After all, it's the mechanoids doing the killing, not them, right?</description>
 		<baseCost>1600</baseCost>
 		<prerequisites>
 		  <li>WTH_MechanoidWorkshop</li>
