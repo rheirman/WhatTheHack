@@ -13,7 +13,7 @@ namespace WhatTheHack.Recipes
         protected override void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
             base.PostSuccessfulApply(pawn, part, billDoer, ingredients, bill);
-            if (pawn.skills == null || pawn.workSettings == null)
+            if (pawn.skills == null || pawn.workSettings == null || Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn).workTypes == null)
             {
                 //for people who became victums of NullReferenceException bug (reinitialize ALL mechanoid skills and worktypes)
                 Utilities.InitWorkTypesAndSkills(pawn, Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn));
