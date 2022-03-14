@@ -13,7 +13,7 @@ namespace WhatTheHack.Jobs
     {
         float powerDrain = 40f; //Should store this globally. 
         float fuelConsumption = 5f; //Should store this globally. 
-        public override Job TryGiveJob(Pawn pawn)
+        protected override Job TryGiveJob(Pawn pawn)
         {
             if(pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_SelfDestruct) && pawn.health.summaryHealth.SummaryHealthPercent < 0.5f)
             {
