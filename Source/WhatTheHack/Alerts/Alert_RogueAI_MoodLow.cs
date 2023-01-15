@@ -1,47 +1,47 @@
-﻿using RimWorld;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using RimWorld;
 using Verse;
 using WhatTheHack.Buildings;
 
-namespace WhatTheHack.Alerts
+namespace WhatTheHack.Alerts;
+
+internal class Alert_RogueAI_MoodLow : Alert
 {
-    class Alert_RogueAI_MoodLow : Alert
+    public Alert_RogueAI_MoodLow()
     {
-        private IEnumerable<Building_RogueAI> RogueAIs
+        defaultLabel = "WTH_Alert_RogueAI_MoodLow_Label".Translate();
+        defaultPriority = AlertPriority.High;
+    }
+
+    private IEnumerable<Building_RogueAI> RogueAIs
+    {
+        get
         {
-            get
+            foreach (var map in Find.Maps)
             {
-                foreach (Map map in Find.Maps)
+                foreach (var rAI in map.listerBuildings.AllBuildingsColonistOfDef(WTH_DefOf.WTH_RogueAI)
+                             .Cast<Building_RogueAI>())
                 {
-                    foreach (Building_RogueAI rAI in map.listerBuildings.AllBuildingsColonistOfDef(WTH_DefOf.WTH_RogueAI).Cast<Building_RogueAI>())
+                    if (rAI.CurMoodCategory == Building_RogueAI.Mood.Annoyed && !rAI.goingRogue)
                     {
-                        if (rAI.CurMoodCategory == Building_RogueAI.Mood.Annoyed && !rAI.goingRogue)
-                        {
-                            yield return rAI;
-                        }
+                        yield return rAI;
                     }
                 }
             }
         }
+    }
 
-        public Alert_RogueAI_MoodLow()
-        {
-            this.defaultLabel = "WTH_Alert_RogueAI_MoodLow_Label".Translate();
-            this.defaultPriority = AlertPriority.High;
-        }
+    public override TaggedString GetExplanation()
+    {
+        var stringBuilder = new StringBuilder();
+        stringBuilder.AppendLine();
+        return string.Format("WTH_Alert_RogueAI_MoodLow_Description".Translate(), stringBuilder);
+    }
 
-        public override string GetExplanation()
-        {
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.AppendLine();
-            return string.Format("WTH_Alert_RogueAI_MoodLow_Description".Translate(), stringBuilder.ToString());
-        }
-
-        public override AlertReport GetReport()
-        {
-            return AlertReport.CulpritIs(RogueAIs.FirstOrDefault<Building_RogueAI>());
-        }
+    public override AlertReport GetReport()
+    {
+        return AlertReport.CulpritIs(RogueAIs.FirstOrDefault());
     }
 }

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using Verse;
 
-namespace WhatTheHack
+namespace WhatTheHack;
+
+public class DefModExtension_Hediff_WorkModule : DefModExtension
 {
-    public class DefModExtension_Hediff_WorkModule : DefModExtension
-    {
-        public List<WorkTypeDef> workTypes;
-        public int skillLevel = -1;
-    }
+    public int skillLevel = -1;
+    public List<WorkTypeDef> workTypes;
 }

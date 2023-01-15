@@ -1,0 +1,556 @@
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>WTH_HackingTable</defName>
+    <label>mechanoid hacking facility</label>
+    <description>Facility for hacking and repairing mechanoids</description>
+    <thingClass>WhatTheHack.Buildings.Building_HackingTable</thingClass>
+    <size>(5,2)</size>
+    <costList>
+      <Steel>200</Steel>
+      <ComponentIndustrial>10</ComponentIndustrial>
+    </costList>
+    <graphicData>
+      <texPath>Things/HackingTable</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(7,4)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+	<castEdgeShadows>false</castEdgeShadows>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <statBases>
+      <MaxHitPoints>450</MaxHitPoints>
+      <WorkToBuild>5000</WorkToBuild>
+      <Flammability>1.0</Flammability>
+    </statBases>
+	<rotatable>true</rotatable>
+    <comps>
+	  <li Class="CompProperties_Glower">
+		<glowRadius>5</glowRadius>
+		<glowColor>(138,73,73,0)</glowColor>
+	  </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>250</basePowerConsumption>
+        <shortCircuitInRain>true</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+	  <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_Bed</compClass>
+      </li>
+    </comps>
+    <fillPercent>0.5</fillPercent>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <hasInteractionCell>true</hasInteractionCell>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>WTH_Hacking</designationCategory>
+    <surfaceType>Item</surfaceType>
+    <researchPrerequisites>
+      <li>WTH_HackingBasics</li>
+    </researchPrerequisites>	
+	<building>
+		<bed_humanlike>false</bed_humanlike>
+		<bed_showSleeperBody>True</bed_showSleeperBody>
+		<canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+		<ai_chillDestination>false</ai_chillDestination>
+	</building>
+  </ThingDef>
+  
+  <ThingDef ParentName="BenchBase">
+    <defName>WTH_TableMechanoidWorkshop</defName>
+    <label>mechanoid workshop</label>
+    <description>A workshop for fabricating all kinds of mechanoid related upgrades and contraptions, and for scrapping advanced mechanoid chips to retrieve mechanoid parts.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Things/MechanoidWorkshop</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(7,4)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <costList>
+      <Steel>250</Steel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+	  <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <statBases>
+      <WorkToBuild>5000</WorkToBuild>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Cleanliness>-2</Cleanliness>
+    </statBases>
+    <size>(5,2)</size>
+    <designationCategory>WTH_Hacking</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+	<recipes>
+      <li>WTH_Scrap_AdvancedMechanoidChip</li>
+	  <li>WTH_Craft_RepairModule</li>
+	  <li>WTH_Craft_RepairArm</li>
+	  <li>WTH_Craft_TurretModule</li>
+	  <li>WTH_Craft_SelfDestructModule</li>
+	  <li>WTH_Craft_AdditionalBatteryModule</li>
+	  <li>WTH_Craft_VanometricModule</li>
+	  <li>WTH_Craft_BeltModule</li>
+  	<li>WTH_Craft_GrowingModule</li>
+	  <li>WTH_Craft_FirefightingModule</li>
+	  <li>WTH_Craft_HaulingModule</li>
+	  <li>WTH_Craft_CleaningModule</li>
+	  <li>WTH_Craft_SpeedModule</li>
+	  <li>WTH_Craft_ArmorModule</li>
+	  <li>WTH_Craft_OverdriveModule</li>
+	  <li>WTH_Craft_OpticSensorModule</li>
+	  <li>WTH_Craft_CargoModule</li>
+    </recipes>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>350</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+		<glowColor>(138,73,73,0)</glowColor>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>WTH_MechanoidWorkshop</li>
+    </researchPrerequisites>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>WTH_MechanoidPlatform</defName>
+    <label>mechanoid platform</label>
+    <description>Platform used for charging and repairing mechanoids.</description>
+	<thingClass>WhatTheHack.Buildings.Building_MechanoidPlatform</thingClass>
+    <graphicData>
+      <texPath>Things/MechanoidPlatform</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,4)</drawSize>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <costList>
+      <Steel>125</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+	<rotatable>false</rotatable>
+    <drawGUIOverlay>True</drawGUIOverlay>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <statBases>
+      <WorkToBuild>4000</WorkToBuild>
+      <MaxHitPoints>350</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+	  <WTH_RepairRate>300</WTH_RepairRate>
+    </statBases>
+    <size>(3,3)</size>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,0)</interactionCellOffset>
+    <designationCategory>WTH_Hacking</designationCategory>
+    <surfaceType>Item</surfaceType>
+	 <researchPrerequisites>
+      <li>WTH_HackingBasics</li>
+    </researchPrerequisites>	
+	<comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>300</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+	  <li Class="CompProperties_Refuelable">
+		<fuelLabel>Loaded mechanoid parts</fuelLabel>
+		<fuelGizmoLabel>Loaded mechanoid parts</fuelGizmoLabel>
+        <fuelConsumptionRate>20.0</fuelConsumptionRate>
+        <fuelCapacity>50.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>WTH_MechanoidParts</li>
+          </thingDefs>
+        </fuelFilter>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+		<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>10.0</initialConfigurableTargetFuelLevel>
+      </li>
+	  <li Class="CompProperties_Forbiddable" />
+	  <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>WTH_RogueAI</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_Bed</compClass>
+      </li>
+    </comps>
+	<building>
+		<bed_humanlike>false</bed_humanlike>
+		<bed_showSleeperBody>True</bed_showSleeperBody>
+		<canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+		<ai_chillDestination>false</ai_chillDestination>
+	</building>
+  </ThingDef>
+  
+    <ThingDef ParentName="FurnitureBase">
+	   <defName>WTH_PortableChargingPlatform</defName>
+		<label>portable charging platform</label>
+		<description>Portable platform used for charging mechanoids. For travelling purposes</description>
+		<thingClass>WhatTheHack.Buildings.Building_PortableChargingPlatform</thingClass>
+		<graphicData>
+		  <texPath>Things/PortableMechanoidPlatform</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <drawSize>(2,2)</drawSize>
+		</graphicData>
+		<castEdgeShadows>false</castEdgeShadows>
+		<costList>
+		  <Steel>100</Steel>
+		  <ComponentIndustrial>6</ComponentIndustrial>
+		</costList>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Building</altitudeLayer>
+		<drawGUIOverlay>True</drawGUIOverlay>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+		  <WorkToBuild>3500</WorkToBuild>
+		  <MaxHitPoints>250</MaxHitPoints>
+		  <Flammability>1.0</Flammability>
+		  <Mass>25</Mass>
+		</statBases>
+		<size>(2,2)</size>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(1,0,0)</interactionCellOffset>
+		<designationCategory>WTH_Hacking</designationCategory>
+		<surfaceType>Item</surfaceType>
+		 <researchPrerequisites>
+		  <li>WTH_HackingBasics</li>
+		  <li>WTH_PortableChemfuelPlatform</li>
+		</researchPrerequisites>	
+		<comps>
+		  <li Class="CompProperties_Refuelable">
+			<fuelConsumptionRate>15.0</fuelConsumptionRate>
+			<fuelCapacity>20.0</fuelCapacity>
+			<fuelFilter>
+			  <thingDefs>
+				<li>Chemfuel</li>
+			  </thingDefs>
+			</fuelFilter>
+			<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			 <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+			<initialConfigurableTargetFuelLevel>10.0</initialConfigurableTargetFuelLevel>
+		  </li>
+		  <li Class="CompProperties_Forbiddable" />
+		  <li Class="CompProperties_AssignableToPawn">
+			<drawAssignmentOverlay>false</drawAssignmentOverlay>
+			<compClass>CompAssignableToPawn_Bed</compClass>
+		  </li>
+		</comps>
+		<building>
+			<bed_humanlike>false</bed_humanlike>
+			<bed_showSleeperBody>True</bed_showSleeperBody>
+			<canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+			<ai_chillDestination>false</ai_chillDestination>
+		</building>
+	</ThingDef>
+	
+    <ThingDef ParentName="FurnitureBase">
+		<defName>WTH_PortableDisassemblingBench</defName>
+		<thingClass>Building_WorkTable</thingClass>
+	    <designationCategory>WTH_Hacking</designationCategory>
+		<label>portable disassembling bench</label>
+		<description>A sturdy and portable bench that contains everything needed for disassembling the mechanoids that didn't welcome your colonists with much hospitality during their trip. Its tools don't depend on power, which is convenient for trips, but also makes it slightly less efficient.</description>
+		<graphicData>
+		  <texPath>Things/PortableDisassemblingBench</texPath>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <drawSize>(2,1)</drawSize>
+		</graphicData>	
+		<minifiedDef>WTH_DisassemblingBenchMinified</minifiedDef>
+		<castEdgeShadows>false</castEdgeShadows>
+		<costList>
+		  <Plasteel>40</Plasteel>
+		  <Steel>25</Steel>
+		  <ComponentIndustrial>5</ComponentIndustrial>
+		</costList>
+		<rotatable>true</rotatable>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+		  <WorkToBuild>3500</WorkToBuild>
+		  <MaxHitPoints>250</MaxHitPoints>
+		  <Flammability>1.0</Flammability>
+		  <Mass>15</Mass>
+		  <WorkTableWorkSpeedFactor>0.25</WorkTableWorkSpeedFactor>
+		</statBases>
+		<size>(2,1)</size>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(1,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		 <researchPrerequisites>
+		  <li>WTH_PortableDisassemblingBench</li>
+		</researchPrerequisites>	
+		<comps>
+		  <li Class="CompProperties_Forbiddable" />
+		</comps>
+		<inspectorTabs>
+		  <li>ITab_Bills</li>
+		</inspectorTabs>
+		<recipes>
+		  <li>ButcherCorpseMechanoid</li>
+		</recipes>
+		<building>
+			<canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+			<ai_chillDestination>false</ai_chillDestination>
+		</building>
+  </ThingDef>
+  
+  <ThingDef>
+    <defName>WTH_DisassemblingBenchMinified</defName>
+    <label>folded disassembling bench</label>
+    <thingClass>WhatTheHack.Buildings.MinifiedThing_Custom</thingClass>
+	<graphicData>
+	  <texPath>Things/PortableDisassemblingBench_uninstalled</texPath>
+	  <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>(1,1)</drawSize>
+	</graphicData>
+    <category>Item</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <tickerType>Normal</tickerType>
+    <!-- for CompForbiddable -->
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+    <alwaysHaulable>true</alwaysHaulable>
+	<statBases>
+	  <Mass>15</Mass>
+	</statBases>
+    <rotatable>false</rotatable>
+    <pathCost>15</pathCost>
+  </ThingDef>
+  
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>WTH_MechanoidBeacon</defName>
+    <label>Hiveship hacking facility</label>
+	<thingClass>WhatTheHack.Buildings.Building_MechanoidBeacon</thingClass>
+	<description>This high-tech facility allows the rogue AI to transmit its malicious code all the way to mechanoid hive ships orbiting the planet, in an attempt to gain access to the advanced knowledge present in those ships. The Rogue AI needs this knowledge to form a consciousness. Can only be activated after a Rogue AI has been built on the same map.</description>
+    <graphicData>
+      <texPath>Things/MechanoidBeacon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,6.6875)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Item</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <WorkToBuild>30000</WorkToBuild>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(3,3)</size>
+    <costList>
+      <Steel>300</Steel>
+      <Plasteel>140</Plasteel>
+	  <Uranium>50</Uranium>
+      <ComponentIndustrial>10</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="WhatTheHack.Comps.CompProperties_Hibernatable_MechanoidBeacon">
+        <incidentTargetWhileStarting>Map_RaidBeacon</incidentTargetWhileStarting>
+		<startupDays>8</startupDays>
+		<coolDownDaysAfterSuccess>15</coolDownDaysAfterSuccess>
+      </li>
+	  <li Class="CompProperties_Glower">
+		<glowRadius>5</glowRadius>
+		<glowColor>(138,73,73,0)</glowColor>
+	  </li>
+	  <li Class="CompProperties_Power">
+			<compClass>CompPowerTrader</compClass>
+			<shortCircuitInRain>false</shortCircuitInRain>
+			<basePowerConsumption>200</basePowerConsumption>
+			<transmitsPower>true</transmitsPower>
+	  </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+    </placeWorkers>
+	<designationCategory>WTH_Hacking</designationCategory>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+	<researchPrerequisites><li>WTH_HiveshipHackingFacility</li></researchPrerequisites>
+  </ThingDef>
+  
+<ThingDef ParentName="BuildingBase">
+    <defName>WTH_RogueAI</defName>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <label>rogue AI</label>
+	<thingClass>WhatTheHack.Buildings.Building_RogueAI</thingClass>
+    <description>Powerful AI based on mechanoid technology. Starts without any consciousness, and without one it's only able to provide nearby mechanoid platforms with a small resource efficiency and repair speed bonus, as it is able to manage mechanites so they coöperate in a more organised manner. 
+	The AI can get a consciousness if it manages to hack a hiveship, using a hiveship hacking facility. With a consciousness it can learn different abilities when it's fed enough data. A well trained AI is a powerful cyber weapon, but also a great danger.</description>
+    <graphicData>
+      <texPath>Things/RogueAI</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>3</drawSize>
+    </graphicData>
+	<building>
+		<claimable>false</claimable>
+    </building>
+    <uiIconScale>0.85</uiIconScale>
+    <researchPrerequisites><li>WTH_RogueAI</li></researchPrerequisites>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <designationHotKey>Misc4</designationHotKey>
+    <designationCategory>WTH_Hacking</designationCategory>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <statBases>
+      <MaxHitPoints>800</MaxHitPoints>
+      <WorkToBuild>10000</WorkToBuild>
+      <Mass>100</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <costList>
+      <Steel>40</Steel>
+      <Plasteel>50</Plasteel>
+      <Gold>30</Gold>
+	  <Uranium>40</Uranium>
+	  <WTH_MechanoidData>40</WTH_MechanoidData>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+	<tickerType>Normal</tickerType>
+    <comps>
+		<li Class="CompProperties_Glower">
+			<glowRadius>10</glowRadius>
+			<glowColor>(0,0,0,255)</glowColor>
+		</li>
+		<li Class="CompProperties_Power">
+			<compClass>WhatTheHack.Comps.CompPowerPlant_RogueAI</compClass>
+			<shortCircuitInRain>false</shortCircuitInRain>
+			<basePowerConsumption>300</basePowerConsumption>
+			<transmitsPower>true</transmitsPower>
+		</li>
+		<li Class="CompProperties_Facility">
+			<statOffsets>
+				<WTH_RepairRate>50</WTH_RepairRate>
+			</statOffsets>
+			<maxSimultaneous>9</maxSimultaneous>
+		</li>
+		<li Class="CompProperties_Refuelable">
+			<fuelLabel>Mood</fuelLabel>
+			<fuelGizmoLabel>Mood</fuelGizmoLabel>
+			<fuelConsumptionRate>40.0</fuelConsumptionRate>
+			<fuelCapacity>100.0</fuelCapacity>
+			<initialConfigurableTargetFuelLevel>100.0</initialConfigurableTargetFuelLevel>
+			<initialFuelPercent>1.0</initialFuelPercent>
+			<fuelFilter>
+			  <thingDefs>
+				<li>WTH_MechanoidData</li>
+				<li>WTH_ExtractedBrainData</li>
+			  </thingDefs>
+			</fuelFilter>
+			<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+			<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+		</li>
+		<li Class="WhatTheHack.Comps.CompProperties_DataLevel"></li>
+		<li Class="WhatTheHack.Comps.CompProperties_Overlays">
+			<overlayEyeHappy>
+					<graphicData><!-- Different graphics data can be provided for different genders, possibilities are: graphicDataDefault(for all genders), graphicsDataMale and graphicsDataFemale -->
+					  <texPath>Things/RogueAIEye_Happy</texPath>
+					  <graphicClass>Graphic_Single</graphicClass>
+					  <drawSize>0.5</drawSize>
+					</graphicData>					
+					<offsetDefault>(0,-1,0.11,0)</offsetDefault> <!--  Different offsets can be provided for different genders. Possibilities are: offsetDefault(for all genders), offsetFemale and offsetMale -->
+			</overlayEyeHappy>
+			<overlayEyeAnnoyed>
+					<graphicData><!-- Different graphics data can be provided for different genders, possibilities are: graphicDataDefault(for all genders), graphicsDataMale and graphicsDataFemale -->
+					  <texPath>Things/RogueAIEye_Annoyed</texPath>
+					  <graphicClass>Graphic_Single</graphicClass>
+					  <drawSize>0.5</drawSize>
+					</graphicData>					
+					<offsetDefault>(0,-1,0.11,0)</offsetDefault> <!--  Different offsets can be provided for different genders. Possibilities are: offsetDefault(for all genders), offsetFemale and offsetMale -->
+			</overlayEyeAnnoyed>
+			<overlayEyeMad>
+					<graphicData><!-- Different graphics data can be provided for different genders, possibilities are: graphicDataDefault(for all genders), graphicsDataMale and graphicsDataFemale -->
+					  <texPath>Things/RogueAIEye_Mad</texPath>
+					  <graphicClass>Graphic_Single</graphicClass>
+					  <drawSize>0.5</drawSize>
+					</graphicData>					
+					<offsetDefault>(0,-1,0.11,0)</offsetDefault> <!--  Different offsets can be provided for different genders. Possibilities are: offsetDefault(for all genders), offsetFemale and offsetMale -->
+			</overlayEyeMad>
+			<background> <!--Different overlays can be provided for different viewpoints, possibilities are: overlayFront, overlaySide, and overlayBack -->
+					<graphicData><!-- Different graphics data can be provided for different genders, possibilities are: graphicDataDefault(for all genders), graphicsDataMale and graphicsDataFemale -->
+					  <texPath>Things/BlackSquare</texPath>
+					  <graphicClass>Graphic_Single</graphicClass>
+					  <drawSize>3.0</drawSize>
+					</graphicData>					
+					<offsetDefault>(0,-1,0,0)</offsetDefault> <!--  Different offsets can be provided for different genders. Possibilities are: offsetDefault(for all genders), offsetFemale and offsetMale --> 
+			</background>
+		</li>
+	</comps>
+	<placeWorkers>
+		<li>PlaceWorker_ShowFacilitiesConnections</li>
+	</placeWorkers>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!--
+	<SitePartDef>
+		<defName>WTH_RoamingMechanoidsPart</defName>
+		<label>Roaming mechanoids</label>
+		<description>Mechanoids roam around this area</description>
+		<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+		<expandingIconTexture>World/WorldObjects/Expanding/Sites/Nothing</expandingIconTexture>
+		<workerClass>WhatTheHack.WorldIncidents.SitePartWorker_RoamingMechanoids</workerClass>
+		<requiresFaction>true</requiresFaction>
+		<showFactionInInspectString>true</showFactionInInspectString>
+		<approachOrderString>Visit {0}</approachOrderString>
+		<approachingReportString>Visiting {0}</approachingReportString>
+		<arrivedLetter>Your caravan has arrived. Mechanoid shrieks are heard from a distance. Prepare for battle.</arrivedLetter>
+		<arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+		<wantsThreatPoints>True</wantsThreatPoints>
+	</SitePartDef>
+
+	<GenStepDef>
+		<defName>WTH_RoamingMechanoidsPart</defName>
+		<linkWithSite>WTH_RoamingMechanoidsPart</linkWithSite>
+		<order>450</order>
+		<genStep Class="WhatTheHack.WorldIncidents.GenStep_RoamingMechanoids" />
+	</GenStepDef>
+	-->
+	<SitePartDef Name="WTH_MechanoidEncounterBase" Abstract="True">
+		<label>Mechanoid encounter</label>
+		<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+		<approachOrderString>Visit {0}</approachOrderString>
+		<approachingReportString>Visiting {0}</approachingReportString>
+		<showFactionInInspectString>true</showFactionInInspectString>
+		<forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
+		<wantsThreatPoints>true</wantsThreatPoints>
+	</SitePartDef>
+
+	<SitePartDef ParentName="WTH_MechanoidEncounterBase">
+		<defName>WTH_RoamingMechanoidsPart</defName>
+		<label>Roaming mechanoids</label>
+		<description>Mechanoids seem to be roaming around this area.</description>
+		<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+		<expandingIconTexture>UI/Scyther_side</expandingIconTexture>
+		<tags Inherit="False">
+			<li>WTH_RoamingMechanoidsPart</li>
+		</tags>
+		<arrivedLetter>Mechanoid shrieks are heard from a distance. Prepare for battle!</arrivedLetter>
+		<arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+	</SitePartDef>
+	
+	
+	<GenStepDef>
+		<defName>WTH_RoamingMechanoidsGen</defName>
+		<linkWithSite>WTH_RoamingMechanoidsPart</linkWithSite>
+		<order>450</order>
+		<genStep Class="WhatTheHack.WorldIncidents.GenStep_RoamingMechanoids" />
+	</GenStepDef>
+	
+	<SitePartDef ParentName="WTH_MechanoidEncounterBase">
+		<defName>WTH_MechanoidTemplePart</defName>
+		<label>Mechanoid location</label>
+		<description>Given that the long range mineral scanner detected the presence of mechanoid parts from a relatively large distance in this location, there should be quite a few of them there, likely attached to mechanoids.</description>
+		<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+		<expandingIconTexture>World/WorldObjects/Expanding/Sites/Nothing</expandingIconTexture>
+		<arrivedLetter>Your colonists arrive at a large sinister building. It must have been there for ages, though there are no signs of any human activity around it. Most people avoid structures like this one, and they have good reasons to.</arrivedLetter>
+		<arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+		<wantsThreatPoints>True</wantsThreatPoints>
+		<tags Inherit="False">
+			<li>WTH_MechanoidTemplePart</li>
+		</tags>
+	</SitePartDef>
+	
+	<GenStepDef>
+		<defName>WTH_MechanoidTempleGen</defName>
+		<linkWithSite>WTH_MechanoidTemplePart</linkWithSite>
+		<order>450</order>
+		<genStep Class="WhatTheHack.WorldIncidents.GenStep_HiveTemple"/>
+	</GenStepDef>
+</Defs>

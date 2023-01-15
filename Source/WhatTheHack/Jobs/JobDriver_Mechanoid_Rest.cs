@@ -1,65 +1,65 @@
-﻿using Harmony;
-using RimWorld;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using RimWorld;
 using Verse;
 using Verse.AI;
 using WhatTheHack.Buildings;
 
-namespace WhatTheHack.Jobs
+namespace WhatTheHack.Jobs;
+
+internal class JobDriver_Mechanoid_Rest : JobDriver
 {
-    class JobDriver_Mechanoid_Rest : JobDriver
+    protected Building_Bed RestingPlace => (Building_Bed)job.GetTarget(TargetIndex.A).Thing;
+
+    public override bool TryMakePreToilReservations(bool errorOnFailed)
     {
-        protected Building_Bed RestingPlace
+        if (pawn.HasReserved(RestingPlace))
         {
-            get
-            {
-                return (Building_Bed)this.job.GetTarget(TargetIndex.A).Thing;
-            }
+            return true;
         }
-        public override bool TryMakePreToilReservations(bool errorOnFailed)
+
+        //pawn.reserve
+        var result = pawn.Reserve(RestingPlace, job);
+        return result;
+    }
+
+    public override IEnumerable<Toil> MakeNewToils()
+    {
+        //this.AddFinishAction(new Action(delegate { Log.Message("finish action called for job!");  }));
+        this.FailOnDespawnedOrNull(TargetIndex.A);
+        if (RestingPlace is Building_BaseMechanoidPlatform)
         {
-            if (pawn.HasReserved(this.RestingPlace))
-            {
-                return true;
-            }
-            //pawn.reserve
-            bool result = this.pawn.Reserve(this.RestingPlace, this.job, 1, -1, null);
-            return result;
+            yield return Toils_Bed.ClaimBedIfNonMedical(TargetIndex.A);
+            yield return GoToPlatform(TargetIndex.A);
         }
-        
-        protected override IEnumerable<Toil> MakeNewToils()
+
+        //goToPlatform.AddPreInitAction(new Action(delegate { Log.Message("first toil pre-initaction"); }));
+        var toil = new Toil
         {
-            //this.AddFinishAction(new Action(delegate { Log.Message("finish action called for job!");  }));
-            this.FailOnDespawnedOrNull(TargetIndex.A);
-            if(RestingPlace is Building_BaseMechanoidPlatform)
+            defaultCompleteMode = ToilCompleteMode.Never,
+            initAction = delegate
             {
-                yield return Toils_Bed.ClaimBedIfNonMedical(TargetIndex.A);
-                yield return GoToPlatform(TargetIndex.A);
-            }
-            //goToPlatform.AddPreInitAction(new Action(delegate { Log.Message("first toil pre-initaction"); }));
-            Toil toil = new Toil();
-            toil.defaultCompleteMode = ToilCompleteMode.Never;
-            toil.initAction = delegate
-            {
-                if ((pawn.health.hediffSet.HasNaturallyHealingInjury() || pawn.OnHackingTable()))
+                if (pawn.health.hediffSet.HasNaturallyHealingInjury() || pawn.OnHackingTable())
                 {
                     pawn.jobs.posture = PawnPosture.LayingInBed;
                 }
-                this.job.expiryInterval = 50;
-                this.job.checkOverrideOnExpire = true;
+
+                job.expiryInterval = 50;
+                job.checkOverrideOnExpire = true;
                 pawn.ClearAllReservations();
-                pawn.Position = RestingPlace.GetSleepingSlotPos(RestingPlace is Building_HackingTable ? Building_HackingTable.SLOTINDEX : Building_BaseMechanoidPlatform.SLOTINDEX);
-            };
-            toil.tickAction = delegate
-            {             
+                pawn.Position = RestingPlace.GetSleepingSlotPos(RestingPlace is Building_HackingTable
+                    ? Building_HackingTable.SLOTINDEX
+                    : Building_BaseMechanoidPlatform.SLOTINDEX);
+            },
+            tickAction = delegate
+            {
                 if (RestingPlace is Building_BaseMechanoidPlatform && pawn.ownership.OwnedBed != RestingPlace)
                 {
-                   ReadyForNextToil();
+                    ReadyForNextToil();
                 }
-                if (RestingPlace.owners.FirstOrDefault((Pawn p) => p != pawn) is Pawn otherPawn)
+
+                if (RestingPlace.TryGetComp<CompAssignableToPawn_Bed>() is { } compAssignable &&
+                    compAssignable.AssignedPawns.FirstOrDefault(p => p != pawn) is { })
                 {
                     pawn.ownership.UnclaimBed();
                     ReadyForNextToil();
@@ -74,50 +74,51 @@ namespace WhatTheHack.Jobs
                     pawn.jobs.posture = PawnPosture.Standing;
                     RotateToSouth();
                 }
-            };
-            yield return toil;
+            }
+        };
 
-        }
+        yield return toil;
+    }
 
 
-        public static Toil GoToPlatform(TargetIndex bedIndex)
+    public static Toil GoToPlatform(TargetIndex bedIndex)
+    {
+        var gotoBed = new Toil();
+        gotoBed.initAction = delegate
         {
-            Toil gotoBed = new Toil();
-            gotoBed.initAction = delegate
+            var actor = gotoBed.actor;
+            var bed = (Building_Bed)actor.CurJob.GetTarget(bedIndex).Thing;
+            var bedSleepingSlotPosFor = RestUtility.GetBedSleepingSlotPosFor(actor, bed);
+            if (actor.Position == bedSleepingSlotPosFor)
             {
-                Pawn actor = gotoBed.actor;
-                Building_Bed bed = (Building_Bed)actor.CurJob.GetTarget(bedIndex).Thing;
-                IntVec3 bedSleepingSlotPosFor = RestUtility.GetBedSleepingSlotPosFor(actor, bed);
-                if (actor.Position == bedSleepingSlotPosFor)
-                {
-                    actor.jobs.curDriver.ReadyForNextToil();
-                }
-                else
-                {
-                    actor.pather.StartPath(bedSleepingSlotPosFor, PathEndMode.OnCell);
-                }
-            };
-            gotoBed.tickAction = delegate
+                actor.jobs.curDriver.ReadyForNextToil();
+            }
+            else
             {
-                Pawn actor = gotoBed.actor;
-                Building_Bed building_Bed = (Building_Bed)actor.CurJob.GetTarget(bedIndex).Thing;
-                Pawn curOccupantAt = building_Bed.GetCurOccupantAt(actor.pather.Destination.Cell);
-                if (curOccupantAt != null && curOccupantAt != actor)
-                {
-                    actor.pather.StartPath(RestUtility.GetBedSleepingSlotPosFor(actor, building_Bed), PathEndMode.OnCell);
-                }
-            };
-            gotoBed.defaultCompleteMode = ToilCompleteMode.PatherArrival;
-            gotoBed.FailOnPlatformNoLongerUsable(bedIndex);
-            //gotoBed.FailOnBedNoLongerUsable(bedIndex);
-            return gotoBed;
-        }
-
-
-        private void RotateToSouth()
+                actor.pather.StartPath(bedSleepingSlotPosFor, PathEndMode.OnCell);
+            }
+        };
+        gotoBed.tickAction = delegate
         {
-            pawn.CurJob.SetTarget(TargetIndex.C, new LocalTargetInfo(new IntVec3(pawn.Position.x, pawn.Position.y, pawn.Position.z - 1)));
-            this.rotateToFace = TargetIndex.C;
-        }
+            var actor = gotoBed.actor;
+            var building_Bed = (Building_Bed)actor.CurJob.GetTarget(bedIndex).Thing;
+            var curOccupantAt = building_Bed.GetCurOccupantAt(actor.pather.Destination.Cell);
+            if (curOccupantAt != null && curOccupantAt != actor)
+            {
+                actor.pather.StartPath(RestUtility.GetBedSleepingSlotPosFor(actor, building_Bed), PathEndMode.OnCell);
+            }
+        };
+        gotoBed.defaultCompleteMode = ToilCompleteMode.PatherArrival;
+        gotoBed.FailOnPlatformNoLongerUsable(bedIndex);
+        //gotoBed.FailOnBedNoLongerUsable(bedIndex);
+        return gotoBed;
+    }
+
+
+    private void RotateToSouth()
+    {
+        pawn.CurJob.SetTarget(TargetIndex.C,
+            new LocalTargetInfo(new IntVec3(pawn.Position.x, pawn.Position.y, pawn.Position.z - 1)));
+        rotateToFace = TargetIndex.C;
     }
 }

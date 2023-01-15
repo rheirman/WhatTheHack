@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Verse;
+﻿using Verse;
 using Verse.AI;
-using WhatTheHack.Storage;
 
-namespace WhatTheHack.ThinkTree
+namespace WhatTheHack.ThinkTree;
+
+public class ThinkNode_ConditionalMechanoidWork : ThinkNode_Conditional
 {
-    class ThinkNode_ConditionalMechanoidWork : ThinkNode_Conditional
+    public override bool Satisfied(Pawn pawn)
     {
-        protected override bool Satisfied(Pawn pawn)
-        {
-            return pawn.IsHacked() && pawn.workSettings != null && pawn.CanStartWorkNow() && !pawn.Drafted;
-        }
+        var result = pawn.IsHacked() && pawn.workSettings != null && pawn.CanStartWorkNow() && !pawn.Drafted;
+        return result;
     }
 }

@@ -1,70 +1,70 @@
-﻿using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
+using RimWorld;
 using Verse;
 
-namespace WhatTheHack.Alerts
+namespace WhatTheHack.Alerts;
+
+public class Alert_LowMechanoidParts : Alert
 {
-    public class Alert_LowMechanoidParts : Alert
+    private const float MechanoidPartsPerMechThreshold = 8f;
+
+    public Alert_LowMechanoidParts()
     {
-        private const float MechanoidPartsPerMechThreshold = 8f;
-
-        public Alert_LowMechanoidParts()
-        {
-            this.defaultLabel = "WTH_Alert_LowMechanoidParts".Translate();
-            this.defaultPriority = AlertPriority.High;
-        }
-
-        public override string GetExplanation()
-        {
-            Map map = this.MapWithLowMechanoidParts();
-            if (map == null)
-            {
-                return string.Empty;
-            }
-            int num = this.MechanoidPartsCount(map);
-            if (num == 0)
-            {
-                return "WTH_Alert_NoMechanoidPartsDesc".Translate() + "\n\n" + "WTH_Alert_LowMechanoidPartsSolution".Translate();
-            }
-            return "WTH_Alert_LowMechanoidPartsDesc".Translate(num) + "\n\n" + "WTH_Alert_LowMechanoidPartsSolution".Translate();
-        }
-
-        public override AlertReport GetReport()
-        {
-            if (!Base.maintenanceDecayEnabled)
-            {
-                return false;
-            }
-            return this.MapWithLowMechanoidParts() != null;
-        }
-
-        private Map MapWithLowMechanoidParts()
-        {
-            List<Map> maps = Find.Maps;
-            for (int i = 0; i < maps.Count; i++)
-            {
-                Map map = maps[i];
-                if (map.IsPlayerHome)
-                {
-                    IEnumerable<Pawn> mechs = map.mapPawns.AllPawns.Where((Pawn p) => p.Faction == Faction.OfPlayer && p.IsHacked());
-                    if((float)this.MechanoidPartsCount(map) < MechanoidPartsPerMechThreshold * mechs.Count())
-                    {
-                        return map;
-                    }
-
-                        
-                }
-            }
-            return null;
-        }
-
-        private int MechanoidPartsCount(Map map)
-        {
-            return map.resourceCounter.GetCount(WTH_DefOf.WTH_MechanoidParts);
-        }
+        defaultLabel = "WTH_Alert_LowMechanoidParts".Translate();
+        defaultPriority = AlertPriority.High;
     }
-    
+
+    public override TaggedString GetExplanation()
+    {
+        var map = MapWithLowMechanoidParts();
+        if (map == null)
+        {
+            return string.Empty;
+        }
+
+        var num = MechanoidPartsCount(map);
+        if (num == 0)
+        {
+            return "WTH_Alert_NoMechanoidPartsDesc".Translate() + "\n\n" +
+                   "WTH_Alert_LowMechanoidPartsSolution".Translate();
+        }
+
+        return "WTH_Alert_LowMechanoidPartsDesc".Translate(num) + "\n\n" +
+               "WTH_Alert_LowMechanoidPartsSolution".Translate();
+    }
+
+    public override AlertReport GetReport()
+    {
+        if (!Base.maintenanceDecayEnabled)
+        {
+            return false;
+        }
+
+        return MapWithLowMechanoidParts() != null;
+    }
+
+    private Map MapWithLowMechanoidParts()
+    {
+        var maps = Find.Maps;
+        foreach (var map in maps)
+        {
+            if (!map.IsPlayerHome)
+            {
+                continue;
+            }
+
+            var mechs = map.mapPawns.AllPawns.Where(p => p.Faction == Faction.OfPlayer && p.IsHacked());
+            if (MechanoidPartsCount(map) < MechanoidPartsPerMechThreshold * mechs.Count())
+            {
+                return map;
+            }
+        }
+
+        return null;
+    }
+
+    private int MechanoidPartsCount(Map map)
+    {
+        return map.resourceCounter.GetCount(WTH_DefOf.WTH_MechanoidParts);
+    }
 }

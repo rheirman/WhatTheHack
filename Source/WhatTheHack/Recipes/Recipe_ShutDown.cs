@@ -1,27 +1,23 @@
-﻿using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
 
-namespace WhatTheHack.Recipes
-{
-    internal class Recipe_ShutDown : RecipeWorker
-    {
-        public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
-        {
-            BodyPartRecord brain = pawn.health.hediffSet.GetBrain();
-            if (brain != null)
-            {
-                yield return brain;
-            }
-        }
+namespace WhatTheHack.Recipes;
 
-        public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
+internal class Recipe_ShutDown : RecipeWorker
+{
+    public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
+    {
+        var brain = pawn.health.hediffSet.GetBrain();
+        if (brain != null)
         {
-            pawn.health.AddHediff(this.recipe.addsHediff, part, null);
-            ThoughtUtility.GiveThoughtsForPawnExecuted(pawn, PawnExecutionKind.GenericHumane);
+            yield return brain;
         }
+    }
+
+    public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
+    {
+        pawn.health.AddHediff(recipe.addsHediff, part);
+        ThoughtUtility.GiveThoughtsForPawnExecuted(pawn, billDoer, PawnExecutionKind.GenericHumane);
     }
 }
