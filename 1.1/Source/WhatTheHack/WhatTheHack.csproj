@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3CB7E01A-F099-49B7-9A5E-16AE036720A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WhatTheHack</RootNamespace>
+    <AssemblyName>WhatTheHack</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alerts\Alert_LowMechanoidParts.cs" />
+    <Compile Include="Alerts\Alert_RogueAI_MoodVeryLow.cs" />
+    <Compile Include="Alerts\Alert_RogueAI_MoodLow.cs" />
+    <Compile Include="Alerts\Alert_RogueAI_NoPower.cs" />
+    <Compile Include="Alerts\Alert_RogueAI_DrainingMood.cs" />
+    <Compile Include="Alerts\Alert_EmergencySignalCooldown.cs" />
+    <Compile Include="Alerts\Alert_EmergencySignalTransmitted.cs" />
+    <Compile Include="Alerts\Alert_MaintenanceLow.cs" />
+    <Compile Include="Alerts\Alert_MaintenanceVeryLow.cs" />
+    <Compile Include="Alerts\Alert_NotEnoughPlatforms.cs" />
+    <Compile Include="Alerts\Alert_PowerLow.cs" />
+    <Compile Include="Buildings\Building_BaseMechanoidPlatform.cs" />
+    <Compile Include="Buildings\Building_MechanoidBeacon.cs" />
+    <Compile Include="Buildings\Building_PortableChargingPlatform.cs" />
+    <Compile Include="Buildings\Building_RogueAI.cs" />
+    <Compile Include="Buildings\MinifiedThing_Custom.cs" />
+    <Compile Include="Command_SetMaintenanceThreshold.cs" />
+    <Compile Include="Command_SetWorkThreshold.cs" />
+    <Compile Include="Comps\CompHibernatable_MechanoidBeacon.cs" />
+    <Compile Include="Comps\CompMountable.cs" />
+    <Compile Include="Comps\CompOverlay.cs" />
+    <Compile Include="Comps\CompPowerPlant_RogueAI.cs" />
+    <Compile Include="Comps\CompProperties_Hibernatable_MechanoidBeacon.cs" />
+    <Compile Include="Comps\CompProperties_Mountable.cs" />
+    <Compile Include="Comps\CompProperties_DataLevel.cs" />
+    <Compile Include="Comps\CompDataLevel.cs" />
+    <Compile Include="Comps\CompProperties_Overlays.cs" />
+    <Compile Include="Harmony\Caravan_NeedsTracker.cs" />
+    <Compile Include="Harmony\HealthCardUtility.cs" />
+    <Compile Include="Harmony\HediffStatsUtility.cs" />
+    <Compile Include="Harmony\JobDriver_Wear.cs" />
+    <Compile Include="Harmony\PawnUIOverlay.cs" />
+    <Compile Include="Harmony\Pawn_CallTracker.cs" />
+    <Compile Include="Harmony\Pawn_EquipmentTracker.cs" />
+    <Compile Include="Harmony\Pawn_SkillTracker.cs" />
+    <Compile Include="Harmony\PrisonLabor\PrisonLabor_Patch_RenamePrisoners.cs" />
+    <Compile Include="Harmony\Sustainer.cs" />
+    <Compile Include="Harmony\ThingDef.cs" />
+    <Compile Include="Jobs\Depricated\JobDriver_Ability.cs" />
+    <Compile Include="Jobs\JobDriver_MechanoidAbility_Overdrive.cs" />
+    <Compile Include="Jobs\JobGiver_Mechanoid_Rest.cs" />
+    <Compile Include="Jobs\JobGiver_Work_Mechanoid.cs" />
+    <Compile Include="Jobs\JobGiver_Mechanoid_Ability.cs" />
+    <Compile Include="ModExtension\DefModExtension_Ability.cs" />
+    <Compile Include="ModExtension\DefModExtension_TurretModule.cs" />
+    <Compile Include="Recipes\Recipe_ModifyMechanoid_UninstallModule.cs" />
+    <Compile Include="Stats\StatPart_Armor.cs" />
+    <Compile Include="Stats\StatPart_BatteryCapacity.cs" />
+    <Compile Include="Stats\StatPart_CarryingCapacity.cs" />
+    <Compile Include="Stats\StatPart_FiringRate.cs" />
+    <Compile Include="Stats\StatPart_PartConsumptionRate.cs" />
+    <Compile Include="Stats\StatPart_PowerProduction.cs" />
+    <Compile Include="Stats\StatPart_PowerRate.cs" />
+    <Compile Include="Stats\StatPart_RechargeRate.cs" />
+    <Compile Include="Stats\StatPart_RepairRate.cs" />
+    <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidAbility.cs" />
+    <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidRest.cs" />
+    <Compile Include="ThinkTree\ThinkNode_ConditionalMechanoidWork.cs" />
+    <Compile Include="Harmony\ApparelUtility.cs" />
+    <Compile Include="Harmony\Bill.cs" />
+    <Compile Include="Harmony\CombatExtended\CE_JobGiver_TakeAndEquip.cs" />
+    <Compile Include="Harmony\CompProperties_Refuelable.cs" />
+    <Compile Include="Harmony\PawnColumnDefGenerator.cs" />
+    <Compile Include="Harmony\ShipUtility.cs" />
+    <Compile Include="Harmony\Building_TurretGun.cs" />
+    <Compile Include="Harmony\Caravan.cs" />
+    <Compile Include="Harmony\CaravanFormingUtility.cs" />
+    <Compile Include="Harmony\CaravanUIUtility.cs" />
+    <Compile Include="Harmony\CharacterCardUtility.cs" />
+    <Compile Include="Harmony\CompHibernatable.cs" />
+    <Compile Include="Harmony\CompLongRangeMineralScanner.cs" />
+    <Compile Include="Harmony\DaysWorthOfFoodCalculator.cs" />
+    <Compile Include="Harmony\Dialog_FormCaravan.cs" />
+    <Compile Include="Harmony\Dialog_LoadTransporters.cs" />
+    <Compile Include="Harmony\Dialog_SplitCaravan.cs" />
+    <Compile Include="Harmony\EdificeGrid.cs" />
+    <Compile Include="Harmony\GenConstruct.cs" />
+    <Compile Include="Harmony\GenGrid.cs" />
+    <Compile Include="Harmony\GenSpawn.cs" />
+    <Compile Include="Harmony\Gizmo_CaravanInfo.cs" />
+    <Compile Include="Harmony\IncidentWorker_RaidEnemy.cs" />
+    <Compile Include="Harmony\IncidentWorker_ShortCircuit.cs" />
+    <Compile Include="Harmony\ITab_Pawn_Gear.cs" />
+    <Compile Include="Harmony\LordToil_Siege.cs" />
+    <Compile Include="Harmony\LovePartnerRelationUtility.cs" />
+    <Compile Include="Harmony\MapParent.cs" />
+    <Compile Include="Harmony\MassUtility.cs" />
+    <Compile Include="Harmony\MinifyUtility.cs" />
+    <Compile Include="Harmony\PowerConnectionMaker.cs" />
+    <Compile Include="Harmony\ShieldBelt.cs" />
+    <Compile Include="Harmony\JobGiver_Work.cs" />
+    <Compile Include="Harmony\TransferableOneWayWidget.cs" />
+    <Compile Include="Harmony\TransferableUIUtility.cs" />
+    <Compile Include="Harmony\TransferableUtility.cs" />
+    <Compile Include="Harmony\CompRefuelable.cs" />
+    <Compile Include="Jobs\JobDriver_MechanoidAbility.cs" />
+    <Compile Include="Jobs\JobDriver_HackRogueAI.cs" />
+    <Compile Include="Jobs\JobDriver_PerformMaintenance.cs" />
+    <Compile Include="Jobs\WorkGiver_HackRogueAI.cs" />
+    <Compile Include="Jobs\WorkGiver_HaulMechanoid.cs" />
+    <Compile Include="Jobs\WorkGiver_PerformMaintenance.cs" />
+    <Compile Include="Jobs\WorkGiver_PerformMaintenanceUrgent.cs" />
+    <Compile Include="ModExtension\DefModextension_Hediff.cs" />
+    <Compile Include="ModExtension\DefModExtension_PawnCapacity.cs" />
+    <Compile Include="ModExtension\DefModExtension_PawnMassCapacity.cs" />
+    <Compile Include="ModExtension\DefModExtension_Recipe.cs" />
+    <Compile Include="ModExtension\DefModExtension_Hediff_WorkModule.cs" />
+    <Compile Include="Needs\MaintenanceCategory.cs" />
+    <Compile Include="Needs\Need_Maintenance.cs" />
+    <Compile Include="Recipes\Recipe_BeltModule.cs" />
+    <Compile Include="Recipes\Recipe_ExtractBrainData.cs" />
+    <Compile Include="Recipes\Recipe_Hacking.cs" />
+    <Compile Include="Recipes\Recipe_InduceEmergencySignal.cs" />
+    <Compile Include="Recipes\Recipe_ModifyMechanoid_WorkModule.cs" />
+    <Compile Include="Recipes\Recipe_MountTurret.cs" />
+    <Compile Include="Recipes\Recipe_ShutDown.cs" />
+    <Compile Include="Record.cs" />
+    <Compile Include="Apparel\RemoteController.cs" />
+    <Compile Include="Base.cs" />
+    <Compile Include="Buildings\Building_HackingTable.cs" />
+    <Compile Include="Buildings\Building_MechanoidPlatform.cs" />
+    <Compile Include="Dict2DRecordHandler.cs" />
+    <Compile Include="GUIDrawUtility.cs" />
+    <Compile Include="ThinkTree\LordJob_ControlMechanoid.cs" />
+    <Compile Include="ThinkTree\LordJob_SearchAndDestroy.cs" />
+    <Compile Include="ThinkTree\LordToil_ControlMechanoid.cs" />
+    <Compile Include="ThinkTree\LordToil_SearchAndDestroy.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Harmony\Bill_Medical.cs" />
+    <Compile Include="Harmony\Building_Bed.cs" />
+    <Compile Include="Harmony\IncidentWorker_Raid.cs" />
+    <Compile Include="Harmony\ITab_Pawn_Character.cs" />
+    <Compile Include="Harmony\Pawn.cs" />
+    <Compile Include="Harmony\PawnComponentsUtility.cs" />
+    <Compile Include="Harmony\Pawn_Draftcontroller.cs" />
+    <Compile Include="Harmony\Pawn_HealthTracker.cs" />
+    <Compile Include="Harmony\RestUtility.cs" />
+    <Compile Include="Harmony\Selector.cs" />
+    <Compile Include="Harmony\SelfDefenceUtility.cs" />
+    <Compile Include="Harmony\StatWorker.cs" />
+    <Compile Include="Harmony\Thing.cs" />
+    <Compile Include="Harmony\StrippableUtility.cs" />
+    <Compile Include="Jobs\JobDriver_ClearHackingTable.cs" />
+    <Compile Include="Jobs\JobDriver_ControlMechanoid.cs" />
+    <Compile Include="Jobs\JobDriver_ControlMechanoid_Goto.cs" />
+    <Compile Include="Jobs\JobDriver_Mechanoid_Rest.cs" />
+    <Compile Include="Jobs\JobGiver_ControlMechanoid.cs" />
+    <Compile Include="Jobs\JobGiver_ControlMechanoid_Follow.cs" />
+    <Compile Include="Needs\Need_Power.cs" />
+    <Compile Include="Needs\PowerCategory.cs" />
+    <Compile Include="Recipes\Recipe_ModifyMechanoid.cs" />
+    <Compile Include="Storage\ExtendedMapData.cs" />
+    <Compile Include="TabWindow\MainTabWindow_Work_Mechanoids.cs" />
+    <Compile Include="TextureUtility.cs" />
+    <Compile Include="Utilities.cs" />
+    <Compile Include="Jobs\JobDriver_CarryToHackingTable.cs" />
+    <Compile Include="Recipes\RecipeUtility.cs" />
+    <Compile Include="Recipes\Recipe_HackMechanoid.cs" />
+    <Compile Include="WorldIncidents\GenStep_HiveTemple.cs" />
+    <Compile Include="WorldIncidents\GenStep_RoamingMechanoids.cs" />
+    <Compile Include="WorldIncidents\IncidentWorker_RoamingMechanoids.cs" />
+    <Compile Include="WorldIncidents\SitePartWorker_RoamingMechanoids.cs" />
+    <Compile Include="WorldIncidents\SymbolResolver_Interior_MechanoidTemple.cs" />
+    <Compile Include="WorldIncidents\SymbolResolver_MechanoidTemple.cs" />
+    <Compile Include="WTH_DefOf.cs" />
+    <Compile Include="Storage\ExtendedDataStorage.cs" />
+    <Compile Include="Storage\ExtendedPawnData.cs" />
+    <Compile Include="Harmony\FloatMenuMakerMap.cs" />
+    <Compile Include="Harmony\Pawn_JobTracker.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref">
+      <Version>1.2.2719</Version>
+    </PackageReference>
+    <PackageReference Include="Lib.Harmony">
+      <Version>2.0.2</Version>
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
+      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="UnlimitedHugs.Rimworld.HugsLib">
+      <Version>8.0.0</Version>
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
+      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
