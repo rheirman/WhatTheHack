@@ -1383,7 +1383,7 @@
 		<defName>WTH_InstallTurretModule</defName>
 		<label>install turret module</label>
 		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
-		<description>A module that provides both structural support and and interface for gun turrets and mortars. Any turret that can be uninstalled, can be interfaced with this module. While this is a powerful upgrade, turrets do draw extra power, and have a tendency of exploding when destroyed. Can only be installed on large mechanoids.</description>
+		<description>A module that provides both structural support and an interface for gun turrets and mortars. Any turret that can be uninstalled, can be interfaced with this module. While this is a powerful upgrade, turrets do draw extra power, and have a tendency of exploding when destroyed. Can only be installed on large mechanoids.</description>
 		<jobString>Modifying mechanoid</jobString>
 		<workAmount>5000</workAmount>
 		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
