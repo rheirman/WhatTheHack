@@ -1,0 +1,1625 @@
+<Defs>
+
+	  
+	<RecipeDef ParentName="SurgeryFlesh">
+		<defName>WTH_ExtractBrainData</defName>
+		<label>extract brain data</label>
+		<description>Extract all the data from a human brain using mechanoid technology. As you might expect from mechanoid technology, the operation doesn't really take into account the well-being of the patient. In other words, this technique cannot be applied without destroying the brain of the patient. More intelligent pawns will yield more data.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ExtractBrainData</workerClass>
+		<jobString>Extract brain data.</jobString>
+		<workAmount>3000</workAmount>
+		<surgerySuccessChanceFactor>1.0</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.5</deathOnFailedSurgeryChance>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<ingredients>
+		  <li>
+			<filter>
+			  <categories>
+				<li>Medicine</li>
+			  </categories>
+			</filter>
+			<count>1</count>
+		  </li>
+		  <li>
+		  	<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <categories>
+			<li>Medicine</li>
+		  </categories>
+		  <thingDefs>
+			<li>WTH_MechanoidChip</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<researchPrerequisite>WTH_ExtractBrainData</researchPrerequisite>
+	</RecipeDef>
+	  
+	<RecipeDef>
+		<defName>WTH_Scrap_AdvancedMechanoidChip</defName>
+		<label>scrap advanced mechanoid chip</label>
+		<description>Scrap advanced mechanoid chip</description>
+		<jobString>Scrapping</jobString>
+		<workSpeedStat>WTH_HackingMaintenanceSpeed</workSpeedStat>
+		<effectWorking>Repair</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>1500</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>WTH_MechanoidChip</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>WTH_MechanoidChip</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <WTH_MechanoidParts>5</WTH_MechanoidParts>
+		</products>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		<workSkill>Crafting</workSkill>
+		<researchPrerequisite>WTH_MechanoidWorkshop</researchPrerequisite>
+  </RecipeDef>
+  
+  <RecipeDef Name="WTH_Craft_Module_Base" Abstract="True">
+	<jobString>Crafting</jobString>
+	<workSpeedStat>WTH_HackingMaintenanceSpeed</workSpeedStat>
+	<effectWorking>Repair</effectWorking>
+	<soundWorking>Recipe_Machining</soundWorking>
+	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_OverdriveModule</defName>
+	<label>craft overdrive module</label>
+	<description>Craft an overdrive module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>ComponentSpacer</li>
+				</thingDefs>
+			</filter>
+			<count>1</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>15</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>2</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>ComponentIndustrial</li>
+			<li>WTH_MechanoidParts</li>
+			<li>WTH_MechanoidChip</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_OverdriveModule>1</WTH_OverdriveModule>
+	</products>
+	<skillRequirements>
+		<Crafting>8</Crafting>
+	</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_OverdriveModule</researchPrerequisite>
+  </RecipeDef>  
+  
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_SpeedModule</defName>
+	<label>craft speed module</label>
+	<description>Craft a speed module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>ComponentIndustrial</li>
+				</thingDefs>
+			</filter>
+			<count>6</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>15</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>2</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>ComponentIndustrial</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_SpeedModule>1</WTH_SpeedModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_SpeedModule</researchPrerequisite>
+  </RecipeDef>  
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_CargoModule</defName>
+	<label>craft cargo module</label>
+	<description>Craft a cargo module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>40</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>10</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>2</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>Plasteel</li>
+			<li>WTH_MechanoidParts</li>
+			<li>WTH_MechanoidChip</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_CargoModule>1</WTH_CargoModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_CargoModule</researchPrerequisite>
+  </RecipeDef>  
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_OpticSensorModule</defName>
+	<label>craft optic sensor module</label>
+	<description>Craft an optic sensor module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>ComponentIndustrial</li>
+				</thingDefs>
+			</filter>
+			<count>6</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>4</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>ComponentIndustrial</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_OpticSensorModule>1</WTH_OpticSensorModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_OpticSensorModule</researchPrerequisite>
+  </RecipeDef>  
+  
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_ArmorModule</defName>
+	<label>craft armor module</label>
+	<description>Craft an armor module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>70</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>15</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>2</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>Plasteel</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_ArmorModule>1</WTH_ArmorModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_ArmorModule</researchPrerequisite>
+  </RecipeDef>  
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_FirefightingModule</defName>
+	<label>craft firefighting module</label>
+	<description>Craft a firefighting module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>DevilstrandCloth</li>
+				</thingDefs>
+			</filter>
+			<count>40</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>ComponentIndustrial</li>
+				</thingDefs>
+			</filter>
+			<count>4</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>10</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>1</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>DevilstrandCloth</li>
+			<li>ComponentIndustrial</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_FirefightingModule>1</WTH_FirefightingModule>
+	</products>
+	<skillRequirements>
+		<Crafting>8</Crafting>
+	</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_WorkModules</researchPrerequisite>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_GrowingModule</defName>
+	<label>craft growing module</label>
+	<description>Craft a growing module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>30</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>ComponentSpacer</li>
+				</thingDefs>
+			</filter>
+			<count>1</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>15</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>4</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>Plasteel</li>
+			<li>ComponentSpacer</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_GrowingModule>1</WTH_GrowingModule>
+	</products>
+	<skillRequirements>
+		<Crafting>8</Crafting>
+	</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_WorkModules</researchPrerequisite>
+  </RecipeDef>  
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_CleaningModule</defName>
+	<label>craft cleaning module</label>
+	<description>Craft a cleaning module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>DevilstrandCloth</li>
+				</thingDefs>
+			</filter>
+			<count>10</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>ComponentSpacer</li>
+				</thingDefs>
+			</filter>
+			<count>1</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>15</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>4</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>DevilstrandCloth</li>
+			<li>ComponentIndustrial</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_CleaningModule>1</WTH_CleaningModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_WorkModules</researchPrerequisite>
+  </RecipeDef>  
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_HaulingModule</defName>
+	<label>craft hauling module</label>
+	<description>Craft a hauling module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>50</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>ComponentSpacer</li>
+				</thingDefs>
+			</filter>
+			<count>1</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>10</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>3</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>Plasteel</li>
+			<li>ComponentSpacer</li>
+			<li>WTH_MechanoidParts</li>
+			<li>WTH_MechanoidChip</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_HaulingModule>1</WTH_HaulingModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_WorkModules</researchPrerequisite>
+  </RecipeDef>  
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_AdditionalBatteryModule</defName>
+	<label>craft battery expansion module</label>
+	<description>Craft a battery expansion module</description>
+	<ingredients>
+		<li>
+			<filter>
+			  <thingDefs>
+				<li>WTH_MechanoidChip</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>ComponentIndustrial</li>
+				</thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>25</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+	  <thingDefs>
+		<li>WTH_MechanoidChip</li>
+		<li>WTH_MechanoidParts</li>
+		<li>ComponentIndustrial</li>
+		<li>Plasteel</li>
+	  </thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_BatteryExpansionModule>1</WTH_BatteryExpansionModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_BatteryExpansionModule</researchPrerequisite>
+  </RecipeDef>
+
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_VanometricModule</defName>
+	<label>craft vanometric module</label>
+	<description>Craft a vanometric power cell module</description>
+	<ingredients>
+		<li>
+			<filter>
+			  <thingDefs>
+				<li>WTH_MechanoidChip</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>ComponentSpacer</li>
+				</thingDefs>
+			</filter>
+			<count>1</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>VanometricPowerCell</li>
+				</thingDefs>
+			</filter>
+			<count>1</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>VanometricPowerCell</li>
+			<li>ComponentSpacer</li>
+			<li>WTH_MechanoidParts</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_VanometricModule>1</WTH_VanometricModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_VanometricModule</researchPrerequisite>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_SelfDestructModule</defName>
+	<label>craft self-destruct module</label>
+	<description>Craft a self-destruct module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>10</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Shell_HighExplosive</li>
+				</thingDefs>
+			</filter>
+			<count>2</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+	  <thingDefs>
+		<li>WTH_MechanoidParts</li>
+		<li>Shell_HighExplosive</li>
+		<li>Plasteel</li>
+	  </thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_SelfDestructModule>1</WTH_SelfDestructModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_SelfDestruct</researchPrerequisite>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_TurretModule</defName>
+	<label>craft turret module</label>
+	<description>Craft a turret module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>25</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>20</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>ComponentSpacer</li>
+				</thingDefs>
+			</filter>
+			<count>1</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>Plasteel</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+			<li>ComponentSpacer</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_TurretModule>1</WTH_TurretModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_TurretModule</researchPrerequisite>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_RepairModule</defName>
+	<label>craft repair module</label>
+	<description>Craft a repair module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>30</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>15</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>Plasteel</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_RepairModule>1</WTH_RepairModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_RepairModule</researchPrerequisite>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_RepairArm</defName>
+	<label>craft repair arm</label>
+	<description>Craft a repair arm</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>25</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>10</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>2</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>Plasteel</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_RepairArm>1</WTH_RepairArm>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_RepairArm</researchPrerequisite>
+  </RecipeDef>  
+  
+  <RecipeDef ParentName="WTH_Craft_Module_Base">
+	<defName>WTH_Craft_BeltModule</defName>
+	<label>craft belt module</label>
+	<description>Craft a belt module</description>
+	<ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Plasteel</li>
+				</thingDefs>
+			</filter>
+			<count>20</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidParts</li>
+				</thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>WTH_MechanoidChip</li>
+				</thingDefs>
+			</filter>
+			<count>5</count>
+		</li>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>ComponentSpacer</li>
+				</thingDefs>
+			</filter>
+			<count>1</count>
+		</li>
+	</ingredients>
+	<fixedIngredientFilter>
+		<thingDefs>
+			<li>Plasteel</li>
+			<li>WTH_MechanoidChip</li>
+			<li>WTH_MechanoidParts</li>
+			<li>ComponentSpacer</li>
+		</thingDefs>
+	</fixedIngredientFilter>
+	<products>
+	  <WTH_BeltModule>1</WTH_BeltModule>
+	</products>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	<workSkill>Crafting</workSkill>
+	<researchPrerequisite>WTH_BeltModule</researchPrerequisite>
+  </RecipeDef>  
+  
+  
+	<RecipeDef>
+		<defName>WTH_HackMechanoid</defName>
+		<label>hack mechanoid targeting device</label>
+		<description>Hacks the targeting device of a mechanoid so it targets your enemies instead of yourself</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_HackMechanoid</workerClass>
+		<jobString>Hacking mechanoid</jobString>
+		<surgerySuccessChanceFactor>1.0</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<workAmount>1500</workAmount>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<effectWorking>Repair</effectWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_MechanoidParts</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+			<li>Brain</li>
+			<li>MechanicalHead</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_TargetingHacked</addsHediff>
+		<researchPrerequisite>WTH_HackingBasics</researchPrerequisite>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+				<addsAdditionalHediff>WTH_BackupBattery</addsAdditionalHediff>
+				<additionalHediffBodyPart>Reactor</additionalHediffBodyPart>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>WTH_InduceEmergencySignal</defName>
+		<label>try inducing an emergency signal</label>
+		<description>The colonist will deliberately try to trigger a self-defence mechanism in the mechanoid that transmits an emergency signal to nearby mechanoids when activated, attracting them. This is a good way of getting some extra mechanoid parts, but also a good way to get your base blown up. The operation is remarkably difficult, and even if it is performed successfully, the mechanoid will be damaged beyond repair.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_InduceEmergencySignal</workerClass>
+		<jobString>Hacking mechanoid</jobString>
+		<surgerySuccessChanceFactor>1.0</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.25</deathOnFailedSurgeryChance>
+		<workAmount>1500</workAmount>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<effectWorking>Repair</effectWorking>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+			<li>Brain</li>
+			<li>MechanicalHead</li>
+		</appliedOnFixedBodyParts>
+		<researchPrerequisite>WTH_InduceEmergencySignal</researchPrerequisite>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+				<surgerySuccessCap>0.5</surgerySuccessCap>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>WTH_ImplantAI</defName>
+		<label>implant AI</label>
+		<description>Implants the AI persona core into the mechanoid, allowing full control for combat purposes</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Hacking mechanoid</jobString>
+		<workAmount>8000</workAmount>
+		<surgerySuccessChanceFactor>9999999</surgerySuccessChanceFactor>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<effectWorking>Repair</effectWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_MechanoidParts</li>
+					</thingDefs>
+				</filter>
+				<count>25</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_MechanoidChip</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AIPersonaCore</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+			<li>Brain</li>
+			<li>MechanicalHead</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_ReplacedAI</addsHediff>
+		<researchPrerequisite>WTH_HackingAdvanced</researchPrerequisite>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>WTH_InstallOverdriveModule</defName>
+		<label>install overdrive module</label>
+		<description>Install a overdrive module.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Installing overdrive module.</jobString>
+		<workAmount>5000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_OverdriveModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>		
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_OverdriveModule</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>WTH_InstallSpeedModule</defName>
+		<label>install speed module</label>
+		<description>Install a speed module.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Installing speed module.</jobString>
+		<workAmount>5000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_SpeedModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>		
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_SpeedModule</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>WTH_InstallCargoModule</defName>
+		<label>install cargo module</label>
+		<description>Install a cargo module.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Installing cargo module.</jobString>
+		<workAmount>5000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_CargoModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>	
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<targetsBodyPart>false</targetsBodyPart>		
+		<addsHediff>WTH_CargoModule</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>WTH_InstallOpticSensorModule</defName>
+		<label>install optic sensor module</label>
+		<description>Install an optic sensor module.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Installing optic sensor module.</jobString>
+		<workAmount>5000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_OpticSensorModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>		
+		<appliedOnFixedBodyParts>
+			<li>MechanicalHead</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_OpticSensorModule</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>WTH_InstallArmorModule</defName>
+		<label>install armor module</label>
+		<description>Install an armor module.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Installing armor module.</jobString>
+		<workAmount>5000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_ArmorModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>		
+		<addsHediff>WTH_ArmorModule</addsHediff>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<targetsBodyPart>false</targetsBodyPart>	
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>WTH_InstallGrowingModule</defName>
+		<label>install growing module</label>
+		<description>Install a growing module.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid_WorkModule</workerClass>
+		<jobString>Installing growing module.</jobString>
+		<workAmount>5000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_GrowingModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>		
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_GrowingModule</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>WTH_InstallFirefightingModule</defName>
+		<label>install firefighting module</label>
+		<description>Install a firefighting module.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid_WorkModule</workerClass>
+		<jobString>Installing firefighting module.</jobString>
+		<workAmount>4000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_FirefightingModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>		
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_FirefightingModule</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>WTH_InstallCleaningModule</defName>
+		<label>install cleaning module</label>
+		<description>Install a cleaning module.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid_WorkModule</workerClass>
+		<jobString>Installing cleaning module.</jobString>
+		<workAmount>5000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_CleaningModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>		
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_CleaningModule</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>WTH_InstallHaulingModule</defName>
+		<label>install hauling module</label>
+		<description>Install a hauling module.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid_WorkModule</workerClass>
+		<jobString>Installing hauling module.</jobString>
+		<workAmount>5000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_HaulingModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>		
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_HaulingModule</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>WTH_InstallRepairArm</defName>
+		<label>install repair arm</label>
+		<description>Install a repair arm.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Installing repair arm.</jobString>
+		<workAmount>3000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_RepairArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>		
+		<appliedOnFixedBodyParts>
+			<li>MechanicalShoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_RepairArm</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+				<requiredHediff>WTH_RepairModule</requiredHediff>
+				<needsFixedBodyPart>true</needsFixedBodyPart>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>WTH_InstallTurretModule</defName>
+		<label>install turret module</label>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<description>A module that provides both structural support and and interface for gun turrets and mortars. Any turret that can be uninstalled, can be interfaced with this module. While this is a powerful upgrade, turrets do draw extra power, and have a tendency of exploding when destroyed. Can only be installed on large mechanoids.</description>
+		<jobString>Modifying mechanoid</jobString>
+		<workAmount>5000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.2</deathOnFailedSurgeryChance>		
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_TurretModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>	
+		<effectWorking>Repair</effectWorking>
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+				<minBodySize>1.5</minBodySize>
+			</li>
+		</modExtensions>
+		<addsHediff>WTH_TurretModule</addsHediff>
+	</RecipeDef>
+	
+	
+	<RecipeDef>
+		<defName>WTH_InstallRepairModule</defName>
+		<label>install repair module</label>
+		<description>A module that can be loaded with mechanoid parts, and is capable of redirecting the mechanoid's power supply to its internal mechanites. This activates the mechanites, which will repair the mechanoid using the parts, but renders the mechanoid incapable of doing anything during the process.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Modifying mechanoid</jobString>
+		<workAmount>4000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.2</deathOnFailedSurgeryChance>		
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<effectWorking>Repair</effectWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_RepairModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_RepairModule</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	
+	<RecipeDef>
+		<defName>WTH_InstallSelfDestruct</defName>
+		<label>install self destruct option</label>
+		<description>Adds the ability to let the mechanoid self destruct by short-circuiting installed high explosive mortar shells. A plasteel casing prevents that the explosives go off unintentionally.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Modifying mechanoid</jobString>
+		<workAmount>2000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.2</deathOnFailedSurgeryChance>		
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<effectWorking>Repair</effectWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_SelfDestructModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_SelfDestruct</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+		
+	<RecipeDef>
+		<defName>WTH_InstallBeltModule</defName>
+		<label>install belt module</label>
+		<description>Install a module that allows mechanoids to equip belts like shield belts and smokepop belts.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_BeltModule</workerClass>
+		<jobString>Modifying mechanoid</jobString>
+		<workAmount>3000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>		
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<effectWorking>Repair</effectWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_BeltModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_BeltModule</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	
+	<RecipeDef>
+		<defName>WTH_InstallBatteryExpansionModule</defName>
+		<label>install battery expansion module</label>
+		<description>Gives the mechanoid extra battery capacity at the cost of a small movement penalty.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Modifying mechanoid</jobString>
+		<workAmount>3000</workAmount>
+		<surgerySuccessChanceFactor>1.3</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.2</deathOnFailedSurgeryChance>		
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<effectWorking>Repair</effectWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_BatteryExpansionModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_BatteryExpansionModule</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>WTH_InstallVanometricModule</defName>
+		<label>install vanometric power cell module</label>
+		<description>Gives the mechanoid infinite power supply at the cost of a small movement penalty.</description>
+		<workerClass>WhatTheHack.Recipes.Recipe_ModifyMechanoid</workerClass>
+		<jobString>Modifying mechanoid</jobString>
+		<workAmount>4000</workAmount>
+		<surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.2</deathOnFailedSurgeryChance>		
+		<skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<effectWorking>Repair</effectWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WTH_VanometricModule</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<appliedOnFixedBodyParts>
+			<li>Reactor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WTH_VanometricModule</addsHediff>
+		<modExtensions>
+			<li Class="WhatTheHack.DefModExtension_Recipe">
+				<requireBed>true</requireBed>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	
+  <RecipeDef>
+    <defName>WTH_ShutDownMechanoid</defName>
+    <label>shut down</label>
+    <description>Shuts down a mechanoid.</description>
+    <workerClass>WhatTheHack.Recipes.Recipe_ShutDown</workerClass>
+    <jobString>Shutting down mechanoid.</jobString>
+    <workAmount>500</workAmount>
+    <effectWorking>Repair</effectWorking>
+    <addsHediff>WTH_ShutDown</addsHediff>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <isViolation>true</isViolation>
+    <surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
+	<modExtensions>
+		<li Class="WhatTheHack.DefModExtension_Recipe">
+			<requireBed>false</requireBed>
+		</li>
+	</modExtensions>
+	</RecipeDef>
+</Defs>

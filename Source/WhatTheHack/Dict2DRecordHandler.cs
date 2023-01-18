@@ -1,68 +1,89 @@
-﻿using HugsLib.Settings;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Xml;
-using System.Xml.Linq;
 using System.Xml.Serialization;
-using Verse;
+using HugsLib.Settings;
 
-namespace WhatTheHack
+namespace WhatTheHack;
+
+public class Dict2DRecordHandler : SettingHandleConvertible
 {
-    public class Dict2DRecordHandler : SettingHandleConvertible
+    private readonly XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+    private readonly XmlSerializer serializer = new XmlSerializer(typeof(Record));
+    public Dictionary<string, Dictionary<string, Record>> inner = new Dictionary<string, Dictionary<string, Record>>();
+
+    public Dict2DRecordHandler()
     {
-        public Dictionary<String, Dictionary<String, Record>> inner = new Dictionary<String, Dictionary<String, Record>>();
-        public Dictionary<String, Dictionary<String, Record>> InnerList { get { return inner; } set { inner = value; } }
-        private XmlSerializer serializer = new XmlSerializer(typeof(Record));
-        XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+        ns.Add("", "");
+    }
 
-        public Dict2DRecordHandler()
+    public Dictionary<string, Dictionary<string, Record>> InnerList
+    {
+        get => inner;
+        set => inner = value;
+    }
+
+    public override void FromString(string settingValue)
+    {
+        inner = new Dictionary<string, Dictionary<string, Record>>();
+        if (settingValue.Equals(string.Empty))
         {
-            ns.Add("", "");
+            return;
         }
-        public override void FromString(string settingValue)
+
+        var xmlDoc = new XmlDocument
         {
-            inner = new Dictionary<String, Dictionary<String, Record>>();
-            if (!settingValue.Equals(string.Empty))
+            InnerXml = settingValue
+        };
+
+        foreach (XmlNode dictNode in xmlDoc.FirstChild.ChildNodes)
+        {
+            var nestedDict = new Dictionary<string, Record>();
+            var name = dictNode.Name;
+            foreach (XmlNode recordNode in dictNode.ChildNodes)
             {
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.InnerXml = settingValue;
-
-                foreach (XmlNode dictNode in xmlDoc.FirstChild.ChildNodes)
-                {
-                    Dictionary<String, Record> nestedDict = new Dictionary<string, Record>();
-                    String name = dictNode.Name;
-                    foreach(XmlNode recordNode in dictNode.ChildNodes)
-                    {
-                        StringReader rdr = new StringReader(recordNode.InnerXml);
-                        nestedDict.Add(recordNode.Name, (Record)serializer.Deserialize(rdr));
-                    }
-                    inner.Add(name, nestedDict);
-                }
+                var rdr = new StringReader(recordNode.InnerXml);
+                nestedDict.Add(recordNode.Name, (Record)serializer.Deserialize(rdr));
             }
-        }
 
-        public override string ToString()
-        {
-            XmlDocument xmlDoc = new XmlDocument();
-            XmlNode root = xmlDoc.AppendChild(xmlDoc.CreateElement("Dict2DRecordHandler"));
-
-            foreach (KeyValuePair< String, Dictionary < String, Record >> kv in inner){
-                XmlElement child = xmlDoc.CreateElement(kv.Key);
-                foreach (KeyValuePair<String, Record> kvInner in kv.Value)
-                {
-                    XmlElement childInner = xmlDoc.CreateElement(kvInner.Key);
-                    StringWriter writer = new StringWriter();
-                    serializer.Serialize(writer, kvInner.Value, ns);
-                    childInner.InnerXml = writer.ToString();
-                    child.AppendChild(childInner);
-                }
-                root.AppendChild(child);
-            }
-            return xmlDoc.OuterXml;
+            inner.Add(name, nestedDict);
         }
     }
 
+    public override string ToString()
+    {
+        var xmlDoc = new XmlDocument();
+        var root = xmlDoc.AppendChild(xmlDoc.CreateElement("Dict2DRecordHandler"));
+
+        foreach (var kv in inner)
+        {
+            var child = xmlDoc.CreateElement(kv.Key);
+            foreach (var kvInner in kv.Value)
+            {
+                var childInner = xmlDoc.CreateElement(kvInner.Key);
+                childInner.InnerXml = SerializeToString(kvInner.Value);
+                child.AppendChild(childInner);
+            }
+
+            root.AppendChild(child);
+        }
+
+        return xmlDoc.OuterXml;
+    }
+
+    private string SerializeToString<T>(T value)
+    {
+        var emptyNamespaces = new XmlSerializerNamespaces(new[] { XmlQualifiedName.Empty });
+        var xmlSerializer = new XmlSerializer(value.GetType());
+        var settings = new XmlWriterSettings
+        {
+            Indent = true,
+            OmitXmlDeclaration = true
+        };
+
+        using var stream = new StringWriter();
+        using var writer = XmlWriter.Create(stream, settings);
+        xmlSerializer.Serialize(writer, value, emptyNamespaces);
+        return stream.ToString();
+    }
 }

@@ -1,38 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using Verse;
 using Verse.AI;
 
-namespace WhatTheHack.Jobs
+namespace WhatTheHack.Jobs;
+
+internal class JobDriver_ControlMechanoid_Goto : JobDriver
 {
-    class JobDriver_ControlMechanoid_Goto : JobDriver
+    private Pawn Mech => pawn.RemoteControlLink();
+
+    public override bool TryMakePreToilReservations(bool errorOnFailed)
     {
-        public override bool TryMakePreToilReservations(bool errorOnFailed)
+        return true;
+    }
+
+    public override IEnumerable<Toil> MakeNewToils()
+    {
+        var gotoCell = Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.OnCell);
+        gotoCell.FailOn(() => pawn.UnableToControl() || Mech.DestroyedOrNull() || Mech.Downed);
+        var radius = Utilities.GetRemoteControlRadius(pawn) / 2;
+        gotoCell.AddPreTickAction(delegate
         {
-            return true;
-        }
-        private Pawn Mech
-        {
-            get
+            if (!(Utilities.QuickDistanceSquared(pawn.Position, Mech.Position) < radius * radius))
             {
-                return pawn.RemoteControlLink();
+                return;
             }
-        }
-        protected override IEnumerable<Toil> MakeNewToils()
-        {
-            Toil gotoCell = Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.OnCell);
-            gotoCell.FailOn(() => pawn.UnableToControl() || this.Mech.DestroyedOrNull() || this.Mech.Downed);
-            int radius = Utilities.GetRemoteControlRadius(pawn) / 2;
-            gotoCell.AddPreTickAction(new Action(delegate {
-                if(Utilities.QuickDistanceSquared(pawn.Position, Mech.Position) < radius * radius)
-                {
-                    pawn.pather.StopDead();
-                    ReadyForNextToil();
-                }
-            }));
-            yield return gotoCell;
-        }
+
+            pawn.pather.StopDead();
+            ReadyForNextToil();
+        });
+        yield return gotoCell;
     }
 }

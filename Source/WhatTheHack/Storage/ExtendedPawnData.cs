@@ -1,81 +1,77 @@
-﻿using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
+﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
-using Verse.AI;
 using WhatTheHack.Buildings;
 using WhatTheHack.Comps;
 
 //Used for mechanoids only.  
 
-namespace WhatTheHack.Storage
+namespace WhatTheHack.Storage;
+
+public class ExtendedPawnData : IExposable
 {
-    public class ExtendedPawnData : IExposable
+    public bool canWorkNow;
+    public Building_PortableChargingPlatform caravanPlatform;
+    public Building_RogueAI controllingAI;
+    public bool isActive;
+
+    //MAKE SURE TO UPDATE SHOULDCLEAN WHEN ADDING FIELDS!!!!
+
+    public bool isHacked; //obsolete. 
+    public Faction originalFaction;
+
+    public Pawn remoteControlLink;
+    public bool shouldExplodeNow; //obsolete. Still here for compatibility with old saves.
+    public CompMountable turretMount = null;
+    public List<WorkTypeDef> workTypes;
+
+    public void ExposeData()
     {
-
-        //MAKE SURE TO UPDATE SHOULDCLEAN WHEN ADDING FIELDS!!!!
-
-        public bool isHacked = false;//obsolete. 
-        public bool canWorkNow = false;
-        public bool isActive = false;
-        public bool shouldExplodeNow = false;//obsolete. Still here for compatibility with old saves.
-
-        public Pawn remoteControlLink = null;
-        public Building_RogueAI controllingAI = null;
-        public Faction originalFaction = null;
-        public List<WorkTypeDef> workTypes = null;
-        public CompMountable turretMount = null;
-        public Building_PortableChargingPlatform caravanPlatform = null;
+        Scribe_Values.Look(ref isHacked, "isHacked"); //Obsolete. 
+        Scribe_Values.Look(ref canWorkNow, "canWorkNow");
+        Scribe_Values.Look(ref shouldExplodeNow, "shouldExplodeNow");
+        Scribe_Values.Look(ref isActive, "isActive");
+        Scribe_References.Look(ref remoteControlLink, "remoteControlLink");
+        Scribe_References.Look(ref controllingAI, "controllingAI");
+        Scribe_References.Look(ref caravanPlatform, "caravanPlatform");
+        Scribe_References.Look(ref originalFaction, "originalFaction");
+        //Scribe_References.Look(ref turretMount, "turretMount");
+        Scribe_Collections.Look(ref workTypes, "workTypes");
+    }
 
 
-        public bool ShouldSave(Pawn pawn)
+    public bool ShouldSave(Pawn pawn)
+    {
+        if ((pawn.IsColonist || pawn.IsMechanoid()) && !(pawn.Dead || pawn.Destroyed))
         {
-            if ((pawn.IsColonist || pawn.RaceProps.IsMechanoid) && !(pawn.Dead || pawn.Destroyed))
-            {
-                return true;
-            }
-            return false;
+            return true;
         }
 
-        public bool ShouldClean()
-        {
-            bool foundValue = false;
-            foreach(FieldInfo fi in this.GetType().GetFields())
-            {
-                var fival = fi.GetValue(this);
+        return false;
+    }
 
-                if(fival is bool val && val == true)
-                {
-                    foundValue = true; 
-                }
-                else if (fival != null && !(fival is int) && !(fival is float) && !(fival is bool))
-                {
-                    foundValue = true; 
-                }
-            }
-            if (!foundValue)
-            {
-                return true;
-            }
-            return false;
-        }
-        public void ExposeData()
+    public bool ShouldClean()
+    {
+        var foundValue = false;
+        foreach (var fi in GetType().GetFields())
         {
-            Scribe_Values.Look(ref isHacked, "isHacked", false);//Obsolete. 
-            Scribe_Values.Look(ref canWorkNow, "canWorkNow", false);
-            Scribe_Values.Look(ref shouldExplodeNow, "shouldExplodeNow", false);
-            Scribe_Values.Look(ref isActive, "isActive", false);
-            Scribe_References.Look(ref remoteControlLink, "remoteControlLink");
-            Scribe_References.Look(ref controllingAI, "controllingAI");
-            Scribe_References.Look(ref caravanPlatform, "caravanPlatform");
-            Scribe_References.Look(ref originalFaction, "originalFaction");
-            Scribe_Deep.Look(ref turretMount, "mountedTo");
-            Scribe_Collections.Look(ref workTypes, "workTypes");
+            var fival = fi.GetValue(this);
+
+            if (fival is bool and true)
+            {
+                foundValue = true;
+            }
+            else if (fival != null && fival is not int && fival is not float && fival is not bool)
+            {
+                foundValue = true;
+            }
         }
 
+        if (!foundValue)
+        {
+            return true;
+        }
 
+        return false;
     }
 }

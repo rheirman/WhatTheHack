@@ -1,30 +1,16 @@
-﻿using RimWorld;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using RimWorld;
 using Verse;
 
-namespace WhatTheHack.TabWindow
+namespace WhatTheHack.TabWindow;
+
+internal class MainTabWindow_Work_Mechanoids : MainTabWindow_Work
 {
-    class MainTabWindow_Work_Mechanoids : MainTabWindow_Work
-    {
-        protected override IEnumerable<Pawn> Pawns
-        {
-            get
-            {
-                return from p in Find.CurrentMap.mapPawns.PawnsInFaction(Faction.OfPlayer)
-                       where p.IsHacked()
-                       select p;
-            }
-        }
-        
-        protected override PawnTableDef PawnTableDef
-        {
-            get
-            {
-                return WTH_DefOf.WTH_Work_Mechanoids;
-            }
-        }
-    }
+    public override IEnumerable<Pawn> Pawns =>
+        from p in Find.CurrentMap.mapPawns.PawnsInFaction(Faction.OfPlayer)
+        where p.IsHacked()
+        select p;
+
+    public override PawnTableDef PawnTableDef => WTH_DefOf.WTH_Work_Mechanoids;
 }

@@ -1,60 +1,73 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using RimWorld;
 using Verse;
-using WhatTheHack.Storage;
 
-namespace WhatTheHack.Recipes
+namespace WhatTheHack.Recipes;
+
+internal class Recipe_ModifyMechanoid_UninstallModule : Recipe_ModifyMechanoid
 {
-    class Recipe_ModifyMechanoid_UninstallModule : Recipe_ModifyMechanoid
+    protected override bool IsValidPawn(Pawn pawn)
     {
-        protected override bool CanApplyOn(Pawn pawn)
+        if (recipe.GetModExtension<DefModExtension_Recipe>() is not { requiredHediff: { } } modExt)
         {
-            return base.CanApplyOn(pawn);
+            return false;
         }
 
-        protected override void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
+        var hasRequiredHediff = pawn.health.hediffSet.HasHediff(modExt.requiredHediff);
+        return pawn.IsHacked() && hasRequiredHediff;
+    }
+
+    protected override void PostSuccessfulApply(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients,
+        Bill bill)
+    {
+        base.PostSuccessfulApply(pawn, part, billDoer, ingredients, bill);
+        if (recipe.GetModExtension<DefModExtension_Recipe>() is not { } modExt)
         {
-            base.PostSuccessfulApply(pawn, part, billDoer, ingredients, bill);
-            if (recipe.GetModExtension<DefModExtension_Recipe>() is DefModExtension_Recipe modExt)
-            {
-                HediffDef removedHediff = modExt.requiredHediff;
-                Uninstallmodule(pawn, removedHediff);
-                Cleanup(pawn, removedHediff);
-            }
+            return;
         }
 
-        private static void Cleanup(Pawn pawn, HediffDef removedHediff)
+        var removedHediff = modExt.requiredHediff;
+        Uninstallmodule(pawn, removedHediff);
+        Cleanup(pawn, removedHediff);
+    }
+
+    private static void Cleanup(Pawn pawn, HediffDef removedHediff)
+    {
+        if (removedHediff == WTH_DefOf.WTH_TurretModule && pawn.health.hediffSet.HasHediff(WTH_DefOf.WTH_MountedTurret))
         {
-            ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
-            if (removedHediff.GetModExtension<DefModExtension_Hediff_WorkModule>() is DefModExtension_Hediff_WorkModule ext)
-            {
-                pawnData.workTypes.RemoveAll((WorkTypeDef def) => ext.workTypes.Contains(def));
-            }
-            if (!pawn.health.hediffSet.hediffs.Exists((Hediff h) => h.def.HasModExtension<DefModExtension_Hediff_WorkModule>()))
-            {
-                pawnData.workTypes = null;
-                pawn.skills = null;
-                pawn.workSettings = null;
-            }
-            if(removedHediff == WTH_DefOf.WTH_RepairModule)
-            {
-                Base.RemoveComps(pawn);
-            }
+            pawn.health.RemoveHediff(
+                pawn.health.hediffSet.hediffs.FirstOrDefault(h => h.def == WTH_DefOf.WTH_MountedTurret));
         }
 
-        private static void Uninstallmodule(Pawn pawn, HediffDef removedHediff)
+        var pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+        if (removedHediff.GetModExtension<DefModExtension_Hediff_WorkModule>() is { } ext)
         {
-            pawn.health.RemoveHediff(pawn.health.hediffSet.hediffs.FirstOrDefault((Hediff h) => h.def == removedHediff));
-            Thing t = ThingMaker.MakeThing(removedHediff.GetModExtension<DefModextension_Hediff>().extraButcherProduct);
-            if (t != null)
-            {
-                t.stackCount = 1;
-                GenPlace.TryPlaceThing(t, pawn.Position, pawn.Map, ThingPlaceMode.Near);
-            }
+            pawnData.workTypes.RemoveAll(def => ext.workTypes.Contains(def));
+        }
+
+        if (!pawn.health.hediffSet.hediffs.Exists(h => h.def.HasModExtension<DefModExtension_Hediff_WorkModule>()))
+        {
+            pawnData.workTypes = null;
+            pawn.skills = null;
+            pawn.workSettings = null;
+        }
+
+        if (removedHediff == WTH_DefOf.WTH_RepairModule)
+        {
+            Base.RemoveComps(pawn);
         }
     }
 
+    private static void Uninstallmodule(Pawn pawn, HediffDef removedHediff)
+    {
+        pawn.health.RemoveHediff(pawn.health.hediffSet.hediffs.FirstOrDefault(h => h.def == removedHediff));
+        var t = ThingMaker.MakeThing(removedHediff.GetModExtension<DefModextension_Hediff>().extraButcherProduct);
+        if (t == null)
+        {
+            return;
+        }
+
+        t.stackCount = 1;
+        GenPlace.TryPlaceThing(t, pawn.Position, pawn.Map, ThingPlaceMode.Near);
+    }
 }

@@ -1,0 +1,23 @@
+<Defs> 
+  <StatCategoryDef>
+    <defName>WTH_StatCategory_HackedMechanoid</defName>
+    <label>What the Hack?!</label>
+    <displayOrder>150</displayOrder>
+  </StatCategoryDef>
+  <StatCategoryDef>
+    <defName>WTH_StatCategory_Colonist</defName>
+    <label>What the Hack?!</label>
+    <displayOrder>150</displayOrder>
+  </StatCategoryDef>
+  <StatCategoryDef>
+    <defName>WTH_StatCategory_Platform</defName>
+    <label>What the Hack?!</label>
+    <displayOrder>150</displayOrder>
+  </StatCategoryDef>
+  <StatCategoryDef>
+    <defName>WTH_StatCategory_Hidden</defName>
+    <label>What the Hack?!</label>
+    <displayOrder>150</displayOrder>
+	<displayAllByDefault>false</displayAllByDefault>
+  </StatCategoryDef>
+</Defs>

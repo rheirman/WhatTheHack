@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Verse;
+﻿using Verse;
 
-namespace WhatTheHack
+namespace WhatTheHack;
+
+public class DefModExtension_PawnMassCapacity : DefModExtension
 {
-    public class DefModExtension_PawnMassCapacity : DefModExtension
-    {
-        public int bonusMassCapacity;
-    }
+    public int bonusMassCapacity;
 }

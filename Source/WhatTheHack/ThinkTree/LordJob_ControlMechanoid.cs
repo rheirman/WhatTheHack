@@ -1,48 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Verse;
-using Verse.AI.Group;
-using WhatTheHack.Storage;
+﻿using Verse.AI.Group;
 
-namespace WhatTheHack.ThinkTree
+namespace WhatTheHack.ThinkTree;
+
+public class LordJob_ControlMechanoid : LordJob
 {
-    public class LordJob_ControlMechanoid : LordJob
+    public override StateGraph CreateGraph()
     {
-        public override StateGraph CreateGraph()
+        var graph = new StateGraph();
+        var sdToil = new LordToil_ControlMechanoid();
+        graph.AddToil(sdToil);
+        var endToil = new LordToil_End();
+
+        var endTransition = new Transition(sdToil, endToil);
+
+        endTransition.AddTrigger(new Trigger_Custom(delegate
         {
-            StateGraph graph = new StateGraph();
-            LordToil_ControlMechanoid sdToil = new LordToil_ControlMechanoid();
-            graph.AddToil(sdToil);
-            LordToil_End endToil = new LordToil_End();
-            
-            Transition endTransition = new Transition(sdToil, endToil);
-            
-            endTransition.AddTrigger(new Trigger_Custom(delegate
+            var pawn = lord.ownedPawns[0];
+            var mech = pawn.RemoteControlLink();
+            var shouldEnd = mech == null || !mech.Spawned || mech.Dead || mech.Downed || pawn.UnableToControl();
+            if (!shouldEnd)
             {
-                Pawn pawn = this.lord.ownedPawns[0];
-                Pawn mech = pawn.RemoteControlLink();
-                bool shouldEnd = (mech == null || !mech.Spawned || mech.Dead || mech.Downed || pawn.UnableToControl());
-                if (shouldEnd)
-                {
-                    if(mech != null)
-                    {
-                        ExtendedPawnData mechData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(mech);
-                        mechData.remoteControlLink = null;
-                    }
-                    ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
-                    pawnData.remoteControlLink = null;
+                return false;
+            }
 
-                }
-                return shouldEnd;
-            }));
-            graph.AddToil(endToil);
-            graph.AddTransition(endTransition);
+            if (mech != null)
+            {
+                var mechData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(mech);
+                mechData.remoteControlLink = null;
+            }
 
-            return graph;
-        }
+            var pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+            pawnData.remoteControlLink = null;
 
+            return true;
+        }));
+        graph.AddToil(endToil);
+        graph.AddTransition(endTransition);
 
+        return graph;
     }
 }

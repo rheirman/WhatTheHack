@@ -1,7 +1,7 @@
 <Defs>
 	<MainButtonDef>
 		<defName>WTH_Tab_Mechanoids</defName>
-		<label>Mechanoids</label>
+		<label>Hacked Mechs</label>
 		<description>An overview of your hacked mechanoids, in which you can also set work priorities for mechs with the right upgrade modules installed</description>
 		<tabWindowClass>WhatTheHack.TabWindow.MainTabWindow_Work_Mechanoids</tabWindowClass>
 		<order>41</order>

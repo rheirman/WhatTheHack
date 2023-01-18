@@ -1,84 +1,85 @@
-﻿using Harmony;
-using RimWorld;
+﻿using RimWorld;
 using RimWorld.Planet;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Verse;
 using WhatTheHack.Buildings;
 
-namespace WhatTheHack.Comps
+namespace WhatTheHack.Comps;
+
+internal class CompHibernatable_MechanoidBeacon : CompHibernatable
 {
-    class CompHibernatable_MechanoidBeacon : CompHibernatable
+    public int coolDownTicks;
+    public int extraStartUpDays;
+
+    public new CompProperties_Hibernatable_MechanoidBeacon Props => (CompProperties_Hibernatable_MechanoidBeacon)props;
+
+    public override void PostExposeData()
     {
-        public int extraStartUpDays = 0;
-        public int coolDownTicks = 0;
+        base.PostExposeData();
+        Scribe_Values.Look(ref extraStartUpDays, "extraStartUpDays");
+        Scribe_Values.Look(ref coolDownTicks, "coolDownTicks");
+    }
 
-        public new CompProperties_Hibernatable_MechanoidBeacon Props
+    public override void CompTick()
+    {
+        if (State == HibernatableStateDefOf.Starting && Find.TickManager.TicksGame > endStartupTick)
+            // Traverse.Create(this).Field("endStartupTick").GetValue<int>())
         {
-            get
-            {
-                return (CompProperties_Hibernatable_MechanoidBeacon)this.props;
-            }
+            FinishWarmup();
         }
 
-        public override void PostExposeData()
+        if (coolDownTicks > 0)
         {
-            base.PostExposeData();
-            Scribe_Values.Look(ref extraStartUpDays, "extraStartUpDays");
-            Scribe_Values.Look(ref coolDownTicks, "coolDownTicks");
+            coolDownTicks--;
         }
 
-        public override void CompTick()
+        if (State == HibernatableStateDefOf.Running && coolDownTicks == 0)
         {
-            if (this.State == HibernatableStateDefOf.Starting && Find.TickManager.TicksGame > Traverse.Create(this).Field("endStartupTick").GetValue<int>() )
-            {
-                FinishWarmup();
-            }
-            if (coolDownTicks > 0)
-            {
-                coolDownTicks--;
-            }
-            if(this.State == HibernatableStateDefOf.Running && coolDownTicks == 0)
-            {
-                this.State = HibernatableStateDefOf.Hibernating;
-            }
+            State = HibernatableStateDefOf.Hibernating;
+        }
+    }
+
+    private void FinishWarmup()
+    {
+        State = HibernatableStateDefOf.Running;
+        endStartupTick = 0;
+        //Traverse.Create(this).Field("endStartupTick").SetValue(0);
+        if (parent.Map.listerBuildings.allBuildingsColonist.FirstOrDefault(b => b is Building_RogueAI) is
+            not Building_RogueAI rogueAI)
+        {
+            return;
         }
 
-        private void FinishWarmup()
+        Find.LetterStack.ReceiveLetter("WTH_MechanoidBeaconComplete_Label".Translate(),
+            "WTH_MechanoidBeaconComplete_Description".Translate(), LetterDefOf.PositiveEvent,
+            new GlobalTargetInfo(parent));
+        if (!rogueAI.IsConscious)
         {
-            this.State = HibernatableStateDefOf.Running;
-            Traverse.Create(this).Field("endStartupTick").SetValue(0);
-            if (this.parent.Map.listerBuildings.allBuildingsColonist.FirstOrDefault((Building b) => b is Building_RogueAI) is Building_RogueAI rogueAI)
-            {
-                Find.LetterStack.ReceiveLetter("WTH_MechanoidBeaconComplete_Label".Translate(), "WTH_MechanoidBeaconComplete_Description".Translate(), LetterDefOf.PositiveEvent, new GlobalTargetInfo(this.parent), null, null);
-                if (!rogueAI.IsConscious)
-                {
-                    rogueAI.IsConscious = true;
-                }
-                extraStartUpDays += 2;
-                coolDownTicks += Props.coolDownDaysAfterSuccess * GenDate.TicksPerDay;
-                Thing md = ThingMaker.MakeThing(WTH_DefOf.WTH_MechanoidData);
-                md.stackCount = Rand.Range(25, 40);
-                GenPlace.TryPlaceThing(md, parent.Position, parent.Map, ThingPlaceMode.Near);
-            }
-
+            rogueAI.IsConscious = true;
         }
 
-        public override string CompInspectStringExtra()
+        extraStartUpDays += 2;
+        coolDownTicks += Props.coolDownDaysAfterSuccess * GenDate.TicksPerDay;
+        var md = ThingMaker.MakeThing(WTH_DefOf.WTH_MechanoidData);
+        md.stackCount = Rand.Range(25, 40);
+        GenPlace.TryPlaceThing(md, parent.Position, parent.Map, ThingPlaceMode.Near);
+    }
+
+    public override string CompInspectStringExtra()
+    {
+        var text = base.CompInspectStringExtra();
+        if (!text.NullOrEmpty())
         {
-            string text = base.CompInspectStringExtra();
-            if(!text.NullOrEmpty())
-            {
-                text += "\n";
-            }
-            text += "WTH_CompHibernatable_MechanoidBeacon_StartUpDays".Translate(Props.startupDays + extraStartUpDays);
-            if(coolDownTicks > 0)
-            {
-                text += "\n" + "WTH_CompHibernatable_MechanoidBeacon_Cooldown".Translate((coolDownTicks/(float)GenDate.TicksPerDay).ToStringDecimalIfSmall());
-            }
-            return text; 
+            text += "\n";
         }
+
+        text += "WTH_CompHibernatable_MechanoidBeacon_StartUpDays".Translate(Props.startupDays + extraStartUpDays);
+        if (coolDownTicks > 0)
+        {
+            text += "\n" +
+                    "WTH_CompHibernatable_MechanoidBeacon_Cooldown".Translate(
+                        (coolDownTicks / (float)GenDate.TicksPerDay).ToStringDecimalIfSmall());
+        }
+
+        return text;
     }
 }

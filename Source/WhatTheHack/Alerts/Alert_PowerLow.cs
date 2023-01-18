@@ -1,51 +1,46 @@
-﻿using RimWorld;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using RimWorld;
 using Verse;
 using WhatTheHack.Buildings;
 using WhatTheHack.Needs;
 
-namespace WhatTheHack.Alerts
+namespace WhatTheHack.Alerts;
+
+internal class Alert_PowerLow : Alert
 {
-    class Alert_PowerLow : Alert
+    public Alert_PowerLow()
     {
-        private IEnumerable<Pawn> LowPowerPawns
+        defaultLabel = "WTH_Alert_Power_Low_Label".Translate();
+        defaultPriority = AlertPriority.High;
+    }
+
+    private IEnumerable<Pawn> LowPowerPawns =>
+        from p in PawnsFinder.AllMaps_Spawned
+        where p.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) != null
+              && p.Faction == Faction.OfPlayer
+              && ((Need_Power)p.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power)).CurCategory >=
+              PowerCategory.VeryLowPower
+              && p.CurrentBed() is not Building_BaseMechanoidPlatform
+        select p;
+
+    public override TaggedString GetExplanation()
+    {
+        var stringBuilder = new StringBuilder();
+        stringBuilder.AppendLine();
+        stringBuilder.AppendLine();
+        foreach (var current in LowPowerPawns)
         {
-            get
-            {
-                return from p in PawnsFinder.AllMaps_Spawned
-                       where p.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power) != null 
-                       && p.Faction == Faction.OfPlayer 
-                       && ((Need_Power) p.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power)).CurCategory >= PowerCategory.VeryLowPower 
-                       && !(p.CurrentBed() is Building_BaseMechanoidPlatform) 
-                       select p;
-            }
+            stringBuilder.AppendLine($"    {current.Name}");
         }
 
-        public Alert_PowerLow()
-        {
-            this.defaultLabel = "WTH_Alert_Power_Low_Label".Translate();
-            this.defaultPriority = AlertPriority.High;
-        }
+        stringBuilder.AppendLine();
+        return string.Format("WTH_Alert_Power_Low_Description".Translate(), stringBuilder);
+    }
 
-        public override string GetExplanation()
-        {
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.AppendLine();
-            stringBuilder.AppendLine();
-            foreach (Pawn current in this.LowPowerPawns)
-            {
-                stringBuilder.AppendLine("    " + current.Name);
-            }
-            stringBuilder.AppendLine();
-            return string.Format("WTH_Alert_Power_Low_Description".Translate(), stringBuilder.ToString());
-        }
-
-        public override AlertReport GetReport()
-        {
-            return AlertReport.CulpritIs(this.LowPowerPawns.FirstOrDefault<Pawn>());
-        }
+    public override AlertReport GetReport()
+    {
+        return AlertReport.CulpritIs(LowPowerPawns.FirstOrDefault());
     }
 }

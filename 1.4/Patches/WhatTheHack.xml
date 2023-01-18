@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class = "PatchOperationAdd">
+	<xpath>Defs/StatDef[defName="ArmorRating_Sharp" or defName="ArmorRating_Blunt"]/parts</xpath>
+	<value>
+		<li Class="WhatTheHack.Stats.StatPart_Armor">
+			<priority>999</priority>
+		</li>
+	</value>
+</Operation>
+
+<Operation Class = "PatchOperationAdd">
+	<xpath>Defs/StatDef[defName="CarryingCapacity"]/parts</xpath>
+	<value>
+		<li Class="WhatTheHack.Stats.StatPart_CarryingCapacity"/>
+	</value>
+</Operation>
+
+<Operation Class="PatchOperationSequence">
+	<success>Always</success>
+	<operations>
+		<li Class = "PatchOperationAdd">
+			<xpath>Defs/StatDef[defName="RangedWeapon_Cooldown" or defName="AimingDelayFactor" or defName="MeleeWeapon_CooldownMultiplier"]/parts</xpath>
+			<value>
+				<li Class="WhatTheHack.Stats.StatPart_FiringRate">
+					<priority>999</priority>
+				</li>
+			</value>
+		</li>
+	</operations>
+</Operation>
+<Operation Class="PatchOperationSequence">
+	<success>Always</success>
+	<operations>
+		<li Class = "PatchOperationAdd">
+			<xpath>Defs/StatDef[(defName="RangedWeapon_Cooldown" or defName="AimingDelayFactor" or defName="MeleeWeapon_CooldownMultiplier") and not (parts)]</xpath>
+			<value>
+				<parts>
+					<li Class="WhatTheHack.Stats.StatPart_FiringRate">
+						<priority>999</priority>
+					</li>
+				</parts>
+			</value>
+		</li>
+	</operations>
+</Operation>
+
+<Operation Class = "PatchOperationInsert">
+	<xpath>Defs/DutyDef[defName="AssaultColony"]/thinkNode/subNodes/li[1]</xpath>
+	<value>
+		<li Class="WhatTheHack.ThinkTree.ThinkNode_ConditionalMechanoidAbility">
+			<subNodes>
+				<li Class="WhatTheHack.Jobs.JobGiver_Mechanoid_Ability"/>
+			</subNodes>
+		</li>
+	</value>
+</Operation>
+
+<Operation Class ="PatchOperationAdd">
+	<xpath>Defs/ThinkTreeDef[defName = "Mechanoid" or defName = "Mechanoid_Skullywag"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes</xpath>
+	<order>Prepend</order>
+	<value>
+		<li Class="WhatTheHack.ThinkTree.ThinkNode_ConditionalMechanoidRest">
+			<subNodes>
+				<li Class="WhatTheHack.Jobs.JobGiver_Mechanoid_Rest"/>
+			</subNodes>
+		</li>
+	</value>
+</Operation>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Combat Extended</li>
+	</mods>
+	<match Class ="PatchOperationAdd">
+		<xpath>Defs/DutyDef[defName="WTH_SearchAndDestroy"]/thinkNode[@Class="ThinkNode_Priority"]/subNodes</xpath>
+		<value>
+			<li Class="CombatExtended.JobGiver_TakeAndEquip"/>
+		</value>
+	</match>
+</Operation>
+
+<Operation Class ="PatchOperationAdd">
+	<xpath>Defs/ThingDef[@Name = "CrashedShipPartBase"]/killedLeavings</xpath>
+	<value>
+		<WTH_MechanoidData>6</WTH_MechanoidData>
+	</value>
+</Operation>
+
+<Operation Class ="PatchOperationAdd">
+	<xpath>Defs/ThingDef[defName = "Human"]/recipes</xpath>
+	<value>
+		<li>WTH_ExtractBrainData</li> 
+	</value>
+</Operation>
+<!--Add mechanoid specific operations, we take into account that some mods don't use BaseMechanoid, that some mods define the raceprops in both their base as in the def itself, and we take into account that mechs could, or could not already have recipes.-->
+<Operation Class="PatchOperationSequence">
+	<success>Always</success>
+	<operations>
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[@ParentName="BaseMechanoid" or (race/fleshType = "Mechanoid" and not (@ParentName="BaseMechanoid") and not (@Name="BaseMechanoid"))]/recipes</xpath>
+			<value>
+				<li>WTH_HackMechanoid</li>
+				<li>WTH_InduceEmergencySignal</li>
+				<li>WTH_ImplantAI</li>
+				<li>WTH_ShutDownMechanoid</li>
+				<li>WTH_InstallRepairModule</li>
+				<li>WTH_InstallRepairArm</li>
+				<li>WTH_InstallSelfDestruct</li>
+				<li>WTH_InstallTurretModule</li>
+				<li>WTH_InstallBatteryExpansionModule</li>
+				<li>WTH_InstallVanometricModule</li>
+				<li>WTH_InstallBeltModule</li>	
+				<li>WTH_InstallCleaningModule</li>
+				<li>WTH_InstallHaulingModule</li>
+				<li>WTH_InstallSpeedModule</li>
+				<li>WTH_InstallArmorModule</li>
+				<li>WTH_InstallGrowingModule</li>
+				<li>WTH_InstallFirefightingModule</li>
+				<li>WTH_InstallOverdriveModule</li>
+				<li>WTH_InstallOpticSensorModule</li>
+				<li>WTH_InstallCargoModule</li>
+			</value>
+		</li> 
+	</operations>
+</Operation>
+<Operation Class="PatchOperationSequence">
+	<success>Always</success>
+	<operations>
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[@ParentName="BaseMechanoid" or (race/fleshType = "Mechanoid" and not (@ParentName="BaseMechanoid") and not (@Name="BaseMechanoid")) and not (recipes)]</xpath>
+			<value>
+				<recipes>
+					<li>WTH_HackMechanoid</li>
+					<li>WTH_InduceEmergencySignal</li>
+					<li>WTH_ImplantAI</li>
+					<li>WTH_ShutDownMechanoid</li>
+					<li>WTH_InstallRepairModule</li>
+					<li>WTH_InstallRepairArm</li>
+					<li>WTH_InstallSelfDestruct</li>
+					<li>WTH_InstallTurretModule</li>
+					<li>WTH_InstallBatteryExpansionModule</li>
+					<li>WTH_InstallVanometricModule</li>
+					<li>WTH_InstallBeltModule</li>	
+					<li>WTH_InstallCleaningModule</li>
+					<li>WTH_InstallHaulingModule</li>
+					<li>WTH_InstallSpeedModule</li>
+					<li>WTH_InstallArmorModule</li>
+					<li>WTH_InstallGrowingModule</li>
+					<li>WTH_InstallFirefightingModule</li>
+					<li>WTH_InstallOverdriveModule</li>
+					<li>WTH_InstallOpticSensorModule</li>
+					<li>WTH_InstallCargoModule</li>
+				</recipes>		
+			</value>
+		</li> 
+	</operations>
+</Operation>
+<Operation Class="PatchOperationSequence">
+	<success>Always</success>
+	<operations>
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef/race[fleshType = "Mechanoid" and not(nameGenerator)]</xpath>
+			<value>
+				<nameGenerator>NamerAnimalUtility</nameGenerator>
+			</value>
+		</li> 
+	</operations>
+</Operation>
+
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/ThingDef[(thingClass = "Building_TurretGun" or thingClass = "CombatExtended.Building_TurretGunCE") and minifiedDef]/comps</xpath>
+	<value>
+		<li Class="WhatTheHack.Comps.CompProperties_Mountable"></li>
+	</value>
+</Operation> 
+<Operation Class="PatchOperationSequence">
+	<success>Always</success>
+	<operations>
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[@ParentName="BaseMechanoid" or (race/fleshType = "Mechanoid" and not (@ParentName="BaseMechanoid") and not (@Name="BaseMechanoid"))]/comps[not(descendant::li[@Class = "CompProperties_Refuelable"])]</xpath>
+			<value>
+				<li Class="CompProperties_Refuelable">
+				    <fuelLabel>Loaded mechanoid parts</fuelLabel>
+					<fuelGizmoLabel>Loaded mechanoid parts</fuelGizmoLabel>
+					<fuelConsumptionRate>40.0</fuelConsumptionRate>
+					<fuelCapacity>15.0</fuelCapacity>
+					<fuelFilter>
+					  <thingDefs>
+						<li>WTH_MechanoidParts</li>
+					  </thingDefs>
+					</fuelFilter>
+					<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				</li>
+			</value>
+		</li> 
+	</operations>
+</Operation>
+
+<Operation Class="PatchOperationSequence">
+	<success>Always</success>
+	<operations>
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[(@ParentName="BaseMechanoid" or (race/fleshType = "Mechanoid" and not (@ParentName="BaseMechanoid") and not (@Name="BaseMechanoid"))) and not(comps)]</xpath>
+			<value>
+				<comps>
+					<li Class="CompProperties_Refuelable">
+						<fuelLabel>Loaded mechanoid parts</fuelLabel>
+						<fuelGizmoLabel>Loaded mechanoid parts</fuelGizmoLabel>
+						<fuelConsumptionRate>40.0</fuelConsumptionRate>
+						<fuelCapacity>15.0</fuelCapacity>
+						<fuelFilter>
+						  <thingDefs>
+							<li>WTH_MechanoidParts</li>
+						  </thingDefs>
+						</fuelFilter>
+						<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+					</li>
+				</comps>
+			</value>
+		</li> 
+	</operations>
+</Operation>
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[@Name = "MechCentipede"]</xpath>
+		<value>
+			<!--Cmon, centipedes should be able to carry more than 70-ish kilos --> 
+			<li Class="WhatTheHack.DefModExtension_PawnMassCapacity">
+				<bonusMassCapacity>85</bonusMassCapacity>
+			</li>
+		</value>
+	</Operation> 
+	
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[defName = "Mech_Pikeman"]</xpath>
+		<value>
+			<!-- Makes it possible that Pikemen can use the turret module despite their body size of only 1 --> 
+			<li Class="WhatTheHack.DefModExtension_TurretModule">
+				<ignoreMinBodySize>true</ignoreMinBodySize>
+			</li>
+		</value>
+	</Operation> 
+	
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/ThinkTreeDef[defName = "Mechanoid" or defName = "Mechanoid_Skullywag"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[treeDef="LordDuty"]</xpath> <!--Priority is important here, hence the insert after this specific subNode--> 
+		<value>
+			<!-- Make sure mechanoids don't wander about when drafted --> 
+			<li Class="ThinkNode_ConditionalDrafted">
+			  <subNodes>
+				<li Class="ThinkNode_Tagger">
+				  <tagToGive>DraftedOrder</tagToGive>
+				  <subNodes>
+					<li Class="JobGiver_MoveToStandable" />
+					<li Class="JobGiver_Orders" />
+				  </subNodes>
+				</li>
+			  </subNodes>
+			</li>
+			<!-- Work order for mechs with work modules --> 
+			<li Class="WhatTheHack.ThinkTree.ThinkNode_ConditionalMechanoidWork">
+				<subNodes>
+					<li Class="WhatTheHack.Jobs.JobGiver_Work_Mechanoid"/>
+				</subNodes>
+			</li>
+		</value>
+	</Operation>
+	<!-- Mechanoid parts sold from exotic goods trader --> 
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraderKindDef[defName = "Caravan_Outlander_Exotic" or defName = "Orbital_Exotic"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_SingleDef">
+					<thingDef>WTH_MechanoidParts</thingDef>
+					<countRange>
+						<min>0</min>
+						<max>70</max>
+					</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+					<thingDef>WTH_MechanoidData</thingDef>
+					<countRange>
+						<min>0</min>
+						<max>20</max>
+					</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+					<thingDef>WTH_MechanoidChip</thingDef>
+					<countRange>
+						<min>0</min>
+						<max>5</max>
+					</countRange>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraderKindDef[defName = "Base_Outlander_Standard"]/stockGenerators</xpath>
+		<value>
+			<li Class="StockGenerator_SingleDef">
+					<thingDef>WTH_MechanoidParts</thingDef>
+					<countRange>
+						<min>0</min>
+						<max>100</max>
+					</countRange>
+			</li>
+		</value>
+	</Operation>
+	
+	<!-- Save our ship 2 compatibility --> 
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Save Our Ship 2</li>
+		</mods>
+		<match Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[(@ParentName="BaseShuttle") or (@Name="BaseShuttle")]/comps/li[(@Class = "CompProperties_Refuelable") and (descendant::fuelLabel)]</xpath>
+		</match>
+	</Operation>
+</Patch>

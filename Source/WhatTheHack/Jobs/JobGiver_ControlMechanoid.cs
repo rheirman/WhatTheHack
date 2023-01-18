@@ -1,23 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Verse;
+﻿using Verse;
 using Verse.AI;
 
-namespace WhatTheHack.Jobs
+namespace WhatTheHack.Jobs;
+
+internal class JobGiver_ControlMechanoid : ThinkNode_JobGiver
 {
-    class JobGiver_ControlMechanoid : ThinkNode_JobGiver
+    public override Job TryGiveJob(Pawn pawn)
     {
-        protected override Job TryGiveJob(Pawn pawn)
+        if (pawn.RemoteControlLink() == null ||
+            !(Utilities.QuickDistance(pawn.Position, pawn.RemoteControlLink().Position) <=
+              Utilities.GetRemoteControlRadius(pawn) - 5f))
         {
-            if(pawn.RemoteControlLink() != null && Utilities.QuickDistance(pawn.Position, pawn.RemoteControlLink().Position) <= Utilities.GetRemoteControlRadius(pawn) - 5f)
-            {
-                Job job = new Job(WTH_DefOf.WTH_ControlMechanoid);
-                job.count = 1;
-                return job;
-            }
             return null;
         }
+
+        var job = new Job(WTH_DefOf.WTH_ControlMechanoid)
+        {
+            count = 1
+        };
+        return job;
     }
 }

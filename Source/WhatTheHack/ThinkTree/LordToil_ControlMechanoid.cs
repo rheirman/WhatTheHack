@@ -1,29 +1,18 @@
-﻿using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Verse.AI;
+﻿using Verse.AI;
 using Verse.AI.Group;
 
-namespace WhatTheHack.ThinkTree
-{
-    class LordToil_ControlMechanoid : LordToil
-    {
-        public override bool AllowSatisfyLongNeeds
-        {
-            get
-            {
-                return false;
-            }
-        }
-        public override void UpdateAllDuties()
+namespace WhatTheHack.ThinkTree;
 
+internal class LordToil_ControlMechanoid : LordToil
+{
+    public override bool AllowSatisfyLongNeeds => false;
+
+    public override void UpdateAllDuties()
+
+    {
+        for (var i = 0; i < lord.ownedPawns.Count; i++)
         {
-            for (int i = 0; i < this.lord.ownedPawns.Count; i++)
-            {
-                this.lord.ownedPawns[i].mindState.duty = new PawnDuty(WTH_DefOf.WTH_ControlMechanoidDuty);
-            }
+            lord.ownedPawns[i].mindState.duty = new PawnDuty(WTH_DefOf.WTH_ControlMechanoidDuty);
         }
     }
 }
