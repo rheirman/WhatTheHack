@@ -24,32 +24,9 @@ public static class IncidentWorker_Raid_TryExecuteWorker
         }
     }
 
-    //[HarmonyPriority(Priority.First)]
-    //private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
-    //{
-    //    var instructionList = instructions.ToList();
-
-    //    for (var i = 0; i < instructions.Count(); i++)
-    //    {
-    //        yield return instructionList[i];
-    //        if (instructionList[i].operand as MethodInfo !=
-    //            AccessTools.Method(typeof(PawnsArrivalModeWorker), "Arrive"))
-    //        {
-    //            continue;
-    //        }
-
-    //        yield return instructionList[i - 2];
-    //        yield return instructionList[i - 1];
-    //        yield return new CodeInstruction(OpCodes.Call,
-    //            typeof(IncidentWorker_Raid_TryExecuteWorker).GetMethod("SpawnHackedMechanoids"));
-    //    }
-    //}
-
-
-    //returns pawns for compatibility reasons. 
-    //public static void SpawnHackedMechanoids(List<Pawn> pawns, IncidentParms parms)
-    public static void Postfix(ref List<Pawn> pawns, IncidentParms parms)
+    public static void Prefix(ref List<Pawn> pawns, IncidentParms parms, ref List<Pawn> __state)
     {
+        __state = new List<Pawn>();
         if (pawns.Count == 0)
         {
             return;
@@ -70,8 +47,6 @@ public static class IncidentWorker_Raid_TryExecuteWorker
         var maxMechPoints =
             parms.points * rand.Next(minHackedMechPoints, Base.maxHackedMechPoints) / 100f; //TODO: no magic numbers
         float cumulativePoints = 0;
-        var map = parms.target as Map;
-        var addedPawns = new List<Pawn>();
         var possibleMechs = from a in DefDatabase<PawnKindDef>.AllDefs
             where a.IsMechanoid() && Utilities.IsAllowedInModOptions(a.race.defName, parms.faction) && a.isFighter &&
                   (parms.raidArrivalMode == PawnsArrivalModeDefOf.EdgeWalkIn || a.RaceProps.baseBodySize <= 1)
@@ -90,38 +65,36 @@ public static class IncidentWorker_Raid_TryExecuteWorker
             }
 
             var mechanoid = PawnGenerator.GeneratePawn(pawnKindDef, parms.faction);
-            if (parms.raidArrivalMode == PawnsArrivalModeDefOf.EdgeWalkIn)
-            {
-                var loc = CellFinder.RandomClosewalkCellNear(parms.spawnCenter, map, 8);
-                GenSpawn.Spawn(mechanoid, loc, map, parms.spawnRotation);
-            }
+            pawns.Add(mechanoid);
+            __state.Add(mechanoid);
+            cumulativePoints += pawnKindDef.combatPower;
+        }
+    }
 
+    public static void Postfix(List<Pawn> pawns, IncidentParms parms, List<Pawn> __state)
+    {
+        if (!__state.Any())
+        {
+            return;
+        }
+
+        foreach (var mechanoid in __state)
+        {
             mechanoid.health.AddHediff(WTH_DefOf.WTH_TargetingHacked);
             mechanoid.health.AddHediff(WTH_DefOf.WTH_BackupBattery);
 
             var powerNeed = (Need_Power)mechanoid.needs.TryGetNeed(WTH_DefOf.WTH_Mechanoid_Power);
             powerNeed.CurLevel = powerNeed.MaxLevel;
-            if (ModsConfig.BiotechActive)
+            if (ModsConfig.BiotechActive && mechanoid.needs.energy != null)
             {
-                if (mechanoid.needs.energy == null)
-                {
-                    mechanoid.needs.energy = new Need_MechEnergy(mechanoid);
-                }
-
                 mechanoid.needs.energy.curLevelInt = mechanoid.needs.energy.MaxLevel;
             }
 
             pawns.Add(mechanoid);
-            cumulativePoints += pawnKindDef.combatPower;
             AddModules(mechanoid);
-        }
-
-
-        foreach (var pawn in pawns)
-        {
-            if (pawn.equipment == null)
+            if (mechanoid.equipment == null)
             {
-                pawn.equipment = new Pawn_EquipmentTracker(pawn);
+                mechanoid.equipment = new Pawn_EquipmentTracker(mechanoid);
             }
         }
     }

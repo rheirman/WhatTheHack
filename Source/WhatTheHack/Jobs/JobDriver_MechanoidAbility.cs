@@ -55,7 +55,7 @@ public class JobDriver_MechanoidAbility : JobDriver
         {
             powerNeed.CurLevel -= modExt.powerDrain;
 
-            if (ModsConfig.BiotechActive)
+            if (ModsConfig.BiotechActive && pawn.needs.energy != null)
             {
                 pawn.needs.energy.CurLevelPercentage = powerNeed.CurLevelPercentage;
             }
