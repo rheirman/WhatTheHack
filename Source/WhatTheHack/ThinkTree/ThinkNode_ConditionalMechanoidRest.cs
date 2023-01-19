@@ -18,11 +18,6 @@ public class ThinkNode_ConditionalMechanoidRest : ThinkNode_Conditional
             return true;
         }
 
-        if (HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn) && pawn.OnHackingTable())
-        {
-            return true;
-        }
-
-        return false;
+        return HealthAIUtility.ShouldHaveSurgeryDoneNow(pawn) && pawn.OnHackingTable();
     }
 }

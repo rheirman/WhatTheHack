@@ -9,6 +9,7 @@ internal class JobGiver_Mechanoid_Rest : ThinkNode_JobGiver
     public override Job TryGiveJob(Pawn pawn)
     {
         Job job = null;
+
         if (pawn.IsActivated() && (pawn.ShouldRecharge() || pawn.ShouldBeMaintained()))
         {
             pawn.drafter.Drafted = false;

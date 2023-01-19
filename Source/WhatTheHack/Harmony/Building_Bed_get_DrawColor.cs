@@ -16,19 +16,3 @@ internal static class Building_Bed_get_DrawColor
         }
     }
 }
-
-//[HarmonyPatch(typeof(CompAssignableToPawn), "CanAssignTo")]
-//static class CompAssignableToPawn_CanAssignTo
-//{
-//    static bool Prefix(CompAssignableToPawn __instance, Pawn pawn, ref AcceptanceReport __result)
-//    {
-//        if (pawn.IsHacked() && pawn.Faction == Faction.OfPlayer)
-//        {
-//            __result = AcceptanceReport.WasAccepted;
-//            return false;
-//        }
-//        return true;
-//    }
-//}
-
-//Patch is needed so mechanoids that are standing up can still have a "cur bed"

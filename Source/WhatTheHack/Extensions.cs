@@ -10,7 +10,6 @@ using WhatTheHack.Needs;
 
 namespace WhatTheHack;
 
-// WhatTheHack.Extensions.IsMechanoidLike(RaceProperties RaceProps)
 public static class Extensions
 {
     public static void RemoveRemoteControlLink(this Pawn pawn)
@@ -156,40 +155,6 @@ public static class Extensions
             pawn.RevertToFaction(pawnData.originalFaction);
         }
     }
-    /*
-    public static Building_HackingTable HackingTable(this Pawn pawn)
-    {
-        List<Thing> thingList = pawn.Position.GetThingList(pawn.Map);
-        Building_HackingTable hackingTable = null;
-        for (int i = 0; i < thingList.Count; i++)
-        {
-            hackingTable = (thingList[i] as Building_HackingTable);
-            if (hackingTable != null)
-            {
-                break;
-            }
-        }
-        if (hackingTable == null)
-        {
-            return null;
-        }
-        if(hackingTable.GetCurOccupant(0) == pawn)
-        {
-            return hackingTable;
-        }
-        return null;
-    }
-    */
-    /*
-    public static bool OnHackingTable(this Pawn pawn)
-    {
-        if(pawn.HackingTable() != null)
-        {
-            return true;
-        }
-        return false;
-    }
-    */
 
     public static void FailOnPlatformNoLongerUsable(this Toil toil, TargetIndex bedIndex)
     {
