@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using UnityEngine;
+using Verse;
 using WhatTheHack.Buildings;
 
 namespace WhatTheHack.Harmony;
@@ -17,18 +18,28 @@ internal static class Building_Bed_get_DrawColor
     }
 }
 
-//[HarmonyPatch(typeof(CompAssignableToPawn), "CanAssignTo")]
-//static class CompAssignableToPawn_CanAssignTo
-//{
-//    static bool Prefix(CompAssignableToPawn __instance, Pawn pawn, ref AcceptanceReport __result)
-//    {
-//        if (pawn.IsHacked() && pawn.Faction == Faction.OfPlayer)
-//        {
-//            __result = AcceptanceReport.WasAccepted;
-//            return false;
-//        }
-//        return true;
-//    }
-//}
+[HarmonyPatch(typeof(JobGiver_GetEnergy), "ShouldAutoRecharge")]
+internal static class JobGiver_GetEnergy_ShouldAutoRecharge
+{
+    private static void Postfix(ref bool __result, Pawn pawn)
+    {
+        if (!__result)
+        {
+            return;
+        }
 
-//Patch is needed so mechanoids that are standing up can still have a "cur bed"
+        if (pawn.IsHacked())
+        {
+            __result = false;
+        }
+    }
+}
+
+[HarmonyPatch(typeof(Need_MechEnergy), "NeedInterval")]
+internal static class Need_MechEnergy_NeedInterval
+{
+    private static bool Prefix(Need_MechEnergy __instance)
+    {
+        return !__instance.pawn.IsHacked();
+    }
+}
