@@ -247,7 +247,6 @@ internal static class Utilities
         var huntingWorkType = WorkTypeDefOf.Hunting;
         if (pawnData.workTypes == null)
         {
-            // Log.Message("WTHACK: " + pawn.Name);
             pawnData.workTypes = new List<WorkTypeDef>();
         }
 

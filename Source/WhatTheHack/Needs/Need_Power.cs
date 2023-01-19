@@ -124,6 +124,11 @@ public class Need_Power : Need
             CurLevel -= PowerFallPerTick * 150f;
             if (ModsConfig.BiotechActive)
             {
+                if (pawn.needs.energy == null)
+                {
+                    pawn.needs.energy = new Need_MechEnergy(pawn);
+                }
+
                 pawn.needs.energy.CurLevelPercentage = CurLevelPercentage;
             }
         }

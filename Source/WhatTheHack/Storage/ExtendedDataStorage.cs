@@ -83,8 +83,6 @@ public class ExtendedDataStorage : WorldComponent
         {
             _store.Remove(key);
         }
-
-        Log.Message($"Cleaned up {shouldRemove.Count} deprecated records from What the Hack!?");
     }
 
 
