@@ -91,4 +91,18 @@ Cheers,
 Roolo
 		</content>
 	</HugsLib.UpdateFeatureDef>
+	<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase_WhatTheHack">
+		<defName>WhatTheHack_5_0_0</defName>
+		<assemblyVersion>5.0.0</assemblyVersion>
+		<content>
+What the Hack is updated to support Rimworld 1.4. This update comes with a couple of performance improvements as well.  
+&lt;color=orange&gt;&lt;b&gt;Many thanks go to Mlie who did this update completely. **&lt;/b&gt;&lt;/color&gt;
+
+Rimworld 1.4 came with a ton of mechanoid related changes, and it wasn't feasible for us to test every single interaction with this mod. So please beware that there could be issues. I you encounter any, please report them with a hugslib log (press ctrl+f12 in-game to get one).
+Enjoy the update!
+
+Cheers,
+Roolo
+		</content>
+	</HugsLib.UpdateFeatureDef>
 </Defs>
