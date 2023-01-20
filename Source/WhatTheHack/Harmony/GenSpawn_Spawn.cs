@@ -36,7 +36,6 @@ internal class GenSpawn_Spawn
         {
             NameUnnamedMechs(newThing);
             AddOwnershipIfNeeded(newThing);
-            //Log.Message("aa");
             if (newThing is Pawn p && p.IsHacked() && p.Faction == Faction.OfPlayer)
             {
                 var storage = Base.Instance.GetExtendedDataStorage();
@@ -135,7 +134,7 @@ internal class GenSpawn_Spawn
     public static void Modified_WipeExistingThings(IntVec3 thingPos, Rot4 thingRot, BuildableDef thingDef, Map map,
         DestroyMode mode, Thing thing)
     {
-        if (!(thing.TryGetComp<CompMountable>() is { Active: true }))
+        if (thing.TryGetComp<CompMountable>() is not { Active: true })
         {
             GenSpawn.WipeExistingThings(thingPos, thingRot, thingDef, map, mode);
         }

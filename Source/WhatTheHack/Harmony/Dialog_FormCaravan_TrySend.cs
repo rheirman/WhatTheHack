@@ -17,7 +17,6 @@ internal class Dialog_FormCaravan_TrySend
             var instruction = instructionsList[i];
             if (instruction.opcode == OpCodes.Stloc_0)
             {
-                Log.Message("found Stloc_1");
                 yield return new CodeInstruction(OpCodes.Ldarg_0);
                 yield return new CodeInstruction(OpCodes.Call,
                     typeof(Dialog_FormCaravan_TrySend).GetMethod("AddWarnings"));

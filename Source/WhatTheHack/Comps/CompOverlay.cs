@@ -26,7 +26,6 @@ internal class CompOverlay : ThingComp
 
     public override void Initialize(CompProperties props)
     {
-        Log.Message("CompOverlay Initialize");
         base.Initialize(props);
         //SetLookAround();
     }

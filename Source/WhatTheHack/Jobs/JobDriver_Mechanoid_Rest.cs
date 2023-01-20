@@ -25,7 +25,6 @@ internal class JobDriver_Mechanoid_Rest : JobDriver
 
     public override IEnumerable<Toil> MakeNewToils()
     {
-        //this.AddFinishAction(new Action(delegate { Log.Message("finish action called for job!");  }));
         this.FailOnDespawnedOrNull(TargetIndex.A);
         if (RestingPlace is Building_BaseMechanoidPlatform)
         {
@@ -33,7 +32,6 @@ internal class JobDriver_Mechanoid_Rest : JobDriver
             yield return GoToPlatform(TargetIndex.A);
         }
 
-        //goToPlatform.AddPreInitAction(new Action(delegate { Log.Message("first toil pre-initaction"); }));
         var toil = new Toil
         {
             defaultCompleteMode = ToilCompleteMode.Never,
