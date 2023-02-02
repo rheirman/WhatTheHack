@@ -20,7 +20,7 @@ namespace WhatTheHack.Jobs
                 return pawn.RemoteControlLink();
             }
         }
-        public override IEnumerable<Toil> MakeNewToils()
+        protected override IEnumerable<Toil> MakeNewToils()
         {
             Toil toil = new Toil();
             toil.defaultCompleteMode = ToilCompleteMode.Never;

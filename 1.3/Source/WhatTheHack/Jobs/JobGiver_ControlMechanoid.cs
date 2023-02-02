@@ -9,7 +9,7 @@ namespace WhatTheHack.Jobs
 {
     class JobGiver_ControlMechanoid : ThinkNode_JobGiver
     {
-        public override Job TryGiveJob(Pawn pawn)
+        protected override Job TryGiveJob(Pawn pawn)
         {
             if(pawn.RemoteControlLink() != null && Utilities.QuickDistance(pawn.Position, pawn.RemoteControlLink().Position) <= Utilities.GetRemoteControlRadius(pawn) - 5f)
             {

@@ -31,7 +31,7 @@ namespace WhatTheHack.Jobs
             return this.pawn.Reserve(this.Takee, this.job, 1, -1, null) && this.pawn.Reserve(this.HackingTable, this.job, 1, -1, null);
         }
 
-        public override IEnumerable<Toil> MakeNewToils()
+        protected override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDestroyedOrNull(TargetIndex.A);
             this.FailOnDestroyedOrNull(TargetIndex.B);

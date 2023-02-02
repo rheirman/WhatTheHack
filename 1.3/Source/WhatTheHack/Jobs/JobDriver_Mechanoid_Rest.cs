@@ -30,7 +30,7 @@ namespace WhatTheHack.Jobs
             return result;
         }
 
-        public override IEnumerable<Toil> MakeNewToils()
+        protected override IEnumerable<Toil> MakeNewToils()
         {
             //this.AddFinishAction(new Action(delegate { Log.Message("finish action called for job!");  }));
             this.FailOnDespawnedOrNull(TargetIndex.A);

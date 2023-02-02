@@ -54,7 +54,7 @@ namespace WhatTheHack.Jobs
             }
             return false;
         }
-        public override IEnumerable<Toil> MakeNewToils()
+        protected override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnAggroMentalState(TargetIndex.A);
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);

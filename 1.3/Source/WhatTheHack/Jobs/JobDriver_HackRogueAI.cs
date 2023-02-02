@@ -27,7 +27,7 @@ namespace WhatTheHack.Jobs
             return true;
         }
 
-        public override IEnumerable<Toil> MakeNewToils()
+        protected override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             this.FailOn(() => RogueAI.goingRogue == false);

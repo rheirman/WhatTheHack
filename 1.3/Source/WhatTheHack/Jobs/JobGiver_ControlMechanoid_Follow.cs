@@ -21,7 +21,7 @@ namespace WhatTheHack.Jobs
             }
         }
 
-        public override Job TryGiveJob(Pawn pawn)
+        protected override Job TryGiveJob(Pawn pawn)
         {
             Pawn followee = pawn.RemoteControlLink();
             if (followee == null)

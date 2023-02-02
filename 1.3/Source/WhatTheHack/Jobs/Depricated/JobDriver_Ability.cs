@@ -27,7 +27,7 @@ namespace WhatTheHack.Jobs
             }
         }
 
-        public override IEnumerable<Toil> MakeNewToils()
+        protected override IEnumerable<Toil> MakeNewToils()
         {
             if(TargetA != null)
             {

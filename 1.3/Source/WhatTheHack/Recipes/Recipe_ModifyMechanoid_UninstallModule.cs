@@ -42,12 +42,14 @@ namespace WhatTheHack.Recipes
             {
                 pawnData.workTypes.RemoveAll((WorkTypeDef def) => ext.workTypes.Contains(def));
             }
+            /* Disableled because after this part of code runs -> mechanoid will never do hunting (actualy this part breaks a lot of things)
             if (!pawn.health.hediffSet.hediffs.Exists((Hediff h) => h.def.HasModExtension<DefModExtension_Hediff_WorkModule>()))
             {
                 pawnData.workTypes = null;
                 pawn.skills = null;
                 pawn.workSettings = null;
             }
+            */
             if(removedHediff == WTH_DefOf.WTH_RepairModule)
             {
                 Base.RemoveComps(pawn);
